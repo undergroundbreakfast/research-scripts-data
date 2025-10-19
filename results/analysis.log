@@ -1,0 +1,100 @@
+2025-10-18 23:50:02,951 - INFO - Starting analysis script...
+2025-10-18 23:50:03,228 - INFO - Successfully created connection engine for database 'Research_TEST' on host 'localhost'.
+2025-10-18 23:50:03,228 - INFO - Fetching data from 'aha_survey_data' table...
+2025-10-18 23:50:03,287 - INFO - Successfully fetched 6166 records.
+2025-10-18 23:50:03,298 - INFO - Initial data types and missing values:
+None
+2025-10-18 23:50:03,298 - INFO - Performing feature engineering...
+2025-10-18 23:50:03,301 - INFO - Feature engineering complete. New columns added: 'is_in_system', 'system_size', 'capex_per_sqft', 'ai_adoption_score', 'robotics_adoption_score'.
+2025-10-18 23:50:03,301 - INFO - Dataset contains 4174 hospitals in a system and 1992 independent hospitals.
+2025-10-18 23:50:03,301 - INFO - 
+==================================================
+ANALYSIS 1: System vs. Independent Hospital Tech Adoption
+==================================================
+2025-10-18 23:50:03,306 - INFO - Mean technology adoption scores (0=No, 1=Yes):
+                         Independent  In-System
+robohos                        0.305      0.496
+robosys                        0.030      0.278
+roboven                        0.011      0.013
+wfaiart                        0.092      0.318
+wfaiss                         0.047      0.228
+wfaipsn                        0.033      0.274
+wfaippd                        0.041      0.279
+wfaioacw                       0.126      0.346
+robotics_adoption_score        0.182      0.507
+ai_adoption_score              0.128      0.700
+2025-10-18 23:50:03,313 - INFO - 
+==================================================
+ANALYSIS 2: Health System Size and Tech Adoption
+==================================================
+2025-10-18 23:50:03,852 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_robohos.png
+2025-10-18 23:50:04,151 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_robosys.png
+2025-10-18 23:50:04,427 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_roboven.png
+2025-10-18 23:50:04,693 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_wfaiart.png
+2025-10-18 23:50:04,948 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_wfaiss.png
+2025-10-18 23:50:05,275 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_wfaipsn.png
+2025-10-18 23:50:05,532 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_wfaippd.png
+2025-10-18 23:50:05,791 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_wfaioacw.png
+2025-10-18 23:50:06,119 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_robotics_adoption_score.png
+2025-10-18 23:50:06,457 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_ai_adoption_score.png
+2025-10-18 23:50:06,458 - INFO - 
+==================================================
+ANALYSIS 3: Health System Size and CAPEX per SqFt
+==================================================
+2025-10-18 23:50:06,718 - INFO - Saved scatterplot to plots/scatterplot_system_size_vs_capex_per_sqft.png
+2025-10-18 23:50:06,718 - INFO - 
+==================================================
+ANALYSIS 4: Patient Volume (adjpd) and Tech Adoption
+==================================================
+2025-10-18 23:50:07,030 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_robohos.png
+2025-10-18 23:50:07,337 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_robosys.png
+2025-10-18 23:50:07,667 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_roboven.png
+2025-10-18 23:50:07,960 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_wfaiart.png
+2025-10-18 23:50:08,249 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_wfaiss.png
+2025-10-18 23:50:08,538 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_wfaipsn.png
+2025-10-18 23:50:08,834 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_wfaippd.png
+2025-10-18 23:50:09,128 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_wfaioacw.png
+2025-10-18 23:50:09,504 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_robotics_adoption_score.png
+2025-10-18 23:50:09,879 - INFO - Saved scatterplot to plots/scatterplot_adjpd_vs_ai_adoption_score.png
+2025-10-18 23:50:09,948 - INFO - 
+All regression results saved to results/hospital_tech_adoption_analysis_results.csv
+2025-10-18 23:50:09,948 - INFO - 
+======================================================================
+SUMMARY OF REGRESSION RESULTS
+======================================================================
+2025-10-18 23:50:09,948 - INFO - Significance codes: *** p<0.001, ** p<0.01, * p<0.05
+
+2025-10-18 23:50:09,948 - INFO -                    analysis     predictor                  outcome          beta  r_squared        p_value   n_obs significance
+0    System vs. Independent  is_in_system                  robohos  1.905642e-01   0.029711   2.632499e-26  3736.0          ***
+1    System vs. Independent  is_in_system                  robosys  2.486937e-01   0.075636   8.008881e-66  3736.0          ***
+2    System vs. Independent  is_in_system                  roboven  1.198428e-03   0.000024   7.654624e-01  3736.0             
+3    System vs. Independent  is_in_system                  wfaiart  2.253846e-01   0.052526   2.372351e-34  2771.0          ***
+4    System vs. Independent  is_in_system                   wfaiss  1.817577e-01   0.044269   4.255829e-29  2771.0          ***
+5    System vs. Independent  is_in_system                  wfaipsn  2.406083e-01   0.069082   5.209779e-45  2771.0          ***
+6    System vs. Independent  is_in_system                  wfaippd  2.380378e-01   0.066199   3.850073e-43  2771.0          ***
+7    System vs. Independent  is_in_system                 wfaioacw  2.201967e-01   0.046815   1.030979e-30  2771.0          ***
+8    System vs. Independent  is_in_system  robotics_adoption_score  3.244793e-01   0.060566   9.741582e-86  6166.0          ***
+9    System vs. Independent  is_in_system        ai_adoption_score  5.725379e-01   0.042998   7.276675e-61  6166.0          ***
+10     System Size vs. Tech   system_size                  robohos -1.322582e-03   0.013244   2.182637e-09  2688.0          ***
+11     System Size vs. Tech   system_size                  robosys -1.929376e-03   0.035080   1.208265e-22  2688.0          ***
+12     System Size vs. Tech   system_size                  roboven  3.306992e-05   0.000166   5.046603e-01  2688.0             
+13     System Size vs. Tech   system_size                  wfaiart -3.166228e-03   0.073436   2.279161e-35  2022.0          ***
+14     System Size vs. Tech   system_size                   wfaiss -9.223878e-04   0.007661   8.114400e-05  2022.0          ***
+15     System Size vs. Tech   system_size                  wfaipsn -1.428311e-03   0.016280   8.542358e-09  2022.0          ***
+16     System Size vs. Tech   system_size                  wfaippd -2.181201e-03   0.037508   1.541620e-18  2022.0          ***
+17     System Size vs. Tech   system_size                 wfaioacw -3.023200e-03   0.064141   5.822586e-31  2022.0          ***
+18     System Size vs. Tech   system_size  robotics_adoption_score -3.100123e-03   0.052073   1.922073e-50  4174.0          ***
+19     System Size vs. Tech   system_size        ai_adoption_score -6.840730e-03   0.052071   1.933247e-50  4174.0          ***
+20    System Size vs. CAPEX   system_size           capex_per_sqft -1.358472e-01   0.001450   8.807035e-02  2008.0             
+21  Patient Volume vs. Tech         adjpd                  robohos  1.797733e-06   0.226935  5.451924e-211  3736.0          ***
+22  Patient Volume vs. Tech         adjpd                  robosys  3.237360e-07   0.011000   1.307416e-10  3736.0          ***
+23  Patient Volume vs. Tech         adjpd                  roboven -5.034063e-09   0.000036   7.135375e-01  3736.0             
+24  Patient Volume vs. Tech         adjpd                  wfaiart  7.556213e-07   0.059771   5.398663e-39  2771.0          ***
+25  Patient Volume vs. Tech         adjpd                   wfaiss  4.746639e-07   0.030566   1.852092e-20  2771.0          ***
+26  Patient Volume vs. Tech         adjpd                  wfaipsn  5.913052e-07   0.042240   8.213053e-28  2771.0          ***
+27  Patient Volume vs. Tech         adjpd                  wfaippd  6.875278e-07   0.055910   1.622912e-36  2771.0          ***
+28  Patient Volume vs. Tech         adjpd                 wfaioacw  9.365837e-07   0.085745   6.457766e-56  2771.0          ***
+29  Patient Volume vs. Tech         adjpd  robotics_adoption_score  2.307792e-06   0.177586  4.905752e-264  6166.0          ***
+30  Patient Volume vs. Tech         adjpd        ai_adoption_score  3.498253e-06   0.093047  6.276211e-133  6166.0          ***
+2025-10-18 23:50:09,955 - INFO - 
+Analysis script finished successfully.

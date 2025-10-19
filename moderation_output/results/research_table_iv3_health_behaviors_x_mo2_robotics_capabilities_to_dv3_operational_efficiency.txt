@@ -1,0 +1,43 @@
+=== MODERATION EFFECT ANALYSIS ===
+IV: Iv3 Health Behaviors
+Moderator: Mo2 Robotics Capabilities
+DV: Dv3 Operational Efficiency
+
+Parameter                      Raw Data             Z-Score              Log-Transform        Winsorized           
+--------------------------------------------------------------------------------
+Sample Size                    2109                 2109                 2109                 2109                 
+R²                             0.1054               0.1054               0.1383               0.1420               
+Adjusted R²                    0.1003               0.1003               0.1334               0.1371               
+Cohen's f²                     0.0002               0.0002               0.0001               0.0004               
+f² Interpretation              Negligible effect    Negligible effect    Negligible effect    Negligible effect    
+--------------------------------------------------------------------------------
+REGRESSION COEFFICIENTS
+const                          -0.0204 (0.0286)    -0.2985 (0.1373)*   0.5981 (0.0139)*** -0.0148 (0.0205)    
+iv3_health_behaviors_win_centered --                   --                   --                   0.0001 (0.0002)    
+iv3_health_behaviors_log_centered --                   --                   0.0009 (0.0043)    --                   
+iv3_health_behaviors_z_centered --                   -0.0236 (0.0227)    --                   --                   
+iv3_health_behaviors_centered  -0.0003 (0.0002)    --                   --                   --                   
+mo2_robotics_capabilities_z_centered --                   0.1546 (0.0214)*** --                   --                   
+mo2_robotics_capabilities_win_centered --                   --                   --                   0.0085 (0.0010)*** 
+mo2_robotics_capabilities_centered 0.0094 (0.0013)*** --                   --                   --                   
+mo2_robotics_capabilities_log_centered --                   --                   0.0220 (0.0024)*** --                   
+iv3_health_behaviors_x_mo2_robotics_capabilities -0.0000 (0.0001)    --                   --                   --                   
+iv3_health_behaviors_z_x_mo2_robotics_capabilities_z --                   -0.0125 (0.0210)    --                   --                   
+iv3_health_behaviors_log_x_mo2_robotics_capabilities_log --                   --                   -0.0021 (0.0043)    --                   
+iv3_health_behaviors_win_x_mo2_robotics_capabilities_win --                   --                   --                   -0.0001 (0.0001)    
+div_2                          0.0276 (0.0335)    0.1325 (0.1609)    0.0121 (0.0162)    0.0224 (0.0240)    
+div_3                          0.1334 (0.0308)*** 0.6409 (0.1480)*** 0.0646 (0.0150)*** 0.1177 (0.0221)*** 
+div_4                          0.1041 (0.0304)*** 0.4999 (0.1462)*** 0.0538 (0.0147)*** 0.0999 (0.0218)*** 
+div_5                          0.0826 (0.0315)**  0.3965 (0.1512)**  0.0380 (0.0153)*   0.0664 (0.0226)**  
+div_6                          0.0276 (0.0300)    0.1327 (0.1441)    0.0158 (0.0145)    0.0242 (0.0215)    
+div_7                          -0.0343 (0.0309)    -0.1646 (0.1482)    -0.0278 (0.0150)†   -0.0165 (0.0222)    
+div_8                          0.0941 (0.0317)**  0.4519 (0.1521)**  0.0428 (0.0153)**  0.0615 (0.0227)**  
+div_9                          0.0335 (0.0334)    0.1608 (0.1602)    0.0153 (0.0161)    0.0288 (0.0239)    
+population                     0.0000 (0.0000)*   0.0000 (0.0000)*   0.0000 (0.0000)    0.0000 (0.0000)**  
+
+Significance levels: † p<0.1, * p<0.05, ** p<0.01, *** p<0.001
+
+CONDITIONAL SLOPES
+Low Moderator                  -0.0003 (p=0.2989)    -0.0152 (p=0.5669)    0.0009 (p=0.8403)    0.0001 (p=0.6419)    
+Medium Moderator               -0.0003 (p=0.2989)    -0.0152 (p=0.5669)    0.0009 (p=0.8403)    0.0001 (p=0.6419)    
+High Moderator                 -0.0006 (p=0.3557)    -0.0511 (p=0.3213)    -0.0042 (p=0.7193)    -0.0004 (p=0.4544)    

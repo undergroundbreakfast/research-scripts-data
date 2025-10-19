@@ -1,0 +1,43 @@
+=== MODERATION EFFECT ANALYSIS ===
+IV: Iv4 Social Economic Factors
+Moderator: Mo1 Genai Capabilities
+DV: Dv2 Healthcare Quality
+
+Parameter                      Raw Data             Z-Score              Log-Transform        Winsorized           
+--------------------------------------------------------------------------------
+Sample Size                    2109                 2109                 2109                 2109                 
+R²                             0.6270               0.6270               0.6371               0.6430               
+Adjusted R²                    0.6249               0.6249               0.6350               0.6409               
+Cohen's f²                     0.0027               0.0027               0.0002               0.0012               
+f² Interpretation              Negligible effect    Negligible effect    Negligible effect    Negligible effect    
+--------------------------------------------------------------------------------
+REGRESSION COEFFICIENTS
+const                          3654.0577 (140.2071)*** -0.7107 (0.0881)*** 8.1625 (0.0286)*** 3653.3018 (119.3523)*** 
+iv4_social_economic_factors_z_centered --                   0.6104 (0.0142)*** --                   --                   
+iv4_social_economic_factors_log_centered --                   --                   0.7876 (0.0180)*** --                   
+iv4_social_economic_factors_centered 277.5948 (6.4687)*** --                   --                   --                   
+iv4_social_economic_factors_win_centered --                   --                   --                   270.9706 (6.4930)*** 
+mo1_genai_capabilities_log_centered --                   --                   -0.0240 (0.0105)*   --                   
+mo1_genai_capabilities_centered -64.7041 (22.7902)**  --                   --                   --                   
+mo1_genai_capabilities_z_centered --                   -0.0398 (0.0140)**  --                   --                   
+mo1_genai_capabilities_win_centered --                   --                   --                   -66.1115 (26.9080)*   
+iv4_social_economic_factors_log_x_mo1_genai_capabilities_log --                   --                   -0.0283 (0.0405)    --                   
+iv4_social_economic_factors_x_mo1_genai_capabilities -16.8508 (7.0610)*   --                   --                   --                   
+iv4_social_economic_factors_z_x_mo1_genai_capabilities_z --                   -0.0363 (0.0152)*   --                   --                   
+iv4_social_economic_factors_win_x_mo1_genai_capabilities_win --                   --                   --                   -14.5665 (9.0148)    
+div_2                          739.7913 (165.9592)*** 0.4647 (0.1042)*** 0.1915 (0.0339)*** 696.1767 (141.2629)*** 
+div_3                          1566.6363 (149.6385)*** 0.9840 (0.0940)*** 0.3521 (0.0306)*** 1525.6301 (127.4559)*** 
+div_4                          835.1505 (150.3199)*** 0.5246 (0.0944)*** 0.2076 (0.0307)*** 809.0496 (127.9431)*** 
+div_5                          2205.1014 (153.8347)*** 1.3850 (0.0966)*** 0.4638 (0.0314)*** 2073.7299 (131.0737)*** 
+div_6                          535.1980 (148.2290)*** 0.3362 (0.0931)*** 0.1217 (0.0303)*** 517.9694 (126.2410)*** 
+div_7                          1855.7445 (150.6402)*** 1.1656 (0.0946)*** 0.4235 (0.0308)*** 1819.0536 (128.2407)*** 
+div_8                          647.7199 (156.9549)*** 0.4068 (0.0986)*** 0.1409 (0.0320)*** 591.4482 (133.5576)*** 
+div_9                          517.8754 (165.0270)**  0.3253 (0.1037)**  0.1310 (0.0337)*** 539.9512 (140.5244)*** 
+population                     -0.0001 (0.0001)†   -0.0000 (0.0000)†   -0.0000 (0.0000)    -0.0001 (0.0000)**  
+
+Significance levels: † p<0.1, * p<0.05, ** p<0.01, *** p<0.001
+
+CONDITIONAL SLOPES
+Low Moderator                  277.5948 (p=0.0000)*** 0.6256 (p=0.0000)*** 0.7876 (p=0.0000)*** 270.9706 (p=0.0000)*** 
+Medium Moderator               277.5948 (p=0.0000)*** 0.6256 (p=0.0000)*** 0.7876 (p=0.0000)*** 270.9706 (p=0.0000)*** 
+High Moderator                 252.2298 (p=0.0000)*** 0.5699 (p=0.0000)*** 0.7616 (p=0.0000)*** 249.0441 (p=0.0000)*** 

@@ -1,0 +1,530 @@
+2025-10-19 00:13:54,331 - INFO - [LISA_Cluster_Regressions_072025_v3.py:73] - Logging to: logs/dissertation_regression_analysis_log_20251019_001354.txt
+2025-10-19 00:13:54,331 - INFO - [LISA_Cluster_Regressions_072025_v3.py:409] - Starting Dissertation OLS Regression Analysis Script.
+2025-10-19 00:13:54,390 - INFO - [LISA_Cluster_Regressions_072025_v3.py:95] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-10-19 00:14:21,372 - INFO - [LISA_Cluster_Regressions_072025_v3.py:135] - Data for analysis retrieved: 3052 rows, 8 columns.
+2025-10-19 00:14:21,372 - INFO - [LISA_Cluster_Regressions_072025_v3.py:140] - Renaming columns for clarity...
+2025-10-19 00:14:21,372 - INFO - [LISA_Cluster_Regressions_072025_v3.py:165] - Performing data preparations for regression...
+2025-10-19 00:14:21,373 - INFO - [LISA_Cluster_Regressions_072025_v3.py:171] - Created 'state_fips_for_clustering' column for clustered SEs.
+2025-10-19 00:14:21,373 - INFO - [LISA_Cluster_Regressions_072025_v3.py:179] - Converting 'ct1_population' to numeric type...
+2025-10-19 00:14:21,374 - INFO - [LISA_Cluster_Regressions_072025_v3.py:185] - Created 'log_population' from 'ct1_population'.
+2025-10-19 00:14:21,375 - INFO - [LISA_Cluster_Regressions_072025_v3.py:202] - Created 8 dummy variables for 'ct2_census_division'.
+2025-10-19 00:14:21,375 - INFO - [LISA_Cluster_Regressions_072025_v3.py:213] - Prepared 'sp3_cluster_type' as a categorical variable.
+2025-10-19 00:14:21,375 - INFO - [LISA_Cluster_Regressions_072025_v3.py:217] - Converting all regression variables to proper numeric types...
+2025-10-19 00:14:21,375 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'dv21_premature_death' sample values before conversion: [9407.9482421875, 8981.5751953125, 13138.8486328125, 12675.4345703125, 11541.4951171875]
+2025-10-19 00:14:21,375 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'dv21_premature_death' to numeric type. Null values: 0/3052
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'sp1_moran_i' sample values before conversion: ['-0.000661666', '0.069610369', '0.060769739', '0.010672831683467651', '0.010672831683467646']
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'sp1_moran_i' to numeric type. Null values: 0/3052
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'iv3_health_behaviors' sample values before conversion: [48.49579097956419, 27.742231903374197, 61.90532405585051, 56.320113735496996, 28.205747699290516]
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'iv3_health_behaviors' to numeric type. Null values: 0/3052
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'iv4_social_economic' sample values before conversion: [10.134138997178525, 11.176548715084792, 12.181614794842899, 14.091700394097716, 13.662033479325473]
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'iv4_social_economic' to numeric type. Null values: 0/3052
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:235] - Data preparation complete.
+2025-10-19 00:14:21,376 - INFO - [LISA_Cluster_Regressions_072025_v3.py:602] - 
+============================== LISA CLUSTER POPULATION SUMMARY ==============================
+2025-10-19 00:14:21,379 - INFO - [LISA_Cluster_Regressions_072025_v3.py:632] - 
+Population Distribution by LISA Cluster Type:
+2025-10-19 00:14:21,380 - INFO - [LISA_Cluster_Regressions_072025_v3.py:633] - 
+sp3_cluster_type  county_count total_population avg_population pct_counties pct_population
+              HH           111       96,651,800        870,736        3.64%         29.72%
+              HL            89       15,438,825        173,469        2.92%          4.75%
+              LH           277        8,933,884         32,252        9.08%          2.75%
+              LL            63       12,208,635        193,787        2.06%          3.75%
+ Not Significant          2512      192,024,453         76,442       82.31%         59.04%
+2025-10-19 00:14:21,380 - INFO - [LISA_Cluster_Regressions_072025_v3.py:638] - 
+HIGHLIGHT - 'HL' Cluster Population: 15,438,825
+2025-10-19 00:14:21,380 - INFO - [LISA_Cluster_Regressions_072025_v3.py:639] - Number of counties in 'HL' cluster: 89
+2025-10-19 00:14:21,380 - INFO - [LISA_Cluster_Regressions_072025_v3.py:644] - 
+Top 10 most populous counties in 'HL' cluster:
+2025-10-19 00:14:21,380 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 39049, Population: 1,318,149
+2025-10-19 00:14:21,380 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 18097, Population: 971,737
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 40109, Population: 795,822
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 21111, Population: 779,232
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 36055, Population: 756,406
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 01073, Population: 672,265
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 40143, Population: 668,923
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 55025, Population: 559,891
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 53063, Population: 538,711
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:646] -   • FIPS: 22033, Population: 454,369
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:648] - ================================================================================
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg1_SP3_on_DV21 ==============================
+2025-10-19 00:14:21,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: []
+2025-10-19 00:14:21,382 - INFO - [LISA_Cluster_Regressions_072025_v3.py:483] - Created dummy variables for 'sp3_cluster_type'. Reference: 'Not Significant'
+2025-10-19 00:14:21,382 - INFO - [LISA_Cluster_Regressions_072025_v3.py:484] - IV variables for model: ['sp3_cluster_type_HH', 'sp3_cluster_type_HL', 'sp3_cluster_type_LH', 'sp3_cluster_type_LL']
+2025-10-19 00:14:21,383 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:21,383 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const                  float64
+sp3_cluster_type_HH      int64
+sp3_cluster_type_HL      int64
+sp3_cluster_type_LH      int64
+sp3_cluster_type_LL      int64
+dtype: object
+2025-10-19 00:14:21,384 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:21,388 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg1_SP3_on_DV21 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.037
+Model:                              OLS   Adj. R-squared:                  0.035
+Method:                   Least Squares   F-statistic:                     18.02
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           4.96e-09
+Time:                          00:14:21   Log-Likelihood:                -29143.
+No. Observations:                  3052   AIC:                         5.830e+04
+Df Residuals:                      3047   BIC:                         5.833e+04
+Df Model:                             4                                         
+Covariance Type:                cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                9895.1694    299.641     33.023      0.000    9307.884    1.05e+04
+sp3_cluster_type_HH -2840.2118    397.452     -7.146      0.000   -3619.204   -2061.220
+sp3_cluster_type_HL   -26.4021    291.258     -0.091      0.928    -597.257     544.453
+sp3_cluster_type_LH   982.6691    317.923      3.091      0.002     359.551    1605.787
+sp3_cluster_type_LL -1707.8131    409.697     -4.168      0.000   -2510.804    -904.822
+==============================================================================
+Omnibus:                     1090.093   Durbin-Watson:                   1.471
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7079.909
+Skew:                           1.543   Prob(JB):                         0.00
+Kurtosis:                       9.793   Cond. No.                         7.11
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:21,785 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg2_SP3_on_DV21_Controls_Base ==============================
+2025-10-19 00:14:21,785 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: ['log_population', 'census_dummies']
+2025-10-19 00:14:21,786 - INFO - [LISA_Cluster_Regressions_072025_v3.py:483] - Created dummy variables for 'sp3_cluster_type'. Reference: 'Not Significant'
+2025-10-19 00:14:21,786 - INFO - [LISA_Cluster_Regressions_072025_v3.py:484] - IV variables for model: ['sp3_cluster_type_HH', 'sp3_cluster_type_HL', 'sp3_cluster_type_LH', 'sp3_cluster_type_LL']
+2025-10-19 00:14:21,787 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:21,787 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const                  float64
+sp3_cluster_type_HH      int64
+sp3_cluster_type_HL      int64
+sp3_cluster_type_LH      int64
+sp3_cluster_type_LL      int64
+log_population         float64
+div_2                    int64
+div_3                    int64
+div_4                    int64
+div_5                    int64
+div_6                    int64
+div_7                    int64
+div_8                    int64
+div_9                    int64
+dtype: object
+2025-10-19 00:14:21,789 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:21,794 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg2_SP3_on_DV21_Controls_Base ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.255
+Model:                              OLS   Adj. R-squared:                  0.252
+Method:                   Least Squares   F-statistic:                     26.70
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           2.48e-17
+Time:                          00:14:21   Log-Likelihood:                -28750.
+No. Observations:                  3052   AIC:                         5.753e+04
+Df Residuals:                      3038   BIC:                         5.761e+04
+Df Model:                            13                                         
+Covariance Type:                cluster                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                1.359e+04   1017.996     13.352      0.000    1.16e+04    1.56e+04
+sp3_cluster_type_HH  -505.4245    370.908     -1.363      0.173   -1232.392     221.543
+sp3_cluster_type_HL   312.3690    239.166      1.306      0.192    -156.389     781.127
+sp3_cluster_type_LH   467.5868    270.261      1.730      0.084     -62.116     997.290
+sp3_cluster_type_LL  -496.8229    372.982     -1.332      0.183   -1227.854     234.209
+log_population       -558.0761     84.994     -6.566      0.000    -724.661    -391.491
+div_2                 778.9078    480.528      1.621      0.105    -162.909    1720.725
+div_3                3141.1678    488.015      6.437      0.000    2184.676    4097.659
+div_4                1093.9073    496.614      2.203      0.028     120.561    2067.253
+div_5                4770.2223    491.999      9.696      0.000    3805.922    5734.523
+div_6                 216.2255    655.111      0.330      0.741   -1067.768    1500.219
+div_7                2959.7864    627.209      4.719      0.000    1730.480    4189.093
+div_8                1265.3030    707.740      1.788      0.074    -121.841    2652.447
+div_9                 679.0769    479.782      1.415      0.157    -261.279    1619.433
+==============================================================================
+Omnibus:                     1630.479   Durbin-Watson:                   1.781
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            25325.144
+Skew:                           2.178   Prob(JB):                         0.00
+Kurtosis:                      16.423   Cond. No.                         235.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:22,096 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg3_SP3_on_DV21_Controls_IV3 ==============================
+2025-10-19 00:14:22,096 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: ['log_population', 'census_dummies', 'iv3_health_behaviors']
+2025-10-19 00:14:22,097 - INFO - [LISA_Cluster_Regressions_072025_v3.py:483] - Created dummy variables for 'sp3_cluster_type'. Reference: 'Not Significant'
+2025-10-19 00:14:22,097 - INFO - [LISA_Cluster_Regressions_072025_v3.py:484] - IV variables for model: ['sp3_cluster_type_HH', 'sp3_cluster_type_HL', 'sp3_cluster_type_LH', 'sp3_cluster_type_LL']
+2025-10-19 00:14:22,099 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:22,099 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const                   float64
+sp3_cluster_type_HH       int64
+sp3_cluster_type_HL       int64
+sp3_cluster_type_LH       int64
+sp3_cluster_type_LL       int64
+log_population          float64
+div_2                     int64
+div_3                     int64
+div_4                     int64
+div_5                     int64
+div_6                     int64
+div_7                     int64
+div_8                     int64
+div_9                     int64
+iv3_health_behaviors    float64
+dtype: object
+2025-10-19 00:14:22,101 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:22,104 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg3_SP3_on_DV21_Controls_IV3 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.453
+Model:                              OLS   Adj. R-squared:                  0.450
+Method:                   Least Squares   F-statistic:                     40.09
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           2.47e-21
+Time:                          00:14:22   Log-Likelihood:                -28279.
+No. Observations:                  3052   AIC:                         5.659e+04
+Df Residuals:                      3037   BIC:                         5.668e+04
+Df Model:                            14                                         
+Covariance Type:                cluster                                         
+========================================================================================
+                           coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                 1.526e+04    986.225     15.471      0.000    1.33e+04    1.72e+04
+sp3_cluster_type_HH   -379.6875    303.153     -1.252      0.210    -973.856     214.481
+sp3_cluster_type_HL    -20.0459    195.856     -0.102      0.918    -403.917     363.825
+sp3_cluster_type_LH    154.8028    199.184      0.777      0.437    -235.590     545.195
+sp3_cluster_type_LL   -174.1322    342.729     -0.508      0.611    -845.869     497.605
+log_population        -844.8160     89.798     -9.408      0.000   -1020.817    -668.815
+div_2                  413.6313    520.787      0.794      0.427    -607.093    1434.355
+div_3                 1283.5541    557.722      2.301      0.021     190.439    2376.670
+div_4                  335.7196    532.337      0.631      0.528    -707.641    1379.081
+div_5                 2818.7326    497.987      5.660      0.000    1842.696    3794.769
+div_6                -1110.3559    677.176     -1.640      0.101   -2437.596     216.884
+div_7                 1043.9501    465.587      2.242      0.025     131.416    1956.484
+div_8                  224.7182    607.559      0.370      0.711    -966.075    1415.512
+div_9                  -27.8707    491.738     -0.057      0.955    -991.659     935.918
+iv3_health_behaviors    80.8940     11.193      7.228      0.000      58.957     102.831
+==============================================================================
+Omnibus:                      849.427   Durbin-Watson:                   1.789
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5304.918
+Skew:                           1.170   Prob(JB):                         0.00
+Kurtosis:                       9.020   Cond. No.                         910.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:22,395 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg4_SP3_on_DV21_Controls_IV4 ==============================
+2025-10-19 00:14:22,395 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: ['log_population', 'census_dummies', 'iv3_health_behaviors', 'iv4_social_economic']
+2025-10-19 00:14:22,396 - INFO - [LISA_Cluster_Regressions_072025_v3.py:483] - Created dummy variables for 'sp3_cluster_type'. Reference: 'Not Significant'
+2025-10-19 00:14:22,396 - INFO - [LISA_Cluster_Regressions_072025_v3.py:484] - IV variables for model: ['sp3_cluster_type_HH', 'sp3_cluster_type_HL', 'sp3_cluster_type_LH', 'sp3_cluster_type_LL']
+2025-10-19 00:14:22,397 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:22,398 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const                   float64
+sp3_cluster_type_HH       int64
+sp3_cluster_type_HL       int64
+sp3_cluster_type_LH       int64
+sp3_cluster_type_LL       int64
+log_population          float64
+div_2                     int64
+div_3                     int64
+div_4                     int64
+div_5                     int64
+div_6                     int64
+div_7                     int64
+div_8                     int64
+div_9                     int64
+iv3_health_behaviors    float64
+iv4_social_economic     float64
+dtype: object
+2025-10-19 00:14:22,400 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:22,403 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg4_SP3_on_DV21_Controls_IV4 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.706
+Model:                              OLS   Adj. R-squared:                  0.705
+Method:                   Least Squares   F-statistic:                     140.2
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           9.37e-34
+Time:                          00:14:22   Log-Likelihood:                -27330.
+No. Observations:                  3052   AIC:                         5.469e+04
+Df Residuals:                      3036   BIC:                         5.479e+04
+Df Model:                            15                                         
+Covariance Type:                cluster                                         
+========================================================================================
+                           coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                 2155.5037   1100.645      1.958      0.050      -1.720    4312.727
+sp3_cluster_type_HH   -193.7167    219.089     -0.884      0.377    -623.124     235.690
+sp3_cluster_type_HL   -395.4889    183.760     -2.152      0.031    -755.652     -35.326
+sp3_cluster_type_LH    126.0887    141.271      0.893      0.372    -150.797     402.974
+sp3_cluster_type_LL    195.3623    194.987      1.002      0.316    -186.805     577.529
+log_population        -305.8810     81.014     -3.776      0.000    -464.666    -147.096
+div_2                 1332.4673    293.050      4.547      0.000     758.100    1906.835
+div_3                 1760.9123    301.008      5.850      0.000    1170.948    2350.877
+div_4                 1198.7309    322.392      3.718      0.000     566.853    1830.609
+div_5                 2906.8642    218.057     13.331      0.000    2479.480    3334.248
+div_6                  316.3103    406.122      0.779      0.436    -479.674    1112.295
+div_7                 2199.4473    293.308      7.499      0.000    1624.574    2774.320
+div_8                  436.0081    323.988      1.346      0.178    -198.997    1071.013
+div_9                  610.2363    336.213      1.815      0.070     -48.728    1269.201
+iv3_health_behaviors    63.0164      4.813     13.094      0.000      53.584      72.449
+iv4_social_economic    537.9267     28.587     18.817      0.000     481.898     593.956
+==============================================================================
+Omnibus:                      435.493   Durbin-Watson:                   1.839
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2684.108
+Skew:                           0.519   Prob(JB):                         0.00
+Kurtosis:                       7.476   Cond. No.                         969.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:22,688 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg5_SP1_on_DV21 ==============================
+2025-10-19 00:14:22,688 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp1_moran_i, Controls: []
+2025-10-19 00:14:22,690 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:22,690 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const          float64
+sp1_moran_i    float64
+dtype: object
+2025-10-19 00:14:22,691 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:22,693 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg5_SP1_on_DV21 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.009
+Model:                              OLS   Adj. R-squared:                  0.009
+Method:                   Least Squares   F-statistic:                     17.65
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           0.000118
+Time:                          00:14:22   Log-Likelihood:                -29186.
+No. Observations:                  3052   AIC:                         5.838e+04
+Df Residuals:                      3050   BIC:                         5.839e+04
+Df Model:                             1                                         
+Covariance Type:                cluster                                         
+===============================================================================
+                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------
+const        9890.0308    299.694     33.000      0.000    9302.641    1.05e+04
+sp1_moran_i  -197.6901     47.058     -4.201      0.000    -289.923    -105.457
+==============================================================================
+Omnibus:                     1076.118   Durbin-Watson:                   1.446
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6702.878
+Skew:                           1.534   Prob(JB):                         0.00
+Kurtosis:                       9.580   Cond. No.                         1.71
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:23,077 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg6_SP1_on_DV21_Controls_Base ==============================
+2025-10-19 00:14:23,077 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp1_moran_i, Controls: ['log_population', 'census_dummies']
+2025-10-19 00:14:23,079 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:23,079 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const             float64
+sp1_moran_i       float64
+log_population    float64
+div_2               int64
+div_3               int64
+div_4               int64
+div_5               int64
+div_6               int64
+div_7               int64
+div_8               int64
+div_9               int64
+dtype: object
+2025-10-19 00:14:23,081 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:23,084 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg6_SP1_on_DV21_Controls_Base ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.252
+Model:                              OLS   Adj. R-squared:                  0.250
+Method:                   Least Squares   F-statistic:                     29.60
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           5.61e-17
+Time:                          00:14:23   Log-Likelihood:                -28756.
+No. Observations:                  3052   AIC:                         5.753e+04
+Df Residuals:                      3041   BIC:                         5.760e+04
+Df Model:                            10                                         
+Covariance Type:                cluster                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const           1.387e+04    958.652     14.466      0.000     1.2e+04    1.57e+04
+sp1_moran_i        4.5205     24.090      0.188      0.851     -42.695      51.736
+log_population  -590.0958     79.283     -7.443      0.000    -745.487    -434.704
+div_2            751.7028    437.352      1.719      0.086    -105.491    1608.897
+div_3           3244.1277    481.927      6.732      0.000    2299.568    4188.687
+div_4           1162.0029    486.249      2.390      0.017     208.973    2115.032
+div_5           4904.7995    482.691     10.161      0.000    3958.742    5850.857
+div_6            300.0064    639.028      0.469      0.639    -952.465    1552.478
+div_7           3038.2546    621.062      4.892      0.000    1820.996    4255.514
+div_8           1307.7575    703.437      1.859      0.063     -70.953    2686.469
+div_9            704.8715    445.619      1.582      0.114    -168.525    1578.268
+==============================================================================
+Omnibus:                     1621.050   Durbin-Watson:                   1.780
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            25018.800
+Skew:                           2.163   Prob(JB):                         0.00
+Kurtosis:                      16.343   Cond. No.                         235.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:23,377 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg7_SP1_on_DV21_Controls_IV3 ==============================
+2025-10-19 00:14:23,377 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp1_moran_i, Controls: ['log_population', 'census_dummies', 'iv3_health_behaviors']
+2025-10-19 00:14:23,379 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:23,379 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const                   float64
+sp1_moran_i             float64
+log_population          float64
+div_2                     int64
+div_3                     int64
+div_4                     int64
+div_5                     int64
+div_6                     int64
+div_7                     int64
+div_8                     int64
+div_9                     int64
+iv3_health_behaviors    float64
+dtype: object
+2025-10-19 00:14:23,381 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:23,384 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg7_SP1_on_DV21_Controls_IV3 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.452
+Model:                              OLS   Adj. R-squared:                  0.450
+Method:                   Least Squares   F-statistic:                     43.11
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           8.54e-21
+Time:                          00:14:23   Log-Likelihood:                -28281.
+No. Observations:                  3052   AIC:                         5.659e+04
+Df Residuals:                      3040   BIC:                         5.666e+04
+Df Model:                            11                                         
+Covariance Type:                cluster                                         
+========================================================================================
+                           coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                 1.543e+04    947.198     16.293      0.000    1.36e+04    1.73e+04
+sp1_moran_i             -6.5318     22.815     -0.286      0.775     -51.248      38.185
+log_population        -865.0875     85.483    -10.120      0.000   -1032.632    -697.543
+div_2                  389.9331    497.798      0.783      0.433    -585.733    1365.600
+div_3                 1320.9691    554.969      2.380      0.017     233.249    2408.689
+div_4                  359.8485    526.883      0.683      0.495    -672.824    1392.521
+div_5                 2867.5305    491.904      5.829      0.000    1903.415    3831.645
+div_6                -1083.9086    667.838     -1.623      0.105   -2392.847     225.030
+div_7                 1066.0211    460.475      2.315      0.021     163.507    1968.536
+div_8                  235.3900    600.442      0.392      0.695    -941.455    1412.235
+div_9                  -16.8368    473.196     -0.036      0.972    -944.283     910.609
+iv3_health_behaviors    81.1140     11.172      7.260      0.000      59.217     103.011
+==============================================================================
+Omnibus:                      841.100   Durbin-Watson:                   1.790
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5222.919
+Skew:                           1.158   Prob(JB):                         0.00
+Kurtosis:                       8.975   Cond. No.                         910.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:23,673 - INFO - [LISA_Cluster_Regressions_072025_v3.py:463] - 
+============================== RUNNING REGRESSION: Reg8_SP1_on_DV21_Controls_IV4 ==============================
+2025-10-19 00:14:23,673 - INFO - [LISA_Cluster_Regressions_072025_v3.py:464] - DV: dv21_premature_death, IV: sp1_moran_i, Controls: ['log_population', 'census_dummies', 'iv3_health_behaviors', 'iv4_social_economic']
+2025-10-19 00:14:23,674 - INFO - [LISA_Cluster_Regressions_072025_v3.py:271] - Y dtype: float64
+2025-10-19 00:14:23,675 - INFO - [LISA_Cluster_Regressions_072025_v3.py:272] - X dtypes: const                   float64
+sp1_moran_i             float64
+log_population          float64
+div_2                     int64
+div_3                     int64
+div_4                     int64
+div_5                     int64
+div_6                     int64
+div_7                     int64
+div_8                     int64
+div_9                     int64
+iv3_health_behaviors    float64
+iv4_social_economic     float64
+dtype: object
+2025-10-19 00:14:23,677 - INFO - [LISA_Cluster_Regressions_072025_v3.py:284] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-10-19 00:14:23,680 - INFO - [LISA_Cluster_Regressions_072025_v3.py:505] - 
+--- Results for Reg8_SP1_on_DV21_Controls_IV4 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.706
+Model:                              OLS   Adj. R-squared:                  0.705
+Method:                   Least Squares   F-statistic:                     155.5
+Date:                  Sun, 19 Oct 2025   Prob (F-statistic):           1.44e-33
+Time:                          00:14:23   Log-Likelihood:                -27333.
+No. Observations:                  3052   AIC:                         5.469e+04
+Df Residuals:                      3039   BIC:                         5.477e+04
+Df Model:                            12                                         
+Covariance Type:                cluster                                         
+========================================================================================
+                           coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                 2330.3409   1077.653      2.162      0.031     218.180    4442.502
+sp1_moran_i             -0.2905     20.906     -0.014      0.989     -41.266      40.685
+log_population        -321.1330     77.610     -4.138      0.000    -473.246    -169.020
+div_2                 1308.9976    296.464      4.415      0.000     727.940    1890.056
+div_3                 1760.7284    304.759      5.777      0.000    1163.412    2358.044
+div_4                 1187.7397    325.721      3.646      0.000     549.338    1826.142
+div_5                 2911.1022    223.956     12.999      0.000    2472.157    3350.047
+div_6                  305.3077    403.500      0.757      0.449    -485.538    1096.154
+div_7                 2177.4206    299.071      7.281      0.000    1591.252    2763.590
+div_8                  428.6202    325.236      1.318      0.188    -208.831    1066.072
+div_9                  593.2695    326.943      1.815      0.070     -47.526    1234.065
+iv3_health_behaviors    63.0081      4.854     12.980      0.000      53.494      72.522
+iv4_social_economic    537.1317     28.514     18.837      0.000     481.245     593.019
+==============================================================================
+Omnibus:                      428.913   Durbin-Watson:                   1.838
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2693.530
+Skew:                           0.501   Prob(JB):                         0.00
+Kurtosis:                       7.492   Cond. No.                         969.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+2025-10-19 00:14:23,970 - INFO - [LISA_Cluster_Regressions_072025_v3.py:538] - 
+Consolidated regression results saved to: dissertation_regression_output/dissertation_regression_summary.csv
+2025-10-19 00:14:23,971 - INFO - [LISA_Cluster_Regressions_072025_v3.py:539] - 
+                                   N  Adj. R-Squared  Coef_sp1_moran_i  Coef_sp3_cluster_type_HH  Coef_sp3_cluster_type_HL  Coef_sp3_cluster_type_LH  Coef_sp3_cluster_type_LL  P-val_sp1_moran_i  P-val_sp3_cluster_type_HH  P-val_sp3_cluster_type_HL  P-val_sp3_cluster_type_LH  P-val_sp3_cluster_type_LL
+Model Name                                                                                                                                                                                                                                                                                                   
+Reg1_SP3_on_DV21                3052        0.035424               NaN              -2840.211791                -26.402096                982.669150              -1707.813099                NaN               8.931160e-13                   0.927772                   0.001995                   0.000031
+Reg2_SP3_on_DV21_Controls_Base  3052        0.251847               NaN               -505.424499                312.369023                467.586817               -496.822921                NaN               1.729877e-01                   0.191528                   0.083607                   0.182851
+Reg3_SP3_on_DV21_Controls_IV3   3052        0.450422               NaN               -379.687485                -20.045890                154.802825               -174.132210                NaN               2.104014e-01                   0.918479                   0.437049                   0.611401
+Reg4_SP3_on_DV21_Controls_IV4   3052        0.704884               NaN               -193.716719               -395.488873                126.088674                195.362284                NaN               3.765933e-01                   0.031382                   0.372107                   0.316379
+Reg5_SP1_on_DV21                3052        0.008749       -197.690062                       NaN                       NaN                       NaN                       NaN           0.000027                        NaN                        NaN                        NaN                        NaN
+Reg6_SP1_on_DV21_Controls_Base  3052        0.249854          4.520463                       NaN                       NaN                       NaN                       NaN           0.851151                        NaN                        NaN                        NaN                        NaN
+Reg7_SP1_on_DV21_Controls_IV3   3052        0.450424         -6.531765                       NaN                       NaN                       NaN                       NaN           0.774654                        NaN                        NaN                        NaN                        NaN
+Reg8_SP1_on_DV21_Controls_IV4   3052        0.704536         -0.290493                       NaN                       NaN                       NaN                       NaN           0.988914                        NaN                        NaN                        NaN                        NaN
+2025-10-19 00:14:23,971 - INFO - [LISA_Cluster_Regressions_072025_v3.py:543] - 
+Script finished. Check the output directory for logs, plots, and summary CSV.
+2025-10-19 00:14:23,971 - INFO - [LISA_Cluster_Regressions_072025_v3.py:547] - 
+============================== LISA CLUSTER POPULATION SUMMARY ==============================
+2025-10-19 00:14:23,974 - INFO - [LISA_Cluster_Regressions_072025_v3.py:576] - 
+Population Distribution by LISA Cluster Type:
+2025-10-19 00:14:23,974 - INFO - [LISA_Cluster_Regressions_072025_v3.py:577] - 
+sp3_cluster_type  county_count total_population avg_population pct_counties pct_population
+              HH           111       96,651,800        870,736        3.64%         29.72%
+              HL            89       15,438,825        173,469        2.92%          4.75%
+              LH           277        8,933,884         32,252        9.08%          2.75%
+              LL            63       12,208,635        193,787        2.06%          3.75%
+ Not Significant          2512      192,024,453         76,442       82.31%         59.04%
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:582] - 
+HIGHLIGHT - 'HL' Cluster Population: 15,438,825
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:583] - Number of counties in 'HL' cluster: 89
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:588] - 
+Top 10 most populous counties in 'HL' cluster:
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 39049, Population: 1,318,149
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 18097, Population: 971,737
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 40109, Population: 795,822
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 21111, Population: 779,232
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 36055, Population: 756,406
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 01073, Population: 672,265
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 40143, Population: 668,923
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 55025, Population: 559,891
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 53063, Population: 538,711
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:590] -   • FIPS: 22033, Population: 454,369
+2025-10-19 00:14:23,975 - INFO - [LISA_Cluster_Regressions_072025_v3.py:592] - ================================================================================
