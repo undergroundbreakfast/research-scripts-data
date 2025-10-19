@@ -1,0 +1,43 @@
+=== MODERATION EFFECT ANALYSIS ===
+IV: Iv1 Public Health Policy
+Moderator: Mo2 Robotics Capabilities
+DV: Dv2 Healthcare Quality
+
+Parameter                      Raw Data             Z-Score              Log-Transform        Winsorized           
+--------------------------------------------------------------------------------
+Sample Size                    2109                 2109                 2109                 2109                 
+R²                             0.3120               0.3120               0.3291               0.3625               
+Adjusted R²                    0.3081               0.3081               0.3253               0.3589               
+Cohen's f²                     0.0001               0.0001               0.0004               0.0000               
+f² Interpretation              Negligible effect    Negligible effect    Negligible effect    Negligible effect    
+--------------------------------------------------------------------------------
+REGRESSION COEFFICIENTS
+const                          3600.7674 (201.7574)*** -0.7078 (0.1210)*** 8.1864 (0.0412)*** 3674.5392 (168.9562)*** 
+iv1_public_health_policy       109.4524 (67.7053)    --                   --                   --                   
+iv1_public_health_policy_log   --                   --                   0.0124 (0.0200)    --                   
+iv1_public_health_policy_win   --                   --                   --                   49.3409 (56.6909)    
+iv1_public_health_policy_z     --                   0.0343 (0.0212)    --                   --                   
+mo2_robotics_capabilities_z_centered --                   -0.1611 (0.0188)*** --                   --                   
+mo2_robotics_capabilities_win_centered --                   --                   --                   -66.0500 (11.3913)*** 
+mo2_robotics_capabilities_centered -69.7874 (13.2088)*** --                   --                   --                   
+mo2_robotics_capabilities_log_centered --                   --                   -0.0578 (0.0099)*** --                   
+iv1_public_health_policy_x_mo2_robotics_capabilities -8.9788 (17.1721)    --                   --                   --                   
+iv1_public_health_policy_win_x_mo2_robotics_capabilities_win --                   --                   --                   -2.5984 (14.8777)    
+iv1_public_health_policy_log_x_mo2_robotics_capabilities_log --                   --                   -0.0181 (0.0187)    --                   
+iv1_public_health_policy_z_x_mo2_robotics_capabilities_z --                   -0.0097 (0.0185)    --                   --                   
+div_2                          360.5810 (224.6636)    0.2265 (0.1411)    0.0878 (0.0459)†   347.3951 (188.1515)†   
+div_3                          1865.0431 (208.2905)*** 1.1714 (0.1308)*** 0.3823 (0.0425)*** 1712.8020 (174.4060)*** 
+div_4                          697.3969 (204.2238)*** 0.4380 (0.1283)*** 0.1653 (0.0417)*** 658.7841 (171.0212)*** 
+div_5                          2592.6028 (213.1425)*** 1.6284 (0.1339)*** 0.5208 (0.0436)*** 2393.5077 (178.4823)*** 
+div_6                          359.7996 (204.4761)†   0.2260 (0.1284)†   0.0528 (0.0418)    303.9529 (171.2361)†   
+div_7                          1913.8325 (208.9351)*** 1.2021 (0.1312)*** 0.4011 (0.0427)*** 1822.3619 (174.9616)*** 
+div_8                          1078.9664 (213.2050)*** 0.6777 (0.1339)*** 0.1943 (0.0436)*** 880.9839 (178.5433)*** 
+div_9                          436.4795 (223.3613)†   0.2742 (0.1403)†   0.0909 (0.0456)*   420.4656 (187.0660)*   
+population                     -0.0005 (0.0001)*** -0.0000 (0.0000)*** -0.0000 (0.0000)*** -0.0004 (0.0001)*** 
+
+Significance levels: † p<0.1, * p<0.05, ** p<0.01, *** p<0.001
+
+CONDITIONAL SLOPES
+Low Moderator                  109.4524 (p=0.1061)    0.0408 (p=0.0909)†   0.0124 (p=0.5362)    49.3409 (p=0.3842)    
+Medium Moderator               109.4524 (p=0.1061)    0.0408 (p=0.0909)†   0.0124 (p=0.5362)    49.3409 (p=0.3842)    
+High Moderator                 21.1011 (p=0.9090)    0.0131 (p=0.7788)    -0.0308 (p=0.5361)    23.7730 (p=0.8813)    

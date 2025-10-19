@@ -1,0 +1,43 @@
+=== MODERATION EFFECT ANALYSIS ===
+IV: Iv1 Public Health Policy
+Moderator: Mo1 Genai Capabilities
+DV: Dv1 Healthcare Access
+
+Parameter                      Raw Data             Z-Score              Log-Transform        Winsorized           
+--------------------------------------------------------------------------------
+Sample Size                    2109                 2109                 2109                 2109                 
+R²                             0.2460               0.2460               0.2653               0.2831               
+Adjusted R²                    0.2417               0.2417               0.2611               0.2790               
+Cohen's f²                     0.0003               0.0003               0.0002               0.0000               
+f² Interpretation              Negligible effect    Negligible effect    Negligible effect    Negligible effect    
+--------------------------------------------------------------------------------
+REGRESSION COEFFICIENTS
+const                          946.7296 (64.4111)*** -0.6273 (0.1269)*** 6.8317 (0.0514)*** 937.9403 (51.3793)*** 
+iv1_public_health_policy       -13.3127 (21.5740)    --                   --                   --                   
+iv1_public_health_policy_log   --                   --                   -0.0231 (0.0248)    --                   
+iv1_public_health_policy_win   --                   --                   --                   -4.4560 (17.2184)    
+iv1_public_health_policy_z     --                   -0.0137 (0.0222)    --                   --                   
+mo1_genai_capabilities_log_centered --                   --                   -0.0519 (0.0268)†   --                   
+mo1_genai_capabilities_centered -20.8858 (14.6813)    --                   --                   --                   
+mo1_genai_capabilities_z_centered --                   -0.0596 (0.0194)**  --                   --                   
+mo1_genai_capabilities_win_centered --                   --                   --                   -49.7636 (16.6204)**  
+iv1_public_health_policy_x_mo1_genai_capabilities -16.2434 (19.3092)    --                   --                   --                   
+iv1_public_health_policy_log_x_mo1_genai_capabilities_log --                   --                   -0.0337 (0.0501)    --                   
+iv1_public_health_policy_win_x_mo1_genai_capabilities_win --                   --                   --                   -1.9560 (21.4293)    
+iv1_public_health_policy_z_x_mo1_genai_capabilities_z --                   -0.0164 (0.0195)    --                   --                   
+div_2                          238.5511 (71.5472)*** 0.4919 (0.1475)*** 0.2309 (0.0570)*** 238.1123 (57.0494)*** 
+div_3                          415.8024 (66.3901)*** 0.8575 (0.1369)*** 0.3361 (0.0530)*** 388.7144 (52.9499)*** 
+div_4                          309.4298 (65.0481)*** 0.6381 (0.1341)*** 0.2723 (0.0519)*** 305.2008 (51.8676)*** 
+div_5                          668.3364 (68.1684)*** 1.3783 (0.1406)*** 0.5039 (0.0544)*** 585.8625 (54.3827)*** 
+div_6                          215.5613 (65.3358)*** 0.4445 (0.1347)*** 0.1731 (0.0521)*** 209.5488 (52.1091)*** 
+div_7                          571.5900 (66.7503)*** 1.1787 (0.1377)*** 0.4431 (0.0532)*** 520.0065 (53.2324)*** 
+div_8                          -28.4190 (68.1887)    -0.0586 (0.1406)    -0.0936 (0.0544)†   -1.2617 (54.3854)    
+div_9                          -65.0497 (71.3576)    -0.1341 (0.1472)    -0.1108 (0.0569)†   -51.1621 (56.8777)    
+population                     -0.0001 (0.0000)*** -0.0000 (0.0000)*** -0.0000 (0.0000)*** -0.0001 (0.0000)*** 
+
+Significance levels: † p<0.1, * p<0.05, ** p<0.01, *** p<0.001
+
+CONDITIONAL SLOPES
+Low Moderator                  -13.3127 (p=0.5373)    -0.0068 (p=0.7702)    -0.0231 (p=0.3529)    -4.4560 (p=0.7958)    
+Medium Moderator               -13.3127 (p=0.5373)    -0.0068 (p=0.7702)    -0.0231 (p=0.3529)    -4.4560 (p=0.7958)    
+High Moderator                 -37.7634 (p=0.3049)    -0.0320 (p=0.3117)    -0.0540 (p=0.3126)    -7.4003 (p=0.8430)    
