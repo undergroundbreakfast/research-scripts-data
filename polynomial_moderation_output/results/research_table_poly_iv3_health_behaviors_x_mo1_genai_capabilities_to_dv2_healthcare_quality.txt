@@ -1,0 +1,25 @@
+Polynomial Moderation Analysis Results
+================================================================================
+IV: iv3_health_behaviors, MO: mo1_genai_capabilities, DV: dv2_healthcare_quality
+Polynomial Degree: 3
+N: 3135.0, R²: 0.4085, Adj. R²: 0.4055
+Cohen's f²: 0.0048 (Negligible effect)
+
+Coefficients:
+const                    :  3993.7024 (179.9008) t= 22.199 p=0.0000 ***
+iv3_health_behaviors_centered:    25.3284 (1.8219) t= 13.902 p=0.0000 ***
+iv3_health_behaviors_centered^2:     0.3917 (0.0602) t=  6.507 p=0.0000 ***
+iv3_health_behaviors_centered^3:    -0.0030 (0.0010) t= -2.960 p=0.0031 **
+mo1_genai_capabilities_centered:  -162.3296 (39.6155) t= -4.098 p=0.0000 ***
+iv3_health_behaviors_centered_x_mo1_genai_capabilities_centered:    -1.3693 (2.5156) t= -0.544 p=0.5863 
+iv3_health_behaviors_centered^2_x_mo1_genai_capabilities_centered:     0.0457 (0.1363) t=  0.335 p=0.7373 
+iv3_health_behaviors_centered^3_x_mo1_genai_capabilities_centered:    -0.0053 (0.0032) t= -1.653 p=0.0984 †
+population               :    -0.0008 (0.0001) t=-11.220 p=0.0000 ***
+div_2                    :   263.9712 (205.5581) t=  1.284 p=0.1992 
+div_3                    :  1201.9249 (186.2854) t=  6.452 p=0.0000 ***
+div_4                    :   567.1482 (186.3089) t=  3.044 p=0.0024 **
+div_5                    :  2014.1494 (191.4954) t= 10.518 p=0.0000 ***
+div_6                    :   295.3322 (184.0790) t=  1.604 p=0.1087 
+div_7                    :  1266.3257 (188.5412) t=  6.716 p=0.0000 ***
+div_8                    :   807.1504 (192.3053) t=  4.197 p=0.0000 ***
+div_9                    :   358.6000 (203.9506) t=  1.758 p=0.0788 †

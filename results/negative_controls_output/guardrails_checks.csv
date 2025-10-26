@@ -1,0 +1,12 @@
+Check,Moderator,Beta_on_DV21,Beta_on_LifeExp,Incoherent,N_no_hospital,Beta_IV3_on_DV2_in_no_hospital,Note
+Incoherent sign (MO1 on DV21 vs LifeExp),MO1,-61.655915110785855,0.02788291420188478,False,,,
+Incoherent sign (MO11 on DV21 vs LifeExp),MO11,-3.792327999997039,0.003515009113001676,False,,,
+Incoherent sign (MO12 on DV21 vs LifeExp),MO12,-3.5701716145695634,0.002848450933330737,False,,,
+Incoherent sign (MO13 on DV21 vs LifeExp),MO13,-3.30489660162424,0.0021513314635669186,False,,,
+Incoherent sign (MO14 on DV21 vs LifeExp),MO14,-2.8445169920496625,0.0013736113075911091,False,,,
+Incoherent sign (MO15 on DV21 vs LifeExp),MO15,-2.3539464584049457,0.0011653293210418794,False,,,
+No-hospital counties,,,,,2091.0,"iv3_health_behaviors_score    7.25374
+iv3_health_behaviors_score    7.25374
+iv3_health_behaviors_score    7.25374
+iv3_health_behaviors_score    7.25374
+dtype: float64",Interaction undefined (MO==0); slope reported for consistency.

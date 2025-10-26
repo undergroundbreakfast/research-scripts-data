@@ -1,0 +1,671 @@
+2025-10-26 02:00:32,154 INFO: Logging to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Working_Code/Dissertation_Repo/multiverse_output/run_log.txt
+2025-10-26 02:00:35,749 INFO: Connected to Postgres at localhost / db=Research_TEST
+2025-10-26 02:00:36,142 INFO: chr_analytic_chunk_1: 3195 rows, 191 cols
+2025-10-26 02:00:36,200 INFO: chr_analytic_chunk_2: 3195 rows, 218 cols
+2025-10-26 02:00:36,266 INFO: chr_analytic_chunk_3: 3195 rows, 227 cols
+2025-10-26 02:01:04,029 INFO: vw_conceptual_model_adjpd: 3143 rows
+2025-10-26 02:01:04,061 INFO: vw_county_tech_summary_adjpd: 3270 rows, 25 cols
+2025-10-26 02:01:04,079 INFO: hrsa_health_equity_data: 3270 rows
+2025-10-26 02:01:05,428 INFO: Column 'county_fips': 3135/3135 values (0.0% missing), 3135 unique values, 0 empty strings (0.0%)
+2025-10-26 02:01:05,428 INFO: Column 'population': 3135/3135 values (0.0% missing), 3071 unique values, 0 zeros (0.0%)
+2025-10-26 02:01:05,428 INFO: Column 'log_population': 3135/3135 values (0.0% missing), 3071 unique values, 0 zeros (0.0%)
+2025-10-26 02:01:05,428 INFO: Column 'premature_death_raw_value': 3080/3135 values (1.8% missing), 3080 unique values, 0 zeros (0.0%)
+2025-10-26 02:01:05,428 INFO: Column 'preventable_hospital_stays_raw_value': 3065/3135 values (2.2% missing), 2082 unique values, 0 zeros (0.0%)
+2025-10-26 02:01:05,428 INFO: Column 'MO11': 3133/3135 values (0.1% missing), 289 unique values, 2716 zeros (86.6%)
+2025-10-26 02:01:05,429 INFO: Column 'MO12': 3133/3135 values (0.1% missing), 313 unique values, 2680 zeros (85.5%)
+2025-10-26 02:01:05,429 INFO: Column 'MO13': 3133/3135 values (0.1% missing), 239 unique values, 2796 zeros (89.2%)
+2025-10-26 02:01:05,429 INFO: Column 'MO14': 3133/3135 values (0.1% missing), 228 unique values, 2815 zeros (89.8%)
+2025-10-26 02:01:05,429 INFO: Column 'MO15': 3133/3135 values (0.1% missing), 210 unique values, 2834 zeros (90.4%)
+2025-10-26 02:01:05,429 INFO: Column 'MO21': 3133/3135 values (0.1% missing), 529 unique values, 2358 zeros (75.2%)
+2025-10-26 02:01:05,429 INFO: Feature selection: excluded 18 columns due to ID/target/control rules: MO11, MO12, MO13, MO14, MO15, MO21, _5_digit_fips, census_division, county_fips, log_population, name, population, premature_death_raw_value, preventable_hospital_stays_raw_value, state_abbreviation, state_fips, state_key, year
+2025-10-26 02:01:05,472 INFO: Feature selection audit: 635 candidates after exclusions -> 344 kept, 291 dropped
+2025-10-26 02:01:05,472 INFO:   KEEP county_clustered                                             dtype=float64 missing=0.0% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_numerator                                    dtype=float64 missing=1.8% unique=1589
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_denominator                                  dtype=float64 missing=1.8% unique=3055
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_ci_low                                       dtype=float64 missing=1.8% unique=3079
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_ci_high                                      dtype=float64 missing=1.8% unique=3080
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_flag_0_no_flag_1_unreliable_2_suppressed     dtype=float64 missing=0.0% unique=3
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_flag_aian_no_flag_1_unreliable_2_suppressed  dtype=float64 missing=6.8% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_flag_asian_pacific_islander_no_flag_1_unreliabl dtype=float64 missing=7.8% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_flag_black_no_flag_1_unreliable_2_suppressed dtype=float64 missing=34.7% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_flag_hispanic_no_flag_1_unreliable_2_suppressed dtype=float64 missing=26.0% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_white                                        dtype=float64 missing=3.2% unique=3034
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_ci_low_white                                 dtype=float64 missing=3.2% unique=3034
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_ci_high_white                                dtype=float64 missing=3.2% unique=3035
+2025-10-26 02:01:05,472 INFO:   KEEP premature_death_flag_nhopi_no_flag_1_unreliable_2_suppressed dtype=float64 missing=1.3% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP poor_or_fair_health_raw_value                                dtype=float64 missing=0.0% unique=237
+2025-10-26 02:01:05,472 INFO:   KEEP poor_or_fair_health_ci_low                                   dtype=float64 missing=0.0% unique=214
+2025-10-26 02:01:05,472 INFO:   KEEP poor_or_fair_health_ci_high                                  dtype=float64 missing=0.0% unique=260
+2025-10-26 02:01:05,472 INFO:   KEEP poor_physical_health_days_raw_value                          dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,472 INFO:   KEEP poor_physical_health_days_ci_low                             dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,472 INFO:   KEEP poor_physical_health_days_ci_high                            dtype=float64 missing=0.0% unique=3131
+2025-10-26 02:01:05,472 INFO:   KEEP poor_mental_health_days_raw_value                            dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,472 INFO:   KEEP poor_mental_health_days_ci_low                               dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,472 INFO:   KEEP poor_mental_health_days_ci_high                              dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_raw_value                                    dtype=float64 missing=3.1% unique=2927
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_numerator                                    dtype=float64 missing=3.1% unique=1057
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_denominator                                  dtype=float64 missing=3.1% unique=2441
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_ci_low                                       dtype=float64 missing=3.1% unique=3017
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_ci_high                                      dtype=float64 missing=3.1% unique=3017
+2025-10-26 02:01:05,472 INFO:   KEEP lbw_unreliable_indicator_unreliable_numerator_20_or_relative_st dtype=float64 missing=0.0% unique=2
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_white                                        dtype=float64 missing=6.2% unique=2762
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_ci_low_white                                 dtype=float64 missing=6.2% unique=2915
+2025-10-26 02:01:05,472 INFO:   KEEP low_birthweight_ci_high_white                                dtype=float64 missing=6.2% unique=2915
+2025-10-26 02:01:05,472 INFO:   KEEP adult_smoking_raw_value                                      dtype=float64 missing=0.0% unique=234
+2025-10-26 02:01:05,473 INFO:   KEEP adult_smoking_ci_low                                         dtype=float64 missing=0.0% unique=214
+2025-10-26 02:01:05,473 INFO:   KEEP adult_smoking_ci_high                                        dtype=float64 missing=0.0% unique=262
+2025-10-26 02:01:05,473 INFO:   KEEP adult_obesity_raw_value                                      dtype=float64 missing=0.0% unique=271
+2025-10-26 02:01:05,473 INFO:   KEEP adult_obesity_ci_low                                         dtype=float64 missing=0.0% unique=245
+2025-10-26 02:01:05,473 INFO:   KEEP adult_obesity_ci_high                                        dtype=float64 missing=0.0% unique=304
+2025-10-26 02:01:05,473 INFO:   KEEP food_environment_index_raw_value                             dtype=float64 missing=1.1% unique=82
+2025-10-26 02:01:05,473 INFO:   KEEP food_environment_index_numerator                             dtype=float64 missing=1.7% unique=3083
+2025-10-26 02:01:05,473 INFO:   KEEP food_environment_index_denominator                           dtype=float64 missing=0.0% unique=202
+2025-10-26 02:01:05,473 INFO:   KEEP physical_inactivity_raw_value                                dtype=float64 missing=0.0% unique=280
+2025-10-26 02:01:05,473 INFO:   KEEP physical_inactivity_ci_low                                   dtype=float64 missing=0.0% unique=255
+2025-10-26 02:01:05,473 INFO:   KEEP physical_inactivity_ci_high                                  dtype=float64 missing=0.0% unique=313
+2025-10-26 02:01:05,473 INFO:   KEEP access_to_exercise_opportunities_raw_value                   dtype=float64 missing=1.4% unique=3052
+2025-10-26 02:01:05,473 INFO:   KEEP access_to_exercise_opportunities_numerator                   dtype=float64 missing=1.4% unique=2984
+2025-10-26 02:01:05,473 INFO:   KEEP access_to_exercise_opportunities_denominator                 dtype=float64 missing=0.0% unique=3077
+2025-10-26 02:01:05,473 INFO:   KEEP excessive_drinking_raw_value                                 dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,473 INFO:   KEEP excessive_drinking_ci_low                                    dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,473 INFO:   KEEP excessive_drinking_ci_high                                   dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,473 INFO:   KEEP alcohol_impaired_driving_deaths_raw_value                    dtype=float64 missing=0.9% unique=857
+2025-10-26 02:01:05,473 INFO:   KEEP alcohol_impaired_driving_deaths_numerator                    dtype=float64 missing=0.9% unique=154
+2025-10-26 02:01:05,473 INFO:   KEEP alcohol_impaired_driving_deaths_denominator                  dtype=float64 missing=0.9% unique=319
+2025-10-26 02:01:05,473 INFO:   KEEP alcohol_impaired_driving_deaths_ci_low                       dtype=float64 missing=1.7% unique=1292
+2025-10-26 02:01:05,473 INFO:   KEEP alcohol_impaired_driving_deaths_ci_high                      dtype=float64 missing=1.7% unique=1311
+2025-10-26 02:01:05,473 INFO:   KEEP sexually_transmitted_infections_raw_value                    dtype=float64 missing=4.6% unique=2377
+2025-10-26 02:01:05,473 INFO:   KEEP sexually_transmitted_infections_numerator                    dtype=float64 missing=4.6% unique=864
+2025-10-26 02:01:05,473 INFO:   KEEP sexually_transmitted_infections_denominator                  dtype=float64 missing=4.6% unique=2948
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_raw_value                                        dtype=float64 missing=6.9% unique=2894
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_numerator                                        dtype=float64 missing=6.9% unique=858
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_denominator                                      dtype=float64 missing=6.9% unique=2687
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_ci_low                                           dtype=float64 missing=6.9% unique=2917
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_ci_high                                          dtype=float64 missing=6.9% unique=2917
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_white                                            dtype=float64 missing=12.8% unique=2703
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_ci_low_white                                     dtype=float64 missing=12.6% unique=2737
+2025-10-26 02:01:05,473 INFO:   KEEP teen_births_ci_high_white                                    dtype=float64 missing=12.6% unique=2737
+2025-10-26 02:01:05,473 INFO:   KEEP uninsured_raw_value                                          dtype=float64 missing=0.0% unique=3131
+2025-10-26 02:01:05,473 INFO:   KEEP uninsured_numerator                                          dtype=float64 missing=0.0% unique=2553
+2025-10-26 02:01:05,473 INFO:   KEEP uninsured_denominator                                        dtype=float64 missing=0.0% unique=3050
+2025-10-26 02:01:05,473 INFO:   KEEP uninsured_ci_low                                             dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,473 INFO:   KEEP uninsured_ci_high                                            dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,473 INFO:   KEEP primary_care_physicians_raw_value                            dtype=float64 missing=5.0% unique=2882
+2025-10-26 02:01:05,473 INFO:   KEEP primary_care_physicians_numerator                            dtype=float64 missing=0.0% unique=398
+2025-10-26 02:01:05,473 INFO:   KEEP primary_care_physicians_denominator                          dtype=float64 missing=0.0% unique=3084
+2025-10-26 02:01:05,473 INFO:   KEEP ratio_of_population_to_primary_care_physicians               dtype=float64 missing=5.0% unique=2956
+2025-10-26 02:01:05,473 INFO:   KEEP dentists_raw_value                                           dtype=float64 missing=2.8% unique=2875
+2025-10-26 02:01:05,473 INFO:   KEEP dentists_numerator                                           dtype=float64 missing=0.0% unique=391
+2025-10-26 02:01:05,473 INFO:   KEEP dentists_denominator                                         dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,473 INFO:   KEEP ratio_of_population_to_dentists                              dtype=float64 missing=2.8% unique=3023
+2025-10-26 02:01:05,473 INFO:   KEEP mental_health_providers_raw_value                            dtype=float64 missing=5.9% unique=2912
+2025-10-26 02:01:05,473 INFO:   KEEP mental_health_providers_numerator                            dtype=float64 missing=0.0% unique=720
+2025-10-26 02:01:05,473 INFO:   KEEP mental_health_providers_denominator                          dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,473 INFO:   KEEP ratio_of_population_to_mental_health_providers               dtype=float64 missing=5.9% unique=2942
+2025-10-26 02:01:05,473 INFO:   KEEP preventable_hospital_stays_white                             dtype=float64 missing=3.1% unique=2071
+2025-10-26 02:01:05,473 INFO:   KEEP flu_vaccinations_white                                       dtype=float64 missing=0.7% unique=64
+2025-10-26 02:01:05,473 INFO:   KEEP high_school_completion_raw_value                             dtype=float64 missing=0.0% unique=3130
+2025-10-26 02:01:05,473 INFO:   KEEP high_school_completion_numerator                             dtype=float64 missing=0.0% unique=3039
+2025-10-26 02:01:05,473 INFO:   KEEP high_school_completion_denominator                           dtype=float64 missing=0.0% unique=3054
+2025-10-26 02:01:05,473 INFO:   KEEP high_school_completion_ci_low                                dtype=float64 missing=0.8% unique=3110
+2025-10-26 02:01:05,473 INFO:   KEEP high_school_completion_ci_high                               dtype=float64 missing=0.8% unique=3070
+2025-10-26 02:01:05,473 INFO:   KEEP some_college_raw_value                                       dtype=float64 missing=0.0% unique=3125
+2025-10-26 02:01:05,473 INFO:   KEEP some_college_numerator                                       dtype=float64 missing=0.0% unique=2747
+2025-10-26 02:01:05,473 INFO:   KEEP some_college_denominator                                     dtype=float64 missing=0.0% unique=2924
+2025-10-26 02:01:05,473 INFO:   KEEP some_college_ci_low                                          dtype=float64 missing=1.4% unique=3092
+2025-10-26 02:01:05,473 INFO:   KEEP some_college_ci_high                                         dtype=float64 missing=1.1% unique=3069
+2025-10-26 02:01:05,473 INFO:   KEEP unemployment_raw_value                                       dtype=float64 missing=0.0% unique=3122
+2025-10-26 02:01:05,473 INFO:   KEEP unemployment_numerator                                       dtype=float64 missing=0.0% unique=1557
+2025-10-26 02:01:05,473 INFO:   KEEP unemployment_denominator                                     dtype=float64 missing=0.0% unique=3014
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_raw_value                                dtype=float64 missing=0.0% unique=403
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_numerator                                dtype=float64 missing=0.0% unique=2143
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_ci_low                                   dtype=float64 missing=0.0% unique=2442
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_ci_high                                  dtype=float64 missing=0.1% unique=2482
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_hispanic                                 dtype=float64 missing=20.7% unique=2381
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_ci_low_hispanic                          dtype=float64 missing=20.7% unique=1875
+2025-10-26 02:01:05,473 INFO:   KEEP children_in_poverty_ci_high_hispanic                         dtype=float64 missing=20.7% unique=2416
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_poverty_white                                    dtype=float64 missing=2.4% unique=3052
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_poverty_ci_low_white                             dtype=float64 missing=2.4% unique=2851
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_poverty_ci_high_white                            dtype=float64 missing=2.4% unique=3059
+2025-10-26 02:01:05,474 INFO:   KEEP state_fips_c2                                                dtype=float64 missing=0.0% unique=50
+2025-10-26 02:01:05,474 INFO:   KEEP _5_digit_fips_c2                                             dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,474 INFO:   KEEP income_inequality_raw_value                                  dtype=float64 missing=0.5% unique=3115
+2025-10-26 02:01:05,474 INFO:   KEEP income_inequality_numerator                                  dtype=float64 missing=0.5% unique=3025
+2025-10-26 02:01:05,474 INFO:   KEEP income_inequality_denominator                                dtype=float64 missing=0.5% unique=2937
+2025-10-26 02:01:05,474 INFO:   KEEP income_inequality_ci_low                                     dtype=float64 missing=0.5% unique=3107
+2025-10-26 02:01:05,474 INFO:   KEEP income_inequality_ci_high                                    dtype=float64 missing=0.5% unique=3120
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_single_parent_households_raw_value               dtype=float64 missing=0.3% unique=3119
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_single_parent_households_numerator               dtype=float64 missing=0.0% unique=2316
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_single_parent_households_denominator             dtype=float64 missing=0.0% unique=2873
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_single_parent_households_ci_low                  dtype=float64 missing=0.0% unique=3051
+2025-10-26 02:01:05,474 INFO:   KEEP children_in_single_parent_households_ci_high                 dtype=float64 missing=0.1% unique=3130
+2025-10-26 02:01:05,474 INFO:   KEEP social_associations_raw_value                                dtype=float64 missing=0.0% unique=2954
+2025-10-26 02:01:05,474 INFO:   KEEP social_associations_numerator                                dtype=float64 missing=0.0% unique=432
+2025-10-26 02:01:05,474 INFO:   KEEP social_associations_denominator                              dtype=float64 missing=0.0% unique=3084
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_raw_value                                      dtype=float64 missing=3.4% unique=3027
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_numerator                                      dtype=float64 missing=3.4% unique=891
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_denominator                                    dtype=float64 missing=3.4% unique=3020
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_ci_low                                         dtype=float64 missing=3.4% unique=3028
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_ci_high                                        dtype=float64 missing=3.4% unique=3027
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_white                                          dtype=float64 missing=5.6% unique=2956
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_ci_low_white                                   dtype=float64 missing=5.6% unique=2956
+2025-10-26 02:01:05,474 INFO:   KEEP injury_deaths_ci_high_white                                  dtype=float64 missing=5.6% unique=2958
+2025-10-26 02:01:05,474 INFO:   KEEP air_pollution_particulate_matter_raw_value                   dtype=float64 missing=0.9% unique=104
+2025-10-26 02:01:05,474 INFO:   KEEP drinking_water_violations_raw_value                          dtype=float64 missing=1.7% unique=2
+2025-10-26 02:01:05,474 INFO:   KEEP severe_housing_problems_raw_value                            dtype=float64 missing=0.0% unique=3029
+2025-10-26 02:01:05,474 INFO:   KEEP severe_housing_problems_numerator                            dtype=float64 missing=0.0% unique=1312
+2025-10-26 02:01:05,474 INFO:   KEEP severe_housing_problems_denominator                          dtype=float64 missing=0.0% unique=2510
+2025-10-26 02:01:05,474 INFO:   KEEP severe_housing_problems_ci_low                               dtype=float64 missing=0.8% unique=3109
+2025-10-26 02:01:05,474 INFO:   KEEP severe_housing_problems_ci_high                              dtype=float64 missing=0.1% unique=3132
+2025-10-26 02:01:05,474 INFO:   KEEP percentage_of_households_with_high_housing_costs             dtype=float64 missing=0.1% unique=3093
+2025-10-26 02:01:05,474 INFO:   KEEP percentage_of_households_with_high_housing_costs_ci_low      dtype=float64 missing=0.0% unique=3030
+2025-10-26 02:01:05,474 INFO:   KEEP percentage_of_households_with_high_housing_costs_ci_high     dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,474 INFO:   KEEP percentage_of_households_with_overcrowding                   dtype=float64 missing=0.0% unique=3007
+2025-10-26 02:01:05,474 INFO:   KEEP percentage_of_households_with_overcrowding_ci_low            dtype=float64 missing=0.2% unique=2456
+2025-10-26 02:01:05,474 INFO:   KEEP percentage_of_households_with_overcrowding_ci_high           dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,474 INFO:   KEEP pct_households_with_lack_of_kitchen_or_plumbing              dtype=float64 missing=0.0% unique=2884
+2025-10-26 02:01:05,474 INFO:   KEEP pct_households_with_lack_of_kitchen_or_plumbing_ci_low       dtype=float64 missing=0.0% unique=2159
+2025-10-26 02:01:05,474 INFO:   KEEP pct_households_with_lack_of_kitchen_or_plumbing_ci_high      dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_raw_value                              dtype=float64 missing=0.0% unique=3129
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_numerator                              dtype=float64 missing=0.0% unique=2960
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_denominator                            dtype=float64 missing=0.0% unique=3004
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_ci_low                                 dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_ci_high                                dtype=float64 missing=0.0% unique=3121
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_white                                  dtype=float64 missing=2.1% unique=3065
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_ci_low_white                           dtype=float64 missing=2.1% unique=3068
+2025-10-26 02:01:05,474 INFO:   KEEP driving_alone_to_work_ci_high_white                          dtype=float64 missing=2.1% unique=3030
+2025-10-26 02:01:05,474 INFO:   KEEP long_commute_driving_alone_raw_value                         dtype=float64 missing=0.0% unique=573
+2025-10-26 02:01:05,474 INFO:   KEEP long_commute_driving_alone_denominator                       dtype=float64 missing=0.0% unique=3004
+2025-10-26 02:01:05,474 INFO:   KEEP long_commute_driving_alone_ci_low                            dtype=float64 missing=0.0% unique=3098
+2025-10-26 02:01:05,474 INFO:   KEEP long_commute_driving_alone_ci_high                           dtype=float64 missing=0.1% unique=3126
+2025-10-26 02:01:05,474 INFO:   KEEP life_expectancy_raw_value                                    dtype=float64 missing=2.3% unique=3057
+2025-10-26 02:01:05,474 INFO:   KEEP life_expectancy_ci_low                                       dtype=float64 missing=2.3% unique=3061
+2025-10-26 02:01:05,474 INFO:   KEEP life_expectancy_ci_high                                      dtype=float64 missing=2.3% unique=3059
+2025-10-26 02:01:05,474 INFO:   KEEP life_expectancy_white                                        dtype=float64 missing=5.0% unique=2973
+2025-10-26 02:01:05,474 INFO:   KEEP life_expectancy_ci_low_white                                 dtype=float64 missing=5.0% unique=2974
+2025-10-26 02:01:05,474 INFO:   KEEP life_expectancy_ci_high_white                                dtype=float64 missing=5.0% unique=2975
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_raw_value                   dtype=float64 missing=1.8% unique=3080
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_numerator                   dtype=float64 missing=1.8% unique=1589
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_denominator                 dtype=float64 missing=1.8% unique=3055
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_ci_low                      dtype=float64 missing=1.8% unique=3080
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_ci_high                     dtype=float64 missing=1.8% unique=3080
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_white                       dtype=float64 missing=3.2% unique=3035
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_ci_low_white                dtype=float64 missing=3.2% unique=3035
+2025-10-26 02:01:05,474 INFO:   KEEP premature_age_adjusted_mortality_ci_high_white               dtype=float64 missing=3.2% unique=3035
+2025-10-26 02:01:05,474 INFO:   KEEP child_mortality_raw_value                                    dtype=float64 missing=35.3% unique=2024
+2025-10-26 02:01:05,474 INFO:   KEEP child_mortality_numerator                                    dtype=float64 missing=35.2% unique=313
+2025-10-26 02:01:05,474 INFO:   KEEP child_mortality_denominator                                  dtype=float64 missing=35.2% unique=2005
+2025-10-26 02:01:05,474 INFO:   KEEP child_mortality_ci_low                                       dtype=float64 missing=35.2% unique=2027
+2025-10-26 02:01:05,474 INFO:   KEEP child_mortality_ci_high                                      dtype=float64 missing=35.2% unique=2028
+2025-10-26 02:01:05,474 INFO:   KEEP frequent_physical_distress_raw_value                         dtype=float64 missing=0.0% unique=129
+2025-10-26 02:01:05,475 INFO:   KEEP frequent_physical_distress_ci_low                            dtype=float64 missing=0.0% unique=112
+2025-10-26 02:01:05,475 INFO:   KEEP frequent_physical_distress_ci_high                           dtype=float64 missing=0.0% unique=147
+2025-10-26 02:01:05,475 INFO:   KEEP frequent_mental_distress_raw_value                           dtype=float64 missing=0.0% unique=125
+2025-10-26 02:01:05,475 INFO:   KEEP frequent_mental_distress_ci_low                              dtype=float64 missing=0.0% unique=110
+2025-10-26 02:01:05,475 INFO:   KEEP frequent_mental_distress_ci_high                             dtype=float64 missing=0.0% unique=136
+2025-10-26 02:01:05,475 INFO:   KEEP diabetes_prevalence_raw_value                                dtype=float64 missing=0.0% unique=138
+2025-10-26 02:01:05,475 INFO:   KEEP diabetes_prevalence_ci_low                                   dtype=float64 missing=0.0% unique=124
+2025-10-26 02:01:05,475 INFO:   KEEP diabetes_prevalence_ci_high                                  dtype=float64 missing=0.0% unique=155
+2025-10-26 02:01:05,475 INFO:   KEEP hiv_prevalence_raw_value                                     dtype=float64 missing=14.5% unique=1810
+2025-10-26 02:01:05,475 INFO:   KEEP hiv_prevalence_numerator                                     dtype=float64 missing=14.5% unique=591
+2025-10-26 02:01:05,475 INFO:   KEEP hiv_prevalence_denominator                                   dtype=float64 missing=14.5% unique=2639
+2025-10-26 02:01:05,475 INFO:   KEEP food_insecurity_raw_value                                    dtype=float64 missing=0.0% unique=202
+2025-10-26 02:01:05,475 INFO:   KEEP food_insecurity_numerator                                    dtype=float64 missing=0.0% unique=1365
+2025-10-26 02:01:05,475 INFO:   KEEP limited_access_to_healthy_foods_raw_value                    dtype=float64 missing=1.7% unique=3083
+2025-10-26 02:01:05,475 INFO:   KEEP limited_access_to_healthy_foods_numerator                    dtype=float64 missing=1.3% unique=3094
+2025-10-26 02:01:05,475 INFO:   KEEP limited_access_to_healthy_foods_denominator                  dtype=float64 missing=0.1% unique=3081
+2025-10-26 02:01:05,475 INFO:   KEEP drug_overdose_deaths_raw_value                               dtype=float64 missing=39.7% unique=1890
+2025-10-26 02:01:05,475 INFO:   KEEP drug_overdose_deaths_numerator                               dtype=float64 missing=39.7% unique=408
+2025-10-26 02:01:05,475 INFO:   KEEP drug_overdose_deaths_denominator                             dtype=float64 missing=39.7% unique=1887
+2025-10-26 02:01:05,475 INFO:   KEEP drug_overdose_deaths_ci_low                                  dtype=float64 missing=39.7% unique=1891
+2025-10-26 02:01:05,475 INFO:   KEEP drug_overdose_deaths_ci_high                                 dtype=float64 missing=39.7% unique=1891
+2025-10-26 02:01:05,475 INFO:   KEEP insufficient_sleep_raw_value                                 dtype=float64 missing=0.1% unique=205
+2025-10-26 02:01:05,475 INFO:   KEEP insufficient_sleep_ci_low                                    dtype=float64 missing=0.1% unique=200
+2025-10-26 02:01:05,475 INFO:   KEEP insufficient_sleep_ci_high                                   dtype=float64 missing=0.1% unique=203
+2025-10-26 02:01:05,475 INFO:   KEEP state_fips_c3                                                dtype=float64 missing=0.0% unique=50
+2025-10-26 02:01:05,475 INFO:   KEEP _5_digit_fips_c3                                             dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_adults_raw_value                                   dtype=float64 missing=0.0% unique=3131
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_adults_numerator                                   dtype=float64 missing=0.0% unique=2469
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_adults_denominator                                 dtype=float64 missing=0.0% unique=3025
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_adults_ci_low                                      dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_adults_ci_high                                     dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_children_raw_value                                 dtype=float64 missing=0.0% unique=3113
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_children_numerator                                 dtype=float64 missing=0.0% unique=1402
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_children_denominator                               dtype=float64 missing=0.0% unique=2864
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_children_ci_low                                    dtype=float64 missing=0.0% unique=3131
+2025-10-26 02:01:05,475 INFO:   KEEP uninsured_children_ci_high                                   dtype=float64 missing=0.0% unique=3131
+2025-10-26 02:01:05,475 INFO:   KEEP other_primary_care_providers_raw_value                       dtype=float64 missing=0.7% unique=3034
+2025-10-26 02:01:05,475 INFO:   KEEP other_primary_care_providers_numerator                       dtype=float64 missing=0.0% unique=537
+2025-10-26 02:01:05,475 INFO:   KEEP other_primary_care_providers_denominator                     dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,475 INFO:   KEEP ratio_of_population_to_primary_care_providers_other_than_physic dtype=float64 missing=0.4% unique=3104
+2025-10-26 02:01:05,475 INFO:   KEEP high_school_graduation_raw_value                             dtype=float64 missing=21.6% unique=1580
+2025-10-26 02:01:05,475 INFO:   KEEP high_school_graduation_numerator                             dtype=float64 missing=21.6% unique=2292
+2025-10-26 02:01:05,475 INFO:   KEEP high_school_graduation_denominator                           dtype=float64 missing=21.6% unique=1249
+2025-10-26 02:01:05,475 INFO:   KEEP reading_scores_raw_value                                     dtype=float64 missing=11.5% unique=2773
+2025-10-26 02:01:05,475 INFO:   KEEP reading_scores_white                                         dtype=float64 missing=15.3% unique=2656
+2025-10-26 02:01:05,475 INFO:   KEEP math_scores_raw_value                                        dtype=float64 missing=14.3% unique=2686
+2025-10-26 02:01:05,475 INFO:   KEEP math_scores_white                                            dtype=float64 missing=18.2% unique=2565
+2025-10-26 02:01:05,475 INFO:   KEEP school_segregation_raw_value                                 dtype=float64 missing=7.0% unique=2914
+2025-10-26 02:01:05,475 INFO:   KEEP school_funding_adequacy_raw_value                            dtype=float64 missing=2.7% unique=3051
+2025-10-26 02:01:05,475 INFO:   KEEP gender_pay_gap_raw_value                                     dtype=float64 missing=0.2% unique=3129
+2025-10-26 02:01:05,475 INFO:   KEEP gender_pay_gap_numerator                                     dtype=float64 missing=0.2% unique=2897
+2025-10-26 02:01:05,475 INFO:   KEEP gender_pay_gap_denominator                                   dtype=float64 missing=0.2% unique=2923
+2025-10-26 02:01:05,475 INFO:   KEEP gender_pay_gap_ci_low                                        dtype=float64 missing=0.2% unique=3123
+2025-10-26 02:01:05,475 INFO:   KEEP gender_pay_gap_ci_high                                       dtype=float64 missing=0.2% unique=3128
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_raw_value                            dtype=float64 missing=0.0% unique=3044
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_ci_low                               dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_ci_high                              dtype=float64 missing=0.0% unique=3132
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_hispanic                             dtype=float64 missing=24.2% unique=2197
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_ci_low_hispanic                      dtype=float64 missing=24.2% unique=2373
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_ci_high_hispanic                     dtype=float64 missing=24.2% unique=2376
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_white                                dtype=float64 missing=0.2% unique=3021
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_ci_low_white                         dtype=float64 missing=0.2% unique=3127
+2025-10-26 02:01:05,475 INFO:   KEEP median_household_income_ci_high_white                        dtype=float64 missing=0.2% unique=3128
+2025-10-26 02:01:05,475 INFO:   KEEP children_eligible_for_free_or_reduced_price_lunch_raw_value  dtype=float64 missing=17.3% unique=2528
+2025-10-26 02:01:05,475 INFO:   KEEP children_eligible_for_free_or_reduced_price_lunch_numerator  dtype=float64 missing=17.3% unique=2134
+2025-10-26 02:01:05,475 INFO:   KEEP children_eligible_for_free_or_reduced_price_lunch_denominator dtype=float64 missing=17.3% unique=2360
+2025-10-26 02:01:05,475 INFO:   KEEP residential_segregation_black_white_raw_value                dtype=float64 missing=34.0% unique=2068
+2025-10-26 02:01:05,475 INFO:   KEEP child_care_cost_burden_raw_value                             dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,475 INFO:   KEEP child_care_cost_burden_denominator                           dtype=float64 missing=0.0% unique=3044
+2025-10-26 02:01:05,475 INFO:   KEEP child_care_centers_raw_value                                 dtype=float64 missing=4.8% unique=2607
+2025-10-26 02:01:05,475 INFO:   KEEP child_care_centers_numerator                                 dtype=float64 missing=4.8% unique=291
+2025-10-26 02:01:05,475 INFO:   KEEP child_care_centers_denominator                               dtype=float64 missing=0.1% unique=2356
+2025-10-26 02:01:05,475 INFO:   KEEP suicides_raw_value                                           dtype=float64 missing=22.8% unique=2418
+2025-10-26 02:01:05,475 INFO:   KEEP suicides_numerator                                           dtype=float64 missing=22.8% unique=392
+2025-10-26 02:01:05,476 INFO:   KEEP suicides_denominator                                         dtype=float64 missing=22.8% unique=2413
+2025-10-26 02:01:05,476 INFO:   KEEP suicides_ci_low                                              dtype=float64 missing=22.8% unique=2419
+2025-10-26 02:01:05,476 INFO:   KEEP suicides_ci_high                                             dtype=float64 missing=22.8% unique=2419
+2025-10-26 02:01:05,476 INFO:   KEEP crude_suicide_rate                                           dtype=float64 missing=22.8% unique=2415
+2025-10-26 02:01:05,476 INFO:   KEEP suicides_white                                               dtype=float64 missing=27.0% unique=2287
+2025-10-26 02:01:05,476 INFO:   KEEP suicides_ci_low_white                                        dtype=float64 missing=27.0% unique=2287
+2025-10-26 02:01:05,476 INFO:   KEEP suicides_ci_high_white                                       dtype=float64 missing=27.0% unique=2287
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_raw_value                                 dtype=float64 missing=27.6% unique=2267
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_numerator                                 dtype=float64 missing=27.6% unique=345
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_denominator                               dtype=float64 missing=27.6% unique=2265
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_ci_low                                    dtype=float64 missing=27.6% unique=2270
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_ci_high                                   dtype=float64 missing=27.6% unique=2270
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_white                                     dtype=float64 missing=33.2% unique=2092
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_ci_low_white                              dtype=float64 missing=33.2% unique=2095
+2025-10-26 02:01:05,476 INFO:   KEEP firearm_fatalities_ci_high_white                             dtype=float64 missing=33.2% unique=2095
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_raw_value                         dtype=float64 missing=14.5% unique=2678
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_numerator                         dtype=float64 missing=14.5% unique=394
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_denominator                       dtype=float64 missing=14.5% unique=2672
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_ci_low                            dtype=float64 missing=14.5% unique=2680
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_ci_high                           dtype=float64 missing=14.5% unique=2680
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_white                             dtype=float64 missing=20.3% unique=2498
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_ci_low_white                      dtype=float64 missing=20.3% unique=2500
+2025-10-26 02:01:05,476 INFO:   KEEP motor_vehicle_crash_deaths_ci_high_white                     dtype=float64 missing=20.3% unique=2499
+2025-10-26 02:01:05,476 INFO:   KEEP juvenile_arrests_raw_value                                   dtype=float64 missing=38.8% unique=1314
+2025-10-26 02:01:05,476 INFO:   KEEP juvenile_arrests_denominator                                 dtype=float64 missing=17.4% unique=398
+2025-10-26 02:01:05,476 INFO:   KEEP number_of_juvenile_delinquency_cases_formally_processed_by_a_ju dtype=float64 missing=23.4% unique=384
+2025-10-26 02:01:05,476 INFO:   KEEP voter_turnout_raw_value                                      dtype=float64 missing=1.0% unique=3096
+2025-10-26 02:01:05,476 INFO:   KEEP voter_turnout_numerator                                      dtype=float64 missing=1.0% unique=3004
+2025-10-26 02:01:05,476 INFO:   KEEP voter_turnout_denominator                                    dtype=float64 missing=1.0% unique=2757
+2025-10-26 02:01:05,476 INFO:   KEEP census_participation_raw_value                               dtype=float64 missing=0.1% unique=542
+2025-10-26 02:01:05,476 INFO:   KEEP traffic_volume_raw_value                                     dtype=float64 missing=1.0% unique=3103
+2025-10-26 02:01:05,476 INFO:   KEEP homeownership_raw_value                                      dtype=float64 missing=0.0% unique=3131
+2025-10-26 02:01:05,476 INFO:   KEEP homeownership_numerator                                      dtype=float64 missing=0.0% unique=2925
+2025-10-26 02:01:05,476 INFO:   KEEP homeownership_denominator                                    dtype=float64 missing=0.0% unique=2996
+2025-10-26 02:01:05,476 INFO:   KEEP homeownership_ci_low                                         dtype=float64 missing=0.1% unique=3131
+2025-10-26 02:01:05,476 INFO:   KEEP homeownership_ci_high                                        dtype=float64 missing=0.2% unique=3126
+2025-10-26 02:01:05,476 INFO:   KEEP severe_housing_cost_burden_raw_value                         dtype=float64 missing=0.2% unique=3120
+2025-10-26 02:01:05,476 INFO:   KEEP severe_housing_cost_burden_numerator                         dtype=float64 missing=0.2% unique=2146
+2025-10-26 02:01:05,476 INFO:   KEEP severe_housing_cost_burden_denominator                       dtype=float64 missing=0.2% unique=2989
+2025-10-26 02:01:05,476 INFO:   KEEP severe_housing_cost_burden_ci_low                            dtype=float64 missing=0.2% unique=3006
+2025-10-26 02:01:05,476 INFO:   KEEP severe_housing_cost_burden_ci_high                           dtype=float64 missing=0.2% unique=3129
+2025-10-26 02:01:05,476 INFO:   KEEP broadband_access_raw_value                                   dtype=float64 missing=0.0% unique=3124
+2025-10-26 02:01:05,476 INFO:   KEEP broadband_access_numerator                                   dtype=float64 missing=0.0% unique=2960
+2025-10-26 02:01:05,476 INFO:   KEEP broadband_access_denominator                                 dtype=float64 missing=0.0% unique=2996
+2025-10-26 02:01:05,476 INFO:   KEEP broadband_access_ci_low                                      dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,476 INFO:   KEEP broadband_access_ci_high                                     dtype=float64 missing=0.0% unique=3120
+2025-10-26 02:01:05,476 INFO:   KEEP population_raw_value                                         dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP below_18_years_of_age_raw_value                              dtype=float64 missing=0.0% unique=3134
+2025-10-26 02:01:05,476 INFO:   KEEP below_18_years_of_age_numerator                              dtype=float64 missing=0.0% unique=2887
+2025-10-26 02:01:05,476 INFO:   KEEP below_18_years_of_age_denominator                            dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP _65_and_older_raw_value                                      dtype=float64 missing=0.0% unique=3130
+2025-10-26 02:01:05,476 INFO:   KEEP _65_and_older_numerator                                      dtype=float64 missing=0.0% unique=2864
+2025-10-26 02:01:05,476 INFO:   KEEP _65_and_older_denominator                                    dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP non_hispanic_black_raw_value                                 dtype=float64 missing=0.2% unique=3127
+2025-10-26 02:01:05,476 INFO:   KEEP non_hispanic_black_numerator                                 dtype=float64 missing=0.0% unique=2032
+2025-10-26 02:01:05,476 INFO:   KEEP non_hispanic_black_denominator                               dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP american_indian_or_alaska_native_raw_value                   dtype=float64 missing=0.1% unique=3130
+2025-10-26 02:01:05,476 INFO:   KEEP american_indian_or_alaska_native_numerator                   dtype=float64 missing=0.0% unique=1313
+2025-10-26 02:01:05,476 INFO:   KEEP american_indian_or_alaska_native_denominator                 dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP asian_raw_value                                              dtype=float64 missing=0.2% unique=3124
+2025-10-26 02:01:05,476 INFO:   KEEP asian_numerator                                              dtype=float64 missing=0.0% unique=1373
+2025-10-26 02:01:05,476 INFO:   KEEP asian_denominator                                            dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP native_hawaiian_or_other_pacific_islander_raw_value          dtype=float64 missing=0.0% unique=2941
+2025-10-26 02:01:05,476 INFO:   KEEP native_hawaiian_or_other_pacific_islander_numerator          dtype=float64 missing=0.0% unique=554
+2025-10-26 02:01:05,476 INFO:   KEEP native_hawaiian_or_other_pacific_islander_denominator        dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP hispanic_raw_value                                           dtype=float64 missing=0.0% unique=3135
+2025-10-26 02:01:05,476 INFO:   KEEP hispanic_numerator                                           dtype=float64 missing=0.0% unique=2296
+2025-10-26 02:01:05,476 INFO:   KEEP hispanic_denominator                                         dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,476 INFO:   KEEP non_hispanic_white_raw_value                                 dtype=float64 missing=0.0% unique=3133
+2025-10-26 02:01:05,476 INFO:   KEEP non_hispanic_white_numerator                                 dtype=float64 missing=0.0% unique=3055
+2025-10-26 02:01:05,476 INFO:   KEEP non_hispanic_white_denominator                               dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,477 INFO:   KEEP not_proficient_in_english_raw_value                          dtype=float64 missing=0.0% unique=2941
+2025-10-26 02:01:05,477 INFO:   KEEP not_proficient_in_english_numerator                          dtype=float64 missing=0.0% unique=1328
+2025-10-26 02:01:05,477 INFO:   KEEP not_proficient_in_english_denominator                        dtype=float64 missing=0.0% unique=3085
+2025-10-26 02:01:05,477 INFO:   KEEP not_proficient_in_english_ci_low                             dtype=float64 missing=4.2% unique=1608
+2025-10-26 02:01:05,477 INFO:   KEEP not_proficient_in_english_ci_high                            dtype=float64 missing=3.9% unique=3012
+2025-10-26 02:01:05,477 INFO:   KEEP female_raw_value                                             dtype=float64 missing=0.0% unique=3129
+2025-10-26 02:01:05,477 INFO:   KEEP female_numerator                                             dtype=float64 missing=0.0% unique=3030
+2025-10-26 02:01:05,477 INFO:   KEEP female_denominator                                           dtype=float64 missing=0.0% unique=3071
+2025-10-26 02:01:05,477 INFO:   KEEP rural_raw_value                                              dtype=float64 missing=0.2% unique=2001
+2025-10-26 02:01:05,477 INFO:   KEEP rural_numerator                                              dtype=float64 missing=0.0% unique=3011
+2025-10-26 02:01:05,477 INFO:   KEEP rural_denominator                                            dtype=float64 missing=0.0% unique=3077
+2025-10-26 02:01:05,477 INFO:   KEEP irr_county_value                                             dtype=float64 missing=0.1% unique=72
+2025-10-26 02:01:05,477 INFO:   KEEP div_2                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_3                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_4                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_5                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_6                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_7                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_8                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   KEEP div_9                                                        dtype=int64 missing=0.0% unique=2
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_aian                                         reason=missingness 88.6% > threshold 40.0% dtype=float64 missing=88.6% unique=358
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_low_aian                                  reason=missingness 88.6% > threshold 40.0% dtype=float64 missing=88.6% unique=358
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_high_aian                                 reason=missingness 88.6% > threshold 40.0% dtype=float64 missing=88.6% unique=358
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_asian_pacific_islander                       reason=missingness 88.0% > threshold 40.0% dtype=float64 missing=88.0% unique=375
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_low_asian_pacific_islander                reason=missingness 88.0% > threshold 40.0% dtype=float64 missing=88.0% unique=375
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_high_asian_pacific_islander               reason=missingness 88.0% > threshold 40.0% dtype=float64 missing=88.0% unique=375
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_black                                        reason=missingness 54.6% > threshold 40.0% dtype=float64 missing=54.6% unique=1422
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_low_black                                 reason=missingness 54.6% > threshold 40.0% dtype=float64 missing=54.6% unique=1422
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_high_black                                reason=missingness 54.6% > threshold 40.0% dtype=float64 missing=54.6% unique=1422
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_hispanic                                     reason=missingness 66.3% > threshold 40.0% dtype=float64 missing=66.3% unique=1055
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_low_hispanic                              reason=missingness 66.3% > threshold 40.0% dtype=float64 missing=66.3% unique=1055
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_high_hispanic                             reason=missingness 66.3% > threshold 40.0% dtype=float64 missing=66.3% unique=1055
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_nhopi                                        reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=55
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_low_nhopi                                 reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=55
+2025-10-26 02:01:05,477 INFO:   DROP premature_death_ci_high_nhopi                                reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=55
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_aian                                         reason=missingness 91.1% > threshold 40.0% dtype=float64 missing=91.1% unique=259
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_low_aian                                  reason=missingness 91.1% > threshold 40.0% dtype=float64 missing=91.1% unique=272
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_high_aian                                 reason=missingness 91.1% > threshold 40.0% dtype=float64 missing=91.1% unique=272
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_asian_pacific_islander                       reason=missingness 79.4% > threshold 40.0% dtype=float64 missing=79.4% unique=603
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_low_asian_pacific_islander                reason=missingness 79.4% > threshold 40.0% dtype=float64 missing=79.4% unique=630
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_high_asian_pacific_islander               reason=missingness 79.4% > threshold 40.0% dtype=float64 missing=79.4% unique=630
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_black                                        reason=missingness 55.8% > threshold 40.0% dtype=float64 missing=55.8% unique=1286
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_low_black                                 reason=missingness 55.8% > threshold 40.0% dtype=float64 missing=55.8% unique=1353
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_high_black                                reason=missingness 55.8% > threshold 40.0% dtype=float64 missing=55.8% unique=1353
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_hispanic                                     reason=missingness 52.2% > threshold 40.0% dtype=float64 missing=52.2% unique=1334
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_low_hispanic                              reason=missingness 52.2% > threshold 40.0% dtype=float64 missing=52.2% unique=1455
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_high_hispanic                             reason=missingness 52.2% > threshold 40.0% dtype=float64 missing=52.2% unique=1455
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_nhopi                                        reason=missingness 97.3% > threshold 40.0% dtype=float64 missing=97.3% unique=85
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_low_nhopi                                 reason=missingness 97.3% > threshold 40.0% dtype=float64 missing=97.3% unique=85
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_high_nhopi                                reason=missingness 97.3% > threshold 40.0% dtype=float64 missing=97.3% unique=85
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_two_or_more_races                            reason=missingness 74.0% > threshold 40.0% dtype=float64 missing=74.0% unique=714
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_low_two_or_more_races                     reason=missingness 74.0% > threshold 40.0% dtype=float64 missing=74.0% unique=777
+2025-10-26 02:01:05,477 INFO:   DROP low_birthweight_ci_high_two_or_more_races                    reason=missingness 74.0% > threshold 40.0% dtype=float64 missing=74.0% unique=777
+2025-10-26 02:01:05,477 INFO:   DROP teen_births_aian                                             reason=missingness 91.8% > threshold 40.0% dtype=float64 missing=91.8% unique=255
+2025-10-26 02:01:05,477 INFO:   DROP teen_births_ci_low_aian                                      reason=missingness 91.7% > threshold 40.0% dtype=float64 missing=91.7% unique=259
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_high_aian                                     reason=missingness 91.7% > threshold 40.0% dtype=float64 missing=91.7% unique=259
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_asian_pacific_islander                           reason=missingness 94.3% > threshold 40.0% dtype=float64 missing=94.3% unique=180
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_low_asian_pacific_islander                    reason=missingness 94.3% > threshold 40.0% dtype=float64 missing=94.3% unique=180
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_high_asian_pacific_islander                   reason=missingness 94.3% > threshold 40.0% dtype=float64 missing=94.3% unique=180
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_black                                            reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1174
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_low_black                                     reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1192
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_high_black                                    reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1192
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_hispanic                                         reason=missingness 50.0% > threshold 40.0% dtype=float64 missing=50.0% unique=1516
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_low_hispanic                                  reason=missingness 50.0% > threshold 40.0% dtype=float64 missing=50.0% unique=1553
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_high_hispanic                                 reason=missingness 50.0% > threshold 40.0% dtype=float64 missing=50.0% unique=1553
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_nhopi                                            reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=57
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_low_nhopi                                     reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=57
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_high_nhopi                                    reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=57
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_two_or_more_races                                reason=missingness 71.3% > threshold 40.0% dtype=float64 missing=71.3% unique=874
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_low_two_or_more_races                         reason=missingness 71.3% > threshold 40.0% dtype=float64 missing=71.3% unique=889
+2025-10-26 02:01:05,478 INFO:   DROP teen_births_ci_high_two_or_more_races                        reason=missingness 71.3% > threshold 40.0% dtype=float64 missing=71.3% unique=889
+2025-10-26 02:01:05,478 INFO:   DROP preventable_hospital_stays_aian                              reason=missingness 90.3% > threshold 40.0% dtype=float64 missing=90.3% unique=292
+2025-10-26 02:01:05,478 INFO:   DROP preventable_hospital_stays_asian_pacific_islander            reason=missingness 87.8% > threshold 40.0% dtype=float64 missing=87.8% unique=352
+2025-10-26 02:01:05,478 INFO:   DROP preventable_hospital_stays_black                             reason=missingness 58.0% > threshold 40.0% dtype=float64 missing=58.0% unique=1188
+2025-10-26 02:01:05,478 INFO:   DROP preventable_hospital_stays_hispanic                          reason=missingness 75.4% > threshold 40.0% dtype=float64 missing=75.4% unique=709
+2025-10-26 02:01:05,478 INFO:   DROP mammography_screening_raw_value                              reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP mammography_screening_aian                                   reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP mammography_screening_asian_pacific_islander                 reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP mammography_screening_black                                  reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP mammography_screening_hispanic                               reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP mammography_screening_white                                  reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP flu_vaccinations_raw_value                                   reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP flu_vaccinations_aian                                        reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP flu_vaccinations_asian_pacific_islander                      reason=missingness 63.2% > threshold 40.0% dtype=float64 missing=63.2% unique=66
+2025-10-26 02:01:05,478 INFO:   DROP flu_vaccinations_black                                       reason=missingness 44.1% > threshold 40.0% dtype=float64 missing=44.1% unique=62
+2025-10-26 02:01:05,478 INFO:   DROP flu_vaccinations_hispanic                                    reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_aian                                     reason=missingness 75.1% > threshold 40.0% dtype=float64 missing=75.1% unique=749
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_ci_low_aian                              reason=missingness 75.1% > threshold 40.0% dtype=float64 missing=75.1% unique=496
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_ci_high_aian                             reason=missingness 75.1% > threshold 40.0% dtype=float64 missing=75.1% unique=729
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_asian_pacific_islander                   reason=missingness 75.1% > threshold 40.0% dtype=float64 missing=75.1% unique=770
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_ci_low_asian_pacific_islander            reason=missingness 75.1% > threshold 40.0% dtype=float64 missing=75.1% unique=374
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_ci_high_asian_pacific_islander           reason=missingness 75.1% > threshold 40.0% dtype=float64 missing=75.1% unique=749
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_black                                    reason=missingness 47.1% > threshold 40.0% dtype=float64 missing=47.1% unique=1629
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_ci_low_black                             reason=missingness 47.1% > threshold 40.0% dtype=float64 missing=47.1% unique=1334
+2025-10-26 02:01:05,478 INFO:   DROP children_in_poverty_ci_high_black                            reason=missingness 47.1% > threshold 40.0% dtype=float64 missing=47.1% unique=1581
+2025-10-26 02:01:05,478 INFO:   DROP state_abbreviation_c2                                        reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP name_c2                                                      reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,478 INFO:   DROP year_c2                                                      reason=constant or single unique value dtype=float64 missing=0.0% unique=1
+2025-10-26 02:01:05,478 INFO:   DROP injury_deaths_aian                                           reason=missingness 91.5% > threshold 40.0% dtype=float64 missing=91.5% unique=266
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_low_aian                                    reason=missingness 91.5% > threshold 40.0% dtype=float64 missing=91.5% unique=266
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_high_aian                                   reason=missingness 91.5% > threshold 40.0% dtype=float64 missing=91.5% unique=266
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_asian_pacific_islander                         reason=missingness 91.2% > threshold 40.0% dtype=float64 missing=91.2% unique=275
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_low_asian_pacific_islander                  reason=missingness 91.2% > threshold 40.0% dtype=float64 missing=91.2% unique=275
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_high_asian_pacific_islander                 reason=missingness 91.2% > threshold 40.0% dtype=float64 missing=91.2% unique=275
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_black                                          reason=missingness 62.6% > threshold 40.0% dtype=float64 missing=62.6% unique=1171
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_low_black                                   reason=missingness 62.6% > threshold 40.0% dtype=float64 missing=62.6% unique=1171
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_high_black                                  reason=missingness 62.6% > threshold 40.0% dtype=float64 missing=62.6% unique=1171
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_hispanic                                       reason=missingness 70.7% > threshold 40.0% dtype=float64 missing=70.7% unique=918
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_low_hispanic                                reason=missingness 70.7% > threshold 40.0% dtype=float64 missing=70.7% unique=918
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_high_hispanic                               reason=missingness 70.7% > threshold 40.0% dtype=float64 missing=70.7% unique=918
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_nhopi                                          reason=missingness 99.0% > threshold 40.0% dtype=float64 missing=99.0% unique=32
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_low_nhopi                                   reason=missingness 99.0% > threshold 40.0% dtype=float64 missing=99.0% unique=32
+2025-10-26 02:01:05,479 INFO:   DROP injury_deaths_ci_high_nhopi                                  reason=missingness 99.0% > threshold 40.0% dtype=float64 missing=99.0% unique=32
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_aian                                   reason=missingness 87.1% > threshold 40.0% dtype=float64 missing=87.1% unique=402
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_low_aian                            reason=missingness 87.1% > threshold 40.0% dtype=float64 missing=87.1% unique=403
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_high_aian                           reason=missingness 87.1% > threshold 40.0% dtype=float64 missing=87.1% unique=374
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_asian_pacific_islander                 reason=missingness 80.9% > threshold 40.0% dtype=float64 missing=80.9% unique=598
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_low_asian_pacific_islander          reason=missingness 80.9% > threshold 40.0% dtype=float64 missing=80.9% unique=598
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_high_asian_pacific_islander         reason=missingness 80.9% > threshold 40.0% dtype=float64 missing=80.9% unique=588
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_black                                  reason=missingness 65.6% > threshold 40.0% dtype=float64 missing=65.6% unique=1077
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_low_black                           reason=missingness 65.6% > threshold 40.0% dtype=float64 missing=65.6% unique=1078
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_high_black                          reason=missingness 65.6% > threshold 40.0% dtype=float64 missing=65.6% unique=1040
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_hispanic                               reason=missingness 58.3% > threshold 40.0% dtype=float64 missing=58.3% unique=1303
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_low_hispanic                        reason=missingness 58.3% > threshold 40.0% dtype=float64 missing=58.3% unique=1306
+2025-10-26 02:01:05,479 INFO:   DROP driving_alone_to_work_ci_high_hispanic                       reason=missingness 58.3% > threshold 40.0% dtype=float64 missing=58.3% unique=1285
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_aian                                         reason=missingness 91.2% > threshold 40.0% dtype=float64 missing=91.2% unique=275
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_low_aian                                  reason=missingness 91.2% > threshold 40.0% dtype=float64 missing=91.2% unique=275
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_high_aian                                 reason=missingness 91.2% > threshold 40.0% dtype=float64 missing=91.2% unique=275
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_asian_pacific_islander                       reason=missingness 82.3% > threshold 40.0% dtype=float64 missing=82.3% unique=556
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_low_asian_pacific_islander                reason=missingness 82.3% > threshold 40.0% dtype=float64 missing=82.3% unique=556
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_high_asian_pacific_islander               reason=missingness 82.3% > threshold 40.0% dtype=float64 missing=82.3% unique=556
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_black                                        reason=missingness 59.6% > threshold 40.0% dtype=float64 missing=59.6% unique=1266
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_low_black                                 reason=missingness 59.6% > threshold 40.0% dtype=float64 missing=59.6% unique=1266
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_high_black                                reason=missingness 59.6% > threshold 40.0% dtype=float64 missing=59.6% unique=1263
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_hispanic                                     reason=missingness 59.3% > threshold 40.0% dtype=float64 missing=59.3% unique=1277
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_low_hispanic                              reason=missingness 59.3% > threshold 40.0% dtype=float64 missing=59.3% unique=1277
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_high_hispanic                             reason=missingness 59.3% > threshold 40.0% dtype=float64 missing=59.3% unique=1277
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_nhopi                                        reason=missingness 98.6% > threshold 40.0% dtype=float64 missing=98.6% unique=44
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_low_nhopi                                 reason=missingness 98.6% > threshold 40.0% dtype=float64 missing=98.6% unique=44
+2025-10-26 02:01:05,479 INFO:   DROP life_expectancy_ci_high_nhopi                                reason=missingness 98.6% > threshold 40.0% dtype=float64 missing=98.6% unique=44
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_aian                        reason=missingness 88.6% > threshold 40.0% dtype=float64 missing=88.6% unique=358
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_low_aian                 reason=missingness 88.6% > threshold 40.0% dtype=float64 missing=88.6% unique=358
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_high_aian                reason=missingness 88.6% > threshold 40.0% dtype=float64 missing=88.6% unique=358
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_asian_pacific_islander      reason=missingness 88.0% > threshold 40.0% dtype=float64 missing=88.0% unique=375
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_low_asian_pacific_islander reason=missingness 88.0% > threshold 40.0% dtype=float64 missing=88.0% unique=375
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_high_asian_pacific_islander reason=missingness 88.0% > threshold 40.0% dtype=float64 missing=88.0% unique=375
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_black                       reason=missingness 54.6% > threshold 40.0% dtype=float64 missing=54.6% unique=1422
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_low_black                reason=missingness 54.6% > threshold 40.0% dtype=float64 missing=54.6% unique=1422
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_high_black               reason=missingness 54.6% > threshold 40.0% dtype=float64 missing=54.6% unique=1422
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_hispanic                    reason=missingness 66.3% > threshold 40.0% dtype=float64 missing=66.3% unique=1055
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_low_hispanic             reason=missingness 66.3% > threshold 40.0% dtype=float64 missing=66.3% unique=1055
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_high_hispanic            reason=missingness 66.3% > threshold 40.0% dtype=float64 missing=66.3% unique=1055
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_nhopi                       reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=55
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_low_nhopi                reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=55
+2025-10-26 02:01:05,479 INFO:   DROP premature_age_adjusted_mortality_ci_high_nhopi               reason=missingness 98.2% > threshold 40.0% dtype=float64 missing=98.2% unique=55
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_aian                                         reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=53
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_ci_low_aian                                  reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=53
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_ci_high_aian                                 reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=53
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_asian_pacific_islander                       reason=missingness 96.7% > threshold 40.0% dtype=float64 missing=96.7% unique=105
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_ci_low_asian_pacific_islander                reason=missingness 96.7% > threshold 40.0% dtype=float64 missing=96.7% unique=105
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_ci_high_asian_pacific_islander               reason=missingness 96.7% > threshold 40.0% dtype=float64 missing=96.7% unique=105
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_black                                        reason=missingness 80.1% > threshold 40.0% dtype=float64 missing=80.1% unique=623
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_ci_low_black                                 reason=missingness 80.1% > threshold 40.0% dtype=float64 missing=80.1% unique=625
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_ci_high_black                                reason=missingness 80.1% > threshold 40.0% dtype=float64 missing=80.1% unique=625
+2025-10-26 02:01:05,479 INFO:   DROP child_mortality_hispanic                                     reason=missingness 85.2% > threshold 40.0% dtype=float64 missing=85.2% unique=463
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_ci_low_hispanic                              reason=missingness 85.2% > threshold 40.0% dtype=float64 missing=85.2% unique=463
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_ci_high_hispanic                             reason=missingness 85.2% > threshold 40.0% dtype=float64 missing=85.2% unique=463
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_white                                        reason=missingness 47.9% > threshold 40.0% dtype=float64 missing=47.9% unique=1634
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_ci_low_white                                 reason=missingness 47.8% > threshold 40.0% dtype=float64 missing=47.8% unique=1635
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_ci_high_white                                reason=missingness 47.8% > threshold 40.0% dtype=float64 missing=47.8% unique=1635
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_nhopi                                        reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=11
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_ci_low_nhopi                                 reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=11
+2025-10-26 02:01:05,480 INFO:   DROP child_mortality_ci_high_nhopi                                reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=11
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_raw_value                                   reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1193
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_numerator                                   reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=285
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_denominator                                 reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1164
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low                                      reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1198
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high                                     reason=missingness 61.8% > threshold 40.0% dtype=float64 missing=61.8% unique=1198
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_aian                                        reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=12
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_aian                                 reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=12
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_aian                                reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=12
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_asian_pacific_islander                      reason=missingness 98.1% > threshold 40.0% dtype=float64 missing=98.1% unique=58
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_asian_pacific_islander               reason=missingness 98.1% > threshold 40.0% dtype=float64 missing=98.1% unique=58
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_asian_pacific_islander              reason=missingness 98.1% > threshold 40.0% dtype=float64 missing=98.1% unique=58
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_black                                       reason=missingness 87.6% > threshold 40.0% dtype=float64 missing=87.6% unique=387
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_black                                reason=missingness 87.6% > threshold 40.0% dtype=float64 missing=87.6% unique=389
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_black                               reason=missingness 87.6% > threshold 40.0% dtype=float64 missing=87.6% unique=389
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_hispanic                                    reason=missingness 91.5% > threshold 40.0% dtype=float64 missing=91.5% unique=266
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_hispanic                             reason=missingness 91.5% > threshold 40.0% dtype=float64 missing=91.5% unique=266
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_hispanic                            reason=missingness 91.5% > threshold 40.0% dtype=float64 missing=91.5% unique=266
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_white                                       reason=missingness 73.7% > threshold 40.0% dtype=float64 missing=73.7% unique=824
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_white                                reason=missingness 73.7% > threshold 40.0% dtype=float64 missing=73.7% unique=824
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_white                               reason=missingness 73.7% > threshold 40.0% dtype=float64 missing=73.7% unique=824
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_nhopi                                       reason=missingness 99.9% > threshold 40.0% dtype=float64 missing=99.9% unique=4
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_nhopi                                reason=missingness 99.9% > threshold 40.0% dtype=float64 missing=99.9% unique=4
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_nhopi                               reason=missingness 99.9% > threshold 40.0% dtype=float64 missing=99.9% unique=4
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_two_or_more_races                           reason=missingness 98.7% > threshold 40.0% dtype=float64 missing=98.7% unique=40
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_low_two_or_more_races                    reason=missingness 98.7% > threshold 40.0% dtype=float64 missing=98.7% unique=40
+2025-10-26 02:01:05,480 INFO:   DROP infant_mortality_ci_high_two_or_more_races                   reason=missingness 98.7% > threshold 40.0% dtype=float64 missing=98.7% unique=40
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_aian                                    reason=missingness 97.9% > threshold 40.0% dtype=float64 missing=97.9% unique=67
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_low_aian                             reason=missingness 97.9% > threshold 40.0% dtype=float64 missing=97.9% unique=67
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_high_aian                            reason=missingness 97.9% > threshold 40.0% dtype=float64 missing=97.9% unique=67
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_asian_pacific_islander                  reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=52
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_low_asian_pacific_islander           reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=52
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_high_asian_pacific_islander          reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=52
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_black                                   reason=missingness 85.6% > threshold 40.0% dtype=float64 missing=85.6% unique=450
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_low_black                            reason=missingness 85.6% > threshold 40.0% dtype=float64 missing=85.6% unique=450
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_high_black                           reason=missingness 85.6% > threshold 40.0% dtype=float64 missing=85.6% unique=450
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_hispanic                                reason=missingness 89.8% > threshold 40.0% dtype=float64 missing=89.8% unique=319
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_low_hispanic                         reason=missingness 89.8% > threshold 40.0% dtype=float64 missing=89.8% unique=319
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_high_hispanic                        reason=missingness 89.8% > threshold 40.0% dtype=float64 missing=89.8% unique=319
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_white                                   reason=missingness 43.5% > threshold 40.0% dtype=float64 missing=43.5% unique=1770
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_low_white                            reason=missingness 43.5% > threshold 40.0% dtype=float64 missing=43.5% unique=1770
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_high_white                           reason=missingness 43.5% > threshold 40.0% dtype=float64 missing=43.5% unique=1770
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_nhopi                                   reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=5
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_low_nhopi                            reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=5
+2025-10-26 02:01:05,480 INFO:   DROP drug_overdose_deaths_ci_high_nhopi                           reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=5
+2025-10-26 02:01:05,480 INFO:   DROP state_abbreviation_c3                                        reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,480 INFO:   DROP name_c3                                                      reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,480 INFO:   DROP year_c3                                                      reason=constant or single unique value dtype=float64 missing=0.0% unique=1
+2025-10-26 02:01:05,480 INFO:   DROP disconnected_youth_raw_value                                 reason=missingness 62.7% > threshold 40.0% dtype=float64 missing=62.7% unique=1169
+2025-10-26 02:01:05,480 INFO:   DROP disconnected_youth_numerator                                 reason=missingness 62.7% > threshold 40.0% dtype=float64 missing=62.7% unique=751
+2025-10-26 02:01:05,480 INFO:   DROP disconnected_youth_denominator                               reason=missingness 62.7% > threshold 40.0% dtype=float64 missing=62.7% unique=1131
+2025-10-26 02:01:05,480 INFO:   DROP disconnected_youth_ci_low                                    reason=missingness 62.7% > threshold 40.0% dtype=float64 missing=62.7% unique=1170
+2025-10-26 02:01:05,480 INFO:   DROP disconnected_youth_ci_high                                   reason=missingness 62.7% > threshold 40.0% dtype=float64 missing=62.7% unique=1170
+2025-10-26 02:01:05,480 INFO:   DROP reading_scores_asian_pacific_islander                        reason=missingness 86.3% > threshold 40.0% dtype=float64 missing=86.3% unique=430
+2025-10-26 02:01:05,480 INFO:   DROP reading_scores_black                                         reason=missingness 64.3% > threshold 40.0% dtype=float64 missing=64.3% unique=1118
+2025-10-26 02:01:05,480 INFO:   DROP reading_scores_hispanic                                      reason=missingness 57.3% > threshold 40.0% dtype=float64 missing=57.3% unique=1340
+2025-10-26 02:01:05,480 INFO:   DROP math_scores_asian_pacific_islander                           reason=missingness 85.5% > threshold 40.0% dtype=float64 missing=85.5% unique=454
+2025-10-26 02:01:05,480 INFO:   DROP math_scores_black                                            reason=missingness 66.6% > threshold 40.0% dtype=float64 missing=66.6% unique=1046
+2025-10-26 02:01:05,480 INFO:   DROP math_scores_hispanic                                         reason=missingness 57.3% > threshold 40.0% dtype=float64 missing=57.3% unique=1339
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_aian                                 reason=missingness 60.6% > threshold 40.0% dtype=float64 missing=60.6% unique=1151
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_ci_low_aian                          reason=missingness 60.6% > threshold 40.0% dtype=float64 missing=60.6% unique=1234
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_ci_high_aian                         reason=missingness 60.6% > threshold 40.0% dtype=float64 missing=60.6% unique=1234
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_asian                                reason=missingness 59.1% > threshold 40.0% dtype=float64 missing=59.1% unique=1240
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_ci_low_asian                         reason=missingness 59.1% > threshold 40.0% dtype=float64 missing=59.1% unique=1283
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_ci_high_asian                        reason=missingness 59.1% > threshold 40.0% dtype=float64 missing=59.1% unique=1283
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_black                                reason=missingness 43.5% > threshold 40.0% dtype=float64 missing=43.5% unique=1711
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_ci_low_black                         reason=missingness 43.5% > threshold 40.0% dtype=float64 missing=43.5% unique=1769
+2025-10-26 02:01:05,480 INFO:   DROP median_household_income_ci_high_black                        reason=missingness 43.5% > threshold 40.0% dtype=float64 missing=43.5% unique=1770
+2025-10-26 02:01:05,480 INFO:   DROP child_care_cost_burden_numerator                             reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,480 INFO:   DROP homicides_raw_value                                          reason=missingness 56.4% > threshold 40.0% dtype=float64 missing=56.4% unique=1368
+2025-10-26 02:01:05,480 INFO:   DROP homicides_numerator                                          reason=missingness 56.4% > threshold 40.0% dtype=float64 missing=56.4% unique=266
+2025-10-26 02:01:05,480 INFO:   DROP homicides_denominator                                        reason=missingness 56.4% > threshold 40.0% dtype=float64 missing=56.4% unique=1368
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_low                                             reason=missingness 56.4% > threshold 40.0% dtype=float64 missing=56.4% unique=1368
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_high                                            reason=missingness 56.4% > threshold 40.0% dtype=float64 missing=56.4% unique=1368
+2025-10-26 02:01:05,480 INFO:   DROP homicides_aian                                               reason=missingness 98.8% > threshold 40.0% dtype=float64 missing=98.8% unique=37
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_low_aian                                        reason=missingness 98.8% > threshold 40.0% dtype=float64 missing=98.8% unique=37
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_high_aian                                       reason=missingness 98.8% > threshold 40.0% dtype=float64 missing=98.8% unique=37
+2025-10-26 02:01:05,480 INFO:   DROP homicides_asian_pacific_islander                             reason=missingness 98.7% > threshold 40.0% dtype=float64 missing=98.7% unique=42
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_low_asian_pacific_islander                      reason=missingness 98.7% > threshold 40.0% dtype=float64 missing=98.7% unique=42
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_high_asian_pacific_islander                     reason=missingness 98.7% > threshold 40.0% dtype=float64 missing=98.7% unique=42
+2025-10-26 02:01:05,480 INFO:   DROP homicides_black                                              reason=missingness 79.2% > threshold 40.0% dtype=float64 missing=79.2% unique=652
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_low_black                                       reason=missingness 79.2% > threshold 40.0% dtype=float64 missing=79.2% unique=652
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_high_black                                      reason=missingness 79.2% > threshold 40.0% dtype=float64 missing=79.2% unique=652
+2025-10-26 02:01:05,480 INFO:   DROP homicides_hispanic                                           reason=missingness 91.3% > threshold 40.0% dtype=float64 missing=91.3% unique=272
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_low_hispanic                                    reason=missingness 91.3% > threshold 40.0% dtype=float64 missing=91.3% unique=272
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_high_hispanic                                   reason=missingness 91.3% > threshold 40.0% dtype=float64 missing=91.3% unique=272
+2025-10-26 02:01:05,480 INFO:   DROP homicides_white                                              reason=missingness 69.8% > threshold 40.0% dtype=float64 missing=69.8% unique=947
+2025-10-26 02:01:05,480 INFO:   DROP homicides_ci_low_white                                       reason=missingness 69.8% > threshold 40.0% dtype=float64 missing=69.8% unique=947
+2025-10-26 02:01:05,481 INFO:   DROP homicides_ci_high_white                                      reason=missingness 69.8% > threshold 40.0% dtype=float64 missing=69.8% unique=947
+2025-10-26 02:01:05,481 INFO:   DROP homicides_nhopi                                              reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=5
+2025-10-26 02:01:05,481 INFO:   DROP homicides_ci_low_nhopi                                       reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=5
+2025-10-26 02:01:05,481 INFO:   DROP homicides_ci_high_nhopi                                      reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=5
+2025-10-26 02:01:05,481 INFO:   DROP suicides_aian                                                reason=missingness 97.9% > threshold 40.0% dtype=float64 missing=97.9% unique=66
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_low_aian                                         reason=missingness 97.9% > threshold 40.0% dtype=float64 missing=97.9% unique=66
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_high_aian                                        reason=missingness 97.9% > threshold 40.0% dtype=float64 missing=97.9% unique=66
+2025-10-26 02:01:05,481 INFO:   DROP suicides_asian_pacific_islander                              reason=missingness 96.0% > threshold 40.0% dtype=float64 missing=96.0% unique=124
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_low_asian_pacific_islander                       reason=missingness 96.0% > threshold 40.0% dtype=float64 missing=96.0% unique=124
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_high_asian_pacific_islander                      reason=missingness 96.0% > threshold 40.0% dtype=float64 missing=96.0% unique=124
+2025-10-26 02:01:05,481 INFO:   DROP suicides_black                                               reason=missingness 90.6% > threshold 40.0% dtype=float64 missing=90.6% unique=295
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_low_black                                        reason=missingness 90.6% > threshold 40.0% dtype=float64 missing=90.6% unique=295
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_high_black                                       reason=missingness 90.6% > threshold 40.0% dtype=float64 missing=90.6% unique=295
+2025-10-26 02:01:05,481 INFO:   DROP suicides_hispanic                                            reason=missingness 89.7% > threshold 40.0% dtype=float64 missing=89.7% unique=322
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_low_hispanic                                     reason=missingness 89.7% > threshold 40.0% dtype=float64 missing=89.7% unique=322
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_high_hispanic                                    reason=missingness 89.7% > threshold 40.0% dtype=float64 missing=89.7% unique=322
+2025-10-26 02:01:05,481 INFO:   DROP suicides_nhopi                                               reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=7
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_low_nhopi                                        reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=7
+2025-10-26 02:01:05,481 INFO:   DROP suicides_ci_high_nhopi                                       reason=missingness 99.8% > threshold 40.0% dtype=float64 missing=99.8% unique=7
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_aian                                      reason=missingness 98.5% > threshold 40.0% dtype=float64 missing=98.5% unique=47
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_low_aian                               reason=missingness 98.5% > threshold 40.0% dtype=float64 missing=98.5% unique=47
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_high_aian                              reason=missingness 98.5% > threshold 40.0% dtype=float64 missing=98.5% unique=47
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_asian_pacific_islander                    reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=52
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_low_asian_pacific_islander             reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=52
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_high_asian_pacific_islander            reason=missingness 98.3% > threshold 40.0% dtype=float64 missing=98.3% unique=52
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_black                                     reason=missingness 80.7% > threshold 40.0% dtype=float64 missing=80.7% unique=605
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_low_black                              reason=missingness 80.7% > threshold 40.0% dtype=float64 missing=80.7% unique=605
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_high_black                             reason=missingness 80.7% > threshold 40.0% dtype=float64 missing=80.7% unique=605
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_hispanic                                  reason=missingness 90.4% > threshold 40.0% dtype=float64 missing=90.4% unique=300
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_low_hispanic                           reason=missingness 90.4% > threshold 40.0% dtype=float64 missing=90.4% unique=300
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_high_hispanic                          reason=missingness 90.4% > threshold 40.0% dtype=float64 missing=90.4% unique=300
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_nhopi                                     reason=missingness 99.7% > threshold 40.0% dtype=float64 missing=99.7% unique=8
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_low_nhopi                              reason=missingness 99.7% > threshold 40.0% dtype=float64 missing=99.7% unique=8
+2025-10-26 02:01:05,481 INFO:   DROP firearm_fatalities_ci_high_nhopi                             reason=missingness 99.7% > threshold 40.0% dtype=float64 missing=99.7% unique=8
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_aian                              reason=missingness 96.9% > threshold 40.0% dtype=float64 missing=96.9% unique=96
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_low_aian                       reason=missingness 96.9% > threshold 40.0% dtype=float64 missing=96.9% unique=96
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_high_aian                      reason=missingness 96.9% > threshold 40.0% dtype=float64 missing=96.9% unique=96
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_asian_pacific_islander            reason=missingness 96.5% > threshold 40.0% dtype=float64 missing=96.5% unique=109
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_low_asian_pacific_islander     reason=missingness 96.5% > threshold 40.0% dtype=float64 missing=96.5% unique=109
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_high_asian_pacific_islander    reason=missingness 96.5% > threshold 40.0% dtype=float64 missing=96.5% unique=109
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_black                             reason=missingness 77.6% > threshold 40.0% dtype=float64 missing=77.6% unique=703
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_low_black                      reason=missingness 77.6% > threshold 40.0% dtype=float64 missing=77.6% unique=703
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_high_black                     reason=missingness 77.6% > threshold 40.0% dtype=float64 missing=77.6% unique=703
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_hispanic                          reason=missingness 83.7% > threshold 40.0% dtype=float64 missing=83.7% unique=509
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_low_hispanic                   reason=missingness 83.7% > threshold 40.0% dtype=float64 missing=83.7% unique=510
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_high_hispanic                  reason=missingness 83.7% > threshold 40.0% dtype=float64 missing=83.7% unique=510
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_nhopi                             reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=11
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_low_nhopi                      reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=11
+2025-10-26 02:01:05,481 INFO:   DROP motor_vehicle_crash_deaths_ci_high_nhopi                     reason=missingness 99.6% > threshold 40.0% dtype=float64 missing=99.6% unique=11
+2025-10-26 02:01:05,481 INFO:   DROP juvenile_arrests_numerator                                   reason=missingness 100.0% > threshold 40.0% dtype=float64 missing=100.0% unique=0
+2025-10-26 02:01:05,481 INFO:   DROP number_of_informally_handled_juvenile_delinquency_cases      reason=missingness 49.2% > threshold 40.0% dtype=float64 missing=49.2% unique=269
+2025-10-26 02:01:07,123 INFO: Final modeling frame: 3135 counties, 344 CHR features
+2025-10-26 02:01:07,124 INFO: Direct effects 1/6 for MO11 (MO11): 150 reps, 344 features
+2025-10-26 02:03:27,383 INFO: Direct effects 2/6 for MO12 (MO12): 150 reps, 344 features
+2025-10-26 02:05:51,099 INFO: Direct effects 3/6 for MO13 (MO13): 150 reps, 344 features
+2025-10-26 02:08:06,601 INFO: Direct effects 4/6 for MO14 (MO14): 150 reps, 344 features
+2025-10-26 02:10:20,262 INFO: Direct effects 5/6 for MO15 (MO15): 150 reps, 344 features
+2025-10-26 02:12:32,474 INFO: Direct effects 6/6 for MO21 (MO21): 150 reps, 344 features
+2025-10-26 02:14:50,532 INFO: Interaction sweep 1/2 for dv21 (premature_death_raw_value): testing 120 CHR features × 6 moderators
+2025-10-26 02:14:51,735 INFO: Interaction sweep 2/2 for dv15: 117 candidates after dropping controls/duplicates
+2025-10-26 02:14:51,735 INFO: Interaction sweep 2/2 for dv15 (preventable_hospital_stays_raw_value): testing 117 CHR features × 6 moderators
+2025-10-26 02:14:52,472 INFO: Targeted moderation for DV15 (preventable_hospital_stays_raw_value): testing 9 IVs × 5 moderators
+2025-10-26 02:14:52,635 INFO: Targeted moderation results written to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Working_Code/Dissertation_Repo/multiverse_output/targeted_moderation_dv15.csv
+2025-10-26 02:14:52,635 INFO: Targeted moderation for DV21 (premature_death_raw_value): testing 9 IVs × 5 moderators
+2025-10-26 02:14:52,797 INFO: Targeted moderation results written to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Working_Code/Dissertation_Repo/multiverse_output/targeted_moderation_dv21.csv
+2025-10-26 02:14:52,797 INFO: Done. Outputs written to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Working_Code/Dissertation_Repo/multiverse_output

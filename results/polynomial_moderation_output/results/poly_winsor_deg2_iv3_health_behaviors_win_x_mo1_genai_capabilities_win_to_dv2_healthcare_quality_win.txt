@@ -1,0 +1,27 @@
+Polynomial Moderation Analysis Results (Transform: WINSOR, Degree: 2)
+================================================================================
+IV (base for model): iv3_health_behaviors_win
+MO (base for model): mo1_genai_capabilities_win
+DV: dv2_healthcare_quality_win
+Polynomial Degree: 2
+N: 3135.0, R²: 0.3986, Adj. R²: 0.3959
+Cohen's f² (Interaction): 0.0034 (Negligible effect)
+
+Coefficients:
+Term                                     Coef.  Std. Err.    t-value      P>|t| Sig.
+--------------------------------------------------------------------------------
+const                                3989.3769   149.9138     26.611     0.0000 ***
+div_2                                 267.1871   170.4782      1.567     0.1172 
+div_3                                1169.1217   154.5908      7.563     0.0000 ***
+div_4                                 541.2722   154.6581      3.500     0.0005 ***
+div_5                                1934.0153   158.9939     12.164     0.0000 ***
+div_6                                 224.7189   152.9082      1.470     0.1418 
+div_7                                1280.6474   156.8221      8.166     0.0000 ***
+div_8                                 687.8318   159.8196      4.304     0.0000 ***
+div_9                                 389.1002   169.3094      2.298     0.0216 *
+iv3_health_behaviors_win_centered      22.2830     1.7249     12.918     0.0000 ***
+iv3_health_behaviors_win_centered^2     0.3503     0.0667      5.251     0.0000 ***
+iv3_health_behaviors_win_centered^2_x_mo1_genai_capabilities_win_centered    -0.1564     0.1274     -1.228     0.2197 
+iv3_health_behaviors_win_centered_x_mo1_genai_capabilities_win_centered    -4.6626     2.9147     -1.600     0.1098 
+mo1_genai_capabilities_win_centered  -211.2855    49.2238     -4.292     0.0000 ***
+population                             -0.0008     0.0001    -11.880     0.0000 ***

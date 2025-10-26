@@ -1,0 +1,13 @@
+Interaction_Name,Dependent_Variable,Independent_Variable,Moderator,Moderator_Column,N_Observations,Interaction_Beta,Interaction_P_Value,Interaction_CI_Lower,Interaction_CI_Upper,Adj_R_Squared
+iv3_health_behaviors_x_mo1_1_ai_automate_tasks_on_dv2_health_outcomes,dv2_health_outcomes,iv3_health_behaviors,mo1.1_ai_automate_tasks,pct_wfaiart_enabled_adjpd,3135.0000,-0.1728,0.0000,-0.2535,-0.0921,0.7040
+iv3_health_behaviors_x_mo1_2_ai_optimize_workflows_on_dv2_health_outcomes,dv2_health_outcomes,iv3_health_behaviors,mo1.2_ai_optimize_workflows,pct_wfaioacw_enabled_adjpd,3135.0000,-0.1740,0.0000,-0.2459,-0.1020,0.7042
+iv3_health_behaviors_x_mo1_3_ai_predict_demand_on_dv2_health_outcomes,dv2_health_outcomes,iv3_health_behaviors,mo1.3_ai_predict_demand,pct_wfaippd_enabled_adjpd,3135.0000,-0.1610,0.0001,-0.2433,-0.0787,0.7032
+iv3_health_behaviors_x_mo1_4_ai_predict_staff_on_dv2_health_outcomes,dv2_health_outcomes,iv3_health_behaviors,mo1.4_ai_predict_staff,pct_wfaipsn_enabled_adjpd,3135.0000,-0.1453,0.0015,-0.2348,-0.0558,0.7027
+iv3_health_behaviors_x_mo1_5_ai_staff_schedule_on_dv2_health_outcomes,dv2_health_outcomes,iv3_health_behaviors,mo1.5_ai_staff_schedule,pct_wfaiss_enabled_adjpd,3135.0000,-0.1406,0.0026,-0.2320,-0.0491,0.7026
+iv3_health_behaviors_x_mo2_1_robotics_in_hospital_on_dv2_health_outcomes,dv2_health_outcomes,iv3_health_behaviors,mo2.1_robotics_in_hospital,pct_robohos_enabled_adjpd,3135.0000,-0.0823,0.0005,-0.1288,-0.0358,0.7048
+iv3_health_behaviors_x_mo1_1_ai_automate_tasks_on_dv1_clinical_care,dv1_clinical_care,iv3_health_behaviors,mo1.1_ai_automate_tasks,pct_wfaiart_enabled_adjpd,3135.0000,-0.0061,0.7844,-0.0498,0.0376,0.2614
+iv3_health_behaviors_x_mo1_2_ai_optimize_workflows_on_dv1_clinical_care,dv1_clinical_care,iv3_health_behaviors,mo1.2_ai_optimize_workflows,pct_wfaioacw_enabled_adjpd,3135.0000,-0.0084,0.6727,-0.0474,0.0306,0.2613
+iv3_health_behaviors_x_mo1_3_ai_predict_demand_on_dv1_clinical_care,dv1_clinical_care,iv3_health_behaviors,mo1.3_ai_predict_demand,pct_wfaippd_enabled_adjpd,3135.0000,-0.0028,0.9026,-0.0475,0.0419,0.2578
+iv3_health_behaviors_x_mo1_4_ai_predict_staff_on_dv1_clinical_care,dv1_clinical_care,iv3_health_behaviors,mo1.4_ai_predict_staff,pct_wfaipsn_enabled_adjpd,3135.0000,-0.0143,0.5623,-0.0629,0.0342,0.2572
+iv3_health_behaviors_x_mo1_5_ai_staff_schedule_on_dv1_clinical_care,dv1_clinical_care,iv3_health_behaviors,mo1.5_ai_staff_schedule,pct_wfaiss_enabled_adjpd,3135.0000,-0.0346,0.1711,-0.0841,0.0150,0.2581
+iv3_health_behaviors_x_mo2_1_robotics_in_hospital_on_dv1_clinical_care,dv1_clinical_care,iv3_health_behaviors,mo2.1_robotics_in_hospital,pct_robohos_enabled_adjpd,3135.0000,-0.0216,0.0894,-0.0465,0.0033,0.2806

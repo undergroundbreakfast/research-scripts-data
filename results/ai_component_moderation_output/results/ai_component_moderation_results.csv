@@ -1,0 +1,11 @@
+IV,Moderator,DV,N,R_squared,Adj_R_squared,F_statistic,F_pvalue,IV_coef,IV_pvalue,MO_coef,MO_pvalue,Interaction_coef,Interaction_pvalue,Interaction_significant
+iv3_health_behaviors,mo11_ai_staff_scheduling,dv15_preventable_hospitalizations,3049,0.2235,0.2204,72.81,0.0,7.3493,0.0,-1.044,0.2291,0.0682,0.163,No
+iv3_health_behaviors,mo12_ai_predict_staffing,dv15_preventable_hospitalizations,3049,0.2242,0.2211,73.11,0.0,7.4483,0.0,-0.7556,0.3768,0.1105,0.0213,Yes
+iv3_health_behaviors,mo13_ai_predict_demand,dv15_preventable_hospitalizations,3049,0.2247,0.2216,73.31,0.0,7.4578,0.0,-1.4193,0.0845,0.1021,0.0207,Yes
+iv3_health_behaviors,mo14_ai_routine_tasks,dv15_preventable_hospitalizations,3049,0.2258,0.2228,73.79,0.0,7.4977,0.0,-2.037,0.0055,0.0753,0.0812,No
+iv3_health_behaviors,mo15_ai_optimize_workflows,dv15_preventable_hospitalizations,3049,0.2248,0.2217,73.36,0.0,7.4952,0.0,-1.6171,0.0189,0.0646,0.0942,No
+iv3_health_behaviors,mo11_ai_staff_scheduling,dv21_premature_death,3049,0.3971,0.3947,166.65,0.0,69.1004,0.0,-11.5412,0.0,-0.2463,0.0618,No
+iv3_health_behaviors,mo12_ai_predict_staffing,dv21_premature_death,3049,0.3967,0.3944,166.39,0.0,69.1537,0.0,-10.9578,0.0,-0.2361,0.0682,No
+iv3_health_behaviors,mo13_ai_predict_demand,dv21_premature_death,3049,0.401,0.3986,169.38,0.0,69.2719,0.0,-13.1908,0.0,-0.3865,0.0011,Yes
+iv3_health_behaviors,mo14_ai_routine_tasks,dv21_premature_death,3049,0.403,0.4007,170.8,0.0,67.9581,0.0,-13.9063,0.0,-0.4458,0.0001,Yes
+iv3_health_behaviors,mo15_ai_optimize_workflows,dv21_premature_death,3049,0.4044,0.402,171.76,0.0,68.3249,0.0,-12.5904,0.0,-0.4646,0.0,Yes

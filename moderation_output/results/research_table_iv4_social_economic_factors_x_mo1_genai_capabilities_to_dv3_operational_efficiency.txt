@@ -1,0 +1,43 @@
+=== MODERATION EFFECT ANALYSIS ===
+IV: Iv4 Social Economic Factors
+Moderator: Mo1 Genai Capabilities
+DV: Dv3 Operational Efficiency
+
+Parameter                      Raw Data             Z-Score              Log-Transform        Winsorized           
+--------------------------------------------------------------------------------
+Sample Size                    2109                 2109                 2109                 2109                 
+R²                             0.1263               0.1263               0.1541               0.1533               
+Adjusted R²                    0.1213               0.1213               0.1492               0.1484               
+Cohen's f²                     0.0006               0.0006               0.0030               0.0017               
+f² Interpretation              Negligible effect    Negligible effect    Negligible effect    Negligible effect    
+--------------------------------------------------------------------------------
+REGRESSION COEFFICIENTS
+const                          -0.0234 (0.0281)    -0.3130 (0.1348)*   0.5954 (0.0136)*** -0.0229 (0.0202)    
+iv4_social_economic_factors_z_centered --                   -0.1859 (0.0218)*** --                   --                   
+iv4_social_economic_factors_log_centered --                   --                   -0.0791 (0.0086)*** --                   
+iv4_social_economic_factors_centered -0.0111 (0.0013)*** --                   --                   --                   
+iv4_social_economic_factors_win_centered --                   --                   --                   -0.0094 (0.0011)*** 
+mo1_genai_capabilities_log_centered --                   --                   0.0271 (0.0050)*** --                   
+mo1_genai_capabilities_centered 0.0209 (0.0046)*** --                   --                   --                   
+mo1_genai_capabilities_z_centered --                   0.0986 (0.0215)*** --                   --                   
+mo1_genai_capabilities_win_centered --                   --                   --                   0.0231 (0.0046)*** 
+iv4_social_economic_factors_log_x_mo1_genai_capabilities_log --                   --                   0.0483 (0.0192)*   --                   
+iv4_social_economic_factors_x_mo1_genai_capabilities 0.0015 (0.0014)    --                   --                   --                   
+iv4_social_economic_factors_z_x_mo1_genai_capabilities_z --                   0.0252 (0.0233)    --                   --                   
+iv4_social_economic_factors_win_x_mo1_genai_capabilities_win --                   --                   --                   0.0029 (0.0015)†   
+div_2                          0.0178 (0.0332)    0.0855 (0.1595)    0.0064 (0.0161)    0.0176 (0.0239)    
+div_3                          0.1472 (0.0299)*** 0.7073 (0.1439)*** 0.0750 (0.0145)*** 0.1368 (0.0216)*** 
+div_4                          0.1056 (0.0301)*** 0.5071 (0.1445)*** 0.0558 (0.0145)*** 0.1055 (0.0217)*** 
+div_5                          0.0976 (0.0308)**  0.4688 (0.1479)**  0.0491 (0.0149)*** 0.0872 (0.0222)*** 
+div_6                          0.0223 (0.0297)    0.1070 (0.1425)    0.0117 (0.0144)    0.0233 (0.0214)    
+div_7                          -0.0329 (0.0301)    -0.1583 (0.1448)    -0.0258 (0.0146)†   -0.0080 (0.0217)    
+div_8                          0.1145 (0.0314)*** 0.5498 (0.1509)*** 0.0530 (0.0152)*** 0.0811 (0.0226)*** 
+div_9                          0.0417 (0.0330)    0.2002 (0.1586)    0.0200 (0.0160)    0.0388 (0.0238)    
+population                     0.0000 (0.0000)    0.0000 (0.0000)    0.0000 (0.0000)    0.0000 (0.0000)*   
+
+Significance levels: † p<0.1, * p<0.05, ** p<0.01, *** p<0.001
+
+CONDITIONAL SLOPES
+Low Moderator                  -0.0111 (p=0.0000)*** -0.1965 (p=0.0000)*** -0.0791 (p=0.0000)*** -0.0094 (p=0.0000)*** 
+Medium Moderator               -0.0111 (p=0.0000)*** -0.1965 (p=0.0000)*** -0.0791 (p=0.0000)*** -0.0094 (p=0.0000)*** 
+High Moderator                 -0.0088 (p=0.0007)*** -0.1578 (p=0.0000)*** -0.0348 (p=0.0752)†   -0.0050 (p=0.0525)†   

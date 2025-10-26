@@ -134,24 +134,25 @@ ehthumbs.db
 Desktop.ini
 
 # Large data directories that shouldn't be in version control
-analysis_results_*/
-*_output/
+# analysis_results_*/  # Now tracked for research sharing
+# *_output/  # Now tracked for research sharing
 logs/
-plots/
+# plots/  # Now tracked for research sharing
 figs/
 figures/
 tile_cache/
-# Output directories - generated results
-multiverse_output/
-polynomial_moderation_output/
+
+# Output directories - now tracked for research collaboration
+# multiverse_output/  # Restored for sharing
+# polynomial_moderation_output/  # Restored for sharing
 ML_Graphs/
 ai_impact_results/
-output_figures/
+# output_figures/  # Restored for sharing
 psm_results/
-ai_component_3d_analysis_output/
-ai_component_moderation_output/
-ai_component_polynomial_moderation_output/
+# ai_component_3d_analysis_output/  # Restored for sharing
+# ai_component_moderation_output/  # Restored for sharing
+# ai_component_polynomial_moderation_output/  # Restored for sharing
 
-# Large PDF files
+# Large PDF files - keeping these excluded for size
 *.pdf
 research_poster_*.pdf

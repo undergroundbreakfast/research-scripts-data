@@ -1,0 +1,27 @@
+Polynomial Moderation Analysis Results (Transform: LOG, Degree: 2)
+================================================================================
+IV (base for model): iv3_health_behaviors_log
+MO (base for model): mo1_genai_capabilities_log
+DV: dv2_healthcare_quality_log
+Polynomial Degree: 2
+N: 3135.0, R²: 0.3746, Adj. R²: 0.3717
+Cohen's f² (Interaction): 0.0021 (Negligible effect)
+
+Coefficients:
+Term                                     Coef.  Std. Err.    t-value      P>|t| Sig.
+--------------------------------------------------------------------------------
+const                                   8.2588     0.0357    231.312     0.0000 ***
+div_2                                   0.0632     0.0412      1.534     0.1252 
+div_3                                   0.2451     0.0373      6.565     0.0000 ***
+div_4                                   0.1294     0.0374      3.459     0.0005 ***
+div_5                                   0.4024     0.0384     10.470     0.0000 ***
+div_6                                   0.0339     0.0370      0.918     0.3589 
+div_7                                   0.2639     0.0378      6.986     0.0000 ***
+div_8                                   0.1317     0.0386      3.410     0.0007 ***
+div_9                                   0.0641     0.0410      1.565     0.1177 
+iv3_health_behaviors_log_centered       0.1978     0.0091     21.822     0.0000 ***
+iv3_health_behaviors_log_centered^2     0.0939     0.0086     10.896     0.0000 ***
+iv3_health_behaviors_log_centered^2_x_mo1_genai_capabilities_log_centered     0.0003     0.0403      0.008     0.9939 
+iv3_health_behaviors_log_centered_x_mo1_genai_capabilities_log_centered    -0.0636     0.0250     -2.545     0.0110 *
+mo1_genai_capabilities_log_centered    -0.0860     0.0158     -5.462     0.0000 ***
+population                             -0.0000     0.0000    -12.167     0.0000 ***

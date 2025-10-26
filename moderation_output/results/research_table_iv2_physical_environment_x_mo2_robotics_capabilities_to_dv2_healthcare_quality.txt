@@ -1,0 +1,43 @@
+=== MODERATION EFFECT ANALYSIS ===
+IV: Iv2 Physical Environment
+Moderator: Mo2 Robotics Capabilities
+DV: Dv2 Healthcare Quality
+
+Parameter                      Raw Data             Z-Score              Log-Transform        Winsorized           
+--------------------------------------------------------------------------------
+Sample Size                    2109                 2109                 2109                 2109                 
+R²                             0.3150               0.3150               0.3359               0.3656               
+Adjusted R²                    0.3110               0.3110               0.3321               0.3620               
+Cohen's f²                     0.0011               0.0011               0.0012               0.0001               
+f² Interpretation              Negligible effect    Negligible effect    Negligible effect    Negligible effect    
+--------------------------------------------------------------------------------
+REGRESSION COEFFICIENTS
+const                          3812.6033 (192.5105)*** -0.6111 (0.1209)*** 8.2251 (0.0392)*** 3818.1655 (161.3235)*** 
+iv2_physical_environment_z_centered --                   0.0731 (0.0235)**  --                   --                   
+iv2_physical_environment_centered 252.5391 (81.1269)**  --                   --                   --                   
+iv2_physical_environment_log_centered --                   --                   0.1576 (0.0341)*** --                   
+iv2_physical_environment_win_centered --                   --                   --                   246.8324 (75.0213)**  
+mo2_robotics_capabilities_z_centered --                   -0.1672 (0.0188)*** --                   --                   
+mo2_robotics_capabilities_win_centered --                   --                   --                   -70.1229 (7.5579)*** 
+mo2_robotics_capabilities_centered -77.3364 (8.6926)*** --                   --                   --                   
+mo2_robotics_capabilities_log_centered --                   --                   -0.0687 (0.0067)*** --                   
+iv2_physical_environment_log_x_mo2_robotics_capabilities_log --                   --                   0.0480 (0.0297)    --                   
+iv2_physical_environment_z_x_mo2_robotics_capabilities_z --                   0.0294 (0.0194)    --                   --                   
+iv2_physical_environment_x_mo2_robotics_capabilities 29.4882 (19.5088)    --                   --                   --                   
+iv2_physical_environment_win_x_mo2_robotics_capabilities_win --                   --                   --                   9.2846 (17.9356)    
+div_2                          234.2915 (227.2610)    0.1472 (0.1427)    0.0486 (0.0463)    233.8015 (190.6222)    
+div_3                          1668.9271 (206.1106)*** 1.0482 (0.1295)*** 0.3393 (0.0420)*** 1563.9484 (173.0026)*** 
+div_4                          531.3590 (208.2237)*   0.3337 (0.1308)*   0.1201 (0.0424)**  517.2131 (174.7642)**  
+div_5                          2372.5704 (212.6784)*** 1.4902 (0.1336)*** 0.4702 (0.0434)*** 2220.6247 (178.6596)*** 
+div_6                          252.9845 (200.3645)    0.1589 (0.1258)    0.0349 (0.0409)    246.7778 (167.7249)    
+div_7                          1672.3021 (210.4031)*** 1.0504 (0.1322)*** 0.3453 (0.0428)*** 1630.9099 (176.8745)*** 
+div_8                          1086.5118 (211.9394)*** 0.6824 (0.1331)*** 0.2109 (0.0433)*** 902.4292 (177.3271)*** 
+div_9                          324.6628 (225.2467)    0.2039 (0.1415)    0.0591 (0.0458)    333.3192 (188.2791)†   
+population                     -0.0006 (0.0001)*** -0.0000 (0.0000)*** -0.0000 (0.0000)*** -0.0005 (0.0001)*** 
+
+Significance levels: † p<0.1, * p<0.05, ** p<0.01, *** p<0.001
+
+CONDITIONAL SLOPES
+Low Moderator                  252.5391 (p=0.0019)**  0.0534 (p=0.0466)*   0.1576 (p=0.0000)*** 246.8324 (p=0.0010)**  
+Medium Moderator               252.5391 (p=0.0019)**  0.0534 (p=0.0466)*   0.1576 (p=0.0000)*** 246.8324 (p=0.0010)**  
+High Moderator                 542.7028 (p=0.0092)**  0.1374 (p=0.0047)**  0.2721 (p=0.0008)*** 338.1926 (p=0.0797)†   

@@ -1,0 +1,21 @@
+IV,Moderator,DV,Degree,N,R_squared,Adj_R_squared,Cohens_f_squared,Effect_size,F_statistic,F_pvalue,Highest_interaction,Interaction_coef,Interaction_pvalue,Significant
+iv3_health_behaviors,mo11_ai_staff_scheduling,dv15_preventable_hospitalizations,2,3049,0.2235,0.22,0.2879,Medium effect,62.39,0.0,iv3_health_behaviors_centered^2_x_mo11_ai_staff_scheduling_centered,0.0004,0.8626,No
+iv3_health_behaviors,mo12_ai_predict_staffing,dv15_preventable_hospitalizations,2,3049,0.2246,0.221,0.2896,Medium effect,62.77,0.0,iv3_health_behaviors_centered^2_x_mo12_ai_predict_staffing_centered,0.0024,0.2544,No
+iv3_health_behaviors,mo13_ai_predict_demand,dv15_preventable_hospitalizations,2,3049,0.2248,0.2212,0.2899,Medium effect,62.83,0.0,iv3_health_behaviors_centered^2_x_mo13_ai_predict_demand_centered,0.0008,0.6702,No
+iv3_health_behaviors,mo14_ai_routine_tasks,dv15_preventable_hospitalizations,2,3049,0.226,0.2224,0.292,Medium effect,63.28,0.0,iv3_health_behaviors_centered^2_x_mo14_ai_routine_tasks_centered,-0.0013,0.4575,No
+iv3_health_behaviors,mo15_ai_optimize_workflows,dv15_preventable_hospitalizations,2,3049,0.2248,0.2212,0.29,Medium effect,62.85,0.0,iv3_health_behaviors_centered^2_x_mo15_ai_optimize_workflows_centered,-0.0,0.9846,No
+iv3_health_behaviors,mo11_ai_staff_scheduling,dv15_preventable_hospitalizations,3,3049,0.2239,0.2198,0.2885,Medium effect,54.66,0.0,iv3_health_behaviors_centered^3_x_mo11_ai_staff_scheduling_centered,0.0,0.6106,No
+iv3_health_behaviors,mo12_ai_predict_staffing,dv15_preventable_hospitalizations,3,3049,0.2253,0.2212,0.2908,Medium effect,55.1,0.0,iv3_health_behaviors_centered^3_x_mo12_ai_predict_staffing_centered,0.0001,0.2729,No
+iv3_health_behaviors,mo13_ai_predict_demand,dv15_preventable_hospitalizations,3,3049,0.2252,0.2211,0.2907,Medium effect,55.08,0.0,iv3_health_behaviors_centered^3_x_mo13_ai_predict_demand_centered,0.0,0.6098,No
+iv3_health_behaviors,mo14_ai_routine_tasks,dv15_preventable_hospitalizations,3,3049,0.2262,0.2222,0.2924,Medium effect,55.41,0.0,iv3_health_behaviors_centered^3_x_mo14_ai_routine_tasks_centered,0.0,0.896,No
+iv3_health_behaviors,mo15_ai_optimize_workflows,dv15_preventable_hospitalizations,3,3049,0.2253,0.2212,0.2907,Medium effect,55.1,0.0,iv3_health_behaviors_centered^3_x_mo15_ai_optimize_workflows_centered,-0.0,0.522,No
+iv3_health_behaviors,mo11_ai_staff_scheduling,dv21_premature_death,2,3049,0.4024,0.3996,0.6732,Large effect,145.9,0.0,iv3_health_behaviors_centered^2_x_mo11_ai_staff_scheduling_centered,0.0041,0.5112,No
+iv3_health_behaviors,mo12_ai_predict_staffing,dv21_premature_death,2,3049,0.4021,0.3994,0.6726,Large effect,145.75,0.0,iv3_health_behaviors_centered^2_x_mo12_ai_predict_staffing_centered,0.006,0.2848,No
+iv3_health_behaviors,mo13_ai_predict_demand,dv21_premature_death,2,3049,0.4056,0.4029,0.6825,Large effect,147.9,0.0,iv3_health_behaviors_centered^2_x_mo13_ai_predict_demand_centered,0.0006,0.9067,No
+iv3_health_behaviors,mo14_ai_routine_tasks,dv21_premature_death,2,3049,0.4075,0.4048,0.6877,Large effect,149.04,0.0,iv3_health_behaviors_centered^2_x_mo14_ai_routine_tasks_centered,-0.0027,0.5558,No
+iv3_health_behaviors,mo15_ai_optimize_workflows,dv21_premature_death,2,3049,0.4084,0.4056,0.6903,Large effect,149.59,0.0,iv3_health_behaviors_centered^2_x_mo15_ai_optimize_workflows_centered,-0.0015,0.7112,No
+iv3_health_behaviors,mo11_ai_staff_scheduling,dv21_premature_death,3,3049,0.408,0.4049,0.6892,Large effect,130.61,0.0,iv3_health_behaviors_centered^3_x_mo11_ai_staff_scheduling_centered,-0.0,0.8751,No
+iv3_health_behaviors,mo12_ai_predict_staffing,dv21_premature_death,3,3049,0.4076,0.4045,0.6882,Large effect,130.41,0.0,iv3_health_behaviors_centered^3_x_mo12_ai_predict_staffing_centered,0.0001,0.6837,No
+iv3_health_behaviors,mo13_ai_predict_demand,dv21_premature_death,3,3049,0.4116,0.4085,0.6995,Large effect,132.55,0.0,iv3_health_behaviors_centered^3_x_mo13_ai_predict_demand_centered,0.0,0.893,No
+iv3_health_behaviors,mo14_ai_routine_tasks,dv21_premature_death,3,3049,0.4135,0.4104,0.7049,Large effect,133.58,0.0,iv3_health_behaviors_centered^3_x_mo14_ai_routine_tasks_centered,-0.0001,0.488,No
+iv3_health_behaviors,mo15_ai_optimize_workflows,dv21_premature_death,3,3049,0.4142,0.4111,0.7071,Large effect,133.99,0.0,iv3_health_behaviors_centered^3_x_mo15_ai_optimize_workflows_centered,-0.0001,0.5441,No
