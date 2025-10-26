@@ -85,6 +85,25 @@ CONFIG = {
 # Default output directory in the same directory as the script
 DEFAULT_OUTDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "multiverse_output")
 
+# Targeted moderation configuration (IV31–IV39 × MO11–MO15 on DV15/DV21)
+TARGETED_IV_MAP = {
+    "IV31": "adult_smoking_raw_value",
+    "IV32": "adult_obesity_raw_value",
+    "IV33": "food_environment_index_raw_value",
+    "IV34": "physical_inactivity_raw_value",
+    "IV35": "access_to_exercise_opportunities_raw_value",
+    "IV36": "excessive_drinking_raw_value",
+    "IV37": "alcohol_impaired_driving_deaths_raw_value",
+    "IV38": "sexually_transmitted_infections_raw_value",
+    "IV39": "teen_births_raw_value",
+}
+
+TARGETED_MODERATORS = ["MO11", "MO12", "MO13", "MO14", "MO15"]
+TARGETED_DV_MAP = {
+    "DV15": "preventable_hospital_stays_raw_value",
+    "DV21": "premature_death_raw_value",
+}
+
 # ----------------------------- logging / args -----------------------------
 
 def setup_logging(outdir: str) -> None:
@@ -452,6 +471,29 @@ def coerce_numeric_wide(df: pd.DataFrame) -> pd.DataFrame:
             df[c] = to_numeric_clean(df[c])
     return df
 
+def resolve_column_with_suffix(df: pd.DataFrame, base_name: str) -> Optional[str]:
+    """
+    Resolve canonical CHR column names that may appear with merge suffixes (e.g., _c2, _c3).
+    Returns the actual dataframe column name or None if not present.
+    """
+    col_lookup = {c.lower(): c for c in df.columns}
+    candidates = [base_name]
+    # Allow chunk suffixes applied during merges
+    candidates.extend([f"{base_name}_c2", f"{base_name}_c3"])
+    base_lower = base_name.lower()
+    # Some tables may drop _raw_value suffixes for derived columns
+    if base_name.endswith("_raw_value"):
+        candidates.append(base_name[:-10])  # remove "_raw_value"
+    for cand in candidates:
+        actual = col_lookup.get(cand.lower())
+        if actual:
+            return actual
+    # Fallback: partial match across columns if an unexpected suffix was attached
+    for c in df.columns:
+        if base_lower in c.lower():
+            return c
+    return None
+
 def assemble_feature_matrix(df: pd.DataFrame, drop_missing_thresh: float,
                             targets: List[str], dv_cols: List[str]) -> Tuple[pd.DataFrame, List[str]]:
     # Candidate features = numeric CHR variables across chunks
@@ -788,6 +830,67 @@ def run_interactions(
         res = pd.DataFrame(rows).sort_values(["p_value"], na_position="last")
         res.to_csv(os.path.join(outdir, f"interaction_sweep_{dv_key}.csv"), index=False)
 
+def run_targeted_moderations(
+    df: pd.DataFrame,
+    controls: List[str],
+    outdir: str,
+) -> None:
+    """
+    Evaluate predefined moderation combinations between IV31–IV39, MO11–MO15, and DV15/DV21.
+    Persists one CSV per DV containing all tested permutations.
+    """
+    cluster_col = "state_key"
+    if cluster_col not in df.columns:
+        logging.warning("Targeted moderation sweep skipped: state_key column missing for clustering.")
+        return
+
+    moderators = [m for m in TARGETED_MODERATORS if m in df.columns]
+    if not moderators:
+        logging.warning("Targeted moderation sweep skipped: none of %s present.", TARGETED_MODERATORS)
+        return
+
+    for dv_code, dv_base in TARGETED_DV_MAP.items():
+        dv_col = resolve_column_with_suffix(df, dv_base)
+        if not dv_col:
+            logging.warning("Targeted moderation: DV %s column '%s' not found.", dv_code, dv_base)
+            continue
+
+        rows = []
+        logging.info(
+            "Targeted moderation for %s (%s): testing %d IVs × %d moderators",
+            dv_code, dv_col, len(TARGETED_IV_MAP), len(moderators)
+        )
+        for iv_code, iv_base in TARGETED_IV_MAP.items():
+            iv_col = resolve_column_with_suffix(df, iv_base)
+            if not iv_col:
+                logging.warning("Targeted moderation: IV %s column '%s' not found.", iv_code, iv_base)
+                continue
+            for mod in moderators:
+                _, beta, p, ci_l, ci_u, n_obs, fit_err = fit_interaction_ols_cluster(
+                    df, dv_col, iv_col, mod, controls, cluster_col
+                )
+                rows.append({
+                    "dv_code": dv_code,
+                    "dv_column": dv_col,
+                    "iv_code": iv_code,
+                    "iv_column": iv_col,
+                    "moderator": mod,
+                    "beta_interaction": beta,
+                    "p_value": p,
+                    "ci_low": ci_l,
+                    "ci_high": ci_u,
+                    "n_obs": n_obs,
+                    "fit_error": int(fit_err),
+                })
+
+        if not rows:
+            logging.warning("Targeted moderation for %s produced no rows; skipping output.", dv_code)
+            continue
+
+        out_df = pd.DataFrame(rows).sort_values(["p_value"], na_position="last")
+        out_path = os.path.join(outdir, f"targeted_moderation_{dv_code.lower()}.csv")
+        out_df.to_csv(out_path, index=False)
+        logging.info("Targeted moderation results written to %s", out_path)
 
 def validate_data_quality(df: pd.DataFrame, critical_cols: List[str]) -> None:
     """Log data quality metrics for critical columns."""
@@ -867,6 +970,9 @@ def main():
 
     # ----- Interaction sweep -----
     run_interactions(df, feat_cols, controls, args.outdir)
+
+    # ----- Targeted moderation grid (IV31–IV39 × MO11–MO15 on DV15/DV21) -----
+    run_targeted_moderations(df, controls, args.outdir)
 
     logging.info("Done. Outputs written to %s", args.outdir)
 

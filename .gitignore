@@ -141,3 +141,17 @@ plots/
 figs/
 figures/
 tile_cache/
+# Output directories - generated results
+multiverse_output/
+polynomial_moderation_output/
+ML_Graphs/
+ai_impact_results/
+output_figures/
+psm_results/
+ai_component_3d_analysis_output/
+ai_component_moderation_output/
+ai_component_polynomial_moderation_output/
+
+# Large PDF files
+*.pdf
+research_poster_*.pdf
