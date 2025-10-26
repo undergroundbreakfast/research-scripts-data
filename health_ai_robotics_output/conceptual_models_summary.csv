@@ -1,9 +1,0 @@
-model_description,outcome_variable,n_obs,r_squared,adj_r_squared,f_statistic,f_pvalue,error_message
-IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score),dv1_clinical_care_score,3135,0.2779,0.2744,80.0252,0.0000,
-IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score),dv2_health_outcomes_score,3135,0.7045,0.7030,495.6304,0.0000,
-IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin),dv3_operational_efficiency_margin,2109,0.1680,0.1620,28.1716,0.0000,
-IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate),dv21_premature_death_ypll_rate,3080,0.7080,0.7065,495.2014,0.0000,
-IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score),dv1_clinical_care_score,2746,0.4498,0.4421,58.2465,0.0000,
-IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score),dv2_health_outcomes_score,2746,0.8400,0.8378,374.0543,0.0000,
-IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin),dv3_operational_efficiency_margin,1951,0.1915,0.1755,11.9207,0.0000,
-IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate),dv21_premature_death_ypll_rate,2746,0.8400,0.8378,374.0132,0.0000,

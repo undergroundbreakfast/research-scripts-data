@@ -1,7 +1,0 @@
-Component,ATE,CI_Lower,CI_Upper,Significant,E_value,YPLL_Averted,Deaths_Averted,N_Treated,N_Control,Error
-AI Staff Scheduling,-405.44,-989.10,42.20,No,,0,0,299,2781,False
-AI Predict Staff Needs,-681.03,-1334.10,-85.15,Yes,1.67,"1,205,502","41,569",318,2762,False
-AI Predict Pt Demand,-714.77,-1029.40,-321.52,Yes,1.69,"1,226,244","42,284",337,2743,False
-AI Automate Routine Tasks,-978.76,-1452.33,-548.70,Yes,1.89,"1,515,913","52,273",417,2663,False
-AI Optimize Workflows,-416.61,-775.48,-88.19,Yes,1.46,"607,358","20,943",453,2627,False
-Robotics in Hospital,-635.21,-841.07,-355.85,Yes,1.63,"464,604","16,021",775,2305,False

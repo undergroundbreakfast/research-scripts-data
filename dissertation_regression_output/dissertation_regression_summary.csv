@@ -1,9 +1,0 @@
-Model Name,N,Adj. R-Squared,Coef_sp1_moran_i,Coef_sp3_cluster_type_HH,Coef_sp3_cluster_type_HL,Coef_sp3_cluster_type_LH,Coef_sp3_cluster_type_LL,P-val_sp1_moran_i,P-val_sp3_cluster_type_HH,P-val_sp3_cluster_type_HL,P-val_sp3_cluster_type_LH,P-val_sp3_cluster_type_LL
-Reg1_SP3_on_DV21,3052,0.0354,,-2840.2118,-26.4021,982.6691,-1707.8131,,0.0000,0.9278,0.0020,0.0000
-Reg2_SP3_on_DV21_Controls_Base,3052,0.2518,,-505.4245,312.3690,467.5868,-496.8229,,0.1730,0.1915,0.0836,0.1829
-Reg3_SP3_on_DV21_Controls_IV3,3052,0.4504,,-379.6875,-20.0459,154.8028,-174.1322,,0.2104,0.9185,0.4370,0.6114
-Reg4_SP3_on_DV21_Controls_IV4,3052,0.7049,,-193.7167,-395.4889,126.0887,195.3623,,0.3766,0.0314,0.3721,0.3164
-Reg5_SP1_on_DV21,3052,0.0087,-197.6901,,,,,0.0000,,,,
-Reg6_SP1_on_DV21_Controls_Base,3052,0.2499,4.5205,,,,,0.8512,,,,
-Reg7_SP1_on_DV21_Controls_IV3,3052,0.4504,-6.5318,,,,,0.7747,,,,
-Reg8_SP1_on_DV21_Controls_IV4,3052,0.7045,-0.2905,,,,,0.9889,,,,
