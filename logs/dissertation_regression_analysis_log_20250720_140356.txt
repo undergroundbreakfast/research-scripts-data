@@ -1,0 +1,135 @@
+2025-07-20 14:03:56,666 - INFO - [LISA_Cluster_Regressions_072025_v1.py:73] - Logging to: logs/dissertation_regression_analysis_log_20250720_140356.txt
+2025-07-20 14:03:56,666 - INFO - [LISA_Cluster_Regressions_072025_v1.py:385] - Starting Dissertation OLS Regression Analysis Script.
+2025-07-20 14:03:56,735 - INFO - [LISA_Cluster_Regressions_072025_v1.py:95] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-07-20 14:04:22,800 - INFO - [LISA_Cluster_Regressions_072025_v1.py:135] - Data for analysis retrieved: 3052 rows, 8 columns.
+2025-07-20 14:04:22,800 - INFO - [LISA_Cluster_Regressions_072025_v1.py:140] - Renaming columns for clarity...
+2025-07-20 14:04:22,801 - INFO - [LISA_Cluster_Regressions_072025_v1.py:166] - Performing data preparations for regression...
+2025-07-20 14:04:22,802 - INFO - [LISA_Cluster_Regressions_072025_v1.py:172] - Created 'state_fips_for_clustering' column for clustered SEs.
+2025-07-20 14:04:22,802 - INFO - [LISA_Cluster_Regressions_072025_v1.py:180] - Converting 'ct1_population' to numeric type...
+2025-07-20 14:04:22,804 - INFO - [LISA_Cluster_Regressions_072025_v1.py:186] - Created 'log_population' from 'ct1_population'.
+2025-07-20 14:04:22,805 - INFO - [LISA_Cluster_Regressions_072025_v1.py:202] - Created 8 dummy variables for 'ct2_census_division'.
+2025-07-20 14:04:22,805 - INFO - [LISA_Cluster_Regressions_072025_v1.py:213] - Prepared 'sp3_cluster_type' as a categorical variable.
+2025-07-20 14:04:22,805 - INFO - [LISA_Cluster_Regressions_072025_v1.py:215] - Data preparation complete.
+2025-07-20 14:04:22,805 - INFO - [LISA_Cluster_Regressions_072025_v1.py:222] - Converting all regression variables to proper numeric types...
+2025-07-20 14:04:22,805 - INFO - [LISA_Cluster_Regressions_072025_v1.py:234] - Column 'dv21_premature_death' sample values before conversion: [9407.9482421875, 8981.5751953125, 13138.8486328125, 12675.4345703125, 11541.4951171875]
+2025-07-20 14:04:22,805 - INFO - [LISA_Cluster_Regressions_072025_v1.py:241] - Converted 'dv21_premature_death' to numeric type. Null values: 0/3052
+2025-07-20 14:04:22,806 - INFO - [LISA_Cluster_Regressions_072025_v1.py:234] - Column 'sp1_moran_i' sample values before conversion: ['-0.000661666', '0.069610369', '0.060769739', '0.010672831683467651', '0.010672831683467646']
+2025-07-20 14:04:22,806 - INFO - [LISA_Cluster_Regressions_072025_v1.py:241] - Converted 'sp1_moran_i' to numeric type. Null values: 0/3052
+2025-07-20 14:04:22,806 - INFO - [LISA_Cluster_Regressions_072025_v1.py:234] - Column 'iv3_health_behaviors' sample values before conversion: [48.49579097956419, 27.742231903374197, 61.90532405585051, 56.320113735496996, 28.205747699290516]
+2025-07-20 14:04:22,807 - INFO - [LISA_Cluster_Regressions_072025_v1.py:241] - Converted 'iv3_health_behaviors' to numeric type. Null values: 0/3052
+2025-07-20 14:04:22,807 - INFO - [LISA_Cluster_Regressions_072025_v1.py:234] - Column 'iv4_social_economic' sample values before conversion: [10.134138997178525, 11.176548715084792, 12.181614794842899, 14.091700394097716, 13.662033479325473]
+2025-07-20 14:04:22,807 - INFO - [LISA_Cluster_Regressions_072025_v1.py:241] - Converted 'iv4_social_economic' to numeric type. Null values: 0/3052
+2025-07-20 14:04:22,807 - INFO - [LISA_Cluster_Regressions_072025_v1.py:439] - 
+============================== RUNNING REGRESSION: Reg1_SP3_on_DV21 ==============================
+2025-07-20 14:04:22,807 - INFO - [LISA_Cluster_Regressions_072025_v1.py:440] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: []
+2025-07-20 14:04:22,810 - INFO - [LISA_Cluster_Regressions_072025_v1.py:298] - Y dtype: float64
+2025-07-20 14:04:22,810 - INFO - [LISA_Cluster_Regressions_072025_v1.py:299] - X dtypes: const                               float64
+sp3_cluster_type_HL                    bool
+sp3_cluster_type_LH                    bool
+sp3_cluster_type_LL                    bool
+sp3_cluster_type_Not Significant       bool
+dtype: object
+2025-07-20 14:04:22,810 - ERROR - [LISA_Cluster_Regressions_072025_v1.py:310] - OLS regression failed for DV 'dv21_premature_death': Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-07-20 14:04:22,814 - WARNING - [LISA_Cluster_Regressions_072025_v1.py:494] - Skipping results and plots for Reg1_SP3_on_DV21 due to model failure.
+2025-07-20 14:04:22,814 - INFO - [LISA_Cluster_Regressions_072025_v1.py:439] - 
+============================== RUNNING REGRESSION: Reg2_SP3_on_DV21_Controls_Base ==============================
+2025-07-20 14:04:22,814 - INFO - [LISA_Cluster_Regressions_072025_v1.py:440] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: ['log_population', 'census_dummies']
+2025-07-20 14:04:22,816 - INFO - [LISA_Cluster_Regressions_072025_v1.py:298] - Y dtype: float64
+2025-07-20 14:04:22,817 - INFO - [LISA_Cluster_Regressions_072025_v1.py:299] - X dtypes: const                               float64
+sp3_cluster_type_HL                    bool
+sp3_cluster_type_LH                    bool
+sp3_cluster_type_LL                    bool
+sp3_cluster_type_Not Significant       bool
+log_population                      float64
+div_2                                 int64
+div_3                                 int64
+div_4                                 int64
+div_5                                 int64
+div_6                                 int64
+div_7                                 int64
+div_8                                 int64
+div_9                                 int64
+dtype: object
+2025-07-20 14:04:22,817 - ERROR - [LISA_Cluster_Regressions_072025_v1.py:310] - OLS regression failed for DV 'dv21_premature_death': Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-07-20 14:04:22,817 - WARNING - [LISA_Cluster_Regressions_072025_v1.py:494] - Skipping results and plots for Reg2_SP3_on_DV21_Controls_Base due to model failure.
+2025-07-20 14:04:22,817 - INFO - [LISA_Cluster_Regressions_072025_v1.py:439] - 
+============================== RUNNING REGRESSION: Reg3_SP3_on_DV21_Controls_IV3 ==============================
+2025-07-20 14:04:22,818 - INFO - [LISA_Cluster_Regressions_072025_v1.py:440] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: ['log_population', 'census_dummies', 'iv3_health_behaviors']
+2025-07-20 14:04:22,820 - INFO - [LISA_Cluster_Regressions_072025_v1.py:298] - Y dtype: float64
+2025-07-20 14:04:22,821 - INFO - [LISA_Cluster_Regressions_072025_v1.py:299] - X dtypes: const                               float64
+sp3_cluster_type_HL                    bool
+sp3_cluster_type_LH                    bool
+sp3_cluster_type_LL                    bool
+sp3_cluster_type_Not Significant       bool
+log_population                      float64
+div_2                                 int64
+div_3                                 int64
+div_4                                 int64
+div_5                                 int64
+div_6                                 int64
+div_7                                 int64
+div_8                                 int64
+div_9                                 int64
+iv3_health_behaviors                float64
+dtype: object
+2025-07-20 14:04:22,821 - ERROR - [LISA_Cluster_Regressions_072025_v1.py:310] - OLS regression failed for DV 'dv21_premature_death': Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-07-20 14:04:22,822 - WARNING - [LISA_Cluster_Regressions_072025_v1.py:494] - Skipping results and plots for Reg3_SP3_on_DV21_Controls_IV3 due to model failure.
+2025-07-20 14:04:22,822 - INFO - [LISA_Cluster_Regressions_072025_v1.py:439] - 
+============================== RUNNING REGRESSION: Reg4_SP3_on_DV21_Controls_IV4 ==============================
+2025-07-20 14:04:22,822 - INFO - [LISA_Cluster_Regressions_072025_v1.py:440] - DV: dv21_premature_death, IV: sp3_cluster_type, Controls: ['log_population', 'census_dummies', 'iv3_health_behaviors', 'iv4_social_economic']
+2025-07-20 14:04:22,825 - INFO - [LISA_Cluster_Regressions_072025_v1.py:298] - Y dtype: float64
+2025-07-20 14:04:22,825 - INFO - [LISA_Cluster_Regressions_072025_v1.py:299] - X dtypes: const                               float64
+sp3_cluster_type_HL                    bool
+sp3_cluster_type_LH                    bool
+sp3_cluster_type_LL                    bool
+sp3_cluster_type_Not Significant       bool
+log_population                      float64
+div_2                                 int64
+div_3                                 int64
+div_4                                 int64
+div_5                                 int64
+div_6                                 int64
+div_7                                 int64
+div_8                                 int64
+div_9                                 int64
+iv3_health_behaviors                float64
+iv4_social_economic                 float64
+dtype: object
+2025-07-20 14:04:22,826 - ERROR - [LISA_Cluster_Regressions_072025_v1.py:310] - OLS regression failed for DV 'dv21_premature_death': Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-07-20 14:04:22,826 - WARNING - [LISA_Cluster_Regressions_072025_v1.py:494] - Skipping results and plots for Reg4_SP3_on_DV21_Controls_IV4 due to model failure.
+2025-07-20 14:04:22,826 - INFO - [LISA_Cluster_Regressions_072025_v1.py:439] - 
+============================== RUNNING REGRESSION: Reg5_SP1_on_DV21 ==============================
+2025-07-20 14:04:22,826 - INFO - [LISA_Cluster_Regressions_072025_v1.py:440] - DV: dv21_premature_death, IV: sp1_moran_i, Controls: []
+2025-07-20 14:04:22,827 - INFO - [LISA_Cluster_Regressions_072025_v1.py:298] - Y dtype: float64
+2025-07-20 14:04:22,827 - INFO - [LISA_Cluster_Regressions_072025_v1.py:299] - X dtypes: const          float64
+sp1_moran_i    float64
+dtype: object
+2025-07-20 14:04:22,830 - INFO - [LISA_Cluster_Regressions_072025_v1.py:306] - OLS model fitted successfully for DV 'dv21_premature_death' (N=3052).
+2025-07-20 14:04:22,834 - INFO - [LISA_Cluster_Regressions_072025_v1.py:474] - 
+--- Results for Reg5_SP1_on_DV21 ---
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     dv21_premature_death   R-squared:                       0.009
+Model:                              OLS   Adj. R-squared:                  0.009
+Method:                   Least Squares   F-statistic:                     17.65
+Date:                  Sun, 20 Jul 2025   Prob (F-statistic):           0.000118
+Time:                          14:04:22   Log-Likelihood:                -29186.
+No. Observations:                  3052   AIC:                         5.838e+04
+Df Residuals:                      3050   BIC:                         5.839e+04
+Df Model:                             1                                         
+Covariance Type:                cluster                                         
+===============================================================================
+                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------
+const        9890.0308    299.694     33.000      0.000    9302.641    1.05e+04
+sp1_moran_i  -197.6901     47.058     -4.201      0.000    -289.923    -105.457
+==============================================================================
+Omnibus:                     1076.118   Durbin-Watson:                   1.446
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6702.878
+Skew:                           1.534   Prob(JB):                         0.00
+Kurtosis:                       9.580   Cond. No.                         1.71
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+

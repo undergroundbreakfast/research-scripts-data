@@ -1,0 +1,124 @@
+Dependent_Variable,Weighting_Scheme,N_Observations,R_Squared,Adj_R_Squared,F_p_value,Model_Summary
+dv1_clinical_care,beds,3135.0,0.28316489460706673,0.27971746704025235,2.8724162082341243e-212,"                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:      dv1_clinical_care   R-squared:                       0.283
+Model:                            OLS   Adj. R-squared:                  0.280
+Method:                 Least Squares   F-statistic:                     82.14
+Date:                Sat, 06 Sep 2025   Prob (F-statistic):          2.87e-212
+Time:                        21:16:50   Log-Likelihood:                -23940.
+No. Observations:                3135   AIC:                         4.791e+04
+Df Residuals:                    3119   BIC:                         4.801e+04
+Df Model:                          15                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+Intercept                679.0628    126.162      5.382      0.000     431.694     926.432
+iv1_medicaid_expansion    25.8044     20.878      1.236      0.217     -15.131      66.740
+iv2_physical_env         388.3540     27.268     14.242      0.000     334.888     441.820
+iv3_health_behaviors      -0.4910      0.463     -1.060      0.289      -1.400       0.417
+iv4_social_economic       11.6528      2.747      4.243      0.000       6.268      17.038
+mo1_composite_beds        -1.2075      0.507     -2.380      0.017      -2.202      -0.213
+mo2_composite_beds        -2.9250      0.315     -9.287      0.000      -3.542      -2.307
+log_population           -51.7115      8.642     -5.984      0.000     -68.656     -34.767
+div_2                    148.9205     78.419      1.899      0.058      -4.838     302.679
+div_3                    358.1427     72.059      4.970      0.000     216.856     499.430
+div_4                    201.2384     72.053      2.793      0.005      59.962     342.515
+div_5                    498.8055     74.916      6.658      0.000     351.915     645.696
+div_6                    188.5954     71.836      2.625      0.009      47.745     329.446
+div_7                    334.9459     74.930      4.470      0.000     188.030     481.862
+div_8                     14.0935     73.553      0.192      0.848    -130.123     158.310
+div_9                   -245.0015     77.643     -3.155      0.002    -397.237     -92.766
+==============================================================================
+Omnibus:                     1177.248   Durbin-Watson:                   1.985
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7238.621
+Skew:                           1.657   Prob(JB):                         0.00
+Kurtosis:                       9.666   Cond. No.                     1.19e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.19e+03. This might indicate that there are
+strong multicollinearity or other numerical problems."
+dv2_health_outcomes,beds,3135.0,0.7052268302495575,0.7038091971792604,0.0,"                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     dv2_health_outcomes   R-squared:                       0.705
+Model:                             OLS   Adj. R-squared:                  0.704
+Method:                  Least Squares   F-statistic:                     497.5
+Date:                 Sat, 06 Sep 2025   Prob (F-statistic):               0.00
+Time:                         21:16:50   Log-Likelihood:                -25900.
+No. Observations:                 3135   AIC:                         5.183e+04
+Df Residuals:                     3119   BIC:                         5.193e+04
+Df Model:                           15                                         
+Covariance Type:             nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+Intercept                575.5980    235.816      2.441      0.015     113.229    1037.967
+iv1_medicaid_expansion   -31.4094     39.023     -0.805      0.421    -107.923      45.104
+iv2_physical_env         453.8755     50.969      8.905      0.000     353.940     553.811
+iv3_health_behaviors      27.6907      0.866     31.974      0.000      25.993      29.389
+iv4_social_economic      263.1673      5.134     51.262      0.000     253.101     273.233
+mo1_composite_beds        -1.6463      0.948     -1.736      0.083      -3.506       0.213
+mo2_composite_beds        -2.5336      0.589     -4.304      0.000      -3.688      -1.379
+log_population          -159.2450     16.153     -9.858      0.000    -190.917    -127.573
+div_2                    463.1582    146.578      3.160      0.002     175.760     750.556
+div_3                    714.4697    134.688      5.305      0.000     450.383     978.556
+div_4                    371.4275    134.678      2.758      0.006     107.361     635.494
+div_5                   1230.1775    140.030      8.785      0.000     955.618    1504.737
+div_6                    116.7646    134.272      0.870      0.385    -146.506     380.036
+div_7                    806.2018    140.054      5.756      0.000     531.594    1080.810
+div_8                    374.6386    137.481      2.725      0.006     105.076     644.201
+div_9                     34.4733    145.126      0.238      0.812    -250.078     319.025
+==============================================================================
+Omnibus:                      522.744   Durbin-Watson:                   1.931
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4097.964
+Skew:                           0.565   Prob(JB):                         0.00
+Kurtosis:                       8.486   Cond. No.                     1.19e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.19e+03. This might indicate that there are
+strong multicollinearity or other numerical problems."
+dv3_ops_efficiency,beds,2109.0,0.16555801767418676,0.1595777836871407,1.1072331354748573e-71,"                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     dv3_ops_efficiency   R-squared:                       0.166
+Model:                            OLS   Adj. R-squared:                  0.160
+Method:                 Least Squares   F-statistic:                     27.68
+Date:                Sat, 06 Sep 2025   Prob (F-statistic):           1.11e-71
+Time:                        21:16:50   Log-Likelihood:                 508.47
+No. Observations:                2109   AIC:                            -984.9
+Df Residuals:                    2093   BIC:                            -894.5
+Df Model:                          15                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+Intercept                 -0.3289      0.061     -5.376      0.000      -0.449      -0.209
+iv1_medicaid_expansion     0.0063      0.010      0.647      0.517      -0.013       0.026
+iv2_physical_env          -0.0068      0.012     -0.552      0.581      -0.031       0.017
+iv3_health_behaviors      -0.0007      0.000     -2.811      0.005      -0.001      -0.000
+iv4_social_economic       -0.0063      0.001     -4.669      0.000      -0.009      -0.004
+mo1_composite_beds         0.0003      0.000      1.251      0.211      -0.000       0.001
+mo2_composite_beds         0.0002      0.000      1.684      0.092   -3.68e-05       0.000
+log_population             0.0354      0.004      8.320      0.000       0.027       0.044
+div_2                      0.0184      0.033      0.558      0.577      -0.046       0.083
+div_3                      0.1767      0.031      5.680      0.000       0.116       0.238
+div_4                      0.1355      0.030      4.443      0.000       0.076       0.195
+div_5                      0.1412      0.032      4.385      0.000       0.078       0.204
+div_6                      0.0950      0.031      3.101      0.002       0.035       0.155
+div_7                      0.0234      0.032      0.728      0.467      -0.040       0.086
+div_8                      0.1552      0.031      4.960      0.000       0.094       0.217
+div_9                      0.0500      0.033      1.526      0.127      -0.014       0.114
+==============================================================================
+Omnibus:                     2667.919   Durbin-Watson:                   2.002
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          1606987.174
+Skew:                           6.216   Prob(JB):                         0.00
+Kurtosis:                     137.657   Cond. No.                     1.22e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.22e+03. This might indicate that there are
+strong multicollinearity or other numerical problems."

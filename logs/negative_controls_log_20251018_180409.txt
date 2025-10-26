@@ -1,0 +1,11 @@
+2025-10-18 18:04:09,774 - INFO - Logger initialized.
+2025-10-18 18:04:09,949 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 18:04:39,708 - INFO - Base data: 3135 counties.
+2025-10-18 18:04:39,713 - INFO - Added division FE (dummies=8).
+2025-10-18 18:04:39,801 - INFO - [Direct NCO] Skipping pct_households_with_lack_of_kitchen_or_plumbing: not found.
+2025-10-18 18:04:39,801 - INFO - [Direct NCO] Skipping percentage_of_households_with_high_housing_costs: not found.
+2025-10-18 18:04:39,802 - INFO - [Direct NCO] Skipping percentage_of_households_with_overcrowding: not found.
+2025-10-18 18:04:39,883 - WARNING - No pre-2023 years found for temporal falsification.
+2025-10-18 18:04:52,922 - INFO - Permutation tests done for MO1 family.
+2025-10-18 18:04:52,930 - INFO - Guardrail checks written.
+2025-10-18 18:04:52,931 - INFO - All done. Outputs in ./negative_controls_output

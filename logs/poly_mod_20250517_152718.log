@@ -1,0 +1,5 @@
+2025-05-17 15:27:18 | INFO | Logger initialised – writing to logs/poly_mod_20250517_152718.log
+2025-05-17 15:27:18 | INFO | Connected to Postgres.
+2025-05-17 15:27:48 | INFO | Fetched 3143 rows from vw_conceptual_model.
+2025-05-17 15:27:48 | INFO | Added 8 census-division dummies (ref=1).
+2025-05-17 15:27:48 | INFO | dv2_healthcare_quality model (deg=1) fitted: R²=0.3947

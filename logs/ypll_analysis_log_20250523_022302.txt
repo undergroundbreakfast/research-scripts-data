@@ -1,0 +1,35 @@
+2025-05-23 02:23:02,878 - INFO - Logging to: logs/ypll_analysis_log_20250523_022302.txt
+2025-05-23 02:23:02,878 - INFO - Starting YPLL Analysis Script.
+2025-05-23 02:23:02,878 - INFO - Output (logs, plots) will be saved in: ypll_analysis_output and logs/
+2025-05-23 02:23:03,427 - INFO - Connected to Postgres database 'Research_TEST' successfully.
+2025-05-23 02:23:03,431 - ERROR - Database connection or query failed during YPLL data fetch: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying > integer
+LINE 22: ...AND vcm.population IS NOT NULL AND vcm.population > 0 -- For...
+                                                              ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+    SELECT
+        vcm.county_fips, -- Ensure this is selected for potential merging/identification
+        vcm.weighted_ai_adoption_score,
+        vcm.health_behaviors_score,
+        vcm.social_economic_factors_score,
+        vcm.medicaid_expansion_active,
+        vcm.population,
+        vcm.census_division,        -- Renamed from 'division' for consistency
+        vcv.premature_death_raw_value -- The dependent variable for YPLL analysis
+    FROM
+        public.vw_conceptual_model AS vcm
+    JOIN
+        public.vw_conceptual_model_variables AS vcv
+    ON
+        vcm.county_fips = vcv.county_fips -- Assuming county_fips is the common key
+    WHERE
+        vcm.weighted_ai_adoption_score IS NOT NULL
+        AND vcm.health_behaviors_score IS NOT NULL
+        AND vcm.social_economic_factors_score IS NOT NULL
+        AND vcm.medicaid_expansion_active IS NOT NULL
+        AND vcm.population IS NOT NULL AND vcm.population > 0 -- For log transform
+        AND vcm.census_division IS NOT NULL
+        AND vcv.premature_death_raw_value IS NOT NULL;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)

@@ -1,0 +1,20 @@
+2025-06-14 11:41:33,205 [INFO] Logging to logs/geospatial_analysis_20250614_114133.txt
+2025-06-14 11:41:33,317 [INFO] Connected to Postgres (Research_TEST@localhost).
+2025-06-14 11:41:33,317 [INFO] Fetching hospital data …
+2025-06-14 11:41:33,317 [ERROR] Fatal error: (psycopg2.errors.DatatypeMismatch) COALESCE types character varying and integer cannot be matched
+LINE 5:             COALESCE(bdtot,0)          AS bed_total,
+                                   ^
+
+[SQL: 
+        SELECT
+            id,
+            fcounty                     AS county_fips,
+            COALESCE(bdtot,0)          AS bed_total,
+            wfaiart, wfaioacw, wfaippd, wfaipsn, wfaiss,
+            robohos,
+            mloczip,
+            latitude, longitude
+        FROM public.aha_survey_data
+        WHERE COALESCE(fcounty,'') <> ''
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)

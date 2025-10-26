@@ -1,0 +1,32 @@
+2025-09-06 22:22:37,109 - INFO - [Replicate_Results_090625_v1.py:73] - Logging to: logs/genai_robotics_health_analysis_log_20250906_222237.txt
+2025-09-06 22:22:37,109 - INFO - [Replicate_Results_090625_v1.py:763] - Starting Dissertation Replication & Testing Script.
+2025-09-06 22:22:37,175 - INFO - [Replicate_Results_090625_v1.py:98] - Connected to PostgreSQL database 'Research_TEST'.
+2025-09-06 22:22:37,178 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_adjpd
+2025-09-06 22:22:37,179 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_variables_adjpd
+2025-09-06 22:22:37,179 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_adjpd_weighted_tech_summary
+2025-09-06 22:23:05,523 - INFO - [Replicate_Results_090625_v1.py:274] - Data retrieved: 3135 rows, 21 columns.
+2025-09-06 22:23:05,526 - INFO - [Replicate_Results_090625_v1.py:322] - Created 8 division dummies.
+2025-09-06 22:23:05,527 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo11_ai_automate_routine_tasks_pct'.
+2025-09-06 22:23:05,527 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo12_ai_optimize_workflows_pct'.
+2025-09-06 22:23:05,527 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo13_ai_predict_patient_demand_pct'.
+2025-09-06 22:23:05,527 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo14_ai_predict_staff_needs_pct'.
+2025-09-06 22:23:05,527 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo15_ai_staff_scheduling_pct'.
+2025-09-06 22:23:05,527 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo21_robotics_in_hospital_pct'.
+2025-09-06 22:23:47,937 - INFO - [Replicate_Results_090625_v1.py:888] - Saved main effects summary to genai_robotics_health_output/main_effects_on_health_summary.csv
+2025-09-06 22:23:48,144 - INFO - [Replicate_Results_090625_v1.py:631] - Saved main effect comparison plot: genai_robotics_health_output/plots/Main_Effect_Comparison.png
+2025-09-06 22:23:48,150 - WARNING - [Replicate_Results_090625_v1.py:690] - Column 'iv3_health_behaviors_score' is a 2D array with shape (3135, 2). Extracting first column.
+2025-09-06 22:23:48,150 - ERROR - [Replicate_Results_090625_v1.py:698] - Failed to process column 'iv3_health_behaviors_score': arg must be a list, tuple, 1-d array, or Series
+2025-09-06 22:23:48,155 - WARNING - [Replicate_Results_090625_v1.py:690] - Column 'iv3_health_behaviors_score' is a 2D array with shape (3080, 2). Extracting first column.
+2025-09-06 22:23:48,155 - ERROR - [Replicate_Results_090625_v1.py:698] - Failed to process column 'iv3_health_behaviors_score': arg must be a list, tuple, 1-d array, or Series
+2025-09-06 22:23:48,160 - WARNING - [Replicate_Results_090625_v1.py:690] - Column 'iv3_health_behaviors_score' is a 2D array with shape (3080, 2). Extracting first column.
+2025-09-06 22:23:48,160 - ERROR - [Replicate_Results_090625_v1.py:698] - Failed to process column 'iv3_health_behaviors_score': arg must be a list, tuple, 1-d array, or Series
+2025-09-06 22:23:48,164 - WARNING - [Replicate_Results_090625_v1.py:690] - Column 'iv1_medicaid_expansion_active' is a 2D array with shape (2109, 2). Extracting first column.
+2025-09-06 22:23:48,164 - ERROR - [Replicate_Results_090625_v1.py:698] - Failed to process column 'iv1_medicaid_expansion_active': arg must be a list, tuple, 1-d array, or Series
+2025-09-06 22:23:48,167 - WARNING - [Replicate_Results_090625_v1.py:690] - Column 'iv1_medicaid_expansion_active' is a 2D array with shape (2109, 2). Extracting first column.
+2025-09-06 22:23:48,167 - ERROR - [Replicate_Results_090625_v1.py:698] - Failed to process column 'iv1_medicaid_expansion_active': arg must be a list, tuple, 1-d array, or Series
+2025-09-06 22:23:48,168 - INFO - [Replicate_Results_090625_v1.py:946] - Saved moderation summary to genai_robotics_health_output/moderation_analysis_summary.csv
+2025-09-06 22:23:48,193 - INFO - [Replicate_Results_090625_v1.py:999] - Saved index-level OLS summary to genai_robotics_health_output/index_level_ols_summary.csv
+2025-09-06 22:23:48,217 - INFO - [Replicate_Results_090625_v1.py:1029] - Saved direct DV3 effects to genai_robotics_health_output/direct_effects_on_dv3_summary.csv
+2025-09-06 22:23:48,398 - INFO - [Replicate_Results_090625_v1.py:657] - Saved DV3 direct effect plot: genai_robotics_health_output/plots/Direct_Effect_DV3.png
+2025-09-06 22:23:48,400 - INFO - [Replicate_Results_090625_v1.py:1110] - Saved replication report to genai_robotics_health_output/replication_report.csv
+2025-09-06 22:23:48,400 - INFO - [Replicate_Results_090625_v1.py:1114] - All done. Check logs and output directory for results.

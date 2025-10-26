@@ -1,0 +1,190 @@
+2025-05-24 17:08:07,832 - INFO - YPLL_AIPW_Analysis_052325_v7 - Logging to: logs/genai_components_causal_analysis_log_20250524_170807.txt
+2025-05-24 17:08:07,832 - INFO - YPLL_AIPW_Analysis_052325_v7 - Starting Generative AI & Robotics Component-Level Causal Analysis Script.
+2025-05-24 17:08:07,832 - INFO - YPLL_AIPW_Analysis_052325_v7 - Output will be saved in: genai_components_causal_output and logs/
+2025-05-24 17:08:07,900 - INFO - YPLL_AIPW_Analysis_052325_v7 - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-05-24 17:08:33,089 - INFO - YPLL_AIPW_Analysis_052325_v7 - Data for component analysis retrieved: 3080 rows, 14 columns.
+2025-05-24 17:08:33,089 - INFO - YPLL_AIPW_Analysis_052325_v7 - Converting population to numeric and filtering...
+2025-05-24 17:08:33,092 - INFO - YPLL_AIPW_Analysis_052325_v7 - Performing common data preparations...
+2025-05-24 17:08:33,093 - INFO - YPLL_AIPW_Analysis_052325_v7 - Created 8 dummy variables for 'census_division'.
+2025-05-24 17:08:33,093 - INFO - YPLL_AIPW_Analysis_052325_v7 - Common data preparations complete.
+2025-05-24 17:08:33,093 - INFO - YPLL_AIPW_Analysis_052325_v7 - Processing Component: AI Staff Scheduling
+2025-05-24 17:08:33,093 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Prevalence for pct_wfaiss_enabled_beds_adopted: 9.71%
+2025-05-24 17:08:33,095 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Final N for pct_wfaiss_enabled_beds analysis: 3080 (Treated: 299, Control: 2781)
+2025-05-24 17:08:33,095 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Starting AIPW Analysis for Treatment: pct_wfaiss_enabled_beds_adopted ---
+2025-05-24 17:08:33,491 - INFO - YPLL_AIPW_Analysis_052325_v7 - Propensity score overlap plot saved to genai_components_causal_output/plots/propensity_overlap_pct_wfaiss_enabled_beds_adopted.png
+2025-05-24 17:08:33,494 - INFO - YPLL_AIPW_Analysis_052325_v7 - ATE for pct_wfaiss_enabled_beds_adopted: -306.4690
+2025-05-24 17:08:33,699 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 25/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:33,888 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 50/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:34,096 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 75/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:34,276 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 100/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:34,450 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 125/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:34,644 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 150/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:34,820 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 175/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:34,991 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 200/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:35,170 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 225/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:35,343 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 250/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:35,527 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 275/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:35,699 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 300/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:35,871 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 325/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:36,046 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 350/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:36,212 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 375/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:36,384 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 400/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:36,551 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 425/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:36,719 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 450/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:36,898 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 475/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:37,072 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 500/500 for pct_wfaiss_enabled_beds_adopted
+2025-05-24 17:08:37,078 - INFO - YPLL_AIPW_Analysis_052325_v7 - 95% CI for pct_wfaiss_enabled_beds_adopted (500 valid samples): [-1112.7474, 454.1087]
+2025-05-24 17:08:37,078 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Finished AIPW Analysis for Treatment: pct_wfaiss_enabled_beds_adopted ---
+2025-05-24 17:08:37,079 - INFO - YPLL_AIPW_Analysis_052325_v7 - Processing Component: AI Predict Staff Needs
+2025-05-24 17:08:37,079 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Prevalence for pct_wfaipsn_enabled_beds_adopted: 10.32%
+2025-05-24 17:08:37,080 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Final N for pct_wfaipsn_enabled_beds analysis: 3080 (Treated: 318, Control: 2762)
+2025-05-24 17:08:37,081 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Starting AIPW Analysis for Treatment: pct_wfaipsn_enabled_beds_adopted ---
+2025-05-24 17:08:37,321 - INFO - YPLL_AIPW_Analysis_052325_v7 - Propensity score overlap plot saved to genai_components_causal_output/plots/propensity_overlap_pct_wfaipsn_enabled_beds_adopted.png
+2025-05-24 17:08:37,323 - INFO - YPLL_AIPW_Analysis_052325_v7 - ATE for pct_wfaipsn_enabled_beds_adopted: -178.2684
+2025-05-24 17:08:37,494 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 25/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:37,680 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 50/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:37,861 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 75/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:38,071 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 100/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:38,252 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 125/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:38,430 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 150/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:38,606 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 175/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:38,783 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 200/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:38,972 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 225/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:39,165 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 250/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:39,369 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 275/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:39,561 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 300/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:39,741 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 325/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:39,930 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 350/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:40,106 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 375/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:40,295 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 400/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:40,475 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 425/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:40,657 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 450/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:40,861 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 475/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:41,065 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 500/500 for pct_wfaipsn_enabled_beds_adopted
+2025-05-24 17:08:41,072 - INFO - YPLL_AIPW_Analysis_052325_v7 - 95% CI for pct_wfaipsn_enabled_beds_adopted (500 valid samples): [-663.3531, 357.1462]
+2025-05-24 17:08:41,072 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Finished AIPW Analysis for Treatment: pct_wfaipsn_enabled_beds_adopted ---
+2025-05-24 17:08:41,073 - INFO - YPLL_AIPW_Analysis_052325_v7 - Processing Component: AI Predict Pt Demand
+2025-05-24 17:08:41,073 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Prevalence for pct_wfaippd_enabled_beds_adopted: 10.94%
+2025-05-24 17:08:41,074 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Final N for pct_wfaippd_enabled_beds analysis: 3080 (Treated: 337, Control: 2743)
+2025-05-24 17:08:41,074 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Starting AIPW Analysis for Treatment: pct_wfaippd_enabled_beds_adopted ---
+2025-05-24 17:08:41,296 - INFO - YPLL_AIPW_Analysis_052325_v7 - Propensity score overlap plot saved to genai_components_causal_output/plots/propensity_overlap_pct_wfaippd_enabled_beds_adopted.png
+2025-05-24 17:08:41,298 - INFO - YPLL_AIPW_Analysis_052325_v7 - ATE for pct_wfaippd_enabled_beds_adopted: -438.8069
+2025-05-24 17:08:41,471 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 25/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:41,665 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 50/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:41,845 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 75/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:42,037 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 100/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:42,210 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 125/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:42,384 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 150/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:42,559 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 175/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:42,802 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 200/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:42,992 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 225/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:43,164 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 250/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:43,340 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 275/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:43,529 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 300/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:43,713 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 325/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:43,901 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 350/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:44,082 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 375/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:44,289 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 400/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:44,480 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 425/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:44,662 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 450/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:44,854 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 475/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:45,065 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 500/500 for pct_wfaippd_enabled_beds_adopted
+2025-05-24 17:08:45,071 - INFO - YPLL_AIPW_Analysis_052325_v7 - 95% CI for pct_wfaippd_enabled_beds_adopted (500 valid samples): [-895.6629, 67.0953]
+2025-05-24 17:08:45,071 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Finished AIPW Analysis for Treatment: pct_wfaippd_enabled_beds_adopted ---
+2025-05-24 17:08:45,072 - INFO - YPLL_AIPW_Analysis_052325_v7 - Processing Component: AI Automate Routine Tasks
+2025-05-24 17:08:45,072 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Prevalence for pct_wfaiart_enabled_beds_adopted: 13.54%
+2025-05-24 17:08:45,073 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Final N for pct_wfaiart_enabled_beds analysis: 3080 (Treated: 417, Control: 2663)
+2025-05-24 17:08:45,073 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Starting AIPW Analysis for Treatment: pct_wfaiart_enabled_beds_adopted ---
+2025-05-24 17:08:45,316 - INFO - YPLL_AIPW_Analysis_052325_v7 - Propensity score overlap plot saved to genai_components_causal_output/plots/propensity_overlap_pct_wfaiart_enabled_beds_adopted.png
+2025-05-24 17:08:45,320 - INFO - YPLL_AIPW_Analysis_052325_v7 - ATE for pct_wfaiart_enabled_beds_adopted: -946.2930
+2025-05-24 17:08:45,495 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 25/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:45,680 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 50/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:45,858 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 75/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:46,048 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 100/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:46,237 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 125/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:46,413 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 150/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:46,591 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 175/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:46,789 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 200/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:46,983 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 225/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:47,174 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 250/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:47,371 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 275/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:47,579 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 300/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:47,791 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 325/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:47,979 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 350/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:48,167 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 375/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:48,347 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 400/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:48,552 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 425/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:48,761 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 450/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:48,934 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 475/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:49,113 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 500/500 for pct_wfaiart_enabled_beds_adopted
+2025-05-24 17:08:49,121 - INFO - YPLL_AIPW_Analysis_052325_v7 - 95% CI for pct_wfaiart_enabled_beds_adopted (500 valid samples): [-1756.2098, -169.0992]
+2025-05-24 17:08:49,121 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Finished AIPW Analysis for Treatment: pct_wfaiart_enabled_beds_adopted ---
+2025-05-24 17:08:49,122 - INFO - YPLL_AIPW_Analysis_052325_v7 - Processing Component: AI Optimize Workflows
+2025-05-24 17:08:49,122 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Prevalence for pct_wfaioacw_enabled_beds_adopted: 14.71%
+2025-05-24 17:08:49,123 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Final N for pct_wfaioacw_enabled_beds analysis: 3080 (Treated: 453, Control: 2627)
+2025-05-24 17:08:49,123 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Starting AIPW Analysis for Treatment: pct_wfaioacw_enabled_beds_adopted ---
+2025-05-24 17:08:49,343 - INFO - YPLL_AIPW_Analysis_052325_v7 - Propensity score overlap plot saved to genai_components_causal_output/plots/propensity_overlap_pct_wfaioacw_enabled_beds_adopted.png
+2025-05-24 17:08:49,346 - INFO - YPLL_AIPW_Analysis_052325_v7 - ATE for pct_wfaioacw_enabled_beds_adopted: -294.6499
+2025-05-24 17:08:49,511 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 25/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:49,692 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 50/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:49,874 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 75/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:50,071 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 100/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:50,248 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 125/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:50,433 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 150/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:50,642 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 175/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:50,833 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 200/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:51,006 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 225/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:51,177 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 250/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:51,384 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 275/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:51,572 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 300/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:51,766 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 325/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:51,943 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 350/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:52,127 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 375/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:52,313 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 400/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:52,477 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 425/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:52,662 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 450/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:52,825 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 475/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:53,020 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 500/500 for pct_wfaioacw_enabled_beds_adopted
+2025-05-24 17:08:53,027 - INFO - YPLL_AIPW_Analysis_052325_v7 - 95% CI for pct_wfaioacw_enabled_beds_adopted (500 valid samples): [-766.2599, 270.5282]
+2025-05-24 17:08:53,027 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Finished AIPW Analysis for Treatment: pct_wfaioacw_enabled_beds_adopted ---
+2025-05-24 17:08:53,028 - INFO - YPLL_AIPW_Analysis_052325_v7 - Processing Component: Robotics in Hospital
+2025-05-24 17:08:53,028 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Prevalence for pct_robohos_enabled_beds_adopted: 25.16%
+2025-05-24 17:08:53,030 - INFO - YPLL_AIPW_Analysis_052325_v7 -   Final N for pct_robohos_enabled_beds analysis: 3080 (Treated: 775, Control: 2305)
+2025-05-24 17:08:53,030 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Starting AIPW Analysis for Treatment: pct_robohos_enabled_beds_adopted ---
+2025-05-24 17:08:53,248 - INFO - YPLL_AIPW_Analysis_052325_v7 - Propensity score overlap plot saved to genai_components_causal_output/plots/propensity_overlap_pct_robohos_enabled_beds_adopted.png
+2025-05-24 17:08:53,251 - INFO - YPLL_AIPW_Analysis_052325_v7 - ATE for pct_robohos_enabled_beds_adopted: -471.2637
+2025-05-24 17:08:53,434 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 25/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:53,652 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 50/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:53,854 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 75/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:54,056 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 100/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:54,257 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 125/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:54,473 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 150/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:54,713 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 175/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:54,924 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 200/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:55,129 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 225/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:55,327 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 250/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:55,535 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 275/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:55,741 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 300/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:55,967 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 325/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:56,181 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 350/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:56,367 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 375/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:56,563 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 400/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:56,772 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 425/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:56,968 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 450/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:57,175 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 475/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:57,356 - INFO - YPLL_AIPW_Analysis_052325_v7 - Bootstrap iteration 500/500 for pct_robohos_enabled_beds_adopted
+2025-05-24 17:08:57,363 - INFO - YPLL_AIPW_Analysis_052325_v7 - 95% CI for pct_robohos_enabled_beds_adopted (500 valid samples): [-746.4017, -184.4217]
+2025-05-24 17:08:57,363 - INFO - YPLL_AIPW_Analysis_052325_v7 - --- Finished AIPW Analysis for Treatment: pct_robohos_enabled_beds_adopted ---
+2025-05-24 17:08:57,364 - INFO - YPLL_AIPW_Analysis_052325_v7 - ================================================================================
+2025-05-24 17:08:57,364 - INFO - YPLL_AIPW_Analysis_052325_v7 - Component-Level Causal Analysis Summary:
+2025-05-24 17:08:57,369 - INFO - YPLL_AIPW_Analysis_052325_v7 - 
+                Component       ATE   CI_Lower  CI_Upper  N_Treated  N_Control Significant  Error
+      AI Staff Scheduling -306.4690 -1112.7474  454.1087        299       2781          No  False
+   AI Predict Staff Needs -178.2684  -663.3531  357.1462        318       2762          No  False
+     AI Predict Pt Demand -438.8069  -895.6629   67.0953        337       2743          No  False
+AI Automate Routine Tasks -946.2930 -1756.2098 -169.0992        417       2663         Yes  False
+    AI Optimize Workflows -294.6499  -766.2599  270.5282        453       2627          No  False
+     Robotics in Hospital -471.2637  -746.4017 -184.4217        775       2305         Yes  False
+2025-05-24 17:08:57,536 - INFO - YPLL_AIPW_Analysis_052325_v7 - Summary table also saved to genai_components_causal_output/component_analysis_summary.csv
+2025-05-24 17:08:57,536 - INFO - YPLL_AIPW_Analysis_052325_v7 - ================================================================================
+2025-05-24 17:08:57,536 - INFO - YPLL_AIPW_Analysis_052325_v7 - Script finished.

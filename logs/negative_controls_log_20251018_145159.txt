@@ -1,0 +1,7 @@
+2025-10-18 14:51:59,586 - INFO - Logger initialized.
+2025-10-18 14:51:59,640 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 14:52:27,845 - INFO - Base data: 3135 counties.
+2025-10-18 14:52:27,847 - INFO - Added division FE (dummies=8).
+2025-10-18 14:52:27,911 - INFO - [Direct NCO] Skipping pct_households_with_lack_of_kitchen_or_plumbing: not found.
+2025-10-18 14:52:27,911 - INFO - [Direct NCO] Skipping percentage_of_households_with_high_housing_costs: not found.
+2025-10-18 14:52:27,911 - INFO - [Direct NCO] Skipping percentage_of_households_with_overcrowding: not found.

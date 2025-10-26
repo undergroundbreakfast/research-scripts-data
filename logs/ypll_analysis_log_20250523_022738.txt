@@ -1,0 +1,66 @@
+2025-05-23 02:27:38,011 - INFO - Logging to: logs/ypll_analysis_log_20250523_022738.txt
+2025-05-23 02:27:38,011 - INFO - Starting YPLL Analysis Script.
+2025-05-23 02:27:38,011 - INFO - Output (logs, plots) will be saved in: ypll_analysis_output and logs/
+2025-05-23 02:27:38,080 - INFO - Connected to Postgres database 'Research_TEST' successfully.
+2025-05-23 02:28:01,190 - INFO - Data for YPLL analysis retrieved: 3080 rows, 8 columns.
+2025-05-23 02:28:01,190 - INFO - Converting population to numeric and filtering zero/negative values...
+2025-05-23 02:28:01,192 - INFO - Preparing data for analysis...
+2025-05-23 02:28:01,193 - INFO - Created 'log_population'.
+2025-05-23 02:28:01,194 - INFO - Using '1' as the reference category for 'census_division' dummies.
+2025-05-23 02:28:01,196 - INFO - Created 8 dummy variables for 'census_division': ['div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-05-23 02:28:01,198 - INFO - Data preparation complete.
+2025-05-23 02:28:01,198 - INFO - Starting OLS regression analysis...
+2025-05-23 02:28:01,198 - INFO - OLS Formula: premature_death_raw_value ~ weighted_ai_adoption_score + health_behaviors_score + social_economic_factors_score + log_population + medicaid_expansion_active + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-05-23 02:28:01,220 - INFO - OLS Regression Summary:
+                                OLS Regression Results                               
+=====================================================================================
+Dep. Variable:     premature_death_raw_value   R-squared:                       0.699
+Model:                                   OLS   Adj. R-squared:                  0.697
+Method:                        Least Squares   F-statistic:                     546.9
+Date:                       Fri, 23 May 2025   Prob (F-statistic):               0.00
+Time:                               02:28:01   Log-Likelihood:                -27642.
+No. Observations:                       3080   AIC:                         5.531e+04
+Df Residuals:                           3066   BIC:                         5.540e+04
+Df Model:                                 13                                         
+Covariance Type:                   nonrobust                                         
+=================================================================================================
+                                    coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+Intercept                      2492.1754    474.643      5.251      0.000    1561.525    3422.826
+weighted_ai_adoption_score      -77.1489     40.560     -1.902      0.057    -156.677       2.379
+health_behaviors_score           56.9547      1.765     32.263      0.000      53.493      60.416
+social_economic_factors_score   523.5505     10.553     49.613      0.000     502.859     544.242
+log_population                 -293.9399     29.574     -9.939      0.000    -351.928    -235.952
+medicaid_expansion_active      -122.9665     80.062     -1.536      0.125    -279.947      34.014
+div_2                          1311.7154    295.272      4.442      0.000     732.765    1890.666
+div_3                          1817.0439    269.901      6.732      0.000    1287.839    2346.249
+div_4                          1213.0500    267.655      4.532      0.000     688.249    1737.851
+div_5                          2972.7861    278.779     10.664      0.000    2426.174    3519.398
+div_6                           312.2831    272.909      1.144      0.253    -222.820     847.386
+div_7                          2213.7825    276.244      8.014      0.000    1672.140    2755.425
+div_8                           480.1539    280.591      1.711      0.087     -70.011    1030.319
+div_9                           381.0824    293.318      1.299      0.194    -194.036     956.201
+==============================================================================
+Omnibus:                      464.180   Durbin-Watson:                   1.850
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3549.873
+Skew:                           0.487   Prob(JB):                         0.00
+Kurtosis:                       8.168   Cond. No.                         992.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+2025-05-23 02:28:01,221 - INFO - Regression coefficient for 'weighted_ai_adoption_score' = -77.1489, SE = 40.5602
+2025-05-23 02:28:01,221 - INFO - Starting scenario simulation for YPLL reduction...
+2025-05-23 02:28:01,222 - INFO - 75th percentile of 'weighted_ai_adoption_score' = 0.0000
+2025-05-23 02:28:01,222 - INFO - Total YPLL (Years of Potential Life Lost) potentially averted = 0
+2025-05-23 02:28:01,222 - INFO - Total premature deaths potentially averted = 0
+2025-05-23 02:28:01,222 - INFO - Assumption: Each prevented premature death equals ~29.0 YPLL.
+2025-05-23 02:28:01,222 - INFO - Assumption: Counties below 75th percentile AI adoption (0.0000) are raised to this level.
+2025-05-23 02:28:01,222 - INFO - Generating visualizations...
+2025-05-23 02:28:01,595 - INFO - Saved figure: ypll_analysis_output/plots/ai_adoption_distribution.png
+2025-05-23 02:28:01,762 - INFO - Saved figure: ypll_analysis_output/plots/delta_ai_distribution.png
+2025-05-23 02:28:01,930 - INFO - Saved figure: ypll_analysis_output/plots/ypll_reduction_distribution.png
+2025-05-23 02:28:01,930 - INFO - Visualizations generated successfully.
+2025-05-23 02:28:01,930 - INFO - ================================================================================
+2025-05-23 02:28:01,931 - INFO - YPLL Analysis Script finished.
+2025-05-23 02:28:01,931 - INFO - ================================================================================

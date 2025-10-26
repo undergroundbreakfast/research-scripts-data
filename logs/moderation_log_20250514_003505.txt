@@ -1,0 +1,25 @@
+2025-05-14 00:35:05,628 - INFO - Logging to: logs/moderation_log_20250514_003505.txt
+2025-05-14 00:35:05,628 - INFO - Output will be saved in: moderation_output
+2025-05-14 00:35:05,698 - INFO - Connected to Postgres successfully.
+2025-05-14 00:35:31,628 - INFO - Data fetched from vw_conceptual_model: shape=(2126, 12)
+2025-05-14 00:35:31,628 - INFO - Converting columns to numeric types...
+2025-05-14 00:35:31,630 - INFO - Using '1' as the reference category for census_division dummies.
+2025-05-14 00:35:31,632 - INFO - Created 8 dummy cols for census_division
+2025-05-14 00:35:31,632 - INFO - Saving coefficients summary to: moderation_output/Moderation_Coefficients_All_Transformations.csv
+2025-05-14 00:35:31,632 - INFO - --------------------------------------------------------------------------------
+2025-05-14 00:35:31,632 - INFO - PATH 1/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-14 00:35:31,632 - INFO -   Running with RAW transformation
+2025-05-14 00:35:31,632 - INFO -   Data summary after raw transformation:
+2025-05-14 00:35:31,632 - INFO -     iv1_public_health_policy: dtype=int64, min=0, max=1, NaN count=0
+2025-05-14 00:35:31,632 - INFO -     mo1_genai_capabilities: dtype=float64, min=0.0, max=5.0, NaN count=0
+2025-05-14 00:35:31,632 - INFO -     dv1_healthcare_access: dtype=float64, min=-3.538009605040879, max=4817.359152346999, NaN count=0
+2025-05-14 00:35:31,632 - INFO -   Control variable data types:
+2025-05-14 00:35:31,632 - INFO -     population: dtype=int64, NaN count=0
+2025-05-14 00:35:31,632 - INFO -     div_2: dtype=int64, NaN count=0
+2025-05-14 00:35:31,632 - INFO -     div_3: dtype=int64, NaN count=0
+2025-05-14 00:35:31,633 - INFO -     div_4: dtype=int64, NaN count=0
+2025-05-14 00:35:31,633 - INFO -     div_5: dtype=int64, NaN count=0
+2025-05-14 00:35:31,633 - INFO -     div_6: dtype=int64, NaN count=0
+2025-05-14 00:35:31,633 - INFO -     div_7: dtype=int64, NaN count=0
+2025-05-14 00:35:31,633 - INFO -     div_8: dtype=int64, NaN count=0
+2025-05-14 00:35:31,633 - INFO -     div_9: dtype=int64, NaN count=0

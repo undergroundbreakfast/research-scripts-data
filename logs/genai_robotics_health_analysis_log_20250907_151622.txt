@@ -1,0 +1,29 @@
+2025-09-07 15:16:22,423 - INFO - [Replicate_Results_090625_v3.py:75] - Logging to: logs/genai_robotics_health_analysis_log_20250907_151622.txt
+2025-09-07 15:16:22,423 - INFO - [Replicate_Results_090625_v3.py:814] - Starting Dissertation Replication & Testing Script.
+2025-09-07 15:16:22,489 - INFO - [Replicate_Results_090625_v3.py:100] - Connected to PostgreSQL database 'Research_TEST'.
+2025-09-07 15:16:22,491 - INFO - [Replicate_Results_090625_v3.py:144] - Using table/view: vw_conceptual_model_adjpd
+2025-09-07 15:16:22,491 - INFO - [Replicate_Results_090625_v3.py:144] - Using table/view: vw_conceptual_model_variables_adjpd
+2025-09-07 15:16:22,492 - INFO - [Replicate_Results_090625_v3.py:144] - Using table/view: vw_adjpd_weighted_tech_summary
+2025-09-07 15:16:22,493 - INFO - [Replicate_Results_090625_v3.py:197] - HRSA health equity table found: hrsa_health_equity_data (for SP5 rurality).
+2025-09-07 15:16:51,300 - INFO - [Replicate_Results_090625_v3.py:309] - Data retrieved: 3135 rows, 22 columns.
+2025-09-07 15:16:51,303 - INFO - [Replicate_Results_090625_v3.py:358] - Created 8 division dummies.
+2025-09-07 15:16:51,303 - INFO - [Replicate_Results_090625_v3.py:387] - Filled 2 NaNs with 0 for tech column 'mo11_ai_automate_routine_tasks_pct'.
+2025-09-07 15:16:51,304 - INFO - [Replicate_Results_090625_v3.py:387] - Filled 2 NaNs with 0 for tech column 'mo12_ai_optimize_workflows_pct'.
+2025-09-07 15:16:51,304 - INFO - [Replicate_Results_090625_v3.py:387] - Filled 2 NaNs with 0 for tech column 'mo13_ai_predict_patient_demand_pct'.
+2025-09-07 15:16:51,304 - INFO - [Replicate_Results_090625_v3.py:387] - Filled 2 NaNs with 0 for tech column 'mo14_ai_predict_staff_needs_pct'.
+2025-09-07 15:16:51,304 - INFO - [Replicate_Results_090625_v3.py:387] - Filled 2 NaNs with 0 for tech column 'mo15_ai_staff_scheduling_pct'.
+2025-09-07 15:16:51,304 - INFO - [Replicate_Results_090625_v3.py:387] - Filled 2 NaNs with 0 for tech column 'mo21_robotics_in_hospital_pct'.
+2025-09-07 15:17:35,486 - INFO - [Replicate_Results_090625_v3.py:939] - Saved main effects summary to genai_robotics_health_output/main_effects_on_health_summary.csv
+2025-09-07 15:17:35,705 - INFO - [Replicate_Results_090625_v3.py:674] - Saved main effect comparison plot: genai_robotics_health_output/plots/Main_Effect_Comparison.png
+2025-09-07 15:17:35,966 - INFO - [Replicate_Results_090625_v3.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV3_x_MO1_on_DV2.png
+2025-09-07 15:17:36,225 - INFO - [Replicate_Results_090625_v3.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV3_x_MO11_on_DV21.png
+2025-09-07 15:17:36,512 - INFO - [Replicate_Results_090625_v3.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV3_x_MO12_on_DV21.png
+2025-09-07 15:17:36,765 - INFO - [Replicate_Results_090625_v3.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV1_x_MO1_on_DV3.png
+2025-09-07 15:17:36,978 - INFO - [Replicate_Results_090625_v3.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV1_x_MO2_on_DV3.png
+2025-09-07 15:17:37,002 - INFO - [Replicate_Results_090625_v3.py:1000] - Saved moderation summary to genai_robotics_health_output/moderation_analysis_summary.csv
+2025-09-07 15:17:37,219 - INFO - [Replicate_Results_090625_v3.py:804] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_MO1_x_SP5_on_DV2.png
+2025-09-07 15:17:37,440 - INFO - [Replicate_Results_090625_v3.py:804] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_MO2_x_SP5_on_DV3.png
+2025-09-07 15:17:37,441 - INFO - [Replicate_Results_090625_v3.py:1088] - Saved rurality moderation summary to genai_robotics_health_output/rurality_moderation_summary.csv
+2025-09-07 15:17:37,645 - INFO - [Replicate_Results_090625_v3.py:804] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_MO1_x_SP5_on_DV21.png
+2025-09-07 15:17:37,859 - INFO - [Replicate_Results_090625_v3.py:804] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_MO2_x_SP5_on_DV21.png
+2025-09-07 15:17:37,860 - INFO - [Replicate_Results_090625_v3.py:1162] - Saved rurality moderation (DV21) to genai_robotics_health_output/rurality_moderation_dv21_summary.csv

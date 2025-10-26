@@ -1,0 +1,45 @@
+2025-04-21 22:48:00,878 - INFO - Logging to: logs/moderation_log_20250421_224800.txt
+2025-04-21 22:48:01,060 - INFO - Connected to Postgres successfully.
+2025-04-21 22:48:25,544 - INFO - Data fetched from vw_conceptual_model: shape=(3143, 12)
+2025-04-21 22:48:25,547 - INFO - Created 9 dummy cols for census_division
+2025-04-21 22:48:25,547 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:48:25,547 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-21 22:48:25,564 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.193
+Model:                               OLS   Adj. R-squared:                  0.190
+Method:                    Least Squares   F-statistic:                     62.07
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.83e-135
+Time:                           22:48:25   Log-Likelihood:                -24284.
+No. Observations:                   3135   AIC:                         4.859e+04
+Df Residuals:                       3122   BIC:                         4.867e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                               926.7688     77.102     12.020      0.000     775.593    1077.945
+iv1_public_health_policy                             29.6652     24.018      1.235      0.217     -17.428      76.758
+mo1_genai_capabilities                              -24.1573     17.948     -1.346      0.178     -59.349      11.034
+iv1_public_health_policy_X_mo1_genai_capabilities   -33.4506     23.471     -1.425      0.154     -79.470      12.569
+population                                           -0.0001    3.1e-05     -4.211      0.000      -0.000   -6.97e-05
+div_2                                               279.0924     86.215      3.237      0.001     110.049     448.136
+div_3                                               529.6145     78.114      6.780      0.000     376.455     682.774
+div_4                                               397.8799     77.931      5.106      0.000     245.078     550.681
+div_5                                               753.3372     80.572      9.350      0.000     595.359     911.316
+div_6                                               224.7481     78.054      2.879      0.004      71.705     377.791
+div_7                                               578.7578     79.380      7.291      0.000     423.115     734.401
+div_8                                               -86.6340     81.016     -1.069      0.285    -245.485      72.217
+div_9                                              -161.2506     85.146     -1.894      0.058    -328.198       5.697
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      981.222   Durbin-Watson:                   1.779
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5284.769
+Skew:                           1.386   Prob(JB):                         0.00
+Kurtosis:                       8.725   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.

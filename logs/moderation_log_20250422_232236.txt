@@ -1,0 +1,1217 @@
+2025-04-22 23:22:36,035 - INFO - Logging to: logs/moderation_log_20250422_232236.txt
+2025-04-22 23:22:36,928 - INFO - Connected to Postgres successfully.
+2025-04-22 23:23:10,755 - INFO - Data fetched from vw_conceptual_model: shape=(3143, 12)
+2025-04-22 23:23:10,758 - INFO - Created 9 dummy cols for census_division
+2025-04-22 23:23:10,758 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:10,758 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-22 23:23:10,762 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:10,762 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:10,765 - WARNING - High condition number: 7813993.8 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:10,765 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:10,767 - INFO - Centering reduced condition number from 7813993.8 to 7794823.5
+2025-04-22 23:23:10,768 - INFO - Using centered variables: ['iv1_public_health_policy_c', 'mo1_genai_capabilities_c', 'iv1_public_health_policy_c_X_mo1_genai_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:10,830 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:10,830 - WARNING -   - const: VIF = 54.92
+2025-04-22 23:23:10,832 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.200
+Model:                               OLS   Adj. R-squared:                  0.197
+Method:                    Least Squares   F-statistic:                     65.17
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          7.43e-142
+Time:                           23:23:10   Log-Likelihood:                -24111.
+No. Observations:                   3135   AIC:                         4.825e+04
+Df Residuals:                       3122   BIC:                         4.833e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=========================================================================================================================
+                                                            coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------
+const                                                   946.4512     70.233     13.476      0.000     808.744    1084.159
+iv1_public_health_policy_c                                4.0494     21.920      0.185      0.853     -38.930      47.029
+mo1_genai_capabilities_c                                -55.1350     11.080     -4.976      0.000     -76.859     -33.411
+iv1_public_health_policy_c_X_mo1_genai_capabilities_c   -22.1874     22.210     -0.999      0.318     -65.735      21.361
+population                                               -0.0002   2.93e-05     -5.678      0.000      -0.000      -0.000
+div_2                                                   289.6855     81.584      3.551      0.000     129.722     449.649
+div_3                                                   545.1418     73.918      7.375      0.000     400.209     690.075
+div_4                                                   405.6102     73.745      5.500      0.000     261.016     550.204
+div_5                                                   758.5241     76.244      9.949      0.000     609.031     908.017
+div_6                                                   274.1986     73.862      3.712      0.000     129.376     419.021
+div_7                                                   611.3014     75.116      8.138      0.000     464.019     758.584
+div_8                                                   -23.1882     76.665     -0.302      0.762    -173.506     127.130
+div_9                                                   -71.4057     80.572     -0.886      0.376    -229.386      86.575
+==============================================================================
+Omnibus:                     1219.400   Durbin-Watson:                   1.819
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7158.512
+Skew:                           1.744   Prob(JB):                         0.00
+Kurtosis:                       9.529   Cond. No.                     7.79e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.79e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:11,423 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:11,423 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:11,423 - INFO - Fitting moderation model: iv1_public_health_policy x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-22 23:23:11,426 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:11,426 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:11,428 - WARNING - High condition number: 7803246.9 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:11,428 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:11,429 - INFO - Centering reduced condition number from 7803246.9 to 7783857.7
+2025-04-22 23:23:11,429 - INFO - Using centered variables: ['iv1_public_health_policy_c', 'mo2_robotics_capabilities_c', 'iv1_public_health_policy_c_X_mo2_robotics_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:11,449 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:11,449 - WARNING -   - const: VIF = 54.75
+2025-04-22 23:23:11,452 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.226
+Model:                               OLS   Adj. R-squared:                  0.223
+Method:                    Least Squares   F-statistic:                     76.11
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          5.15e-164
+Time:                           23:23:11   Log-Likelihood:                -24059.
+No. Observations:                   3135   AIC:                         4.814e+04
+Df Residuals:                       3122   BIC:                         4.822e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+const                                                      914.7367     68.970     13.263      0.000     779.505    1049.969
+iv1_public_health_policy_c                                   7.1230     21.566      0.330      0.741     -35.163      49.409
+mo2_robotics_capabilities_c                                -35.3045      3.065    -11.519      0.000     -41.314     -29.295
+iv1_public_health_policy_c_X_mo2_robotics_capabilities_c     4.0425      6.030      0.670      0.503      -7.780      15.865
+population                                                  -0.0001   2.93e-05     -3.922      0.000      -0.000   -5.74e-05
+div_2                                                      318.1758     80.335      3.961      0.000     160.662     475.690
+div_3                                                      577.7166     72.632      7.954      0.000     435.306     720.127
+div_4                                                      443.0145     72.579      6.104      0.000     300.706     585.323
+div_5                                                      776.3260     74.785     10.381      0.000     629.694     922.958
+div_6                                                      291.5563     72.507      4.021      0.000     149.391     433.722
+div_7                                                      626.8093     73.743      8.500      0.000     482.220     771.399
+div_8                                                        2.1400     75.187      0.028      0.977    -145.282     149.562
+div_9                                                      -28.3084     79.105     -0.358      0.720    -183.411     126.795
+==============================================================================
+Omnibus:                     1196.515   Durbin-Watson:                   1.836
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7219.702
+Skew:                           1.696   Prob(JB):                         0.00
+Kurtosis:                       9.616   Cond. No.                     7.78e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.78e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:11,742 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:11,742 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:11,742 - INFO - Fitting moderation model: iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-22 23:23:11,746 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access model:
+2025-04-22 23:23:11,746 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9785
+2025-04-22 23:23:11,746 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:11,746 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:11,747 - WARNING - High condition number: 7784730.8 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:11,747 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:11,748 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:11,760 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:11,760 - WARNING -   - const: VIF = 83.81
+2025-04-22 23:23:11,760 - WARNING -   - mo1_genai_capabilities: VIF = 26.98
+2025-04-22 23:23:11,760 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 27.43
+2025-04-22 23:23:11,762 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.231
+Model:                               OLS   Adj. R-squared:                  0.228
+Method:                    Least Squares   F-statistic:                     78.26
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          2.73e-168
+Time:                           23:23:11   Log-Likelihood:                -24049.
+No. Observations:                   3135   AIC:                         4.812e+04
+Df Residuals:                       3122   BIC:                         4.820e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                               411.8881     85.063      4.842      0.000     245.103     578.674
+iv2_physical_environment                            304.7675     27.272     11.175      0.000     251.295     358.240
+mo1_genai_capabilities                               22.5546     54.891      0.411      0.681     -85.072     130.181
+iv2_physical_environment_X_mo1_genai_capabilities   -38.7322     24.636     -1.572      0.116     -87.036       9.572
+population                                           -0.0002   2.98e-05     -8.087      0.000      -0.000      -0.000
+div_2                                               159.8060     81.321      1.965      0.049       0.358     319.254
+div_3                                               403.2548     72.534      5.560      0.000     261.035     545.475
+div_4                                               248.7132     73.957      3.363      0.001     103.704     393.723
+div_5                                               588.1808     75.082      7.834      0.000     440.965     735.396
+div_6                                               253.9300     71.529      3.550      0.000     113.682     394.178
+div_7                                               419.3238     74.294      5.644      0.000     273.654     564.994
+div_8                                                53.6385     74.913      0.716      0.474     -93.244     200.521
+div_9                                              -179.5449     79.778     -2.251      0.024    -335.967     -23.123
+==============================================================================
+Omnibus:                     1217.041   Durbin-Watson:                   1.870
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6878.185
+Skew:                           1.755   Prob(JB):                         0.00
+Kurtosis:                       9.351   Cond. No.                     7.78e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.78e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:12,057 - INFO - Saved plot to: moderation_iv2_physical_environment_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:12,057 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:12,057 - INFO - Fitting moderation model: iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-22 23:23:12,060 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access model:
+2025-04-22 23:23:12,060 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9777
+2025-04-22 23:23:12,060 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:12,060 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:12,061 - WARNING - High condition number: 7745085.4 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:12,061 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:12,063 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:12,086 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:12,086 - WARNING -   - const: VIF = 86.57
+2025-04-22 23:23:12,086 - WARNING -   - mo2_robotics_capabilities: VIF = 28.86
+2025-04-22 23:23:12,086 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 30.27
+2025-04-22 23:23:12,091 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.267
+Model:                               OLS   Adj. R-squared:                  0.264
+Method:                    Least Squares   F-statistic:                     94.55
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          7.51e-200
+Time:                           23:23:12   Log-Likelihood:                -23976.
+No. Observations:                   3135   AIC:                         4.798e+04
+Df Residuals:                       3122   BIC:                         4.806e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                  308.5227     84.444      3.654      0.000     142.951     474.094
+iv2_physical_environment                               368.0573     28.202     13.051      0.000     312.760     423.354
+mo2_robotics_capabilities                               23.1168     15.342      1.507      0.132      -6.965      53.199
+iv2_physical_environment_X_mo2_robotics_capabilities   -27.7693      6.742     -4.119      0.000     -40.988     -14.551
+population                                              -0.0002   2.95e-05     -6.082      0.000      -0.000      -0.000
+div_2                                                  176.3439     79.137      2.228      0.026      21.178     331.510
+div_3                                                  413.8978     70.618      5.861      0.000     275.436     552.360
+div_4                                                  268.6653     72.007      3.731      0.000     127.480     409.851
+div_5                                                  577.9746     73.072      7.910      0.000     434.701     721.248
+div_6                                                  266.8509     69.489      3.840      0.000     130.601     403.100
+div_7                                                  408.1806     72.342      5.642      0.000     266.339     550.023
+div_8                                                   77.9564     73.094      1.067      0.286     -65.360     221.273
+div_9                                                 -145.3286     77.675     -1.871      0.061    -297.627       6.970
+==============================================================================
+Omnibus:                     1187.684   Durbin-Watson:                   1.896
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6806.207
+Skew:                           1.700   Prob(JB):                         0.00
+Kurtosis:                       9.367   Cond. No.                     7.75e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.75e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:12,374 - INFO - Saved plot to: moderation_iv2_physical_environment_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:12,374 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:12,374 - INFO - Fitting moderation model: iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-22 23:23:12,377 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access model:
+2025-04-22 23:23:12,378 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8807
+2025-04-22 23:23:12,378 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:12,378 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:12,379 - WARNING - High condition number: 7764115.5 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:12,379 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:12,380 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:12,406 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:12,406 - WARNING -   - const: VIF = 55.36
+2025-04-22 23:23:12,408 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.200
+Model:                               OLS   Adj. R-squared:                  0.197
+Method:                    Least Squares   F-statistic:                     65.13
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          8.61e-142
+Time:                           23:23:12   Log-Likelihood:                -24111.
+No. Observations:                   3135   AIC:                         4.825e+04
+Df Residuals:                       3122   BIC:                         4.833e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=================================================================================================================
+                                                    coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+const                                           959.2506     70.514     13.604      0.000     820.992    1097.509
+iv3_health_behaviors                             -0.0568      0.479     -0.118      0.906      -0.997       0.883
+mo1_genai_capabilities                          -39.5071     23.741     -1.664      0.096     -86.057       7.042
+iv3_health_behaviors_X_mo1_genai_capabilities    -0.5635      0.701     -0.804      0.421      -1.938       0.811
+population                                       -0.0002   2.98e-05     -5.472      0.000      -0.000      -0.000
+div_2                                           292.1854     81.661      3.578      0.000     132.070     452.301
+div_3                                           551.8652     73.460      7.512      0.000     407.830     695.901
+div_4                                           410.2830     73.880      5.553      0.000     265.424     555.142
+div_5                                           764.1163     75.572     10.111      0.000     615.940     912.293
+div_6                                           279.6984     72.911      3.836      0.000     136.740     422.657
+div_7                                           617.1131     74.276      8.308      0.000     471.479     762.748
+div_8                                           -15.0870     76.256     -0.198      0.843    -164.603     134.429
+div_9                                           -63.3634     80.811     -0.784      0.433    -221.812      95.085
+==============================================================================
+Omnibus:                     1216.932   Durbin-Watson:                   1.818
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7134.363
+Skew:                           1.741   Prob(JB):                         0.00
+Kurtosis:                       9.519   Cond. No.                     7.76e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.76e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:12,648 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:12,648 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:12,648 - INFO - Fitting moderation model: iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-22 23:23:12,651 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access model:
+2025-04-22 23:23:12,652 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8515
+2025-04-22 23:23:12,652 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:12,652 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:12,654 - WARNING - High condition number: 7742868.3 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:12,654 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:12,655 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:12,667 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:12,667 - WARNING -   - const: VIF = 55.10
+2025-04-22 23:23:12,669 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.227
+Model:                               OLS   Adj. R-squared:                  0.224
+Method:                    Least Squares   F-statistic:                     76.25
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          2.63e-164
+Time:                           23:23:12   Log-Likelihood:                -24058.
+No. Observations:                   3135   AIC:                         4.814e+04
+Df Residuals:                       3122   BIC:                         4.822e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+const                                              965.0344     69.175     13.951      0.000     829.401    1100.668
+iv3_health_behaviors                                 0.4724      0.498      0.948      0.343      -0.505       1.450
+mo2_robotics_capabilities                          -28.4447      6.010     -4.733      0.000     -40.228     -16.661
+iv3_health_behaviors_X_mo2_robotics_capabilities    -0.1948      0.151     -1.294      0.196      -0.490       0.100
+population                                          -0.0001   2.96e-05     -3.815      0.000      -0.000   -5.49e-05
+div_2                                              318.6123     80.302      3.968      0.000     161.162     476.063
+div_3                                              572.1871     72.069      7.939      0.000     430.879     713.495
+div_4                                              442.2977     72.562      6.095      0.000     300.023     584.572
+div_5                                              769.0713     74.100     10.379      0.000     623.782     914.361
+div_6                                              288.2099     71.481      4.032      0.000     148.056     428.363
+div_7                                              619.2387     72.782      8.508      0.000     476.532     761.945
+div_8                                               -2.0693     74.903     -0.028      0.978    -148.934     144.796
+div_9                                              -30.6733     79.286     -0.387      0.699    -186.132     124.785
+==============================================================================
+Omnibus:                     1198.385   Durbin-Watson:                   1.837
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7253.601
+Skew:                           1.698   Prob(JB):                         0.00
+Kurtosis:                       9.633   Cond. No.                     7.74e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.74e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:12,916 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:12,916 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:12,916 - INFO - Fitting moderation model: iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-22 23:23:12,919 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access model:
+2025-04-22 23:23:12,919 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9678
+2025-04-22 23:23:12,919 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:12,919 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:12,920 - WARNING - High condition number: 7755412.6 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:12,921 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:12,922 - INFO - Centering reduced condition number from 7755412.6 to 7744392.0
+2025-04-22 23:23:12,922 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo1_genai_capabilities_c', 'iv4_social_economic_factors_c_X_mo1_genai_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:12,936 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:12,936 - WARNING -   - const: VIF = 53.70
+2025-04-22 23:23:12,938 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.206
+Model:                               OLS   Adj. R-squared:                  0.203
+Method:                    Least Squares   F-statistic:                     67.64
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          6.35e-147
+Time:                           23:23:12   Log-Likelihood:                -24099.
+No. Observations:                   3135   AIC:                         4.822e+04
+Df Residuals:                       3122   BIC:                         4.830e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+const                                                      943.4761     69.187     13.637      0.000     807.819    1079.133
+iv4_social_economic_factors_c                               13.2113      2.709      4.877      0.000       7.900      18.522
+mo1_genai_capabilities_c                                   -53.5181     11.570     -4.626      0.000     -76.203     -30.833
+iv4_social_economic_factors_c_X_mo1_genai_capabilities_c    -1.6615      3.471     -0.479      0.632      -8.467       5.144
+population                                                  -0.0001   2.97e-05     -4.805      0.000      -0.000   -8.45e-05
+div_2                                                      309.7089     81.565      3.797      0.000     149.782     469.636
+div_3                                                      537.2454     72.414      7.419      0.000     395.261     679.230
+div_4                                                      414.1623     73.534      5.632      0.000     269.983     558.342
+div_5                                                      737.7959     74.721      9.874      0.000     591.288     884.304
+div_6                                                      281.9547     72.413      3.894      0.000     139.972     423.937
+div_7                                                      614.0841     73.324      8.375      0.000     470.316     757.852
+div_8                                                      -35.1629     76.077     -0.462      0.644    -184.329     114.003
+div_9                                                      -71.6097     80.370     -0.891      0.373    -229.192      85.973
+==============================================================================
+Omnibus:                     1216.834   Durbin-Watson:                   1.813
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7201.666
+Skew:                           1.737   Prob(JB):                         0.00
+Kurtosis:                       9.562   Cond. No.                     7.74e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.74e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:13,195 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:13,195 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:13,195 - INFO - Fitting moderation model: iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-22 23:23:13,199 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access model:
+2025-04-22 23:23:13,199 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9591
+2025-04-22 23:23:13,199 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:13,199 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:13,200 - WARNING - High condition number: 7735609.5 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:13,200 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:13,201 - INFO - Centering reduced condition number from 7735609.5 to 7722313.4
+2025-04-22 23:23:13,201 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:13,213 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:13,213 - WARNING -   - const: VIF = 53.52
+2025-04-22 23:23:13,215 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.229
+Model:                               OLS   Adj. R-squared:                  0.226
+Method:                    Least Squares   F-statistic:                     77.43
+Date:                   Tue, 22 Apr 2025   Prob (F-statistic):          1.21e-166
+Time:                           23:23:13   Log-Likelihood:                -24053.
+No. Observations:                   3135   AIC:                         4.813e+04
+Df Residuals:                       3122   BIC:                         4.821e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+===============================================================================================================================
+                                                                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+const                                                         917.1005     68.061     13.475      0.000     783.653    1050.548
+iv4_social_economic_factors_c                                   9.6179      2.705      3.555      0.000       4.314      14.922
+mo2_robotics_capabilities_c                                   -33.1509      3.238    -10.237      0.000     -39.501     -26.801
+iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c     0.0460      0.911      0.051      0.960      -1.740       1.832
+population                                                  -9.894e-05   2.97e-05     -3.336      0.001      -0.000   -4.08e-05
+div_2                                                         334.7972     80.250      4.172      0.000     177.449     492.146
+div_3                                                         567.3895     71.199      7.969      0.000     427.788     706.991
+div_4                                                         448.3517     72.356      6.196      0.000     306.482     590.222
+div_5                                                         758.1073     73.330     10.338      0.000     614.328     901.886
+div_6                                                         294.5355     71.161      4.139      0.000     155.009     434.062
+div_7                                                         625.7113     72.033      8.686      0.000     484.474     766.949
+div_8                                                         -11.5277     74.734     -0.154      0.877    -158.060     135.004
+div_9                                                         -29.9278     78.990     -0.379      0.705    -184.805     124.949
+==============================================================================
+Omnibus:                     1195.606   Durbin-Watson:                   1.832
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7240.482
+Skew:                           1.693   Prob(JB):                         0.00
+Kurtosis:                       9.631   Cond. No.                     7.72e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.72e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:13,475 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-22 23:23:13,476 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:13,476 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:13,479 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:13,479 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:13,480 - WARNING - High condition number: 7813993.8 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:13,480 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:13,481 - INFO - Centering reduced condition number from 7813993.8 to 7794823.5
+2025-04-22 23:23:13,482 - INFO - Using centered variables: ['iv1_public_health_policy_c', 'mo1_genai_capabilities_c', 'iv1_public_health_policy_c_X_mo1_genai_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:13,496 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:13,497 - WARNING -   - const: VIF = 54.92
+2025-04-22 23:23:13,498 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.215
+Model:                                OLS   Adj. R-squared:                  0.212
+Method:                     Least Squares   F-statistic:                     71.45
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):          1.17e-154
+Time:                            23:23:13   Log-Likelihood:                -27435.
+No. Observations:                    3135   AIC:                         5.490e+04
+Df Residuals:                        3122   BIC:                         5.497e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+=========================================================================================================================
+                                                            coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------
+const                                                  3772.1185    202.768     18.603      0.000    3374.547    4169.690
+iv1_public_health_policy_c                              -54.5075     63.286     -0.861      0.389    -178.593      69.578
+mo1_genai_capabilities_c                               -167.7636     31.988     -5.245      0.000    -230.483    -105.045
+iv1_public_health_policy_c_X_mo1_genai_capabilities_c    59.4807     64.122      0.928      0.354     -66.245     185.207
+population                                               -0.0007   8.46e-05     -7.737      0.000      -0.001      -0.000
+div_2                                                   336.1948    235.539      1.427      0.154    -125.632     798.021
+div_3                                                  1712.0130    213.407      8.022      0.000    1293.581    2130.445
+div_4                                                   699.1730    212.908      3.284      0.001     281.720    1116.626
+div_5                                                  2582.7006    220.121     11.733      0.000    2151.104    3014.297
+div_6                                                   536.6830    213.244      2.517      0.012     118.569     954.797
+div_7                                                  1716.0886    216.867      7.913      0.000    1290.873    2141.305
+div_8                                                   985.6716    221.336      4.453      0.000     551.692    1419.651
+div_9                                                   719.9604    232.618      3.095      0.002     263.860    1176.061
+==============================================================================
+Omnibus:                     1691.191   Durbin-Watson:                   1.766
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            24908.344
+Skew:                           2.227   Prob(JB):                         0.00
+Kurtosis:                      16.071   Cond. No.                     7.79e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.79e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:13,736 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:13,736 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:13,736 - INFO - Fitting moderation model: iv1_public_health_policy x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:13,739 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:13,739 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:13,740 - WARNING - High condition number: 7803246.9 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:13,740 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:13,742 - INFO - Centering reduced condition number from 7803246.9 to 7783857.7
+2025-04-22 23:23:13,742 - INFO - Using centered variables: ['iv1_public_health_policy_c', 'mo2_robotics_capabilities_c', 'iv1_public_health_policy_c_X_mo2_robotics_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:13,755 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:13,755 - WARNING -   - const: VIF = 54.75
+2025-04-22 23:23:13,757 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.229
+Model:                                OLS   Adj. R-squared:                  0.226
+Method:                     Least Squares   F-statistic:                     77.27
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):          2.48e-166
+Time:                            23:23:13   Log-Likelihood:                -27408.
+No. Observations:                    3135   AIC:                         5.484e+04
+Df Residuals:                        3122   BIC:                         5.492e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+const                                                     3706.7373    200.688     18.470      0.000    3313.243    4100.232
+iv1_public_health_policy_c                                 -52.6589     62.753     -0.839      0.401    -175.701      70.383
+mo2_robotics_capabilities_c                                -80.8715      8.918     -9.068      0.000     -98.357     -63.386
+iv1_public_health_policy_c_X_mo2_robotics_capabilities_c     5.1777     17.545      0.295      0.768     -29.222      39.578
+population                                                  -0.0005   8.52e-05     -6.372      0.000      -0.001      -0.000
+div_2                                                      404.5531    233.755      1.731      0.084     -53.777     862.883
+div_3                                                     1783.3028    211.341      8.438      0.000    1368.921    2197.685
+div_4                                                      785.9169    211.190      3.721      0.000     371.832    1200.002
+div_5                                                     2625.7543    217.606     12.067      0.000    2199.089    3052.420
+div_6                                                      574.1749    210.978      2.721      0.007     160.506     987.844
+div_7                                                     1753.8084    214.575      8.173      0.000    1333.086    2174.531
+div_8                                                     1019.0816    218.778      4.658      0.000     590.118    1448.045
+div_9                                                      817.3401    230.178      3.551      0.000     366.025    1268.655
+==============================================================================
+Omnibus:                     1701.763   Durbin-Watson:                   1.765
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            25465.871
+Skew:                           2.241   Prob(JB):                         0.00
+Kurtosis:                      16.224   Cond. No.                     7.78e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.78e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:13,993 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:13,993 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:13,993 - INFO - Fitting moderation model: iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:13,997 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality model:
+2025-04-22 23:23:13,997 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9785
+2025-04-22 23:23:13,997 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:13,997 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:13,998 - WARNING - High condition number: 7784730.8 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:13,998 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:14,000 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:14,014 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:14,014 - WARNING -   - const: VIF = 83.81
+2025-04-22 23:23:14,014 - WARNING -   - mo1_genai_capabilities: VIF = 26.98
+2025-04-22 23:23:14,014 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 27.43
+2025-04-22 23:23:14,016 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.217
+Model:                                OLS   Adj. R-squared:                  0.214
+Method:                     Least Squares   F-statistic:                     72.10
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):          5.63e-156
+Time:                            23:23:14   Log-Likelihood:                -27432.
+No. Observations:                    3135   AIC:                         5.489e+04
+Df Residuals:                        3122   BIC:                         5.497e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                              3707.0085    250.230     14.814      0.000    3216.376    4197.641
+iv2_physical_environment                             83.9887     80.226      1.047      0.295     -73.312     241.290
+mo1_genai_capabilities                             -520.4209    161.474     -3.223      0.001    -837.027    -203.815
+iv2_physical_environment_X_mo1_genai_capabilities   161.7673     72.471      2.232      0.026      19.671     303.863
+population                                           -0.0007   8.76e-05     -8.088      0.000      -0.001      -0.001
+div_2                                               226.0006    239.222      0.945      0.345    -243.047     695.049
+div_3                                              1645.2675    213.374      7.711      0.000    1226.900    2063.635
+div_4                                               594.9844    217.560      2.735      0.006     168.409    1021.559
+div_5                                              2510.1821    220.870     11.365      0.000    2077.118    2943.246
+div_6                                               504.2898    210.416      2.397      0.017      91.723     916.857
+div_7                                              1636.3839    218.551      7.487      0.000    1207.866    2064.902
+div_8                                               995.6680    220.370      4.518      0.000     563.583    1427.753
+div_9                                               628.4839    234.682      2.678      0.007     168.337    1088.631
+==============================================================================
+Omnibus:                     1707.077   Durbin-Watson:                   1.776
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            25699.491
+Skew:                           2.248   Prob(JB):                         0.00
+Kurtosis:                      16.286   Cond. No.                     7.78e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.78e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:14,285 - INFO - Saved plot to: moderation_iv2_physical_environment_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:14,285 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:14,285 - INFO - Fitting moderation model: iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:14,288 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality model:
+2025-04-22 23:23:14,288 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9777
+2025-04-22 23:23:14,289 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:14,289 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:14,290 - WARNING - High condition number: 7745085.4 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:14,290 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:14,291 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:14,310 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:14,310 - WARNING -   - const: VIF = 86.57
+2025-04-22 23:23:14,310 - WARNING -   - mo2_robotics_capabilities: VIF = 28.86
+2025-04-22 23:23:14,310 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 30.27
+2025-04-22 23:23:14,312 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.231
+Model:                                OLS   Adj. R-squared:                  0.228
+Method:                     Least Squares   F-statistic:                     78.22
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):          3.21e-168
+Time:                            23:23:14   Log-Likelihood:                -27403.
+No. Observations:                    3135   AIC:                         5.483e+04
+Df Residuals:                        3122   BIC:                         5.491e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                 3640.9721    252.005     14.448      0.000    3146.861    4135.084
+iv2_physical_environment                               119.7751     84.164      1.423      0.155     -45.247     284.797
+mo2_robotics_capabilities                             -170.7288     45.786     -3.729      0.000    -260.502     -80.956
+iv2_physical_environment_X_mo2_robotics_capabilities    39.3627     20.119      1.956      0.050      -0.086      78.811
+population                                              -0.0006    8.8e-05     -6.936      0.000      -0.001      -0.000
+div_2                                                  308.7448    236.168      1.307      0.191    -154.315     771.804
+div_3                                                 1723.3134    210.743      8.177      0.000    1310.105    2136.522
+div_4                                                  688.1440    214.889      3.202      0.001     266.806    1109.482
+div_5                                                 2555.4657    218.066     11.719      0.000    2127.898    2983.033
+div_6                                                  574.0954    207.376      2.768      0.006     167.489     980.702
+div_7                                                 1667.0748    215.888      7.722      0.000    1243.778    2090.371
+div_8                                                 1074.4823    218.132      4.926      0.000     646.785    1502.179
+div_9                                                  736.9363    231.803      3.179      0.001     282.435    1191.438
+==============================================================================
+Omnibus:                     1719.103   Durbin-Watson:                   1.780
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            26389.255
+Skew:                           2.263   Prob(JB):                         0.00
+Kurtosis:                      16.474   Cond. No.                     7.75e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.75e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:14,650 - INFO - Saved plot to: moderation_iv2_physical_environment_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:14,650 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:14,650 - INFO - Fitting moderation model: iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:14,653 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality model:
+2025-04-22 23:23:14,653 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8807
+2025-04-22 23:23:14,653 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:14,653 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:14,654 - WARNING - High condition number: 7764115.5 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:14,654 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:14,656 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:14,690 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:14,690 - WARNING -   - const: VIF = 55.36
+2025-04-22 23:23:14,692 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.395
+Model:                                OLS   Adj. R-squared:                  0.392
+Method:                     Least Squares   F-statistic:                     169.7
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):               0.00
+Time:                            23:23:14   Log-Likelihood:                -27028.
+No. Observations:                    3135   AIC:                         5.408e+04
+Df Residuals:                        3122   BIC:                         5.416e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+=================================================================================================================
+                                                    coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+const                                          3093.1231    178.802     17.299      0.000    2742.543    3443.704
+iv3_health_behaviors                             36.8060      1.215     30.282      0.000      34.423      39.189
+mo1_genai_capabilities                           58.0688     60.200      0.965      0.335     -59.966     176.104
+iv3_health_behaviors_X_mo1_genai_capabilities    -7.5043      1.777     -4.223      0.000     -10.989      -4.020
+population                                       -0.0009   7.55e-05    -12.216      0.000      -0.001      -0.001
+div_2                                           184.9638    207.068      0.893      0.372    -221.040     590.967
+div_3                                          1017.9450    186.273      5.465      0.000     652.715    1383.175
+div_4                                           457.0091    187.338      2.439      0.015      89.691     824.328
+div_5                                          1850.0166    191.628      9.654      0.000    1474.286    2225.747
+div_6                                           190.9378    184.880      1.033      0.302    -171.560     553.436
+div_7                                          1065.3258    188.341      5.656      0.000     696.042    1434.610
+div_8                                           705.7719    193.361      3.650      0.000     326.645    1084.899
+div_9                                           278.5766    204.912      1.359      0.174    -123.199     680.352
+==============================================================================
+Omnibus:                     1037.468   Durbin-Watson:                   1.817
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6710.131
+Skew:                           1.414   Prob(JB):                         0.00
+Kurtosis:                       9.586   Cond. No.                     7.76e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.76e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:14,953 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:14,953 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:14,953 - INFO - Fitting moderation model: iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:14,957 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality model:
+2025-04-22 23:23:14,957 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8515
+2025-04-22 23:23:14,957 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:14,957 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:14,958 - WARNING - High condition number: 7742868.3 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:14,958 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:14,960 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:14,971 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:14,971 - WARNING -   - const: VIF = 55.10
+2025-04-22 23:23:14,973 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.416
+Model:                                OLS   Adj. R-squared:                  0.413
+Method:                     Least Squares   F-statistic:                     185.1
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):               0.00
+Time:                            23:23:14   Log-Likelihood:                -26973.
+No. Observations:                    3135   AIC:                         5.397e+04
+Df Residuals:                        3122   BIC:                         5.405e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+const                                             3146.5569    175.262     17.953      0.000    2802.917    3490.197
+iv3_health_behaviors                                37.8896      1.263     30.002      0.000      35.413      40.366
+mo2_robotics_capabilities                          -63.7528     15.226     -4.187      0.000     -93.608     -33.898
+iv3_health_behaviors_X_mo2_robotics_capabilities    -0.9951      0.381     -2.609      0.009      -1.743      -0.247
+population                                          -0.0008    7.5e-05    -10.772      0.000      -0.001      -0.001
+div_2                                              236.0091    203.453      1.160      0.246    -162.907     634.925
+div_3                                             1043.7701    182.595      5.716      0.000     685.752    1401.788
+div_4                                              514.3354    183.843      2.798      0.005     153.869     874.802
+div_5                                             1844.9873    187.739      9.827      0.000    1476.882    2213.092
+div_6                                              185.5620    181.103      1.025      0.306    -169.530     540.654
+div_7                                             1037.7797    184.401      5.628      0.000     676.220    1399.340
+div_8                                              718.8317    189.775      3.788      0.000     346.736    1090.928
+div_9                                              343.0167    200.880      1.708      0.088     -50.853     736.886
+==============================================================================
+Omnibus:                     1008.375   Durbin-Watson:                   1.815
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             6479.412
+Skew:                           1.371   Prob(JB):                         0.00
+Kurtosis:                       9.488   Cond. No.                     7.74e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.74e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:15,235 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:15,235 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:15,235 - INFO - Fitting moderation model: iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:15,239 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality model:
+2025-04-22 23:23:15,239 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9678
+2025-04-22 23:23:15,239 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:15,239 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:15,240 - WARNING - High condition number: 7755412.6 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:15,240 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:15,241 - INFO - Centering reduced condition number from 7755412.6 to 7744392.0
+2025-04-22 23:23:15,242 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo1_genai_capabilities_c', 'iv4_social_economic_factors_c_X_mo1_genai_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:15,253 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:15,253 - WARNING -   - const: VIF = 53.70
+2025-04-22 23:23:15,255 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.593
+Model:                                OLS   Adj. R-squared:                  0.591
+Method:                     Least Squares   F-statistic:                     378.9
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):               0.00
+Time:                            23:23:15   Log-Likelihood:                -26406.
+No. Observations:                    3135   AIC:                         5.284e+04
+Df Residuals:                        3122   BIC:                         5.292e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+const                                                     3693.4170    144.429     25.573      0.000    3410.232    3976.602
+iv4_social_economic_factors_c                              300.1570      5.654     53.084      0.000     289.070     311.244
+mo1_genai_capabilities_c                                   -84.6353     24.152     -3.504      0.000    -131.991     -37.280
+iv4_social_economic_factors_c_X_mo1_genai_capabilities_c   -24.2196      7.246     -3.343      0.001     -38.427     -10.012
+population                                               -9.193e-05    6.2e-05     -1.483      0.138      -0.000    2.97e-05
+div_2                                                      817.2503    170.268      4.800      0.000     483.402    1151.098
+div_3                                                     1593.0812    151.165     10.539      0.000    1296.688    1889.475
+div_4                                                      917.0506    153.502      5.974      0.000     616.075    1218.026
+div_5                                                     2172.8678    155.981     13.930      0.000    1867.033    2478.703
+div_6                                                      750.6016    151.163      4.966      0.000     454.213    1046.990
+div_7                                                     1855.3231    153.064     12.121      0.000    1555.208    2155.438
+div_8                                                      646.8442    158.811      4.073      0.000     335.460     958.229
+div_9                                                      651.6205    167.772      3.884      0.000     322.667     980.574
+==============================================================================
+Omnibus:                      928.373   Durbin-Watson:                   1.741
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7256.621
+Skew:                           1.186   Prob(JB):                         0.00
+Kurtosis:                      10.066   Cond. No.                     7.74e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.74e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:15,509 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:15,510 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:15,510 - INFO - Fitting moderation model: iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-22 23:23:15,513 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality model:
+2025-04-22 23:23:15,513 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9591
+2025-04-22 23:23:15,513 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:15,513 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:15,514 - WARNING - High condition number: 7735609.5 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:15,514 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:15,549 - INFO - Centering reduced condition number from 7735609.5 to 7722313.4
+2025-04-22 23:23:15,549 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:15,639 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:15,639 - WARNING -   - const: VIF = 53.52
+2025-04-22 23:23:15,641 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.593
+Model:                                OLS   Adj. R-squared:                  0.591
+Method:                     Least Squares   F-statistic:                     378.5
+Date:                    Tue, 22 Apr 2025   Prob (F-statistic):               0.00
+Time:                            23:23:15   Log-Likelihood:                -26407.
+No. Observations:                    3135   AIC:                         5.284e+04
+Df Residuals:                        3122   BIC:                         5.292e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+===============================================================================================================================
+                                                                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+const                                                        3643.6592    144.229     25.263      0.000    3360.866    3926.452
+iv4_social_economic_factors_c                                 298.6662      5.733     52.096      0.000     287.425     309.907
+mo2_robotics_capabilities_c                                   -27.0283      6.863     -3.938      0.000     -40.484     -13.572
+iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c    -3.4793      1.930     -1.802      0.072      -7.264       0.305
+population                                                  -6.464e-05   6.28e-05     -1.028      0.304      -0.000    5.86e-05
+div_2                                                         864.4103    170.060      5.083      0.000     530.969    1197.852
+div_3                                                        1646.9031    150.880     10.915      0.000    1351.069    1942.737
+div_4                                                         972.7857    153.331      6.344      0.000     672.145    1273.426
+div_5                                                        2226.4404    155.395     14.328      0.000    1921.754    2531.126
+div_6                                                         787.9384    150.799      5.225      0.000     492.264    1083.613
+div_7                                                        1894.5489    152.648     12.411      0.000    1595.248    2193.850
+div_8                                                         701.4263    158.370      4.429      0.000     390.906    1011.947
+div_9                                                         712.9413    167.389      4.259      0.000     384.737    1041.145
+==============================================================================
+Omnibus:                      934.959   Durbin-Watson:                   1.738
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7442.733
+Skew:                           1.190   Prob(JB):                         0.00
+Kurtosis:                      10.163   Cond. No.                     7.72e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.72e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:15,890 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-22 23:23:15,890 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:15,890 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:15,893 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:15,893 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:15,894 - WARNING - High condition number: 8586219.6 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:15,894 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:15,895 - INFO - Centering reduced condition number from 8586219.6 to 8558901.4
+2025-04-22 23:23:15,895 - INFO - Using centered variables: ['iv1_public_health_policy_c', 'mo1_genai_capabilities_c', 'iv1_public_health_policy_c_X_mo1_genai_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:15,915 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:15,915 - WARNING -   - const: VIF = 45.14
+2025-04-22 23:23:15,917 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.096
+Model:                                    OLS   Adj. R-squared:                  0.091
+Method:                         Least Squares   F-statistic:                     18.74
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           3.82e-39
+Time:                                23:23:15   Log-Likelihood:                -9309.6
+No. Observations:                        2126   AIC:                         1.865e+04
+Df Residuals:                            2113   BIC:                         1.872e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+=========================================================================================================================
+                                                            coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------
+const                                                    -2.1734      2.821     -0.771      0.441      -7.705       3.358
+iv1_public_health_policy_c                                0.2507      0.986      0.254      0.799      -1.683       2.184
+mo1_genai_capabilities_c                                  2.2122      0.441      5.016      0.000       1.347       3.077
+iv1_public_health_policy_c_X_mo1_genai_capabilities_c    -2.4586      0.885     -2.777      0.006      -4.195      -0.722
+population                                             3.334e-06   1.09e-06      3.061      0.002     1.2e-06    5.47e-06
+div_2                                                     3.8748      3.276      1.183      0.237      -2.549      10.299
+div_3                                                    12.8999      3.040      4.243      0.000       6.938      18.862
+div_4                                                    12.0562      2.982      4.043      0.000       6.209      17.904
+div_5                                                     8.1138      3.125      2.596      0.009       1.985      14.243
+div_6                                                     3.2310      2.994      1.079      0.281      -2.641       9.103
+div_7                                                    -3.5533      3.055     -1.163      0.245      -9.545       2.438
+div_8                                                     7.4349      3.126      2.379      0.017       1.305      13.565
+div_9                                                     3.7787      3.267      1.156      0.248      -2.629      10.186
+==============================================================================
+Omnibus:                     1604.336   Durbin-Watson:                   1.926
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           114475.861
+Skew:                           2.930   Prob(JB):                         0.00
+Kurtosis:                      38.468   Cond. No.                     8.56e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.56e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:16,156 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:16,156 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:16,156 - INFO - Fitting moderation model: iv1_public_health_policy x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:16,159 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:16,159 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:16,160 - WARNING - High condition number: 8575832.3 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:16,160 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:16,161 - INFO - Centering reduced condition number from 8575832.3 to 8547699.4
+2025-04-22 23:23:16,161 - INFO - Using centered variables: ['iv1_public_health_policy_c', 'mo2_robotics_capabilities_c', 'iv1_public_health_policy_c_X_mo2_robotics_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:16,251 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:16,251 - WARNING -   - const: VIF = 45.01
+2025-04-22 23:23:16,253 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.109
+Model:                                    OLS   Adj. R-squared:                  0.104
+Method:                         Least Squares   F-statistic:                     21.51
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           2.36e-45
+Time:                                23:23:16   Log-Likelihood:                -9294.6
+No. Observations:                        2126   AIC:                         1.862e+04
+Df Residuals:                            2113   BIC:                         1.869e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+const                                                       -1.4587      2.797     -0.522      0.602      -6.943       4.026
+iv1_public_health_policy_c                                   0.0658      0.980      0.067      0.946      -1.855       1.987
+mo2_robotics_capabilities_c                                  0.9162      0.127      7.236      0.000       0.668       1.165
+iv1_public_health_policy_c_X_mo2_robotics_capabilities_c    -0.9181      0.249     -3.683      0.000      -1.407      -0.429
+population                                                2.483e-06   1.09e-06      2.269      0.023    3.37e-07    4.63e-06
+div_2                                                        3.4857      3.256      1.070      0.285      -2.900       9.872
+div_3                                                       11.6053      3.020      3.843      0.000       5.683      17.528
+div_4                                                       11.1730      2.964      3.770      0.000       5.360      16.986
+div_5                                                        7.6873      3.094      2.485      0.013       1.620      13.755
+div_6                                                        3.1231      2.967      1.053      0.293      -2.696       8.942
+div_7                                                       -4.0196      3.028     -1.328      0.184      -9.957       1.918
+div_8                                                        7.3274      3.094      2.368      0.018       1.259      13.395
+div_9                                                        3.0483      3.238      0.941      0.347      -3.301       9.398
+==============================================================================
+Omnibus:                     1659.721   Durbin-Watson:                   1.905
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           126378.258
+Skew:                           3.075   Prob(JB):                         0.00
+Kurtosis:                      40.267   Cond. No.                     8.55e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.55e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:16,519 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:16,519 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:16,519 - INFO - Fitting moderation model: iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:16,522 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency model:
+2025-04-22 23:23:16,522 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-04-22 23:23:16,522 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:16,522 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:16,523 - WARNING - High condition number: 8549108.4 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:16,523 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:16,524 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:16,565 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:16,565 - WARNING -   - const: VIF = 76.19
+2025-04-22 23:23:16,565 - WARNING -   - mo1_genai_capabilities: VIF = 27.98
+2025-04-22 23:23:16,565 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 28.46
+2025-04-22 23:23:16,566 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.102
+Model:                                    OLS   Adj. R-squared:                  0.097
+Method:                         Least Squares   F-statistic:                     19.93
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           8.05e-42
+Time:                                23:23:16   Log-Likelihood:                -9303.1
+No. Observations:                        2126   AIC:                         1.863e+04
+Df Residuals:                            2113   BIC:                         1.871e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                               -13.7824      3.653     -3.773      0.000     -20.946      -6.618
+iv2_physical_environment                              5.2521      1.237      4.245      0.000       2.826       7.679
+mo1_genai_capabilities                                8.5541      2.270      3.768      0.000       4.102      13.006
+iv2_physical_environment_X_mo1_genai_capabilities    -2.9629      1.012     -2.929      0.003      -4.947      -0.979
+population                                         2.575e-06   1.13e-06      2.281      0.023    3.61e-07    4.79e-06
+div_2                                                 2.8218      3.330      0.847      0.397      -3.709       9.353
+div_3                                                11.5629      3.018      3.832      0.000       5.645      17.481
+div_4                                                10.4748      3.052      3.432      0.001       4.490      16.460
+div_5                                                 6.2433      3.118      2.003      0.045       0.129      12.357
+div_6                                                 3.9680      2.948      1.346      0.178      -1.813       9.749
+div_7                                                -5.7735      3.076     -1.877      0.061     -11.806       0.259
+div_8                                                 9.2701      3.100      2.991      0.003       3.191      15.349
+div_9                                                 3.0609      3.298      0.928      0.353      -3.407       9.529
+==============================================================================
+Omnibus:                     1595.625   Durbin-Watson:                   1.914
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           111107.237
+Skew:                           2.913   Prob(JB):                         0.00
+Kurtosis:                      37.933   Cond. No.                     8.55e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.55e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:16,843 - INFO - Saved plot to: moderation_iv2_physical_environment_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:16,843 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:16,843 - INFO - Fitting moderation model: iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:16,846 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency model:
+2025-04-22 23:23:16,846 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-04-22 23:23:16,846 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:16,846 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:16,847 - WARNING - High condition number: 8487264.0 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:16,847 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:16,849 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:16,887 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:16,887 - WARNING -   - const: VIF = 80.62
+2025-04-22 23:23:16,887 - WARNING -   - mo2_robotics_capabilities: VIF = 28.20
+2025-04-22 23:23:16,887 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 29.89
+2025-04-22 23:23:16,889 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.107
+Model:                                    OLS   Adj. R-squared:                  0.102
+Method:                         Least Squares   F-statistic:                     21.11
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           1.82e-44
+Time:                                23:23:16   Log-Likelihood:                -9296.7
+No. Observations:                        2126   AIC:                         1.862e+04
+Df Residuals:                            2113   BIC:                         1.869e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                   -9.8419      3.747     -2.627      0.009     -17.190      -2.494
+iv2_physical_environment                                 3.6474      1.341      2.719      0.007       1.017       6.278
+mo2_robotics_capabilities                                0.8890      0.646      1.376      0.169      -0.378       2.156
+iv2_physical_environment_X_mo2_robotics_capabilities    -0.0267      0.285     -0.094      0.925      -0.585       0.531
+population                                            1.586e-06   1.14e-06      1.396      0.163   -6.42e-07    3.81e-06
+div_2                                                    1.3943      3.305      0.422      0.673      -5.088       7.876
+div_3                                                    9.8571      2.998      3.288      0.001       3.977      15.737
+div_4                                                    8.8518      3.031      2.920      0.004       2.908      14.796
+div_5                                                    5.2641      3.095      1.701      0.089      -0.805      11.333
+div_6                                                    2.3090      2.916      0.792      0.429      -3.410       8.028
+div_7                                                   -6.6298      3.056     -2.170      0.030     -12.622      -0.638
+div_8                                                    8.1198      3.086      2.631      0.009       2.068      14.171
+div_9                                                    1.2013      3.275      0.367      0.714      -5.222       7.624
+==============================================================================
+Omnibus:                     1653.757   Durbin-Watson:                   1.893
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           124342.795
+Skew:                           3.062   Prob(JB):                         0.00
+Kurtosis:                      39.962   Cond. No.                     8.49e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.49e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:17,158 - INFO - Saved plot to: moderation_iv2_physical_environment_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:17,158 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:17,158 - INFO - Fitting moderation model: iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:17,160 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency model:
+2025-04-22 23:23:17,160 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8771
+2025-04-22 23:23:17,161 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:17,161 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:17,162 - WARNING - High condition number: 8519594.9 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:17,162 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:17,163 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:17,211 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:17,211 - WARNING -   - const: VIF = 46.30
+2025-04-22 23:23:17,213 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.093
+Model:                                    OLS   Adj. R-squared:                  0.088
+Method:                         Least Squares   F-statistic:                     18.03
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           1.49e-37
+Time:                                23:23:17   Log-Likelihood:                -9313.4
+No. Observations:                        2126   AIC:                         1.865e+04
+Df Residuals:                            2113   BIC:                         1.873e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+=================================================================================================================
+                                                    coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+const                                            -3.0411      2.862     -1.063      0.288      -8.653       2.571
+iv3_health_behaviors                             -0.0094      0.024     -0.383      0.702      -0.057       0.039
+mo1_genai_capabilities                            2.0007      0.958      2.088      0.037       0.122       3.880
+iv3_health_behaviors_X_mo1_genai_capabilities     0.0031      0.028      0.112      0.911      -0.051       0.057
+population                                     3.343e-06   1.11e-06      3.008      0.003    1.16e-06    5.52e-06
+div_2                                             3.8884      3.286      1.183      0.237      -2.556      10.333
+div_3                                            13.1104      3.028      4.330      0.000       7.173      19.048
+div_4                                            12.1241      2.995      4.048      0.000       6.251      17.998
+div_5                                             8.3385      3.100      2.690      0.007       2.260      14.417
+div_6                                             3.4848      2.955      1.179      0.238      -2.311       9.280
+div_7                                            -3.3876      3.033     -1.117      0.264      -9.336       2.561
+div_8                                             8.0533      3.112      2.588      0.010       1.950      14.156
+div_9                                             4.2744      3.282      1.302      0.193      -2.162      10.711
+==============================================================================
+Omnibus:                     1605.697   Durbin-Watson:                   1.918
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           114385.913
+Skew:                           2.935   Prob(JB):                         0.00
+Kurtosis:                      38.452   Cond. No.                     8.52e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.52e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:17,552 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:17,552 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:17,552 - INFO - Fitting moderation model: iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:17,555 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency model:
+2025-04-22 23:23:17,555 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8393
+2025-04-22 23:23:17,555 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:17,555 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:17,556 - WARNING - High condition number: 8489177.1 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:17,556 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:17,557 - WARNING - Centering did not help, reverting to original variables
+2025-04-22 23:23:17,585 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:17,585 - WARNING -   - const: VIF = 46.24
+2025-04-22 23:23:17,587 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.104
+Model:                                    OLS   Adj. R-squared:                  0.099
+Method:                         Least Squares   F-statistic:                     20.36
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           8.54e-43
+Time:                                23:23:17   Log-Likelihood:                -9300.7
+No. Observations:                        2126   AIC:                         1.863e+04
+Df Residuals:                            2113   BIC:                         1.870e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+const                                               -3.2745      2.843     -1.152      0.249      -8.849       2.300
+iv3_health_behaviors                                -0.0117      0.027     -0.436      0.663      -0.064       0.041
+mo2_robotics_capabilities                            1.0243      0.252      4.072      0.000       0.531       1.518
+iv3_health_behaviors_X_mo2_robotics_capabilities    -0.0043      0.006     -0.682      0.495      -0.017       0.008
+population                                        2.618e-06   1.11e-06      2.354      0.019    4.37e-07     4.8e-06
+div_2                                                3.1972      3.266      0.979      0.328      -3.208       9.603
+div_3                                               12.1417      3.002      4.044      0.000       6.254      18.029
+div_4                                               11.0554      2.972      3.720      0.000       5.227      16.884
+div_5                                                7.8588      3.071      2.559      0.011       1.836      13.882
+div_6                                                2.9300      2.927      1.001      0.317      -2.809       8.669
+div_7                                               -3.7994      3.004     -1.265      0.206      -9.691       2.092
+div_8                                                7.6006      3.090      2.460      0.014       1.541      13.660
+div_9                                                2.8481      3.254      0.875      0.382      -3.534       9.230
+==============================================================================
+Omnibus:                     1643.052   Durbin-Watson:                   1.905
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           122594.874
+Skew:                           3.032   Prob(JB):                         0.00
+Kurtosis:                      39.704   Cond. No.                     8.49e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.49e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:17,961 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:17,961 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:17,961 - INFO - Fitting moderation model: iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:17,964 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency model:
+2025-04-22 23:23:17,964 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-04-22 23:23:17,964 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:17,964 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:17,965 - WARNING - High condition number: 8506706.7 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:17,965 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:17,966 - INFO - Centering reduced condition number from 8506706.7 to 8486680.5
+2025-04-22 23:23:17,966 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo1_genai_capabilities_c', 'iv4_social_economic_factors_c_X_mo1_genai_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:17,986 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:17,986 - WARNING -   - const: VIF = 43.96
+2025-04-22 23:23:17,988 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.121
+Model:                                    OLS   Adj. R-squared:                  0.116
+Method:                         Least Squares   F-statistic:                     24.32
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           1.34e-51
+Time:                                23:23:17   Log-Likelihood:                -9279.5
+No. Observations:                        2126   AIC:                         1.859e+04
+Df Residuals:                            2113   BIC:                         1.866e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+const                                                       -2.0005      2.744     -0.729      0.466      -7.382       3.381
+iv4_social_economic_factors_c                               -1.0105      0.125     -8.063      0.000      -1.256      -0.765
+mo1_genai_capabilities_c                                     1.8940      0.446      4.246      0.000       1.019       2.769
+iv4_social_economic_factors_c_X_mo1_genai_capabilities_c     0.1786      0.138      1.291      0.197      -0.093       0.450
+population                                                1.563e-06    1.1e-06      1.425      0.154   -5.88e-07    3.71e-06
+div_2                                                        2.4061      3.243      0.742      0.458      -3.954       8.767
+div_3                                                       13.4992      2.927      4.613      0.000       7.760      19.239
+div_4                                                       11.2585      2.942      3.827      0.000       5.489      17.028
+div_5                                                        9.2574      3.011      3.075      0.002       3.353      15.162
+div_6                                                        2.5053      2.900      0.864      0.388      -3.183       8.193
+div_7                                                       -3.6891      2.943     -1.253      0.210      -9.461       2.083
+div_8                                                        9.5065      3.072      3.095      0.002       3.483      15.531
+div_9                                                        3.7816      3.226      1.172      0.241      -2.546      10.109
+==============================================================================
+Omnibus:                     1648.076   Durbin-Watson:                   1.929
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           124965.439
+Skew:                           3.041   Prob(JB):                         0.00
+Kurtosis:                      40.064   Cond. No.                     8.49e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.49e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:18,242 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:18,242 - INFO - --------------------------------------------------------------------------------
+2025-04-22 23:23:18,242 - INFO - Fitting moderation model: iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-22 23:23:18,245 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency model:
+2025-04-22 23:23:18,245 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-04-22 23:23:18,245 - WARNING - Near-constant predictors detected: div_Unknown
+2025-04-22 23:23:18,245 - INFO - Dropping low-variance controls: div_Unknown
+2025-04-22 23:23:18,246 - WARNING - High condition number: 8485278.0 - Results may be unstable due to multicollinearity
+2025-04-22 23:23:18,246 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-22 23:23:18,248 - INFO - Centering reduced condition number from 8485278.0 to 8456173.2
+2025-04-22 23:23:18,248 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-22 23:23:18,257 - WARNING - High VIFs detected in final model:
+2025-04-22 23:23:18,257 - WARNING -   - const: VIF = 43.79
+2025-04-22 23:23:18,259 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.128
+Model:                                    OLS   Adj. R-squared:                  0.123
+Method:                         Least Squares   F-statistic:                     25.78
+Date:                        Tue, 22 Apr 2025   Prob (F-statistic):           7.93e-55
+Time:                                23:23:18   Log-Likelihood:                -9271.8
+No. Observations:                        2126   AIC:                         1.857e+04
+Df Residuals:                            2113   BIC:                         1.864e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+===============================================================================================================================
+                                                                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+const                                                          -0.8637      2.729     -0.316      0.752      -6.215       4.488
+iv4_social_economic_factors_c                                  -0.9168      0.127     -7.232      0.000      -1.165      -0.668
+mo2_robotics_capabilities_c                                     0.7507      0.130      5.755      0.000       0.495       1.006
+iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c     0.0793      0.038      2.093      0.036       0.005       0.154
+population                                                   1.143e-06    1.1e-06      1.037      0.300   -1.02e-06     3.3e-06
+div_2                                                           1.6755      3.226      0.519      0.604      -4.650       8.001
+div_3                                                          12.1423      2.911      4.171      0.000       6.433      17.852
+div_4                                                          10.0721      2.927      3.441      0.001       4.332      15.812
+div_5                                                           8.2452      2.984      2.763      0.006       2.393      14.097
+div_6                                                           1.8371      2.881      0.638      0.524      -3.812       7.486
+div_7                                                          -4.3656      2.921     -1.495      0.135     -10.094       1.363
+div_8                                                           8.7212      3.046      2.863      0.004       2.748      14.695
+div_9                                                           2.4711      3.203      0.771      0.441      -3.811       8.753
+==============================================================================
+Omnibus:                     1676.962   Durbin-Watson:                   1.913
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           131192.512
+Skew:                           3.119   Prob(JB):                         0.00
+Kurtosis:                      40.975   Cond. No.                     8.46e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.46e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-04-22 23:23:18,519 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-22 23:23:18,519 - INFO - All moderation analyses completed.

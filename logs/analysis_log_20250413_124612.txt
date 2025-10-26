@@ -1,0 +1,237 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-13 12:46:12
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)
+Index-level data fetched from improved version: shape = (3143, 12)
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+
+Diagnosing Index-Level (Original): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+Diagnosing Index-Level (Improved): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+Diagnostic DV check:
+  - Original dv1_healthcare_access: 3143 non-null values
+  - Original dv2_healthcare_quality: 3143 non-null values
+  - Original dv3_operational_eff: 2133 non-null values
+  - Improved dv1_healthcare_access: 3143 non-null values
+  - Improved dv2_healthcare_quality: 3143 non-null values
+  - Improved dv3_operational_eff: 2133 non-null values
+Converted dv1_healthcare_access in Original to numeric: float64
+Converted dv2_healthcare_quality in Original to numeric: float64
+Converted dv3_operational_eff in Original to numeric: float64
+Converted dv1_healthcare_access in Improved to numeric: float64
+Converted dv2_healthcare_quality in Improved to numeric: float64
+Converted dv3_operational_eff in Improved to numeric: float64
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS (Original)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access (Original) .....
+Error processing dv1_healthcare_access (Original): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+..... Analyzing DV: dv2_healthcare_quality (Original) .....
+Error processing dv2_healthcare_quality (Original): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+..... Analyzing DV: dv3_operational_eff (Original) .....
+Error processing dv3_operational_eff (Original): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+--------------------------------------------------------------------------------
+ PART B: INDEX-LEVEL MODELS (Improved)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access (Improved) .....
+Error processing dv1_healthcare_access (Improved): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+..... Analyzing DV: dv2_healthcare_quality (Improved) .....
+Error processing dv2_healthcare_quality (Improved): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+..... Analyzing DV: dv3_operational_eff (Improved) .....
+Error processing dv3_operational_eff (Improved): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+--------------------------------------------------------------------------------
+ PART C: COMPONENT-LEVEL MODELS
+--------------------------------------------------------------------------------
+Component-level data fetched: shape = (3143, 37)
+
+..... Analyzing DV: dv1_healthcare_access (Component) .....
+Error processing dv1_healthcare_access (Component): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+..... Analyzing DV: dv2_healthcare_quality (Component) .....
+Error processing dv2_healthcare_quality (Component): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+..... Analyzing DV: dv3_operational_eff (Component) .....
+Error processing dv3_operational_eff (Component): name 'args' is not defined
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Detective_Work_041425_v2.py", line 1347, in analyze_all_dvs
+    df, dv, predictors, logger=logger, verbose_interactions=args.verbose_interactions
+                                                            ^^^^
+NameError: name 'args' is not defined
+
+
+--------------------------------------------------------------------------------
+ PART Z: SPECIFIC VARIABLE PAIRS TEST
+--------------------------------------------------------------------------------
+Columns in aha_survey_data: ['id', 'cntrl', 'mname', 'madmin', 'mlocaddr', 'mloccity', 'mlocstcd', 'mloczip', 'bsc', 'sysname', 'fcounty', 'mapp19', 'mapp20', 'robohos', 'robosys', 'roboven', 'jnls', 'paytot', 'bdtot', 'admtot', 'ipdtot', 'vem', 'fted', 'fter', 'ften', 'ftep', 'fteap', 'vmd', 'vres', 'vrn', 'vlpn', 'vast', 'vrad', 'vlab', 'vrsp', 'vothl', 'vtotl', 'adjadm', 'adjpd', 'adjadc', 'ftemd', 'ftern', 'ftelpn', 'fteres', 'ftecap', 'crnfte', 'tecar', 'aprn', 'fteapn', 'ftephrn', 'wfaipsn', 'wfaippd', 'wfaiss', 'wfaiart', 'wfaioacw', 'wfaidna', 'gfeet', 'ceamt']
+AHA data fetched: shape=(6166, 13)
+AHA data successfully rolled up to county level: shape=(2487, 17)
+Component-level data fetched: shape = (3143, 37)
+Part Z merged shape=(2458, 19) for user-requested tests.
+
+..... Univariate OLS for Each Condition .....
+Univariate OLS: preventable_hospital_stays_raw_value ~ wfaipsn_wtd_bdtot
+  => n=2444, R²=0.0030, Coef=-262.3972, p=6.5901e-03
+Univariate OLS: preventable_hospital_stays_raw_value ~ wfaippd_wtd_bdtot
+  => n=2444, R²=0.0032, Coef=-259.2512, p=5.4219e-03
+Univariate OLS: preventable_hospital_stays_raw_value ~ wfaiss_wtd_bdtot
+  => n=2444, R²=0.0025, Coef=-243.7070, p=1.3777e-02
+Univariate OLS: preventable_hospital_stays_raw_value ~ wfaioacw_wtd_bdtot
+  => n=2444, R²=0.0035, Coef=-231.3043, p=3.3989e-03
+Univariate OLS: preventable_hospital_stays_raw_value ~ wfaiart_wtd_bdtot
+  => n=2444, R²=0.0066, Coef=-331.1545, p=6.1267e-05
+Univariate OLS: premature_death_raw_value ~ wfaipsn_wtd_bdtot
+  => n=2449, R²=0.0138, Coef=-1696.6924, p=5.5209e-09
+Univariate OLS: premature_death_raw_value ~ wfaippd_wtd_bdtot
+  => n=2449, R²=0.0173, Coef=-1833.9174, p=6.3828e-11
+Univariate OLS: premature_death_raw_value ~ wfaiss_wtd_bdtot
+  => n=2449, R²=0.0120, Coef=-1621.5862, p=5.4028e-08
+Univariate OLS: premature_death_raw_value ~ wfaioacw_wtd_bdtot
+  => n=2449, R²=0.0200, Coef=-1670.1100, p=2.0634e-12
+Univariate OLS: premature_death_raw_value ~ wfaiart_wtd_bdtot
+  => n=2449, R²=0.0249, Coef=-1951.2139, p=4.0535e-15
+Univariate OLS: premature_death_raw_value ~ paytot_sum
+  => n=2451, R²=0.0177, Coef=-0.0000, p=3.9235e-11
+Univariate OLS: premature_death_raw_value ~ bdtot_over_paytot
+  => n=2451, R²=0.0180, Coef=139881441.9653, p=2.5977e-11
+Univariate OLS: premature_death_raw_value ~ admtot_sum
+  => n=2451, R²=0.0172, Coef=-0.0100, p=6.8241e-11
+Univariate OLS: premature_death_raw_value ~ ftemd_sum
+  => n=2451, R²=0.0083, Coef=-0.8557, p=5.9922e-06
+Univariate OLS: premature_death_raw_value ~ ftemd_over_adjadm
+  => n=2450, R²=0.0454, Coef=93560.8628, p=1.4990e-26
+Univariate OLS: preventable_hospital_stays_raw_value ~ ftemd_sum
+  => n=2446, R²=0.0001, Coef=0.0242, p=6.9968e-01
+Univariate OLS: preventable_hospital_stays_raw_value ~ ftemd_over_adjadm
+  => n=2445, R²=0.0001, Coef=-1193.6542, p=6.9256e-01
+Univariate OLS: preventable_hospital_stays_raw_value ~ ftern_sum
+  => n=2446, R²=0.0000, Coef=-0.0016, p=8.5848e-01
+Univariate OLS: preventable_hospital_stays_raw_value ~ ftern_over_adjadm
+  => n=2445, R²=0.0000, Coef=35.4555, p=9.6111e-01
+Univariate OLS: premature_death_raw_value ~ ftern_sum
+  => n=2451, R²=0.0161, Coef=-0.1690, p=2.7981e-10
+Univariate OLS: premature_death_raw_value ~ ftern_over_adjadm
+  => n=2450, R²=0.0059, Coef=11028.6942, p=1.3255e-04
+Univariate OLS: preventable_hospital_stays_raw_value ~ ceamt_sum
+  => n=2446, R²=0.0000, Coef=-0.0000, p=9.7575e-01
+Univariate OLS: preventable_hospital_stays_raw_value ~ ceamt_over_adjadm
+  => n=2445, R²=0.0025, Coef=-0.0293, p=1.2831e-02
+Univariate OLS: premature_death_raw_value ~ ceamt_sum
+  => n=2451, R²=0.0128, Coef=-0.0000, p=1.9722e-08
+Univariate OLS: premature_death_raw_value ~ ceamt_over_adjadm
+  => n=2450, R²=0.0049, Coef=-0.1234, p=5.0065e-04
+
+--------------------------------------------------------------------------------
+ FINAL COHEN'S f² SUMMARY
+--------------------------------------------------------------------------------
+No f² results to summarize.
+
+================================================================================
+ ANALYSIS COMPLETED: 2025-04-13 12:47:03
+ Total runtime: 0:00:51.555295
+================================================================================
+

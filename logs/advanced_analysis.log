@@ -1,0 +1,115 @@
+2025-05-18 16:15:30,763 |     INFO | AHA_Machine_Learning_051825_v2.py:610 | ===== Starting Advanced AI Adoption Impact Analysis =====
+2025-05-18 16:15:31,782 |     INFO | AHA_Machine_Learning_051825_v2.py:106 | ✔ Connected to Postgres database: Research_TEST on localhost
+2025-05-18 16:15:31,782 |     INFO | AHA_Machine_Learning_051825_v2.py:116 | 🚀 Starting data fetching and preprocessing...
+2025-05-18 16:16:00,724 |     INFO | AHA_Machine_Learning_051825_v2.py:149 | ✔ Successfully fetched 3270 rows and 15 columns.
+2025-05-18 16:16:00,724 |     INFO | AHA_Machine_Learning_051825_v2.py:158 | Missing values before any imputation:
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'population': 139 missing (4.3%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'crude_rate': 141 missing (4.3%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'medicaid_expansion_active': 129 missing (3.9%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'physical_environment_score': 129 missing (3.9%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'social_economic_factors_score': 129 missing (3.9%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'health_outcomes_score': 129 missing (3.9%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'clinical_care_score': 129 missing (3.9%)
+2025-05-18 16:16:00,725 |     INFO | AHA_Machine_Learning_051825_v2.py:161 |   - Column 'census_division': 137 missing (4.2%)
+2025-05-18 16:16:00,726 |     INFO | AHA_Machine_Learning_051825_v2.py:171 | Dropped 142 rows due to NA in FIPS or outcome variables.
+2025-05-18 16:16:00,728 |     INFO | AHA_Machine_Learning_051825_v2.py:186 | One-hot encoding 'census_division'.
+2025-05-18 16:16:00,729 |     INFO | AHA_Machine_Learning_051825_v2.py:191 | Added 8 dummy columns for census division.
+2025-05-18 16:16:00,730 |     INFO | AHA_Machine_Learning_051825_v2.py:211 | Final dataset shape after preprocessing: (3128, 24)
+2025-05-18 16:16:00,730 |     INFO | AHA_Machine_Learning_051825_v2.py:216 | ✔ Data fetching and preprocessing complete.
+2025-05-18 16:16:00,730 |     INFO | AHA_Machine_Learning_051825_v2.py:629 | Using 13 control variables for modeling: ['log_population', 'hospital_beds_per_capita', 'medicaid_expansion_active', 'physical_environment_score', 'social_economic_factors_score', 'census_div_2', 'census_div_3', 'census_div_4', 'census_div_5', 'census_div_6', 'census_div_7', 'census_div_8', 'census_div_9']
+2025-05-18 16:16:00,730 |     INFO | AHA_Machine_Learning_051825_v2.py:223 | 🚀 Starting Feature Importance Analysis...
+2025-05-18 16:16:00,730 |     INFO | AHA_Machine_Learning_051825_v2.py:230 | --- Analyzing outcome: All-Cause Mortality Crude Rate (crude_rate) ---
+2025-05-18 16:16:00,731 |     INFO | AHA_Machine_Learning_051825_v2.py:266 |   Training RandomForest for All-Cause Mortality Crude Rate...
+2025-05-18 16:16:00,832 |     INFO | AHA_Machine_Learning_051825_v2.py:273 |     RandomForest - MSE: 41130.5645, R-squared: 0.5827
+2025-05-18 16:16:01,274 |     INFO | AHA_Machine_Learning_051825_v2.py:289 |     Saved feature importance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/feat_imp_crude_rate_RandomForest.png
+2025-05-18 16:16:01,274 |     INFO | AHA_Machine_Learning_051825_v2.py:266 |   Training GradientBoosting for All-Cause Mortality Crude Rate...
+2025-05-18 16:16:01,514 |     INFO | AHA_Machine_Learning_051825_v2.py:273 |     GradientBoosting - MSE: 40362.3615, R-squared: 0.5905
+2025-05-18 16:16:01,616 |     INFO | AHA_Machine_Learning_051825_v2.py:289 |     Saved feature importance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/feat_imp_crude_rate_GradientBoosting.png
+2025-05-18 16:16:01,616 |     INFO | AHA_Machine_Learning_051825_v2.py:230 | --- Analyzing outcome: Health Outcomes Index (CHR, ↓ better) (health_outcomes_score) ---
+2025-05-18 16:16:01,617 |     INFO | AHA_Machine_Learning_051825_v2.py:266 |   Training RandomForest for Health Outcomes Index (CHR, ↓ better)...
+2025-05-18 16:16:01,706 |     INFO | AHA_Machine_Learning_051825_v2.py:273 |     RandomForest - MSE: 955769.5238, R-squared: 0.7044
+2025-05-18 16:16:01,824 |     INFO | AHA_Machine_Learning_051825_v2.py:289 |     Saved feature importance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/feat_imp_health_outcomes_score_RandomForest.png
+2025-05-18 16:16:01,824 |     INFO | AHA_Machine_Learning_051825_v2.py:266 |   Training GradientBoosting for Health Outcomes Index (CHR, ↓ better)...
+2025-05-18 16:16:02,045 |     INFO | AHA_Machine_Learning_051825_v2.py:273 |     GradientBoosting - MSE: 1023774.4329, R-squared: 0.6834
+2025-05-18 16:16:02,144 |     INFO | AHA_Machine_Learning_051825_v2.py:289 |     Saved feature importance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/feat_imp_health_outcomes_score_GradientBoosting.png
+2025-05-18 16:16:02,144 |     INFO | AHA_Machine_Learning_051825_v2.py:230 | --- Analyzing outcome: Clinical Care Index (CHR, ↓ better) (clinical_care_score) ---
+2025-05-18 16:16:02,145 |     INFO | AHA_Machine_Learning_051825_v2.py:266 |   Training RandomForest for Clinical Care Index (CHR, ↓ better)...
+2025-05-18 16:16:02,237 |     INFO | AHA_Machine_Learning_051825_v2.py:273 |     RandomForest - MSE: 189298.0120, R-squared: 0.4109
+2025-05-18 16:16:02,357 |     INFO | AHA_Machine_Learning_051825_v2.py:289 |     Saved feature importance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/feat_imp_clinical_care_score_RandomForest.png
+2025-05-18 16:16:02,357 |     INFO | AHA_Machine_Learning_051825_v2.py:266 |   Training GradientBoosting for Clinical Care Index (CHR, ↓ better)...
+2025-05-18 16:16:02,576 |     INFO | AHA_Machine_Learning_051825_v2.py:273 |     GradientBoosting - MSE: 178541.8833, R-squared: 0.4444
+2025-05-18 16:16:02,674 |     INFO | AHA_Machine_Learning_051825_v2.py:289 |     Saved feature importance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/feat_imp_clinical_care_score_GradientBoosting.png
+2025-05-18 16:16:02,685 |     INFO | AHA_Machine_Learning_051825_v2.py:309 | ✔ Saved AI feature importance summary to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/output_advanced/ai_feature_importances_summary.csv
+2025-05-18 16:16:02,685 |     INFO | AHA_Machine_Learning_051825_v2.py:315 | ✔ Feature Importance Analysis complete.
+2025-05-18 16:16:02,685 |     INFO | AHA_Machine_Learning_051825_v2.py:636 | ML feature importance analysis produced results.
+2025-05-18 16:16:02,685 |     INFO | AHA_Machine_Learning_051825_v2.py:430 | 🚀 Starting Causal Inference Analysis for Treatment: 'pct_wfaiart_enabled_beds', Outcome: 'health_outcomes_score'
+2025-05-18 16:16:02,686 |     INFO | AHA_Machine_Learning_051825_v2.py:444 | Defined treatment based on 'pct_wfaiart_enabled_beds' > median (0.00).
+2025-05-18 16:16:02,686 |     INFO | AHA_Machine_Learning_051825_v2.py:454 | Treatment groups: Treated=417, Control=2711
+2025-05-18 16:16:02,686 |     INFO | AHA_Machine_Learning_051825_v2.py:464 | Preparing confounders for Logit model: ['log_population', 'hospital_beds_per_capita', 'medicaid_expansion_active', 'physical_environment_score', 'social_economic_factors_score', 'census_div_2', 'census_div_3', 'census_div_4', 'census_div_5', 'census_div_6', 'census_div_7', 'census_div_8', 'census_div_9']
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:477 | Confounder dtypes BEFORE sm.add_constant:
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - log_population: float64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - hospital_beds_per_capita: float64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - medicaid_expansion_active: float64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - physical_environment_score: float64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - social_economic_factors_score: float64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_2: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_3: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_4: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_5: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_6: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_7: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_8: int64
+2025-05-18 16:16:02,687 |     INFO | AHA_Machine_Learning_051825_v2.py:478 |   - census_div_9: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:482 | X_confounders_for_logit dtypes AFTER sm.add_constant (input to Logit):
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - const: float64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - log_population: float64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - hospital_beds_per_capita: float64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - medicaid_expansion_active: float64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - physical_environment_score: float64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - social_economic_factors_score: float64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_2: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_3: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_4: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_5: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_6: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_7: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_8: int64
+2025-05-18 16:16:02,688 |     INFO | AHA_Machine_Learning_051825_v2.py:484 |   - census_div_9: int64
+2025-05-18 16:16:02,694 |     INFO | AHA_Machine_Learning_051825_v2.py:506 | Successfully estimated propensity scores.
+2025-05-18 16:16:02,702 |     INFO | AHA_Machine_Learning_051825_v2.py:507 | Propensity score model summary:
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:              TREATMENT   No. Observations:                 3128
+Model:                          Logit   Df Residuals:                     3114
+Method:                           MLE   Df Model:                           13
+Date:                Sun, 18 May 2025   Pseudo R-squ.:                  0.2869
+Time:                        16:16:02   Log-Likelihood:                -875.79
+converged:                       True   LL-Null:                       -1228.2
+Covariance Type:            nonrobust   LLR p-value:                3.344e-142
+=================================================================================================
+                                    coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+const                           -14.6176      0.922    -15.852      0.000     -16.425     -12.810
+log_population                    1.0605      0.057     18.637      0.000       0.949       1.172
+hospital_beds_per_capita          0.2832      0.085      3.327      0.001       0.116       0.450
+medicaid_expansion_active         0.2856      0.154      1.852      0.064      -0.017       0.588
+physical_environment_score       -0.4163      0.176     -2.361      0.018      -0.762      -0.071
+social_economic_factors_score    -0.0031      0.020     -0.158      0.874      -0.042       0.036
+census_div_2                      0.1563      0.393      0.398      0.690      -0.613       0.926
+census_div_3                     -0.5384      0.379     -1.420      0.156      -1.281       0.205
+census_div_4                      0.5033      0.371      1.359      0.174      -0.223       1.230
+census_div_5                     -0.8511      0.443     -1.921      0.055      -1.720       0.017
+census_div_6                      0.1187      0.386      0.307      0.759      -0.639       0.876
+census_div_7                     -0.0952      0.409     -0.233      0.816      -0.897       0.707
+census_div_8                      0.1017      0.392      0.260      0.795      -0.666       0.870
+census_div_9                     -0.9080      0.423     -2.148      0.032      -1.736      -0.080
+=================================================================================================
+2025-05-18 16:16:02,807 |     INFO | AHA_Machine_Learning_051825_v2.py:518 | Saved propensity score distribution plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/ps_dist_pct_wfaiart_enabled_beds_health_outcomes_score.png
+2025-05-18 16:16:02,807 |     INFO | AHA_Machine_Learning_051825_v2.py:522 | Trimmed to common support (PS 0.01-0.99). New N: 2855
+2025-05-18 16:16:02,809 |     INFO | AHA_Machine_Learning_051825_v2.py:549 | IPTW ATE: -484.1255 (SE: 53.9811), 95% CI: [-589.9713, -378.2796]
+2025-05-18 16:16:02,894 |     INFO | AHA_Machine_Learning_051825_v2.py:569 | Saved SMD balance plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/smd_balance_pct_wfaiart_enabled_beds_health_outcomes_score.png
+2025-05-18 16:16:02,939 |     INFO | AHA_Machine_Learning_051825_v2.py:586 | Saved ATE estimates plot to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/figs_advanced/ate_estimates_pct_wfaiart_enabled_beds_health_outcomes_score.png
+2025-05-18 16:16:02,939 |  WARNING | AHA_Machine_Learning_051825_v2.py:414 | E-value for continuous outcome ATE is complex. The paper's E-value (e.g., 2.3-3.3) likely refers to an effect on a relative (RR/OR) scale. This calculation is a rough estimate assuming an RR interpretation.
+2025-05-18 16:16:02,939 |     INFO | AHA_Machine_Learning_051825_v2.py:603 | ✔ Causal Inference Analysis complete.
+2025-05-18 16:16:02,940 |     INFO | AHA_Machine_Learning_051825_v2.py:655 | ✔ Saved causal inference summary to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/output_advanced/causal_results_pct_wfaiart_enabled_beds_health_outcomes_score.csv
+2025-05-18 16:16:02,940 |     INFO | AHA_Machine_Learning_051825_v2.py:659 | ===== Analysis Complete. Outputs are in logs/, figs_advanced/, output_advanced/ =====

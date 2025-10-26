@@ -1,0 +1,314 @@
+2025-10-18 19:13:20,085 - INFO - Logger initialized.
+2025-10-18 19:13:20,143 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 19:13:20,144 - INFO - ============================================================
+2025-10-18 19:13:20,144 - INFO - DIAGNOSTIC: Checking CHR column data quality
+2025-10-18 19:13:20,144 - INFO - ============================================================
+2025-10-18 19:13:20,147 - INFO - 
+Checking chr_analytic_chunk_2...
+2025-10-18 19:13:20,158 - INFO - ================================================================================
+2025-10-18 19:13:20,158 - INFO - EXECUTING SQL:
+2025-10-18 19:13:20,158 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:20,158 - INFO - SELECT 
+                long_commute_driving_alone_raw_value,
+                COUNT(*) as count,
+                COUNT(DISTINCT long_commute_driving_alone_raw_value) as distinct_count
+            FROM public.chr_analytic_chunk_2
+            WHERE year = '2024'
+            GROUP BY long_commute_driving_alone_raw_value
+            ORDER BY count DESC
+            LIMIT 10
+2025-10-18 19:13:20,158 - INFO - ================================================================================
+2025-10-18 19:13:20,172 - INFO -   ✓ long_commute_driving_alone_raw_value: Found with 10 distinct values
+2025-10-18 19:13:20,172 - INFO -     Top values: ['0.31799998879432678', '0.33700001239776611', '0.30199998617172241', '0.34700000286102295', '0.34400001168251038']
+2025-10-18 19:13:20,172 - INFO -     Numeric conversion: 100.0% valid
+2025-10-18 19:13:20,172 - INFO -   ❌ school_funding_adequacy_raw_value: NOT FOUND in table
+2025-10-18 19:13:20,172 - INFO -   ❌ school_segregation_raw_value: NOT FOUND in table
+2025-10-18 19:13:20,173 - INFO - 
+Checking chr_analytic_chunk_3...
+2025-10-18 19:13:20,178 - INFO -   ❌ long_commute_driving_alone_raw_value: NOT FOUND in table
+2025-10-18 19:13:20,178 - INFO - ================================================================================
+2025-10-18 19:13:20,178 - INFO - EXECUTING SQL:
+2025-10-18 19:13:20,178 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:20,178 - INFO - SELECT 
+                school_funding_adequacy_raw_value,
+                COUNT(*) as count,
+                COUNT(DISTINCT school_funding_adequacy_raw_value) as distinct_count
+            FROM public.chr_analytic_chunk_3
+            WHERE year = '2024'
+            GROUP BY school_funding_adequacy_raw_value
+            ORDER BY count DESC
+            LIMIT 10
+2025-10-18 19:13:20,178 - INFO - ================================================================================
+2025-10-18 19:13:20,186 - INFO -   ✓ school_funding_adequacy_raw_value: Found with 10 distinct values
+2025-10-18 19:13:20,186 - INFO -     Top values: [None, '-4930.80517578125', '-1001.1422729492188', '-1004.7899780273438', '-1008.5399780273438']
+2025-10-18 19:13:20,186 - INFO -     Numeric conversion: 90.0% valid
+2025-10-18 19:13:20,186 - INFO - ================================================================================
+2025-10-18 19:13:20,186 - INFO - EXECUTING SQL:
+2025-10-18 19:13:20,186 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:20,186 - INFO - SELECT 
+                school_segregation_raw_value,
+                COUNT(*) as count,
+                COUNT(DISTINCT school_segregation_raw_value) as distinct_count
+            FROM public.chr_analytic_chunk_3
+            WHERE year = '2024'
+            GROUP BY school_segregation_raw_value
+            ORDER BY count DESC
+            LIMIT 10
+2025-10-18 19:13:20,186 - INFO - ================================================================================
+2025-10-18 19:13:20,191 - INFO -   ✓ school_segregation_raw_value: Found with 10 distinct values
+2025-10-18 19:13:20,191 - INFO -     Top values: [None, '0.33536046743392944', '0.24044071137905121', '0.00470366096124053', '0.01063079945743084']
+2025-10-18 19:13:20,192 - INFO -     Numeric conversion: 90.0% valid
+2025-10-18 19:13:20,192 - INFO - ============================================================
+2025-10-18 19:13:20,200 - INFO - ================================================================================
+2025-10-18 19:13:20,200 - INFO - EXECUTING SQL:
+2025-10-18 19:13:20,200 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:20,200 - INFO - SELECT
+          vcm.county_fips,
+          vcm.population::numeric AS population,
+          vcm.census_division,
+          vcm.medicaid_expansion_active AS iv1_medicaid_expansion_active,
+          vcm.physical_environment_score::numeric AS iv2_physical_environment_score,
+          vcm.health_behaviors_score::numeric AS iv3_health_behaviors_score,
+          vcm.social_economic_factors_score::numeric AS iv4_social_economic_factors_score,
+          vcm.health_outcomes_score::numeric AS dv2_health_outcomes_score,
+          vcm.weighted_ai_adoption_score::numeric AS mo1_genai_composite_score,
+          vcm.weighted_robotics_adoption_score::numeric AS mo2_robotics_composite_score
+    
+, vcv.premature_death_raw_value::numeric AS dv21_premature_death_ypll_rate
+, vcts.pct_wfaiart_enabled::numeric AS mo11_ai_automate_routine_tasks_pct, vcts.pct_wfaioacw_enabled::numeric AS mo12_ai_optimize_workflows_pct, vcts.pct_wfaippd_enabled::numeric AS mo13_ai_predict_patient_demand_pct, vcts.pct_wfaipsn_enabled::numeric AS mo14_ai_predict_staff_needs_pct, vcts.pct_wfaiss_enabled::numeric AS mo15_ai_staff_scheduling_pct, vcts.pct_robohos_enabled::numeric AS mo21_robotics_in_hospital_pct
+, hrsa.irr_county_value::numeric AS sp5_irr_county_value
+,
+          aha.capex_sum::numeric AS fi1_capex_sum,
+          aha.adjpd_sum::numeric AS fi2_adjpd_sum,
+          CASE WHEN aha.adjpd_sum IS NOT NULL AND aha.adjpd_sum<>0
+               THEN (aha.capex_sum::numeric/aha.adjpd_sum::numeric)
+               ELSE NULL END AS fi_capex_intensity_ratio
+        
+FROM public.vw_conceptual_model_adjpd vcm
+LEFT JOIN public.vw_conceptual_model_variables_adjpd  vcv  ON vcm.county_fips=vcv.county_fips
+LEFT JOIN public.vw_county_tech_summary_adjpd vcts ON vcm.county_fips=vcts.county_fips
+
+        LEFT JOIN (
+          SELECT LPAD(TRIM(CAST(county_fips_code AS TEXT)),5,'0') AS county_fips,
+                 AVG(NULLIF(irr_county_value,'')::numeric) AS irr_county_value
+          FROM public.hrsa_health_equity_data
+          GROUP BY 1
+        ) hrsa ON vcm.county_fips=hrsa.county_fips
+        
+
+        LEFT JOIN (
+          SELECT LPAD(TRIM(CAST(fcounty AS TEXT)),5,'0') AS county_fips,
+                 SUM(NULLIF(ceamt,'')::numeric) AS capex_sum,
+                 SUM(NULLIF(adjpd,'')::numeric) AS adjpd_sum
+          FROM public.aha_survey_data
+          GROUP BY 1
+        ) aha ON vcm.county_fips=aha.county_fips
+        
+WHERE vcm.population IS NOT NULL AND vcm.population::numeric>0;
+2025-10-18 19:13:20,200 - INFO - ================================================================================
+2025-10-18 19:13:50,320 - INFO - Base data: 3135 counties.
+2025-10-18 19:13:50,322 - INFO - Added division FE (dummies=8).
+2025-10-18 19:13:50,324 - INFO - ================================================================================
+2025-10-18 19:13:50,324 - INFO - EXECUTING SQL:
+2025-10-18 19:13:50,324 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,324 - INFO - SELECT 
+        LPAD(TRIM(CAST(county_fips AS TEXT)), 5, '0') as county_fips,
+        CAST(year AS TEXT) as year,
+        NULLIF(TRIM(non_hispanic_black_raw_value), '') AS non_hispanic_black_raw_value, NULLIF(TRIM(voter_turnout_raw_value), '') AS voter_turnout_raw_value, NULLIF(TRIM(non_hispanic_white_raw_value), '') AS non_hispanic_white_raw_value, NULLIF(TRIM(female_raw_value), '') AS female_raw_value, NULLIF(TRIM(school_funding_adequacy_raw_value), '') AS school_funding_adequacy_raw_value, NULLIF(TRIM(below_18_years_of_age_raw_value), '') AS below_18_years_of_age_raw_value, NULLIF(TRIM(_65_and_older_raw_value), '') AS _65_and_older_raw_value, NULLIF(TRIM(population_raw_value), '') AS population_raw_value, NULLIF(TRIM(homeownership_raw_value), '') AS homeownership_raw_value, NULLIF(TRIM(juvenile_arrests_raw_value), '') AS juvenile_arrests_raw_value, NULLIF(TRIM(census_participation_raw_value), '') AS census_participation_raw_value, NULLIF(TRIM(traffic_volume_raw_value), '') AS traffic_volume_raw_value, NULLIF(TRIM(gender_pay_gap_raw_value), '') AS gender_pay_gap_raw_value, NULLIF(TRIM(hispanic_raw_value), '') AS hispanic_raw_value, NULLIF(TRIM(not_proficient_in_english_raw_value), '') AS not_proficient_in_english_raw_value, NULLIF(TRIM(math_scores_raw_value), '') AS math_scores_raw_value, NULLIF(TRIM(reading_scores_raw_value), '') AS reading_scores_raw_value, NULLIF(TRIM(severe_housing_cost_burden_raw_value), '') AS severe_housing_cost_burden_raw_value, NULLIF(TRIM(school_segregation_raw_value), '') AS school_segregation_raw_value
+    FROM public.chr_analytic_chunk_3
+    WHERE year IS NOT NULL
+2025-10-18 19:13:50,324 - INFO - ================================================================================
+2025-10-18 19:13:50,338 - INFO - chr_analytic_chunk_3: Filtered 52 invalid county_fips records
+2025-10-18 19:13:50,367 - INFO - chr_analytic_chunk_3: Years range from 2024 to 2024 (3143 valid records, years: [2024])
+2025-10-18 19:13:50,368 - INFO - chr_analytic_chunk_3: 19/19 requested columns have data: ['non_hispanic_black_raw_value', 'voter_turnout_raw_value', 'non_hispanic_white_raw_value', 'female_raw_value', 'school_funding_adequacy_raw_value']...
+2025-10-18 19:13:50,368 - INFO - chr_analytic_chunk_3: Sample county_fips after processing: ['00265', '00017', '00103', '00283', '00075']
+2025-10-18 19:13:50,370 - INFO - ================================================================================
+2025-10-18 19:13:50,370 - INFO - EXECUTING SQL:
+2025-10-18 19:13:50,370 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,370 - INFO - SELECT 
+        LPAD(TRIM(CAST(county_fips AS TEXT)), 5, '0') as county_fips,
+        CAST(year AS TEXT) as year,
+        NULLIF(TRIM(percentage_of_households_with_high_housing_costs), '') AS percentage_of_households_with_high_housing_costs, NULLIF(TRIM(percentage_of_households_with_overcrowding), '') AS percentage_of_households_with_overcrowding, NULLIF(TRIM(driving_alone_to_work_raw_value), '') AS driving_alone_to_work_raw_value, NULLIF(TRIM(severe_housing_problems_raw_value), '') AS severe_housing_problems_raw_value, NULLIF(TRIM(long_commute_driving_alone_raw_value), '') AS long_commute_driving_alone_raw_value, NULLIF(TRIM(pct_households_with_lack_of_kitchen_or_plumbing), '') AS pct_households_with_lack_of_kitchen_or_plumbing, NULLIF(TRIM(air_pollution_particulate_matter_raw_value), '') AS air_pollution_particulate_matter_raw_value, NULLIF(TRIM(drinking_water_violations_raw_value), '') AS drinking_water_violations_raw_value, NULLIF(TRIM(life_expectancy_raw_value), '') AS life_expectancy_raw_value
+    FROM public.chr_analytic_chunk_2
+    WHERE year IS NOT NULL
+2025-10-18 19:13:50,370 - INFO - ================================================================================
+2025-10-18 19:13:50,378 - INFO - chr_analytic_chunk_2: Filtered 52 invalid county_fips records
+2025-10-18 19:13:50,392 - INFO - chr_analytic_chunk_2: Years range from 2024 to 2024 (3143 valid records, years: [2024])
+2025-10-18 19:13:50,393 - INFO - chr_analytic_chunk_2: 9/9 requested columns have data: ['percentage_of_households_with_high_housing_costs', 'percentage_of_households_with_overcrowding', 'driving_alone_to_work_raw_value', 'severe_housing_problems_raw_value', 'long_commute_driving_alone_raw_value']...
+2025-10-18 19:13:50,393 - INFO - chr_analytic_chunk_2: Sample county_fips after processing: ['00265', '00109', '00011', '00015', '00069']
+2025-10-18 19:13:50,395 - INFO - ================================================================================
+2025-10-18 19:13:50,395 - INFO - EXECUTING SQL:
+2025-10-18 19:13:50,395 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,395 - INFO - SELECT 
+        LPAD(TRIM(CAST(county_fips AS TEXT)), 5, '0') as county_fips,
+        CAST(year AS TEXT) as year,
+        NULLIF(TRIM(premature_death_raw_value), '') AS premature_death_raw_value
+    FROM public.chr_analytic_chunk_1
+    WHERE year IS NOT NULL
+2025-10-18 19:13:50,395 - INFO - ================================================================================
+2025-10-18 19:13:50,399 - INFO - chr_analytic_chunk_1: Filtered 52 invalid county_fips records
+2025-10-18 19:13:50,402 - INFO - chr_analytic_chunk_1: Years range from 2024 to 2024 (3143 valid records, years: [2024])
+2025-10-18 19:13:50,402 - INFO - chr_analytic_chunk_1: 1/1 requested columns have data: ['premature_death_raw_value']
+2025-10-18 19:13:50,402 - INFO - chr_analytic_chunk_1: Sample county_fips after processing: ['00119', '00041', '00045', '00155', '00011']
+2025-10-18 19:13:50,405 - INFO - ================================================================================
+2025-10-18 19:13:50,405 - INFO - EXECUTING SQL:
+2025-10-18 19:13:50,405 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,405 - INFO - SELECT 1 FROM information_schema.tables
+        WHERE table_schema='public' AND table_name=:t LIMIT 1
+2025-10-18 19:13:50,405 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,405 - INFO - PARAMETERS: {'t': 'chr_analytic_chunk_1'}
+2025-10-18 19:13:50,405 - INFO - ================================================================================
+2025-10-18 19:13:50,406 - INFO - ================================================================================
+2025-10-18 19:13:50,406 - INFO - EXECUTING SQL:
+2025-10-18 19:13:50,406 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,406 - INFO - SELECT column_name FROM information_schema.columns
+        WHERE table_schema='public' AND table_name=:t
+2025-10-18 19:13:50,406 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,406 - INFO - PARAMETERS: {'t': 'chr_analytic_chunk_1'}
+2025-10-18 19:13:50,406 - INFO - ================================================================================
+2025-10-18 19:13:50,407 - INFO - ================================================================================
+2025-10-18 19:13:50,407 - INFO - EXECUTING SQL:
+2025-10-18 19:13:50,407 - INFO - --------------------------------------------------------------------------------
+2025-10-18 19:13:50,407 - INFO - SELECT county_fips, year, premature_death_flag_0_no_flag_1_unreliable_2_suppressed FROM public.chr_analytic_chunk_1;
+2025-10-18 19:13:50,407 - INFO - ================================================================================
+2025-10-18 19:13:50,425 - INFO - Data summary:
+2025-10-18 19:13:50,425 - INFO -   Base counties: 3135
+2025-10-18 19:13:50,425 - INFO -   CHR chunk_3: 325 counties (latest year)
+2025-10-18 19:13:50,425 - INFO -   CHR chunk_2: 325 counties (latest year)
+2025-10-18 19:13:50,425 - INFO -   CHR chunk_1 temporal: 85835 county-year records
+2025-10-18 19:13:50,425 - INFO -   Year range in chunk_1: 2024-2024
+2025-10-18 19:13:50,425 - INFO -   Historical years (2010-2022) available: 0
+2025-10-18 19:13:50,425 - WARNING -   ⚠️  No historical CHR data available - temporal falsification will be skipped
+2025-10-18 19:13:50,425 - WARNING -   ⚠️  To run temporal falsification, load CHR data from 2010-2022
+2025-10-18 19:13:50,425 - INFO - CHR chunk_3: 325 counties
+2025-10-18 19:13:50,425 - INFO - CHR chunk_3 sample county_fips: ['00001', '00003', '00005', '00006', '00007']
+2025-10-18 19:13:50,426 - INFO - CHR chunk_3 county_fips dtype: object
+2025-10-18 19:13:50,426 - INFO - CHR chunk_2: 325 counties
+2025-10-18 19:13:50,426 - INFO - CHR chunk_2 sample county_fips: ['00001', '00003', '00005', '00006', '00007']
+2025-10-18 19:13:50,426 - INFO - CHR chunk_2 county_fips dtype: object
+2025-10-18 19:13:50,426 - INFO - Base df: 3135 counties
+2025-10-18 19:13:50,426 - INFO - Base df sample county_fips: ['01001', '01003', '01005', '01007', '01009']
+2025-10-18 19:13:50,426 - INFO - Base df county_fips dtype: object
+2025-10-18 19:13:50,426 - INFO - County overlap between base and chunk_3: 0 counties
+2025-10-18 19:13:50,426 - WARNING - Very few overlapping counties! Base has 3135, CHR has 325
+2025-10-18 19:13:50,426 - WARNING - Sample base county_fips: ['18169', '20167', '36011', '05055', '13003']
+2025-10-18 19:13:50,426 - WARNING - Sample CHR county_fips: ['00427', '00095', '00399', '00233', '00393']
+2025-10-18 19:13:50,428 - WARNING - [Direct NCO] Skipping _65_and_older_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,428 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,428 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,428 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,429 - WARNING - [Direct NCO] Skipping air_pollution_particulate_matter_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,429 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,429 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,429 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,429 - WARNING - [Direct NCO] Skipping below_18_years_of_age_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,429 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,429 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,430 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,430 - WARNING - [Direct NCO] Skipping census_participation_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,430 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,430 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,430 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,431 - WARNING - [Direct NCO] Skipping drinking_water_violations_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,431 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,431 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,431 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,431 - WARNING - [Direct NCO] Skipping driving_alone_to_work_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,431 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,431 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,431 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,432 - WARNING - [Direct NCO] Skipping female_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,432 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,432 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,432 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,432 - WARNING - [Direct NCO] Skipping gender_pay_gap_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,432 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,432 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,433 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,433 - WARNING - [Direct NCO] Skipping hispanic_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,433 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,433 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,433 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,434 - WARNING - [Direct NCO] Skipping homeownership_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,434 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,434 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,434 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,434 - WARNING - [Direct NCO] Skipping juvenile_arrests_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,434 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,434 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,434 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,435 - WARNING - [Direct NCO] Skipping long_commute_driving_alone_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,435 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,435 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,435 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,436 - WARNING - [Direct NCO] Skipping math_scores_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,436 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,436 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,436 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,437 - WARNING - [Direct NCO] Skipping non_hispanic_black_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,437 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,437 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,437 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,437 - WARNING - [Direct NCO] Skipping non_hispanic_white_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,437 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,437 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,437 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,438 - WARNING - [Direct NCO] Skipping not_proficient_in_english_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,438 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,438 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,438 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,439 - WARNING - [Direct NCO] Skipping reading_scores_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,439 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,439 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,439 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,439 - WARNING - [Direct NCO] Skipping school_funding_adequacy_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,439 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,439 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,439 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,440 - WARNING - [Direct NCO] Skipping school_segregation_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,440 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,440 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,440 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,440 - WARNING - [Direct NCO] Skipping severe_housing_cost_burden_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,440 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,440 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,440 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,441 - WARNING - [Direct NCO] Skipping traffic_volume_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,441 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,441 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,441 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,442 - WARNING - [Direct NCO] Skipping voter_turnout_raw_value: 0 valid values after merge.
+2025-10-18 19:13:50,442 - WARNING -   Total rows after merge: 3135
+2025-10-18 19:13:50,442 - WARNING -   DV column type: float64
+2025-10-18 19:13:50,442 - WARNING -   Sample DV values: [nan, nan, nan, nan, nan]
+2025-10-18 19:13:50,442 - WARNING - Direct NCO tests produced 0 results - check data availability and merge logic.
+2025-10-18 19:13:50,443 - WARNING - [Placebo IV] Skipping voter_turnout_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,444 - WARNING - [Placebo IV] Skipping census_participation_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,444 - WARNING - [Placebo IV] Skipping traffic_volume_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,446 - WARNING - [Placebo IV] Skipping driving_alone_to_work_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,446 - WARNING - [Placebo IV] Skipping long_commute_driving_alone_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,447 - WARNING - [Placebo IV] Skipping reading_scores_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,448 - WARNING - [Placebo IV] Skipping math_scores_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,448 - WARNING - [Placebo IV] Skipping school_funding_adequacy_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,449 - WARNING - [Placebo IV] Skipping school_segregation_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,450 - WARNING - [Placebo IV] Skipping gender_pay_gap_raw_value: 0 valid values after join.
+2025-10-18 19:13:50,450 - WARNING - Placebo interaction tests produced 0 results - check data availability.
+2025-10-18 19:13:50,469 - INFO - DV21 long data shape: (85835, 5)
+2025-10-18 19:13:50,470 - INFO - DV21 unique years available: [2024]
+2025-10-18 19:13:50,470 - WARNING - No years in range 2010-2022 found for temporal falsification.
+2025-10-18 19:13:50,470 - WARNING - Available years: [2024]
+2025-10-18 19:13:50,470 - WARNING - Temporal falsification requires historical CHR data. Skipping this test.
+2025-10-18 19:14:03,304 - INFO - Permutation tests done for MO1 family.
+2025-10-18 19:14:03,311 - INFO - Guardrail checks written.
+2025-10-18 19:14:03,312 - INFO - ============================================================
+2025-10-18 19:14:03,312 - INFO - NEGATIVE CONTROLS TEST SUITE COMPLETE
+2025-10-18 19:14:03,312 - INFO - ============================================================
+2025-10-18 19:14:03,312 - INFO - Output directory: ./negative_controls_output
+2025-10-18 19:14:03,312 - INFO - Tests completed:
+2025-10-18 19:14:03,312 - INFO -   ✓ Direct NCO tests: 0 results
+2025-10-18 19:14:03,312 - INFO -   ✓ Placebo interactions: 0 results
+2025-10-18 19:14:03,312 - INFO -   ✓ Placebo outcomes: 0 results
+2025-10-18 19:14:03,312 - INFO -   ⚠ Temporal falsification: 0 results
+2025-10-18 19:14:03,312 - INFO -   ✓ Permutation tests: 6 results
+2025-10-18 19:14:03,312 - INFO -   ✓ Guardrail checks: 1 results
+2025-10-18 19:14:03,312 - INFO - ============================================================

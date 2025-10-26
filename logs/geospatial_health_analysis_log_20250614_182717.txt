@@ -1,0 +1,124 @@
+2025-06-14 18:27:17,982 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:75] - Logging to: logs/geospatial_health_analysis_log_20250614_182717.txt
+2025-06-14 18:27:17,982 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:385] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 18:27:18,046 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:96] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 18:27:18,046 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:108] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 18:27:18,069 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:133] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 18:27:18,075 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:152] - GeoDataFrame created successfully.
+2025-06-14 18:27:18,075 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:172] - County shapefile already exists at: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 18:27:18,240 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:203] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 18:27:23,440 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:241] - Failed to create spatial weights matrix for ai_adoption_score: [1mFailed in nopython mode pipeline (step: nopython frontend)
+[1m[1m[1m[1m[1m[1mFailed in nopython mode pipeline (step: nopython frontend)
+[1mFailed in nopython mode pipeline (step: nopython frontend)
+[1m[1m[1mNo implementation of function Function(<intrinsic _impl>) found for signature:
+ 
+ >>> _impl(array(int64, 2d, C), array(float64, 1d, C))
+ 
+There are 2 candidate implementations:
+[1m  - Of which 2 did not match due to:
+  Intrinsic in function 'dot_2_impl.<locals>._impl': File: numba/np/linalg.py: Line 543.
+    With argument(s): '(array(int64, 2d, C), array(float64, 1d, C))':[0m
+[1m   Rejected as the implementation raised a specific error:
+     TypingError: [1m'@' arguments must all have the same dtype[0m[0m
+  raised from /opt/anaconda3/lib/python3.12/site-packages/numba/np/linalg.py:563
+[0m
+[0m[1mDuring: resolving callee type: Function(<intrinsic _impl>)[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/numba/np/linalg.py (582)
+[0m
+[1m
+File "../../../../../../../../../../../opt/anaconda3/lib/python3.12/site-packages/numba/np/linalg.py", line 582:[0m
+[1m            def _dot2_codegen(context, builder, sig, args):
+                <source elided>
+
+[1m        return lambda left, right: _impl(left, right)
+[0m        [1m^[0m[0m
+
+[0m[1mDuring: typing of intrinsic-call at /opt/anaconda3/lib/python3.12/site-packages/esda/getisord.py (683)[0m
+[1m
+File "../../../../../../../../../../../opt/anaconda3/lib/python3.12/site-packages/esda/getisord.py", line 683:[0m
+[1mdef _g_local_crand(i, z, permuted_ids, weights_i, scaling):
+    <source elided>
+    zi, zrand = _prepare_univariate(i, z, permuted_ids, other_weights)
+[1m    return (zrand @ other_weights) / (scaling - zi)
+[0m    [1m^[0m[0m
+
+[0m[1mDuring: resolving callee type: type(CPUDispatcher(<function _g_local_crand at 0x10f56f240>))[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/esda/crand.py (325)
+[0m
+[0m[1mDuring: resolving callee type: type(CPUDispatcher(<function _g_local_crand at 0x10f56f240>))[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/esda/crand.py (325)
+[0m
+[0m[1mDuring: resolving callee type: type(CPUDispatcher(<function _g_local_crand at 0x10f56f240>))[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/esda/crand.py (325)
+[0m
+[1m
+File "../../../../../../../../../../../opt/anaconda3/lib/python3.12/site-packages/esda/crand.py", line 325:[0m
+[1mdef compute_chunk(
+    <source elided>
+        mask[chunk_start + i] = False
+[1m        rstats = stat_func(chunk_start + i, z, permuted_ids, weights_i, scaling)
+[0m        [1m^[0m[0m
+[0m
+2025-06-14 18:27:23,444 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:253] - Cluster column 'ai_adoption_score_cluster' not in results. Cannot plot.
+2025-06-14 18:27:23,444 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:310] - Cluster column 'ai_adoption_score_cluster' not found. Hot spot analysis may have failed.
+2025-06-14 18:27:23,444 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:311] - Creating placeholder cluster column for analysis to continue
+2025-06-14 18:27:23,445 - WARNING - [Geospatial_TAMU_analysis_061425_v1.py:320] - No hot spot hospitals found for ai_adoption_score
+2025-06-14 18:27:23,446 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:373] - No hospitals found in high-tech clusters for ai_adoption_score, skipping service area analysis.
+2025-06-14 18:27:23,446 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:203] - --- Running Hot Spot Analysis for: robotics_adoption_score ---
+2025-06-14 18:27:27,240 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:241] - Failed to create spatial weights matrix for robotics_adoption_score: [1mFailed in nopython mode pipeline (step: nopython frontend)
+[1m[1m[1m[1m[1m[1mFailed in nopython mode pipeline (step: nopython frontend)
+[1mFailed in nopython mode pipeline (step: nopython frontend)
+[1m[1m[1mNo implementation of function Function(<intrinsic _impl>) found for signature:
+ 
+ >>> _impl(array(int64, 2d, C), array(float64, 1d, C))
+ 
+There are 2 candidate implementations:
+[1m  - Of which 2 did not match due to:
+  Intrinsic in function 'dot_2_impl.<locals>._impl': File: numba/np/linalg.py: Line 543.
+    With argument(s): '(array(int64, 2d, C), array(float64, 1d, C))':[0m
+[1m   Rejected as the implementation raised a specific error:
+     TypingError: [1m'@' arguments must all have the same dtype[0m[0m
+  raised from /opt/anaconda3/lib/python3.12/site-packages/numba/np/linalg.py:563
+[0m
+[0m[1mDuring: resolving callee type: Function(<intrinsic _impl>)[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/numba/np/linalg.py (582)
+[0m
+[1m
+File "../../../../../../../../../../../opt/anaconda3/lib/python3.12/site-packages/numba/np/linalg.py", line 582:[0m
+[1m            def _dot2_codegen(context, builder, sig, args):
+                <source elided>
+
+[1m        return lambda left, right: _impl(left, right)
+[0m        [1m^[0m[0m
+
+[0m[1mDuring: typing of intrinsic-call at /opt/anaconda3/lib/python3.12/site-packages/esda/getisord.py (683)[0m
+[1m
+File "../../../../../../../../../../../opt/anaconda3/lib/python3.12/site-packages/esda/getisord.py", line 683:[0m
+[1mdef _g_local_crand(i, z, permuted_ids, weights_i, scaling):
+    <source elided>
+    zi, zrand = _prepare_univariate(i, z, permuted_ids, other_weights)
+[1m    return (zrand @ other_weights) / (scaling - zi)
+[0m    [1m^[0m[0m
+
+[0m[1mDuring: resolving callee type: type(CPUDispatcher(<function _g_local_crand at 0x10ea6b240>))[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/esda/crand.py (325)
+[0m
+[0m[1mDuring: resolving callee type: type(CPUDispatcher(<function _g_local_crand at 0x10ea6b240>))[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/esda/crand.py (325)
+[0m
+[0m[1mDuring: resolving callee type: type(CPUDispatcher(<function _g_local_crand at 0x10ea6b240>))[0m
+[0m[1mDuring: typing of call at /opt/anaconda3/lib/python3.12/site-packages/esda/crand.py (325)
+[0m
+[1m
+File "../../../../../../../../../../../opt/anaconda3/lib/python3.12/site-packages/esda/crand.py", line 325:[0m
+[1mdef compute_chunk(
+    <source elided>
+        mask[chunk_start + i] = False
+[1m        rstats = stat_func(chunk_start + i, z, permuted_ids, weights_i, scaling)
+[0m        [1m^[0m[0m
+[0m
+2025-06-14 18:27:27,244 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:253] - Cluster column 'robotics_adoption_score_cluster' not in results. Cannot plot.
+2025-06-14 18:27:27,244 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:310] - Cluster column 'robotics_adoption_score_cluster' not found. Hot spot analysis may have failed.
+2025-06-14 18:27:27,244 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:311] - Creating placeholder cluster column for analysis to continue
+2025-06-14 18:27:27,245 - WARNING - [Geospatial_TAMU_analysis_061425_v1.py:320] - No hot spot hospitals found for robotics_adoption_score
+2025-06-14 18:27:27,245 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:373] - No hospitals found in high-tech clusters for robotics_adoption_score, skipping service area analysis.
+2025-06-14 18:27:27,245 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:429] - Geospatial analysis script finished. Check logs and output directory for results.

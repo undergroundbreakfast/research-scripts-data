@@ -1,0 +1,65 @@
+2025-05-24 16:47:53,898 - INFO - YPLL_AIPW_Analysis_052325_v5 - Logging to: logs/genai_health_causal_analysis_log_20250524_164753.txt
+2025-05-24 16:47:53,898 - INFO - YPLL_AIPW_Analysis_052325_v5 - Starting Generative AI Health Impact Causal Analysis Script.
+2025-05-24 16:47:53,898 - INFO - YPLL_AIPW_Analysis_052325_v5 - Output will be saved in: genai_causal_output and logs/
+2025-05-24 16:47:53,959 - INFO - YPLL_AIPW_Analysis_052325_v5 - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-05-24 16:48:20,630 - INFO - YPLL_AIPW_Analysis_052325_v5 - Data for causal analysis retrieved: 3080 rows, 10 columns.
+2025-05-24 16:48:20,630 - INFO - YPLL_AIPW_Analysis_052325_v5 - Converting population to numeric and filtering...
+2025-05-24 16:48:20,635 - INFO - YPLL_AIPW_Analysis_052325_v5 - Preparing data for causal analysis...
+2025-05-24 16:48:20,636 - INFO - YPLL_AIPW_Analysis_052325_v5 - Treatment variable 'genai_adopted' created (weighted_ai_adoption_score > 0.0). Prevalence: 18.54%
+2025-05-24 16:48:20,637 - INFO - YPLL_AIPW_Analysis_052325_v5 - Created 8 dummy variables for 'census_division'. Ref category implicitly first unique sorted value.
+2025-05-24 16:48:20,639 - INFO - YPLL_AIPW_Analysis_052325_v5 - Data preparation complete.
+2025-05-24 16:48:20,639 - INFO - YPLL_AIPW_Analysis_052325_v5 - Dataset for analysis: 3080 counties after preparation.
+2025-05-24 16:48:20,640 - INFO - YPLL_AIPW_Analysis_052325_v5 - Treatment distribution: {0: 0.8146103896103896, 1: 0.18538961038961038}
+2025-05-24 16:48:20,640 - INFO - YPLL_AIPW_Analysis_052325_v5 - Estimating propensity scores...
+2025-05-24 16:48:20,651 - INFO - YPLL_AIPW_Analysis_052325_v5 - Propensity score estimation complete.
+2025-05-24 16:48:21,053 - INFO - YPLL_AIPW_Analysis_052325_v5 - Propensity score overlap plot saved to genai_causal_output/plots/propensity_score_overlap.png
+2025-05-24 16:48:21,053 - INFO - YPLL_AIPW_Analysis_052325_v5 - Fitting outcome models (mu0 and mu1) for AIPW...
+2025-05-24 16:48:21,056 - INFO - YPLL_AIPW_Analysis_052325_v5 - Outcome models mu0 and mu1 fitted and predictions generated.
+2025-05-24 16:48:21,057 - INFO - YPLL_AIPW_Analysis_052325_v5 - Calculating AIPW Average Treatment Effect (ATE)...
+2025-05-24 16:48:21,057 - INFO - YPLL_AIPW_Analysis_052325_v5 - AIPW ATE calculated: -598.0421
+2025-05-24 16:48:21,057 - INFO - YPLL_AIPW_Analysis_052325_v5 - Starting bootstrapping for ATE CI with 200 iterations. This may take some time.
+2025-05-24 16:48:21,057 - INFO - YPLL_AIPW_Analysis_052325_v5 - Calculating ATE confidence intervals using 200 bootstrap samples...
+2025-05-24 16:48:21,126 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 10/200
+2025-05-24 16:48:21,280 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 20/200
+2025-05-24 16:48:21,356 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 30/200
+2025-05-24 16:48:21,443 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 40/200
+2025-05-24 16:48:21,531 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 50/200
+2025-05-24 16:48:21,611 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 60/200
+2025-05-24 16:48:21,681 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 70/200
+2025-05-24 16:48:21,751 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 80/200
+2025-05-24 16:48:21,812 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 90/200
+2025-05-24 16:48:21,881 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 100/200
+2025-05-24 16:48:21,948 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 110/200
+2025-05-24 16:48:22,034 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 120/200
+2025-05-24 16:48:22,129 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 130/200
+2025-05-24 16:48:22,203 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 140/200
+2025-05-24 16:48:22,274 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 150/200
+2025-05-24 16:48:22,349 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 160/200
+2025-05-24 16:48:22,421 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 170/200
+2025-05-24 16:48:22,495 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 180/200
+2025-05-24 16:48:22,566 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 190/200
+2025-05-24 16:48:22,635 - INFO - YPLL_AIPW_Analysis_052325_v5 - Bootstrap iteration 200/200
+2025-05-24 16:48:22,642 - INFO - YPLL_AIPW_Analysis_052325_v5 - ATE 95% CI (Bootstrap, 200 valid samples): [-1320.7075, 42.6097]
+2025-05-24 16:48:22,642 - INFO - YPLL_AIPW_Analysis_052325_v5 - Simulating potential YPLL and lives saved based on ATE...
+2025-05-24 16:48:22,642 - INFO - YPLL_AIPW_Analysis_052325_v5 - Simulating for 2509 counties currently without GenAI adoption.
+2025-05-24 16:48:22,642 - INFO - YPLL_AIPW_Analysis_052325_v5 - Scenario: If all non-adopting counties adopted GenAI:
+2025-05-24 16:48:22,642 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Estimated ATE on YPLL rate (per 100k pop): -598.0421
+2025-05-24 16:48:22,642 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Implied YPLL rate reduction (per 100k pop): 598.0421
+2025-05-24 16:48:22,643 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Total YPLL potentially averted nationally: 719,672
+2025-05-24 16:48:22,643 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Total premature deaths potentially averted: 24,816
+2025-05-24 16:48:22,643 - INFO - YPLL_AIPW_Analysis_052325_v5 -   (Assumption: 29.0 YPLL per premature death)
+2025-05-24 16:48:22,643 - INFO - YPLL_AIPW_Analysis_052325_v5 - Generating visualizations...
+2025-05-24 16:48:22,814 - INFO - YPLL_AIPW_Analysis_052325_v5 - ATE estimate plot saved to genai_causal_output/plots/ate_estimate_plot.png
+2025-05-24 16:48:23,006 - INFO - YPLL_AIPW_Analysis_052325_v5 - Unadjusted outcome plot saved to genai_causal_output/plots/unadjusted_outcome_by_treatment.png
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 - Potential YPLL averted distribution plot saved to genai_causal_output/plots/potential_ypll_averted_distribution.png
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 - Visualizations generation attempt finished.
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 - ================================================================================
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 - Causal Analysis Summary:
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Outcome Variable: premature_death_raw_value
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Treatment Variable: genai_adopted (GenAI Adopted if weighted_ai_adoption_score > 0)
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Estimated ATE (AIPW): -598.0421
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 -   95% CI for ATE (Bootstrap, 200 reps): [-1320.7075, 42.6097]
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Potential YPLL Averted (National Estimate): 719,672
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Potential Premature Deaths Averted (National Estimate): 24,816
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 - ================================================================================
+2025-05-24 16:48:23,225 - INFO - YPLL_AIPW_Analysis_052325_v5 - Generative AI Health Impact Causal Analysis Script finished.

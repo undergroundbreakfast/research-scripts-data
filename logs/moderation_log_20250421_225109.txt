@@ -1,0 +1,1013 @@
+2025-04-21 22:51:09,238 - INFO - Logging to: logs/moderation_log_20250421_225109.txt
+2025-04-21 22:51:09,302 - INFO - Connected to Postgres successfully.
+2025-04-21 22:51:33,741 - INFO - Data fetched from vw_conceptual_model: shape=(3143, 12)
+2025-04-21 22:51:33,743 - INFO - Created 9 dummy cols for census_division
+2025-04-21 22:51:33,743 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:33,743 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-21 22:51:33,761 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.193
+Model:                               OLS   Adj. R-squared:                  0.190
+Method:                    Least Squares   F-statistic:                     62.07
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.83e-135
+Time:                           22:51:33   Log-Likelihood:                -24284.
+No. Observations:                   3135   AIC:                         4.859e+04
+Df Residuals:                       3122   BIC:                         4.867e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                               926.7688     77.102     12.020      0.000     775.593    1077.945
+iv1_public_health_policy                             29.6652     24.018      1.235      0.217     -17.428      76.758
+mo1_genai_capabilities                              -24.1573     17.948     -1.346      0.178     -59.349      11.034
+iv1_public_health_policy_X_mo1_genai_capabilities   -33.4506     23.471     -1.425      0.154     -79.470      12.569
+population                                           -0.0001    3.1e-05     -4.211      0.000      -0.000   -6.97e-05
+div_2                                               279.0924     86.215      3.237      0.001     110.049     448.136
+div_3                                               529.6145     78.114      6.780      0.000     376.455     682.774
+div_4                                               397.8799     77.931      5.106      0.000     245.078     550.681
+div_5                                               753.3372     80.572      9.350      0.000     595.359     911.316
+div_6                                               224.7481     78.054      2.879      0.004      71.705     377.791
+div_7                                               578.7578     79.380      7.291      0.000     423.115     734.401
+div_8                                               -86.6340     81.016     -1.069      0.285    -245.485      72.217
+div_9                                              -161.2506     85.146     -1.894      0.058    -328.198       5.697
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      981.222   Durbin-Watson:                   1.779
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5284.769
+Skew:                           1.386   Prob(JB):                         0.00
+Kurtosis:                       8.725   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:34,172 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:34,172 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:34,172 - INFO - Fitting moderation model: iv1_public_health_policy x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-21 22:51:34,189 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.208
+Model:                               OLS   Adj. R-squared:                  0.205
+Method:                    Least Squares   F-statistic:                     68.46
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.33e-148
+Time:                           22:51:34   Log-Likelihood:                -24253.
+No. Observations:                   3135   AIC:                         4.853e+04
+Df Residuals:                       3122   BIC:                         4.861e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                  941.4379     76.411     12.321      0.000     791.617    1091.259
+iv1_public_health_policy                                20.0355     25.079      0.799      0.424     -29.137      69.208
+mo2_robotics_capabilities                              -29.3584      4.957     -5.922      0.000     -39.078     -19.638
+iv1_public_health_policy_X_mo2_robotics_capabilities     1.2398      6.415      0.193      0.847     -11.338      13.817
+population                                           -8.782e-05   3.12e-05     -2.819      0.005      -0.000   -2.67e-05
+div_2                                                  303.0781     85.467      3.546      0.000     135.500     470.656
+div_3                                                  556.8196     77.272      7.206      0.000     405.310     708.329
+div_4                                                  429.0839     77.217      5.557      0.000     277.683     580.485
+div_5                                                  768.6360     79.563      9.661      0.000     612.635     924.637
+div_6                                                  240.7096     77.139      3.120      0.002      89.461     391.958
+div_7                                                  592.0071     78.455      7.546      0.000     438.179     745.835
+div_8                                                  -62.7815     79.991     -0.785      0.433    -219.622      94.059
+div_9                                                 -124.0297     84.159     -1.474      0.141    -289.043      40.983
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      942.036   Durbin-Watson:                   1.789
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5229.695
+Skew:                           1.315   Prob(JB):                         0.00
+Kurtosis:                       8.755   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:34,451 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:34,451 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:34,451 - INFO - Fitting moderation model: iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-21 22:51:34,456 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.241
+Model:                               OLS   Adj. R-squared:                  0.238
+Method:                    Least Squares   F-statistic:                     82.74
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          4.00e-177
+Time:                           22:51:34   Log-Likelihood:                -24187.
+No. Observations:                   3135   AIC:                         4.840e+04
+Df Residuals:                       3122   BIC:                         4.848e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                               289.2110     85.742      3.373      0.001     121.095     457.327
+iv2_physical_environment                            364.5536     25.659     14.207      0.000     314.243     414.865
+mo1_genai_capabilities                               74.5079     56.114      1.328      0.184     -35.516     184.532
+iv2_physical_environment_X_mo1_genai_capabilities   -57.5393     25.233     -2.280      0.023    -107.015      -8.063
+population                                           -0.0002   3.12e-05     -7.515      0.000      -0.000      -0.000
+div_2                                               130.0925     84.797      1.534      0.125     -36.171     296.356
+div_3                                               355.2119     75.565      4.701      0.000     207.050     503.373
+div_4                                               210.8034     77.041      2.736      0.006      59.748     361.859
+div_5                                               541.2307     78.191      6.922      0.000     387.919     694.542
+div_6                                               193.9603     74.719      2.596      0.009      47.458     340.463
+div_7                                               341.0851     77.284      4.413      0.000     189.552     492.618
+div_8                                                 1.0175     78.200      0.013      0.990    -152.311     154.346
+div_9                                              -173.4886     82.748     -2.097      0.036    -335.735     -11.242
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1024.599   Durbin-Watson:                   1.845
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5305.347
+Skew:                           1.469   Prob(JB):                         0.00
+Kurtosis:                       8.655   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:34,716 - INFO - Saved plot to: moderation_iv2_physical_environment_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:34,716 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:34,716 - INFO - Fitting moderation model: iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-21 22:51:34,722 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.269
+Model:                               OLS   Adj. R-squared:                  0.267
+Method:                    Least Squares   F-statistic:                     95.93
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.81e-202
+Time:                           22:51:34   Log-Likelihood:                -24128.
+No. Observations:                   3135   AIC:                         4.828e+04
+Df Residuals:                       3122   BIC:                         4.836e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                  185.8499     85.059      2.185      0.029      19.073     352.627
+iv2_physical_environment                               428.0883     26.490     16.161      0.000     376.149     480.027
+mo2_robotics_capabilities                               45.7220     15.785      2.897      0.004      14.772      76.672
+iv2_physical_environment_X_mo2_robotics_capabilities   -35.8989      6.944     -5.170      0.000     -49.513     -22.284
+population                                              -0.0002    3.1e-05     -5.726      0.000      -0.000      -0.000
+div_2                                                  143.5143     82.894      1.731      0.083     -19.018     306.047
+div_3                                                  361.7122     73.900      4.895      0.000     216.814     506.610
+div_4                                                  226.4872     75.342      3.006      0.003      78.762     374.212
+div_5                                                  528.0035     76.432      6.908      0.000     378.141     677.866
+div_6                                                  202.2074     72.940      2.772      0.006      59.193     345.222
+div_7                                                  328.9837     75.591      4.352      0.000     180.771     477.196
+div_8                                                   18.5376     76.666      0.242      0.809    -131.784     168.859
+div_9                                                 -124.4767     81.017     -1.536      0.125    -283.329      34.376
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      983.037   Durbin-Watson:                   1.864
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5175.939
+Skew:                           1.397   Prob(JB):                         0.00
+Kurtosis:                       8.641   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:34,999 - INFO - Saved plot to: moderation_iv2_physical_environment_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:34,999 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:34,999 - INFO - Fitting moderation model: iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-21 22:51:35,010 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.196
+Model:                               OLS   Adj. R-squared:                  0.193
+Method:                    Least Squares   F-statistic:                     63.59
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.30e-138
+Time:                           22:51:35   Log-Likelihood:                -24277.
+No. Observations:                   3135   AIC:                         4.858e+04
+Df Residuals:                       3122   BIC:                         4.866e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+=================================================================================================================
+                                                    coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+const                                           904.8265     74.228     12.190      0.000     759.285    1050.368
+iv3_health_behaviors                              2.0079      0.482      4.168      0.000       1.063       2.952
+mo1_genai_capabilities                          -13.2379     24.360     -0.543      0.587     -61.002      34.526
+iv3_health_behaviors_X_mo1_genai_capabilities    -1.0473      0.723     -1.448      0.148      -2.465       0.371
+population                                       -0.0001   3.14e-05     -4.584      0.000      -0.000   -8.23e-05
+div_2                                           273.7719     86.083      3.180      0.001     104.986     442.557
+div_3                                           489.1091     77.271      6.330      0.000     337.601     640.617
+div_4                                           386.9902     77.867      4.970      0.000     234.315     539.666
+div_5                                           707.1084     79.595      8.884      0.000     551.045     863.172
+div_6                                           207.8056     76.762      2.707      0.007      57.297     358.314
+div_7                                           539.0216     78.162      6.896      0.000     385.768     692.275
+div_8                                           -90.9286     80.331     -1.132      0.258    -248.435      66.578
+div_9                                          -171.8614     85.099     -2.020      0.044    -338.717      -5.006
+div_Unknown                                            0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1004.813   Durbin-Watson:                   1.777
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5450.417
+Skew:                           1.421   Prob(JB):                         0.00
+Kurtosis:                       8.801   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:35,256 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:35,256 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:35,256 - INFO - Fitting moderation model: iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-21 22:51:35,265 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.215
+Model:                               OLS   Adj. R-squared:                  0.212
+Method:                    Least Squares   F-statistic:                     71.45
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.13e-154
+Time:                           22:51:35   Log-Likelihood:                -24239.
+No. Observations:                   3135   AIC:                         4.850e+04
+Df Residuals:                       3122   BIC:                         4.858e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+const                                              905.6436     73.146     12.381      0.000     762.225    1049.062
+iv3_health_behaviors                                 2.7094      0.503      5.386      0.000       1.723       3.696
+mo2_robotics_capabilities                          -16.2053      6.068     -2.670      0.008     -28.104      -4.307
+iv3_health_behaviors_X_mo2_robotics_capabilities    -0.4094      0.153     -2.673      0.008      -0.710      -0.109
+population                                       -9.963e-05   3.13e-05     -3.180      0.001      -0.000   -3.82e-05
+div_2                                              294.2968     85.058      3.460      0.001     127.522     461.072
+div_3                                              505.2820     76.176      6.633      0.000     355.922     654.642
+div_4                                              412.1949     76.853      5.363      0.000     261.508     562.882
+div_5                                              708.7954     78.421      9.038      0.000     555.033     862.558
+div_6                                              214.7940     75.621      2.840      0.005      66.523     363.065
+div_7                                              537.8979     76.967      6.989      0.000     386.986     688.810
+div_8                                              -80.0383     79.285     -1.010      0.313    -235.494      75.418
+div_9                                             -147.2457     83.897     -1.755      0.079    -311.745      17.254
+div_Unknown                                               0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      973.740   Durbin-Watson:                   1.786
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5467.219
+Skew:                           1.361   Prob(JB):                         0.00
+Kurtosis:                       8.869   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:35,534 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:35,534 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:35,534 - INFO - Fitting moderation model: iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-21 22:51:35,549 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.229
+Model:                               OLS   Adj. R-squared:                  0.226
+Method:                    Least Squares   F-statistic:                     77.34
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          1.82e-166
+Time:                           22:51:35   Log-Likelihood:                -24212.
+No. Observations:                   3135   AIC:                         4.845e+04
+Df Residuals:                       3122   BIC:                         4.853e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                  546.7576     78.961      6.924      0.000     391.937     701.578
+iv4_social_economic_factors                             29.4046      2.401     12.244      0.000      24.696      34.113
+mo1_genai_capabilities                                  48.1684     46.173      1.043      0.297     -42.365     138.702
+iv4_social_economic_factors_X_mo1_genai_capabilities    -6.7886      3.544     -1.916      0.055     -13.737       0.160
+population                                           -9.154e-05   3.06e-05     -2.991      0.003      -0.000   -3.15e-05
+div_2                                                  317.3193     84.531      3.754      0.000     151.577     483.061
+div_3                                                  500.6081     75.048      6.670      0.000     353.459     647.757
+div_4                                                  408.0330     76.215      5.354      0.000     258.597     557.470
+div_5                                                  694.5661     77.408      8.973      0.000     542.789     846.343
+div_6                                                  253.3334     75.099      3.373      0.001     106.085     400.581
+div_7                                                  585.8402     76.009      7.708      0.000     436.808     734.873
+div_8                                                  -93.5284     78.738     -1.188      0.235    -247.913      60.856
+div_9                                                 -144.8836     83.288     -1.740      0.082    -308.188      18.421
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1055.058   Durbin-Watson:                   1.779
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5818.019
+Skew:                           1.496   Prob(JB):                         0.00
+Kurtosis:                       8.966   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:35,807 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo1_genai_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:35,807 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:35,807 - INFO - Fitting moderation model: iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-21 22:51:35,813 - INFO -                               OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.242
+Model:                               OLS   Adj. R-squared:                  0.239
+Method:                    Least Squares   F-statistic:                     83.22
+Date:                   Mon, 21 Apr 2025   Prob (F-statistic):          4.56e-178
+Time:                           22:51:35   Log-Likelihood:                -24184.
+No. Observations:                   3135   AIC:                         4.839e+04
+Df Residuals:                       3122   BIC:                         4.847e+04
+Df Model:                             12                                         
+Covariance Type:               nonrobust                                         
+===========================================================================================================================
+                                                              coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------------
+const                                                     556.9877     78.905      7.059      0.000     402.276     711.699
+iv4_social_economic_factors                                29.1803      2.474     11.795      0.000      24.329      34.031
+mo2_robotics_capabilities                                   5.4835     11.884      0.461      0.645     -17.817      28.784
+iv4_social_economic_factors_X_mo2_robotics_capabilities    -2.4502      0.918     -2.669      0.008      -4.250      -0.650
+population                                              -5.992e-05   3.08e-05     -1.943      0.052      -0.000    5.52e-07
+div_2                                                     342.7699     83.671      4.097      0.000     178.714     506.825
+div_3                                                     528.9532     74.241      7.125      0.000     383.387     674.519
+div_4                                                     441.4462     75.449      5.851      0.000     293.511     589.382
+div_5                                                     713.8356     76.437      9.339      0.000     563.963     863.708
+div_6                                                     264.7951     74.258      3.566      0.000     119.195     410.395
+div_7                                                     597.2218     75.133      7.949      0.000     449.907     744.536
+div_8                                                     -71.2535     77.857     -0.915      0.360    -223.910      81.403
+div_9                                                    -114.1666     82.346     -1.386      0.166    -275.624      47.290
+div_Unknown                                                      0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1022.285   Durbin-Watson:                   1.791
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5729.070
+Skew:                           1.438   Prob(JB):                         0.00
+Kurtosis:                       8.966   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:36,071 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo2_robotics_capabilities_dv1_healthcare_access.png
+2025-04-21 22:51:36,071 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:36,071 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:36,092 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.202
+Model:                                OLS   Adj. R-squared:                  0.199
+Method:                     Least Squares   F-statistic:                     65.79
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):          3.79e-143
+Time:                            22:51:36   Log-Likelihood:                -27668.
+No. Observations:                    3135   AIC:                         5.536e+04
+Df Residuals:                        3122   BIC:                         5.544e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                              3768.6645    226.906     16.609      0.000    3323.764    4213.565
+iv1_public_health_policy                             -2.0867     70.683     -0.030      0.976    -140.677     136.504
+mo1_genai_capabilities                             -147.1966     52.820     -2.787      0.005    -250.762     -43.631
+iv1_public_health_policy_X_mo1_genai_capabilities    21.2695     69.073      0.308      0.758    -114.164     156.703
+population                                           -0.0006   9.12e-05     -6.395      0.000      -0.001      -0.000
+div_2                                               329.3868    253.725      1.298      0.194    -168.097     826.871
+div_3                                              1760.7178    229.884      7.659      0.000    1309.979    2211.456
+div_4                                               718.0527    229.346      3.131      0.002     268.368    1167.737
+div_5                                              2643.5312    237.116     11.149      0.000    2178.611    3108.451
+div_6                                               424.6300    229.709      1.849      0.065     -25.766     875.026
+div_7                                              1670.3241    233.611      7.150      0.000    1212.278    2128.371
+div_8                                               712.0976    238.425      2.987      0.003     244.611    1179.584
+div_9                                               512.0993    250.579      2.044      0.041      20.784    1003.415
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1297.042   Durbin-Watson:                   1.801
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            16723.106
+Skew:                           1.603   Prob(JB):                         0.00
+Kurtosis:                      13.851   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:36,353 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:36,353 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:36,353 - INFO - Fitting moderation model: iv1_public_health_policy x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:36,359 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.211
+Model:                                OLS   Adj. R-squared:                  0.208
+Method:                     Least Squares   F-statistic:                     69.40
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):          1.62e-150
+Time:                            22:51:36   Log-Likelihood:                -27651.
+No. Observations:                    3135   AIC:                         5.533e+04
+Df Residuals:                        3122   BIC:                         5.541e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                 3780.9127    225.844     16.741      0.000    3338.094    4223.731
+iv1_public_health_policy                                 8.4329     74.124      0.114      0.909    -136.904     153.770
+mo2_robotics_capabilities                              -67.1137     14.652     -4.580      0.000     -95.843     -38.385
+iv1_public_health_policy_X_mo2_robotics_capabilities    -1.2639     18.960     -0.067      0.947     -38.439      35.911
+population                                              -0.0005   9.21e-05     -5.302      0.000      -0.001      -0.000
+div_2                                                  389.0573    252.612      1.540      0.124    -106.244     884.359
+div_3                                                 1821.8564    228.389      7.977      0.000    1374.048    2269.665
+div_4                                                  792.8066    228.226      3.474      0.001     345.319    1240.294
+div_5                                                 2681.7427    235.160     11.404      0.000    2220.660    3142.826
+div_6                                                  460.3926    227.996      2.019      0.044      13.355     907.431
+div_7                                                 1703.6219    231.884      7.347      0.000    1248.961    2158.282
+div_8                                                  745.9487    236.426      3.155      0.002     282.382    1209.515
+div_9                                                  598.9531    248.745      2.408      0.016     111.232    1086.674
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1287.240   Durbin-Watson:                   1.801
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            16893.804
+Skew:                           1.582   Prob(JB):                         0.00
+Kurtosis:                      13.924   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:36,591 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:36,591 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:36,591 - INFO - Fitting moderation model: iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:36,597 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.204
+Model:                                OLS   Adj. R-squared:                  0.201
+Method:                     Least Squares   F-statistic:                     66.80
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):          3.24e-145
+Time:                            22:51:36   Log-Likelihood:                -27663.
+No. Observations:                    3135   AIC:                         5.535e+04
+Df Residuals:                        3122   BIC:                         5.543e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                              3459.0018    259.898     13.309      0.000    2949.414    3968.590
+iv2_physical_environment                            194.6908     77.778      2.503      0.012      42.190     347.191
+mo1_genai_capabilities                             -340.7311    170.091     -2.003      0.045    -674.232      -7.230
+iv2_physical_environment_X_mo1_genai_capabilities    92.4599     76.487      1.209      0.227     -57.509     242.429
+population                                           -0.0007   9.46e-05     -7.013      0.000      -0.001      -0.000
+div_2                                               196.6216    257.033      0.765      0.444    -307.349     700.592
+div_3                                              1627.8351    229.049      7.107      0.000    1178.733    2076.937
+div_4                                               569.2889    233.523      2.438      0.015     111.415    1027.163
+div_5                                              2490.4245    237.010     10.508      0.000    2025.713    2955.136
+div_6                                               369.4014    226.485      1.631      0.103     -74.672     813.475
+div_7                                              1501.2915    234.262      6.409      0.000    1041.969    1960.614
+div_8                                               741.3679    237.036      3.128      0.002     276.605    1206.131
+div_9                                               465.5722    250.823      1.856      0.064     -26.223     957.368
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1358.474   Durbin-Watson:                   1.814
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            18159.292
+Skew:                           1.691   Prob(JB):                         0.00
+Kurtosis:                      14.295   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:36,865 - INFO - Saved plot to: moderation_iv2_physical_environment_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:36,865 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:36,865 - INFO - Fitting moderation model: iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:36,895 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.214
+Model:                                OLS   Adj. R-squared:                  0.211
+Method:                     Least Squares   F-statistic:                     70.79
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):          2.45e-153
+Time:                            22:51:36   Log-Likelihood:                -27644.
+No. Observations:                    3135   AIC:                         5.531e+04
+Df Residuals:                        3122   BIC:                         5.539e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                 3360.2724    261.150     12.867      0.000    2848.229    3872.316
+iv2_physical_environment                               250.8806     81.329      3.085      0.002      91.416     410.345
+mo2_robotics_capabilities                             -101.7486     48.463     -2.099      0.036    -196.772      -6.725
+iv2_physical_environment_X_mo2_robotics_capabilities    13.3949     21.319      0.628      0.530     -28.405      55.195
+population                                              -0.0006   9.53e-05     -6.035      0.000      -0.001      -0.000
+div_2                                                  258.0727    254.504      1.014      0.311    -240.939     757.085
+div_3                                                 1683.1622    226.891      7.418      0.000    1238.292    2128.032
+div_4                                                  638.3463    231.317      2.760      0.006     184.797    1091.895
+div_5                                                 2514.4478    234.665     10.715      0.000    2054.334    2974.561
+div_6                                                  421.9609    223.941      1.884      0.060     -17.126     861.048
+div_7                                                 1515.0789    232.081      6.528      0.000    1060.032    1970.126
+div_8                                                  805.3117    235.383      3.421      0.001     343.791    1266.832
+div_9                                                  568.1073    248.742      2.284      0.022      80.393    1055.822
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1365.086   Durbin-Watson:                   1.817
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            18716.803
+Skew:                           1.693   Prob(JB):                         0.00
+Kurtosis:                      14.481   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:37,236 - INFO - Saved plot to: moderation_iv2_physical_environment_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:37,236 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:37,236 - INFO - Fitting moderation model: iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:37,250 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.395
+Model:                                OLS   Adj. R-squared:                  0.393
+Method:                     Least Squares   F-statistic:                     169.8
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):               0.00
+Time:                            22:51:37   Log-Likelihood:                -27234.
+No. Observations:                    3135   AIC:                         5.449e+04
+Df Residuals:                        3122   BIC:                         5.457e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+=================================================================================================================
+                                                    coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+const                                          3032.8461    190.655     15.907      0.000    2659.024    3406.668
+iv3_health_behaviors                             38.8425      1.237     31.391      0.000      36.416      41.269
+mo1_genai_capabilities                          101.4056     62.569      1.621      0.105     -21.276     224.087
+iv3_health_behaviors_X_mo1_genai_capabilities    -8.4778      1.857     -4.564      0.000     -12.120      -4.836
+population                                       -0.0009   8.06e-05    -11.037      0.000      -0.001      -0.001
+div_2                                           182.4021    221.105      0.825      0.409    -251.124     615.928
+div_3                                          1035.2958    198.472      5.216      0.000     646.148    1424.444
+div_4                                           461.6699    200.001      2.308      0.021      69.523     853.817
+div_5                                          1832.4995    204.440      8.964      0.000    1431.650    2233.349
+div_6                                           149.8845    197.163      0.760      0.447    -236.698     536.467
+div_7                                           994.3580    200.758      4.953      0.000     600.727    1387.989
+div_8                                           517.8280    206.330      2.510      0.012     113.272     922.384
+div_9                                           131.3685    218.577      0.601      0.548    -297.200     559.937
+div_Unknown                                            0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      782.222   Durbin-Watson:                   1.852
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5140.022
+Skew:                           1.018   Prob(JB):                         0.00
+Kurtosis:                       8.933   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:37,511 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:37,511 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:37,511 - INFO - Fitting moderation model: iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:37,516 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.412
+Model:                                OLS   Adj. R-squared:                  0.409
+Method:                     Least Squares   F-statistic:                     182.0
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):               0.00
+Time:                            22:51:37   Log-Likelihood:                -27190.
+No. Observations:                    3135   AIC:                         5.441e+04
+Df Residuals:                        3122   BIC:                         5.448e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+const                                             3072.3509    187.491     16.387      0.000    2704.732    3439.969
+iv3_health_behaviors                                40.4269      1.289     31.352      0.000      37.899      42.955
+mo2_robotics_capabilities                          -41.2513     15.555     -2.652      0.008     -71.750     -10.752
+iv3_health_behaviors_X_mo2_robotics_capabilities    -1.4972      0.393     -3.814      0.000      -2.267      -0.727
+population                                          -0.0008   8.03e-05     -9.710      0.000      -0.001      -0.001
+div_2                                              225.0990    218.025      1.032      0.302    -202.388     652.586
+div_3                                             1057.9697    195.258      5.418      0.000     675.123    1440.817
+div_4                                              510.3665    196.993      2.591      0.010     124.117     896.616
+div_5                                             1823.1112    201.014      9.070      0.000    1428.978    2217.244
+div_6                                              144.8847    193.835      0.747      0.455    -235.173     524.942
+div_7                                              963.0750    197.287      4.882      0.000     576.249    1349.901
+div_8                                              529.5667    203.228      2.606      0.009     131.093     928.040
+div_9                                              187.5448    215.051      0.872      0.383    -234.110     609.200
+div_Unknown                                               0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                      736.462   Durbin-Watson:                   1.847
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4948.485
+Skew:                           0.943   Prob(JB):                         0.00
+Kurtosis:                       8.859   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:37,763 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:37,763 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:37,763 - INFO - Fitting moderation model: iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:37,768 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.590
+Model:                                OLS   Adj. R-squared:                  0.588
+Method:                     Least Squares   F-statistic:                     374.3
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):               0.00
+Time:                            22:51:37   Log-Likelihood:                -26624.
+No. Observations:                    3135   AIC:                         5.327e+04
+Df Residuals:                        3122   BIC:                         5.335e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                  -61.0944    170.455     -0.358      0.720    -395.309     273.120
+iv4_social_economic_factors                            276.0973      5.184     53.258      0.000     265.933     286.262
+mo1_genai_capabilities                                  96.4834     99.676      0.968      0.333     -98.953     291.920
+iv4_social_economic_factors_X_mo1_genai_capabilities   -13.7455      7.650     -1.797      0.072     -28.745       1.254
+population                                              -0.0002   6.61e-05     -2.357      0.019      -0.000   -2.62e-05
+div_2                                                  786.7420    182.479      4.311      0.000     428.951    1144.533
+div_3                                                 1625.5751    162.009     10.034      0.000    1307.920    1943.230
+div_4                                                  904.5592    164.527      5.498      0.000     581.967    1227.152
+div_5                                                 2229.6466    167.104     13.343      0.000    1902.003    2557.291
+div_6                                                  825.7459    162.118      5.093      0.000     507.878    1143.614
+div_7                                                 1899.1132    164.082     11.574      0.000    1577.393    2220.834
+div_8                                                  700.9395    169.975      4.124      0.000     367.666    1034.213
+div_9                                                  691.3868    179.795      3.845      0.000     338.858    1043.916
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1144.630   Durbin-Watson:                   1.800
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            10245.275
+Skew:                           1.477   Prob(JB):                         0.00
+Kurtosis:                      11.349   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:38,016 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo1_genai_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:38,016 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:38,016 - INFO - Fitting moderation model: iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-21 22:51:38,022 - INFO -                               OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.591
+Model:                                OLS   Adj. R-squared:                  0.590
+Method:                     Least Squares   F-statistic:                     376.1
+Date:                    Mon, 21 Apr 2025   Prob (F-statistic):               0.00
+Time:                            22:51:38   Log-Likelihood:                -26620.
+No. Observations:                    3135   AIC:                         5.327e+04
+Df Residuals:                        3122   BIC:                         5.334e+04
+Df Model:                              12                                         
+Covariance Type:                nonrobust                                         
+===========================================================================================================================
+                                                              coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------------
+const                                                     -17.2114    171.574     -0.100      0.920    -353.621     319.198
+iv4_social_economic_factors                               271.5776      5.380     50.483      0.000     261.030     282.126
+mo2_robotics_capabilities                                 -42.7983     25.840     -1.656      0.098     -93.464       7.867
+iv4_social_economic_factors_X_mo2_robotics_capabilities     0.8492      1.996      0.425      0.671      -3.065       4.764
+population                                                 -0.0001   6.71e-05     -1.551      0.121      -0.000    2.75e-05
+div_2                                                     835.3588    181.936      4.591      0.000     478.632    1192.086
+div_3                                                    1674.8723    161.432     10.375      0.000    1358.350    1991.395
+div_4                                                     958.8111    164.059      5.844      0.000     637.136    1280.486
+div_5                                                    2274.4734    166.207     13.685      0.000    1948.586    2600.360
+div_6                                                     860.5319    161.469      5.329      0.000     543.935    1177.128
+div_7                                                    1934.9012    163.371     11.844      0.000    1614.576    2255.226
+div_8                                                     742.6826    169.295      4.387      0.000     410.741    1074.624
+div_9                                                     759.2715    179.055      4.240      0.000     408.195    1110.348
+div_Unknown                                                      0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1141.845   Durbin-Watson:                   1.795
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            10367.131
+Skew:                           1.469   Prob(JB):                         0.00
+Kurtosis:                      11.411   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:38,281 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo2_robotics_capabilities_dv2_healthcare_quality.png
+2025-04-21 22:51:38,282 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:38,282 - INFO - Fitting moderation model: iv1_public_health_policy x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:38,287 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.096
+Model:                                    OLS   Adj. R-squared:                  0.091
+Method:                         Least Squares   F-statistic:                     18.74
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           3.82e-39
+Time:                                22:51:38   Log-Likelihood:                -9309.6
+No. Observations:                        2126   AIC:                         1.865e+04
+Df Residuals:                            2113   BIC:                         1.872e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                                -3.7345      2.960     -1.262      0.207      -9.538       2.069
+iv1_public_health_policy                              1.2525      1.038      1.206      0.228      -0.784       3.289
+mo1_genai_capabilities                                3.5074      0.673      5.215      0.000       2.188       4.826
+iv1_public_health_policy_X_mo1_genai_capabilities    -2.4586      0.885     -2.777      0.006      -4.195      -0.722
+population                                         3.334e-06   1.09e-06      3.061      0.002     1.2e-06    5.47e-06
+div_2                                                 3.8748      3.276      1.183      0.237      -2.549      10.299
+div_3                                                12.8999      3.040      4.243      0.000       6.938      18.862
+div_4                                                12.0562      2.982      4.043      0.000       6.209      17.904
+div_5                                                 8.1138      3.125      2.596      0.009       1.985      14.243
+div_6                                                 3.2310      2.994      1.079      0.281      -2.641       9.103
+div_7                                                -3.5533      3.055     -1.163      0.245      -9.545       2.438
+div_8                                                 7.4349      3.126      2.379      0.017       1.305      13.565
+div_9                                                 3.7787      3.267      1.156      0.248      -2.629      10.186
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1604.336   Durbin-Watson:                   1.926
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           114475.861
+Skew:                           2.930   Prob(JB):                         0.00
+Kurtosis:                      38.468   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:38,557 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:38,557 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:38,557 - INFO - Fitting moderation model: iv1_public_health_policy x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:38,563 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.109
+Model:                                    OLS   Adj. R-squared:                  0.104
+Method:                         Least Squares   F-statistic:                     21.51
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           2.36e-45
+Time:                                22:51:38   Log-Likelihood:                -9294.6
+No. Observations:                        2126   AIC:                         1.862e+04
+Df Residuals:                            2113   BIC:                         1.869e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                   -4.6979      2.948     -1.594      0.111     -10.479       1.083
+iv1_public_health_policy                                 2.1674      1.113      1.947      0.052      -0.016       4.351
+mo2_robotics_capabilities                                1.3999      0.192      7.292      0.000       1.023       1.776
+iv1_public_health_policy_X_mo2_robotics_capabilities    -0.9181      0.249     -3.683      0.000      -1.407      -0.429
+population                                            2.483e-06   1.09e-06      2.269      0.023    3.37e-07    4.63e-06
+div_2                                                    3.4857      3.256      1.070      0.285      -2.900       9.872
+div_3                                                   11.6053      3.020      3.843      0.000       5.683      17.528
+div_4                                                   11.1730      2.964      3.770      0.000       5.360      16.986
+div_5                                                    7.6873      3.094      2.485      0.013       1.620      13.755
+div_6                                                    3.1231      2.967      1.053      0.293      -2.696       8.942
+div_7                                                   -4.0196      3.028     -1.328      0.184      -9.957       1.918
+div_8                                                    7.3274      3.094      2.368      0.018       1.259      13.395
+div_9                                                    3.0483      3.238      0.941      0.347      -3.301       9.398
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1659.721   Durbin-Watson:                   1.905
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           126378.258
+Skew:                           3.075   Prob(JB):                         0.00
+Kurtosis:                      40.267   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:38,811 - INFO - Saved plot to: moderation_iv1_public_health_policy_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:38,811 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:38,811 - INFO - Fitting moderation model: iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:38,816 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.103
+Model:                                    OLS   Adj. R-squared:                  0.098
+Method:                         Least Squares   F-statistic:                     20.15
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           2.55e-42
+Time:                                22:51:38   Log-Likelihood:                -9301.9
+No. Observations:                        2126   AIC:                         1.863e+04
+Df Residuals:                            2113   BIC:                         1.870e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+const                                               -13.8860      3.568     -3.892      0.000     -20.883      -6.889
+iv2_physical_environment                              5.3600      1.169      4.585      0.000       3.067       7.653
+mo1_genai_capabilities                                8.2269      2.220      3.706      0.000       3.873      12.581
+iv2_physical_environment_X_mo1_genai_capabilities    -2.8232      0.991     -2.848      0.004      -4.767      -0.879
+population                                         2.422e-06   1.13e-06      2.142      0.032    2.05e-07    4.64e-06
+div_2                                                 2.7092      3.323      0.815      0.415      -3.808       9.226
+div_3                                                11.4528      3.009      3.806      0.000       5.552      17.354
+div_4                                                10.3354      3.043      3.396      0.001       4.367      16.303
+div_5                                                 6.0990      3.109      1.962      0.050       0.002      12.196
+div_6                                                 3.8782      2.945      1.317      0.188      -1.898       9.654
+div_7                                                -5.9244      3.065     -1.933      0.053     -11.935       0.086
+div_8                                                 9.2641      3.096      2.992      0.003       3.192      15.336
+div_9                                                 3.6241      3.275      1.107      0.269      -2.799      10.047
+div_Unknown                                                0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1599.604   Durbin-Watson:                   1.912
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           111849.205
+Skew:                           2.923   Prob(JB):                         0.00
+Kurtosis:                      38.049   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:39,062 - INFO - Saved plot to: moderation_iv2_physical_environment_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:39,062 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:39,062 - INFO - Fitting moderation model: iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:39,067 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.108
+Model:                                    OLS   Adj. R-squared:                  0.103
+Method:                         Least Squares   F-statistic:                     21.31
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           6.44e-45
+Time:                                22:51:39   Log-Likelihood:                -9295.6
+No. Observations:                        2126   AIC:                         1.862e+04
+Df Residuals:                            2113   BIC:                         1.869e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                  -10.3287      3.639     -2.839      0.005     -17.464      -3.193
+iv2_physical_environment                                 3.9135      1.259      3.109      0.002       1.445       6.382
+mo2_robotics_capabilities                                0.9836      0.636      1.547      0.122      -0.263       2.230
+iv2_physical_environment_X_mo2_robotics_capabilities    -0.0726      0.280     -0.259      0.796      -0.622       0.477
+population                                            1.492e-06   1.14e-06      1.312      0.190   -7.38e-07    3.72e-06
+div_2                                                    1.3383      3.299      0.406      0.685      -5.130       7.807
+div_3                                                    9.7996      2.990      3.277      0.001       3.936      15.663
+div_4                                                    8.7616      3.023      2.899      0.004       2.834      14.689
+div_5                                                    5.1415      3.086      1.666      0.096      -0.910      11.193
+div_6                                                    2.2942      2.915      0.787      0.431      -3.422       8.010
+div_7                                                   -6.7519      3.044     -2.218      0.027     -12.722      -0.782
+div_8                                                    8.1510      3.083      2.644      0.008       2.105      14.197
+div_9                                                    1.6908      3.254      0.520      0.603      -4.690       8.072
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1655.951   Durbin-Watson:                   1.891
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           124817.380
+Skew:                           3.067   Prob(JB):                         0.00
+Kurtosis:                      40.032   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:39,330 - INFO - Saved plot to: moderation_iv2_physical_environment_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:39,330 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:39,330 - INFO - Fitting moderation model: iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:39,335 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.093
+Model:                                    OLS   Adj. R-squared:                  0.088
+Method:                         Least Squares   F-statistic:                     18.03
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           1.50e-37
+Time:                                22:51:39   Log-Likelihood:                -9313.4
+No. Observations:                        2126   AIC:                         1.865e+04
+Df Residuals:                            2113   BIC:                         1.873e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+=================================================================================================================
+                                                    coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------
+const                                            -3.2644      2.857     -1.143      0.253      -8.867       2.338
+iv3_health_behaviors                              0.0044      0.024      0.187      0.852      -0.042       0.051
+mo1_genai_capabilities                            1.9026      0.932      2.041      0.041       0.075       3.730
+iv3_health_behaviors_X_mo1_genai_capabilities     0.0063      0.027      0.235      0.814      -0.047       0.059
+population                                     3.215e-06   1.11e-06      2.897      0.004    1.04e-06    5.39e-06
+div_2                                             3.7904      3.286      1.153      0.249      -2.654      10.235
+div_3                                            12.7442      3.016      4.226      0.000       6.830      18.659
+div_4                                            11.9668      2.994      3.997      0.000       6.095      17.838
+div_5                                             7.9853      3.096      2.579      0.010       1.914      14.057
+div_6                                             3.3315      2.952      1.129      0.259      -2.457       9.120
+div_7                                            -3.7302      3.029     -1.232      0.218      -9.669       2.209
+div_8                                             7.9076      3.110      2.543      0.011       1.809      14.006
+div_9                                             4.1110      3.280      1.253      0.210      -2.321      10.543
+div_Unknown                                            0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1609.305   Durbin-Watson:                   1.916
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           115150.618
+Skew:                           2.944   Prob(JB):                         0.00
+Kurtosis:                      38.570   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:39,578 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:39,579 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:39,579 - INFO - Fitting moderation model: iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:39,584 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.103
+Model:                                    OLS   Adj. R-squared:                  0.098
+Method:                         Least Squares   F-statistic:                     20.30
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           1.17e-42
+Time:                                22:51:39   Log-Likelihood:                -9301.1
+No. Observations:                        2126   AIC:                         1.863e+04
+Df Residuals:                            2113   BIC:                         1.870e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+const                                               -3.5663      2.837     -1.257      0.209      -9.129       1.996
+iv3_health_behaviors                                 0.0046      0.026      0.177      0.860      -0.046       0.056
+mo2_robotics_capabilities                            1.0250      0.240      4.279      0.000       0.555       1.495
+iv3_health_behaviors_X_mo2_robotics_capabilities    -0.0046      0.006     -0.763      0.446      -0.017       0.007
+population                                        2.501e-06   1.11e-06      2.252      0.024    3.23e-07    4.68e-06
+div_2                                                3.1174      3.267      0.954      0.340      -3.289       9.524
+div_3                                               11.7412      2.992      3.924      0.000       5.874      17.609
+div_4                                               10.9231      2.972      3.675      0.000       5.095      16.752
+div_5                                                7.4885      3.068      2.441      0.015       1.472      13.505
+div_6                                                2.7916      2.924      0.955      0.340      -2.942       8.525
+div_7                                               -4.1477      3.001     -1.382      0.167     -10.032       1.737
+div_8                                                7.4620      3.088      2.416      0.016       1.406      13.518
+div_9                                                2.6960      3.253      0.829      0.407      -3.683       9.076
+div_Unknown                                               0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1645.539   Durbin-Watson:                   1.903
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           123139.721
+Skew:                           3.038   Prob(JB):                         0.00
+Kurtosis:                      39.786   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:39,831 - INFO - Saved plot to: moderation_iv3_health_behaviors_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:39,831 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:39,831 - INFO - Fitting moderation model: iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:39,838 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.112
+Model:                                    OLS   Adj. R-squared:                  0.107
+Method:                         Least Squares   F-statistic:                     22.30
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           4.09e-47
+Time:                                22:51:39   Log-Likelihood:                -9290.3
+No. Observations:                        2126   AIC:                         1.861e+04
+Df Residuals:                            2113   BIC:                         1.868e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+========================================================================================================================
+                                                           coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------
+const                                                    8.2901      3.250      2.551      0.011       1.916      14.664
+iv4_social_economic_factors                             -0.8273      0.125     -6.617      0.000      -1.073      -0.582
+mo1_genai_capabilities                                   0.7908      1.799      0.440      0.660      -2.737       4.318
+iv4_social_economic_factors_X_mo1_genai_capabilities     0.0851      0.137      0.619      0.536      -0.184       0.355
+population                                            1.967e-06    1.1e-06      1.790      0.074   -1.89e-07    4.12e-06
+div_2                                                    2.6275      3.260      0.806      0.420      -3.765       9.020
+div_3                                                   13.3105      2.941      4.525      0.000       7.542      19.079
+div_4                                                   11.3756      2.957      3.847      0.000       5.577      17.174
+div_5                                                    8.9652      3.026      2.963      0.003       3.032      14.899
+div_6                                                    2.3502      2.917      0.806      0.420      -3.369       8.070
+div_7                                                   -3.7750      2.958     -1.276      0.202      -9.576       2.026
+div_8                                                    8.7979      3.084      2.853      0.004       2.751      14.845
+div_9                                                    3.7091      3.243      1.144      0.253      -2.650      10.068
+div_Unknown                                                   0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1632.325   Durbin-Watson:                   1.928
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           121335.211
+Skew:                           3.000   Prob(JB):                         0.00
+Kurtosis:                      39.520   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:40,101 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo1_genai_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:40,101 - INFO - --------------------------------------------------------------------------------
+2025-04-21 22:51:40,101 - INFO - Fitting moderation model: iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-21 22:51:40,106 - INFO -                                 OLS Regression Results                                
+======================================================================================
+Dep. Variable:     dv3_operational_efficiency   R-squared:                       0.119
+Model:                                    OLS   Adj. R-squared:                  0.114
+Method:                         Least Squares   F-statistic:                     23.84
+Date:                        Mon, 21 Apr 2025   Prob (F-statistic):           1.55e-50
+Time:                                22:51:40   Log-Likelihood:                -9282.1
+No. Observations:                        2126   AIC:                         1.859e+04
+Df Residuals:                            2113   BIC:                         1.866e+04
+Df Model:                                  12                                         
+Covariance Type:                    nonrobust                                         
+===========================================================================================================================
+                                                              coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------------
+const                                                       7.9283      3.339      2.374      0.018       1.380      14.477
+iv4_social_economic_factors                                -0.7968      0.136     -5.878      0.000      -1.063      -0.531
+mo2_robotics_capabilities                                   0.2486      0.484      0.514      0.607      -0.700       1.197
+iv4_social_economic_factors_X_mo2_robotics_capabilities     0.0392      0.037      1.056      0.291      -0.034       0.112
+population                                                1.43e-06   1.11e-06      1.293      0.196   -7.39e-07     3.6e-06
+div_2                                                       1.9815      3.241      0.611      0.541      -4.374       8.337
+div_3                                                      11.9920      2.925      4.099      0.000       6.255      17.729
+div_4                                                      10.2580      2.941      3.488      0.000       4.491      16.025
+div_5                                                       8.0490      2.998      2.684      0.007       2.169      13.929
+div_6                                                       1.7129      2.896      0.591      0.554      -3.967       7.393
+div_7                                                      -4.4289      2.935     -1.509      0.131     -10.185       1.327
+div_8                                                       8.1074      3.058      2.651      0.008       2.110      14.104
+div_9                                                       2.3641      3.219      0.734      0.463      -3.949       8.677
+div_Unknown                                                      0          0        nan        nan           0           0
+==============================================================================
+Omnibus:                     1664.703   Durbin-Watson:                   1.912
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           128325.828
+Skew:                           3.086   Prob(JB):                         0.00
+Kurtosis:                      40.557   Cond. No.                          inf
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is      0. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+2025-04-21 22:51:40,372 - INFO - Saved plot to: moderation_iv4_social_economic_factors_mo2_robotics_capabilities_dv3_operational_efficiency.png
+2025-04-21 22:51:40,372 - INFO - All moderation analyses completed.

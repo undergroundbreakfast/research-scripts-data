@@ -1,0 +1,22 @@
+2025-06-14 19:05:06,513 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:75] - Logging to: logs/geospatial_health_analysis_log_20250614_190506.txt
+2025-06-14 19:05:06,513 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:748] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 19:05:06,583 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:96] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 19:05:06,583 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:108] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 19:05:06,603 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:133] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 19:05:06,610 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:152] - GeoDataFrame created successfully.
+2025-06-14 19:05:06,610 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:172] - County shapefile already exists at: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 19:05:06,774 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:222] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 19:05:07,094 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:284] - Hot spot analysis complete for ai_adoption_score. Hot spots: 98, Cold spots: 0
+2025-06-14 19:05:07,097 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:418] - Generating cluster map for ai_adoption_score...
+2025-06-14 19:05:18,743 - WARNING - [Geospatial_TAMU_analysis_061425_v3.py:449] - Could not add basemap to cluster plot: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 19:05:20,311 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:461] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_ai_adoption_score.png
+2025-06-14 19:05:20,313 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:480] - Found 98 hospitals in high-tech clusters
+2025-06-14 19:05:20,693 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:501] - Found 303 counties within a 30-mile radius of a 'ai_adoption_score' hot spot hospital.
+2025-06-14 19:05:20,694 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:504] - Service area summary saved to geospatial_output/service_area_summary_ai_adoption_score.csv
+2025-06-14 19:05:20,694 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:506] - Generating service area coverage map...
+2025-06-14 19:05:21,661 - ERROR - [Geospatial_TAMU_analysis_061425_v3.py:538] - Error in hospital service area analysis: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 19:05:22,309 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:598] - Creating glow effect for 98 hot spots for ai_adoption_score
+2025-06-14 19:05:22,392 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:677] - Attempting to add basemap using: a.basemaps.cartocdn.com
+2025-06-14 19:05:23,093 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:681] - Successfully added basemap using a.basemaps.cartocdn.com
+2025-06-14 19:05:23,093 - ERROR - [Geospatial_TAMU_analysis_061425_v3.py:801] - A critical error occurred during the main execution pipeline: name 'mpatches' is not defined
+2025-06-14 19:05:23,095 - INFO - [Geospatial_TAMU_analysis_061425_v3.py:804] - Geospatial analysis script finished. Check logs and output directory for results.

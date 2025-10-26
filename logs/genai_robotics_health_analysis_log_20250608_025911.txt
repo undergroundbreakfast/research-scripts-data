@@ -1,0 +1,50 @@
+2025-06-08 02:59:11,054 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v2.py:75] - Logging to: logs/genai_robotics_health_analysis_log_20250608_025911.txt
+2025-06-08 02:59:11,055 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v2.py:904] - Starting GenAI/Robotics Causal and Moderation Analysis Script.
+2025-06-08 02:59:11,055 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v2.py:905] - Note on GWR & Continuous IPTW/AIPW: Geographically Weighted Regression and IPTW/AIPW with continuous exposures are advanced methods. This script focuses on OLS with clustered SEs, and binary treatment IPTW/AIPW. GWR/Continuous exposure models are potential future research directions.
+2025-06-08 02:59:11,244 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v2.py:105] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-08 02:59:11,252 - ERROR - [OLS_IPTW_AIPW_ADJPD_060825_v2.py:194] - Database query or initial data processing failed: (psycopg2.errors.UndefinedColumn) column vcts.pct_wfaiart_enabled_adjpd does not exist
+LINE 21:         vcts.pct_wfaiart_enabled_adjpd,     -- MO11 (AI Auto...
+                 ^
+
+[SQL: 
+    SELECT
+        vcm.county_fips,
+        -- IVs for main effects and moderation
+        vcm.health_behaviors_score,        -- IV3 (X for some interactions)
+        vcm.social_economic_factors_score, -- IV4 (Confounder)
+        vcm.physical_environment_score,    -- IV2 (Confounder)
+        vcm.medicaid_expansion_active,     -- IV1 (Confounder)
+        
+        -- DVs for main effects and moderation
+        vcm.health_outcomes_score,         -- DV2 (Y for some interactions)
+        vcm.clinical_care_score,           -- DV1 
+        vcm.avg_patient_services_margin,   -- DV3 
+
+        -- Specific DV components from vw_conceptual_model_variables
+        vcv.premature_death_raw_value,     -- DV21 (Y for main effect analysis, and some interactions)
+        vcv.ratio_of_population_to_primary_care_physicians, -- DV12 (X for some interactions)
+        vcv.preventable_hospital_stays_raw_value, -- DV15 (Y for some interactions)
+        
+        -- Moderators (Tech components from vw_county_tech_summary)
+        vcts.pct_wfaiart_enabled_adjpd,     -- MO11 (AI Automate Routine Tasks)
+        vcts.pct_wfaioacw_enabled_adjpd,    -- MO12 (AI Optimize Workflows)
+        vcts.pct_wfaippd_enabled_adjpd,     -- MO13 (AI Predict Pt Demand)
+        vcts.pct_wfaipsn_enabled_adjpd,     -- MO14 (AI Predict Staff Needs)
+        vcts.pct_wfaiss_enabled_adjpd,      -- MO15 (AI Staff Scheduling)
+        vcts.pct_robohos_enabled_adjpd,     -- MO21 (Robotics in Hospital)
+        
+        -- Controls
+        vcm.population,                    -- Control / for lives saved
+        vcm.census_division                -- Control
+    FROM
+        public.vw_conceptual_model AS vcm
+    LEFT JOIN 
+        public.vw_conceptual_model_variables AS vcv
+        ON vcm.county_fips = vcv.county_fips
+    LEFT JOIN
+        public.vw_county_tech_summary AS vcts
+        ON vcm.county_fips = vcts.county_fips
+    WHERE
+        vcm.population IS NOT NULL AND CAST(vcm.population AS NUMERIC) > 0;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)

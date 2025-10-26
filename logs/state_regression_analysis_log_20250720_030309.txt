@@ -1,0 +1,83 @@
+2025-07-20 03:03:09,248 - INFO - [AHEI_State_Regressions_072025_v1.py:67] - Logging to: logs/state_regression_analysis_log_20250720_030309.txt
+2025-07-20 03:03:09,249 - INFO - [AHEI_State_Regressions_072025_v1.py:201] - Starting State-Level AHEI and Mortality Regression Analysis.
+2025-07-20 03:03:09,310 - INFO - [AHEI_State_Regressions_072025_v1.py:89] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-07-20 03:03:09,319 - INFO - [AHEI_State_Regressions_072025_v1.py:119] - Successfully fetched and joined data: 51 rows, 7 columns.
+2025-07-20 03:03:09,319 - INFO - [AHEI_State_Regressions_072025_v1.py:138] - Converting the following columns to numeric: ['ahei', 'access_gini', 'avg_travel_time_min', 'pct_area_in_30min_drive', 'death_rate', 'age_adjusted_death_rate']
+2025-07-20 03:03:09,320 - WARNING - [AHEI_State_Regressions_072025_v1.py:147] - Column 'death_rate': Introduced 22 NaNs during numeric conversion (likely due to non-numeric text).
+2025-07-20 03:03:09,320 - WARNING - [AHEI_State_Regressions_072025_v1.py:147] - Column 'age_adjusted_death_rate': Introduced 1 NaNs during numeric conversion (likely due to non-numeric text).
+2025-07-20 03:03:09,321 - INFO - [AHEI_State_Regressions_072025_v1.py:161] - Dropped 22 rows due to missing values after cleaning.
+2025-07-20 03:03:09,321 - INFO - [AHEI_State_Regressions_072025_v1.py:167] - Data cleaning complete. 29 rows are available for analysis.
+2025-07-20 03:03:09,321 - INFO - [AHEI_State_Regressions_072025_v1.py:223] - ================================================================================
+2025-07-20 03:03:09,321 - INFO - [AHEI_State_Regressions_072025_v1.py:224] - RUNNING REGRESSION FOR DEPENDENT VARIABLE: death_rate
+2025-07-20 03:03:09,321 - INFO - [AHEI_State_Regressions_072025_v1.py:225] - INDEPENDENT VARIABLES: ahei, access_gini, avg_travel_time_min, pct_area_in_30min_drive
+2025-07-20 03:03:09,321 - INFO - [AHEI_State_Regressions_072025_v1.py:226] - --------------------------------------------------------------------------------
+2025-07-20 03:03:09,326 - INFO - [AHEI_State_Regressions_072025_v1.py:187] - 
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             death_rate   R-squared:                       0.514
+Model:                            OLS   Adj. R-squared:                  0.433
+Method:                 Least Squares   F-statistic:                     6.348
+Date:                Sun, 20 Jul 2025   Prob (F-statistic):            0.00124
+Time:                        03:03:09   Log-Likelihood:                -160.62
+No. Observations:                  29   AIC:                             331.2
+Df Residuals:                      24   BIC:                             338.1
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                    1244.6049     81.551     15.262      0.000    1076.291    1412.918
+ahei                       -5.8110      1.571     -3.699      0.001      -9.053      -2.569
+access_gini              -128.6796    134.469     -0.957      0.348    -406.210     148.851
+avg_travel_time_min        -0.7051      0.215     -3.272      0.003      -1.150      -0.260
+pct_area_in_30min_drive     2.0052      1.044      1.921      0.067      -0.149       4.160
+==============================================================================
+Omnibus:                        2.057   Durbin-Watson:                   2.095
+Prob(Omnibus):                  0.358   Jarque-Bera (JB):                1.168
+Skew:                          -0.096   Prob(JB):                        0.558
+Kurtosis:                       2.036   Cond. No.                     1.22e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.22e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+2025-07-20 03:03:09,326 - INFO - [AHEI_State_Regressions_072025_v1.py:223] - ================================================================================
+2025-07-20 03:03:09,326 - INFO - [AHEI_State_Regressions_072025_v1.py:224] - RUNNING REGRESSION FOR DEPENDENT VARIABLE: age_adjusted_death_rate
+2025-07-20 03:03:09,326 - INFO - [AHEI_State_Regressions_072025_v1.py:225] - INDEPENDENT VARIABLES: ahei, access_gini, avg_travel_time_min, pct_area_in_30min_drive
+2025-07-20 03:03:09,326 - INFO - [AHEI_State_Regressions_072025_v1.py:226] - --------------------------------------------------------------------------------
+2025-07-20 03:03:09,329 - INFO - [AHEI_State_Regressions_072025_v1.py:187] - 
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     age_adjusted_death_rate   R-squared:                       0.381
+Model:                                 OLS   Adj. R-squared:                  0.278
+Method:                      Least Squares   F-statistic:                     3.690
+Date:                     Sun, 20 Jul 2025   Prob (F-statistic):             0.0177
+Time:                             03:03:09   Log-Likelihood:                -151.92
+No. Observations:                       29   AIC:                             313.8
+Df Residuals:                           24   BIC:                             320.7
+Df Model:                                4                                         
+Covariance Type:                 nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                     825.5209     60.411     13.665      0.000     700.839     950.202
+ahei                        1.5792      1.164      1.357      0.187      -0.822       3.981
+access_gini              -285.0498     99.611     -2.862      0.009    -490.636     -79.464
+avg_travel_time_min        -0.0186      0.160     -0.116      0.908      -0.348       0.311
+pct_area_in_30min_drive    -1.8931      0.773     -2.448      0.022      -3.489      -0.297
+==============================================================================
+Omnibus:                        4.710   Durbin-Watson:                   1.258
+Prob(Omnibus):                  0.095   Jarque-Bera (JB):                3.011
+Skew:                           0.641   Prob(JB):                        0.222
+Kurtosis:                       3.921   Cond. No.                     1.22e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.22e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+2025-07-20 03:03:09,329 - INFO - [AHEI_State_Regressions_072025_v1.py:230] - ================================================================================
+2025-07-20 03:03:09,329 - INFO - [AHEI_State_Regressions_072025_v1.py:231] - Script finished successfully.

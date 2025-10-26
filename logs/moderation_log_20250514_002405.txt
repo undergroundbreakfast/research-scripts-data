@@ -1,0 +1,179 @@
+2025-05-14 00:24:05,103 - INFO - Logging to: logs/moderation_log_20250514_002405.txt
+2025-05-14 00:24:05,103 - INFO - Output will be saved in: moderation_output
+2025-05-14 00:24:05,179 - INFO - Connected to Postgres successfully.
+2025-05-14 00:24:31,069 - INFO - Data fetched from vw_conceptual_model (with NOT NULL checks): shape=(2126, 12)
+2025-05-14 00:24:31,070 - INFO - Using '1' as the reference category for census_division dummies.
+2025-05-14 00:24:31,071 - INFO - Created 8 dummy cols for census_division
+2025-05-14 00:24:31,071 - INFO - Saving coefficients summary to: moderation_output/Moderation_Coefficients_All_Transformations.csv
+2025-05-14 00:24:31,071 - INFO - --------------------------------------------------------------------------------
+2025-05-14 00:24:31,071 - INFO - PATH 1/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-14 00:24:31,071 - INFO -   Running with RAW transformation
+2025-05-14 00:24:31,071 - INFO -   Data summary after raw transformation:
+2025-05-14 00:24:31,072 - INFO -     iv1_public_health_policy: dtype=int64, min=0, max=1, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     mo1_genai_capabilities: dtype=float64, min=0.0, max=5.0, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     dv1_healthcare_access: dtype=float64, min=-3.538009605040879, max=4817.359152346999, NaN count=0
+2025-05-14 00:24:31,072 - INFO -   Control variable data types:
+2025-05-14 00:24:31,072 - INFO -     population: dtype=object, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_2: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_3: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_4: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_5: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_6: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_7: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_8: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO -     div_9: dtype=int64, NaN count=0
+2025-05-14 00:24:31,072 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv1_public_health_policy * mo1_genai_capabilities + controls
+2025-05-14 00:24:31,073 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-14 00:24:31,073 - INFO - Creating interaction term: iv1_public_health_policy_x_mo1_genai_capabilities
+2025-05-14 00:24:31,074 - WARNING - Column population is not numeric. Converting...
+2025-05-14 00:24:31,097 - WARNING - High multicollinearity detected (VIF > 10):
+  Variable        VIF
+0    const  49.438007
+2025-05-14 00:24:31,097 - WARNING - Interpreting interaction effects may be problematic.
+2025-05-14 00:24:31,099 - INFO - Model summary for dv1_healthcare_access ~ iv1_public_health_policy * mo1_genai_capabilities + controls:
+2025-05-14 00:24:31,101 - INFO - N: 2126.0, R²: 0.2451, Adj. R²: 0.2408
+2025-05-14 00:24:31,102 - INFO - Model coefficients:
+2025-05-14 00:24:31,102 - INFO - const                    :   947.9435 (64.4283) t= 14.713 p=0.0000 ***
+2025-05-14 00:24:31,102 - INFO - iv1_public_health_policy :   -14.1195 (21.5209) t= -0.656 p=0.5118 
+2025-05-14 00:24:31,102 - INFO - mo1_genai_capabilities_centered:   -20.6456 (14.6805) t= -1.406 p=0.1598 
+2025-05-14 00:24:31,102 - INFO - iv1_public_health_policy_x_mo1_genai_capabilities:   -16.2491 (19.3254) t= -0.841 p=0.4005 
+2025-05-14 00:24:31,102 - INFO - population               :    -0.0001 (0.0000) t= -5.359 p=0.0000 ***
+2025-05-14 00:24:31,102 - INFO - div_2                    :   233.6262 (71.4988) t=  3.268 p=0.0011 **
+2025-05-14 00:24:31,102 - INFO - div_3                    :   408.0987 (66.3602) t=  6.150 p=0.0000 ***
+2025-05-14 00:24:31,102 - INFO - div_4                    :   310.8365 (65.0827) t=  4.776 p=0.0000 ***
+2025-05-14 00:24:31,102 - INFO - div_5                    :   662.6611 (68.2158) t=  9.714 p=0.0000 ***
+2025-05-14 00:24:31,102 - INFO - div_6                    :   215.7942 (65.3594) t=  3.302 p=0.0010 ***
+2025-05-14 00:24:31,102 - INFO - div_7                    :   575.8367 (66.6887) t=  8.635 p=0.0000 ***
+2025-05-14 00:24:31,102 - INFO - div_8                    :   -29.8041 (68.2260) t= -0.437 p=0.6623 
+2025-05-14 00:24:31,103 - INFO - div_9                    :   -63.4602 (71.3174) t= -0.890 p=0.3737 
+2025-05-14 00:24:31,103 - INFO - ✗ Non-significant interaction effect: iv1_public_health_policy_x_mo1_genai_capabilities, p = 0.4005
+2025-05-14 00:24:31,104 - INFO - Cohen's f-squared for interaction: 0.0003 (Negligible effect)
+2025-05-14 00:24:31,104 - INFO -   Running with ZSCORE transformation
+2025-05-14 00:24:31,105 - INFO -   Data summary after zscore transformation:
+2025-05-14 00:24:31,105 - INFO -     iv1_public_health_policy_z: dtype=float64, min=-1.0548916582396983, max=0.9475187573117291, NaN count=0
+2025-05-14 00:24:31,106 - INFO -     mo1_genai_capabilities_z: dtype=float64, min=-0.41769428199853226, max=4.708181261738883, NaN count=0
+2025-05-14 00:24:31,106 - INFO -     dv1_healthcare_access_z: dtype=float64, min=-2.572965424320128, max=7.3689211987231396, NaN count=0
+2025-05-14 00:24:31,106 - INFO -   Control variable data types:
+2025-05-14 00:24:31,106 - INFO -     population: dtype=object, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_2: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_3: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_4: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_5: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_6: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_7: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_8: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO -     div_9: dtype=int64, NaN count=0
+2025-05-14 00:24:31,107 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv1_public_health_policy_z * mo1_genai_capabilities_z + controls
+2025-05-14 00:24:31,108 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-14 00:24:31,108 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo1_genai_capabilities_z
+2025-05-14 00:24:31,109 - WARNING - Column population is not numeric. Converting...
+2025-05-14 00:24:31,133 - WARNING - High multicollinearity detected (VIF > 10):
+  Variable        VIF
+0    const  45.143195
+2025-05-14 00:24:31,133 - WARNING - Interpreting interaction effects may be problematic.
+2025-05-14 00:24:31,136 - INFO - Model summary for dv1_healthcare_access_z ~ iv1_public_health_policy_z * mo1_genai_capabilities_z + controls:
+2025-05-14 00:24:31,136 - INFO - N: 2126.0, R²: 0.2451, Adj. R²: 0.2408
+2025-05-14 00:24:31,136 - INFO - Model coefficients:
+2025-05-14 00:24:31,136 - INFO - const                    :    -0.6261 (0.1270) t= -4.931 p=0.0000 ***
+2025-05-14 00:24:31,136 - INFO - iv1_public_health_policy_z:    -0.0145 (0.0222) t= -0.656 p=0.5118 
+2025-05-14 00:24:31,136 - INFO - mo1_genai_capabilities_z_centered:    -0.0588 (0.0194) t= -3.034 p=0.0024 **
+2025-05-14 00:24:31,136 - INFO - iv1_public_health_policy_z_x_mo1_genai_capabilities_z:    -0.0163 (0.0194) t= -0.841 p=0.4005 
+2025-05-14 00:24:31,136 - INFO - population               :    -0.0000 (0.0000) t= -5.359 p=0.0000 ***
+2025-05-14 00:24:31,136 - INFO - div_2                    :     0.4818 (0.1474) t=  3.268 p=0.0011 **
+2025-05-14 00:24:31,136 - INFO - div_3                    :     0.8416 (0.1369) t=  6.150 p=0.0000 ***
+2025-05-14 00:24:31,136 - INFO - div_4                    :     0.6410 (0.1342) t=  4.776 p=0.0000 ***
+2025-05-14 00:24:31,136 - INFO - div_5                    :     1.3666 (0.1407) t=  9.714 p=0.0000 ***
+2025-05-14 00:24:31,136 - INFO - div_6                    :     0.4450 (0.1348) t=  3.302 p=0.0010 ***
+2025-05-14 00:24:31,136 - INFO - div_7                    :     1.1875 (0.1375) t=  8.635 p=0.0000 ***
+2025-05-14 00:24:31,136 - INFO - div_8                    :    -0.0615 (0.1407) t= -0.437 p=0.6623 
+2025-05-14 00:24:31,136 - INFO - div_9                    :    -0.1309 (0.1471) t= -0.890 p=0.3737 
+2025-05-14 00:24:31,137 - INFO - ✗ Non-significant interaction effect: iv1_public_health_policy_z_x_mo1_genai_capabilities_z, p = 0.4005
+2025-05-14 00:24:31,138 - INFO - Cohen's f-squared for interaction: 0.0003 (Negligible effect)
+2025-05-14 00:24:31,139 - INFO -   Running with LOG transformation
+2025-05-14 00:24:31,139 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-14 00:24:31,140 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-14 00:24:31,140 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-14 00:24:31,140 - INFO -   Data summary after log transformation:
+2025-05-14 00:24:31,140 - INFO -     iv1_public_health_policy_log: dtype=float64, min=0.0, max=0.6931471805599453, NaN count=0
+2025-05-14 00:24:31,141 - INFO -     mo1_genai_capabilities_log: dtype=float64, min=0.0, max=1.791759469228055, NaN count=0
+2025-05-14 00:24:31,141 - INFO -     dv1_healthcare_access_log: dtype=float64, min=-4.440892098500627e-16, max=8.480922731668413, NaN count=0
+2025-05-14 00:24:31,141 - INFO -   Control variable data types:
+2025-05-14 00:24:31,141 - INFO -     population: dtype=object, NaN count=0
+2025-05-14 00:24:31,141 - INFO -     div_2: dtype=int64, NaN count=0
+2025-05-14 00:24:31,142 - INFO -     div_3: dtype=int64, NaN count=0
+2025-05-14 00:24:31,142 - INFO -     div_4: dtype=int64, NaN count=0
+2025-05-14 00:24:31,142 - INFO -     div_5: dtype=int64, NaN count=0
+2025-05-14 00:24:31,142 - INFO -     div_6: dtype=int64, NaN count=0
+2025-05-14 00:24:31,142 - INFO -     div_7: dtype=int64, NaN count=0
+2025-05-14 00:24:31,142 - INFO -     div_8: dtype=int64, NaN count=0
+2025-05-14 00:24:31,143 - INFO -     div_9: dtype=int64, NaN count=0
+2025-05-14 00:24:31,143 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv1_public_health_policy_log * mo1_genai_capabilities_log + controls
+2025-05-14 00:24:31,144 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-14 00:24:31,144 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo1_genai_capabilities_log
+2025-05-14 00:24:31,144 - WARNING - Column population is not numeric. Converting...
+2025-05-14 00:24:31,171 - WARNING - High multicollinearity detected (VIF > 10):
+  Variable        VIF
+0    const  49.504677
+2025-05-14 00:24:31,172 - WARNING - Interpreting interaction effects may be problematic.
+2025-05-14 00:24:31,173 - INFO - Model summary for dv1_healthcare_access_log ~ iv1_public_health_policy_log * mo1_genai_capabilities_log + controls:
+2025-05-14 00:24:31,173 - INFO - N: 2126.0, R²: 0.2652, Adj. R²: 0.2610
+2025-05-14 00:24:31,173 - INFO - Model coefficients:
+2025-05-14 00:24:31,173 - INFO - const                    :     6.8330 (0.0513) t=133.216 p=0.0000 ***
+2025-05-14 00:24:31,173 - INFO - iv1_public_health_policy_log:    -0.0244 (0.0247) t= -0.985 p=0.3248 
+2025-05-14 00:24:31,173 - INFO - mo1_genai_capabilities_log_centered:    -0.0519 (0.0267) t= -1.944 p=0.0521 †
+2025-05-14 00:24:31,173 - INFO - iv1_public_health_policy_log_x_mo1_genai_capabilities_log:    -0.0329 (0.0501) t= -0.657 p=0.5111 
+2025-05-14 00:24:31,173 - INFO - population               :    -0.0000 (0.0000) t= -4.204 p=0.0000 ***
+2025-05-14 00:24:31,173 - INFO - div_2                    :     0.2264 (0.0569) t=  3.980 p=0.0001 ***
+2025-05-14 00:24:31,173 - INFO - div_3                    :     0.3303 (0.0528) t=  6.254 p=0.0000 ***
+2025-05-14 00:24:31,173 - INFO - div_4                    :     0.2738 (0.0518) t=  5.287 p=0.0000 ***
+2025-05-14 00:24:31,173 - INFO - div_5                    :     0.5003 (0.0543) t=  9.210 p=0.0000 ***
+2025-05-14 00:24:31,173 - INFO - div_6                    :     0.1732 (0.0520) t=  3.328 p=0.0009 ***
+2025-05-14 00:24:31,173 - INFO - div_7                    :     0.4452 (0.0531) t=  8.387 p=0.0000 ***
+2025-05-14 00:24:31,173 - INFO - div_8                    :    -0.0951 (0.0543) t= -1.751 p=0.0800 †
+2025-05-14 00:24:31,173 - INFO - div_9                    :    -0.1087 (0.0567) t= -1.916 p=0.0555 †
+2025-05-14 00:24:31,173 - INFO - ✗ Non-significant interaction effect: iv1_public_health_policy_log_x_mo1_genai_capabilities_log, p = 0.5111
+2025-05-14 00:24:31,177 - INFO - Cohen's f-squared for interaction: 0.0002 (Negligible effect)
+2025-05-14 00:24:31,178 - INFO -   Running with WINSOR transformation
+2025-05-14 00:24:31,180 - INFO - Winsorized iv1_public_health_policy at 5th percentile (0.0000) and 95th percentile (1.0000)
+2025-05-14 00:24:31,181 - INFO - Winsorized mo1_genai_capabilities at 5th percentile (0.0000) and 95th percentile (2.5000)
+2025-05-14 00:24:31,183 - INFO - Winsorized dv1_healthcare_access at 5th percentile (645.9969) and 95th percentile (2106.5315)
+2025-05-14 00:24:31,183 - INFO -   Data summary after winsor transformation:
+2025-05-14 00:24:31,183 - INFO -     iv1_public_health_policy_win: dtype=int64, min=0, max=1, NaN count=0
+2025-05-14 00:24:31,185 - INFO -     mo1_genai_capabilities_win: dtype=float64, min=0.0, max=2.5, NaN count=0
+2025-05-14 00:24:31,186 - INFO -     dv1_healthcare_access_win: dtype=float64, min=645.9969491380081, max=2106.5315451027454, NaN count=0
+2025-05-14 00:24:31,186 - INFO -   Control variable data types:
+2025-05-14 00:24:31,187 - INFO -     population: dtype=object, NaN count=0
+2025-05-14 00:24:31,187 - INFO -     div_2: dtype=int64, NaN count=0
+2025-05-14 00:24:31,187 - INFO -     div_3: dtype=int64, NaN count=0
+2025-05-14 00:24:31,187 - INFO -     div_4: dtype=int64, NaN count=0
+2025-05-14 00:24:31,187 - INFO -     div_5: dtype=int64, NaN count=0
+2025-05-14 00:24:31,187 - INFO -     div_6: dtype=int64, NaN count=0
+2025-05-14 00:24:31,187 - INFO -     div_7: dtype=int64, NaN count=0
+2025-05-14 00:24:31,188 - INFO -     div_8: dtype=int64, NaN count=0
+2025-05-14 00:24:31,188 - INFO -     div_9: dtype=int64, NaN count=0
+2025-05-14 00:24:31,188 - INFO - Fitting OLS model: dv1_healthcare_access_win ~ iv1_public_health_policy_win * mo1_genai_capabilities_win + controls
+2025-05-14 00:24:31,188 - INFO - Mean-centering mo1_genai_capabilities_win (mean=0.3364)
+2025-05-14 00:24:31,188 - INFO - Creating interaction term: iv1_public_health_policy_win_x_mo1_genai_capabilities_win
+2025-05-14 00:24:31,189 - WARNING - Column population is not numeric. Converting...
+2025-05-14 00:24:31,204 - WARNING - High multicollinearity detected (VIF > 10):
+  Variable        VIF
+0    const  49.492115
+2025-05-14 00:24:31,204 - WARNING - Interpreting interaction effects may be problematic.
+2025-05-14 00:24:31,205 - INFO - Model summary for dv1_healthcare_access_win ~ iv1_public_health_policy_win * mo1_genai_capabilities_win + controls:
+2025-05-14 00:24:31,205 - INFO - N: 2126.0, R²: 0.2827, Adj. R²: 0.2787
+2025-05-14 00:24:31,206 - INFO - Model coefficients:
+2025-05-14 00:24:31,206 - INFO - const                    :   939.0562 (51.2078) t= 18.338 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - iv1_public_health_policy_win:    -5.1572 (17.1143) t= -0.301 p=0.7632 
+2025-05-14 00:24:31,206 - INFO - mo1_genai_capabilities_win_centered:   -49.3889 (16.5553) t= -2.983 p=0.0029 **
+2025-05-14 00:24:31,206 - INFO - iv1_public_health_policy_win_x_mo1_genai_capabilities_win:    -1.9875 (21.3592) t= -0.093 p=0.9259 
+2025-05-14 00:24:31,206 - INFO - population               :    -0.0001 (0.0000) t= -5.826 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - div_2                    :   233.1981 (56.8038) t=  4.105 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - div_3                    :   381.7064 (52.7360) t=  7.238 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - div_4                    :   306.5675 (51.7079) t=  5.929 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - div_5                    :   580.6936 (54.2239) t= 10.709 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - div_6                    :   209.8839 (51.9400) t=  4.041 p=0.0001 ***
+2025-05-14 00:24:31,206 - INFO - div_7                    :   521.7556 (52.9916) t=  9.846 p=0.0000 ***
+2025-05-14 00:24:31,206 - INFO - div_8                    :    -2.2649 (54.2190) t= -0.042 p=0.9667 
+2025-05-14 00:24:31,206 - INFO - div_9                    :   -49.3056 (56.6409) t= -0.870 p=0.3841 
+2025-05-14 00:24:31,206 - INFO - ✗ Non-significant interaction effect: iv1_public_health_policy_win_x_mo1_genai_capabilities_win, p = 0.9259
+2025-05-14 00:24:31,207 - INFO - Cohen's f-squared for interaction: 0.0000 (Negligible effect)

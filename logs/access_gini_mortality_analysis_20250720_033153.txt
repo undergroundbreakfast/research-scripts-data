@@ -1,0 +1,41 @@
+2025-07-20 03:31:53,602 - INFO - [AHEI_State_Regressions_072025_v4.py:51] - Logging to: logs/access_gini_mortality_analysis_20250720_033153.txt
+2025-07-20 03:31:53,602 - INFO - [AHEI_State_Regressions_072025_v4.py:279] - ================================================================================
+2025-07-20 03:31:53,602 - INFO - [AHEI_State_Regressions_072025_v4.py:280] - FOCUSED ANALYSIS: Access Inequality (Gini) vs. Age-Adjusted Mortality
+2025-07-20 03:31:53,602 - INFO - [AHEI_State_Regressions_072025_v4.py:281] - ================================================================================
+2025-07-20 03:31:53,665 - INFO - [AHEI_State_Regressions_072025_v4.py:73] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-07-20 03:31:53,668 - INFO - [AHEI_State_Regressions_072025_v4.py:96] - Successfully fetched data: 51 rows, 3 columns.
+2025-07-20 03:31:53,668 - INFO - [AHEI_State_Regressions_072025_v4.py:112] - Converting the following columns to numeric: ['access_gini', 'age_adjusted_death_rate']
+2025-07-20 03:31:53,668 - INFO - [AHEI_State_Regressions_072025_v4.py:118] - Column 'access_gini' sample values before cleaning: ['0.6502', '0.6171', '0.2315', '0.4842', '0.6139']
+2025-07-20 03:31:53,669 - INFO - [AHEI_State_Regressions_072025_v4.py:118] - Column 'age_adjusted_death_rate' sample values before cleaning: ['670.6', '753.5', '645.6', '861.3', '946.9']
+2025-07-20 03:31:53,670 - INFO - [AHEI_State_Regressions_072025_v4.py:157] - Numeric conversion complete.
+2025-07-20 03:31:53,670 - INFO - [AHEI_State_Regressions_072025_v4.py:303] - Running regression with 51 observations.
+2025-07-20 03:31:53,673 - INFO - [AHEI_State_Regressions_072025_v4.py:173] - 
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     age_adjusted_death_rate   R-squared:                       0.109
+Model:                                 OLS   Adj. R-squared:                  0.091
+Method:                      Least Squares   F-statistic:                     6.011
+Date:                     Sun, 20 Jul 2025   Prob (F-statistic):             0.0178
+Time:                             03:31:53   Log-Likelihood:                -302.92
+No. Observations:                       51   AIC:                             609.8
+Df Residuals:                           49   BIC:                             613.7
+Df Model:                                1                                         
+Covariance Type:                 nonrobust                                         
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+const         896.6267     49.411     18.146      0.000     797.332     995.921
+access_gini  -254.0569    103.625     -2.452      0.018    -462.299     -45.815
+==============================================================================
+Omnibus:                        3.236   Durbin-Watson:                   1.774
+Prob(Omnibus):                  0.198   Jarque-Bera (JB):                3.035
+Skew:                           0.535   Prob(JB):                        0.219
+Kurtosis:                       2.469   Cond. No.                         9.58
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:31:53,673 - INFO - [AHEI_State_Regressions_072025_v4.py:187] - Generating regression plot...
+2025-07-20 03:31:54,189 - INFO - [AHEI_State_Regressions_072025_v4.py:263] - Saved regression plot to: plots/access_gini_vs_mortality_20250720_033153.png
+2025-07-20 03:35:41,761 - INFO - [AHEI_State_Regressions_072025_v4.py:312] - Analysis completed successfully.

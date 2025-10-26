@@ -1,0 +1,138 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-12 22:19:05
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)
+Index-level data fetched from improved version: shape = (3143, 12)
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+
+Diagnosing Index-Level (Original): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+Diagnosing Index-Level (Improved): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS (Original)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access (Original) .....
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2962 (initial=0.2968), Condition#=inf
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_9', 'div_Unknown']
+Removed predictors: ['div_8', 'iv3_health_behaviors', 'iv1_public_health_policy', 'mo1_genai_cap']
+Testing 66 interactions for DV=dv1_healthcare_access among stepwise-kept predictors.
+Interaction iv2_physical_environment×iv4_social_economic: ΔR²=0.0001, f²=0.0001, p=5.6432e-01
+Interaction iv2_physical_environment×mo2_robotics_cap: ΔR²=0.0059, f²=0.0085, p=2.8973e-07
+Interaction iv2_physical_environment×population: ΔR²=0.0002, f²=0.0003, p=3.0998e-01
+Interaction iv2_physical_environment×div_2: ΔR²=0.0028, f²=0.0040, p=4.3088e-04
+Interaction iv2_physical_environment×div_3: ΔR²=0.0005, f²=0.0007, p=1.4866e-01
+Interaction iv2_physical_environment×div_4: ΔR²=0.0002, f²=0.0003, p=3.4033e-01
+Interaction iv2_physical_environment×div_5: ΔR²=0.0014, f²=0.0019, p=1.3918e-02
+Interaction iv2_physical_environment×div_6: ΔR²=0.0057, f²=0.0081, p=5.1748e-07
+Interaction iv2_physical_environment×div_7: ΔR²=0.0026, f²=0.0037, p=6.3141e-04
+Interaction iv2_physical_environment×div_9: ΔR²=0.0010, f²=0.0015, p=3.3041e-02
+Interaction iv2_physical_environment×div_Unknown: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction iv4_social_economic×mo2_robotics_cap: ΔR²=0.0011, f²=0.0016, p=2.3985e-02
+Interaction iv4_social_economic×population: ΔR²=0.0067, f²=0.0096, p=5.0029e-08
+Interaction iv4_social_economic×div_2: ΔR²=0.0008, f²=0.0012, p=5.6758e-02
+Interaction iv4_social_economic×div_3: ΔR²=0.0000, f²=0.0000, p=7.0321e-01
+Interaction iv4_social_economic×div_4: ΔR²=0.0006, f²=0.0009, p=9.0853e-02
+Interaction iv4_social_economic×div_5: ΔR²=0.0013, f²=0.0018, p=1.7049e-02
+Interaction iv4_social_economic×div_6: ΔR²=0.0000, f²=0.0000, p=8.4186e-01
+Interaction iv4_social_economic×div_7: ΔR²=0.0016, f²=0.0023, p=7.2471e-03
+Interaction iv4_social_economic×div_9: ΔR²=0.0024, f²=0.0034, p=1.0481e-03
+Interaction iv4_social_economic×div_Unknown: ΔR²=0.0000, f²=0.0000, p=1.4491e-03
+Interaction mo2_robotics_cap×population: ΔR²=0.0027, f²=0.0038, p=5.6760e-04
+Interaction mo2_robotics_cap×div_2: ΔR²=0.0001, f²=0.0001, p=5.1182e-01
+Interaction mo2_robotics_cap×div_3: ΔR²=0.0000, f²=0.0000, p=8.9859e-01
+Interaction mo2_robotics_cap×div_4: ΔR²=0.0001, f²=0.0001, p=5.0310e-01
+Interaction mo2_robotics_cap×div_5: ΔR²=0.0021, f²=0.0030, p=2.1512e-03
+Interaction mo2_robotics_cap×div_6: ΔR²=0.0000, f²=0.0000, p=7.6047e-01
+Interaction mo2_robotics_cap×div_7: ΔR²=0.0006, f²=0.0009, p=9.3933e-02
+Interaction mo2_robotics_cap×div_9: ΔR²=0.0003, f²=0.0005, p=2.2651e-01
+Interaction mo2_robotics_cap×div_Unknown: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction population×div_2: ΔR²=0.0001, f²=0.0002, p=4.4654e-01
+Interaction population×div_3: ΔR²=0.0015, f²=0.0021, p=1.0611e-02
+Interaction population×div_4: ΔR²=0.0002, f²=0.0003, p=3.4561e-01
+Interaction population×div_5: ΔR²=0.0079, f²=0.0113, p=2.9540e-09
+Interaction population×div_6: ΔR²=0.0002, f²=0.0003, p=3.3544e-01
+Interaction population×div_7: ΔR²=0.0002, f²=0.0003, p=3.0890e-01
+Interaction population×div_9: ΔR²=0.0024, f²=0.0034, p=1.1127e-03
+Interaction population×div_Unknown: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_2×div_3: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_2×div_4: ΔR²=0.0000, f²=0.0000, p=1.0637e-04
+Interaction div_2×div_5: ΔR²=0.0000, f²=0.0000, p=1.4491e-03
+Interaction div_2×div_6: ΔR²=0.0000, f²=0.0000, p=5.2615e-10
+Interaction div_2×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Interaction div_2×div_9: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_2×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Interaction div_3×div_4: ΔR²=0.0000, f²=0.0000, p=5.2615e-10
+Interaction div_3×div_5: ΔR²=0.0000, f²=0.0000, p=1.0637e-04
+Interaction div_3×div_6: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_3×div_7: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_3×div_9: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_3×div_Unknown: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_4×div_5: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_4×div_6: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_4×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Interaction div_4×div_9: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_4×div_Unknown: ΔR²=0.0000, f²=0.0000, p=5.2615e-10
+Interaction div_5×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Interaction div_5×div_7: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_5×div_9: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_5×div_Unknown: ΔR²=0.0000, f²=0.0000, p=5.2615e-10
+Interaction div_6×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Interaction div_6×div_9: ΔR²=0.0000, f²=0.0000, p=5.2615e-10
+Interaction div_6×div_Unknown: ΔR²=0.0000, f²=0.0000, p=6.0750e-24
+Interaction div_7×div_9: ΔR²=0.0000, f²=0.0000, p=6.0340e-02
+Interaction div_7×div_Unknown: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Interaction div_9×div_Unknown: ΔR²=0.0000, f²=0.0000, p=3.3655e-04
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2962 (initial=0.2968), Condition#=inf
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_9', 'div_Unknown']
+Removed predictors: ['div_8', 'iv3_health_behaviors', 'iv1_public_health_policy', 'mo1_genai_cap']
+Appended results to OLS_Coefficients_IndexLevel_Original.csv for DV=dv1_healthcare_access.

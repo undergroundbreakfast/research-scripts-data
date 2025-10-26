@@ -1,0 +1,81 @@
+2025-05-23 02:42:17,484 - INFO - Logging to: logs/ypll_analysis_log_20250523_024217.txt
+2025-05-23 02:42:17,484 - INFO - Starting YPLL Analysis Script with revised cutoffs and county_category.
+2025-05-23 02:42:17,484 - INFO - Output will be saved in: ypll_analysis_output_revised and logs/
+2025-05-23 02:42:17,563 - INFO - Connected to Postgres database 'Research_TEST' successfully.
+2025-05-23 02:42:44,283 - INFO - Data for YPLL analysis retrieved: 3080 rows, 9 columns.
+2025-05-23 02:42:44,284 - INFO - Converting population to numeric and filtering zero/negative values...
+2025-05-23 02:42:44,286 - INFO - Preparing data for analysis...
+2025-05-23 02:42:44,287 - INFO - Created 'log_population'.
+2025-05-23 02:42:44,287 - INFO - Processed 'medicaid_expansion_active'.
+2025-05-23 02:42:44,288 - INFO - Using '1' as the reference category for 'census_division' dummies (prefix: div).
+2025-05-23 02:42:44,290 - INFO - Created 8 dummy variables for 'census_division': ['div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-05-23 02:42:44,290 - INFO - Using '1' as the reference category for 'county_category' dummies (prefix: cat).
+2025-05-23 02:42:44,291 - INFO - Created 5 dummy variables for 'county_category': ['cat_2', 'cat_3', 'cat_4', 'cat_5', 'cat_6']
+2025-05-23 02:42:44,293 - INFO - Data preparation complete.
+2025-05-23 02:42:44,293 - INFO - Starting OLS regression analysis...
+2025-05-23 02:42:44,293 - INFO - OLS Formula: premature_death_raw_value ~ weighted_ai_adoption_score + health_behaviors_score + social_economic_factors_score + log_population + medicaid_expansion_active + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9 + cat_2 + cat_3 + cat_4 + cat_5 + cat_6
+2025-05-23 02:42:44,328 - INFO - OLS Regression Summary:
+                                OLS Regression Results                               
+=====================================================================================
+Dep. Variable:     premature_death_raw_value   R-squared:                       0.703
+Model:                                   OLS   Adj. R-squared:                  0.702
+Method:                        Least Squares   F-statistic:                     403.2
+Date:                       Fri, 23 May 2025   Prob (F-statistic):               0.00
+Time:                               02:42:44   Log-Likelihood:                -27618.
+No. Observations:                       3080   AIC:                         5.527e+04
+Df Residuals:                           3061   BIC:                         5.539e+04
+Df Model:                                 18                                         
+Covariance Type:                   nonrobust                                         
+=================================================================================================
+                                    coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+Intercept                       934.0328    524.642      1.780      0.075     -94.653    1962.719
+weighted_ai_adoption_score       96.5500     64.226      1.503      0.133     -29.381     222.481
+health_behaviors_score           57.8419      1.762     32.825      0.000      54.387      61.297
+social_economic_factors_score   526.0165     10.514     50.032      0.000     505.402     546.631
+log_population                 -120.8512     38.988     -3.100      0.002    -197.296     -44.406
+medicaid_expansion_active      -129.6014     79.707     -1.626      0.104    -285.886      26.683
+div_2                          1291.0646    294.006      4.391      0.000     714.595    1867.534
+div_3                          1745.2798    269.319      6.480      0.000    1217.216    2273.344
+div_4                          1246.2287    266.453      4.677      0.000     723.785    1768.673
+div_5                          2936.9395    277.493     10.584      0.000    2392.848    3481.031
+div_6                           430.4022    271.874      1.583      0.114    -102.671     963.476
+div_7                          2268.0237    274.809      8.253      0.000    1729.194    2806.853
+div_8                           555.6148    279.594      1.987      0.047       7.403    1103.827
+div_9                           444.6934    291.593      1.525      0.127    -127.044    1016.431
+cat_2                          -167.9620     95.864     -1.752      0.080    -355.926      20.002
+cat_3                          -656.6833    134.851     -4.870      0.000    -921.091    -392.276
+cat_4                          -564.6385    250.687     -2.252      0.024   -1056.170     -73.107
+cat_5                          -933.3365    248.599     -3.754      0.000   -1420.774    -445.899
+cat_6                         -1247.3384    202.138     -6.171      0.000   -1643.679    -850.998
+==============================================================================
+Omnibus:                      484.641   Durbin-Watson:                   1.855
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3722.879
+Skew:                           0.522   Prob(JB):                         0.00
+Kurtosis:                       8.284   Cond. No.                     1.01e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.01e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-05-23 02:42:44,329 - INFO - Regression coefficient for 'weighted_ai_adoption_score' = 96.5500, SE = 64.2264, P-value = 0.1329
+2025-05-23 02:42:44,329 - WARNING - AI adoption coefficient is POSITIVE.
+2025-05-23 02:42:44,329 - INFO - Starting scenario simulation for YPLL reduction...
+2025-05-23 02:42:44,329 - INFO - 75th percentile of 'weighted_ai_adoption_score' = 0.0000
+2025-05-23 02:42:44,330 - INFO - Using median of non-zero AI scores as target: 1.1250
+2025-05-23 02:42:44,330 - INFO - Total YPLL potentially averted = -207,148
+2025-05-23 02:42:44,330 - INFO - Total premature deaths potentially averted = -7,143
+2025-05-23 02:42:44,330 - INFO - Assumption: Each prevented premature death equals ~29.0 YPLL.
+2025-05-23 02:42:44,330 - INFO - Assumption for scenario: Counties below target AI adoption (Median of non-zero AI scores (1.1250)) are raised to this level.
+2025-05-23 02:42:44,330 - WARNING - Reminder: AI coefficient positive. 'Averted' figures represent magnitude of change.
+2025-05-23 02:42:44,330 - INFO - Generating visualizations...
+2025-05-23 02:42:44,731 - INFO - Saved: ai_adoption_distribution_revised.png
+2025-05-23 02:42:44,943 - INFO - Saved: delta_ai_distribution_revised.png
+2025-05-23 02:42:45,236 - INFO - Saved: ypll_reduction_distribution_revised.png
+2025-05-23 02:42:45,494 - INFO - Saved: ai_adoption_by_county_category.png
+2025-05-23 02:42:45,781 - INFO - Saved: premature_death_by_county_category.png
+2025-05-23 02:42:45,781 - INFO - Visualizations generated successfully.
+2025-05-23 02:42:45,781 - INFO - ================================================================================
+2025-05-23 02:42:45,781 - INFO - YPLL Analysis Script finished.
+2025-05-23 02:42:45,781 - INFO - ================================================================================

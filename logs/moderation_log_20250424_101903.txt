@@ -1,0 +1,321 @@
+2025-04-24 10:19:03,727 - INFO - Logging to: logs/moderation_log_20250424_101903.txt
+2025-04-24 10:19:03,727 - INFO - Output will be saved in: moderation_output
+2025-04-24 10:19:03,784 - INFO - Connected to Postgres successfully.
+2025-04-24 10:19:28,988 - INFO - Data fetched from vw_conceptual_model (with NOT NULL checks): shape=(2126, 12)
+2025-04-24 10:19:28,989 - INFO - Using '1' as the reference category for census_division dummies.
+2025-04-24 10:19:28,990 - INFO - Created 8 dummy cols for census_division
+2025-04-24 10:19:28,990 - INFO - All expected IV, MO, DV, and Control variables found in DataFrame.
+2025-04-24 10:19:28,990 - INFO - Saving coefficients summary to: moderation_output/Moderation_Coefficients.csv
+2025-04-24 10:19:28,990 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:28,990 - INFO - PATH 1/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-24 10:19:28,995 - INFO - Condition number for iv1_public_health_policyxmo1_genai_capabilities=>dv1_healthcare_access: 8586219.6
+2025-04-24 10:19:28,995 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:28,996 - INFO - Condition number AFTER centering: 8558901.4
+2025-04-24 10:19:28,996 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:29,020 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:29,416 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:29,416 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:29,416 - INFO - PATH 2/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-24 10:19:29,420 - INFO - Condition number for iv1_public_health_policyxmo2_robotics_capabilities=>dv1_healthcare_access: 8575832.3
+2025-04-24 10:19:29,420 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:29,421 - INFO - Condition number AFTER centering: 8547699.4
+2025-04-24 10:19:29,421 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:29,443 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:29,702 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:29,702 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:29,702 - INFO - PATH 3/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-24 10:19:29,705 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo1_genai_capabilities=>dv1_healthcare_access model:
+2025-04-24 10:19:29,705 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-04-24 10:19:29,706 - INFO - Condition number for iv2_physical_environmentxmo1_genai_capabilities=>dv1_healthcare_access: 8549108.4
+2025-04-24 10:19:29,706 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:29,708 - INFO - Condition number AFTER centering: 8613457.2
+2025-04-24 10:19:29,708 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:29,722 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo1_genai_capabilities=>dv1_healthcare_access:
+2025-04-24 10:19:29,722 - WARNING -   - iv2_physical_environment: VIF = 26.48
+2025-04-24 10:19:29,722 - WARNING -   - mo1_genai_capabilities: VIF = 29.80
+2025-04-24 10:19:29,722 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 30.39
+2025-04-24 10:19:29,722 - WARNING -   - div_3: VIF = 5.22
+2025-04-24 10:19:29,722 - WARNING -   - div_4: VIF = 5.17
+2025-04-24 10:19:29,722 - WARNING -   - div_7: VIF = 5.61
+2025-04-24 10:19:29,724 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:30,037 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:30,037 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:30,037 - INFO - PATH 4/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-24 10:19:30,040 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo2_robotics_capabilities=>dv1_healthcare_access model:
+2025-04-24 10:19:30,040 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-04-24 10:19:30,041 - INFO - Condition number for iv2_physical_environmentxmo2_robotics_capabilities=>dv1_healthcare_access: 8487264.0
+2025-04-24 10:19:30,041 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:30,042 - INFO - Condition number AFTER centering: 8571598.7
+2025-04-24 10:19:30,042 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:30,072 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo2_robotics_capabilities=>dv1_healthcare_access:
+2025-04-24 10:19:30,072 - WARNING -   - iv2_physical_environment: VIF = 29.10
+2025-04-24 10:19:30,072 - WARNING -   - mo2_robotics_capabilities: VIF = 35.13
+2025-04-24 10:19:30,072 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 36.74
+2025-04-24 10:19:30,072 - WARNING -   - div_3: VIF = 5.56
+2025-04-24 10:19:30,072 - WARNING -   - div_4: VIF = 5.48
+2025-04-24 10:19:30,072 - WARNING -   - div_6: VIF = 5.08
+2025-04-24 10:19:30,072 - WARNING -   - div_7: VIF = 5.89
+2025-04-24 10:19:30,074 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:30,380 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:30,380 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:30,380 - INFO - PATH 5/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-24 10:19:30,384 - INFO - Condition number for iv3_health_behaviorsxmo1_genai_capabilities=>dv1_healthcare_access: 8519594.9
+2025-04-24 10:19:30,384 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:30,385 - INFO - Condition number AFTER centering: 8538407.7
+2025-04-24 10:19:30,385 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:30,401 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo1_genai_capabilities=>dv1_healthcare_access:
+2025-04-24 10:19:30,401 - WARNING -   - iv3_health_behaviors: VIF = 5.14
+2025-04-24 10:19:30,401 - WARNING -   - mo1_genai_capabilities: VIF = 5.61
+2025-04-24 10:19:30,401 - WARNING -   - iv3_health_behaviors_X_mo1_genai_capabilities: VIF = 5.74
+2025-04-24 10:19:30,403 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:30,712 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:30,712 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:30,712 - INFO - PATH 6/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-24 10:19:30,716 - INFO - Condition number for iv3_health_behaviorsxmo2_robotics_capabilities=>dv1_healthcare_access: 8489177.1
+2025-04-24 10:19:30,716 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:30,717 - INFO - Condition number AFTER centering: 8514294.9
+2025-04-24 10:19:30,717 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:30,735 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo2_robotics_capabilities=>dv1_healthcare_access:
+2025-04-24 10:19:30,735 - WARNING -   - iv3_health_behaviors: VIF = 6.25
+2025-04-24 10:19:30,735 - WARNING -   - mo2_robotics_capabilities: VIF = 5.96
+2025-04-24 10:19:30,735 - WARNING -   - iv3_health_behaviors_X_mo2_robotics_capabilities: VIF = 6.34
+2025-04-24 10:19:30,736 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:31,038 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:31,038 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:31,038 - INFO - PATH 7/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access
+2025-04-24 10:19:31,041 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo1_genai_capabilities=>dv1_healthcare_access model:
+2025-04-24 10:19:31,041 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-04-24 10:19:31,041 - INFO - Condition number for iv4_social_economic_factorsxmo1_genai_capabilities=>dv1_healthcare_access: 8506706.7
+2025-04-24 10:19:31,042 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:31,043 - INFO - Condition number AFTER centering: 8486680.5
+2025-04-24 10:19:31,043 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:31,058 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo1_genai_capabilities=>dv1_healthcare_access:
+2025-04-24 10:19:31,058 - WARNING -   - iv4_social_economic_factors: VIF = 14.07
+2025-04-24 10:19:31,058 - WARNING -   - mo1_genai_capabilities: VIF = 20.84
+2025-04-24 10:19:31,058 - WARNING -   - iv4_social_economic_factors_X_mo1_genai_capabilities: VIF = 20.41
+2025-04-24 10:19:31,060 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:31,366 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:31,366 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:31,366 - INFO - PATH 8/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-04-24 10:19:31,369 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo2_robotics_capabilities=>dv1_healthcare_access model:
+2025-04-24 10:19:31,369 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-04-24 10:19:31,370 - INFO - Condition number for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv1_healthcare_access: 8485278.0
+2025-04-24 10:19:31,370 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:31,371 - INFO - Condition number AFTER centering: 8456173.2
+2025-04-24 10:19:31,371 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:31,425 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv1_healthcare_access:
+2025-04-24 10:19:31,425 - WARNING -   - iv4_social_economic_factors: VIF = 15.75
+2025-04-24 10:19:31,425 - WARNING -   - mo2_robotics_capabilities: VIF = 21.89
+2025-04-24 10:19:31,426 - WARNING -   - iv4_social_economic_factors_X_mo2_robotics_capabilities: VIF = 20.71
+2025-04-24 10:19:31,428 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:31,749 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-04-24 10:19:31,749 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:31,749 - INFO - PATH 9/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:31,753 - INFO - Condition number for iv1_public_health_policyxmo1_genai_capabilities=>dv2_healthcare_quality: 8586219.6
+2025-04-24 10:19:31,753 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:31,754 - INFO - Condition number AFTER centering: 8558901.4
+2025-04-24 10:19:31,754 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:31,815 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:32,092 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:32,092 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:32,092 - INFO - PATH 10/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:32,096 - INFO - Condition number for iv1_public_health_policyxmo2_robotics_capabilities=>dv2_healthcare_quality: 8575832.3
+2025-04-24 10:19:32,096 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:32,097 - INFO - Condition number AFTER centering: 8547699.4
+2025-04-24 10:19:32,097 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:32,112 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:32,379 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:32,379 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:32,379 - INFO - PATH 11/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:32,382 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo1_genai_capabilities=>dv2_healthcare_quality model:
+2025-04-24 10:19:32,382 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-04-24 10:19:32,383 - INFO - Condition number for iv2_physical_environmentxmo1_genai_capabilities=>dv2_healthcare_quality: 8549108.4
+2025-04-24 10:19:32,383 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:32,384 - INFO - Condition number AFTER centering: 8613457.2
+2025-04-24 10:19:32,384 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:32,400 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo1_genai_capabilities=>dv2_healthcare_quality:
+2025-04-24 10:19:32,400 - WARNING -   - iv2_physical_environment: VIF = 26.48
+2025-04-24 10:19:32,400 - WARNING -   - mo1_genai_capabilities: VIF = 29.80
+2025-04-24 10:19:32,400 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 30.39
+2025-04-24 10:19:32,400 - WARNING -   - div_3: VIF = 5.22
+2025-04-24 10:19:32,400 - WARNING -   - div_4: VIF = 5.17
+2025-04-24 10:19:32,400 - WARNING -   - div_7: VIF = 5.61
+2025-04-24 10:19:32,402 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:32,718 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:32,718 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:32,718 - INFO - PATH 12/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:32,721 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo2_robotics_capabilities=>dv2_healthcare_quality model:
+2025-04-24 10:19:32,721 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-04-24 10:19:32,721 - INFO - Condition number for iv2_physical_environmentxmo2_robotics_capabilities=>dv2_healthcare_quality: 8487264.0
+2025-04-24 10:19:32,721 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:32,723 - INFO - Condition number AFTER centering: 8571598.7
+2025-04-24 10:19:32,723 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:32,743 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo2_robotics_capabilities=>dv2_healthcare_quality:
+2025-04-24 10:19:32,743 - WARNING -   - iv2_physical_environment: VIF = 29.10
+2025-04-24 10:19:32,743 - WARNING -   - mo2_robotics_capabilities: VIF = 35.13
+2025-04-24 10:19:32,743 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 36.74
+2025-04-24 10:19:32,743 - WARNING -   - div_3: VIF = 5.56
+2025-04-24 10:19:32,743 - WARNING -   - div_4: VIF = 5.48
+2025-04-24 10:19:32,743 - WARNING -   - div_6: VIF = 5.08
+2025-04-24 10:19:32,743 - WARNING -   - div_7: VIF = 5.89
+2025-04-24 10:19:32,745 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:33,057 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:33,057 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:33,057 - INFO - PATH 13/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:33,060 - INFO - Condition number for iv3_health_behaviorsxmo1_genai_capabilities=>dv2_healthcare_quality: 8519594.9
+2025-04-24 10:19:33,060 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:33,061 - INFO - Condition number AFTER centering: 8538407.7
+2025-04-24 10:19:33,061 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:33,076 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo1_genai_capabilities=>dv2_healthcare_quality:
+2025-04-24 10:19:33,076 - WARNING -   - iv3_health_behaviors: VIF = 5.14
+2025-04-24 10:19:33,076 - WARNING -   - mo1_genai_capabilities: VIF = 5.61
+2025-04-24 10:19:33,076 - WARNING -   - iv3_health_behaviors_X_mo1_genai_capabilities: VIF = 5.74
+2025-04-24 10:19:33,077 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:33,389 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:33,389 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:33,389 - INFO - PATH 14/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:33,393 - INFO - Condition number for iv3_health_behaviorsxmo2_robotics_capabilities=>dv2_healthcare_quality: 8489177.1
+2025-04-24 10:19:33,393 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:33,394 - INFO - Condition number AFTER centering: 8514294.9
+2025-04-24 10:19:33,394 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:33,430 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo2_robotics_capabilities=>dv2_healthcare_quality:
+2025-04-24 10:19:33,430 - WARNING -   - iv3_health_behaviors: VIF = 6.25
+2025-04-24 10:19:33,430 - WARNING -   - mo2_robotics_capabilities: VIF = 5.96
+2025-04-24 10:19:33,430 - WARNING -   - iv3_health_behaviors_X_mo2_robotics_capabilities: VIF = 6.34
+2025-04-24 10:19:33,434 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:33,742 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:33,742 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:33,742 - INFO - PATH 15/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:33,745 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo1_genai_capabilities=>dv2_healthcare_quality model:
+2025-04-24 10:19:33,745 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-04-24 10:19:33,746 - INFO - Condition number for iv4_social_economic_factorsxmo1_genai_capabilities=>dv2_healthcare_quality: 8506706.7
+2025-04-24 10:19:33,746 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:33,747 - INFO - Condition number AFTER centering: 8486680.5
+2025-04-24 10:19:33,747 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:33,779 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo1_genai_capabilities=>dv2_healthcare_quality:
+2025-04-24 10:19:33,779 - WARNING -   - iv4_social_economic_factors: VIF = 14.07
+2025-04-24 10:19:33,779 - WARNING -   - mo1_genai_capabilities: VIF = 20.84
+2025-04-24 10:19:33,779 - WARNING -   - iv4_social_economic_factors_X_mo1_genai_capabilities: VIF = 20.41
+2025-04-24 10:19:33,781 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:34,123 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:34,123 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:34,123 - INFO - PATH 16/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-04-24 10:19:34,126 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo2_robotics_capabilities=>dv2_healthcare_quality model:
+2025-04-24 10:19:34,126 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-04-24 10:19:34,126 - INFO - Condition number for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv2_healthcare_quality: 8485278.0
+2025-04-24 10:19:34,127 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:34,128 - INFO - Condition number AFTER centering: 8456173.2
+2025-04-24 10:19:34,128 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:34,142 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv2_healthcare_quality:
+2025-04-24 10:19:34,142 - WARNING -   - iv4_social_economic_factors: VIF = 15.75
+2025-04-24 10:19:34,142 - WARNING -   - mo2_robotics_capabilities: VIF = 21.89
+2025-04-24 10:19:34,142 - WARNING -   - iv4_social_economic_factors_X_mo2_robotics_capabilities: VIF = 20.71
+2025-04-24 10:19:34,143 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:34,462 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-04-24 10:19:34,463 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:34,463 - INFO - PATH 17/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:34,466 - INFO - Condition number for iv1_public_health_policyxmo1_genai_capabilities=>dv3_operational_efficiency: 8586219.6
+2025-04-24 10:19:34,466 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:34,467 - INFO - Condition number AFTER centering: 8558901.4
+2025-04-24 10:19:34,467 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:34,487 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:34,748 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:34,748 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:34,748 - INFO - PATH 18/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:34,752 - INFO - Condition number for iv1_public_health_policyxmo2_robotics_capabilities=>dv3_operational_efficiency: 8575832.3
+2025-04-24 10:19:34,752 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:34,753 - INFO - Condition number AFTER centering: 8547699.4
+2025-04-24 10:19:34,753 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:34,774 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:35,038 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:35,038 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:35,038 - INFO - PATH 19/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:35,041 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo1_genai_capabilities=>dv3_operational_efficiency model:
+2025-04-24 10:19:35,041 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-04-24 10:19:35,042 - INFO - Condition number for iv2_physical_environmentxmo1_genai_capabilities=>dv3_operational_efficiency: 8549108.4
+2025-04-24 10:19:35,042 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:35,043 - INFO - Condition number AFTER centering: 8613457.2
+2025-04-24 10:19:35,043 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:35,069 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo1_genai_capabilities=>dv3_operational_efficiency:
+2025-04-24 10:19:35,069 - WARNING -   - iv2_physical_environment: VIF = 26.48
+2025-04-24 10:19:35,069 - WARNING -   - mo1_genai_capabilities: VIF = 29.80
+2025-04-24 10:19:35,069 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 30.39
+2025-04-24 10:19:35,069 - WARNING -   - div_3: VIF = 5.22
+2025-04-24 10:19:35,069 - WARNING -   - div_4: VIF = 5.17
+2025-04-24 10:19:35,069 - WARNING -   - div_7: VIF = 5.61
+2025-04-24 10:19:35,071 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:35,431 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:35,431 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:35,431 - INFO - PATH 20/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:35,434 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo2_robotics_capabilities=>dv3_operational_efficiency model:
+2025-04-24 10:19:35,434 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-04-24 10:19:35,435 - INFO - Condition number for iv2_physical_environmentxmo2_robotics_capabilities=>dv3_operational_efficiency: 8487264.0
+2025-04-24 10:19:35,435 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:35,436 - INFO - Condition number AFTER centering: 8571598.7
+2025-04-24 10:19:35,436 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:35,456 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo2_robotics_capabilities=>dv3_operational_efficiency:
+2025-04-24 10:19:35,457 - WARNING -   - iv2_physical_environment: VIF = 29.10
+2025-04-24 10:19:35,457 - WARNING -   - mo2_robotics_capabilities: VIF = 35.13
+2025-04-24 10:19:35,457 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 36.74
+2025-04-24 10:19:35,457 - WARNING -   - div_3: VIF = 5.56
+2025-04-24 10:19:35,457 - WARNING -   - div_4: VIF = 5.48
+2025-04-24 10:19:35,457 - WARNING -   - div_6: VIF = 5.08
+2025-04-24 10:19:35,457 - WARNING -   - div_7: VIF = 5.89
+2025-04-24 10:19:35,459 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:35,778 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:35,778 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:35,778 - INFO - PATH 21/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:35,781 - INFO - Condition number for iv3_health_behaviorsxmo1_genai_capabilities=>dv3_operational_efficiency: 8519594.9
+2025-04-24 10:19:35,781 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:35,782 - INFO - Condition number AFTER centering: 8538407.7
+2025-04-24 10:19:35,782 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:35,819 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo1_genai_capabilities=>dv3_operational_efficiency:
+2025-04-24 10:19:35,819 - WARNING -   - iv3_health_behaviors: VIF = 5.14
+2025-04-24 10:19:35,819 - WARNING -   - mo1_genai_capabilities: VIF = 5.61
+2025-04-24 10:19:35,819 - WARNING -   - iv3_health_behaviors_X_mo1_genai_capabilities: VIF = 5.74
+2025-04-24 10:19:35,821 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:36,141 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:36,141 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:36,141 - INFO - PATH 22/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:36,144 - INFO - Condition number for iv3_health_behaviorsxmo2_robotics_capabilities=>dv3_operational_efficiency: 8489177.1
+2025-04-24 10:19:36,144 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:36,146 - INFO - Condition number AFTER centering: 8514294.9
+2025-04-24 10:19:36,146 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:36,166 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo2_robotics_capabilities=>dv3_operational_efficiency:
+2025-04-24 10:19:36,166 - WARNING -   - iv3_health_behaviors: VIF = 6.25
+2025-04-24 10:19:36,166 - WARNING -   - mo2_robotics_capabilities: VIF = 5.96
+2025-04-24 10:19:36,166 - WARNING -   - iv3_health_behaviors_X_mo2_robotics_capabilities: VIF = 6.34
+2025-04-24 10:19:36,168 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:36,457 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:36,457 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:36,457 - INFO - PATH 23/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:36,460 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo1_genai_capabilities=>dv3_operational_efficiency model:
+2025-04-24 10:19:36,460 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-04-24 10:19:36,461 - INFO - Condition number for iv4_social_economic_factorsxmo1_genai_capabilities=>dv3_operational_efficiency: 8506706.7
+2025-04-24 10:19:36,461 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:36,462 - INFO - Condition number AFTER centering: 8486680.5
+2025-04-24 10:19:36,462 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:36,516 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo1_genai_capabilities=>dv3_operational_efficiency:
+2025-04-24 10:19:36,517 - WARNING -   - iv4_social_economic_factors: VIF = 14.07
+2025-04-24 10:19:36,517 - WARNING -   - mo1_genai_capabilities: VIF = 20.84
+2025-04-24 10:19:36,517 - WARNING -   - iv4_social_economic_factors_X_mo1_genai_capabilities: VIF = 20.41
+2025-04-24 10:19:36,518 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 1.5}
+2025-04-24 10:19:36,854 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:36,854 - INFO - --------------------------------------------------------------------------------
+2025-04-24 10:19:36,854 - INFO - PATH 24/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-04-24 10:19:36,857 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo2_robotics_capabilities=>dv3_operational_efficiency model:
+2025-04-24 10:19:36,857 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-04-24 10:19:36,858 - INFO - Condition number for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv3_operational_efficiency: 8485278.0
+2025-04-24 10:19:36,858 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-04-24 10:19:36,859 - INFO - Condition number AFTER centering: 8456173.2
+2025-04-24 10:19:36,859 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-04-24 10:19:36,875 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv3_operational_efficiency:
+2025-04-24 10:19:36,875 - WARNING -   - iv4_social_economic_factors: VIF = 15.75
+2025-04-24 10:19:36,875 - WARNING -   - mo2_robotics_capabilities: VIF = 21.89
+2025-04-24 10:19:36,875 - WARNING -   - iv4_social_economic_factors_X_mo2_robotics_capabilities: VIF = 20.71
+2025-04-24 10:19:36,877 - INFO - Moderator values for regression lines: {'Low': 0.0, 'Medium': 0.0, 'High': 9.333333333333332}
+2025-04-24 10:19:37,180 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-04-24 10:19:37,188 - INFO - Successfully saved coefficients for 24 models to moderation_output/Moderation_Coefficients.csv
+2025-04-24 10:19:37,188 - INFO - ================================================================================
+2025-04-24 10:19:37,188 - INFO - Moderation analyses script finished.
+2025-04-24 10:19:37,188 - INFO - ================================================================================

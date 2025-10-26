@@ -1,0 +1,542 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-01 20:53:26
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched: shape = (3143, 11)
+Component-level data fetched: shape = (3143, 37)
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access with stepwise, then all interactions .....
+Initial model with 6 predictors => R² = 0.2388
+Step 1: Removing 'iv3_health_behaviors' (p=0.5147 > 0.1, f²=0.0001, trivial effect)
+
+Final stepwise model => R² = 0.2387 (initial was 0.2388)
+Condition number: 84.43 (caution if > 30)
+Kept predictors: ['iv1_public_health_policy', 'iv2_physical_environment', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+iv3_health_behaviors           0.5147     0.0001     trivial
+Overall effect of removed predictors => f² = 0.0001, trivial
+
+Partial Cohen's f² for each *kept* predictor:
+  iv1_public_health_policy  p=0.0000, f²=0.0062, TRIVIAL effect (statistically sig. but negligible)
+  iv2_physical_environment  p=0.0000, f²=0.1867, medium**
+  iv4_social_economic       p=0.0000, f²=0.0652, small*
+  mo1_genai_cap             p=0.0449, f²=0.0013, TRIVIAL effect (statistically sig. but negligible)
+  mo2_robotics_cap          p=0.0000, f²=0.0396, small*
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.237
+Method:                    Least Squares   F-statistic:                     196.7
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          1.00e-182
+Time:                           20:53:52   Log-Likelihood:                -24251.
+No. Observations:                   3143   AIC:                         4.851e+04
+Df Residuals:                       3137   BIC:                         4.855e+04
+Df Model:                              5                                         
+Covariance Type:               nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+const                      -73.1297     54.866     -1.333      0.183    -180.706      34.446
+iv1_public_health_policy   -86.6492     19.606     -4.420      0.000    -125.091     -48.208
+iv2_physical_environment   481.5538     19.900     24.199      0.000     442.536     520.571
+iv4_social_economic         32.2204      2.252     14.306      0.000      27.804      36.636
+mo1_genai_cap              -23.4862     11.706     -2.006      0.045     -46.439      -0.534
+mo2_robotics_cap           -36.7203      3.295    -11.144      0.000     -43.181     -30.259
+==============================================================================
+Omnibus:                      957.531   Durbin-Watson:                   1.759
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4356.644
+Skew:                           1.403   Prob(JB):                         0.00
+Kurtosis:                       8.040   Cond. No.                         84.4
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (Final Stepwise Model) ---
+                 feature      VIF
+        mo2_robotics_cap 1.169240
+           mo1_genai_cap 1.133729
+iv2_physical_environment 1.030621
+iv1_public_health_policy 1.020488
+     iv4_social_economic 1.016796
+Max VIF: 1.17 (caution if > 5)
+
+Systematic interaction candidates for dv1_healthcare_access: [('iv1_public_health_policy', 'iv2_physical_environment'), ('iv1_public_health_policy', 'iv4_social_economic'), ('iv1_public_health_policy', 'mo1_genai_cap'), ('iv1_public_health_policy', 'mo2_robotics_cap'), ('iv2_physical_environment', 'iv4_social_economic'), ('iv2_physical_environment', 'mo1_genai_cap'), ('iv2_physical_environment', 'mo2_robotics_cap'), ('iv4_social_economic', 'mo1_genai_cap'), ('iv4_social_economic', 'mo2_robotics_cap'), ('mo1_genai_cap', 'mo2_robotics_cap')]
+
+Testing interaction: iv1_public_health_policy × iv2_physical_environment for DV='dv1_healthcare_access'
+  R² with interaction = 0.2414 vs. base R² = 0.2387 (Δ=0.0028)
+Cohen's f² for iv1_public_health_policy×iv2_physical_environment: ((0.2414 - 0.2387) / (1 - 0.2414)) = 0.0037 => trivial
+  => Statistically significant (p=6.8179e-04), but TRIVIAL effect (f²=0.0037)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.241
+Model:                               OLS   Adj. R-squared:                  0.240
+Method:                    Least Squares   F-statistic:                     166.4
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          4.73e-184
+Time:                           20:53:52   Log-Likelihood:                -24245.
+No. Observations:                   3143   AIC:                         4.850e+04
+Df Residuals:                       3136   BIC:                         4.855e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+=======================================================================================================================
+                                                          coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------------
+const                                                -245.5185     74.636     -3.290      0.001    -391.859     -99.178
+iv1_public_health_policy                              209.4647     89.260      2.347      0.019      34.451     384.478
+iv2_physical_environment                              560.7677     30.617     18.315      0.000     500.736     620.799
+iv4_social_economic                                    31.9331      2.250     14.192      0.000      27.521      36.345
+mo1_genai_cap                                         -21.6749     11.699     -1.853      0.064     -44.613       1.263
+mo2_robotics_cap                                      -36.7066      3.290    -11.158      0.000     -43.157     -30.256
+iv1_public_health_policy_x_iv2_physical_environment  -135.8497     39.953     -3.400      0.001    -214.187     -57.512
+==============================================================================
+Omnibus:                      955.568   Durbin-Watson:                   1.760
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4289.469
+Skew:                           1.404   Prob(JB):                         0.00
+Kurtosis:                       7.987   Cond. No.                         173.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                            feature       VIF
+iv1_public_health_policy_x_iv2_physical_environment 21.701516
+                           iv1_public_health_policy 21.223335
+                           iv2_physical_environment  2.447931
+                                   mo2_robotics_cap  1.169242
+                                      mo1_genai_cap  1.136085
+                                iv4_social_economic  1.018232
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 173.11 (caution if > 30)
+
+Testing interaction: iv1_public_health_policy × iv4_social_economic for DV='dv1_healthcare_access'
+  R² with interaction = 0.2388 vs. base R² = 0.2387 (Δ=0.0001)
+Cohen's f² for iv1_public_health_policy×iv4_social_economic: ((0.2388 - 0.2387) / (1 - 0.2388)) = 0.0002 => trivial
+  => Not significant: coeff=-3.1692, p=4.8043e-01, f²=0.0002 (trivial)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.237
+Method:                    Least Squares   F-statistic:                     163.9
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          1.16e-181
+Time:                           20:53:52   Log-Likelihood:                -24251.
+No. Observations:                   3143   AIC:                         4.852e+04
+Df Residuals:                       3136   BIC:                         4.856e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+==================================================================================================================
+                                                     coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+const                                            -94.6234     62.757     -1.508      0.132    -217.671      28.425
+iv1_public_health_policy                         -44.5412     62.808     -0.709      0.478    -167.691      78.609
+iv2_physical_environment                         481.0543     19.914     24.157      0.000     442.009     520.100
+iv4_social_economic                               33.9323      3.310     10.250      0.000      27.442      40.423
+mo1_genai_cap                                    -23.5572     11.708     -2.012      0.044     -46.512      -0.602
+mo2_robotics_cap                                 -36.7951      3.297    -11.160      0.000     -43.260     -30.330
+iv1_public_health_policy_x_iv4_social_economic    -3.1692      4.491     -0.706      0.480     -11.975       5.636
+==============================================================================
+Omnibus:                      958.639   Durbin-Watson:                   1.759
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4363.551
+Skew:                           1.404   Prob(JB):                         0.00
+Kurtosis:                       8.043   Cond. No.                         132.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                       feature       VIF
+iv1_public_health_policy_x_iv4_social_economic 11.657397
+                      iv1_public_health_policy 10.471498
+                           iv4_social_economic  2.196235
+                              mo2_robotics_cap  1.170450
+                                 mo1_genai_cap  1.133813
+                      iv2_physical_environment  1.031924
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 132.40 (caution if > 30)
+
+Testing interaction: iv1_public_health_policy × mo1_genai_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2388 vs. base R² = 0.2387 (Δ=0.0002)
+Cohen's f² for iv1_public_health_policy×mo1_genai_cap: ((0.2388 - 0.2387) / (1 - 0.2388)) = 0.0002 => trivial
+  => Not significant: coeff=-18.6167, p=4.0729e-01, f²=0.0002 (trivial)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.237
+Method:                    Least Squares   F-statistic:                     164.0
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          1.05e-181
+Time:                           20:53:52   Log-Likelihood:                -24250.
+No. Observations:                   3143   AIC:                         4.851e+04
+Df Residuals:                       3136   BIC:                         4.856e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+============================================================================================================
+                                               coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------
+const                                      -77.1764     55.085     -1.401      0.161    -185.183      30.830
+iv1_public_health_policy                   -81.0844     20.725     -3.912      0.000    -121.719     -40.449
+iv2_physical_environment                   482.4107     19.927     24.208      0.000     443.339     521.483
+iv4_social_economic                         32.1885      2.253     14.289      0.000      27.772      36.605
+mo1_genai_cap                              -12.4786     17.705     -0.705      0.481     -47.192      22.235
+mo2_robotics_cap                           -36.7559      3.296    -11.153      0.000     -43.218     -30.294
+iv1_public_health_policy_x_mo1_genai_cap   -18.6167     22.463     -0.829      0.407     -62.660      25.426
+==============================================================================
+Omnibus:                      956.902   Durbin-Watson:                   1.759
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4344.663
+Skew:                           1.402   Prob(JB):                         0.00
+Kurtosis:                       8.031   Cond. No.                         85.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                 feature      VIF
+iv1_public_health_policy_x_mo1_genai_cap 2.639618
+                           mo1_genai_cap 2.592996
+                        mo2_robotics_cap 1.169438
+                iv1_public_health_policy 1.140169
+                iv2_physical_environment 1.033403
+                     iv4_social_economic 1.017092
+Condition number: 84.96 (caution if > 30)
+
+Testing interaction: iv1_public_health_policy × mo2_robotics_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2387 vs. base R² = 0.2387 (Δ=0.0001)
+Cohen's f² for iv1_public_health_policy×mo2_robotics_cap: ((0.2387 - 0.2387) / (1 - 0.2387)) = 0.0001 => trivial
+  => Not significant: coeff=-3.8664, p=5.3437e-01, f²=0.0001 (trivial)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.237
+Method:                    Least Squares   F-statistic:                     163.9
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          1.22e-181
+Time:                           20:53:52   Log-Likelihood:                -24251.
+No. Observations:                   3143   AIC:                         4.852e+04
+Df Residuals:                       3136   BIC:                         4.856e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+===============================================================================================================
+                                                  coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------
+const                                         -76.4460     55.130     -1.387      0.166    -184.540      31.648
+iv1_public_health_policy                      -80.1117     22.252     -3.600      0.000    -123.741     -36.482
+iv2_physical_environment                      481.8104     19.906     24.204      0.000     442.781     520.840
+iv4_social_economic                            32.1764      2.254     14.278      0.000      27.758      36.595
+mo1_genai_cap                                 -23.5192     11.707     -2.009      0.045     -46.474      -0.564
+mo2_robotics_cap                              -34.4490      4.921     -7.000      0.000     -44.098     -24.800
+iv1_public_health_policy_x_mo2_robotics_cap    -3.8664      6.222     -0.621      0.534     -16.066       8.333
+==============================================================================
+Omnibus:                      958.836   Durbin-Watson:                   1.760
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4363.299
+Skew:                           1.405   Prob(JB):                         0.00
+Kurtosis:                       8.042   Cond. No.                         85.1
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                    feature      VIF
+iv1_public_health_policy_x_mo2_robotics_cap 2.849232
+                           mo2_robotics_cap 2.607468
+                   iv1_public_health_policy 1.314261
+                              mo1_genai_cap 1.133753
+                   iv2_physical_environment 1.031065
+                        iv4_social_economic 1.017799
+Condition number: 85.15 (caution if > 30)
+
+Testing interaction: iv2_physical_environment × iv4_social_economic for DV='dv1_healthcare_access'
+  R² with interaction = 0.2416 vs. base R² = 0.2387 (Δ=0.0029)
+Cohen's f² for iv2_physical_environment×iv4_social_economic: ((0.2416 - 0.2387) / (1 - 0.2416)) = 0.0039 => trivial
+  => Statistically significant (p=4.9931e-04), but TRIVIAL effect (f²=0.0039)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.242
+Model:                               OLS   Adj. R-squared:                  0.240
+Method:                    Least Squares   F-statistic:                     166.5
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          3.54e-184
+Time:                           20:53:52   Log-Likelihood:                -24245.
+No. Observations:                   3143   AIC:                         4.850e+04
+Df Residuals:                       3136   BIC:                         4.855e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+==================================================================================================================
+                                                     coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+const                                            193.4014     94.072      2.056      0.040       8.953     377.849
+iv1_public_health_policy                         -84.7982     19.578     -4.331      0.000    -123.186     -46.411
+iv2_physical_environment                         330.6820     47.634      6.942      0.000     237.285     424.079
+iv4_social_economic                               11.0798      6.470      1.713      0.087      -1.606      23.765
+mo1_genai_cap                                    -22.5920     11.688     -1.933      0.053     -45.510       0.325
+mo2_robotics_cap                                 -35.7281      3.302    -10.821      0.000     -42.202     -29.254
+iv2_physical_environment_x_iv4_social_economic    11.7564      3.374      3.485      0.000       5.142      18.371
+==============================================================================
+Omnibus:                      958.782   Durbin-Watson:                   1.765
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4323.187
+Skew:                           1.408   Prob(JB):                         0.00
+Kurtosis:                       8.008   Cond. No.                         364.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                       feature       VIF
+iv2_physical_environment_x_iv4_social_economic 13.237462
+                           iv4_social_economic  8.420317
+                      iv2_physical_environment  5.926358
+                              mo2_robotics_cap  1.178002
+                                 mo1_genai_cap  1.134276
+                      iv1_public_health_policy  1.021240
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 363.85 (caution if > 30)
+
+Testing interaction: iv2_physical_environment × mo1_genai_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2407 vs. base R² = 0.2387 (Δ=0.0020)
+Cohen's f² for iv2_physical_environment×mo1_genai_cap: ((0.2407 - 0.2387) / (1 - 0.2407)) = 0.0027 => trivial
+  => Statistically significant (p=3.8583e-03), but TRIVIAL effect (f²=0.0027)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.241
+Model:                               OLS   Adj. R-squared:                  0.239
+Method:                    Least Squares   F-statistic:                     165.7
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          2.31e-183
+Time:                           20:53:52   Log-Likelihood:                -24247.
+No. Observations:                   3143   AIC:                         4.851e+04
+Df Residuals:                       3136   BIC:                         4.855e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+============================================================================================================
+                                               coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------
+const                                     -113.5151     56.553     -2.007      0.045    -224.400      -2.631
+iv1_public_health_policy                   -83.5359     19.612     -4.259      0.000    -121.990     -45.082
+iv2_physical_environment                   500.8754     20.969     23.886      0.000     459.760     541.990
+iv4_social_economic                         32.0357      2.250     14.235      0.000      27.623      36.448
+mo1_genai_cap                              132.4251     55.171      2.400      0.016      24.251     240.599
+mo2_robotics_cap                           -36.3637      3.294    -11.041      0.000     -42.822     -29.906
+iv2_physical_environment_x_mo1_genai_cap   -71.6698     24.785     -2.892      0.004    -120.266     -23.074
+==============================================================================
+Omnibus:                      963.509   Durbin-Watson:                   1.760
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4395.683
+Skew:                           1.411   Prob(JB):                         0.00
+Kurtosis:                       8.060   Cond. No.                         99.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                 feature       VIF
+iv2_physical_environment_x_mo1_genai_cap 25.582642
+                           mo1_genai_cap 25.241089
+                        mo2_robotics_cap  1.170882
+                iv2_physical_environment  1.147092
+                iv1_public_health_policy  1.023573
+                     iv4_social_economic  1.017615
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 99.02 (caution if > 30)
+
+Testing interaction: iv2_physical_environment × mo2_robotics_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2502 vs. base R² = 0.2387 (Δ=0.0115)
+Cohen's f² for iv2_physical_environment×mo2_robotics_cap: ((0.2502 - 0.2387) / (1 - 0.2502)) = 0.0153 => trivial
+  => Statistically significant (p=4.8509e-12), but TRIVIAL effect (f²=0.0153)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.250
+Model:                               OLS   Adj. R-squared:                  0.249
+Method:                    Least Squares   F-statistic:                     174.4
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          6.94e-192
+Time:                           20:53:52   Log-Likelihood:                -24227.
+No. Observations:                   3143   AIC:                         4.847e+04
+Df Residuals:                       3136   BIC:                         4.851e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+===============================================================================================================
+                                                  coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------
+const                                        -210.3766     57.941     -3.631      0.000    -323.982     -96.771
+iv1_public_health_policy                      -83.5241     19.465     -4.291      0.000    -121.690     -45.358
+iv2_physical_environment                      550.7798     22.130     24.889      0.000     507.390     594.170
+iv4_social_economic                            31.4763      2.238     14.064      0.000      27.088      35.865
+mo1_genai_cap                                 -24.1833     11.620     -2.081      0.037     -46.966      -1.400
+mo2_robotics_cap                               70.3117     15.772      4.458      0.000      39.386     101.237
+iv2_physical_environment_x_mo2_robotics_cap   -47.7524      6.884     -6.937      0.000     -61.250     -34.255
+==============================================================================
+Omnibus:                      966.146   Durbin-Watson:                   1.772
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4388.202
+Skew:                           1.417   Prob(JB):                         0.00
+Kurtosis:                       8.047   Cond. No.                         95.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                                    feature       VIF
+iv2_physical_environment_x_mo2_robotics_cap 28.059776
+                           mo2_robotics_cap 27.190425
+                   iv2_physical_environment  1.293710
+                              mo1_genai_cap  1.133814
+                   iv1_public_health_policy  1.021035
+                        iv4_social_economic  1.019137
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 95.05 (caution if > 30)
+
+Testing interaction: iv4_social_economic × mo1_genai_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2394 vs. base R² = 0.2387 (Δ=0.0008)
+Cohen's f² for iv4_social_economic×mo1_genai_cap: ((0.2394 - 0.2387) / (1 - 0.2394)) = 0.0010 => trivial
+  => Not significant: coeff=-6.2629, p=7.4186e-02, f²=0.0010 (trivial)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.238
+Method:                    Least Squares   F-statistic:                     164.5
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          3.03e-182
+Time:                           20:53:52   Log-Likelihood:                -24249.
+No. Observations:                   3143   AIC:                         4.851e+04
+Df Residuals:                       3136   BIC:                         4.855e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+=======================================================================================================
+                                          coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------
+const                                 -83.8483     55.174     -1.520      0.129    -192.029      24.332
+iv1_public_health_policy              -87.0489     19.600     -4.441      0.000    -125.479     -48.618
+iv2_physical_environment              480.8765     19.896     24.169      0.000     441.866     519.888
+iv4_social_economic                    33.2013      2.317     14.327      0.000      28.657      37.745
+mo1_genai_cap                          56.1654     46.106      1.218      0.223     -34.236     146.566
+mo2_robotics_cap                      -37.3827      3.315    -11.277      0.000     -43.882     -30.883
+iv4_social_economic_x_mo1_genai_cap    -6.2629      3.507     -1.786      0.074     -13.138       0.612
+==============================================================================
+Omnibus:                      955.684   Durbin-Watson:                   1.761
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4358.928
+Skew:                           1.399   Prob(JB):                         0.00
+Kurtosis:                       8.046   Cond. No.                         92.1
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                            feature       VIF
+                      mo1_genai_cap 17.599214
+iv4_social_economic_x_mo1_genai_cap 17.065334
+                   mo2_robotics_cap  1.184062
+                iv4_social_economic  1.077300
+           iv2_physical_environment  1.030995
+           iv1_public_health_policy  1.020621
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 92.13 (caution if > 30)
+
+Testing interaction: iv4_social_economic × mo2_robotics_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2389 vs. base R² = 0.2387 (Δ=0.0002)
+Cohen's f² for iv4_social_economic×mo2_robotics_cap: ((0.2389 - 0.2387) / (1 - 0.2389)) = 0.0003 => trivial
+  => Not significant: coeff=-0.8318, p=3.6249e-01, f²=0.0003 (trivial)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.237
+Method:                    Least Squares   F-statistic:                     164.0
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          9.80e-182
+Time:                           20:53:52   Log-Likelihood:                -24250.
+No. Observations:                   3143   AIC:                         4.851e+04
+Df Residuals:                       3136   BIC:                         4.856e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+==========================================================================================================
+                                             coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------
+const                                    -81.8596     55.698     -1.470      0.142    -191.068      27.349
+iv1_public_health_policy                 -87.3370     19.621     -4.451      0.000    -125.808     -48.866
+iv2_physical_environment                 480.7199     19.921     24.131      0.000     441.660     519.780
+iv4_social_economic                       33.0376      2.424     13.627      0.000      28.284      37.791
+mo1_genai_cap                            -24.3337     11.743     -2.072      0.038     -47.359      -1.308
+mo2_robotics_cap                         -26.3124     11.893     -2.212      0.027     -49.632      -2.993
+iv4_social_economic_x_mo2_robotics_cap    -0.8318      0.913     -0.911      0.362      -2.623       0.959
+==============================================================================
+Omnibus:                      957.664   Durbin-Watson:                   1.760
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4364.498
+Skew:                           1.402   Prob(JB):                         0.00
+Kurtosis:                       8.046   Cond. No.                         278.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                               feature       VIF
+                      mo2_robotics_cap 15.230716
+iv4_social_economic_x_mo2_robotics_cap 14.576974
+                   iv4_social_economic  1.178152
+                         mo1_genai_cap  1.140893
+              iv2_physical_environment  1.032803
+              iv1_public_health_policy  1.022002
+  High collinearity detected (VIF > 5). Interpret with caution!
+Condition number: 278.26 (caution if > 30)
+
+Testing interaction: mo1_genai_cap × mo2_robotics_cap for DV='dv1_healthcare_access'
+  R² with interaction = 0.2418 vs. base R² = 0.2387 (Δ=0.0031)
+Cohen's f² for mo1_genai_cap×mo2_robotics_cap: ((0.2418 - 0.2387) / (1 - 0.2418)) = 0.0042 => trivial
+  => Statistically significant (p=3.1209e-04), but TRIVIAL effect (f²=0.0042)
+--- Model Summary (w/ interaction) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.242
+Model:                               OLS   Adj. R-squared:                  0.240
+Method:                    Least Squares   F-statistic:                     166.7
+Date:                   Tue, 01 Apr 2025   Prob (F-statistic):          2.29e-184
+Time:                           20:53:52   Log-Likelihood:                -24244.
+No. Observations:                   3143   AIC:                         4.850e+04
+Df Residuals:                       3136   BIC:                         4.855e+04
+Df Model:                              6                                         
+Covariance Type:               nonrobust                                         
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+const                              -73.4414     54.761     -1.341      0.180    -180.812      33.929
+iv1_public_health_policy           -84.0547     19.581     -4.293      0.000    -122.448     -45.661
+iv2_physical_environment           483.8773     19.872     24.350      0.000     444.914     522.841
+iv4_social_economic                 32.3429      2.248     14.386      0.000      27.935      36.751
+mo1_genai_cap                      -62.4363     15.905     -3.925      0.000     -93.623     -31.250
+mo2_robotics_cap                   -41.9732      3.597    -11.670      0.000     -49.025     -34.921
+mo1_genai_cap_x_mo2_robotics_cap     9.0540      2.509      3.609      0.000       4.135      13.973
+==============================================================================
+Omnibus:                      948.391   Durbin-Watson:                   1.759
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4318.536
+Skew:                           1.388   Prob(JB):                         0.00
+Kurtosis:                       8.027   Cond. No.                         84.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (with single interaction) ---
+                         feature      VIF
+mo1_genai_cap_x_mo2_robotics_cap 2.505542
+                   mo1_genai_cap 2.101028
+                mo2_robotics_cap 1.398226
+        iv2_physical_environment 1.031704
+        iv1_public_health_policy 1.021865
+             iv4_social_economic 1.017028
+Condition number: 84.90 (caution if > 30)

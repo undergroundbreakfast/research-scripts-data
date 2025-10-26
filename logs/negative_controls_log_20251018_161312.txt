@@ -1,0 +1,19 @@
+2025-10-18 16:13:12,675 - INFO - Logger initialized.
+2025-10-18 16:13:12,730 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 16:13:41,807 - INFO - Base data: 3135 counties.
+2025-10-18 16:13:41,809 - INFO - Added division FE (dummies=8).
+2025-10-18 16:13:41,845 - INFO - Year distribution: {2024: np.int64(3195)}
+2025-10-18 16:13:41,857 - INFO - Column percentage_of_households_with_overcrowding: 3195 valid numeric values after cleaning
+2025-10-18 16:13:41,862 - INFO - Column percentage_of_households_with_high_housing_costs: 3191 valid numeric values after cleaning
+2025-10-18 16:13:41,865 - INFO - Column pct_households_with_lack_of_kitchen_or_plumbing: 3195 valid numeric values after cleaning
+2025-10-18 16:13:41,867 - INFO - Year distribution: {2024: np.int64(3195)}
+2025-10-18 16:13:41,874 - INFO - Column premature_death_raw_value: 3140 valid numeric values after cleaning
+2025-10-18 16:13:41,875 - INFO - Year distribution: {2024: np.int64(3195)}
+2025-10-18 16:13:41,894 - INFO - Latest_c3 shape: (326, 21), columns: ['county_fips', 'year', 'juvenile_arrests_raw_value', 'female_raw_value', 'homeownership_raw_value', 'non_hispanic_black_raw_value', 'non_hispanic_white_raw_value', 'hispanic_raw_value', 'voter_turnout_raw_value', 'population_raw_value', 'census_participation_raw_value', 'school_funding_adequacy_raw_value', '_65_and_older_raw_value', 'severe_housing_cost_burden_raw_value', 'school_segregation_raw_value', 'gender_pay_gap_raw_value', 'math_scores_raw_value', 'traffic_volume_raw_value', 'reading_scores_raw_value', 'not_proficient_in_english_raw_value', 'below_18_years_of_age_raw_value']
+2025-10-18 16:13:41,894 - INFO - Latest_c2 shape: (326, 11), columns: ['county_fips', 'year', 'percentage_of_households_with_overcrowding', 'life_expectancy_raw_value', 'drinking_water_violations_raw_value', 'driving_alone_to_work_raw_value', 'air_pollution_particulate_matter_raw_value', 'percentage_of_households_with_high_housing_costs', 'long_commute_driving_alone_raw_value', 'premature_age_adjusted_mortality_raw_value', 'pct_households_with_lack_of_kitchen_or_plumbing']
+2025-10-18 16:13:41,894 - INFO -   percentage_of_households_with_high_housing_costs: 324/326 valid values
+2025-10-18 16:13:41,895 - INFO -   percentage_of_households_with_overcrowding: 326/326 valid values
+2025-10-18 16:13:41,895 - INFO -   pct_households_with_lack_of_kitchen_or_plumbing: 326/326 valid values
+2025-10-18 16:13:41,946 - WARNING - No pre-2023 years found for temporal falsification (DV21_premature_death).
+2025-10-18 16:13:41,946 - WARNING - No pre-2023 years found for temporal falsification (Premature_Age_Adjusted_Mortality).
+2025-10-18 16:13:41,946 - INFO - Running cross-sectional falsification (2024-only data)...

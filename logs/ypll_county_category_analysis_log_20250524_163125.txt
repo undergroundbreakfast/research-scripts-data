@@ -1,0 +1,73 @@
+2025-05-24 16:31:25,441 - INFO - Logging to: logs/ypll_county_category_analysis_log_20250524_163125.txt
+2025-05-24 16:31:25,441 - INFO - Starting YPLL Analysis Script (Focus on County Category).
+2025-05-24 16:31:25,441 - INFO - Output will be saved in: ypll_county_category_output and logs/
+2025-05-24 16:31:25,506 - INFO - Connected to Postgres database 'Research_TEST' successfully.
+2025-05-24 16:31:51,448 - INFO - Data for YPLL analysis retrieved: 3080 rows, 8 columns (excluding AI score).
+2025-05-24 16:31:51,448 - INFO - Converting population to numeric and filtering zero/negative values...
+2025-05-24 16:31:51,450 - INFO - Preparing data for analysis...
+2025-05-24 16:31:51,450 - INFO - Using '1' as the reference category for 'census_division' (prefix: div).
+2025-05-24 16:31:51,451 - INFO - Created 8 dummies for 'census_division': ['div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-05-24 16:31:51,451 - INFO - Using '1' as the reference category for 'county_category' (prefix: cat).
+2025-05-24 16:31:51,451 - INFO - Created 5 dummies for 'county_category': ['cat_2', 'cat_3', 'cat_4', 'cat_5', 'cat_6']
+2025-05-24 16:31:51,452 - INFO - Data preparation complete.
+2025-05-24 16:31:51,452 - INFO - Starting OLS regression analysis...
+2025-05-24 16:31:51,452 - INFO - OLS Formula: premature_death_raw_value ~ health_behaviors_score + social_economic_factors_score + log_population + medicaid_expansion_active + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9 + cat_2 + cat_3 + cat_4 + cat_5 + cat_6
+2025-05-24 16:31:51,474 - INFO - OLS Regression Summary:
+                                OLS Regression Results                               
+=====================================================================================
+Dep. Variable:     premature_death_raw_value   R-squared:                       0.703
+Model:                                   OLS   Adj. R-squared:                  0.701
+Method:                        Least Squares   F-statistic:                     426.6
+Date:                       Sat, 24 May 2025   Prob (F-statistic):               0.00
+Time:                               16:31:51   Log-Likelihood:                -27619.
+No. Observations:                       3080   AIC:                         5.527e+04
+Df Residuals:                           3062   BIC:                         5.538e+04
+Df Model:                                 17                                         
+Covariance Type:                   nonrobust                                         
+=================================================================================================
+                                    coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+Intercept                      1006.1159    522.554      1.925      0.054     -18.475    2030.707
+health_behaviors_score           57.7602      1.762     32.788      0.000      54.306      61.214
+social_economic_factors_score   525.4152     10.508     50.001      0.000     504.811     546.019
+log_population                 -127.3415     38.756     -3.286      0.001    -203.332     -51.351
+medicaid_expansion_active      -129.6345     79.723     -1.626      0.104    -285.951      26.682
+div_2                          1293.5101    294.062      4.399      0.000     716.931    1870.089
+div_3                          1752.0691    269.336      6.505      0.000    1223.971    2280.167
+div_4                          1249.8065    266.497      4.690      0.000     727.276    1772.337
+div_5                          2934.7052    277.546     10.574      0.000    2390.510    3478.900
+div_6                           422.8388    271.883      1.555      0.120    -110.253     955.931
+div_7                          2258.3961    274.791      8.219      0.000    1719.602    2797.190
+div_8                           563.0474    279.608      2.014      0.044      14.809    1111.286
+div_9                           432.8977    291.547      1.485      0.138    -138.750    1004.546
+cat_2                          -162.4901     95.814     -1.696      0.090    -350.357      25.377
+cat_3                          -645.0284    134.656     -4.790      0.000    -909.053    -381.004
+cat_4                          -348.9382    205.603     -1.697      0.090    -752.073      54.196
+cat_5                          -686.8417    186.893     -3.675      0.000   -1053.291    -320.393
+cat_6                         -1111.4403    180.834     -6.146      0.000   -1466.008    -756.872
+==============================================================================
+Omnibus:                      482.506   Durbin-Watson:                   1.856
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3704.335
+Skew:                           0.518   Prob(JB):                         0.00
+Kurtosis:                       8.272   Cond. No.                     1.01e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.01e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+2025-05-24 16:31:51,475 - INFO - Starting scenario simulation for YPLL reduction (county category change)...
+2025-05-24 16:31:51,475 - INFO - Coefficient for 'cat_2' (vs cat_1): -162.4901
+2025-05-24 16:31:51,475 - INFO - Coefficient for 'cat_4' (vs cat_1): -348.9382
+2025-05-24 16:31:51,475 - INFO - Predicted change in YPLL rate for shifting from cat 2 to cat 4: -186.4481
+2025-05-24 16:31:51,476 - INFO - Scenario: Shifting counties from Category 2 ('Hospital No Tech') to Category 4 ('Hospital w/ AI').
+2025-05-24 16:31:51,476 - INFO - Total YPLL potentially averted under this scenario = 92,977
+2025-05-24 16:31:51,477 - INFO - Total premature deaths potentially averted = 3,206
+2025-05-24 16:31:51,477 - INFO - Assumption: Each prevented premature death equals ~29.0 YPLL.
+2025-05-24 16:31:51,477 - INFO - Generating visualizations...
+2025-05-24 16:31:51,929 - INFO - Saved: ypll_scenario_cat2_to_cat4_dist.png
+2025-05-24 16:31:52,216 - INFO - Saved: premature_death_by_county_category.png
+2025-05-24 16:31:52,216 - INFO - Visualizations generated successfully.
+2025-05-24 16:31:52,216 - INFO - ================================================================================
+2025-05-24 16:31:52,216 - INFO - YPLL (County Category Focus) Analysis Script finished.
+2025-05-24 16:31:52,216 - INFO - ================================================================================

@@ -1,0 +1,37 @@
+2025-09-06 22:14:06,935 - INFO - [Replicate_Results_090625_v1.py:73] - Logging to: logs/genai_robotics_health_analysis_log_20250906_221406.txt
+2025-09-06 22:14:06,935 - INFO - [Replicate_Results_090625_v1.py:733] - Starting Dissertation Replication & Testing Script.
+2025-09-06 22:14:07,008 - INFO - [Replicate_Results_090625_v1.py:98] - Connected to PostgreSQL database 'Research_TEST'.
+2025-09-06 22:14:07,012 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_adjpd
+2025-09-06 22:14:07,013 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_variables_adjpd
+2025-09-06 22:14:07,014 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_adjpd_weighted_tech_summary
+2025-09-06 22:14:35,512 - INFO - [Replicate_Results_090625_v1.py:274] - Data retrieved: 3135 rows, 21 columns.
+2025-09-06 22:14:35,514 - INFO - [Replicate_Results_090625_v1.py:322] - Created 8 division dummies.
+2025-09-06 22:14:35,515 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo11_ai_automate_routine_tasks_pct'.
+2025-09-06 22:14:35,515 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo12_ai_optimize_workflows_pct'.
+2025-09-06 22:14:35,515 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo13_ai_predict_patient_demand_pct'.
+2025-09-06 22:14:35,515 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo14_ai_predict_staff_needs_pct'.
+2025-09-06 22:14:35,515 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo15_ai_staff_scheduling_pct'.
+2025-09-06 22:14:35,516 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo21_robotics_in_hospital_pct'.
+2025-09-06 22:15:18,851 - INFO - [Replicate_Results_090625_v1.py:858] - Saved main effects summary to genai_robotics_health_output/main_effects_on_health_summary.csv
+2025-09-06 22:15:19,058 - INFO - [Replicate_Results_090625_v1.py:631] - Saved main effect comparison plot: genai_robotics_health_output/plots/Main_Effect_Comparison.png
+2025-09-06 22:15:19,063 - WARNING - [Replicate_Results_090625_v1.py:681] - Column 'iv3_health_behaviors_score' has 2 dimensions. Attempting to flatten.
+2025-09-06 22:15:19,064 - WARNING - [Replicate_Results_090625_v1.py:703] - Could not convert iv3_health_behaviors_score to numeric for plotting
+2025-09-06 22:15:19,084 - ERROR - [Replicate_Results_090625_v1.py:725] - Error creating interaction plot for IV3_x_MO1_on_DV2: Data must be 1-dimensional, got ndarray of shape (3135, 2) instead
+2025-09-06 22:15:19,089 - WARNING - [Replicate_Results_090625_v1.py:681] - Column 'iv3_health_behaviors_score' has 2 dimensions. Attempting to flatten.
+2025-09-06 22:15:19,089 - WARNING - [Replicate_Results_090625_v1.py:703] - Could not convert iv3_health_behaviors_score to numeric for plotting
+2025-09-06 22:15:19,118 - ERROR - [Replicate_Results_090625_v1.py:725] - Error creating interaction plot for IV3_x_MO11_on_DV21: Data must be 1-dimensional, got ndarray of shape (3080, 2) instead
+2025-09-06 22:15:19,123 - WARNING - [Replicate_Results_090625_v1.py:681] - Column 'iv3_health_behaviors_score' has 2 dimensions. Attempting to flatten.
+2025-09-06 22:15:19,124 - WARNING - [Replicate_Results_090625_v1.py:703] - Could not convert iv3_health_behaviors_score to numeric for plotting
+2025-09-06 22:15:19,141 - ERROR - [Replicate_Results_090625_v1.py:725] - Error creating interaction plot for IV3_x_MO12_on_DV21: Data must be 1-dimensional, got ndarray of shape (3080, 2) instead
+2025-09-06 22:15:19,146 - WARNING - [Replicate_Results_090625_v1.py:681] - Column 'iv1_medicaid_expansion_active' has 2 dimensions. Attempting to flatten.
+2025-09-06 22:15:19,147 - WARNING - [Replicate_Results_090625_v1.py:703] - Could not convert iv1_medicaid_expansion_active to numeric for plotting
+2025-09-06 22:15:19,173 - ERROR - [Replicate_Results_090625_v1.py:725] - Error creating interaction plot for IV1_x_MO1_on_DV3: Data must be 1-dimensional, got ndarray of shape (2109, 2) instead
+2025-09-06 22:15:19,177 - WARNING - [Replicate_Results_090625_v1.py:681] - Column 'iv1_medicaid_expansion_active' has 2 dimensions. Attempting to flatten.
+2025-09-06 22:15:19,178 - WARNING - [Replicate_Results_090625_v1.py:703] - Could not convert iv1_medicaid_expansion_active to numeric for plotting
+2025-09-06 22:15:19,187 - ERROR - [Replicate_Results_090625_v1.py:725] - Error creating interaction plot for IV1_x_MO2_on_DV3: Data must be 1-dimensional, got ndarray of shape (2109, 2) instead
+2025-09-06 22:15:19,189 - INFO - [Replicate_Results_090625_v1.py:916] - Saved moderation summary to genai_robotics_health_output/moderation_analysis_summary.csv
+2025-09-06 22:15:19,219 - INFO - [Replicate_Results_090625_v1.py:969] - Saved index-level OLS summary to genai_robotics_health_output/index_level_ols_summary.csv
+2025-09-06 22:15:19,242 - INFO - [Replicate_Results_090625_v1.py:999] - Saved direct DV3 effects to genai_robotics_health_output/direct_effects_on_dv3_summary.csv
+2025-09-06 22:15:19,422 - INFO - [Replicate_Results_090625_v1.py:657] - Saved DV3 direct effect plot: genai_robotics_health_output/plots/Direct_Effect_DV3.png
+2025-09-06 22:15:19,424 - INFO - [Replicate_Results_090625_v1.py:1080] - Saved replication report to genai_robotics_health_output/replication_report.csv
+2025-09-06 22:15:19,424 - INFO - [Replicate_Results_090625_v1.py:1084] - All done. Check logs and output directory for results.

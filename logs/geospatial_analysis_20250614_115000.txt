@@ -1,0 +1,20 @@
+2025-06-14 11:50:00,886 [INFO] Logging to logs/geospatial_analysis_20250614_115000.txt
+2025-06-14 11:50:00,949 [INFO] Connected to Postgres (Research_TEST@localhost).
+2025-06-14 11:50:00,949 [INFO] Fetching hospital data …
+2025-06-14 11:50:00,950 [ERROR] Fatal error: (psycopg2.errors.UndefinedColumn) column "latitude" does not exist
+LINE 9:             latitude, longitude
+                    ^
+
+[SQL: 
+        SELECT
+            id,
+            fcounty                                    AS county_fips,
+            COALESCE(CAST(bdtot AS INTEGER), 0)       AS bed_total,
+            wfaiart, wfaioacw, wfaippd, wfaipsn, wfaiss,
+            robohos,
+            mloczip,
+            latitude, longitude
+        FROM public.aha_survey_data
+        WHERE COALESCE(fcounty,'') <> ''
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)

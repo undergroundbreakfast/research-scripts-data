@@ -1,0 +1,450 @@
+2025-06-09 01:12:55,050 - INFO - [Overall_Model_Testing_060525_v1.py:76] - Logging to: logs/health_ai_robotics_analysis_log_20250609_011255.txt
+2025-06-09 01:12:55,050 - INFO - [Overall_Model_Testing_060525_v1.py:1308] - Starting Comprehensive Health AI/Robotics Impact Analysis Script.
+2025-06-09 01:12:55,142 - INFO - [Overall_Model_Testing_060525_v1.py:105] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-09 01:12:55,142 - INFO - [Overall_Model_Testing_060525_v1.py:113] - Fetching comprehensive data for analysis...
+2025-06-09 01:13:22,763 - INFO - [Overall_Model_Testing_060525_v1.py:195] - Data for analysis retrieved: 3135 rows, 52 columns.
+2025-06-09 01:13:22,764 - INFO - [Overall_Model_Testing_060525_v1.py:268] - Columns renamed to analysis-friendly names.
+2025-06-09 01:13:22,767 - WARNING - [Overall_Model_Testing_060525_v1.py:292] - Columns with >10% NaNs which might affect sample sizes in specific analyses:
+dv3_operational_efficiency_margin    1026
+dtype: int64
+2025-06-09 01:13:22,767 - INFO - [Overall_Model_Testing_060525_v1.py:304] - Performing common data preparations...
+2025-06-09 01:13:22,769 - INFO - [Overall_Model_Testing_060525_v1.py:345] - Created 8 dummy variables for 'ct2_census_division'.
+2025-06-09 01:13:22,774 - INFO - [Overall_Model_Testing_060525_v1.py:392] - Common data preparations complete.
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1346] - Sample of prepared data saved to health_ai_robotics_output/prepared_data_sample.csv
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1391] - Available IV Scores: ['iv1_medicaid_expansion_active', 'iv2_physical_environment_score', 'iv3_health_behaviors_score', 'iv4_social_economic_factors_score']
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1392] - Available MO Scores: ['mo1_genai_capabilities_score', 'mo2_robotics_capabilities_score']
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1393] - Available IV Components: 22 components.
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1394] - Available MO Components: ['mo11_ai_automate_routine_tasks', 'mo12_ai_optimize_workflows', 'mo13_ai_predict_patient_demand', 'mo14_ai_predict_staffing_needs', 'mo15_ai_staff_scheduling', 'mo21_robotics_in_hospital']
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1395] - Base Confounders for adjustment: ['iv1_medicaid_expansion_active', 'iv2_physical_environment_score', 'iv3_health_behaviors_score', 'iv4_social_economic_factors_score', 'log_population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:1399] - ============================== PART 1: CONCEPTUAL MODEL REGRESSIONS (OLS) ==============================
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score) ---
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv1_clinical_care_score
+2025-06-09 01:13:22,784 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv1_medicaid_expansion_active', 'iv2_physical_environment_score', 'iv3_health_behaviors_score', 'iv4_social_economic_factors_score', 'mo1_genai_capabilities_score', 'mo2_robotics_capabilities_score', 'log_population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-06-09 01:13:22,822 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv2_physical_environment_score' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 44.65
+2025-06-09 01:13:22,822 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv4_social_economic_factors_score' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 14.09
+2025-06-09 01:13:22,824 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 51.70
+2025-06-09 01:13:22,824 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_3' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 8.58
+2025-06-09 01:13:22,825 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_4' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 6.50
+2025-06-09 01:13:22,825 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 5.95
+2025-06-09 01:13:22,826 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_6' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 7.06
+2025-06-09 01:13:22,826 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_7' in model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)': 7.13
+2025-06-09 01:13:22,827 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Scores+MO_Scores -> DV1 (dv1_clinical_care_score)' Summary: Adj R2=0.274, N=3135
+2025-06-09 01:13:22,827 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score) ---
+2025-06-09 01:13:22,827 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv2_health_outcomes_score
+2025-06-09 01:13:22,827 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv1_medicaid_expansion_active', 'iv2_physical_environment_score', 'iv3_health_behaviors_score', 'iv4_social_economic_factors_score', 'mo1_genai_capabilities_score', 'mo2_robotics_capabilities_score', 'log_population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-06-09 01:13:22,855 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv2_physical_environment_score' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 44.65
+2025-06-09 01:13:22,856 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv4_social_economic_factors_score' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 14.09
+2025-06-09 01:13:22,857 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 51.70
+2025-06-09 01:13:22,858 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_3' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 8.58
+2025-06-09 01:13:22,858 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_4' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 6.50
+2025-06-09 01:13:22,858 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 5.95
+2025-06-09 01:13:22,859 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_6' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 7.06
+2025-06-09 01:13:22,859 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_7' in model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)': 7.13
+2025-06-09 01:13:22,860 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Scores+MO_Scores -> DV2 (dv2_health_outcomes_score)' Summary: Adj R2=0.703, N=3135
+2025-06-09 01:13:22,860 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin) ---
+2025-06-09 01:13:22,860 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv3_operational_efficiency_margin
+2025-06-09 01:13:22,860 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv1_medicaid_expansion_active', 'iv2_physical_environment_score', 'iv3_health_behaviors_score', 'iv4_social_economic_factors_score', 'mo1_genai_capabilities_score', 'mo2_robotics_capabilities_score', 'log_population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-06-09 01:13:22,882 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv2_physical_environment_score' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 43.37
+2025-06-09 01:13:22,883 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv3_health_behaviors_score' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 5.17
+2025-06-09 01:13:22,884 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv4_social_economic_factors_score' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 14.21
+2025-06-09 01:13:22,886 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 52.24
+2025-06-09 01:13:22,887 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_3' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 6.92
+2025-06-09 01:13:22,887 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_4' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 6.21
+2025-06-09 01:13:22,888 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 5.43
+2025-06-09 01:13:22,888 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_6' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 6.40
+2025-06-09 01:13:22,888 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_7' in model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)': 6.50
+2025-06-09 01:13:22,889 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Scores+MO_Scores -> DV3 (dv3_operational_efficiency_margin)' Summary: Adj R2=0.162, N=2109
+2025-06-09 01:13:22,889 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate) ---
+2025-06-09 01:13:22,889 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv21_premature_death_ypll_rate
+2025-06-09 01:13:22,889 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv1_medicaid_expansion_active', 'iv2_physical_environment_score', 'iv3_health_behaviors_score', 'iv4_social_economic_factors_score', 'mo1_genai_capabilities_score', 'mo2_robotics_capabilities_score', 'log_population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-06-09 01:13:22,919 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv2_physical_environment_score' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 44.92
+2025-06-09 01:13:22,920 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv4_social_economic_factors_score' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 13.95
+2025-06-09 01:13:22,922 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 53.14
+2025-06-09 01:13:22,924 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_3' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 8.78
+2025-06-09 01:13:22,925 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_4' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 6.65
+2025-06-09 01:13:22,925 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 6.06
+2025-06-09 01:13:22,925 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_6' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 7.10
+2025-06-09 01:13:22,926 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_7' in model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)': 7.19
+2025-06-09 01:13:22,927 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Scores+MO_Scores -> DV21 (dv21_premature_death_ypll_rate)' Summary: Adj R2=0.707, N=3080
+2025-06-09 01:13:22,927 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score) ---
+2025-06-09 01:13:22,927 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv1_clinical_care_score
+2025-06-09 01:13:22,927 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv41_high_school_completion', 'iv42_some_college', 'iv43_unemployment', 'iv44_children_in_poverty', 'iv45_income_inequality', 'iv46_children_single_parent', 'iv47_social_associations', 'iv48_injury_deaths', 'iv31_adult_smoking', 'iv32_adult_obesity', 'iv33_food_environment_index', 'iv34_physical_inactivity', 'iv35_access_exercise_ops', 'iv36_excessive_drinking', 'iv37_alcohol_driving_deaths', 'iv38_sti', 'iv39_teen_births', 'iv21_air_pollution_pm', 'iv22_drinking_water_violations', 'iv23_severe_housing_problems', 'iv24_driving_alone_work', 'iv25_long_commute_driving_alone', 'mo11_ai_automate_routine_tasks', 'mo12_ai_optimize_workflows', 'mo13_ai_predict_patient_demand', 'mo14_ai_predict_staffing_needs', 'mo15_ai_staff_scheduling', 'mo21_robotics_in_hospital', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'iv1_medicaid_expansion_active', 'log_population']
+2025-06-09 01:13:23,173 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv41_high_school_completion' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 566.46
+2025-06-09 01:13:23,174 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv42_some_college' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 122.52
+2025-06-09 01:13:23,175 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv43_unemployment' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 20.72
+2025-06-09 01:13:23,176 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv44_children_in_poverty' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 39.77
+2025-06-09 01:13:23,177 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv45_income_inequality' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 74.83
+2025-06-09 01:13:23,178 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv46_children_single_parent' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 21.61
+2025-06-09 01:13:23,179 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv47_social_associations' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 9.61
+2025-06-09 01:13:23,181 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv48_injury_deaths' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 26.83
+2025-06-09 01:13:23,182 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv31_adult_smoking' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 141.76
+2025-06-09 01:13:23,182 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv32_adult_obesity' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 259.55
+2025-06-09 01:13:23,183 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv33_food_environment_index' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 120.80
+2025-06-09 01:13:23,184 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv34_physical_inactivity' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 229.41
+2025-06-09 01:13:23,184 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv35_access_exercise_ops' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 18.05
+2025-06-09 01:13:23,185 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv36_excessive_drinking' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 90.54
+2025-06-09 01:13:23,185 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv37_alcohol_driving_deaths' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 6.02
+2025-06-09 01:13:23,186 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv38_sti' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 8.09
+2025-06-09 01:13:23,187 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv39_teen_births' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 18.77
+2025-06-09 01:13:23,188 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv21_air_pollution_pm' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 52.77
+2025-06-09 01:13:23,189 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv23_severe_housing_problems' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 31.33
+2025-06-09 01:13:23,190 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv24_driving_alone_work' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 283.44
+2025-06-09 01:13:23,191 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv25_long_commute_driving_alone' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 14.36
+2025-06-09 01:13:23,198 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_3' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 11.88
+2025-06-09 01:13:23,198 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_4' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 10.55
+2025-06-09 01:13:23,199 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 9.65
+2025-06-09 01:13:23,199 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_6' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 12.69
+2025-06-09 01:13:23,200 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_7' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 11.38
+2025-06-09 01:13:23,200 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_8' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 5.13
+2025-06-09 01:13:23,201 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)': 198.83
+2025-06-09 01:13:23,201 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Components+MO_Components+Controls -> DV1 (dv1_clinical_care_score)' Summary: Adj R2=0.442, N=2746
+2025-06-09 01:13:23,202 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score) ---
+2025-06-09 01:13:23,202 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv2_health_outcomes_score
+2025-06-09 01:13:23,202 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv41_high_school_completion', 'iv42_some_college', 'iv43_unemployment', 'iv44_children_in_poverty', 'iv45_income_inequality', 'iv46_children_single_parent', 'iv47_social_associations', 'iv48_injury_deaths', 'iv31_adult_smoking', 'iv32_adult_obesity', 'iv33_food_environment_index', 'iv34_physical_inactivity', 'iv35_access_exercise_ops', 'iv36_excessive_drinking', 'iv37_alcohol_driving_deaths', 'iv38_sti', 'iv39_teen_births', 'iv21_air_pollution_pm', 'iv22_drinking_water_violations', 'iv23_severe_housing_problems', 'iv24_driving_alone_work', 'iv25_long_commute_driving_alone', 'mo11_ai_automate_routine_tasks', 'mo12_ai_optimize_workflows', 'mo13_ai_predict_patient_demand', 'mo14_ai_predict_staffing_needs', 'mo15_ai_staff_scheduling', 'mo21_robotics_in_hospital', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'iv1_medicaid_expansion_active', 'log_population']
+2025-06-09 01:13:23,406 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv41_high_school_completion' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 566.46
+2025-06-09 01:13:23,407 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv42_some_college' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 122.52
+2025-06-09 01:13:23,407 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv43_unemployment' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 20.72
+2025-06-09 01:13:23,408 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv44_children_in_poverty' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 39.77
+2025-06-09 01:13:23,408 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv45_income_inequality' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 74.83
+2025-06-09 01:13:23,408 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv46_children_single_parent' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 21.61
+2025-06-09 01:13:23,409 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv47_social_associations' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 9.61
+2025-06-09 01:13:23,410 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv48_injury_deaths' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 26.83
+2025-06-09 01:13:23,411 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv31_adult_smoking' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 141.76
+2025-06-09 01:13:23,412 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv32_adult_obesity' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 259.55
+2025-06-09 01:13:23,413 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv33_food_environment_index' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 120.80
+2025-06-09 01:13:23,413 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv34_physical_inactivity' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 229.41
+2025-06-09 01:13:23,414 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv35_access_exercise_ops' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 18.05
+2025-06-09 01:13:23,414 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv36_excessive_drinking' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 90.54
+2025-06-09 01:13:23,415 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv37_alcohol_driving_deaths' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 6.02
+2025-06-09 01:13:23,415 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv38_sti' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 8.09
+2025-06-09 01:13:23,415 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv39_teen_births' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 18.77
+2025-06-09 01:13:23,416 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv21_air_pollution_pm' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 52.77
+2025-06-09 01:13:23,417 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv23_severe_housing_problems' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 31.33
+2025-06-09 01:13:23,420 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv24_driving_alone_work' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 283.44
+2025-06-09 01:13:23,420 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv25_long_commute_driving_alone' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 14.36
+2025-06-09 01:13:23,425 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_3' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 11.88
+2025-06-09 01:13:23,426 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_4' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 10.55
+2025-06-09 01:13:23,426 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 9.65
+2025-06-09 01:13:23,426 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_6' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 12.69
+2025-06-09 01:13:23,427 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_7' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 11.38
+2025-06-09 01:13:23,427 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_8' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 5.13
+2025-06-09 01:13:23,428 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)': 198.83
+2025-06-09 01:13:23,428 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Components+MO_Components+Controls -> DV2 (dv2_health_outcomes_score)' Summary: Adj R2=0.838, N=2746
+2025-06-09 01:13:23,429 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin) ---
+2025-06-09 01:13:23,429 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv3_operational_efficiency_margin
+2025-06-09 01:13:23,429 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv41_high_school_completion', 'iv42_some_college', 'iv43_unemployment', 'iv44_children_in_poverty', 'iv45_income_inequality', 'iv46_children_single_parent', 'iv47_social_associations', 'iv48_injury_deaths', 'iv31_adult_smoking', 'iv32_adult_obesity', 'iv33_food_environment_index', 'iv34_physical_inactivity', 'iv35_access_exercise_ops', 'iv36_excessive_drinking', 'iv37_alcohol_driving_deaths', 'iv38_sti', 'iv39_teen_births', 'iv21_air_pollution_pm', 'iv22_drinking_water_violations', 'iv23_severe_housing_problems', 'iv24_driving_alone_work', 'iv25_long_commute_driving_alone', 'mo11_ai_automate_routine_tasks', 'mo12_ai_optimize_workflows', 'mo13_ai_predict_patient_demand', 'mo14_ai_predict_staffing_needs', 'mo15_ai_staff_scheduling', 'mo21_robotics_in_hospital', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'iv1_medicaid_expansion_active', 'log_population']
+2025-06-09 01:13:23,583 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv41_high_school_completion' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 681.48
+2025-06-09 01:13:23,584 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv42_some_college' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 145.41
+2025-06-09 01:13:23,585 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv43_unemployment' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 24.03
+2025-06-09 01:13:23,586 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv44_children_in_poverty' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 42.17
+2025-06-09 01:13:23,587 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv45_income_inequality' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 85.23
+2025-06-09 01:13:23,588 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv46_children_single_parent' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 26.24
+2025-06-09 01:13:23,588 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv47_social_associations' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 11.15
+2025-06-09 01:13:23,589 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv48_injury_deaths' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 27.07
+2025-06-09 01:13:23,589 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv31_adult_smoking' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 154.12
+2025-06-09 01:13:23,590 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv32_adult_obesity' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 257.76
+2025-06-09 01:13:23,590 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv33_food_environment_index' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 151.33
+2025-06-09 01:13:23,590 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv34_physical_inactivity' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 225.38
+2025-06-09 01:13:23,591 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv35_access_exercise_ops' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 24.85
+2025-06-09 01:13:23,591 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv36_excessive_drinking' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 93.58
+2025-06-09 01:13:23,592 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv37_alcohol_driving_deaths' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 6.60
+2025-06-09 01:13:23,592 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv38_sti' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 9.79
+2025-06-09 01:13:23,592 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv39_teen_births' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 19.95
+2025-06-09 01:13:23,594 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv21_air_pollution_pm' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 48.16
+2025-06-09 01:13:23,595 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv23_severe_housing_problems' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 35.15
+2025-06-09 01:13:23,595 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv24_driving_alone_work' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 281.45
+2025-06-09 01:13:23,596 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv25_long_commute_driving_alone' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 14.82
+2025-06-09 01:13:23,603 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_3' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 9.02
+2025-06-09 01:13:23,604 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_4' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 9.64
+2025-06-09 01:13:23,604 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 8.60
+2025-06-09 01:13:23,604 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_6' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 11.50
+2025-06-09 01:13:23,605 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_7' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 10.22
+2025-06-09 01:13:23,606 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)': 212.81
+2025-06-09 01:13:23,606 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Components+MO_Components+Controls -> DV3 (dv3_operational_efficiency_margin)' Summary: Adj R2=0.175, N=1951
+2025-06-09 01:13:23,607 - INFO - [Overall_Model_Testing_060525_v1.py:410] - --- Running Conceptual OLS Model: IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate) ---
+2025-06-09 01:13:23,607 - INFO - [Overall_Model_Testing_060525_v1.py:411] -     Outcome (DV): dv21_premature_death_ypll_rate
+2025-06-09 01:13:23,607 - INFO - [Overall_Model_Testing_060525_v1.py:412] -     Predictors (IVs/MOs/Controls): ['iv41_high_school_completion', 'iv42_some_college', 'iv43_unemployment', 'iv44_children_in_poverty', 'iv45_income_inequality', 'iv46_children_single_parent', 'iv47_social_associations', 'iv48_injury_deaths', 'iv31_adult_smoking', 'iv32_adult_obesity', 'iv33_food_environment_index', 'iv34_physical_inactivity', 'iv35_access_exercise_ops', 'iv36_excessive_drinking', 'iv37_alcohol_driving_deaths', 'iv38_sti', 'iv39_teen_births', 'iv21_air_pollution_pm', 'iv22_drinking_water_violations', 'iv23_severe_housing_problems', 'iv24_driving_alone_work', 'iv25_long_commute_driving_alone', 'mo11_ai_automate_routine_tasks', 'mo12_ai_optimize_workflows', 'mo13_ai_predict_patient_demand', 'mo14_ai_predict_staffing_needs', 'mo15_ai_staff_scheduling', 'mo21_robotics_in_hospital', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'iv1_medicaid_expansion_active', 'log_population']
+2025-06-09 01:13:23,769 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv41_high_school_completion' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 566.46
+2025-06-09 01:13:23,770 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv42_some_college' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 122.52
+2025-06-09 01:13:23,770 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv43_unemployment' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 20.72
+2025-06-09 01:13:23,770 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv44_children_in_poverty' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 39.77
+2025-06-09 01:13:23,771 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv45_income_inequality' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 74.83
+2025-06-09 01:13:23,772 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv46_children_single_parent' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 21.61
+2025-06-09 01:13:23,773 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv47_social_associations' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 9.61
+2025-06-09 01:13:23,774 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv48_injury_deaths' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 26.83
+2025-06-09 01:13:23,775 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv31_adult_smoking' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 141.76
+2025-06-09 01:13:23,776 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv32_adult_obesity' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 259.55
+2025-06-09 01:13:23,777 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv33_food_environment_index' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 120.80
+2025-06-09 01:13:23,778 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv34_physical_inactivity' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 229.41
+2025-06-09 01:13:23,779 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv35_access_exercise_ops' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 18.05
+2025-06-09 01:13:23,779 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv36_excessive_drinking' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 90.54
+2025-06-09 01:13:23,780 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv37_alcohol_driving_deaths' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 6.02
+2025-06-09 01:13:23,780 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'iv38_sti' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 8.09
+2025-06-09 01:13:23,781 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv39_teen_births' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 18.77
+2025-06-09 01:13:23,781 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv21_air_pollution_pm' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 52.77
+2025-06-09 01:13:23,782 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv23_severe_housing_problems' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 31.33
+2025-06-09 01:13:23,782 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv24_driving_alone_work' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 283.44
+2025-06-09 01:13:23,783 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'iv25_long_commute_driving_alone' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 14.36
+2025-06-09 01:13:23,791 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_3' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 11.88
+2025-06-09 01:13:23,792 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_4' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 10.55
+2025-06-09 01:13:23,793 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_5' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 9.65
+2025-06-09 01:13:23,794 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_6' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 12.69
+2025-06-09 01:13:23,794 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'div_7' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 11.38
+2025-06-09 01:13:23,795 - INFO - [Overall_Model_Testing_060525_v1.py:503] - Moderate VIF for 'div_8' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 5.13
+2025-06-09 01:13:23,796 - WARNING - [Overall_Model_Testing_060525_v1.py:501] - High VIF for 'log_population' in model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)': 198.83
+2025-06-09 01:13:23,796 - INFO - [Overall_Model_Testing_060525_v1.py:506] - Model 'IV_Components+MO_Components+Controls -> DV21 (dv21_premature_death_ypll_rate)' Summary: Adj R2=0.838, N=2746
+2025-06-09 01:13:23,798 - INFO - [Overall_Model_Testing_060525_v1.py:1455] - Conceptual models summary saved to health_ai_robotics_output/conceptual_models_summary.csv
+2025-06-09 01:13:24,282 - INFO - [Overall_Model_Testing_060525_v1.py:1261] - Conceptual model R-squared comparison plot saved to health_ai_robotics_output/plots/conceptual_models_adj_rsquared_comparison.png
+2025-06-09 01:13:24,284 - INFO - [Overall_Model_Testing_060525_v1.py:1463] - Conceptual models coefficients saved to health_ai_robotics_output/conceptual_models_coefficients.csv
+2025-06-09 01:13:24,284 - INFO - [Overall_Model_Testing_060525_v1.py:1476] - ============================== PART 2: MAIN EFFECT ANALYSIS (Tech Components) ==============================
+2025-06-09 01:13:24,284 - INFO - [Overall_Model_Testing_060525_v1.py:1501] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: AI: Automate Tasks (mo11_ai_automate_routine_tasks) ==========
+2025-06-09 01:13:24,285 - INFO - [Overall_Model_Testing_060525_v1.py:1543] -   Main Effect Final N for AI: Automate Tasks: 3080 (Treated: 417, Control: 2663) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 01:13:24,285 - INFO - [Overall_Model_Testing_060525_v1.py:566] - --- Starting OLS Main Effect Analysis for Treatment: mo11_ai_automate_routine_tasks_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:24,333 - INFO - [Overall_Model_Testing_060525_v1.py:611] - OLS Main Effect Beta for mo11_ai_automate_routine_tasks_adopted: -486.0591, P-value: 0.0023, CI: [-799.0785, -173.0396], VIF: 2.90
+2025-06-09 01:13:24,334 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo11_ai_automate_routine_tasks_adopted' (Main Effect: -486.0591 on YPLL rate):
+2025-06-09 01:13:24,334 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 752,816
+2025-06-09 01:13:24,334 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 25,959
+2025-06-09 01:13:24,334 - INFO - [Overall_Model_Testing_060525_v1.py:642] - --- Starting IPTW Main Effect Analysis for Treatment: mo11_ai_automate_routine_tasks_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:24,343 - INFO - [Overall_Model_Testing_060525_v1.py:666] - IPTW Main Effect ATE for mo11_ai_automate_routine_tasks_adopted: -1589.6962
+2025-06-09 01:13:24,343 - INFO - [Overall_Model_Testing_060525_v1.py:667] - IPTW Main Effect ATET for mo11_ai_automate_routine_tasks_adopted: -69.5110
+2025-06-09 01:13:27,797 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo11_ai_automate_routine_tasks_adopted' (Main Effect: -1589.6962 on YPLL rate):
+2025-06-09 01:13:27,797 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 2,462,146
+2025-06-09 01:13:27,797 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 84,902
+2025-06-09 01:13:27,797 - INFO - [Overall_Model_Testing_060525_v1.py:772] - --- Starting AIPW Main Effect Analysis for Treatment: mo11_ai_automate_routine_tasks_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:28,032 - INFO - [Overall_Model_Testing_060525_v1.py:815] - AIPW Main Effect ATE for mo11_ai_automate_routine_tasks_adopted: -946.2964
+2025-06-09 01:13:28,033 - INFO - [Overall_Model_Testing_060525_v1.py:816] - AIPW Main Effect ATET for mo11_ai_automate_routine_tasks_adopted: -390.7923
+2025-06-09 01:13:32,594 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo11_ai_automate_routine_tasks_adopted' (Main Effect: -946.2964 on YPLL rate):
+2025-06-09 01:13:32,594 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 1,465,638
+2025-06-09 01:13:32,594 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 50,539
+2025-06-09 01:13:32,594 - INFO - [Overall_Model_Testing_060525_v1.py:1501] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: AI: Optimize Workflows (mo12_ai_optimize_workflows) ==========
+2025-06-09 01:13:32,596 - INFO - [Overall_Model_Testing_060525_v1.py:1543] -   Main Effect Final N for AI: Optimize Workflows: 3080 (Treated: 453, Control: 2627) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 01:13:32,596 - INFO - [Overall_Model_Testing_060525_v1.py:566] - --- Starting OLS Main Effect Analysis for Treatment: mo12_ai_optimize_workflows_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:32,613 - INFO - [Overall_Model_Testing_060525_v1.py:611] - OLS Main Effect Beta for mo12_ai_optimize_workflows_adopted: -336.5722, P-value: 0.0308, CI: [-641.9524, -31.1920], VIF: 2.97
+2025-06-09 01:13:32,613 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo12_ai_optimize_workflows_adopted' (Main Effect: -336.5722 on YPLL rate):
+2025-06-09 01:13:32,613 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 490,672
+2025-06-09 01:13:32,613 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 16,920
+2025-06-09 01:13:32,613 - INFO - [Overall_Model_Testing_060525_v1.py:642] - --- Starting IPTW Main Effect Analysis for Treatment: mo12_ai_optimize_workflows_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:32,624 - INFO - [Overall_Model_Testing_060525_v1.py:666] - IPTW Main Effect ATE for mo12_ai_optimize_workflows_adopted: -112.9902
+2025-06-09 01:13:32,624 - INFO - [Overall_Model_Testing_060525_v1.py:667] - IPTW Main Effect ATET for mo12_ai_optimize_workflows_adopted: 81.7464
+2025-06-09 01:13:35,896 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo12_ai_optimize_workflows_adopted' (Main Effect: -112.9902 on YPLL rate):
+2025-06-09 01:13:35,896 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 164,723
+2025-06-09 01:13:35,896 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 5,680
+2025-06-09 01:13:35,896 - INFO - [Overall_Model_Testing_060525_v1.py:772] - --- Starting AIPW Main Effect Analysis for Treatment: mo12_ai_optimize_workflows_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:36,124 - INFO - [Overall_Model_Testing_060525_v1.py:815] - AIPW Main Effect ATE for mo12_ai_optimize_workflows_adopted: -294.6460
+2025-06-09 01:13:36,124 - INFO - [Overall_Model_Testing_060525_v1.py:816] - AIPW Main Effect ATET for mo12_ai_optimize_workflows_adopted: -197.7285
+2025-06-09 01:13:40,811 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo12_ai_optimize_workflows_adopted' (Main Effect: -294.6460 on YPLL rate):
+2025-06-09 01:13:40,811 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 429,550
+2025-06-09 01:13:40,811 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 14,812
+2025-06-09 01:13:40,811 - INFO - [Overall_Model_Testing_060525_v1.py:1501] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: AI: Predict Demand (mo13_ai_predict_patient_demand) ==========
+2025-06-09 01:13:40,812 - INFO - [Overall_Model_Testing_060525_v1.py:1543] -   Main Effect Final N for AI: Predict Demand: 3080 (Treated: 337, Control: 2743) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 01:13:40,812 - INFO - [Overall_Model_Testing_060525_v1.py:566] - --- Starting OLS Main Effect Analysis for Treatment: mo13_ai_predict_patient_demand_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:40,826 - INFO - [Overall_Model_Testing_060525_v1.py:611] - OLS Main Effect Beta for mo13_ai_predict_patient_demand_adopted: -306.1962, P-value: 0.0636, CI: [-629.7833, 17.3909], VIF: 2.50
+2025-06-09 01:13:40,827 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo13_ai_predict_patient_demand_adopted' (Main Effect: -306.1962 on YPLL rate):
+2025-06-09 01:13:40,827 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 525,307
+2025-06-09 01:13:40,827 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 18,114
+2025-06-09 01:13:40,827 - INFO - [Overall_Model_Testing_060525_v1.py:642] - --- Starting IPTW Main Effect Analysis for Treatment: mo13_ai_predict_patient_demand_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:40,832 - INFO - [Overall_Model_Testing_060525_v1.py:666] - IPTW Main Effect ATE for mo13_ai_predict_patient_demand_adopted: -1375.4976
+2025-06-09 01:13:40,832 - INFO - [Overall_Model_Testing_060525_v1.py:667] - IPTW Main Effect ATET for mo13_ai_predict_patient_demand_adopted: -180.4134
+2025-06-09 01:13:44,299 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo13_ai_predict_patient_demand_adopted' (Main Effect: -1375.4976 on YPLL rate):
+2025-06-09 01:13:44,299 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 2,359,788
+2025-06-09 01:13:44,299 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 81,372
+2025-06-09 01:13:44,299 - INFO - [Overall_Model_Testing_060525_v1.py:772] - --- Starting AIPW Main Effect Analysis for Treatment: mo13_ai_predict_patient_demand_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:44,536 - INFO - [Overall_Model_Testing_060525_v1.py:815] - AIPW Main Effect ATE for mo13_ai_predict_patient_demand_adopted: -438.8096
+2025-06-09 01:13:44,537 - INFO - [Overall_Model_Testing_060525_v1.py:816] - AIPW Main Effect ATET for mo13_ai_predict_patient_demand_adopted: -314.8763
+2025-06-09 01:13:49,325 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo13_ai_predict_patient_demand_adopted' (Main Effect: -438.8096 on YPLL rate):
+2025-06-09 01:13:49,325 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 752,817
+2025-06-09 01:13:49,325 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 25,959
+2025-06-09 01:13:49,325 - INFO - [Overall_Model_Testing_060525_v1.py:1501] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: AI: Predict Staffing (mo14_ai_predict_staffing_needs) ==========
+2025-06-09 01:13:49,326 - INFO - [Overall_Model_Testing_060525_v1.py:1543] -   Main Effect Final N for AI: Predict Staffing: 3080 (Treated: 318, Control: 2762) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 01:13:49,326 - INFO - [Overall_Model_Testing_060525_v1.py:566] - --- Starting OLS Main Effect Analysis for Treatment: mo14_ai_predict_staffing_needs_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:49,331 - INFO - [Overall_Model_Testing_060525_v1.py:611] - OLS Main Effect Beta for mo14_ai_predict_staffing_needs_adopted: -234.3453, P-value: 0.1889, CI: [-584.0181, 115.3276], VIF: 2.71
+2025-06-09 01:13:49,331 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo14_ai_predict_staffing_needs_adopted' (Main Effect: -234.3453 on YPLL rate):
+2025-06-09 01:13:49,331 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 414,818
+2025-06-09 01:13:49,331 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 14,304
+2025-06-09 01:13:49,331 - INFO - [Overall_Model_Testing_060525_v1.py:642] - --- Starting IPTW Main Effect Analysis for Treatment: mo14_ai_predict_staffing_needs_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:49,341 - INFO - [Overall_Model_Testing_060525_v1.py:666] - IPTW Main Effect ATE for mo14_ai_predict_staffing_needs_adopted: -931.0241
+2025-06-09 01:13:49,341 - INFO - [Overall_Model_Testing_060525_v1.py:667] - IPTW Main Effect ATET for mo14_ai_predict_staffing_needs_adopted: -533.4674
+2025-06-09 01:13:52,836 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo14_ai_predict_staffing_needs_adopted' (Main Effect: -931.0241 on YPLL rate):
+2025-06-09 01:13:52,836 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 1,648,020
+2025-06-09 01:13:52,836 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 56,828
+2025-06-09 01:13:52,836 - INFO - [Overall_Model_Testing_060525_v1.py:772] - --- Starting AIPW Main Effect Analysis for Treatment: mo14_ai_predict_staffing_needs_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:53,066 - INFO - [Overall_Model_Testing_060525_v1.py:815] - AIPW Main Effect ATE for mo14_ai_predict_staffing_needs_adopted: -178.2502
+2025-06-09 01:13:53,066 - INFO - [Overall_Model_Testing_060525_v1.py:816] - AIPW Main Effect ATET for mo14_ai_predict_staffing_needs_adopted: -137.8040
+2025-06-09 01:13:57,800 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo14_ai_predict_staffing_needs_adopted' (Main Effect: -178.2502 on YPLL rate):
+2025-06-09 01:13:57,800 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 315,523
+2025-06-09 01:13:57,800 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 10,880
+2025-06-09 01:13:57,800 - INFO - [Overall_Model_Testing_060525_v1.py:1501] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: AI: Staff Schedule (mo15_ai_staff_scheduling) ==========
+2025-06-09 01:13:57,801 - INFO - [Overall_Model_Testing_060525_v1.py:1543] -   Main Effect Final N for AI: Staff Schedule: 3080 (Treated: 299, Control: 2781) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 01:13:57,801 - INFO - [Overall_Model_Testing_060525_v1.py:566] - --- Starting OLS Main Effect Analysis for Treatment: mo15_ai_staff_scheduling_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:57,816 - INFO - [Overall_Model_Testing_060525_v1.py:611] - OLS Main Effect Beta for mo15_ai_staff_scheduling_adopted: -150.3223, P-value: 0.3682, CI: [-477.8481, 177.2036], VIF: 2.30
+2025-06-09 01:13:57,817 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo15_ai_staff_scheduling_adopted' (Main Effect: -150.3223 on YPLL rate):
+2025-06-09 01:13:57,817 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 285,794
+2025-06-09 01:13:57,817 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 9,855
+2025-06-09 01:13:57,817 - INFO - [Overall_Model_Testing_060525_v1.py:642] - --- Starting IPTW Main Effect Analysis for Treatment: mo15_ai_staff_scheduling_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:13:57,828 - INFO - [Overall_Model_Testing_060525_v1.py:666] - IPTW Main Effect ATE for mo15_ai_staff_scheduling_adopted: -842.0931
+2025-06-09 01:13:57,828 - INFO - [Overall_Model_Testing_060525_v1.py:667] - IPTW Main Effect ATET for mo15_ai_staff_scheduling_adopted: 944.3102
+2025-06-09 01:14:01,190 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo15_ai_staff_scheduling_adopted' (Main Effect: -842.0931 on YPLL rate):
+2025-06-09 01:14:01,190 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 1,600,996
+2025-06-09 01:14:01,190 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 55,207
+2025-06-09 01:14:01,190 - INFO - [Overall_Model_Testing_060525_v1.py:772] - --- Starting AIPW Main Effect Analysis for Treatment: mo15_ai_staff_scheduling_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:14:01,418 - INFO - [Overall_Model_Testing_060525_v1.py:815] - AIPW Main Effect ATE for mo15_ai_staff_scheduling_adopted: -306.4624
+2025-06-09 01:14:01,418 - INFO - [Overall_Model_Testing_060525_v1.py:816] - AIPW Main Effect ATET for mo15_ai_staff_scheduling_adopted: -98.8390
+2025-06-09 01:14:05,886 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo15_ai_staff_scheduling_adopted' (Main Effect: -306.4624 on YPLL rate):
+2025-06-09 01:14:05,886 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 582,649
+2025-06-09 01:14:05,886 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 20,091
+2025-06-09 01:14:05,886 - INFO - [Overall_Model_Testing_060525_v1.py:1501] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: Robotics: In Hospital (mo21_robotics_in_hospital) ==========
+2025-06-09 01:14:05,887 - INFO - [Overall_Model_Testing_060525_v1.py:1543] -   Main Effect Final N for Robotics: In Hospital: 3080 (Treated: 775, Control: 2305) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 01:14:05,887 - INFO - [Overall_Model_Testing_060525_v1.py:566] - --- Starting OLS Main Effect Analysis for Treatment: mo21_robotics_in_hospital_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:14:05,893 - INFO - [Overall_Model_Testing_060525_v1.py:611] - OLS Main Effect Beta for mo21_robotics_in_hospital_adopted: -566.4949, P-value: 0.0000, CI: [-770.6825, -362.3074], VIF: 2.09
+2025-06-09 01:14:05,893 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo21_robotics_in_hospital_adopted' (Main Effect: -566.4949 on YPLL rate):
+2025-06-09 01:14:05,893 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 414,342
+2025-06-09 01:14:05,893 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 14,288
+2025-06-09 01:14:05,893 - INFO - [Overall_Model_Testing_060525_v1.py:642] - --- Starting IPTW Main Effect Analysis for Treatment: mo21_robotics_in_hospital_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:14:05,898 - INFO - [Overall_Model_Testing_060525_v1.py:666] - IPTW Main Effect ATE for mo21_robotics_in_hospital_adopted: -1056.2984
+2025-06-09 01:14:05,898 - INFO - [Overall_Model_Testing_060525_v1.py:667] - IPTW Main Effect ATET for mo21_robotics_in_hospital_adopted: -495.2747
+2025-06-09 01:14:09,746 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo21_robotics_in_hospital_adopted' (Main Effect: -1056.2984 on YPLL rate):
+2025-06-09 01:14:09,746 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 772,591
+2025-06-09 01:14:09,746 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 26,641
+2025-06-09 01:14:09,746 - INFO - [Overall_Model_Testing_060525_v1.py:772] - --- Starting AIPW Main Effect Analysis for Treatment: mo21_robotics_in_hospital_adopted on dv21_premature_death_ypll_rate ---
+2025-06-09 01:14:09,978 - INFO - [Overall_Model_Testing_060525_v1.py:815] - AIPW Main Effect ATE for mo21_robotics_in_hospital_adopted: -471.2516
+2025-06-09 01:14:09,978 - INFO - [Overall_Model_Testing_060525_v1.py:816] - AIPW Main Effect ATET for mo21_robotics_in_hospital_adopted: -778.0293
+2025-06-09 01:14:14,848 - INFO - [Overall_Model_Testing_060525_v1.py:945] -   Scenario for non-adopters of 'mo21_robotics_in_hospital_adopted' (Main Effect: -471.2516 on YPLL rate):
+2025-06-09 01:14:14,848 - INFO - [Overall_Model_Testing_060525_v1.py:946] -     Total YPLL potentially averted (main effect): 344,680
+2025-06-09 01:14:14,848 - INFO - [Overall_Model_Testing_060525_v1.py:947] -     Total premature deaths potentially averted (main effect): 11,886
+2025-06-09 01:14:14,849 - INFO - [Overall_Model_Testing_060525_v1.py:1625] - 
+--- Main Effects Analysis Summary ---
+2025-06-09 01:14:14,853 - INFO - [Overall_Model_Testing_060525_v1.py:1626] -              Component              Raw_Treatment_Col  N_Total  N_Treated  N_Control  OLS Coefficient (Beta)  OLS p-value  OLS CI_Lower  OLS CI_Upper  OLS_VIF_Treatment  OLS YPLL Averted  OLS Deaths Averted  OLS_Error   IPTW ATE  IPTW CI_Lower  IPTW CI_Upper IPTW Significant (95% CI)  IPTW E_Value  IPTW YPLL Averted  IPTW Deaths Averted  IPTW ATET  IPTW ATET_CI_Lower  IPTW ATET_CI_Upper  IPTW_Error  AIPW ATE  AIPW CI_Lower  AIPW CI_Upper  AIPW ATE P-Value (raw)  AIPW ATE Q-Value (BH)  AIPW ATE Significant (BH FDR) AIPW Significant (95% CI)  AIPW E_Value  AIPW YPLL Averted  AIPW Deaths Averted  AIPW ATET  AIPW ATET_CI_Lower  AIPW ATET_CI_Upper  AIPW_Error  Overall_Error_Flag  Error_Message
+    AI: Automate Tasks mo11_ai_automate_routine_tasks     3080        417       2663               -486.0591       0.0023     -799.0785     -173.0396             2.9012       752815.7736          25959.1646      False -1589.6962     -2338.5473      -815.5240                       Yes        2.3663       2462145.9832           84901.5856   -69.5110          -1206.2439            730.7608       False -946.2964     -1756.2482      -169.1031                  0.0160                 0.0479                           True                       Yes        1.8627       1465638.4574           50539.2572  -390.7923           -708.1370            -91.6471       False               False            NaN
+AI: Optimize Workflows     mo12_ai_optimize_workflows     3080        453       2627               -336.5722       0.0308     -641.9524      -31.1920             2.9724       490671.7276          16919.7147      False  -112.9902      -813.8269       683.9985                        No           NaN        164722.7591            5680.0951    81.7464           -754.2528            661.5109       False -294.6460      -766.2656       270.5250                  0.3034                 0.4551                          False                        No           NaN        429549.6415           14812.0566  -197.7285           -704.3306            335.7822       False               False            NaN
+    AI: Predict Demand mo13_ai_predict_patient_demand     3080        337       2743               -306.1962       0.0636     -629.7833       17.3909             2.5016       525306.7802          18114.0269      False -1375.4976     -1860.4953      -801.7498                       Yes        2.2008       2359788.1431           81372.0049  -180.4134          -1249.5670            736.7965       False -438.8096      -895.6577        67.0995                  0.0918                 0.1836                          False                        No           NaN        752816.8190           25959.2007  -314.8763           -651.6189             26.2312       False               False            NaN
+  AI: Predict Staffing mo14_ai_predict_staffing_needs     3080        318       2762               -234.3453       0.1889     -584.0181      115.3276             2.7116       414818.1458          14304.0740      False  -931.0241     -1541.0347      -325.0968                       Yes        1.8556       1648020.0910           56828.2790  -533.4674          -1141.6680            642.0668       False -178.2502      -663.3377       357.1547                  0.5828                 0.6467                          False                        No           NaN        315523.4013           10880.1173  -137.8040           -568.9034            341.2565       False               False            NaN
+    AI: Staff Schedule       mo15_ai_staff_scheduling     3080        299       2781               -150.3223       0.3682     -477.8481      177.2036             2.3045       285794.1746           9854.9715      False  -842.0931     -1717.2286      -112.4540                       Yes        1.7901       1600995.8423           55206.7532   944.3102            -95.4089           1725.3239       False -306.4624     -1112.7301       454.1130                  0.6467                 0.6467                          False                        No           NaN        582649.4402           20091.3600   -98.8390           -403.2622            174.7280       False               False            NaN
+ Robotics: In Hospital      mo21_robotics_in_hospital     3080        775       2305               -566.4949       0.0000     -770.6825     -362.3074             2.0928       414341.9244          14287.6526      False -1056.2984     -1369.5510      -738.7412                       Yes        1.9377        772590.6906           26641.0583  -495.2747           -777.9120           -242.8115       False -471.2516      -746.3714      -184.4257                  0.0040                 0.0240                           True                       Yes        1.5038        344679.7095           11885.5072  -778.0293           -987.0680           -597.0252       False               False            NaN
+2025-06-09 01:14:14,857 - INFO - [Overall_Model_Testing_060525_v1.py:1629] - Main effects summary table saved to health_ai_robotics_output/main_effects_analysis_summary.csv
+2025-06-09 01:14:15,142 - INFO - [Overall_Model_Testing_060525_v1.py:1021] - Main effect ATE comparison plot saved to health_ai_robotics_output/plots/Main_Effect_ATE_Comparison_Plot.png
+2025-06-09 01:14:15,142 - INFO - [Overall_Model_Testing_060525_v1.py:1638] - ============================== PART 3: OLS MODERATION ANALYSIS ==============================
+2025-06-09 01:14:15,142 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo11_on_DV2 ==========
+2025-06-09 01:14:15,143 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo11_on_DV2 ---
+2025-06-09 01:14:15,143 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv2_health_outcomes_score, X (IV): iv3_health_behaviors_score, M (Moderator): mo11_ai_automate_routine_tasks_adopted
+2025-06-09 01:14:15,144 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo11_on_DV2): Removed 2 rows with NaNs.
+2025-06-09 01:14:15,148 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo11 in iv3_health_behaviors_score_x_mo11_on_DV2:
+2025-06-09 01:14:15,148 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -12.7199, P-value: 0.0000, CI: [-18.0882, -7.3516], VIF: 5.72
+2025-06-09 01:14:15,148 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo11_on_DV2 (p=0.000).
+2025-06-09 01:14:15,560 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo11_on_DV2.png
+2025-06-09 01:14:15,560 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo11_on_DV21 ==========
+2025-06-09 01:14:15,561 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo11_on_DV21 ---
+2025-06-09 01:14:15,561 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv21_premature_death_ypll_rate, X (IV): iv3_health_behaviors_score, M (Moderator): mo11_ai_automate_routine_tasks_adopted
+2025-06-09 01:14:15,562 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo11_on_DV21): Removed 55 rows with NaNs.
+2025-06-09 01:14:15,567 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo11 in iv3_health_behaviors_score_x_mo11_on_DV21:
+2025-06-09 01:14:15,567 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -26.7725, P-value: 0.0000, CI: [-37.5593, -15.9858], VIF: 5.72
+2025-06-09 01:14:15,581 - INFO - [Overall_Model_Testing_060525_v1.py:1150] -   Scenario for counties adopting moderator for 'iv3_health_behaviors_score_x_mo11_on_DV21' (Interaction Beta: -26.7725):
+2025-06-09 01:14:15,581 - INFO - [Overall_Model_Testing_060525_v1.py:1151] -     Total YPLL potentially AVERTED due to moderation: 1,562,477
+2025-06-09 01:14:15,581 - INFO - [Overall_Model_Testing_060525_v1.py:1152] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-09 01:14:15,581 - INFO - [Overall_Model_Testing_060525_v1.py:1153] -     Net YPLL impact (Averted - Increased): 1,562,477
+2025-06-09 01:14:15,581 - INFO - [Overall_Model_Testing_060525_v1.py:1154] -     Corresponding premature deaths AVERTED: 53,879
+2025-06-09 01:14:15,581 - INFO - [Overall_Model_Testing_060525_v1.py:1155] -     Corresponding premature deaths INCREASED: 0
+2025-06-09 01:14:15,582 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo11_on_DV21 (p=0.000).
+2025-06-09 01:14:15,990 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo11_on_DV21.png
+2025-06-09 01:14:15,991 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo12_on_DV2 ==========
+2025-06-09 01:14:15,991 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo12_on_DV2 ---
+2025-06-09 01:14:15,991 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv2_health_outcomes_score, X (IV): iv3_health_behaviors_score, M (Moderator): mo12_ai_optimize_workflows_adopted
+2025-06-09 01:14:15,992 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo12_on_DV2): Removed 2 rows with NaNs.
+2025-06-09 01:14:15,999 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo12 in iv3_health_behaviors_score_x_mo12_on_DV2:
+2025-06-09 01:14:15,999 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -14.7539, P-value: 0.0000, CI: [-19.9952, -9.5127], VIF: 6.26
+2025-06-09 01:14:15,999 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo12_on_DV2 (p=0.000).
+2025-06-09 01:14:16,409 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo12_on_DV2.png
+2025-06-09 01:14:16,409 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo12_on_DV21 ==========
+2025-06-09 01:14:16,410 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo12_on_DV21 ---
+2025-06-09 01:14:16,410 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv21_premature_death_ypll_rate, X (IV): iv3_health_behaviors_score, M (Moderator): mo12_ai_optimize_workflows_adopted
+2025-06-09 01:14:16,411 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo12_on_DV21): Removed 55 rows with NaNs.
+2025-06-09 01:14:16,417 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo12 in iv3_health_behaviors_score_x_mo12_on_DV21:
+2025-06-09 01:14:16,417 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -30.8314, P-value: 0.0000, CI: [-41.3592, -20.3036], VIF: 6.27
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1150] -   Scenario for counties adopting moderator for 'iv3_health_behaviors_score_x_mo12_on_DV21' (Interaction Beta: -30.8314):
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1151] -     Total YPLL potentially AVERTED due to moderation: 1,672,009
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1152] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1153] -     Net YPLL impact (Averted - Increased): 1,672,009
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1154] -     Corresponding premature deaths AVERTED: 57,655
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1155] -     Corresponding premature deaths INCREASED: 0
+2025-06-09 01:14:16,431 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo12_on_DV21 (p=0.000).
+2025-06-09 01:14:16,842 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo12_on_DV21.png
+2025-06-09 01:14:16,842 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo13_on_DV2 ==========
+2025-06-09 01:14:16,843 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo13_on_DV2 ---
+2025-06-09 01:14:16,843 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv2_health_outcomes_score, X (IV): iv3_health_behaviors_score, M (Moderator): mo13_ai_predict_patient_demand_adopted
+2025-06-09 01:14:16,843 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo13_on_DV2): Removed 2 rows with NaNs.
+2025-06-09 01:14:16,867 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo13 in iv3_health_behaviors_score_x_mo13_on_DV2:
+2025-06-09 01:14:16,867 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -13.5166, P-value: 0.0000, CI: [-19.2104, -7.8228], VIF: 5.82
+2025-06-09 01:14:16,867 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo13_on_DV2 (p=0.000).
+2025-06-09 01:14:17,273 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo13_on_DV2.png
+2025-06-09 01:14:17,274 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo13_on_DV21 ==========
+2025-06-09 01:14:17,275 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo13_on_DV21 ---
+2025-06-09 01:14:17,275 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv21_premature_death_ypll_rate, X (IV): iv3_health_behaviors_score, M (Moderator): mo13_ai_predict_patient_demand_adopted
+2025-06-09 01:14:17,275 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo13_on_DV21): Removed 55 rows with NaNs.
+2025-06-09 01:14:17,286 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo13 in iv3_health_behaviors_score_x_mo13_on_DV21:
+2025-06-09 01:14:17,286 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -28.2398, P-value: 0.0000, CI: [-39.6695, -16.8102], VIF: 5.82
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1150] -   Scenario for counties adopting moderator for 'iv3_health_behaviors_score_x_mo13_on_DV21' (Interaction Beta: -28.2398):
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1151] -     Total YPLL potentially AVERTED due to moderation: 1,844,979
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1152] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1153] -     Net YPLL impact (Averted - Increased): 1,844,979
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1154] -     Corresponding premature deaths AVERTED: 63,620
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1155] -     Corresponding premature deaths INCREASED: 0
+2025-06-09 01:14:17,301 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo13_on_DV21 (p=0.000).
+2025-06-09 01:14:17,714 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo13_on_DV21.png
+2025-06-09 01:14:17,714 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo14_on_DV2 ==========
+2025-06-09 01:14:17,715 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo14_on_DV2 ---
+2025-06-09 01:14:17,716 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv2_health_outcomes_score, X (IV): iv3_health_behaviors_score, M (Moderator): mo14_ai_predict_staffing_needs_adopted
+2025-06-09 01:14:17,717 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo14_on_DV2): Removed 2 rows with NaNs.
+2025-06-09 01:14:17,749 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo14 in iv3_health_behaviors_score_x_mo14_on_DV2:
+2025-06-09 01:14:17,749 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -11.9219, P-value: 0.0001, CI: [-17.9580, -5.8858], VIF: 5.97
+2025-06-09 01:14:17,749 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo14_on_DV2 (p=0.000).
+2025-06-09 01:14:18,167 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo14_on_DV2.png
+2025-06-09 01:14:18,167 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo14_on_DV21 ==========
+2025-06-09 01:14:18,168 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo14_on_DV21 ---
+2025-06-09 01:14:18,168 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv21_premature_death_ypll_rate, X (IV): iv3_health_behaviors_score, M (Moderator): mo14_ai_predict_staffing_needs_adopted
+2025-06-09 01:14:18,168 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo14_on_DV21): Removed 55 rows with NaNs.
+2025-06-09 01:14:18,181 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo14 in iv3_health_behaviors_score_x_mo14_on_DV21:
+2025-06-09 01:14:18,181 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -25.0522, P-value: 0.0001, CI: [-37.1702, -12.9341], VIF: 5.98
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1150] -   Scenario for counties adopting moderator for 'iv3_health_behaviors_score_x_mo14_on_DV21' (Interaction Beta: -25.0522):
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1151] -     Total YPLL potentially AVERTED due to moderation: 1,703,997
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1152] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1153] -     Net YPLL impact (Averted - Increased): 1,703,997
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1154] -     Corresponding premature deaths AVERTED: 58,759
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1155] -     Corresponding premature deaths INCREASED: 0
+2025-06-09 01:14:18,195 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo14_on_DV21 (p=0.000).
+2025-06-09 01:14:18,617 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo14_on_DV21.png
+2025-06-09 01:14:18,617 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo15_on_DV2 ==========
+2025-06-09 01:14:18,617 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo15_on_DV2 ---
+2025-06-09 01:14:18,617 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv2_health_outcomes_score, X (IV): iv3_health_behaviors_score, M (Moderator): mo15_ai_staff_scheduling_adopted
+2025-06-09 01:14:18,618 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo15_on_DV2): Removed 2 rows with NaNs.
+2025-06-09 01:14:18,640 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo15 in iv3_health_behaviors_score_x_mo15_on_DV2:
+2025-06-09 01:14:18,640 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -10.5618, P-value: 0.0008, CI: [-16.7434, -4.3802], VIF: 5.83
+2025-06-09 01:14:18,640 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo15_on_DV2 (p=0.001).
+2025-06-09 01:14:19,067 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo15_on_DV2.png
+2025-06-09 01:14:19,068 - INFO - [Overall_Model_Testing_060525_v1.py:1674] - ========== PROCESSING MODERATION: iv3_health_behaviors_score_x_mo15_on_DV21 ==========
+2025-06-09 01:14:19,068 - INFO - [Overall_Model_Testing_060525_v1.py:1034] - --- Starting OLS Moderation Analysis for: iv3_health_behaviors_score_x_mo15_on_DV21 ---
+2025-06-09 01:14:19,069 - INFO - [Overall_Model_Testing_060525_v1.py:1035] -     Y (Outcome): dv21_premature_death_ypll_rate, X (IV): iv3_health_behaviors_score, M (Moderator): mo15_ai_staff_scheduling_adopted
+2025-06-09 01:14:19,069 - INFO - [Overall_Model_Testing_060525_v1.py:1055] - OLS Moderation (iv3_health_behaviors_score_x_mo15_on_DV21): Removed 55 rows with NaNs.
+2025-06-09 01:14:19,073 - INFO - [Overall_Model_Testing_060525_v1.py:1091] - OLS Moderation Results for behaviors_x_mo15 in iv3_health_behaviors_score_x_mo15_on_DV21:
+2025-06-09 01:14:19,073 - INFO - [Overall_Model_Testing_060525_v1.py:1092] -   Interaction Beta: -22.3602, P-value: 0.0004, CI: [-34.7717, -9.9486], VIF: 5.84
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1150] -   Scenario for counties adopting moderator for 'iv3_health_behaviors_score_x_mo15_on_DV21' (Interaction Beta: -22.3602):
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1151] -     Total YPLL potentially AVERTED due to moderation: 1,652,158
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1152] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1153] -     Net YPLL impact (Averted - Increased): 1,652,158
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1154] -     Corresponding premature deaths AVERTED: 56,971
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1155] -     Corresponding premature deaths INCREASED: 0
+2025-06-09 01:14:19,088 - INFO - [Overall_Model_Testing_060525_v1.py:1178] - Generating interaction plot for iv3_health_behaviors_score_x_mo15_on_DV21 (p=0.000).
+2025-06-09 01:14:19,495 - INFO - [Overall_Model_Testing_060525_v1.py:1230] - Interaction plot saved to health_ai_robotics_output/plots/interaction_plot_iv3_health_behaviors_score_x_mo15_on_DV21.png
+2025-06-09 01:14:19,496 - INFO - [Overall_Model_Testing_060525_v1.py:1756] - 
+--- Moderation Analysis Summary ---
+2025-06-09 01:14:19,497 - INFO - [Overall_Model_Testing_060525_v1.py:1757] -                          Interaction_Name                         IV              Moderator_Pct_Col                             DV  N_Obs_Model  Interaction_Beta  Interaction_P_Value  Interaction_CI_Lower  Interaction_CI_Upper  Interaction_VIF  Net_YPLL_Impact_Moderation  Net_Deaths_Impact_Moderation  OLS_Interaction_Error  Error_Message
+ iv3_health_behaviors_score_x_mo11_on_DV2 iv3_health_behaviors_score mo11_ai_automate_routine_tasks      dv2_health_outcomes_score         3133          -12.7199               0.0000              -18.0882               -7.3516           5.7168                         NaN                           NaN                  False            NaN
+iv3_health_behaviors_score_x_mo11_on_DV21 iv3_health_behaviors_score mo11_ai_automate_routine_tasks dv21_premature_death_ypll_rate         3080          -26.7725               0.0000              -37.5593              -15.9858           5.7237                1562476.5904                    53878.5031                  False            NaN
+ iv3_health_behaviors_score_x_mo12_on_DV2 iv3_health_behaviors_score     mo12_ai_optimize_workflows      dv2_health_outcomes_score         3133          -14.7539               0.0000              -19.9952               -9.5127           6.2593                         NaN                           NaN                  False            NaN
+iv3_health_behaviors_score_x_mo12_on_DV21 iv3_health_behaviors_score     mo12_ai_optimize_workflows dv21_premature_death_ypll_rate         3080          -30.8314               0.0000              -41.3592              -20.3036           6.2677                1672009.0465                    57655.4844                  False            NaN
+ iv3_health_behaviors_score_x_mo13_on_DV2 iv3_health_behaviors_score mo13_ai_predict_patient_demand      dv2_health_outcomes_score         3133          -13.5166               0.0000              -19.2104               -7.8228           5.8189                         NaN                           NaN                  False            NaN
+iv3_health_behaviors_score_x_mo13_on_DV21 iv3_health_behaviors_score mo13_ai_predict_patient_demand dv21_premature_death_ypll_rate         3080          -28.2398               0.0000              -39.6695              -16.8102           5.8248                1844978.6316                    63619.9528                  False            NaN
+ iv3_health_behaviors_score_x_mo14_on_DV2 iv3_health_behaviors_score mo14_ai_predict_staffing_needs      dv2_health_outcomes_score         3133          -11.9219               0.0001              -17.9580               -5.8858           5.9744                         NaN                           NaN                  False            NaN
+iv3_health_behaviors_score_x_mo14_on_DV21 iv3_health_behaviors_score mo14_ai_predict_staffing_needs dv21_premature_death_ypll_rate         3080          -25.0522               0.0001              -37.1702              -12.9341           5.9801                1703996.9513                    58758.5156                  False            NaN
+ iv3_health_behaviors_score_x_mo15_on_DV2 iv3_health_behaviors_score       mo15_ai_staff_scheduling      dv2_health_outcomes_score         3133          -10.5618               0.0008              -16.7434               -4.3802           5.8350                         NaN                           NaN                  False            NaN
+iv3_health_behaviors_score_x_mo15_on_DV21 iv3_health_behaviors_score       mo15_ai_staff_scheduling dv21_premature_death_ypll_rate         3080          -22.3602               0.0004              -34.7717               -9.9486           5.8403                1652157.7230                    56970.9560                  False            NaN
+2025-06-09 01:14:19,497 - INFO - [Overall_Model_Testing_060525_v1.py:1760] - Moderation analysis summary table saved to health_ai_robotics_output/moderation_analysis_summary.csv
+2025-06-09 01:14:19,497 - INFO - [Overall_Model_Testing_060525_v1.py:1764] - Script finished. Check logs and output directory for details.

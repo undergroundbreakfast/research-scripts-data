@@ -1,0 +1,229 @@
+2025-06-15 00:36:24,073 - INFO - [6_County_Categories_060925_v6.py:62] - Logging to: logs/county_category_summary_analysis_log_20250615_003624.txt
+2025-06-15 00:36:24,073 - INFO - [6_County_Categories_060925_v6.py:568] - Starting County Category Summary Analysis Script.
+2025-06-15 00:36:24,206 - INFO - [6_County_Categories_060925_v6.py:82] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-15 00:36:50,210 - INFO - [6_County_Categories_060925_v6.py:147] - Data for summary analysis retrieved: 3143 rows, 14 columns.
+2025-06-15 00:36:50,210 - INFO - [6_County_Categories_060925_v6.py:154] - Column names standardized to lower case.
+2025-06-15 00:36:50,211 - INFO - [6_County_Categories_060925_v6.py:158] - Initial NaN counts per column:
+rural_raw_value                                      6
+total_beds_in_county                               687
+ratio_of_population_to_primary_care_physicians     157
+life_expectancy_raw_value                           73
+dv21_premature_death_ypll_rate                      55
+child_mortality_raw_value                         1106
+infant_mortality_raw_value                        1937
+dv15_preventable_stays_rate                         70
+avg_patient_services_margin                       1027
+population                                           8
+dtype: int64
+2025-06-15 00:36:50,211 - INFO - [6_County_Categories_060925_v6.py:170] - Performing data preparations for summary analysis...
+2025-06-15 00:36:50,215 - INFO - [6_County_Categories_060925_v6.py:197] - County categories mapped. Value counts:
+county_category_label
+1. No hospital                           685
+2. Hospital, no AI/Robotics             1406
+3. Hospital, surgical robotics           475
+4. Hospital, AI                          105
+5. Hospital, AI & robotics               159
+6. Multiple hospitals, AI & robotics     313
+Name: count, dtype: int64
+2025-06-15 00:36:50,217 - INFO - [6_County_Categories_060925_v6.py:231] - Data preparation complete.
+2025-06-15 00:36:50,217 - INFO - [6_County_Categories_060925_v6.py:239] - ============================== CATEGORICAL SUMMARY ANALYSIS ==============================
+2025-06-15 00:36:50,220 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: rural_raw_value ---
+2025-06-15 00:36:50,231 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for rural_raw_value:
+                                      count  ...        q3
+county_category_label                        ...          
+1. No hospital                          685  ...  1.000000
+2. Hospital, no AI/Robotics            1406  ...  1.000000
+3. Hospital, surgical robotics          475  ...  0.627381
+4. Hospital, AI                         105  ...  0.905480
+5. Hospital, AI & robotics              158  ...  0.608781
+6. Multiple hospitals, AI & robotics    308  ...  0.243018
+
+[6 rows x 6 columns]
+2025-06-15 00:36:50,233 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for rural_raw_value. Using Kruskal-Wallis.
+2025-06-15 00:36:50,234 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for rural_raw_value: H-statistic=1230.239, p-value=0.0000
+2025-06-15 00:36:50,661 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for rural_raw_value saved to county_category_summary_output/plots/boxplot_rural_raw_value.png
+2025-06-15 00:36:51,021 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for rural_raw_value saved to county_category_summary_output/plots/boxplot_log_rural_raw_value.png
+2025-06-15 00:36:51,022 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: total_beds_in_county ---
+2025-06-15 00:36:51,026 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for total_beds_in_county:
+                                      count  ...      q3
+county_category_label                        ...        
+1. No hospital                          685  ...     0.0
+2. Hospital, no AI/Robotics            1406  ...    94.0
+3. Hospital, surgical robotics          475  ...   402.5
+4. Hospital, AI                         105  ...    91.0
+5. Hospital, AI & robotics              159  ...   270.5
+6. Multiple hospitals, AI & robotics    313  ...  2271.0
+
+[6 rows x 6 columns]
+2025-06-15 00:36:51,027 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for total_beds_in_county. Using Kruskal-Wallis.
+2025-06-15 00:36:51,028 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for total_beds_in_county: H-statistic=2158.490, p-value=0.0000
+2025-06-15 00:36:51,316 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for total_beds_in_county saved to county_category_summary_output/plots/boxplot_total_beds_in_county.png
+2025-06-15 00:36:51,649 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for total_beds_in_county saved to county_category_summary_output/plots/boxplot_log_total_beds_in_county.png
+2025-06-15 00:36:51,649 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: ratio_of_population_to_primary_care_physicians ---
+2025-06-15 00:36:51,653 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for ratio_of_population_to_primary_care_physicians:
+                                      count  ...           q3
+county_category_label                        ...             
+1. No hospital                          568  ...  5966.250000
+2. Hospital, no AI/Robotics            1369  ...  3284.833252
+3. Hospital, surgical robotics          474  ...  2368.837891
+4. Hospital, AI                         103  ...  2692.304443
+5. Hospital, AI & robotics              159  ...  2363.500000
+6. Multiple hospitals, AI & robotics    313  ...  1678.239990
+
+[6 rows x 6 columns]
+2025-06-15 00:36:51,654 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for ratio_of_population_to_primary_care_physicians. Using Kruskal-Wallis.
+2025-06-15 00:36:51,654 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for ratio_of_population_to_primary_care_physicians: H-statistic=464.886, p-value=0.0000
+2025-06-15 00:36:51,964 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for ratio_of_population_to_primary_care_physicians saved to county_category_summary_output/plots/boxplot_ratio_of_population_to_primary_care_physicians.png
+2025-06-15 00:36:52,305 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for ratio_of_population_to_primary_care_physicians saved to county_category_summary_output/plots/boxplot_log_ratio_of_population_to_primary_care_physicians.png
+2025-06-15 00:36:52,306 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: life_expectancy_raw_value ---
+2025-06-15 00:36:52,309 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for life_expectancy_raw_value:
+                                      count  ...         q3
+county_category_label                        ...           
+1. No hospital                          623  ...  77.578274
+2. Hospital, no AI/Robotics            1396  ...  77.608082
+3. Hospital, surgical robotics          475  ...  78.275974
+4. Hospital, AI                         104  ...  77.694826
+5. Hospital, AI & robotics              159  ...  78.508289
+6. Multiple hospitals, AI & robotics    313  ...  79.603104
+
+[6 rows x 6 columns]
+2025-06-15 00:36:52,310 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for life_expectancy_raw_value. Using Kruskal-Wallis.
+2025-06-15 00:36:52,311 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for life_expectancy_raw_value: H-statistic=185.995, p-value=0.0000
+2025-06-15 00:36:52,643 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for life_expectancy_raw_value saved to county_category_summary_output/plots/boxplot_life_expectancy_raw_value.png
+2025-06-15 00:36:52,980 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for life_expectancy_raw_value saved to county_category_summary_output/plots/boxplot_log_life_expectancy_raw_value.png
+2025-06-15 00:36:52,980 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: dv21_premature_death_ypll_rate ---
+2025-06-15 00:36:52,984 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for dv21_premature_death_ypll_rate:
+                                      count  ...            q3
+county_category_label                        ...              
+1. No hospital                          637  ...  12372.677734
+2. Hospital, no AI/Robotics            1399  ...  12267.788086
+3. Hospital, surgical robotics          475  ...  10826.117188
+4. Hospital, AI                         105  ...  10231.536133
+5. Hospital, AI & robotics              159  ...  10613.053223
+6. Multiple hospitals, AI & robotics    313  ...   9425.012695
+
+[6 rows x 6 columns]
+2025-06-15 00:36:52,985 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for dv21_premature_death_ypll_rate. Using Kruskal-Wallis.
+2025-06-15 00:36:52,985 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for dv21_premature_death_ypll_rate: H-statistic=208.970, p-value=0.0000
+2025-06-15 00:36:53,290 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for dv21_premature_death_ypll_rate saved to county_category_summary_output/plots/boxplot_dv21_premature_death_ypll_rate.png
+2025-06-15 00:36:53,621 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for dv21_premature_death_ypll_rate saved to county_category_summary_output/plots/boxplot_log_dv21_premature_death_ypll_rate.png
+2025-06-15 00:36:53,621 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: child_mortality_raw_value ---
+2025-06-15 00:36:53,625 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for child_mortality_raw_value:
+                                      count  ...         q3
+county_category_label                        ...           
+1. No hospital                          230  ...  90.751328
+2. Hospital, no AI/Robotics             847  ...  82.985424
+3. Hospital, surgical robotics          431  ...  66.937447
+4. Hospital, AI                          74  ...  67.691584
+5. Hospital, AI & robotics              144  ...  61.952763
+6. Multiple hospitals, AI & robotics    311  ...  62.625847
+
+[6 rows x 6 columns]
+2025-06-15 00:36:53,627 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for child_mortality_raw_value. Using Kruskal-Wallis.
+2025-06-15 00:36:53,627 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for child_mortality_raw_value: H-statistic=251.631, p-value=0.0000
+2025-06-15 00:36:53,922 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for child_mortality_raw_value saved to county_category_summary_output/plots/boxplot_child_mortality_raw_value.png
+2025-06-15 00:36:54,251 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for child_mortality_raw_value saved to county_category_summary_output/plots/boxplot_log_child_mortality_raw_value.png
+2025-06-15 00:36:54,251 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: infant_mortality_raw_value ---
+2025-06-15 00:36:54,255 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for infant_mortality_raw_value:
+                                      count  ...        q3
+county_category_label                        ...          
+1. No hospital                           55  ...  8.409791
+2. Hospital, no AI/Robotics             390  ...  8.776721
+3. Hospital, surgical robotics          322  ...  7.650214
+4. Hospital, AI                          32  ...  7.895736
+5. Hospital, AI & robotics              103  ...  7.139691
+6. Multiple hospitals, AI & robotics    304  ...  6.696344
+
+[6 rows x 6 columns]
+2025-06-15 00:36:54,256 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for infant_mortality_raw_value. Using Kruskal-Wallis.
+2025-06-15 00:36:54,257 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for infant_mortality_raw_value: H-statistic=126.004, p-value=0.0000
+2025-06-15 00:36:54,549 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for infant_mortality_raw_value saved to county_category_summary_output/plots/boxplot_infant_mortality_raw_value.png
+2025-06-15 00:36:54,868 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for infant_mortality_raw_value saved to county_category_summary_output/plots/boxplot_log_infant_mortality_raw_value.png
+2025-06-15 00:36:54,868 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: dv15_preventable_stays_rate ---
+2025-06-15 00:36:54,872 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for dv15_preventable_stays_rate:
+                                      count  ...       q3
+county_category_label                        ...         
+1. No hospital                          627  ...  3539.50
+2. Hospital, no AI/Robotics            1396  ...  3577.75
+3. Hospital, surgical robotics          473  ...  3217.00
+4. Hospital, AI                         105  ...  2977.00
+5. Hospital, AI & robotics              159  ...  3203.50
+6. Multiple hospitals, AI & robotics    313  ...  3208.00
+
+[6 rows x 6 columns]
+2025-06-15 00:36:54,873 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for dv15_preventable_stays_rate. Using Kruskal-Wallis.
+2025-06-15 00:36:54,874 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for dv15_preventable_stays_rate: H-statistic=30.179, p-value=0.0000
+2025-06-15 00:36:55,228 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for dv15_preventable_stays_rate saved to county_category_summary_output/plots/boxplot_dv15_preventable_stays_rate.png
+2025-06-15 00:36:55,568 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for dv15_preventable_stays_rate saved to county_category_summary_output/plots/boxplot_log_dv15_preventable_stays_rate.png
+2025-06-15 00:36:55,568 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: mo1_ai_adoption_score ---
+2025-06-15 00:36:55,572 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for mo1_ai_adoption_score:
+                                      count  ...   q3
+county_category_label                        ...     
+1. No hospital                          685  ...  0.0
+2. Hospital, no AI/Robotics            1406  ...  0.0
+3. Hospital, surgical robotics          475  ...  0.0
+4. Hospital, AI                         105  ...  3.0
+5. Hospital, AI & robotics              159  ...  4.0
+6. Multiple hospitals, AI & robotics    313  ...  1.5
+
+[6 rows x 6 columns]
+2025-06-15 00:36:55,574 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for mo1_ai_adoption_score. Using Kruskal-Wallis.
+2025-06-15 00:36:55,574 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for mo1_ai_adoption_score: H-statistic=3107.707, p-value=0.0000
+2025-06-15 00:36:55,866 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for mo1_ai_adoption_score saved to county_category_summary_output/plots/boxplot_mo1_ai_adoption_score.png
+2025-06-15 00:36:56,172 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for mo1_ai_adoption_score saved to county_category_summary_output/plots/boxplot_log_mo1_ai_adoption_score.png
+2025-06-15 00:36:56,172 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: mo2_robotics_adoption_score ---
+2025-06-15 00:36:56,176 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for mo2_robotics_adoption_score:
+                                      count  ...         q3
+county_category_label                        ...           
+1. No hospital                          685  ...   0.000000
+2. Hospital, no AI/Robotics            1406  ...   0.000000
+3. Hospital, surgical robotics          475  ...  10.000000
+4. Hospital, AI                         105  ...   0.000000
+5. Hospital, AI & robotics              159  ...  10.000000
+6. Multiple hospitals, AI & robotics    313  ...   6.076923
+
+[6 rows x 6 columns]
+2025-06-15 00:36:56,178 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for mo2_robotics_adoption_score. Using Kruskal-Wallis.
+2025-06-15 00:36:56,178 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for mo2_robotics_adoption_score: H-statistic=3016.927, p-value=0.0000
+2025-06-15 00:36:56,477 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for mo2_robotics_adoption_score saved to county_category_summary_output/plots/boxplot_mo2_robotics_adoption_score.png
+2025-06-15 00:36:56,785 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for mo2_robotics_adoption_score saved to county_category_summary_output/plots/boxplot_log_mo2_robotics_adoption_score.png
+2025-06-15 00:36:56,785 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: avg_patient_services_margin ---
+2025-06-15 00:36:56,789 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for avg_patient_services_margin:
+                                      count  ...        q3
+county_category_label                        ...          
+1. No hospital                            0  ...       NaN
+2. Hospital, no AI/Robotics            1168  ...  0.091625
+3. Hospital, surgical robotics          412  ...  0.165750
+4. Hospital, AI                          88  ...  0.104125
+5. Hospital, AI & robotics              139  ...  0.218000
+6. Multiple hospitals, AI & robotics    309  ...  0.155333
+
+[6 rows x 6 columns]
+2025-06-15 00:36:56,790 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for avg_patient_services_margin. Using Kruskal-Wallis.
+2025-06-15 00:36:56,791 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for avg_patient_services_margin: H-statistic=151.852, p-value=0.0000
+2025-06-15 00:36:57,081 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for avg_patient_services_margin saved to county_category_summary_output/plots/boxplot_avg_patient_services_margin.png
+2025-06-15 00:36:57,396 - INFO - [6_County_Categories_060925_v6.py:493] -   Log-transformed box plot for avg_patient_services_margin saved to county_category_summary_output/plots/boxplot_log_avg_patient_services_margin.png
+2025-06-15 00:36:57,416 - INFO - [6_County_Categories_060925_v6.py:552] - 
+Final Summary Table:
+                                     rural_raw_value (Mean ± SD) rural_raw_value (Median (IQR)) rural_raw_value (N Counties) total_beds_in_county (Mean ± SD) total_beds_in_county (Median (IQR)) total_beds_in_county (N Counties) ratio_of_population_to_primary_care_physicians (Mean ± SD) ratio_of_population_to_primary_care_physicians (Median (IQR)) ratio_of_population_to_primary_care_physicians (N Counties) life_expectancy_raw_value (Mean ± SD) life_expectancy_raw_value (Median (IQR)) life_expectancy_raw_value (N Counties) dv21_premature_death_ypll_rate (Mean ± SD) dv21_premature_death_ypll_rate (Median (IQR)) dv21_premature_death_ypll_rate (N Counties) child_mortality_raw_value (Mean ± SD) child_mortality_raw_value (Median (IQR)) child_mortality_raw_value (N Counties) infant_mortality_raw_value (Mean ± SD) infant_mortality_raw_value (Median (IQR)) infant_mortality_raw_value (N Counties) dv15_preventable_stays_rate (Mean ± SD) dv15_preventable_stays_rate (Median (IQR)) dv15_preventable_stays_rate (N Counties) mo1_ai_adoption_score (Mean ± SD) mo1_ai_adoption_score (Median (IQR)) mo1_ai_adoption_score (N Counties) mo2_robotics_adoption_score (Mean ± SD) mo2_robotics_adoption_score (Median (IQR)) mo2_robotics_adoption_score (N Counties) avg_patient_services_margin (Mean ± SD) avg_patient_services_margin (Median (IQR)) avg_patient_services_margin (N Counties)
+1. No hospital                                       0.89 ± 0.22             1.00 (0.94 - 1.00)                          685                      0.00 ± 0.00                  0.00 (0.00 - 0.00)                               685                                          4268.10 ± 4051.95                                   3374.40 (1901.19 - 5966.25)                                                         568                          75.32 ± 3.68                    75.31 (73.07 - 77.58)                                    623                         10609.01 ± 3916.02                 10194.56 (7994.89 - 12372.68)                                         637                         76.93 ± 34.86                    67.92 (54.31 - 90.75)                                    230                            7.82 ± 2.96                        7.28 (6.01 - 8.41)                                      55                       2872.98 ± 1165.85                2801.00 (2097.50 - 3539.50)                                      627                       0.00 ± 0.00                   0.00 (0.00 - 0.00)                                685                             0.00 ± 0.00                         0.00 (0.00 - 0.00)                                      685                               nan ± nan                            nan (nan - nan)                                        0
+2. Hospital, no AI/Robotics                          0.71 ± 0.29             0.73 (0.49 - 1.00)                         1406                   90.93 ± 154.84               40.00 (25.00 - 94.00)                              1406                                          2715.40 ± 2033.87                                   2226.50 (1553.81 - 3284.83)                                                        1369                          75.17 ± 3.43                    75.20 (72.98 - 77.61)                                   1396                         10365.23 ± 3605.49                 10003.20 (7824.97 - 12267.79)                                        1399                         69.75 ± 25.50                    64.39 (51.42 - 82.99)                                    847                            7.44 ± 2.37                        6.99 (5.82 - 8.78)                                     390                       2942.18 ± 1232.75                2814.50 (2115.25 - 3577.75)                                     1396                       0.00 ± 0.00                   0.00 (0.00 - 0.00)                               1406                             0.00 ± 0.00                         0.00 (0.00 - 0.00)                                     1406                             0.00 ± 0.20                       -0.01 (-0.11 - 0.09)                                     1168
+3. Hospital, surgical robotics                       0.44 ± 0.26             0.40 (0.23 - 0.63)                          475                  342.11 ± 544.26             153.00 (50.00 - 402.50)                               475                                          1969.84 ± 1202.85                                   1677.44 (1219.47 - 2368.84)                                                         474                          76.39 ± 3.13                    76.46 (74.49 - 78.28)                                    475                          9082.53 ± 2847.51                  8771.23 (7078.83 - 10826.12)                                         475                         56.84 ± 19.42                    53.69 (43.98 - 66.94)                                    431                            6.45 ± 1.91                        6.07 (5.05 - 7.65)                                     322                        2702.84 ± 947.97                2660.00 (2110.00 - 3217.00)                                      473                       0.00 ± 0.00                   0.00 (0.00 - 0.00)                                475                             6.10 ± 3.28                        5.00 (3.00 - 10.00)                                      475                             0.08 ± 0.17                        0.07 (-0.02 - 0.17)                                      412
+4. Hospital, AI                                      0.66 ± 0.26             0.66 (0.45 - 0.91)                          105                    80.99 ± 99.14               39.00 (24.00 - 91.00)                               105                                          2312.37 ± 1396.82                                   1969.25 (1435.32 - 2692.30)                                                         103                          76.20 ± 2.50                    76.16 (74.67 - 77.69)                                    104                          9088.57 ± 2344.12                  8943.19 (7468.17 - 10231.54)                                         105                         57.08 ± 16.14                    56.21 (46.03 - 67.69)                                     74                            7.06 ± 1.29                        6.95 (6.09 - 7.90)                                      32                       2539.39 ± 1015.10                2379.00 (1894.00 - 2977.00)                                      105                       2.17 ± 1.51                   2.00 (1.00 - 3.00)                                105                             0.00 ± 0.00                         0.00 (0.00 - 0.00)                                      105                             0.02 ± 0.15                        0.01 (-0.05 - 0.10)                                       88
+5. Hospital, AI & robotics                           0.45 ± 0.25             0.44 (0.26 - 0.61)                          158                  198.58 ± 228.46             112.00 (49.00 - 270.50)                               159                                          2081.79 ± 1787.97                                   1851.95 (1272.02 - 2363.50)                                                         159                          76.68 ± 3.19                    76.58 (74.32 - 78.51)                                    159                          8746.28 ± 2570.22                  8526.22 (6992.20 - 10613.05)                                         159                         53.53 ± 15.28                    52.60 (41.73 - 61.95)                                    144                            6.14 ± 1.66                        6.01 (4.87 - 7.14)                                     103                        2650.91 ± 828.69                2582.00 (2128.50 - 3203.50)                                      159                       2.41 ± 1.53                   2.00 (1.00 - 4.00)                                159                             6.68 ± 3.94                        5.00 (3.00 - 10.00)                                      159                             0.14 ± 0.41                        0.10 (-0.02 - 0.22)                                      139
+6. Multiple hospitals, AI & robotics                 0.17 ± 0.19             0.12 (0.04 - 0.24)                          308                1861.67 ± 2471.83          1165.00 (448.00 - 2271.00)                               313                                           1422.83 ± 657.25                                   1268.36 (1003.74 - 1678.24)                                                         313                          77.66 ± 2.74                    77.81 (75.73 - 79.60)                                    313                          7990.55 ± 2336.02                   7653.06 (6224.68 - 9425.01)                                         313                         51.06 ± 16.67                    47.96 (39.24 - 62.63)                                    311                            5.69 ± 1.71                        5.60 (4.46 - 6.70)                                     304                        2742.14 ± 750.02                2678.00 (2210.00 - 3208.00)                                      313                       1.16 ± 0.98                   0.86 (0.50 - 1.50)                                313                             4.83 ± 2.33                         4.60 (3.00 - 6.08)                                      313                             0.09 ± 0.14                         0.07 (0.00 - 0.16)                                      309
+Statistical Test (Across Categories)    Kruskal-Wallis: p=0.0000                                                                     Kruskal-Wallis: p=0.0000                                                                                                         Kruskal-Wallis: p=0.0000                                                                                                                                        Kruskal-Wallis: p=0.0000                                                                                                   Kruskal-Wallis: p=0.0000                                                                                                        Kruskal-Wallis: p=0.0000                                                                                               Kruskal-Wallis: p=0.0000                                                                                                  Kruskal-Wallis: p=0.0000                                                                                              Kruskal-Wallis: p=0.0000                                                                                        Kruskal-Wallis: p=0.0000                                                                                                    Kruskal-Wallis: p=0.0000                                                                                    
+2025-06-15 00:36:57,431 - INFO - [6_County_Categories_060925_v6.py:556] - Summary table saved to county_category_summary_output/county_category_summary_table.csv
+2025-06-15 00:36:57,432 - INFO - [6_County_Categories_060925_v6.py:606] - Database engine disposed.
+2025-06-15 00:36:57,432 - INFO - [6_County_Categories_060925_v6.py:608] - Script finished. Check logs and output directory for details.

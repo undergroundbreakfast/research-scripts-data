@@ -1,0 +1,49 @@
+2025-05-24 16:45:21,656 - INFO - YPLL_AIPW_Analysis_052325_v5 - Logging to: logs/genai_health_causal_analysis_log_20250524_164521.txt
+2025-05-24 16:45:21,656 - INFO - YPLL_AIPW_Analysis_052325_v5 - Starting Generative AI Health Impact Causal Analysis Script.
+2025-05-24 16:45:21,657 - INFO - YPLL_AIPW_Analysis_052325_v5 - Output will be saved in: genai_causal_output and logs/
+2025-05-24 16:45:21,754 - INFO - YPLL_AIPW_Analysis_052325_v5 - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-05-24 16:45:21,760 - ERROR - YPLL_AIPW_Analysis_052325_v5 - Database query or initial data processing failed: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying > integer
+LINE 24: ...       AND vcm.population IS NOT NULL AND vcm.population > 0
+                                                                     ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+    SELECT
+        vcm.county_fips,
+        vcm.health_behaviors_score,        -- IV3
+        vcm.social_economic_factors_score, -- IV4
+        vcm.physical_environment_score,    -- IV2
+        vcm.medicaid_expansion_active,     -- IV1
+        vcm.population,                    -- CT1
+        vcm.census_division,               -- CT2
+        vcm.weighted_ai_adoption_score,    -- MO1 (basis for Treatment)
+        vcm.weighted_robotics_adoption_score, -- MO2 (confounder)
+        vcv.premature_death_raw_value      -- Outcome (from DV2 components)
+    FROM
+        public.vw_conceptual_model AS vcm
+    JOIN
+        public.vw_conceptual_model_variables AS vcv
+    ON
+        vcm.county_fips = vcv.county_fips
+    WHERE
+        vcm.health_behaviors_score IS NOT NULL
+        AND vcm.social_economic_factors_score IS NOT NULL
+        AND vcm.physical_environment_score IS NOT NULL
+        AND vcm.medicaid_expansion_active IS NOT NULL
+        AND vcm.population IS NOT NULL AND vcm.population > 0
+        AND vcm.census_division IS NOT NULL
+        AND vcm.weighted_ai_adoption_score IS NOT NULL
+        AND vcm.weighted_robotics_adoption_score IS NOT NULL
+        AND vcv.premature_death_raw_value IS NOT NULL;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-24 16:45:21,772 - INFO - YPLL_AIPW_Analysis_052325_v5 - ================================================================================
+2025-05-24 16:45:21,772 - INFO - YPLL_AIPW_Analysis_052325_v5 - Causal Analysis Summary:
+2025-05-24 16:45:21,772 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Outcome Variable: N/A
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Treatment Variable: N/A (GenAI Adopted if weighted_ai_adoption_score > 0)
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Estimated ATE (AIPW): nan
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 -   95% CI for ATE (Bootstrap): Not successfully computed.
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Potential YPLL Averted (National Estimate): 0
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 -   Potential Premature Deaths Averted (National Estimate): 0
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 - ================================================================================
+2025-05-24 16:45:21,773 - INFO - YPLL_AIPW_Analysis_052325_v5 - Generative AI Health Impact Causal Analysis Script finished.

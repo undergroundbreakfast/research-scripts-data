@@ -1,0 +1,5 @@
+2025-06-14 12:15:04,859 [INFO] Logging to logs/geospatial_analysis_20250614_121504.txt
+2025-06-14 12:15:04,923 [INFO] Connected to Postgres (Research_TEST@localhost).
+2025-06-14 12:15:04,924 [INFO] Fetching hospital data …
+2025-06-14 12:15:04,939 [INFO] Fetched 6,166 rows.
+2025-06-14 12:15:04,940 [ERROR] Fatal error: name 'load_zip_centroids' is not defined

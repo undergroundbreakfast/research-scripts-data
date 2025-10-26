@@ -1,0 +1,22 @@
+2025-06-14 18:33:24,199 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:75] - Logging to: logs/geospatial_health_analysis_log_20250614_183324.txt
+2025-06-14 18:33:24,199 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:539] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 18:33:24,258 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:96] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 18:33:24,258 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:108] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 18:33:24,280 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:133] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 18:33:24,289 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:152] - GeoDataFrame created successfully.
+2025-06-14 18:33:24,289 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:172] - County shapefile already exists at: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 18:33:24,452 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:209] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 18:33:24,454 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:239] - Failed to create spatial weights matrix for ai_adoption_score: name 'Queen' is not defined
+2025-06-14 18:33:24,455 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:410] - Generating cluster map for ai_adoption_score...
+2025-06-14 18:33:35,863 - WARNING - [Geospatial_TAMU_analysis_061425_v1.py:441] - Could not add basemap to cluster plot: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 18:33:37,542 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:453] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_ai_adoption_score.png
+2025-06-14 18:33:37,543 - WARNING - [Geospatial_TAMU_analysis_061425_v1.py:474] - No hot spot hospitals found for ai_adoption_score
+2025-06-14 18:33:37,543 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:527] - No hospitals found in high-tech clusters for ai_adoption_score, skipping service area analysis.
+2025-06-14 18:33:37,543 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:209] - --- Running Hot Spot Analysis for: robotics_adoption_score ---
+2025-06-14 18:33:37,544 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:239] - Failed to create spatial weights matrix for robotics_adoption_score: name 'Queen' is not defined
+2025-06-14 18:33:37,545 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:410] - Generating cluster map for robotics_adoption_score...
+2025-06-14 18:33:48,521 - WARNING - [Geospatial_TAMU_analysis_061425_v1.py:441] - Could not add basemap to cluster plot: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 18:33:50,102 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:453] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_robotics_adoption_score.png
+2025-06-14 18:33:50,103 - WARNING - [Geospatial_TAMU_analysis_061425_v1.py:474] - No hot spot hospitals found for robotics_adoption_score
+2025-06-14 18:33:50,104 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:527] - No hospitals found in high-tech clusters for robotics_adoption_score, skipping service area analysis.
+2025-06-14 18:33:50,104 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:583] - Geospatial analysis script finished. Check logs and output directory for results.

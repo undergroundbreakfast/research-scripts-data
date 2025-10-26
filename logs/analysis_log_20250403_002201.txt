@@ -1,0 +1,118 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-03 00:22:01
+================================================================================
+
+Connected to Postgres successfully.
+Component-level data fetched: shape = (3143, 37)
+
+--------------------------------------------------------------------------------
+ DATA EXPLORATION
+--------------------------------------------------------------------------------
+Dataset has 3143 rows and 37 columns
+Sample column names: ['county_fips', 'premature_death_raw_value', 'poor_or_fair_health_raw_value', 'poor_physical_health_days_raw_value', 'poor_mental_health_days_raw_value']
+
+--------------------------------------------------------------------------------
+ CALCULATING INDEX VARIABLES
+--------------------------------------------------------------------------------
+Creating index variables from raw components using specified weights
+Created social_economic_factors_score from 8/8 components
+  Components used: high_school_completion_raw_value, some_college_raw_value, unemployment_raw_value, children_in_poverty_raw_value, income_inequality_raw_value, children_in_single_parent_households_raw_value, social_associations_raw_value, injury_deaths_raw_value
+Created health_behaviors_score from 9/9 components
+  Components used: adult_smoking_raw_value, adult_obesity_raw_value, food_environment_index_raw_value, physical_inactivity_raw_value, access_to_exercise_opportunities_raw_value, excessive_drinking_raw_value, alcohol_impaired_driving_deaths_raw_value, sexually_transmitted_infections_raw_value, teen_births_raw_value
+Created physical_environment_score from 5/5 components
+  Components used: air_pollution_particulate_matter_raw_value, drinking_water_violations_raw_value, severe_housing_problems_raw_value, driving_alone_to_work_raw_value, long_commute_driving_alone_raw_value
+Created health_outcomes_score from 5/5 components
+  Components used: premature_death_raw_value, poor_or_fair_health_raw_value, poor_physical_health_days_raw_value, poor_mental_health_days_raw_value, low_birthweight_raw_value
+Created clinical_care_score from 7/7 components
+  Components used: uninsured_raw_value, ratio_of_population_to_primary_care_physicians, ratio_of_population_to_dentists, ratio_of_population_to_mental_health_providers, preventable_hospital_stays_raw_value, mammography_screening_raw_value, flu_vaccinations_raw_value
+
+Successfully created 5 index variables:
+  ✓ IV4 (Social & Economic)
+  ✓ IV3 (Health Behaviors)
+  ✓ IV2 (Physical Environment)
+  ✓ DV2 (Healthcare Quality)
+  ✓ DV1 (Healthcare Accessibility)
+Creating dv_health_outcome as a composite health measure
+
+--------------------------------------------------------------------------------
+ EFA SECTION
+--------------------------------------------------------------------------------
+Potential multicollinearity detected (correlations > 0.8):
+  adult_smoking_raw_value and physical_inactivity_raw_value: r = 0.810
+This may cause the Moore-Penrose generalized inversion warning.
+Bartlett's test: chi_sq=8298.82, p=0.0000 (small p => correlations not identity).
+KMO (sampling adequacy) for each variable => [0.72329798 0.64491415 0.75548513 0.77308263 0.65243174]
+KMO overall => 0.704
+
+Factor Loadings (Rotated):
+  adult_smoking_raw_value: [0.91603023 0.12503628]
+  physical_inactivity_raw_value: [0.88565582 0.14388458]
+  children_in_poverty_raw_value: [0.81677339 0.37992212]
+  unemployment_raw_value: [0.17871933 0.97717392]
+  injury_deaths_raw_value: [0.62638845 0.12860533]
+
+Factor Loadings (Rotated):
+                               Factor 1  Factor 2
+adult_smoking_raw_value           0.916     0.125
+physical_inactivity_raw_value     0.886     0.144
+children_in_poverty_raw_value     0.817     0.380
+unemployment_raw_value            0.179     0.977
+injury_deaths_raw_value           0.626     0.129
+
+Strong Factor Loadings (|loading| > 0.4):
+  adult_smoking_raw_value: Factor 1: 0.916
+  physical_inactivity_raw_value: Factor 1: 0.886
+  children_in_poverty_raw_value: Factor 1: 0.817
+  unemployment_raw_value: Factor 2: 0.977
+  injury_deaths_raw_value: Factor 1: 0.626
+
+Explained Variance (each factor): [0.54298389 0.23041717]
+Cumulative Variance by Factor: [0.54298389 0.77340106]
+
+EFA completed. 2 factors extracted.
+
+Factor loadings saved to: results/factor_loadings_20250403_002204.csv
+Factor scores saved to: results/factor_scores_20250403_002204.csv
+
+Sample factor scores (head):
+
+         F1        F2
+0 -0.140722 -1.103839
+1 -0.343733 -0.938441
+2  1.867681  0.155748
+3  1.349458 -1.170229
+4  0.473072 -1.343187
+
+--------------------------------------------------------------------------------
+ SEM EXAMPLE
+--------------------------------------------------------------------------------
+
+SEM model specification:
+
+# Measurement model
+HealthBeh =~ adult_smoking_raw_value + physical_inactivity_raw_value
+SocioEcon =~ children_in_poverty_raw_value + unemployment_raw_value
+
+# Structural model
+dv_health_outcome ~ HealthBeh + SocioEcon
+
+
+SEM Parameter Estimates:
+
+                             lval  op                           rval      Estimate       Std. Err     z-value   p-value
+0         adult_smoking_raw_value   ~                      HealthBeh  1.000000e+00              -           -         -
+1   physical_inactivity_raw_value   ~                      HealthBeh  1.167546e+00       0.006008  194.346915       0.0
+2   children_in_poverty_raw_value   ~                      SocioEcon  1.000000e+00              -           -         -
+3          unemployment_raw_value   ~                      SocioEcon  7.660899e-02       0.036028      2.1264   0.03347
+4               dv_health_outcome   ~                      HealthBeh  3.016189e+04  119379.076754    0.252656  0.800534
+5               dv_health_outcome   ~                      SocioEcon  1.535193e+04     86539.0844    0.177399  0.859195
+6                       HealthBeh  ~~                      HealthBeh  9.004180e-03        0.00024   37.580282       0.0
+7                       HealthBeh  ~~                      SocioEcon  1.242105e-02       0.000334   37.136536       0.0
+8                       SocioEcon  ~~                      SocioEcon  1.772294e-02       0.003355    5.282975       0.0
+9         adult_smoking_raw_value  ~~        adult_smoking_raw_value  3.276437e-04       0.000015   22.106158       0.0
+10  children_in_poverty_raw_value  ~~  children_in_poverty_raw_value  2.194779e-03       0.003317     0.66177  0.508119
+11              dv_health_outcome  ~~              dv_health_outcome  1.496453e+06     783336.441    1.910358  0.056087
+12  physical_inactivity_raw_value  ~~  physical_inactivity_raw_value  4.899090e-04       0.000021   23.492509       0.0
+13         unemployment_raw_value  ~~         unemployment_raw_value  6.712356e-02       0.001722   38.971862       0.0
+Could not calculate goodness of fit statistics: 'Model' object has no attribute 'calc_stats'

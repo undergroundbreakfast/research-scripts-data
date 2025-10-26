@@ -1,0 +1,30 @@
+2025-06-14 19:42:08,353 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:75] - Logging to: logs/geospatial_health_analysis_log_20250614_194208.txt
+2025-06-14 19:42:08,353 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:983] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 19:42:08,419 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:96] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 19:42:08,419 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:108] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 19:42:08,448 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:133] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 19:42:08,456 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:152] - GeoDataFrame created successfully.
+2025-06-14 19:42:08,456 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:172] - County shapefile already exists at: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 19:42:08,622 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:222] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 19:42:08,955 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:284] - Hot spot analysis complete for ai_adoption_score. Hot spots: 98, Cold spots: 0
+2025-06-14 19:42:08,958 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:418] - Generating cluster map for ai_adoption_score...
+2025-06-14 19:42:20,037 - WARNING - [Geospatial_TAMU_analysis_061425_v4.py:449] - Could not add basemap to cluster plot: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 19:42:21,630 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:461] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_ai_adoption_score.png
+2025-06-14 19:42:21,631 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:480] - Found 98 hospitals in high-tech clusters
+2025-06-14 19:42:22,044 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:501] - Found 303 counties within a 30-mile radius of a 'ai_adoption_score' hot spot hospital.
+2025-06-14 19:42:22,045 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:504] - Service area summary saved to geospatial_output/service_area_summary_ai_adoption_score.csv
+2025-06-14 19:42:22,045 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:506] - Generating service area coverage map...
+2025-06-14 19:42:23,033 - ERROR - [Geospatial_TAMU_analysis_061425_v4.py:538] - Error in hospital service area analysis: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 19:42:23,053 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:545] - --- Generating enhanced glow map for ai_adoption_score ---
+2025-06-14 19:42:23,053 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:568] - Reprojecting input GDF from EPSG:4326 to EPSG:5070 for buffering for ai_adoption_score
+2025-06-14 19:42:23,056 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:572] - Reprojecting gdf_counties from EPSG:4269 to EPSG:5070 for buffering for ai_adoption_score
+2025-06-14 19:42:23,386 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:594] - For ai_adoption_score: Hot spots (buffer CRS): 98, Cold spots (buffer CRS): 0
+2025-06-14 19:42:23,386 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:598] - Converting layers to plotting CRS EPSG:3857 for ai_adoption_score
+2025-06-14 19:42:24,244 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:603] - County boundaries converted to EPSG:3857, length: 3235
+2025-06-14 19:42:24,247 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:610] - Hot spots converted to EPSG:3857, bounds: [-13249305.66183757   2934820.37881495  -7649406.4071671
+   5724892.83924334]
+2025-06-14 19:42:24,247 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:611] - Other points converted to EPSG:3857, bounds: [-17307076.69661717 -20354003.3595718    3901605.55203653
+   6259079.25304616]
+2025-06-14 19:42:24,543 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:627] - Creating glow effect for 98 hot spots for ai_adoption_score
+2025-06-14 19:42:24,575 - ERROR - [Geospatial_TAMU_analysis_061425_v4.py:1040] - A critical error occurred during the main execution pipeline: name 'box' is not defined
+2025-06-14 19:42:24,580 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:1043] - Geospatial analysis script finished. Check logs and output directory for results.

@@ -1,0 +1,145 @@
+2025-04-23 23:58:24,924 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250423_235824.txt
+2025-04-23 23:58:24,924 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-23 23:58:24,982 - INFO - Connected to Postgres successfully.
+2025-04-23 23:58:24,982 - INFO - Checking available columns in views...
+2025-04-23 23:58:25,000 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-23 23:58:25,000 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-23 23:58:25,000 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-23 23:58:25,004 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-23 23:58:25,007 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-23 23:58:25,007 - INFO - Executing join query between conceptual model and variables views
+2025-04-23 23:58:25,012 - ERROR - Error fetching or processing raw data: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying > integer
+LINE 27:           AND m.population IS NOT NULL AND m.population > 0
+                                                                 ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+    WITH JoinedData AS (
+        SELECT
+            v.county_fips,
+            -- Raw health outcome values from variables view
+            v.premature_death_raw_value,
+            v.preventable_hospital_stays_raw_value,
+            
+            -- Get IVs from conceptual model
+            m.medicaid_expansion_active AS iv1_public_health_policy,
+            m.physical_environment_score AS iv2_physical_environment,
+            m.health_behaviors_score AS iv3_health_behaviors,
+            m.social_economic_factors_score AS iv4_social_economic_factors,
+            
+            -- Get MOs from conceptual model
+            m.weighted_ai_adoption_score AS mo1_genai_capabilities,
+            m.weighted_robotics_adoption_score AS mo2_robotics_capabilities,
+            
+            -- Controls
+            m.population,
+            m.census_division
+            
+        FROM public.vw_conceptual_model_variables v
+        JOIN public.vw_conceptual_model m ON v.county_fips = m.county_fips
+        
+        WHERE v.county_fips IS NOT NULL
+          AND m.population IS NOT NULL AND m.population > 0
+          AND m.census_division IS NOT NULL
+          -- Add NOT NULL checks for IVs/MOs
+          AND m.medicaid_expansion_active IS NOT NULL
+          AND m.physical_environment_score IS NOT NULL
+          AND m.health_behaviors_score IS NOT NULL
+          AND m.social_economic_factors_score IS NOT NULL
+          AND m.weighted_ai_adoption_score IS NOT NULL
+          AND m.weighted_robotics_adoption_score IS NOT NULL
+          -- Check raw outcomes
+          AND v.premature_death_raw_value IS NOT NULL
+          AND v.preventable_hospital_stays_raw_value IS NOT NULL
+    )
+    SELECT * FROM JoinedData;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-04-23 23:58:25,013 - ERROR - Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedFunction: operator does not exist: character varying > integer
+LINE 27:           AND m.population IS NOT NULL AND m.population > 0
+                                                                 ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Calculate_Death_Rates_v2.py", line 197, in fetch_data_for_raw_analysis
+    df = pd.read_sql(query, engine)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1779, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying > integer
+LINE 27:           AND m.population IS NOT NULL AND m.population > 0
+                                                                 ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+    WITH JoinedData AS (
+        SELECT
+            v.county_fips,
+            -- Raw health outcome values from variables view
+            v.premature_death_raw_value,
+            v.preventable_hospital_stays_raw_value,
+            
+            -- Get IVs from conceptual model
+            m.medicaid_expansion_active AS iv1_public_health_policy,
+            m.physical_environment_score AS iv2_physical_environment,
+            m.health_behaviors_score AS iv3_health_behaviors,
+            m.social_economic_factors_score AS iv4_social_economic_factors,
+            
+            -- Get MOs from conceptual model
+            m.weighted_ai_adoption_score AS mo1_genai_capabilities,
+            m.weighted_robotics_adoption_score AS mo2_robotics_capabilities,
+            
+            -- Controls
+            m.population,
+            m.census_division
+            
+        FROM public.vw_conceptual_model_variables v
+        JOIN public.vw_conceptual_model m ON v.county_fips = m.county_fips
+        
+        WHERE v.county_fips IS NOT NULL
+          AND m.population IS NOT NULL AND m.population > 0
+          AND m.census_division IS NOT NULL
+          -- Add NOT NULL checks for IVs/MOs
+          AND m.medicaid_expansion_active IS NOT NULL
+          AND m.physical_environment_score IS NOT NULL
+          AND m.health_behaviors_score IS NOT NULL
+          AND m.social_economic_factors_score IS NOT NULL
+          AND m.weighted_ai_adoption_score IS NOT NULL
+          AND m.weighted_robotics_adoption_score IS NOT NULL
+          -- Check raw outcomes
+          AND v.premature_death_raw_value IS NOT NULL
+          AND v.preventable_hospital_stays_raw_value IS NOT NULL
+    )
+    SELECT * FROM JoinedData;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+

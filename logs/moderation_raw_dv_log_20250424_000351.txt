@@ -1,0 +1,56 @@
+2025-04-24 00:03:51,645 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250424_000351.txt
+2025-04-24 00:03:51,645 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-24 00:03:51,711 - INFO - Connected to Postgres successfully.
+2025-04-24 00:03:51,711 - INFO - Checking available columns in views...
+2025-04-24 00:03:51,724 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:03:51,724 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:03:51,724 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-24 00:03:51,727 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:03:51,730 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:03:51,730 - INFO - Executing join query between conceptual model and variables views
+2025-04-24 00:04:16,994 - INFO - Joined data fetched: shape=(3049, 11)
+2025-04-24 00:04:16,994 - ERROR - Error fetching or processing raw data: unsupported operand type(s) for /: 'float' and 'str'
+2025-04-24 00:04:17,028 - ERROR - Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/ops/array_ops.py", line 218, in _na_arithmetic_op
+    result = func(left, right)
+             ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/computation/expressions.py", line 242, in evaluate
+    return _evaluate(op, op_str, a, b)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/computation/expressions.py", line 131, in _evaluate_numexpr
+    result = _evaluate_standard(op, op_str, a, b)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/computation/expressions.py", line 73, in _evaluate_standard
+    return op(a, b)
+           ^^^^^^^^
+TypeError: unsupported operand type(s) for /: 'float' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Calculate_Death_Rates_v2.py", line 201, in fetch_data_for_raw_analysis
+    df['premature_death_rate_100k'] = (df['premature_death_raw_value'] / df['population']) * 100000
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/ops/common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/arraylike.py", line 210, in __truediv__
+    return self._arith_method(other, operator.truediv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/series.py", line 6135, in _arith_method
+    return base.IndexOpsMixin._arith_method(self, other, op)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/base.py", line 1382, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/ops/array_ops.py", line 283, in arithmetic_op
+    res_values = _na_arithmetic_op(left, right, op)  # type: ignore[arg-type]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/ops/array_ops.py", line 227, in _na_arithmetic_op
+    result = _masked_arith_op(left, right, op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/ops/array_ops.py", line 163, in _masked_arith_op
+    result[mask] = op(xrav[mask], yrav[mask])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for /: 'float' and 'str'
+

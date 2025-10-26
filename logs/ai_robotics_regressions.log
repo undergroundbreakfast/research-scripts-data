@@ -1,0 +1,61 @@
+2025-10-19 00:51:31,598 |     INFO | ✔ Connected to Postgres
+2025-10-19 00:51:55,971 |     INFO | ✔ Pulled 3270 rows of data
+2025-10-19 00:51:55,971 |     INFO | Column crude_rate has 141 missing values (4.3%)
+2025-10-19 00:51:55,971 |     INFO | Column clinical_care_score has 129 missing values (3.9%)
+2025-10-19 00:51:55,971 |     INFO | Column health_outcomes_score has 129 missing values (3.9%)
+2025-10-19 00:51:55,971 |     INFO | ▶ Regression:  pct_wfaipsn_enabled  →  crude_rate
+2025-10-19 00:51:56,336 |     INFO |     • Saved fig pct_wfaipsn_enabled__crude_rate.png
+2025-10-19 00:51:56,336 |     INFO |    β=-2.3154  R²=0.026  p=8.38735e-20
+2025-10-19 00:51:56,336 |     INFO | ▶ Regression:  pct_wfaippd_enabled  →  crude_rate
+2025-10-19 00:51:56,604 |     INFO |     • Saved fig pct_wfaippd_enabled__crude_rate.png
+2025-10-19 00:51:56,604 |     INFO |    β=-2.4759  R²=0.032  p=3.85081e-24
+2025-10-19 00:51:56,604 |     INFO | ▶ Regression:  pct_wfaiss_enabled  →  crude_rate
+2025-10-19 00:51:56,947 |     INFO |     • Saved fig pct_wfaiss_enabled__crude_rate.png
+2025-10-19 00:51:56,947 |     INFO |    β=-2.1326  R²=0.021  p=2.83697e-16
+2025-10-19 00:51:56,947 |     INFO | ▶ Regression:  pct_wfaiart_enabled  →  crude_rate
+2025-10-19 00:51:57,204 |     INFO |     • Saved fig pct_wfaiart_enabled__crude_rate.png
+2025-10-19 00:51:57,204 |     INFO |    β=-2.0486  R²=0.029  p=7.67331e-22
+2025-10-19 00:51:57,204 |     INFO | ▶ Regression:  pct_wfaioacw_enabled  →  crude_rate
+2025-10-19 00:51:57,463 |     INFO |     • Saved fig pct_wfaioacw_enabled__crude_rate.png
+2025-10-19 00:51:57,463 |     INFO |    β=-2.0533  R²=0.032  p=4.54429e-24
+2025-10-19 00:51:57,463 |     INFO | ▶ Regression:  pct_robohos_enabled  →  crude_rate
+2025-10-19 00:51:57,753 |     INFO |     • Saved fig pct_robohos_enabled__crude_rate.png
+2025-10-19 00:51:57,753 |     INFO |    β=-2.7382  R²=0.106  p=8.43758e-78
+2025-10-19 00:51:57,753 |     INFO | ▶ Regression:  pct_wfaipsn_enabled  →  health_outcomes_score
+2025-10-19 00:51:58,016 |     INFO |     • Saved fig pct_wfaipsn_enabled__health_outcomes_score.png
+2025-10-19 00:51:58,017 |     INFO |    β=-9.5000  R²=0.014  p=4.55029e-11
+2025-10-19 00:51:58,017 |     INFO | ▶ Regression:  pct_wfaippd_enabled  →  health_outcomes_score
+2025-10-19 00:51:58,284 |     INFO |     • Saved fig pct_wfaippd_enabled__health_outcomes_score.png
+2025-10-19 00:51:58,284 |     INFO |    β=-10.1547  R²=0.017  p=2.58782e-13
+2025-10-19 00:51:58,284 |     INFO | ▶ Regression:  pct_wfaiss_enabled  →  health_outcomes_score
+2025-10-19 00:51:58,565 |     INFO |     • Saved fig pct_wfaiss_enabled__health_outcomes_score.png
+2025-10-19 00:51:58,565 |     INFO |    β=-9.1005  R²=0.012  p=7.09519e-10
+2025-10-19 00:51:58,565 |     INFO | ▶ Regression:  pct_wfaiart_enabled  →  health_outcomes_score
+2025-10-19 00:51:58,832 |     INFO |     • Saved fig pct_wfaiart_enabled__health_outcomes_score.png
+2025-10-19 00:51:58,832 |     INFO |    β=-10.5336  R²=0.024  p=4.53174e-18
+2025-10-19 00:51:58,832 |     INFO | ▶ Regression:  pct_wfaioacw_enabled  →  health_outcomes_score
+2025-10-19 00:51:59,102 |     INFO |     • Saved fig pct_wfaioacw_enabled__health_outcomes_score.png
+2025-10-19 00:51:59,102 |     INFO |    β=-9.1585  R²=0.020  p=2.65134e-15
+2025-10-19 00:51:59,102 |     INFO | ▶ Regression:  pct_robohos_enabled  →  health_outcomes_score
+2025-10-19 00:51:59,380 |     INFO |     • Saved fig pct_robohos_enabled__health_outcomes_score.png
+2025-10-19 00:51:59,380 |     INFO |    β=-9.8707  R²=0.042  p=2.58181e-31
+2025-10-19 00:51:59,380 |     INFO | ▶ Regression:  pct_wfaipsn_enabled  →  clinical_care_score
+2025-10-19 00:51:59,642 |     INFO |     • Saved fig pct_wfaipsn_enabled__clinical_care_score.png
+2025-10-19 00:51:59,642 |     INFO |    β=-3.0643  R²=0.012  p=5.87461e-10
+2025-10-19 00:51:59,642 |     INFO | ▶ Regression:  pct_wfaippd_enabled  →  clinical_care_score
+2025-10-19 00:51:59,911 |     INFO |     • Saved fig pct_wfaippd_enabled__clinical_care_score.png
+2025-10-19 00:51:59,911 |     INFO |    β=-3.2647  R²=0.015  p=7.06609e-12
+2025-10-19 00:51:59,911 |     INFO | ▶ Regression:  pct_wfaiss_enabled  →  clinical_care_score
+2025-10-19 00:52:00,169 |     INFO |     • Saved fig pct_wfaiss_enabled__clinical_care_score.png
+2025-10-19 00:52:00,169 |     INFO |    β=-2.9277  R²=0.011  p=7.34797e-09
+2025-10-19 00:52:00,169 |     INFO | ▶ Regression:  pct_wfaiart_enabled  →  clinical_care_score
+2025-10-19 00:52:00,439 |     INFO |     • Saved fig pct_wfaiart_enabled__clinical_care_score.png
+2025-10-19 00:52:00,439 |     INFO |    β=-3.5715  R²=0.023  p=1.04396e-17
+2025-10-19 00:52:00,439 |     INFO | ▶ Regression:  pct_wfaioacw_enabled  →  clinical_care_score
+2025-10-19 00:52:00,712 |     INFO |     • Saved fig pct_wfaioacw_enabled__clinical_care_score.png
+2025-10-19 00:52:00,712 |     INFO |    β=-3.3071  R²=0.022  p=7.87522e-17
+2025-10-19 00:52:00,712 |     INFO | ▶ Regression:  pct_robohos_enabled  →  clinical_care_score
+2025-10-19 00:52:01,053 |     INFO |     • Saved fig pct_robohos_enabled__clinical_care_score.png
+2025-10-19 00:52:01,053 |     INFO |    β=-4.1708  R²=0.064  p=3.31667e-47
+2025-10-19 00:52:01,058 |     INFO | ✔ Wrote summary results to /Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/output/regression_summary.csv
+2025-10-19 00:52:01,059 |     INFO | 🎉 All done — see figs/ and output/ for deliverables.

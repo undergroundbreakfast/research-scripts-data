@@ -1,0 +1,7 @@
+Technology,Beta_Coefficient,P_Value,N_Observations
+mo1.1_ai_automate_tasks,-2.1681,0.0031,3135.0000
+mo1.2_ai_optimize_workflows,-1.7257,0.0138,3135.0000
+mo1.3_ai_predict_demand,-1.5777,0.0563,3135.0000
+mo1.4_ai_predict_staff,-1.3579,0.1124,3135.0000
+mo1.5_ai_staff_schedule,-1.4732,0.0894,3135.0000
+mo2.1_robotics_in_hospital,-2.7205,0.0000,3135.0000

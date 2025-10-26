@@ -1,0 +1,10 @@
+2025-04-23 23:47:12,285 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250423_234712.txt
+2025-04-23 23:47:12,285 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-23 23:47:12,349 - INFO - Connected to Postgres successfully.
+2025-04-23 23:47:12,349 - INFO - Checking available columns in views...
+2025-04-23 23:47:12,364 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-23 23:47:12,364 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-23 23:47:12,364 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-23 23:47:12,367 - INFO - Available columns in public.vw_conceptual_model_variables: ['county_fips', 'premature_death_raw_value', 'poor_or_fair_health_raw_value', 'poor_physical_health_days_raw_value', 'poor_mental_health_days_raw_value', 'low_birthweight_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'uninsured_raw_value', 'ratio_of_population_to_primary_care_physicians', 'ratio_of_population_to_dentists', 'ratio_of_population_to_mental_health_providers', 'preventable_hospital_stays_raw_value', 'mammography_screening_raw_value', 'flu_vaccinations_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+2025-04-23 23:47:12,367 - INFO - Found 4 matching columns out of 16 needed
+2025-04-23 23:47:12,367 - ERROR - Missing required columns: ['population', 'census_division']

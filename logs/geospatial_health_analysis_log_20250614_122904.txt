@@ -1,0 +1,23 @@
+2025-06-14 12:29:04,635 - INFO - [Geospatial_Analysis_061425_v5.py:82] - Logging to: logs/geospatial_health_analysis_log_20250614_122904.txt
+2025-06-14 12:29:04,635 - INFO - [Geospatial_Analysis_061425_v5.py:496] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 12:29:04,690 - INFO - [Geospatial_Analysis_061425_v5.py:103] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 12:29:04,690 - INFO - [Geospatial_Analysis_061425_v5.py:112] - Fetching hospital-level data for geospatial analysis...
+2025-06-14 12:29:04,707 - INFO - [Geospatial_Analysis_061425_v5.py:138] - Hospital-level data retrieved: 6166 rows.
+2025-06-14 12:29:04,712 - INFO - [Geospatial_Analysis_061425_v5.py:214] - No geocode cache found. Geocoding all hospitals.
+2025-06-14 12:29:04,743 - INFO - [Geospatial_Analysis_061425_v5.py:225] - Starting geocoding for 6166 addresses. This may take some time...
+2025-06-14 12:30:53,049 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 50 of 6166 addresses.
+2025-06-14 12:33:08,628 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 100 of 6166 addresses.
+2025-06-14 12:36:23,189 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 150 of 6166 addresses.
+2025-06-14 12:41:25,687 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 200 of 6166 addresses.
+2025-06-14 12:44:36,564 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 250 of 6166 addresses.
+2025-06-14 12:46:50,117 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 300 of 6166 addresses.
+2025-06-14 12:49:21,375 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 350 of 6166 addresses.
+2025-06-14 12:52:24,329 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 400 of 6166 addresses.
+2025-06-14 12:54:10,477 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 450 of 6166 addresses.
+2025-06-14 12:56:55,401 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 500 of 6166 addresses.
+2025-06-14 12:59:40,251 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 550 of 6166 addresses.
+2025-06-14 13:01:15,279 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 600 of 6166 addresses.
+2025-06-14 13:04:11,000 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 650 of 6166 addresses.
+2025-06-14 13:06:22,172 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 700 of 6166 addresses.
+2025-06-14 13:07:48,562 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 750 of 6166 addresses.
+2025-06-14 13:09:33,277 - INFO - [Geospatial_Analysis_061425_v5.py:239] -   ...geocoded 800 of 6166 addresses.

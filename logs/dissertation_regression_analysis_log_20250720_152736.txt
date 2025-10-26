@@ -1,0 +1,22 @@
+2025-07-20 15:27:36,254 - INFO - [LISA_Cluster_Regressions_072025_v3.py:73] - Logging to: logs/dissertation_regression_analysis_log_20250720_152736.txt
+2025-07-20 15:27:36,254 - INFO - [LISA_Cluster_Regressions_072025_v3.py:409] - Starting Dissertation OLS Regression Analysis Script.
+2025-07-20 15:27:36,340 - INFO - [LISA_Cluster_Regressions_072025_v3.py:95] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-07-20 15:28:02,227 - INFO - [LISA_Cluster_Regressions_072025_v3.py:135] - Data for analysis retrieved: 3052 rows, 8 columns.
+2025-07-20 15:28:02,227 - INFO - [LISA_Cluster_Regressions_072025_v3.py:140] - Renaming columns for clarity...
+2025-07-20 15:28:02,229 - INFO - [LISA_Cluster_Regressions_072025_v3.py:165] - Performing data preparations for regression...
+2025-07-20 15:28:02,230 - INFO - [LISA_Cluster_Regressions_072025_v3.py:171] - Created 'state_fips_for_clustering' column for clustered SEs.
+2025-07-20 15:28:02,230 - INFO - [LISA_Cluster_Regressions_072025_v3.py:179] - Converting 'ct1_population' to numeric type...
+2025-07-20 15:28:02,232 - INFO - [LISA_Cluster_Regressions_072025_v3.py:185] - Created 'log_population' from 'ct1_population'.
+2025-07-20 15:28:02,234 - INFO - [LISA_Cluster_Regressions_072025_v3.py:202] - Created 8 dummy variables for 'ct2_census_division'.
+2025-07-20 15:28:02,235 - INFO - [LISA_Cluster_Regressions_072025_v3.py:213] - Prepared 'sp3_cluster_type' as a categorical variable.
+2025-07-20 15:28:02,235 - INFO - [LISA_Cluster_Regressions_072025_v3.py:217] - Converting all regression variables to proper numeric types...
+2025-07-20 15:28:02,235 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'dv21_premature_death' sample values before conversion: [9407.9482421875, 8981.5751953125, 13138.8486328125, 12675.4345703125, 11541.4951171875]
+2025-07-20 15:28:02,235 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'dv21_premature_death' to numeric type. Null values: 0/3052
+2025-07-20 15:28:02,235 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'sp1_moran_i' sample values before conversion: ['-0.000661666', '0.069610369', '0.060769739', '0.010672831683467651', '0.010672831683467646']
+2025-07-20 15:28:02,236 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'sp1_moran_i' to numeric type. Null values: 0/3052
+2025-07-20 15:28:02,236 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'iv3_health_behaviors' sample values before conversion: [48.49579097956419, 27.742231903374197, 61.90532405585051, 56.320113735496996, 28.205747699290516]
+2025-07-20 15:28:02,236 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'iv3_health_behaviors' to numeric type. Null values: 0/3052
+2025-07-20 15:28:02,236 - INFO - [LISA_Cluster_Regressions_072025_v3.py:222] - Column 'iv4_social_economic' sample values before conversion: [10.134138997178525, 11.176548715084792, 12.181614794842899, 14.091700394097716, 13.662033479325473]
+2025-07-20 15:28:02,236 - INFO - [LISA_Cluster_Regressions_072025_v3.py:229] - Converted 'iv4_social_economic' to numeric type. Null values: 0/3052
+2025-07-20 15:28:02,236 - INFO - [LISA_Cluster_Regressions_072025_v3.py:235] - Data preparation complete.
+2025-07-20 15:28:02,237 - ERROR - [LISA_Cluster_Regressions_072025_v3.py:450] - Critical error during data setup: name 'summarize_clusters_by_population' is not defined

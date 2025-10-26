@@ -1,0 +1,359 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-21 16:39:44
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)
+Index-level data fetched from improved version: shape = (3143, 12)
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+
+Diagnosing Index-Level (Original): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+Diagnosing Index-Level (Improved): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS - BOTH SCENARIOS (Original Data)
+--------------------------------------------------------------------------------
+
+..... Running scenario=original on original data. .....
+Analyzing DV: dv1_healthcare_access under scenario=original...
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv2_healthcare_quality under scenario=original...
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv3_operational_eff under scenario=original...
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+
+..... Running scenario=flipped on original data. .....
+Analyzing DV: dv1_healthcare_access under scenario=flipped...
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv2_healthcare_quality under scenario=flipped...
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv3_operational_eff under scenario=flipped...
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+
+--------------------------------------------------------------------------------
+ PART B: INDEX-LEVEL MODELS - BOTH SCENARIOS (Improved Data)
+--------------------------------------------------------------------------------
+
+..... Running scenario=original on improved data. .....
+Analyzing DV: dv1_healthcare_access under scenario=original (improved)...
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv2_healthcare_quality under scenario=original (improved)...
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv3_operational_eff under scenario=original (improved)...
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+
+..... Running scenario=flipped on improved data. .....
+Analyzing DV: dv1_healthcare_access under scenario=flipped (improved)...
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv1_healthcare_access: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv2_healthcare_quality under scenario=flipped (improved)...
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv2_healthcare_quality: 3143
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Analyzing DV: dv3_operational_eff under scenario=flipped (improved)...
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Usable observations for dv3_operational_eff: 2133
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+
+--------------------------------------------------------------------------------
+ PART C: COMPONENT-LEVEL MODELS (example placeholder)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ PART Z: USER-REQUESTED REGRESSIONS
+--------------------------------------------------------------------------------
+Columns in aha_survey_data: ['id', 'cntrl', 'mname', 'madmin', 'mlocaddr', 'mloccity', 'mlocstcd', 'mloczip', 'bsc', 'sysname', 'fcounty', 'mapp19', 'mapp20', 'robohos', 'robosys', 'roboven', 'jnls', 'paytot', 'bdtot', 'admtot', 'ipdtot', 'vem', 'fted', 'fter', 'ften', 'ftep', 'fteap', 'vmd', 'vres', 'vrn', 'vlpn', 'vast', 'vrad', 'vlab', 'vrsp', 'vothl', 'vtotl', 'adjadm', 'adjpd', 'adjadc', 'ftemd', 'ftern', 'ftelpn', 'fteres', 'ftecap', 'crnfte', 'tecar', 'aprn', 'fteapn', 'ftephrn', 'wfaipsn', 'wfaippd', 'wfaiss', 'wfaiart', 'wfaioacw', 'wfaidna', 'gfeet', 'ceamt']
+AHA data fetched: shape=(6166, 13)
+AHA data successfully rolled up to county level: shape=(2487, 17)
+Component-level data fetched: shape = (3143, 37)
+Part Z merged shape=(2458, 19) for user-requested tests.
+Error fitting OLS: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Flipped_Model_Test_v1.py", line 514, in safe_ols_fit
+    valid_rows = ~(X[X.columns].isna().any(axis=1) or y.isna())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+
+--------------------------------------------------------------------------------
+ FINAL COHEN'S f² SUMMARY
+--------------------------------------------------------------------------------
+No f² results to summarize.
+
+================================================================================
+ ANALYSIS COMPLETED: 2025-04-21 16:40:32
+ Total runtime: 0:00:47.819266
+================================================================================
+

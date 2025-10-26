@@ -1,0 +1,22 @@
+2025-04-24 00:08:13,638 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250424_000813.txt
+2025-04-24 00:08:13,638 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-24 00:08:13,701 - INFO - Connected to Postgres successfully.
+2025-04-24 00:08:13,701 - INFO - Checking available columns in views...
+2025-04-24 00:08:13,721 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:08:13,721 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:08:13,721 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-24 00:08:13,725 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:08:13,728 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:08:13,729 - INFO - Executing join query between conceptual model and variables views
+2025-04-24 00:08:38,890 - INFO - Joined data fetched: shape=(3049, 11)
+2025-04-24 00:08:38,892 - INFO - Calculated death and hospitalization rates per 100k population
+2025-04-24 00:08:38,892 - INFO - Using '1' as the reference category for census_division dummies.
+2025-04-24 00:08:38,893 - INFO - Created 8 dummy cols for census_division
+2025-04-24 00:08:38,893 - INFO - All expected variables for raw DV analysis found.
+2025-04-24 00:08:38,893 - INFO - Saving GLM coefficients summary to: moderation_output_raw_dv/Moderation_RawOutcomes_GLM_Coefficients.csv
+2025-04-24 00:08:38,893 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:08:38,893 - INFO - PATH 1/16: Processing iv1_public_health_policy x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:08:38,898 - WARNING - High condition number: 30.1 - Results may be unstable due to multicollinearity
+2025-04-24 00:08:38,904 - ERROR - Error in GLM fitting: Error evaluating factor: NameError: name 'offset' is not defined
+    premature_death_raw_count ~ iv1_public_health_policy + mo1_genai_capabilities + iv1_public_health_policy_X_mo1_genai_capabilities + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9 + offset(log(population))
+                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^

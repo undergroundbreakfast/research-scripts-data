@@ -1,0 +1,23 @@
+{
+  "YEAR": 2024,
+  "N_REPS": 150,
+  "N_JOBS": 8,
+  "CV_MODE": "state",
+  "TEST_SIZE": 0.3,
+  "ADOPT_THRESHOLD": "zero",
+  "INTERACTION_TOP_K": 120,
+  "DROP_MISSING_THRESH": 0.4,
+  "SEED": 42,
+  "LOGIT_C": 0.1,
+  "LOGIT_MAX_ITER": 8000,
+  "LOGIT_TOL": 0.001,
+  "PDP_TOP_K": 5,
+  "ANNOTATE_VOLCANO_TOP": 15,
+  "MIN_SIG_P": 0.05,
+  "POSTGRES_HOST": "localhost",
+  "POSTGRES_DB": "Research_TEST",
+  "POSTGRES_USER": "postgres",
+  "POSTGRESQL_KEY": "Dissertation",
+  "USE_SHAP": false,
+  "outdir": "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/multiverse_output"
+}

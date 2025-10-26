@@ -1,0 +1,47 @@
+2025-09-06 22:26:56,663 - INFO - [Replicate_Results_090625_v1.py:73] - Logging to: logs/genai_robotics_health_analysis_log_20250906_222656.txt
+2025-09-06 22:26:56,663 - INFO - [Replicate_Results_090625_v1.py:772] - Starting Dissertation Replication & Testing Script.
+2025-09-06 22:26:56,728 - INFO - [Replicate_Results_090625_v1.py:98] - Connected to PostgreSQL database 'Research_TEST'.
+2025-09-06 22:26:56,730 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_adjpd
+2025-09-06 22:26:56,731 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_variables_adjpd
+2025-09-06 22:26:56,732 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_adjpd_weighted_tech_summary
+2025-09-06 22:27:24,991 - INFO - [Replicate_Results_090625_v1.py:274] - Data retrieved: 3135 rows, 21 columns.
+2025-09-06 22:27:24,993 - INFO - [Replicate_Results_090625_v1.py:322] - Created 8 division dummies.
+2025-09-06 22:27:24,994 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo11_ai_automate_routine_tasks_pct'.
+2025-09-06 22:27:24,994 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo12_ai_optimize_workflows_pct'.
+2025-09-06 22:27:24,994 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo13_ai_predict_patient_demand_pct'.
+2025-09-06 22:27:24,994 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo14_ai_predict_staff_needs_pct'.
+2025-09-06 22:27:24,994 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo15_ai_staff_scheduling_pct'.
+2025-09-06 22:27:24,995 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo21_robotics_in_hospital_pct'.
+2025-09-06 22:28:07,389 - INFO - [Replicate_Results_090625_v1.py:897] - Saved main effects summary to genai_robotics_health_output/main_effects_on_health_summary.csv
+2025-09-06 22:28:07,602 - INFO - [Replicate_Results_090625_v1.py:631] - Saved main effect comparison plot: genai_robotics_health_output/plots/Main_Effect_Comparison.png
+2025-09-06 22:28:07,606 - WARNING - [Replicate_Results_090625_v1.py:686] - Column 'iv3_health_behaviors_score' is a 2D array with shape (3135, 2). Extracting first column.
+2025-09-06 22:28:07,607 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'iv3_health_behaviors_score': 0 NaN values out of 3135
+2025-09-06 22:28:07,607 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'dv2_health_outcomes_score': 0 NaN values out of 3135
+2025-09-06 22:28:07,607 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'mo1_genai_composite_score__gt_0pct': 0 NaN values out of 3135
+2025-09-06 22:28:07,869 - INFO - [Replicate_Results_090625_v1.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV3_x_MO1_on_DV2.png
+2025-09-06 22:28:07,874 - WARNING - [Replicate_Results_090625_v1.py:686] - Column 'iv3_health_behaviors_score' is a 2D array with shape (3080, 2). Extracting first column.
+2025-09-06 22:28:07,874 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'iv3_health_behaviors_score': 0 NaN values out of 3080
+2025-09-06 22:28:07,874 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'dv21_premature_death_ypll_rate': 0 NaN values out of 3080
+2025-09-06 22:28:07,874 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'mo11_ai_automate_routine_tasks_pct__gt_0pct': 0 NaN values out of 3080
+2025-09-06 22:28:08,152 - INFO - [Replicate_Results_090625_v1.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV3_x_MO11_on_DV21.png
+2025-09-06 22:28:08,157 - WARNING - [Replicate_Results_090625_v1.py:686] - Column 'iv3_health_behaviors_score' is a 2D array with shape (3080, 2). Extracting first column.
+2025-09-06 22:28:08,157 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'iv3_health_behaviors_score': 0 NaN values out of 3080
+2025-09-06 22:28:08,158 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'dv21_premature_death_ypll_rate': 0 NaN values out of 3080
+2025-09-06 22:28:08,158 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'mo12_ai_optimize_workflows_pct__gt_0pct': 0 NaN values out of 3080
+2025-09-06 22:28:08,441 - INFO - [Replicate_Results_090625_v1.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV3_x_MO12_on_DV21.png
+2025-09-06 22:28:08,463 - WARNING - [Replicate_Results_090625_v1.py:686] - Column 'iv1_medicaid_expansion_active' is a 2D array with shape (2109, 2). Extracting first column.
+2025-09-06 22:28:08,463 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'iv1_medicaid_expansion_active': 0 NaN values out of 2109
+2025-09-06 22:28:08,463 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'dv3_avg_patient_services_margin': 0 NaN values out of 2109
+2025-09-06 22:28:08,463 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'mo1_genai_composite_score__gt_0pct': 0 NaN values out of 2109
+2025-09-06 22:28:08,667 - INFO - [Replicate_Results_090625_v1.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV1_x_MO1_on_DV3.png
+2025-09-06 22:28:08,671 - WARNING - [Replicate_Results_090625_v1.py:686] - Column 'iv1_medicaid_expansion_active' is a 2D array with shape (2109, 2). Extracting first column.
+2025-09-06 22:28:08,671 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'iv1_medicaid_expansion_active': 0 NaN values out of 2109
+2025-09-06 22:28:08,672 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'dv3_avg_patient_services_margin': 0 NaN values out of 2109
+2025-09-06 22:28:08,672 - INFO - [Replicate_Results_090625_v1.py:695] - Processed 'mo2_robotics_composite_score__gt_0pct': 0 NaN values out of 2109
+2025-09-06 22:28:08,873 - INFO - [Replicate_Results_090625_v1.py:760] - Saved interaction plot: genai_robotics_health_output/plots/interaction_IV1_x_MO2_on_DV3.png
+2025-09-06 22:28:08,881 - INFO - [Replicate_Results_090625_v1.py:955] - Saved moderation summary to genai_robotics_health_output/moderation_analysis_summary.csv
+2025-09-06 22:28:08,903 - INFO - [Replicate_Results_090625_v1.py:1008] - Saved index-level OLS summary to genai_robotics_health_output/index_level_ols_summary.csv
+2025-09-06 22:28:08,921 - INFO - [Replicate_Results_090625_v1.py:1038] - Saved direct DV3 effects to genai_robotics_health_output/direct_effects_on_dv3_summary.csv
+2025-09-06 22:28:09,096 - INFO - [Replicate_Results_090625_v1.py:657] - Saved DV3 direct effect plot: genai_robotics_health_output/plots/Direct_Effect_DV3.png
+2025-09-06 22:28:09,098 - INFO - [Replicate_Results_090625_v1.py:1119] - Saved replication report to genai_robotics_health_output/replication_report.csv
+2025-09-06 22:28:09,098 - INFO - [Replicate_Results_090625_v1.py:1123] - All done. Check logs and output directory for results.

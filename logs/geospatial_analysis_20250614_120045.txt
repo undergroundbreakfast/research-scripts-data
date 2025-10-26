@@ -1,0 +1,8 @@
+2025-06-14 12:00:45,952 [INFO] Logging to logs/geospatial_analysis_20250614_120045.txt
+2025-06-14 12:00:46,014 [INFO] Connected to Postgres (Research_TEST@localhost).
+2025-06-14 12:00:46,014 [INFO] Fetching hospital data …
+2025-06-14 12:00:46,029 [INFO] Fetched 6,166 rows.
+2025-06-14 12:00:46,030 [WARNING] ZIP centroid file not found.
+2025-06-14 12:00:46,031 [INFO] Coordinates found for 0.0% of hospitals.
+2025-06-14 12:00:46,035 [INFO] GeoDataFrame ready (N=0).
+2025-06-14 12:00:46,036 [ERROR] Fatal error: need at least one array to concatenate

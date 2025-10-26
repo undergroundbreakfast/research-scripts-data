@@ -1,0 +1,686 @@
+2025-05-13 22:46:48,734 - INFO - Logging to: logs/moderation_log_20250513_224648.txt
+2025-05-13 22:46:48,734 - INFO - Output will be saved in: moderation_output
+2025-05-13 22:46:48,809 - INFO - Connected to Postgres successfully.
+2025-05-13 22:47:14,699 - INFO - Data fetched from vw_conceptual_model (with NOT NULL checks): shape=(2126, 12)
+2025-05-13 22:47:14,700 - INFO - Using '1' as the reference category for census_division dummies.
+2025-05-13 22:47:14,701 - INFO - Created 8 dummy cols for census_division
+2025-05-13 22:47:14,701 - INFO - Saving coefficients summary to: moderation_output/Moderation_Coefficients_All_Transformations.csv
+2025-05-13 22:47:14,701 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,701 - INFO - PATH 1/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,701 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,701 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv1_public_health_policy * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,703 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,703 - INFO - Creating interaction term: iv1_public_health_policy_x_mo1_genai_capabilities
+2025-05-13 22:47:14,705 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,706 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,707 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,707 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,707 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv1_public_health_policy_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,708 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,708 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,709 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,710 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,711 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,711 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,711 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-13 22:47:14,711 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,712 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,712 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv1_public_health_policy_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,712 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,713 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,714 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,715 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,715 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,716 - WARNING - No models successfully fit for iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,716 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,716 - INFO - PATH 2/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,716 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,716 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv1_public_health_policy * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,716 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,716 - INFO - Creating interaction term: iv1_public_health_policy_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,718 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,719 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,719 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,719 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,719 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv1_public_health_policy_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,720 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,720 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,721 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,722 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,722 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,722 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,722 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-13 22:47:14,723 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,723 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,723 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv1_public_health_policy_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,723 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,723 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,725 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,726 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,726 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,726 - WARNING - No models successfully fit for iv1_public_health_policy x mo2_robotics_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,726 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,726 - INFO - PATH 3/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,726 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,726 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv2_physical_environment * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,726 - INFO - Mean-centering iv2_physical_environment (mean=2.2160)
+2025-05-13 22:47:14,726 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,726 - INFO - Creating interaction term: iv2_physical_environment_x_mo1_genai_capabilities
+2025-05-13 22:47:14,728 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,729 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,729 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,729 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,730 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv2_physical_environment_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,730 - INFO - Mean-centering iv2_physical_environment_z (mean=0.0000)
+2025-05-13 22:47:14,730 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,730 - INFO - Creating interaction term: iv2_physical_environment_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,732 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,733 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,733 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,733 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,733 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,733 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,734 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv2_physical_environment_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,734 - INFO - Mean-centering iv2_physical_environment_log (mean=0.7715)
+2025-05-13 22:47:14,734 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,734 - INFO - Creating interaction term: iv2_physical_environment_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,736 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,737 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,737 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,737 - WARNING - No models successfully fit for iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,737 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,737 - INFO - PATH 4/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,737 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,737 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv2_physical_environment * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,738 - INFO - Mean-centering iv2_physical_environment (mean=2.2160)
+2025-05-13 22:47:14,738 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,738 - INFO - Creating interaction term: iv2_physical_environment_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,739 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,740 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,740 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,740 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,740 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv2_physical_environment_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,741 - INFO - Mean-centering iv2_physical_environment_z (mean=0.0000)
+2025-05-13 22:47:14,741 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,741 - INFO - Creating interaction term: iv2_physical_environment_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,742 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,744 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,744 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,744 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,744 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,744 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,745 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv2_physical_environment_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,745 - INFO - Mean-centering iv2_physical_environment_log (mean=0.7715)
+2025-05-13 22:47:14,745 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,745 - INFO - Creating interaction term: iv2_physical_environment_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,746 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,747 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,747 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,747 - WARNING - No models successfully fit for iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,748 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,748 - INFO - PATH 5/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,748 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,748 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv3_health_behaviors * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,748 - INFO - Mean-centering iv3_health_behaviors (mean=34.4633)
+2025-05-13 22:47:14,748 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,748 - INFO - Creating interaction term: iv3_health_behaviors_x_mo1_genai_capabilities
+2025-05-13 22:47:14,750 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,750 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,750 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,750 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,751 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv3_health_behaviors_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,751 - INFO - Mean-centering iv3_health_behaviors_z (mean=0.0000)
+2025-05-13 22:47:14,752 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,752 - INFO - Creating interaction term: iv3_health_behaviors_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,753 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,754 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,754 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,754 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,754 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,754 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,754 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv3_health_behaviors_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,755 - INFO - Mean-centering iv3_health_behaviors_log (mean=3.3947)
+2025-05-13 22:47:14,755 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,755 - INFO - Creating interaction term: iv3_health_behaviors_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,756 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,757 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,757 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,757 - WARNING - No models successfully fit for iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,757 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,757 - INFO - PATH 6/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,757 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,757 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv3_health_behaviors * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,757 - INFO - Mean-centering iv3_health_behaviors (mean=34.4633)
+2025-05-13 22:47:14,757 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,757 - INFO - Creating interaction term: iv3_health_behaviors_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,759 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,759 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,759 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,759 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,760 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv3_health_behaviors_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,760 - INFO - Mean-centering iv3_health_behaviors_z (mean=0.0000)
+2025-05-13 22:47:14,760 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,761 - INFO - Creating interaction term: iv3_health_behaviors_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,762 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,762 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,763 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,763 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,763 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,763 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,763 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv3_health_behaviors_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,763 - INFO - Mean-centering iv3_health_behaviors_log (mean=3.3947)
+2025-05-13 22:47:14,763 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,764 - INFO - Creating interaction term: iv3_health_behaviors_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,765 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,765 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,766 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,766 - WARNING - No models successfully fit for iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,766 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,766 - INFO - PATH 7/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,766 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,766 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv4_social_economic_factors * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,766 - INFO - Mean-centering iv4_social_economic_factors (mean=13.4560)
+2025-05-13 22:47:14,766 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,766 - INFO - Creating interaction term: iv4_social_economic_factors_x_mo1_genai_capabilities
+2025-05-13 22:47:14,767 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,768 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,768 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,768 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,769 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv4_social_economic_factors_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,769 - INFO - Mean-centering iv4_social_economic_factors_z (mean=0.0000)
+2025-05-13 22:47:14,769 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,769 - INFO - Creating interaction term: iv4_social_economic_factors_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,771 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,771 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,772 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,772 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,772 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,772 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,772 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv4_social_economic_factors_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,773 - INFO - Mean-centering iv4_social_economic_factors_log (mean=2.5661)
+2025-05-13 22:47:14,773 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,773 - INFO - Creating interaction term: iv4_social_economic_factors_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,774 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,775 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,775 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,775 - WARNING - No models successfully fit for iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,775 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,775 - INFO - PATH 8/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 22:47:14,775 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,775 - INFO - Fitting OLS model: dv1_healthcare_access ~ iv4_social_economic_factors * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,775 - INFO - Mean-centering iv4_social_economic_factors (mean=13.4560)
+2025-05-13 22:47:14,775 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,776 - INFO - Creating interaction term: iv4_social_economic_factors_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,777 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,778 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,778 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,778 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,778 - INFO - Fitting OLS model: dv1_healthcare_access_z ~ iv4_social_economic_factors_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,779 - INFO - Mean-centering iv4_social_economic_factors_z (mean=0.0000)
+2025-05-13 22:47:14,779 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,779 - INFO - Creating interaction term: iv4_social_economic_factors_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,780 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,781 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,781 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,781 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,781 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,781 - INFO - Log transform: Adding offset of 4.5380096050408785 to dv1_healthcare_access (min=-3.538009605040879).
+2025-05-13 22:47:14,781 - INFO - Fitting OLS model: dv1_healthcare_access_log ~ iv4_social_economic_factors_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,782 - INFO - Mean-centering iv4_social_economic_factors_log (mean=2.5661)
+2025-05-13 22:47:14,782 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,782 - INFO - Creating interaction term: iv4_social_economic_factors_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,783 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,784 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,784 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,784 - WARNING - No models successfully fit for iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access. Skipping.
+2025-05-13 22:47:14,784 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,784 - INFO - PATH 9/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,784 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,784 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv1_public_health_policy * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,784 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,784 - INFO - Creating interaction term: iv1_public_health_policy_x_mo1_genai_capabilities
+2025-05-13 22:47:14,786 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,787 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,787 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,787 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,787 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv1_public_health_policy_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,788 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,788 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,789 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,790 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,790 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,790 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,790 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-13 22:47:14,790 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,790 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv1_public_health_policy_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,791 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,791 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,792 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,793 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,793 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,793 - WARNING - No models successfully fit for iv1_public_health_policy x mo1_genai_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,793 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,793 - INFO - PATH 10/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,793 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,793 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv1_public_health_policy * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,793 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,793 - INFO - Creating interaction term: iv1_public_health_policy_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,795 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,795 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,795 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,795 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,796 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv1_public_health_policy_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,796 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,796 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,797 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,798 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,798 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,798 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,798 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-13 22:47:14,799 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,799 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv1_public_health_policy_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,799 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,799 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,800 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,801 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,801 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,801 - WARNING - No models successfully fit for iv1_public_health_policy x mo2_robotics_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,801 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,801 - INFO - PATH 11/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,801 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,802 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv2_physical_environment * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,802 - INFO - Mean-centering iv2_physical_environment (mean=2.2160)
+2025-05-13 22:47:14,802 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,802 - INFO - Creating interaction term: iv2_physical_environment_x_mo1_genai_capabilities
+2025-05-13 22:47:14,803 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,804 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,804 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,804 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,805 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv2_physical_environment_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,805 - INFO - Mean-centering iv2_physical_environment_z (mean=0.0000)
+2025-05-13 22:47:14,805 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,805 - INFO - Creating interaction term: iv2_physical_environment_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,806 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,807 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,807 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,807 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,807 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,808 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv2_physical_environment_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,808 - INFO - Mean-centering iv2_physical_environment_log (mean=0.7715)
+2025-05-13 22:47:14,808 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,808 - INFO - Creating interaction term: iv2_physical_environment_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,809 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,810 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,810 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,810 - WARNING - No models successfully fit for iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,811 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,811 - INFO - PATH 12/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,811 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,811 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv2_physical_environment * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,811 - INFO - Mean-centering iv2_physical_environment (mean=2.2160)
+2025-05-13 22:47:14,811 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,811 - INFO - Creating interaction term: iv2_physical_environment_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,813 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,813 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,813 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,813 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,814 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv2_physical_environment_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,814 - INFO - Mean-centering iv2_physical_environment_z (mean=0.0000)
+2025-05-13 22:47:14,814 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,814 - INFO - Creating interaction term: iv2_physical_environment_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,816 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,816 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,816 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,816 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,817 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,817 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv2_physical_environment_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,817 - INFO - Mean-centering iv2_physical_environment_log (mean=0.7715)
+2025-05-13 22:47:14,817 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,817 - INFO - Creating interaction term: iv2_physical_environment_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,819 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,819 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,819 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,820 - WARNING - No models successfully fit for iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,820 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,820 - INFO - PATH 13/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,820 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,820 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv3_health_behaviors * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,820 - INFO - Mean-centering iv3_health_behaviors (mean=34.4633)
+2025-05-13 22:47:14,820 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,820 - INFO - Creating interaction term: iv3_health_behaviors_x_mo1_genai_capabilities
+2025-05-13 22:47:14,821 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,822 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,822 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,822 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,823 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv3_health_behaviors_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,823 - INFO - Mean-centering iv3_health_behaviors_z (mean=0.0000)
+2025-05-13 22:47:14,823 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,823 - INFO - Creating interaction term: iv3_health_behaviors_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,824 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,825 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,825 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,825 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,825 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,826 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv3_health_behaviors_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,826 - INFO - Mean-centering iv3_health_behaviors_log (mean=3.3947)
+2025-05-13 22:47:14,826 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,826 - INFO - Creating interaction term: iv3_health_behaviors_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,827 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,828 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,828 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,828 - WARNING - No models successfully fit for iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,828 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,828 - INFO - PATH 14/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,828 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,828 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv3_health_behaviors * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,829 - INFO - Mean-centering iv3_health_behaviors (mean=34.4633)
+2025-05-13 22:47:14,829 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,829 - INFO - Creating interaction term: iv3_health_behaviors_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,830 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,831 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,831 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,831 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,832 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv3_health_behaviors_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,832 - INFO - Mean-centering iv3_health_behaviors_z (mean=0.0000)
+2025-05-13 22:47:14,832 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,832 - INFO - Creating interaction term: iv3_health_behaviors_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,833 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,834 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,834 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,834 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,834 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,834 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv3_health_behaviors_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,835 - INFO - Mean-centering iv3_health_behaviors_log (mean=3.3947)
+2025-05-13 22:47:14,835 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,836 - INFO - Creating interaction term: iv3_health_behaviors_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,837 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,838 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,838 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,838 - WARNING - No models successfully fit for iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,838 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,838 - INFO - PATH 15/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,838 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,838 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv4_social_economic_factors * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,838 - INFO - Mean-centering iv4_social_economic_factors (mean=13.4560)
+2025-05-13 22:47:14,838 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,839 - INFO - Creating interaction term: iv4_social_economic_factors_x_mo1_genai_capabilities
+2025-05-13 22:47:14,840 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,840 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,841 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,841 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,841 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv4_social_economic_factors_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,841 - INFO - Mean-centering iv4_social_economic_factors_z (mean=0.0000)
+2025-05-13 22:47:14,841 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,842 - INFO - Creating interaction term: iv4_social_economic_factors_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,843 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,844 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,844 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,844 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,844 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,844 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv4_social_economic_factors_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,845 - INFO - Mean-centering iv4_social_economic_factors_log (mean=2.5661)
+2025-05-13 22:47:14,845 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,845 - INFO - Creating interaction term: iv4_social_economic_factors_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,846 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,847 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,847 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,847 - WARNING - No models successfully fit for iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,847 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,847 - INFO - PATH 16/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 22:47:14,847 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,847 - INFO - Fitting OLS model: dv2_healthcare_quality ~ iv4_social_economic_factors * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,847 - INFO - Mean-centering iv4_social_economic_factors (mean=13.4560)
+2025-05-13 22:47:14,848 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,848 - INFO - Creating interaction term: iv4_social_economic_factors_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,849 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,850 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,850 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,850 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,850 - INFO - Fitting OLS model: dv2_healthcare_quality_z ~ iv4_social_economic_factors_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,850 - INFO - Mean-centering iv4_social_economic_factors_z (mean=0.0000)
+2025-05-13 22:47:14,851 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,851 - INFO - Creating interaction term: iv4_social_economic_factors_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,852 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,853 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,853 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,853 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,853 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,853 - INFO - Fitting OLS model: dv2_healthcare_quality_log ~ iv4_social_economic_factors_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,853 - INFO - Mean-centering iv4_social_economic_factors_log (mean=2.5661)
+2025-05-13 22:47:14,854 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,854 - INFO - Creating interaction term: iv4_social_economic_factors_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,855 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,856 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,856 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,856 - WARNING - No models successfully fit for iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality. Skipping.
+2025-05-13 22:47:14,856 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,856 - INFO - PATH 17/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,856 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,856 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv1_public_health_policy * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,856 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,856 - INFO - Creating interaction term: iv1_public_health_policy_x_mo1_genai_capabilities
+2025-05-13 22:47:14,857 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,858 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,858 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,858 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,859 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv1_public_health_policy_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,859 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,859 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,860 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,861 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,861 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,861 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,861 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-13 22:47:14,861 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,862 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,862 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv1_public_health_policy_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,862 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,862 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,863 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,864 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,864 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,864 - WARNING - No models successfully fit for iv1_public_health_policy x mo1_genai_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,864 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,864 - INFO - PATH 18/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,864 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,864 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv1_public_health_policy * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,865 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,865 - INFO - Creating interaction term: iv1_public_health_policy_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,866 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,867 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,867 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,867 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,867 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv1_public_health_policy_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,868 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,868 - INFO - Creating interaction term: iv1_public_health_policy_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,869 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,870 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,870 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,870 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,870 - INFO - Log transform: Adding offset of 1 to iv1_public_health_policy (min=0).
+2025-05-13 22:47:14,870 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,870 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,870 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv1_public_health_policy_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,871 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,871 - INFO - Creating interaction term: iv1_public_health_policy_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,872 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,873 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,873 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,873 - WARNING - No models successfully fit for iv1_public_health_policy x mo2_robotics_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,873 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,873 - INFO - PATH 19/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,873 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,873 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv2_physical_environment * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,873 - INFO - Mean-centering iv2_physical_environment (mean=2.2160)
+2025-05-13 22:47:14,873 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,873 - INFO - Creating interaction term: iv2_physical_environment_x_mo1_genai_capabilities
+2025-05-13 22:47:14,875 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,875 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,875 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,875 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,876 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv2_physical_environment_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,876 - INFO - Mean-centering iv2_physical_environment_z (mean=0.0000)
+2025-05-13 22:47:14,876 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,877 - INFO - Creating interaction term: iv2_physical_environment_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,878 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,878 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,878 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,878 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,879 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,879 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,879 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv2_physical_environment_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,879 - INFO - Mean-centering iv2_physical_environment_log (mean=0.7715)
+2025-05-13 22:47:14,879 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,880 - INFO - Creating interaction term: iv2_physical_environment_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,881 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,881 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,881 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,881 - WARNING - No models successfully fit for iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,881 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,882 - INFO - PATH 20/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,882 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,882 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv2_physical_environment * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,882 - INFO - Mean-centering iv2_physical_environment (mean=2.2160)
+2025-05-13 22:47:14,882 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,882 - INFO - Creating interaction term: iv2_physical_environment_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,883 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,884 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,884 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,884 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,885 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv2_physical_environment_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,885 - INFO - Mean-centering iv2_physical_environment_z (mean=0.0000)
+2025-05-13 22:47:14,885 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,885 - INFO - Creating interaction term: iv2_physical_environment_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,886 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,887 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,887 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,887 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,887 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,888 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,888 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv2_physical_environment_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,888 - INFO - Mean-centering iv2_physical_environment_log (mean=0.7715)
+2025-05-13 22:47:14,888 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,888 - INFO - Creating interaction term: iv2_physical_environment_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,889 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,890 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,890 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,890 - WARNING - No models successfully fit for iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,890 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,890 - INFO - PATH 21/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,890 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,890 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv3_health_behaviors * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,891 - INFO - Mean-centering iv3_health_behaviors (mean=34.4633)
+2025-05-13 22:47:14,891 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,891 - INFO - Creating interaction term: iv3_health_behaviors_x_mo1_genai_capabilities
+2025-05-13 22:47:14,892 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,893 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,893 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,893 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,894 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv3_health_behaviors_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,894 - INFO - Mean-centering iv3_health_behaviors_z (mean=0.0000)
+2025-05-13 22:47:14,894 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,894 - INFO - Creating interaction term: iv3_health_behaviors_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,895 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,896 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,896 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,896 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,896 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,896 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,897 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv3_health_behaviors_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,897 - INFO - Mean-centering iv3_health_behaviors_log (mean=3.3947)
+2025-05-13 22:47:14,897 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,897 - INFO - Creating interaction term: iv3_health_behaviors_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,898 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,899 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,899 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,899 - WARNING - No models successfully fit for iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,899 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,899 - INFO - PATH 22/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,899 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,899 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv3_health_behaviors * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,899 - INFO - Mean-centering iv3_health_behaviors (mean=34.4633)
+2025-05-13 22:47:14,900 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,900 - INFO - Creating interaction term: iv3_health_behaviors_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,901 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,902 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,902 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,902 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,902 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv3_health_behaviors_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,903 - INFO - Mean-centering iv3_health_behaviors_z (mean=0.0000)
+2025-05-13 22:47:14,903 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,903 - INFO - Creating interaction term: iv3_health_behaviors_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,904 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,905 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,905 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,905 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,905 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,905 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,905 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv3_health_behaviors_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,906 - INFO - Mean-centering iv3_health_behaviors_log (mean=3.3947)
+2025-05-13 22:47:14,906 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,906 - INFO - Creating interaction term: iv3_health_behaviors_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,907 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,908 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,908 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,908 - WARNING - No models successfully fit for iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,908 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,908 - INFO - PATH 23/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,908 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,908 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv4_social_economic_factors * mo1_genai_capabilities + controls
+2025-05-13 22:47:14,908 - INFO - Mean-centering iv4_social_economic_factors (mean=13.4560)
+2025-05-13 22:47:14,908 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-13 22:47:14,908 - INFO - Creating interaction term: iv4_social_economic_factors_x_mo1_genai_capabilities
+2025-05-13 22:47:14,910 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,911 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,911 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,911 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,911 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv4_social_economic_factors_z * mo1_genai_capabilities_z + controls
+2025-05-13 22:47:14,912 - INFO - Mean-centering iv4_social_economic_factors_z (mean=0.0000)
+2025-05-13 22:47:14,912 - INFO - Mean-centering mo1_genai_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,912 - INFO - Creating interaction term: iv4_social_economic_factors_z_x_mo1_genai_capabilities_z
+2025-05-13 22:47:14,913 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,914 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,914 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,914 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,914 - INFO - Log transform: Adding offset of 1.0 to mo1_genai_capabilities (min=0.0).
+2025-05-13 22:47:14,914 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,914 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv4_social_economic_factors_log * mo1_genai_capabilities_log + controls
+2025-05-13 22:47:14,915 - INFO - Mean-centering iv4_social_economic_factors_log (mean=2.5661)
+2025-05-13 22:47:14,915 - INFO - Mean-centering mo1_genai_capabilities_log (mean=0.2136)
+2025-05-13 22:47:14,915 - INFO - Creating interaction term: iv4_social_economic_factors_log_x_mo1_genai_capabilities_log
+2025-05-13 22:47:14,916 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,917 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,917 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,917 - WARNING - No models successfully fit for iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,917 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:47:14,917 - INFO - PATH 24/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 22:47:14,917 - INFO -   Running with RAW transformation
+2025-05-13 22:47:14,917 - INFO - Fitting OLS model: dv3_operational_efficiency ~ iv4_social_economic_factors * mo2_robotics_capabilities + controls
+2025-05-13 22:47:14,918 - INFO - Mean-centering iv4_social_economic_factors (mean=13.4560)
+2025-05-13 22:47:14,918 - INFO - Mean-centering mo2_robotics_capabilities (mean=2.2891)
+2025-05-13 22:47:14,918 - INFO - Creating interaction term: iv4_social_economic_factors_x_mo2_robotics_capabilities
+2025-05-13 22:47:14,919 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,920 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,920 - WARNING -   Skipping raw transform due to model error
+2025-05-13 22:47:14,920 - INFO -   Running with ZSCORE transformation
+2025-05-13 22:47:14,920 - INFO - Fitting OLS model: dv3_operational_efficiency_z ~ iv4_social_economic_factors_z * mo2_robotics_capabilities_z + controls
+2025-05-13 22:47:14,921 - INFO - Mean-centering iv4_social_economic_factors_z (mean=0.0000)
+2025-05-13 22:47:14,921 - INFO - Mean-centering mo2_robotics_capabilities_z (mean=0.0000)
+2025-05-13 22:47:14,921 - INFO - Creating interaction term: iv4_social_economic_factors_z_x_mo2_robotics_capabilities_z
+2025-05-13 22:47:14,922 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,923 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,923 - WARNING -   Skipping zscore transform due to model error
+2025-05-13 22:47:14,923 - INFO -   Running with LOG transformation
+2025-05-13 22:47:14,923 - INFO - Log transform: Adding offset of 1.0 to mo2_robotics_capabilities (min=0.0).
+2025-05-13 22:47:14,923 - INFO - Log transform: Adding offset of 84.9 to dv3_operational_efficiency (min=-83.9).
+2025-05-13 22:47:14,923 - INFO - Fitting OLS model: dv3_operational_efficiency_log ~ iv4_social_economic_factors_log * mo2_robotics_capabilities_log + controls
+2025-05-13 22:47:14,924 - INFO - Mean-centering iv4_social_economic_factors_log (mean=2.5661)
+2025-05-13 22:47:14,924 - INFO - Mean-centering mo2_robotics_capabilities_log (mean=0.7203)
+2025-05-13 22:47:14,924 - INFO - Creating interaction term: iv4_social_economic_factors_log_x_mo2_robotics_capabilities_log
+2025-05-13 22:47:14,925 - WARNING - Could not calculate VIF: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2025-05-13 22:47:14,926 - ERROR - Error fitting OLS model: Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
+2025-05-13 22:47:14,926 - WARNING -   Skipping log transform due to model error
+2025-05-13 22:47:14,926 - WARNING - No models successfully fit for iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency. Skipping.
+2025-05-13 22:47:14,926 - INFO - ================================================================================
+2025-05-13 22:47:14,926 - INFO - Multi-transformation moderation analyses completed
+2025-05-13 22:47:14,926 - INFO - ================================================================================

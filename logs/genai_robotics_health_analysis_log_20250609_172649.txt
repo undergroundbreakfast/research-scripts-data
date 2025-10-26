@@ -1,0 +1,313 @@
+2025-06-09 17:26:49,819 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:80] - Logging to: logs/genai_robotics_health_analysis_log_20250609_172649.txt
+2025-06-09 17:26:49,819 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:931] - Starting GenAI/Robotics Causal and Moderation Analysis Script.
+2025-06-09 17:26:49,891 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:106] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-09 17:27:18,267 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:162] - Data for analysis retrieved: 3135 rows, 21 columns.
+2025-06-09 17:27:18,268 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:178] - Renaming columns for clarity (e.g. iv3_health_behaviors_score)...
+2025-06-09 17:27:18,269 - WARNING - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:199] - Columns with >10% NaNs which might affect sample sizes:
+dv3_avg_patient_services_margin    1026
+dtype: int64
+2025-06-09 17:27:18,269 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:211] - Performing common data preparations...
+2025-06-09 17:27:18,270 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:217] - Created 'state_fips_for_clustering' column for clustered SEs.
+2025-06-09 17:27:18,271 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:247] - Created 8 dummy variables for 'census_division'.
+2025-06-09 17:27:18,271 - WARNING - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:272] - NaNs introduced or present in outcome column 'dv21_premature_death_ypll_rate' after numeric conversion.
+2025-06-09 17:27:18,271 - WARNING - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:272] - NaNs introduced or present in outcome column 'dv15_preventable_stays_rate' after numeric conversion.
+2025-06-09 17:27:18,272 - WARNING - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:272] - NaNs introduced or present in outcome column 'dv3_avg_patient_services_margin' after numeric conversion.
+2025-06-09 17:27:18,272 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:291] - Filled 2 NaNs with 0 for tech column 'pct_wfaiart_enabled_adjpd'.
+2025-06-09 17:27:18,272 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:291] - Filled 2 NaNs with 0 for tech column 'pct_wfaioacw_enabled_adjpd'.
+2025-06-09 17:27:18,272 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:291] - Filled 2 NaNs with 0 for tech column 'pct_wfaippd_enabled_adjpd'.
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:291] - Filled 2 NaNs with 0 for tech column 'pct_wfaipsn_enabled_adjpd'.
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:291] - Filled 2 NaNs with 0 for tech column 'pct_wfaiss_enabled_adjpd'.
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:291] - Filled 2 NaNs with 0 for tech column 'pct_robohos_enabled_adjpd'.
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:295] - Common data preparations complete.
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1026] - ============================== PART 1: MAIN EFFECT ANALYSIS ON HEALTH OUTCOME ==============================
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1027] - Main effect outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1028] - Treatment definition for main effects: Adoption > Median for that technology.
+2025-06-09 17:27:18,273 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1033] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO11_AI_Automate_Tasks (pct_wfaiart_enabled_adjpd) ==========
+2025-06-09 17:27:18,274 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1046] -   Median for pct_wfaiart_enabled_adjpd: 0.0000. Treatment defined as > Median.
+2025-06-09 17:27:18,275 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1068] -   Main Effect Final N for MO11_AI_Automate_Tasks: 3080 (Treated: 417, Control: 2663) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:27:18,275 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaiart_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:18,285 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaiart_enabled_adjpd_adopted_gt_median: -456.5358, P-value: 0.0069, CI: [-787.7214, -125.3502]
+2025-06-09 17:27:18,286 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaiart_enabled_adjpd_adopted_gt_median' (Main Effect: -456.5358 on YPLL rate):
+2025-06-09 17:27:18,286 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 707,090
+2025-06-09 17:27:18,286 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 24,382
+2025-06-09 17:27:18,286 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:405] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaiart_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:18,294 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:425] - IPTW Main Effect ATE for pct_wfaiart_enabled_adjpd_adopted_gt_median: -1662.1612
+2025-06-09 17:27:22,300 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaiart_enabled_adjpd_adopted_gt_median' (Main Effect: -1662.1612 on YPLL rate):
+2025-06-09 17:27:22,300 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 2,574,381
+2025-06-09 17:27:22,300 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 88,772
+2025-06-09 17:27:22,300 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:502] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaiart_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:22,671 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:542] - AIPW Main Effect ATE for pct_wfaiart_enabled_adjpd_adopted_gt_median: -932.6162
+2025-06-09 17:27:28,097 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaiart_enabled_adjpd_adopted_gt_median' (Main Effect: -932.6162 on YPLL rate):
+2025-06-09 17:27:28,097 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 1,444,450
+2025-06-09 17:27:28,097 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 49,809
+2025-06-09 17:27:28,097 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1033] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO12_AI_Optimize_Workflows (pct_wfaioacw_enabled_adjpd) ==========
+2025-06-09 17:27:28,097 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1046] -   Median for pct_wfaioacw_enabled_adjpd: 0.0000. Treatment defined as > Median.
+2025-06-09 17:27:28,098 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1068] -   Main Effect Final N for MO12_AI_Optimize_Workflows: 3080 (Treated: 453, Control: 2627) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:27:28,098 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaioacw_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:28,103 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaioacw_enabled_adjpd_adopted_gt_median: -305.3977, P-value: 0.0298, CI: [-580.9495, -29.8459]
+2025-06-09 17:27:28,103 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaioacw_enabled_adjpd_adopted_gt_median' (Main Effect: -305.3977 on YPLL rate):
+2025-06-09 17:27:28,103 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 445,224
+2025-06-09 17:27:28,103 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 15,353
+2025-06-09 17:27:28,103 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:405] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaioacw_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:28,112 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:425] - IPTW Main Effect ATE for pct_wfaioacw_enabled_adjpd_adopted_gt_median: -138.1472
+2025-06-09 17:27:31,328 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaioacw_enabled_adjpd_adopted_gt_median' (Main Effect: -138.1472 on YPLL rate):
+2025-06-09 17:27:31,328 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 201,398
+2025-06-09 17:27:31,328 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 6,945
+2025-06-09 17:27:31,328 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:502] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaioacw_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:31,554 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:542] - AIPW Main Effect ATE for pct_wfaioacw_enabled_adjpd_adopted_gt_median: -302.8276
+2025-06-09 17:27:36,794 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaioacw_enabled_adjpd_adopted_gt_median' (Main Effect: -302.8276 on YPLL rate):
+2025-06-09 17:27:36,795 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 441,477
+2025-06-09 17:27:36,795 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 15,223
+2025-06-09 17:27:36,795 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1033] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO13_AI_Predict_Demand (pct_wfaippd_enabled_adjpd) ==========
+2025-06-09 17:27:36,795 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1046] -   Median for pct_wfaippd_enabled_adjpd: 0.0000. Treatment defined as > Median.
+2025-06-09 17:27:36,795 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1068] -   Main Effect Final N for MO13_AI_Predict_Demand: 3080 (Treated: 337, Control: 2743) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:27:36,796 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaippd_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:36,800 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaippd_enabled_adjpd_adopted_gt_median: -273.9607, P-value: 0.0480, CI: [-545.5269, -2.3945]
+2025-06-09 17:27:36,801 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaippd_enabled_adjpd_adopted_gt_median' (Main Effect: -273.9607 on YPLL rate):
+2025-06-09 17:27:36,801 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 470,004
+2025-06-09 17:27:36,801 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 16,207
+2025-06-09 17:27:36,801 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:405] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaippd_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:36,807 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:425] - IPTW Main Effect ATE for pct_wfaippd_enabled_adjpd_adopted_gt_median: -1471.7863
+2025-06-09 17:27:40,374 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaippd_enabled_adjpd_adopted_gt_median' (Main Effect: -1471.7863 on YPLL rate):
+2025-06-09 17:27:40,374 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 2,524,980
+2025-06-09 17:27:40,374 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 87,068
+2025-06-09 17:27:40,375 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:502] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaippd_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:40,600 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:542] - AIPW Main Effect ATE for pct_wfaippd_enabled_adjpd_adopted_gt_median: -446.9089
+2025-06-09 17:27:46,127 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaippd_enabled_adjpd_adopted_gt_median' (Main Effect: -446.9089 on YPLL rate):
+2025-06-09 17:27:46,127 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 766,712
+2025-06-09 17:27:46,128 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 26,438
+2025-06-09 17:27:46,128 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1033] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO14_AI_Predict_Staff (pct_wfaipsn_enabled_adjpd) ==========
+2025-06-09 17:27:46,128 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1046] -   Median for pct_wfaipsn_enabled_adjpd: 0.0000. Treatment defined as > Median.
+2025-06-09 17:27:46,128 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1068] -   Main Effect Final N for MO14_AI_Predict_Staff: 3080 (Treated: 318, Control: 2762) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:27:46,128 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaipsn_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:46,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaipsn_enabled_adjpd_adopted_gt_median: -195.5225, P-value: 0.3309, CI: [-589.6604, 198.6154]
+2025-06-09 17:27:46,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaipsn_enabled_adjpd_adopted_gt_median' (Main Effect: -195.5225 on YPLL rate):
+2025-06-09 17:27:46,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 346,097
+2025-06-09 17:27:46,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 11,934
+2025-06-09 17:27:46,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:405] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaipsn_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:46,150 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:425] - IPTW Main Effect ATE for pct_wfaipsn_enabled_adjpd_adopted_gt_median: -1028.2013
+2025-06-09 17:27:49,662 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaipsn_enabled_adjpd_adopted_gt_median' (Main Effect: -1028.2013 on YPLL rate):
+2025-06-09 17:27:49,662 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 1,820,035
+2025-06-09 17:27:49,662 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 62,760
+2025-06-09 17:27:49,663 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:502] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaipsn_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:49,901 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:542] - AIPW Main Effect ATE for pct_wfaipsn_enabled_adjpd_adopted_gt_median: -155.7273
+2025-06-09 17:27:55,290 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaipsn_enabled_adjpd_adopted_gt_median' (Main Effect: -155.7273 on YPLL rate):
+2025-06-09 17:27:55,290 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 275,655
+2025-06-09 17:27:55,290 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 9,505
+2025-06-09 17:27:55,290 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1033] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO15_AI_Staff_Schedule (pct_wfaiss_enabled_adjpd) ==========
+2025-06-09 17:27:55,290 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1046] -   Median for pct_wfaiss_enabled_adjpd: 0.0000. Treatment defined as > Median.
+2025-06-09 17:27:55,291 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1068] -   Main Effect Final N for MO15_AI_Staff_Schedule: 3080 (Treated: 299, Control: 2781) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:27:55,291 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaiss_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:55,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaiss_enabled_adjpd_adopted_gt_median: -114.0680, P-value: 0.4706, CI: [-423.9683, 195.8322]
+2025-06-09 17:27:55,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaiss_enabled_adjpd_adopted_gt_median' (Main Effect: -114.0680 on YPLL rate):
+2025-06-09 17:27:55,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 216,867
+2025-06-09 17:27:55,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 7,478
+2025-06-09 17:27:55,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:405] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaiss_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:55,302 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:425] - IPTW Main Effect ATE for pct_wfaiss_enabled_adjpd_adopted_gt_median: -985.0449
+2025-06-09 17:27:58,779 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaiss_enabled_adjpd_adopted_gt_median' (Main Effect: -985.0449 on YPLL rate):
+2025-06-09 17:27:58,779 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 1,872,777
+2025-06-09 17:27:58,779 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 64,579
+2025-06-09 17:27:58,779 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:502] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaiss_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:27:59,011 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:542] - AIPW Main Effect ATE for pct_wfaiss_enabled_adjpd_adopted_gt_median: -292.8593
+2025-06-09 17:28:04,366 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_wfaiss_enabled_adjpd_adopted_gt_median' (Main Effect: -292.8593 on YPLL rate):
+2025-06-09 17:28:04,366 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 556,787
+2025-06-09 17:28:04,366 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 19,200
+2025-06-09 17:28:04,366 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1033] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO21_Robotics_In_Hospital (pct_robohos_enabled_adjpd) ==========
+2025-06-09 17:28:04,367 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1046] -   Median for pct_robohos_enabled_adjpd: 0.0000. Treatment defined as > Median.
+2025-06-09 17:28:04,367 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1068] -   Main Effect Final N for MO21_Robotics_In_Hospital: 3080 (Treated: 775, Control: 2305) on Outcome: dv21_premature_death_ypll_rate
+2025-06-09 17:28:04,367 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_robohos_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:28:04,372 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_robohos_enabled_adjpd_adopted_gt_median: -562.8201, P-value: 0.0000, CI: [-790.0064, -335.6339]
+2025-06-09 17:28:04,372 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_robohos_enabled_adjpd_adopted_gt_median' (Main Effect: -562.8201 on YPLL rate):
+2025-06-09 17:28:04,372 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 411,654
+2025-06-09 17:28:04,372 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 14,195
+2025-06-09 17:28:04,372 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:405] - --- Starting IPTW Main Effect Analysis for Treatment: pct_robohos_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:28:04,378 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:425] - IPTW Main Effect ATE for pct_robohos_enabled_adjpd_adopted_gt_median: -1050.2736
+2025-06-09 17:28:08,083 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_robohos_enabled_adjpd_adopted_gt_median' (Main Effect: -1050.2736 on YPLL rate):
+2025-06-09 17:28:08,083 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 768,184
+2025-06-09 17:28:08,084 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 26,489
+2025-06-09 17:28:08,084 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:502] - --- Starting AIPW Main Effect Analysis for Treatment: pct_robohos_enabled_adjpd_adopted_gt_median on dv21_premature_death_ypll_rate ---
+2025-06-09 17:28:08,313 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:542] - AIPW Main Effect ATE for pct_robohos_enabled_adjpd_adopted_gt_median: -469.5637
+2025-06-09 17:28:14,342 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:640] -   Scenario for non-adopters of 'pct_robohos_enabled_adjpd_adopted_gt_median' (Main Effect: -469.5637 on YPLL rate):
+2025-06-09 17:28:14,342 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:641] -     Total YPLL potentially averted (main effect): 343,445
+2025-06-09 17:28:14,342 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:642] -     Total premature deaths potentially averted (main effect): 11,843
+2025-06-09 17:28:14,343 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1139] - 
+--- Main Effects on Health Outcome Summary Table ---
+2025-06-09 17:28:14,344 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1140] - 
+                 Component  N_Total  OLS Coefficient (Beta)  OLS p-value  OLS CI_Lower  OLS CI_Upper  OLS Deaths Averted    AIPW ATE  AIPW CI_Lower  AIPW CI_Upper  AIPW ATE P-Value (raw)  AIPW ATE Q-Value (BH)  AIPW Deaths Averted  AIPW E_Value
+    MO11_AI_Automate_Tasks     3080             -456.535780     0.006897   -787.721403   -125.350156        24382.401756 -932.616248   -1820.242310    -163.531646                0.019960               0.059880         49808.635051      1.852483
+MO12_AI_Optimize_Workflows     3080             -305.397705     0.029837   -580.949494    -29.845917        15352.550429 -302.827567    -795.636536     249.001081                0.279441               0.419162         15223.347803           NaN
+    MO13_AI_Predict_Demand     3080             -273.960664     0.048014   -545.526877     -2.394451        16207.028427 -446.908887    -925.058916      72.019448                0.087824               0.175649         26438.339509           NaN
+     MO14_AI_Predict_Staff     3080             -195.522464     0.330905   -589.660365    198.615437        11934.389815 -155.727350    -620.406342     370.841956                0.622754               0.682635          9505.357381           NaN
+    MO15_AI_Staff_Schedule     3080             -114.068049     0.470649   -423.968306    195.832209         7478.183304 -292.859317   -1117.257594     484.686712                0.682635               0.682635         19199.553961           NaN
+ MO21_Robotics_In_Hospital     3080             -562.820147     0.000001   -790.006444   -335.633850        14194.970772 -469.563704    -743.069569    -180.724735                0.003992               0.023952         11842.936115      1.502542
+2025-06-09 17:28:14,355 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1143] - Main effects on health summary table saved to genai_robotics_health_output/main_effects_on_health_summary.csv
+2025-06-09 17:28:14,629 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:706] - Main effect ATE comparison plot saved to genai_robotics_health_output/plots/Main_Effect_ATE_Comparison_Plot.png
+2025-06-09 17:28:14,629 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1151] - ============================== PART 2: OLS MODERATION ANALYSIS (State-Clustered SEs) ==============================
+2025-06-09 17:28:14,629 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1152] - Moderator definition for interactions: Adoption > 0.0% for the specific technology.
+2025-06-09 17:28:14,629 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO11_on_DV2 ==========
+2025-06-09 17:28:14,630 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO11_on_DV2 ---
+2025-06-09 17:28:14,635 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaiart_enabled_adjpd_adopted_gt_thresh in IV3_x_MO11_on_DV2:
+2025-06-09 17:28:14,635 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -12.6096, P-value: 0.0018, 95% CI: [-20.5289, -4.6903]
+2025-06-09 17:28:14,635 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO11_on_DV2 (p=0.002).
+2025-06-09 17:28:15,033 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO11_on_DV2.png
+2025-06-09 17:28:15,033 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO12_on_DV2 ==========
+2025-06-09 17:28:15,034 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO12_on_DV2 ---
+2025-06-09 17:28:15,058 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaioacw_enabled_adjpd_adopted_gt_thresh in IV3_x_MO12_on_DV2:
+2025-06-09 17:28:15,058 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -14.6360, P-value: 0.0002, 95% CI: [-22.2354, -7.0365]
+2025-06-09 17:28:15,058 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO12_on_DV2 (p=0.000).
+2025-06-09 17:28:15,453 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO12_on_DV2.png
+2025-06-09 17:28:15,454 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO13_on_DV2 ==========
+2025-06-09 17:28:15,454 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO13_on_DV2 ---
+2025-06-09 17:28:15,476 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaippd_enabled_adjpd_adopted_gt_thresh in IV3_x_MO13_on_DV2:
+2025-06-09 17:28:15,476 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -13.2994, P-value: 0.0005, 95% CI: [-20.7827, -5.8160]
+2025-06-09 17:28:15,477 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO13_on_DV2 (p=0.000).
+2025-06-09 17:28:15,878 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO13_on_DV2.png
+2025-06-09 17:28:15,879 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO14_on_DV2 ==========
+2025-06-09 17:28:15,879 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO14_on_DV2 ---
+2025-06-09 17:28:15,897 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaipsn_enabled_adjpd_adopted_gt_thresh in IV3_x_MO14_on_DV2:
+2025-06-09 17:28:15,897 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -11.8505, P-value: 0.0043, 95% CI: [-19.9831, -3.7178]
+2025-06-09 17:28:15,897 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO14_on_DV2 (p=0.004).
+2025-06-09 17:28:16,291 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO14_on_DV2.png
+2025-06-09 17:28:16,291 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO15_on_DV2 ==========
+2025-06-09 17:28:16,292 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO15_on_DV2 ---
+2025-06-09 17:28:16,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaiss_enabled_adjpd_adopted_gt_thresh in IV3_x_MO15_on_DV2:
+2025-06-09 17:28:16,296 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -10.4630, P-value: 0.0032, 95% CI: [-17.4186, -3.5074]
+2025-06-09 17:28:16,297 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO15_on_DV2 (p=0.003).
+2025-06-09 17:28:16,692 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO15_on_DV2.png
+2025-06-09 17:28:16,692 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO2_on_DV2 ==========
+2025-06-09 17:28:16,693 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO2_on_DV2 ---
+2025-06-09 17:28:16,728 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_mo2_robotics_composite_score_adopted_gt_thresh in IV3_x_MO2_on_DV2:
+2025-06-09 17:28:16,728 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -8.2244, P-value: 0.0502, 95% CI: [-16.4550, 0.0062]
+2025-06-09 17:28:16,728 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO2_on_DV2 (p=0.050).
+2025-06-09 17:28:17,149 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO2_on_DV2.png
+2025-06-09 17:28:17,149 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO1_on_DV2 ==========
+2025-06-09 17:28:17,150 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO1_on_DV2 ---
+2025-06-09 17:28:17,157 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_mo1_genai_composite_score_adopted_gt_thresh in IV3_x_MO1_on_DV2:
+2025-06-09 17:28:17,157 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -11.8404, P-value: 0.0020, 95% CI: [-19.3536, -4.3273]
+2025-06-09 17:28:17,158 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO1_on_DV2 (p=0.002).
+2025-06-09 17:28:17,569 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO1_on_DV2.png
+2025-06-09 17:28:17,569 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO11_on_DV21 ==========
+2025-06-09 17:28:17,570 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO11_on_DV21 ---
+2025-06-09 17:28:17,597 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaiart_enabled_adjpd_adopted_gt_thresh in IV3_x_MO11_on_DV21:
+2025-06-09 17:28:17,597 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -26.6260, P-value: 0.0013, 95% CI: [-42.8081, -10.4439]
+2025-06-09 17:28:17,612 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:805] -   Scenario for counties adopting moderator for 'IV3_x_MO11_on_DV21' (Interaction Beta: -26.6260):
+2025-06-09 17:28:17,612 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:806] -     Total YPLL potentially AVERTED due to moderation: 1,553,926
+2025-06-09 17:28:17,612 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:807] -     Net YPLL impact (Averted - Increased): 1,553,926
+2025-06-09 17:28:17,612 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:808] -     Net Premature Deaths Impact (Averted - Increased): 53,584
+2025-06-09 17:28:17,612 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO11_on_DV21 (p=0.001).
+2025-06-09 17:28:18,049 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO11_on_DV21.png
+2025-06-09 17:28:18,050 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO12_on_DV21 ==========
+2025-06-09 17:28:18,050 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO12_on_DV21 ---
+2025-06-09 17:28:18,062 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaioacw_enabled_adjpd_adopted_gt_thresh in IV3_x_MO12_on_DV21:
+2025-06-09 17:28:18,062 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -30.6750, P-value: 0.0001, 95% CI: [-46.1459, -15.2041]
+2025-06-09 17:28:18,077 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:805] -   Scenario for counties adopting moderator for 'IV3_x_MO12_on_DV21' (Interaction Beta: -30.6750):
+2025-06-09 17:28:18,077 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:806] -     Total YPLL potentially AVERTED due to moderation: 1,663,529
+2025-06-09 17:28:18,077 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:807] -     Net YPLL impact (Averted - Increased): 1,663,529
+2025-06-09 17:28:18,077 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:808] -     Net Premature Deaths Impact (Averted - Increased): 57,363
+2025-06-09 17:28:18,077 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO12_on_DV21 (p=0.000).
+2025-06-09 17:28:18,498 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO12_on_DV21.png
+2025-06-09 17:28:18,498 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO1_on_DV3 ==========
+2025-06-09 17:28:18,498 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO1_on_DV3 ---
+2025-06-09 17:28:18,507 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_mo1_genai_composite_score_adopted_gt_thresh in IV3_x_MO1_on_DV3:
+2025-06-09 17:28:18,507 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0008, P-value: 0.3542, 95% CI: [-0.0024, 0.0009]
+2025-06-09 17:28:18,507 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO1_on_DV3 (p=0.354).
+2025-06-09 17:28:18,907 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO1_on_DV3.png
+2025-06-09 17:28:18,908 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO2_on_DV3 ==========
+2025-06-09 17:28:18,908 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO2_on_DV3 ---
+2025-06-09 17:28:18,915 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_mo2_robotics_composite_score_adopted_gt_thresh in IV3_x_MO2_on_DV3:
+2025-06-09 17:28:18,915 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0006, P-value: 0.2658, 95% CI: [-0.0018, 0.0005]
+2025-06-09 17:28:18,915 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO2_on_DV3 (p=0.266).
+2025-06-09 17:28:19,267 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO2_on_DV3.png
+2025-06-09 17:28:19,267 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO11_on_DV3 ==========
+2025-06-09 17:28:19,268 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO11_on_DV3 ---
+2025-06-09 17:28:19,272 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaiart_enabled_adjpd_adopted_gt_thresh in IV3_x_MO11_on_DV3:
+2025-06-09 17:28:19,272 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0015, P-value: 0.1915, 95% CI: [-0.0038, 0.0008]
+2025-06-09 17:28:19,272 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO11_on_DV3 (p=0.192).
+2025-06-09 17:28:19,620 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO11_on_DV3.png
+2025-06-09 17:28:19,620 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO12_on_DV3 ==========
+2025-06-09 17:28:19,621 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO12_on_DV3 ---
+2025-06-09 17:28:19,627 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaioacw_enabled_adjpd_adopted_gt_thresh in IV3_x_MO12_on_DV3:
+2025-06-09 17:28:19,627 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0010, P-value: 0.3915, 95% CI: [-0.0032, 0.0012]
+2025-06-09 17:28:19,627 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO12_on_DV3 (p=0.391).
+2025-06-09 17:28:20,001 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO12_on_DV3.png
+2025-06-09 17:28:20,001 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO13_on_DV3 ==========
+2025-06-09 17:28:20,002 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO13_on_DV3 ---
+2025-06-09 17:28:20,007 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaippd_enabled_adjpd_adopted_gt_thresh in IV3_x_MO13_on_DV3:
+2025-06-09 17:28:20,007 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0013, P-value: 0.3068, 95% CI: [-0.0039, 0.0012]
+2025-06-09 17:28:20,007 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO13_on_DV3 (p=0.307).
+2025-06-09 17:28:20,365 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO13_on_DV3.png
+2025-06-09 17:28:20,365 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO14_on_DV3 ==========
+2025-06-09 17:28:20,365 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO14_on_DV3 ---
+2025-06-09 17:28:20,370 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaipsn_enabled_adjpd_adopted_gt_thresh in IV3_x_MO14_on_DV3:
+2025-06-09 17:28:20,370 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0013, P-value: 0.3522, 95% CI: [-0.0042, 0.0015]
+2025-06-09 17:28:20,370 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO14_on_DV3 (p=0.352).
+2025-06-09 17:28:20,720 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO14_on_DV3.png
+2025-06-09 17:28:20,721 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1158] - ========== PROCESSING MODERATION: IV3_x_MO15_on_DV3 ==========
+2025-06-09 17:28:20,721 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:719] - --- Starting OLS Moderation Analysis (Clustered SEs) for: IV3_x_MO15_on_DV3 ---
+2025-06-09 17:28:20,747 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:755] - OLS Moderation (Clustered) Results for iv3_health_behaviors_score_x_pct_wfaiss_enabled_adjpd_adopted_gt_thresh in IV3_x_MO15_on_DV3:
+2025-06-09 17:28:20,747 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:756] -   Interaction Beta: -0.0016, P-value: 0.2725, 95% CI: [-0.0046, 0.0013]
+2025-06-09 17:28:20,747 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:826] - Generating interaction plot for IV3_x_MO15_on_DV3 (p=0.273).
+2025-06-09 17:28:21,128 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:878] - Interaction plot saved to genai_robotics_health_output/plots/interaction_plot_IV3_x_MO15_on_DV3.png
+2025-06-09 17:28:21,129 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1209] - 
+--- Moderation Analysis Summary Table ---
+2025-06-09 17:28:21,130 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1210] - 
+  Interaction_Name                         IV            Moderator_Pct_Col                              DV  N_Obs_Model  Interaction_Beta  Interaction_P_Value  Interaction_CI_Lower  Interaction_CI_Upper  Net_Deaths_Impact_Moderation
+ IV3_x_MO11_on_DV2 iv3_health_behaviors_score    pct_wfaiart_enabled_adjpd       dv2_health_outcomes_score         3135        -12.609604             0.001804            -20.528941             -4.690267                           NaN
+ IV3_x_MO12_on_DV2 iv3_health_behaviors_score   pct_wfaioacw_enabled_adjpd       dv2_health_outcomes_score         3135        -14.635988             0.000160            -22.235442             -7.036534                           NaN
+ IV3_x_MO13_on_DV2 iv3_health_behaviors_score    pct_wfaippd_enabled_adjpd       dv2_health_outcomes_score         3135        -13.299355             0.000495            -20.782700             -5.816011                           NaN
+ IV3_x_MO14_on_DV2 iv3_health_behaviors_score    pct_wfaipsn_enabled_adjpd       dv2_health_outcomes_score         3135        -11.850471             0.004291            -19.983125             -3.717817                           NaN
+ IV3_x_MO15_on_DV2 iv3_health_behaviors_score     pct_wfaiss_enabled_adjpd       dv2_health_outcomes_score         3135        -10.463014             0.003195            -17.418600             -3.507427                           NaN
+  IV3_x_MO2_on_DV2 iv3_health_behaviors_score mo2_robotics_composite_score       dv2_health_outcomes_score         3135         -8.224409             0.050172            -16.454999              0.006180                           NaN
+  IV3_x_MO1_on_DV2 iv3_health_behaviors_score    mo1_genai_composite_score       dv2_health_outcomes_score         3135        -11.840440             0.002009            -19.353598             -4.327282                           NaN
+IV3_x_MO11_on_DV21 iv3_health_behaviors_score    pct_wfaiart_enabled_adjpd  dv21_premature_death_ypll_rate         3080        -26.626022             0.001260            -42.808134            -10.443909                  53583.643010
+IV3_x_MO12_on_DV21 iv3_health_behaviors_score   pct_wfaioacw_enabled_adjpd  dv21_premature_death_ypll_rate         3080        -30.675025             0.000102            -46.145918            -15.204132                  57363.059239
+  IV3_x_MO1_on_DV3 iv3_health_behaviors_score    mo1_genai_composite_score dv3_avg_patient_services_margin         2109         -0.000763             0.354224             -0.002376              0.000851                           NaN
+  IV3_x_MO2_on_DV3 iv3_health_behaviors_score mo2_robotics_composite_score dv3_avg_patient_services_margin         2109         -0.000636             0.265762             -0.001757              0.000484                           NaN
+ IV3_x_MO11_on_DV3 iv3_health_behaviors_score    pct_wfaiart_enabled_adjpd dv3_avg_patient_services_margin         2109         -0.001511             0.191521             -0.003779              0.000757                           NaN
+ IV3_x_MO12_on_DV3 iv3_health_behaviors_score   pct_wfaioacw_enabled_adjpd dv3_avg_patient_services_margin         2109         -0.000967             0.391491             -0.003178              0.001244                           NaN
+ IV3_x_MO13_on_DV3 iv3_health_behaviors_score    pct_wfaippd_enabled_adjpd dv3_avg_patient_services_margin         2109         -0.001339             0.306808             -0.003907              0.001229                           NaN
+ IV3_x_MO14_on_DV3 iv3_health_behaviors_score    pct_wfaipsn_enabled_adjpd dv3_avg_patient_services_margin         2109         -0.001336             0.352173             -0.004152              0.001479                           NaN
+ IV3_x_MO15_on_DV3 iv3_health_behaviors_score     pct_wfaiss_enabled_adjpd dv3_avg_patient_services_margin         2109         -0.001634             0.272503             -0.004552              0.001284                           NaN
+2025-06-09 17:28:21,130 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1213] - Moderation analysis summary table saved to genai_robotics_health_output/moderation_analysis_summary.csv
+2025-06-09 17:28:21,130 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1218] - ============================== PART 3: DIRECT EFFECTS ON OPERATIONAL EFFICIENCY (DV3) ==============================
+2025-06-09 17:28:21,130 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1219] - Outcome: dv3_avg_patient_services_margin
+2025-06-09 17:28:21,130 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1220] - Treatment definition: Adoption > 0.0% for the specific technology.
+2025-06-09 17:28:21,130 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO14_AI_Predict_Staff ==========
+2025-06-09 17:28:21,131 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaipsn_enabled_adjpd_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,135 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaipsn_enabled_adjpd_adopted_gt_thresh: -0.0308, P-value: 0.2922, CI: [-0.0882, 0.0265]
+2025-06-09 17:28:21,135 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO1_GenAI_Composite ==========
+2025-06-09 17:28:21,135 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: mo1_genai_composite_score_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,139 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for mo1_genai_composite_score_adopted_gt_thresh: -0.0066, P-value: 0.8316, CI: [-0.0674, 0.0542]
+2025-06-09 17:28:21,139 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO11_AI_Automate_Tasks ==========
+2025-06-09 17:28:21,140 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaiart_enabled_adjpd_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaiart_enabled_adjpd_adopted_gt_thresh: -0.0265, P-value: 0.3148, CI: [-0.0781, 0.0252]
+2025-06-09 17:28:21,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO2_Robotics_Composite ==========
+2025-06-09 17:28:21,144 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: mo2_robotics_composite_score_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,148 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for mo2_robotics_composite_score_adopted_gt_thresh: 0.0130, P-value: 0.6277, CI: [-0.0396, 0.0656]
+2025-06-09 17:28:21,148 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO21_Robotics_In_Hospital ==========
+2025-06-09 17:28:21,148 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_robohos_enabled_adjpd_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,152 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_robohos_enabled_adjpd_adopted_gt_thresh: -0.0137, P-value: 0.4245, CI: [-0.0472, 0.0199]
+2025-06-09 17:28:21,152 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO15_AI_Staff_Schedule ==========
+2025-06-09 17:28:21,152 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaiss_enabled_adjpd_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,156 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaiss_enabled_adjpd_adopted_gt_thresh: -0.0182, P-value: 0.5150, CI: [-0.0729, 0.0365]
+2025-06-09 17:28:21,156 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO12_AI_Optimize_Workflows ==========
+2025-06-09 17:28:21,156 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaioacw_enabled_adjpd_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,160 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaioacw_enabled_adjpd_adopted_gt_thresh: -0.0159, P-value: 0.4082, CI: [-0.0536, 0.0218]
+2025-06-09 17:28:21,160 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1228] - ========== PROCESSING DIRECT EFFECT ON DV3 FOR: MO13_AI_Predict_Demand ==========
+2025-06-09 17:28:21,160 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:342] - --- Starting OLS Main Effect Analysis (Clustered SEs) for Treatment: pct_wfaippd_enabled_adjpd_adopted_gt_thresh on dv3_avg_patient_services_margin ---
+2025-06-09 17:28:21,163 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:375] - OLS Main Effect (Clustered) Beta for pct_wfaippd_enabled_adjpd_adopted_gt_thresh: -0.0202, P-value: 0.4493, CI: [-0.0724, 0.0321]
+2025-06-09 17:28:21,164 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1259] - 
+--- Direct Effects on Operational Efficiency (DV3) Summary Table ---
+2025-06-09 17:28:21,164 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1260] - 
+                 Component  N_Obs_Model  OLS Coefficient (Beta)  OLS p-value  OLS CI_Lower  OLS CI_Upper  Error
+     MO14_AI_Predict_Staff         2109               -0.030824     0.292191     -0.088178      0.026531  False
+       MO1_GenAI_Composite         2109               -0.006602     0.831588     -0.067449      0.054245  False
+    MO11_AI_Automate_Tasks         2109               -0.026480     0.314838     -0.078115      0.025155  False
+    MO2_Robotics_Composite         2109                0.013019     0.627690     -0.039594      0.065632  False
+ MO21_Robotics_In_Hospital         2109               -0.013653     0.424495     -0.047159      0.019853  False
+    MO15_AI_Staff_Schedule         2109               -0.018165     0.515045     -0.072854      0.036524  False
+MO12_AI_Optimize_Workflows         2109               -0.015921     0.408161     -0.053648      0.021805  False
+    MO13_AI_Predict_Demand         2109               -0.020168     0.449266     -0.072409      0.032074  False
+2025-06-09 17:28:21,166 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1263] - Direct effects on DV3 summary table saved to genai_robotics_health_output/direct_effects_on_dv3_summary.csv
+2025-06-09 17:28:21,504 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:921] - Direct effect on DV3 plot saved to genai_robotics_health_output/plots/Direct_Effect_on_DV3_Plot.png
+2025-06-09 17:28:21,504 - INFO - [OLS_IPTW_AIPW_ADJPD_060825_v4.py:1270] - Script finished. Check logs and output directory for details.

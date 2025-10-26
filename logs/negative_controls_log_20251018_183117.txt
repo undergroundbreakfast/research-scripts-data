@@ -1,0 +1,65 @@
+2025-10-18 18:31:17,932 - INFO - Logger initialized.
+2025-10-18 18:31:18,000 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 18:31:18,000 - INFO - ============================================================
+2025-10-18 18:31:18,000 - INFO - DIAGNOSTIC: Checking CHR column data quality
+2025-10-18 18:31:18,000 - INFO - ============================================================
+2025-10-18 18:31:18,004 - INFO - 
+Checking chr_analytic_chunk_2...
+2025-10-18 18:31:18,029 - INFO -   ✓ long_commute_driving_alone_raw_value: Found with 10 distinct values
+2025-10-18 18:31:18,029 - INFO -     Top values: ['0.31799998879432678', '0.33700001239776611', '0.30199998617172241', '0.34700000286102295', '0.34400001168251038']
+2025-10-18 18:31:18,029 - INFO -     Numeric conversion: 100.0% valid
+2025-10-18 18:31:18,029 - INFO -   ❌ school_funding_adequacy_raw_value: NOT FOUND in table
+2025-10-18 18:31:18,029 - INFO -   ❌ school_segregation_raw_value: NOT FOUND in table
+2025-10-18 18:31:18,030 - INFO - 
+Checking chr_analytic_chunk_3...
+2025-10-18 18:31:18,035 - INFO -   ❌ long_commute_driving_alone_raw_value: NOT FOUND in table
+2025-10-18 18:31:18,041 - INFO -   ✓ school_funding_adequacy_raw_value: Found with 10 distinct values
+2025-10-18 18:31:18,041 - INFO -     Top values: [None, '-4930.80517578125', '-1001.1422729492188', '-1004.7899780273438', '-1008.5399780273438']
+2025-10-18 18:31:18,042 - INFO -     Numeric conversion: 90.0% valid
+2025-10-18 18:31:18,047 - INFO -   ✓ school_segregation_raw_value: Found with 10 distinct values
+2025-10-18 18:31:18,047 - INFO -     Top values: [None, '0.33536046743392944', '0.24044071137905121', '0.00470366096124053', '0.01063079945743084']
+2025-10-18 18:31:18,047 - INFO -     Numeric conversion: 90.0% valid
+2025-10-18 18:31:18,047 - INFO - ============================================================
+2025-10-18 18:31:47,702 - INFO - Base data: 3135 counties.
+2025-10-18 18:31:47,705 - INFO - Added division FE (dummies=8).
+2025-10-18 18:31:47,746 - INFO - chr_analytic_chunk_3: Years range from 2024 to 2024 (3195 valid records, years: [2024])
+2025-10-18 18:31:47,747 - INFO - chr_analytic_chunk_3: 17/17 requested columns have data: ['traffic_volume_raw_value', 'population_raw_value', 'below_18_years_of_age_raw_value', 'juvenile_arrests_raw_value', 'female_raw_value']...
+2025-10-18 18:31:47,770 - INFO - chr_analytic_chunk_2: Years range from 2024 to 2024 (3195 valid records, years: [2024])
+2025-10-18 18:31:47,770 - INFO - chr_analytic_chunk_2: 8/8 requested columns have data: ['air_pollution_particulate_matter_raw_value', 'life_expectancy_raw_value', 'percentage_of_households_with_high_housing_costs', 'pct_households_with_lack_of_kitchen_or_plumbing', 'driving_alone_to_work_raw_value']...
+2025-10-18 18:31:47,778 - INFO - chr_analytic_chunk_1: Years range from 2024 to 2024 (3195 valid records, years: [2024])
+2025-10-18 18:31:47,778 - INFO - chr_analytic_chunk_1: 1/1 requested columns have data: ['premature_death_raw_value']
+2025-10-18 18:31:47,802 - INFO - Data summary:
+2025-10-18 18:31:47,803 - INFO -   Base counties: 3135
+2025-10-18 18:31:47,803 - INFO -   CHR chunk_3: 326 counties (latest year)
+2025-10-18 18:31:47,803 - INFO -   CHR chunk_2: 326 counties (latest year)
+2025-10-18 18:31:47,803 - INFO -   CHR chunk_1 temporal: 88539 county-year records
+2025-10-18 18:31:47,803 - INFO -   Year range in chunk_1: 2024-2024
+2025-10-18 18:31:47,803 - INFO -   Historical years (2010-2022) available: 0
+2025-10-18 18:31:47,803 - WARNING -   ⚠️  No historical CHR data available - temporal falsification will be skipped
+2025-10-18 18:31:47,803 - WARNING -   ⚠️  To run temporal falsification, load CHR data from 2010-2022
+2025-10-18 18:31:47,831 - INFO - [Direct NCO] Skipping long_commute_driving_alone_raw_value: not found.
+2025-10-18 18:31:47,843 - INFO - [Direct NCO] Skipping school_funding_adequacy_raw_value: not found.
+2025-10-18 18:31:47,843 - INFO - [Direct NCO] Skipping school_segregation_raw_value: not found.
+2025-10-18 18:31:47,872 - INFO - [Placebo IV] Skipping long_commute_driving_alone_raw_value: not found.
+2025-10-18 18:31:47,884 - INFO - [Placebo IV] Skipping school_funding_adequacy_raw_value: not found.
+2025-10-18 18:31:47,884 - INFO - [Placebo IV] Skipping school_segregation_raw_value: not found.
+2025-10-18 18:31:47,906 - INFO - [Placebo DV] Skipping long_commute_driving_alone_raw_value: not found.
+2025-10-18 18:31:47,906 - INFO - DV21 long data shape: (88539, 5)
+2025-10-18 18:31:47,906 - INFO - DV21 unique years available: [2024]
+2025-10-18 18:31:47,906 - WARNING - No years in range 2010-2022 found for temporal falsification.
+2025-10-18 18:31:47,906 - WARNING - Available years: [2024]
+2025-10-18 18:31:47,906 - WARNING - Temporal falsification requires historical CHR data. Skipping this test.
+2025-10-18 18:32:01,129 - INFO - Permutation tests done for MO1 family.
+2025-10-18 18:32:01,137 - INFO - Guardrail checks written.
+2025-10-18 18:32:01,138 - INFO - ============================================================
+2025-10-18 18:32:01,138 - INFO - NEGATIVE CONTROLS TEST SUITE COMPLETE
+2025-10-18 18:32:01,138 - INFO - ============================================================
+2025-10-18 18:32:01,138 - INFO - Output directory: ./negative_controls_output
+2025-10-18 18:32:01,139 - INFO - Tests completed:
+2025-10-18 18:32:01,139 - INFO -   ✓ Direct NCO tests: 0 results
+2025-10-18 18:32:01,139 - INFO -   ✓ Placebo interactions: 0 results
+2025-10-18 18:32:01,139 - INFO -   ✓ Placebo outcomes: 0 results
+2025-10-18 18:32:01,139 - INFO -   ⚠ Temporal falsification: 0 results
+2025-10-18 18:32:01,139 - INFO -   ✓ Permutation tests: 6 results
+2025-10-18 18:32:01,139 - INFO -   ✓ Guardrail checks: 1 results
+2025-10-18 18:32:01,139 - INFO - ============================================================

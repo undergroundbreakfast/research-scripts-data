@@ -1,0 +1,59 @@
+2025-05-25 12:13:21,584 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:73] - Logging to: logs/genai_multi_method_causal_analysis_log_20250525_121321.txt
+2025-05-25 12:13:21,584 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:852] - Starting Multi-Method Causal Analysis Script for GenAI & Robotics Components.
+2025-05-25 12:13:21,585 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:858] - Output will be saved in: genai_multimethod_causal_output (CSVs, plots) and logs/ (text logs)
+2025-05-25 12:13:21,693 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:103] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-05-25 12:13:21,700 - ERROR - [OLS_IPTW_AIPW_YPLL_052525_v1.py:181] - Database query or initial data processing failed: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying > integer
+LINE 31: ...       AND vcm.population IS NOT NULL AND vcm.population > 0
+                                                                     ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+    SELECT
+        vcm.county_fips,
+        vcm.health_behaviors_score,       -- IV3
+        vcm.social_economic_factors_score, -- IV4
+        vcm.physical_environment_score,   -- IV2
+        vcm.medicaid_expansion_active,    -- IV1
+        vcm.population,                   -- Control / for lives saved
+        vcm.census_division,              -- Control
+        vcv.premature_death_raw_value,    -- Outcome (YPLL, directly from vw_conceptual_model_variables)
+        -- Individual AI/Robotics components (Moderators MO1 components, MO2)
+        vcts.pct_wfaiss_enabled_beds,     -- AI Staff Scheduling
+        vcts.pct_wfaipsn_enabled_beds,    -- AI Predict Staff Needs
+        vcts.pct_wfaippd_enabled_beds,    -- AI Predict Pt Demand
+        vcts.pct_wfaiart_enabled_beds,    -- AI Automate Routine Tasks
+        vcts.pct_wfaioacw_enabled_beds,   -- AI Optimize Workflows
+        vcts.pct_robohos_enabled_beds     -- Robotics in Hospital
+    FROM
+        public.vw_conceptual_model AS vcm
+    JOIN
+        public.vw_conceptual_model_variables AS vcv
+        ON vcm.county_fips = vcv.county_fips  -- Join on county_fips only
+    JOIN
+        public.vw_county_tech_summary AS vcts
+        ON vcm.county_fips = vcts.county_fips
+    WHERE
+        vcm.health_behaviors_score IS NOT NULL
+        AND vcm.social_economic_factors_score IS NOT NULL
+        AND vcm.physical_environment_score IS NOT NULL
+        AND vcm.medicaid_expansion_active IS NOT NULL
+        AND vcm.population IS NOT NULL AND vcm.population > 0
+        AND vcm.census_division IS NOT NULL
+        AND vcv.premature_death_raw_value IS NOT NULL -- Check the outcome variable itself for NULL
+        AND vcts.pct_wfaiss_enabled_beds IS NOT NULL
+        AND vcts.pct_wfaipsn_enabled_beds IS NOT NULL
+        AND vcts.pct_wfaippd_enabled_beds IS NOT NULL
+        AND vcts.pct_wfaiart_enabled_beds IS NOT NULL
+        AND vcts.pct_wfaioacw_enabled_beds IS NOT NULL
+        AND vcts.pct_robohos_enabled_beds IS NOT NULL;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-25 12:13:21,707 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:1032] - ================================================================================
+2025-05-25 12:13:21,707 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:1033] - Component-Level Multi-Method Causal Analysis Summary:
+2025-05-25 12:13:21,716 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:1088] - 
+Empty DataFrame
+Columns: [Component, N_Treated, N_Control, OLS Coefficient (Beta), OLS p-value, OLS CI_Lower, OLS CI_Upper, OLS YPLL Averted, OLS Deaths Averted, OLS_Error, IPTW ATE, IPTW CI_Lower, IPTW CI_Upper, IPTW Significant, IPTW E_Value, IPTW YPLL Averted, IPTW Deaths Averted, IPTW ATET, IPTW ATET_CI_Lower, IPTW ATET_CI_Upper, IPTW_Error, AIPW ATE, AIPW CI_Lower, AIPW CI_Upper, AIPW Significant, AIPW E_Value, AIPW YPLL Averted, AIPW Deaths Averted, AIPW ATET, AIPW ATET_CI_Lower, AIPW ATET_CI_Upper, AIPW_Error, Overall_Error_Flag, Error_Message]
+Index: []
+2025-05-25 12:13:21,727 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:1094] - Full summary table saved to genai_multimethod_causal_output/multi_method_component_analysis_summary.csv
+2025-05-25 12:13:21,728 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:1102] - Results DataFrame is empty, skipping ATE comparison plot generation.
+2025-05-25 12:13:21,728 - INFO - [OLS_IPTW_AIPW_YPLL_052525_v1.py:1104] - Script finished. Check logs and output directory for details.

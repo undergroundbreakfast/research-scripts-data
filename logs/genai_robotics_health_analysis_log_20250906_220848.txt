@@ -1,0 +1,16 @@
+2025-09-06 22:08:48,496 - INFO - [Replicate_Results_090625_v1.py:73] - Logging to: logs/genai_robotics_health_analysis_log_20250906_220848.txt
+2025-09-06 22:08:48,497 - INFO - [Replicate_Results_090625_v1.py:689] - Starting Dissertation Replication & Testing Script.
+2025-09-06 22:08:48,596 - INFO - [Replicate_Results_090625_v1.py:98] - Connected to PostgreSQL database 'Research_TEST'.
+2025-09-06 22:08:48,606 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_adjpd
+2025-09-06 22:08:48,607 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_conceptual_model_variables_adjpd
+2025-09-06 22:08:48,608 - INFO - [Replicate_Results_090625_v1.py:142] - Using table/view: vw_adjpd_weighted_tech_summary
+2025-09-06 22:09:16,609 - INFO - [Replicate_Results_090625_v1.py:274] - Data retrieved: 3135 rows, 21 columns.
+2025-09-06 22:09:16,612 - INFO - [Replicate_Results_090625_v1.py:322] - Created 8 division dummies.
+2025-09-06 22:09:16,613 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo11_ai_automate_routine_tasks_pct'.
+2025-09-06 22:09:16,613 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo12_ai_optimize_workflows_pct'.
+2025-09-06 22:09:16,613 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo13_ai_predict_patient_demand_pct'.
+2025-09-06 22:09:16,613 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo14_ai_predict_staff_needs_pct'.
+2025-09-06 22:09:16,613 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo15_ai_staff_scheduling_pct'.
+2025-09-06 22:09:16,613 - INFO - [Replicate_Results_090625_v1.py:350] - Filled 2 NaNs with 0 for tech column 'mo21_robotics_in_hospital_pct'.
+2025-09-06 22:10:03,584 - INFO - [Replicate_Results_090625_v1.py:814] - Saved main effects summary to genai_robotics_health_output/main_effects_on_health_summary.csv
+2025-09-06 22:10:03,885 - INFO - [Replicate_Results_090625_v1.py:631] - Saved main effect comparison plot: genai_robotics_health_output/plots/Main_Effect_Comparison.png

@@ -1,0 +1,24 @@
+Linear Moderation Analysis Results (Transform: RAW)
+================================================================================
+IV (base for model): iv3_health_behaviors
+MO (base for model): mo1_genai_capabilities
+DV: dv2_healthcare_quality
+N: 3135.0, R²: 0.3947, Adj. R²: 0.3924
+Cohen's f² (Interaction): 0.0057 (Negligible effect)
+
+Coefficients:
+Term                                     Coef.  Std. Err.    t-value      P>|t| Sig.
+--------------------------------------------------------------------------------
+const                                4270.4980   177.3246     24.083     0.0000 ***
+div_2                                 184.9638   207.0682      0.893     0.3718 
+div_3                                1017.9450   186.2731      5.465     0.0000 ***
+div_4                                 457.0091   187.3381      2.439     0.0148 *
+div_5                                1850.0166   191.6285      9.654     0.0000 ***
+div_6                                 190.9378   184.8796      1.033     0.3018 
+div_7                                1065.3258   188.3406      5.656     0.0000 ***
+div_8                                 705.7719   193.3607      3.650     0.0003 ***
+div_9                                 278.5766   204.9120      1.359     0.1741 
+iv3_health_behaviors_centered          34.5020     1.2066     28.595     0.0000 ***
+iv3_health_behaviors_centered_x_mo1_genai_capabilities_centered    -7.5043     1.7770     -4.223     0.0000 ***
+mo1_genai_capabilities_centered      -194.1375    28.6102     -6.786     0.0000 ***
+population                             -0.0009     0.0001    -12.216     0.0000 ***

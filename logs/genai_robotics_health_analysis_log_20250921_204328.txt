@@ -1,0 +1,73 @@
+2025-09-21 20:43:28,353 - INFO - [Replicate_Results_090625_v6.py:79] - Logging to: logs/genai_robotics_health_analysis_log_20250921_204328.txt
+2025-09-21 20:43:28,353 - INFO - [Replicate_Results_090625_v6.py:908] - Starting Dissertation Replication & Testing Script.
+2025-09-21 20:43:28,427 - INFO - [Replicate_Results_090625_v6.py:104] - Connected to PostgreSQL database 'Research_TEST'.
+2025-09-21 20:43:28,429 - INFO - [Replicate_Results_090625_v6.py:148] - Using table/view: vw_conceptual_model_adjpd
+2025-09-21 20:43:28,430 - INFO - [Replicate_Results_090625_v6.py:148] - Using table/view: vw_conceptual_model_variables_adjpd
+2025-09-21 20:43:28,431 - INFO - [Replicate_Results_090625_v6.py:148] - Using table/view: vw_adjpd_weighted_tech_summary
+2025-09-21 20:43:28,432 - INFO - [Replicate_Results_090625_v6.py:208] - HRSA health equity table found: hrsa_health_equity_data (for SP5 rurality).
+2025-09-21 20:43:28,432 - INFO - [Replicate_Results_090625_v6.py:214] - AHA survey data found: aha_survey_data (for CAPEX intensity).
+2025-09-21 20:43:57,529 - INFO - [Replicate_Results_090625_v6.py:366] - Data retrieved: 3135 rows, 25 columns.
+2025-09-21 20:43:57,531 - INFO - [Replicate_Results_090625_v6.py:414] - Created 8 division dummies.
+2025-09-21 20:43:57,531 - INFO - [Replicate_Results_090625_v6.py:444] - Filled 2 NaNs with 0 for tech column 'mo11_ai_automate_routine_tasks_pct'.
+2025-09-21 20:43:57,531 - INFO - [Replicate_Results_090625_v6.py:444] - Filled 2 NaNs with 0 for tech column 'mo12_ai_optimize_workflows_pct'.
+2025-09-21 20:43:57,531 - INFO - [Replicate_Results_090625_v6.py:444] - Filled 2 NaNs with 0 for tech column 'mo13_ai_predict_patient_demand_pct'.
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:444] - Filled 2 NaNs with 0 for tech column 'mo14_ai_predict_staff_needs_pct'.
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:444] - Filled 2 NaNs with 0 for tech column 'mo15_ai_staff_scheduling_pct'.
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:444] - Filled 2 NaNs with 0 for tech column 'mo21_robotics_in_hospital_pct'.
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo1_genai_composite_score_c
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo2_robotics_composite_score_c
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: iv2_physical_environment_score_c
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: iv3_health_behaviors_score_c
+2025-09-21 20:43:57,532 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: sp5_irr_county_value_c
+2025-09-21 20:43:57,533 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo11_ai_automate_routine_tasks_pct_c
+2025-09-21 20:43:57,533 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo12_ai_optimize_workflows_pct_c
+2025-09-21 20:43:57,533 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo13_ai_predict_patient_demand_pct_c
+2025-09-21 20:43:57,533 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo14_ai_predict_staff_needs_pct_c
+2025-09-21 20:43:57,533 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo15_ai_staff_scheduling_pct_c
+2025-09-21 20:43:57,533 - INFO - [Replicate_Results_090625_v6.py:463] - Created centered variable: mo21_robotics_in_hospital_pct_c
+2025-09-21 20:43:57,534 - INFO - [Replicate_Results_090625_v6.py:473] - Constructed CAPEX intensity winsorized and log1p variables.
+2025-09-21 20:43:57,534 - INFO - [Replicate_Results_090625_v6.py:932] - Running original script analyses (Parts A-G).
+2025-09-21 20:43:57,759 - INFO - [Replicate_Results_090625_v6.py:834] - Saved H1–H4 summary to genai_robotics_health_output/hypotheses_h1_h4_summary.csv
+2025-09-21 20:43:57,896 - INFO - [Replicate_Results_090625_v6.py:898] - Saved CAPEX intensity regression summary to genai_robotics_health_output/capex_intensity_regression_summary.csv
+2025-09-21 20:43:57,896 - INFO - [Replicate_Results_090625_v6.py:974] - PART H: Running new dissertation-specific hypothesis tests.
+2025-09-21 20:43:57,896 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: mo1_genai_composite_score -> dv15_preventable_stays_rate
+2025-09-21 20:44:13,135 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: mo11_ai_automate_routine_tasks_pct -> dv15_preventable_stays_rate
+2025-09-21 20:44:28,053 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: mo12_ai_optimize_workflows_pct -> dv15_preventable_stays_rate
+2025-09-21 20:44:39,771 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: mo13_ai_predict_patient_demand_pct -> dv15_preventable_stays_rate
+2025-09-21 20:44:52,725 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: mo14_ai_predict_staff_needs_pct -> dv15_preventable_stays_rate
+2025-09-21 20:45:07,610 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: mo15_ai_staff_scheduling_pct -> dv15_preventable_stays_rate
+2025-09-21 20:45:22,062 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: sp5_irr_county_value -> mo1_genai_composite_score
+2025-09-21 20:45:40,191 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: sp5_irr_county_value -> mo11_ai_automate_routine_tasks_pct
+2025-09-21 20:45:51,896 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: sp5_irr_county_value -> mo12_ai_optimize_workflows_pct
+2025-09-21 20:46:04,146 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: sp5_irr_county_value -> mo13_ai_predict_patient_demand_pct
+2025-09-21 20:46:17,167 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: sp5_irr_county_value -> mo14_ai_predict_staff_needs_pct
+2025-09-21 20:46:29,205 - INFO - [Replicate_Results_090625_v6.py:997] -   Direct effect test: sp5_irr_county_value -> mo15_ai_staff_scheduling_pct
+2025-09-21 20:46:41,642 - INFO - [Replicate_Results_090625_v6.py:1037] - Saved dissertation direct effects summary to genai_robotics_health_output/dissertation_direct_effects_summary.csv
+2025-09-21 20:46:41,642 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv3_health_behaviors_score x mo1_genai_composite_score -> dv15_preventable_stays_rate
+2025-09-21 20:46:41,962 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv3_x_mo1.png
+2025-09-21 20:46:41,962 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv3_health_behaviors_score x mo11_ai_automate_routine_tasks_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:42,294 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv3_x_mo11.png
+2025-09-21 20:46:42,294 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv3_health_behaviors_score x mo12_ai_optimize_workflows_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:42,710 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv3_x_mo12.png
+2025-09-21 20:46:42,711 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv3_health_behaviors_score x mo13_ai_predict_patient_demand_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:43,172 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv3_x_mo13.png
+2025-09-21 20:46:43,172 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv3_health_behaviors_score x mo14_ai_predict_staff_needs_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:43,595 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv3_x_mo14.png
+2025-09-21 20:46:43,595 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv3_health_behaviors_score x mo15_ai_staff_scheduling_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:43,922 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv3_x_mo15.png
+2025-09-21 20:46:43,922 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv2_physical_environment_score x mo1_genai_composite_score -> dv15_preventable_stays_rate
+2025-09-21 20:46:44,395 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv2_x_mo1.png
+2025-09-21 20:46:44,395 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv2_physical_environment_score x mo11_ai_automate_routine_tasks_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:44,887 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv2_x_mo11.png
+2025-09-21 20:46:44,887 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv2_physical_environment_score x mo12_ai_optimize_workflows_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:45,152 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv2_x_mo12.png
+2025-09-21 20:46:45,152 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv2_physical_environment_score x mo13_ai_predict_patient_demand_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:45,439 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv2_x_mo13.png
+2025-09-21 20:46:45,439 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv2_physical_environment_score x mo14_ai_predict_staff_needs_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:45,752 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv2_x_mo14.png
+2025-09-21 20:46:45,752 - INFO - [Replicate_Results_090625_v6.py:1059] -   Interaction test: iv2_physical_environment_score x mo15_ai_staff_scheduling_pct -> dv15_preventable_stays_rate
+2025-09-21 20:46:46,098 - INFO - [Replicate_Results_090625_v6.py:706] - Saved continuous interaction plot: genai_robotics_health_output/plots/interaction_cont_iv2_x_mo15.png
+2025-09-21 20:46:46,098 - INFO - [Replicate_Results_090625_v6.py:1098] - Saved dissertation interaction effects summary to genai_robotics_health_output/dissertation_interaction_effects_summary.csv
+2025-09-21 20:46:46,098 - INFO - [Replicate_Results_090625_v6.py:1103] - PART I: Assembling final unified report.
+2025-09-21 20:46:46,100 - INFO - [Replicate_Results_090625_v6.py:775] - Wrote unified replication report to genai_robotics_health_output/replication_report_full.csv (rows=52)
+2025-09-21 20:46:46,100 - INFO - [Replicate_Results_090625_v6.py:1114] - All done. Check logs and output directory for results.

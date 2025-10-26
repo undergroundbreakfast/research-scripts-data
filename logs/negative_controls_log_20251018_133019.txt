@@ -1,0 +1,4 @@
+2025-10-18 13:30:19,640 - INFO - Logger initialized.
+2025-10-18 13:30:19,708 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 13:30:49,652 - INFO - Base data: 3135 counties.
+2025-10-18 13:30:49,656 - INFO - Added division FE (dummies=8).

@@ -1,0 +1,14 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-07 23:48:15
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched: shape = (3143, 12)
+Component-level data fetched: shape = (3143, 37)
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access with stepwise, then all interactions .....

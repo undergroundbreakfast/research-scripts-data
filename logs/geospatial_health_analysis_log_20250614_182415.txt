@@ -1,0 +1,14 @@
+2025-06-14 18:24:15,360 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:74] - Logging to: logs/geospatial_health_analysis_log_20250614_182415.txt
+2025-06-14 18:24:15,360 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:344] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 18:24:15,443 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:95] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 18:24:15,443 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:107] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 18:24:15,474 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:132] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 18:24:15,486 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:151] - GeoDataFrame created successfully.
+2025-06-14 18:24:15,487 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:174] - US County shapefile not found. Downloading from census.gov...
+2025-06-14 18:24:22,352 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:183] - Download complete. Extracting...
+2025-06-14 18:24:22,776 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:188] - Shapefile extracted to: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 18:24:23,916 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:196] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 18:24:23,916 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:210] - Failed to create spatial weights matrix for ai_adoption_score: module 'pysal' has no attribute 'lib'
+2025-06-14 18:24:23,916 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:230] - Cluster column 'ai_adoption_score_cluster' not in results. Cannot plot.
+2025-06-14 18:24:23,916 - INFO - [Geospatial_TAMU_analysis_061425_v1.py:282] - --- Analyzing 30-mile service areas for 'ai_adoption_score' hot spots ---
+2025-06-14 18:24:23,916 - ERROR - [Geospatial_TAMU_analysis_061425_v1.py:385] - A critical error occurred during the main execution pipeline: 'ai_adoption_score_cluster'

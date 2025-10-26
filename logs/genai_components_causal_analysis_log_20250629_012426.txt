@@ -1,0 +1,42 @@
+2025-06-29 01:24:26,476 - INFO - YPLL_AIPW_Analysis_062825_v19 - Logging to: logs/genai_components_causal_analysis_log_20250629_012426.txt
+2025-06-29 01:24:26,476 - INFO - YPLL_AIPW_Analysis_062825_v19 - Starting Generative AI & Robotics Component-Level Causal Analysis Script.
+2025-06-29 01:24:26,476 - INFO - YPLL_AIPW_Analysis_062825_v19 - Output will be saved in: genai_components_causal_output and logs/
+2025-06-29 01:24:26,545 - INFO - YPLL_AIPW_Analysis_062825_v19 - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-29 01:24:47,711 - INFO - YPLL_AIPW_Analysis_062825_v19 - Data for component analysis retrieved: 3080 rows, 14 columns.
+2025-06-29 01:24:47,711 - INFO - YPLL_AIPW_Analysis_062825_v19 - Converting population to numeric and filtering...
+2025-06-29 01:24:47,713 - INFO - YPLL_AIPW_Analysis_062825_v19 - Performing common data preparations...
+2025-06-29 01:24:47,714 - INFO - YPLL_AIPW_Analysis_062825_v19 - Created 8 dummy variables for 'census_division'.
+2025-06-29 01:24:47,714 - INFO - YPLL_AIPW_Analysis_062825_v19 - Common data preparations complete.
+2025-06-29 01:24:47,714 - INFO - YPLL_AIPW_Analysis_062825_v19 - Generating two-way interaction PDP plot...
+2025-06-29 01:24:48,438 - INFO - YPLL_AIPW_Analysis_062825_v19 - Interaction PDP plot saved to genai_components_causal_output/plots/pdp_interaction_plot.png
+2025-06-29 01:24:48,438 - INFO - YPLL_AIPW_Analysis_062825_v19 - Generating 3D interaction surface plot...
+2025-06-29 01:24:49,133 - INFO - YPLL_AIPW_Analysis_062825_v19 - 3D Interaction plot saved to genai_components_causal_output/plots/pdp_interaction_plot_3d.png
+2025-06-29 01:24:49,133 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: AI Staff Scheduling
+2025-06-29 01:24:49,134 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_wfaiss_enabled_adopted: 9.71% (N_T=299, N_C=2781)
+2025-06-29 01:24:49,135 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for AI Staff Scheduling analysis: 3080 (Treated: 299, Control: 2781)
+2025-06-29 01:24:49,135 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_wfaiss_enabled_adopted ---
+2025-06-29 01:24:49,363 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_wfaiss_enabled_adopted.png
+2025-06-29 01:24:49,659 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_wfaiss_enabled_adopted: -405.4369
+2025-06-29 01:24:56,414 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:03,499 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:10,581 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:17,634 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:24,677 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:31,748 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:38,851 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:45,928 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:25:52,981 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:00,049 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:07,117 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:14,190 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:21,241 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:28,265 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:35,308 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:42,385 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:49,426 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:26:56,490 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:27:03,561 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:27:10,585 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:27:10,865 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_wfaiss_enabled_adopted (500 valid): [-989.0955, 42.1992]
+2025-06-29 01:27:10,865 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_wfaiss_enabled_adopted ---
+2025-06-29 01:27:10,866 - ERROR - YPLL_AIPW_Analysis_062825_v19 - Unexpected error in main analysis script: name 'calculate_e_value' is not defined

@@ -1,0 +1,67 @@
+2025-05-16 02:04:49,509 - INFO - Logging to: logs/poly_moderation_log_20250516_020449.txt
+2025-05-16 02:04:49,509 - INFO - Output will be saved in: polynomial_moderation_output
+2025-05-16 02:04:49,594 - INFO - Connected to Postgres successfully.
+2025-05-16 02:05:15,375 - INFO - Data fetched from vw_conceptual_model: shape=(2126, 12)
+2025-05-16 02:05:15,375 - INFO - Converting columns to numeric types...
+2025-05-16 02:05:15,377 - INFO - Using '1' as the reference category for census_division dummies.
+2025-05-16 02:05:15,379 - INFO - Created 8 dummy cols for census_division
+2025-05-16 02:05:15,379 - INFO - --------------------------------------------------------------------------------
+2025-05-16 02:05:15,379 - INFO - Fitting polynomial moderation (degree 2): iv3_health_behaviors × mo1_genai_capabilities → dv2_healthcare_quality
+2025-05-16 02:05:15,379 - INFO - Fitting polynomial moderation model: dv2_healthcare_quality ~ poly(iv3_health_behaviors, degree=2) * mo1_genai_capabilities + controls
+2025-05-16 02:05:15,380 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-16 02:05:15,380 - INFO - Mean-centering iv3_health_behaviors before polynomial expansion (mean=34.4633)
+2025-05-16 02:05:15,389 - INFO - Model summary for dv2_healthcare_quality ~ poly(iv3_health_behaviors, degree=2) * mo1_genai_capabilities + controls:
+2025-05-16 02:05:15,389 - INFO - N: 2126.0, R²: 0.3885, Adj. R²: 0.3845
+2025-05-16 02:05:15,390 - INFO - Model coefficients:
+2025-05-16 02:05:15,390 - INFO - const                    :  4118.6431 (186.3192) t= 22.105 p=0.0000 ***
+2025-05-16 02:05:15,390 - INFO - iv3_health_behaviors_centered:    23.7242 (2.0446) t= 11.604 p=0.0000 ***
+2025-05-16 02:05:15,390 - INFO - iv3_health_behaviors_centered^2:     0.0960 (0.0459) t=  2.092 p=0.0365 *
+2025-05-16 02:05:15,390 - INFO - mo1_genai_capabilities_centered:  -154.1778 (37.6501) t= -4.095 p=0.0000 ***
+2025-05-16 02:05:15,391 - INFO - iv3_health_behaviors_centered_x_mo1_genai_capabilities_centered:    -4.2646 (2.0738) t= -2.056 p=0.0399 *
+2025-05-16 02:05:15,391 - INFO - iv3_health_behaviors_centered^2_x_mo1_genai_capabilities_centered:     0.0068 (0.0810) t=  0.084 p=0.9329 
+2025-05-16 02:05:15,391 - INFO - population               :    -0.0008 (0.0001) t=-10.475 p=0.0000 ***
+2025-05-16 02:05:15,391 - INFO - div_2                    :   169.0513 (213.1315) t=  0.793 p=0.4278 
+2025-05-16 02:05:15,391 - INFO - div_3                    :  1096.1778 (197.5420) t=  5.549 p=0.0000 ***
+2025-05-16 02:05:15,392 - INFO - div_4                    :   387.3237 (194.7635) t=  1.989 p=0.0469 *
+2025-05-16 02:05:15,392 - INFO - div_5                    :  1892.8851 (202.4959) t=  9.348 p=0.0000 ***
+2025-05-16 02:05:15,392 - INFO - div_6                    :    60.8076 (192.3189) t=  0.316 p=0.7519 
+2025-05-16 02:05:15,392 - INFO - div_7                    :  1253.6989 (198.3319) t=  6.321 p=0.0000 ***
+2025-05-16 02:05:15,392 - INFO - div_8                    :   781.0957 (202.2836) t=  3.861 p=0.0001 ***
+2025-05-16 02:05:15,392 - INFO - div_9                    :   107.5526 (213.3946) t=  0.504 p=0.6143 
+2025-05-16 02:05:15,394 - INFO - ✓ Significant polynomial interaction effect(s) found in 1 term(s):
+2025-05-16 02:05:15,394 - INFO -   - iv3_health_behaviors_centered_x_mo1_genai_capabilities_centered: coef = -4.2646, p = 0.0399
+2025-05-16 02:05:15,398 - INFO - Cohen's f-squared for polynomial interaction: 0.0025 (Negligible effect)
+2025-05-16 02:05:17,094 - INFO - Saved polynomial moderation plot to: polynomial_moderation_output/plots/poly_moderation_degree2_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality.png
+2025-05-16 02:05:17,107 - INFO - Created polynomial moderation research table: polynomial_moderation_output/results/research_table_poly_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality.txt
+2025-05-16 02:05:17,107 - INFO - --------------------------------------------------------------------------------
+2025-05-16 02:05:17,107 - INFO - Fitting polynomial moderation (degree 3): iv3_health_behaviors × mo1_genai_capabilities → dv2_healthcare_quality
+2025-05-16 02:05:17,107 - INFO - Fitting polynomial moderation model: dv2_healthcare_quality ~ poly(iv3_health_behaviors, degree=3) * mo1_genai_capabilities + controls
+2025-05-16 02:05:17,108 - INFO - Mean-centering mo1_genai_capabilities (mean=0.4074)
+2025-05-16 02:05:17,108 - INFO - Mean-centering iv3_health_behaviors before polynomial expansion (mean=34.4633)
+2025-05-16 02:05:17,114 - INFO - Model summary for dv2_healthcare_quality ~ poly(iv3_health_behaviors, degree=3) * mo1_genai_capabilities + controls:
+2025-05-16 02:05:17,115 - INFO - N: 2126.0, R²: 0.3916, Adj. R²: 0.3870
+2025-05-16 02:05:17,115 - INFO - Model coefficients:
+2025-05-16 02:05:17,115 - INFO - const                    :  4004.9297 (189.2609) t= 21.161 p=0.0000 ***
+2025-05-16 02:05:17,116 - INFO - iv3_health_behaviors_centered:    23.7807 (2.1426) t= 11.099 p=0.0000 ***
+2025-05-16 02:05:17,116 - INFO - iv3_health_behaviors_centered^2:     0.3583 (0.0929) t=  3.857 p=0.0001 ***
+2025-05-16 02:05:17,116 - INFO - iv3_health_behaviors_centered^3:    -0.0040 (0.0015) t= -2.781 p=0.0055 **
+2025-05-16 02:05:17,116 - INFO - mo1_genai_capabilities_centered:  -157.1649 (41.3172) t= -3.804 p=0.0001 ***
+2025-05-16 02:05:17,116 - INFO - iv3_health_behaviors_centered_x_mo1_genai_capabilities_centered:    -1.3996 (2.5279) t= -0.554 p=0.5799 
+2025-05-16 02:05:17,116 - INFO - iv3_health_behaviors_centered^2_x_mo1_genai_capabilities_centered:     0.1058 (0.1358) t=  0.779 p=0.4359 
+2025-05-16 02:05:17,116 - INFO - iv3_health_behaviors_centered^3_x_mo1_genai_capabilities_centered:    -0.0049 (0.0031) t= -1.554 p=0.1204 
+2025-05-16 02:05:17,116 - INFO - population               :    -0.0008 (0.0001) t=-10.433 p=0.0000 ***
+2025-05-16 02:05:17,116 - INFO - div_2                    :   217.1303 (213.4145) t=  1.017 p=0.3091 
+2025-05-16 02:05:17,116 - INFO - div_3                    :  1147.3901 (198.0758) t=  5.793 p=0.0000 ***
+2025-05-16 02:05:17,116 - INFO - div_4                    :   440.6636 (195.2068) t=  2.257 p=0.0241 *
+2025-05-16 02:05:17,116 - INFO - div_5                    :  1937.2435 (202.7889) t=  9.553 p=0.0000 ***
+2025-05-16 02:05:17,116 - INFO - div_6                    :   114.3780 (192.8513) t=  0.593 p=0.5532 
+2025-05-16 02:05:17,116 - INFO - div_7                    :  1310.1139 (198.7174) t=  6.593 p=0.0000 ***
+2025-05-16 02:05:17,116 - INFO - div_8                    :   821.2953 (202.4923) t=  4.056 p=0.0001 ***
+2025-05-16 02:05:17,116 - INFO - div_9                    :   187.2926 (214.4461) t=  0.873 p=0.3826 
+2025-05-16 02:05:17,117 - INFO - ✗ No significant polynomial interaction effects found
+2025-05-16 02:05:17,122 - INFO - Cohen's f-squared for polynomial interaction: 0.0042 (Negligible effect)
+2025-05-16 02:05:18,817 - INFO - Saved polynomial moderation plot to: polynomial_moderation_output/plots/poly_moderation_degree3_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality.png
+2025-05-16 02:05:18,832 - INFO - Created polynomial moderation research table: polynomial_moderation_output/results/research_table_poly_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality.txt
+2025-05-16 02:05:18,832 - INFO - ================================================================================
+2025-05-16 02:05:18,832 - INFO - Polynomial moderation analysis completed
+2025-05-16 02:05:18,832 - INFO - ================================================================================

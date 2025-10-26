@@ -1,0 +1,262 @@
+2025-07-20 03:12:33,855 - INFO - [AHEI_State_Regressions_072025_v2.py:64] - Logging to: logs/state_regression_analysis_log_20250720_031233.txt
+2025-07-20 03:12:33,855 - INFO - [AHEI_State_Regressions_072025_v2.py:204] - Starting State-Level Simple Linear Regression Analysis.
+2025-07-20 03:12:33,914 - INFO - [AHEI_State_Regressions_072025_v2.py:86] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-07-20 03:12:33,921 - INFO - [AHEI_State_Regressions_072025_v2.py:113] - Successfully fetched and joined data: 51 rows, 7 columns.
+2025-07-20 03:12:33,921 - INFO - [AHEI_State_Regressions_072025_v2.py:129] - Converting the following columns to numeric: ['ahei', 'access_gini', 'avg_travel_time_min', 'pct_area_in_30min_drive', 'death_rate', 'age_adjusted_death_rate']
+2025-07-20 03:12:33,923 - INFO - [AHEI_State_Regressions_072025_v2.py:135] - Column 'ahei' sample values before cleaning: ['50.17', '49.97', '78.98', '34.02', '71.69']
+2025-07-20 03:12:33,924 - INFO - [AHEI_State_Regressions_072025_v2.py:135] - Column 'access_gini' sample values before cleaning: ['0.5309', '0.7026', '0.4399', '0.5713', '0.4325']
+2025-07-20 03:12:33,924 - INFO - [AHEI_State_Regressions_072025_v2.py:135] - Column 'avg_travel_time_min' sample values before cleaning: ['40.2802', '3.9598', '18.2055', '19.0639', '144.5817']
+2025-07-20 03:12:33,925 - INFO - [AHEI_State_Regressions_072025_v2.py:135] - Column 'pct_area_in_30min_drive' sample values before cleaning: ['5.7277', '2.2924', '51.4829', '84.3343', '90.6555']
+2025-07-20 03:12:33,926 - INFO - [AHEI_State_Regressions_072025_v2.py:135] - Column 'death_rate' sample values before cleaning: ['871.5', '952.1', '929.8', '1,015.00', '1,073.20']
+2025-07-20 03:12:33,926 - INFO - [AHEI_State_Regressions_072025_v2.py:135] - Column 'age_adjusted_death_rate' sample values before cleaning: ['753.5', '836.6', '670.6', '946.9', '586.7']
+2025-07-20 03:12:33,927 - INFO - [AHEI_State_Regressions_072025_v2.py:174] - Numeric conversion complete.
+2025-07-20 03:12:33,927 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,927 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'ahei' (IV) vs. 'death_rate' (DV)
+2025-07-20 03:12:33,927 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,927 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,930 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             death_rate   R-squared:                       0.048
+Model:                            OLS   Adj. R-squared:                  0.029
+Method:                 Least Squares   F-statistic:                     2.482
+Date:                Sun, 20 Jul 2025   Prob (F-statistic):              0.122
+Time:                        03:12:33   Log-Likelihood:                -324.28
+No. Observations:                  51   AIC:                             652.6
+Df Residuals:                      49   BIC:                             656.4
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       1057.6055     61.390     17.228      0.000     934.238    1180.973
+ahei          -1.6125      1.023     -1.576      0.122      -3.669       0.444
+==============================================================================
+Omnibus:                        1.523   Durbin-Watson:                   2.080
+Prob(Omnibus):                  0.467   Jarque-Bera (JB):                0.862
+Skew:                           0.292   Prob(JB):                        0.650
+Kurtosis:                       3.255   Cond. No.                         185.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,930 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,930 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'access_gini' (IV) vs. 'death_rate' (DV)
+2025-07-20 03:12:33,930 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,930 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,932 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             death_rate   R-squared:                       0.103
+Model:                            OLS   Adj. R-squared:                  0.085
+Method:                 Least Squares   F-statistic:                     5.615
+Date:                Sun, 20 Jul 2025   Prob (F-statistic):             0.0218
+Time:                        03:12:33   Log-Likelihood:                -322.78
+No. Observations:                  51   AIC:                             649.6
+Df Residuals:                      49   BIC:                             653.4
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+const        1132.7457     72.929     15.532      0.000     986.189    1279.302
+access_gini  -362.4384    152.948     -2.370      0.022    -669.799     -55.078
+==============================================================================
+Omnibus:                        0.191   Durbin-Watson:                   1.891
+Prob(Omnibus):                  0.909   Jarque-Bera (JB):                0.086
+Skew:                           0.095   Prob(JB):                        0.958
+Kurtosis:                       2.936   Cond. No.                         9.58
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,932 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,932 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'avg_travel_time_min' (IV) vs. 'death_rate' (DV)
+2025-07-20 03:12:33,933 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,933 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,935 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             death_rate   R-squared:                       0.005
+Model:                            OLS   Adj. R-squared:                 -0.016
+Method:                 Least Squares   F-statistic:                    0.2318
+Date:                Sun, 20 Jul 2025   Prob (F-statistic):              0.632
+Time:                        03:12:33   Log-Likelihood:                -325.42
+No. Observations:                  51   AIC:                             654.8
+Df Residuals:                      49   BIC:                             658.7
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                 973.8259     25.911     37.583      0.000     921.755    1025.897
+avg_travel_time_min    -0.1456      0.302     -0.481      0.632      -0.753       0.462
+==============================================================================
+Omnibus:                        1.657   Durbin-Watson:                   1.945
+Prob(Omnibus):                  0.437   Jarque-Bera (JB):                0.859
+Skew:                           0.218   Prob(JB):                        0.651
+Kurtosis:                       3.462   Cond. No.                         109.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,935 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,935 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'pct_area_in_30min_drive' (IV) vs. 'death_rate' (DV)
+2025-07-20 03:12:33,935 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,935 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,938 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             death_rate   R-squared:                       0.017
+Model:                            OLS   Adj. R-squared:                 -0.003
+Method:                 Least Squares   F-statistic:                    0.8384
+Date:                Sun, 20 Jul 2025   Prob (F-statistic):              0.364
+Time:                        03:12:33   Log-Likelihood:                -325.11
+No. Observations:                  51   AIC:                             654.2
+Df Residuals:                      49   BIC:                             658.1
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                     986.4965     30.096     32.778      0.000     926.015    1046.978
+pct_area_in_30min_drive    -0.7269      0.794     -0.916      0.364      -2.322       0.868
+==============================================================================
+Omnibus:                        1.350   Durbin-Watson:                   2.058
+Prob(Omnibus):                  0.509   Jarque-Bera (JB):                0.617
+Skew:                           0.168   Prob(JB):                        0.735
+Kurtosis:                       3.421   Cond. No.                         56.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,938 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,938 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'ahei' (IV) vs. 'age_adjusted_death_rate' (DV)
+2025-07-20 03:12:33,938 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,938 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,940 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     age_adjusted_death_rate   R-squared:                       0.090
+Model:                                 OLS   Adj. R-squared:                  0.071
+Method:                      Least Squares   F-statistic:                     4.833
+Date:                     Sun, 20 Jul 2025   Prob (F-statistic):             0.0327
+Time:                             03:12:33   Log-Likelihood:                -303.47
+No. Observations:                       51   AIC:                             610.9
+Df Residuals:                           49   BIC:                             614.8
+Df Model:                                1                                         
+Covariance Type:                 nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        864.7100     40.821     21.183      0.000     782.676     946.744
+ahei          -1.4962      0.681     -2.198      0.033      -2.864      -0.129
+==============================================================================
+Omnibus:                        1.459   Durbin-Watson:                   1.960
+Prob(Omnibus):                  0.482   Jarque-Bera (JB):                1.224
+Skew:                           0.375   Prob(JB):                        0.542
+Kurtosis:                       2.881   Cond. No.                         185.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,940 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,940 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'access_gini' (IV) vs. 'age_adjusted_death_rate' (DV)
+2025-07-20 03:12:33,940 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,940 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,942 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     age_adjusted_death_rate   R-squared:                       0.109
+Model:                                 OLS   Adj. R-squared:                  0.091
+Method:                      Least Squares   F-statistic:                     6.011
+Date:                     Sun, 20 Jul 2025   Prob (F-statistic):             0.0178
+Time:                             03:12:33   Log-Likelihood:                -302.92
+No. Observations:                       51   AIC:                             609.8
+Df Residuals:                           49   BIC:                             613.7
+Df Model:                                1                                         
+Covariance Type:                 nonrobust                                         
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+const         896.6267     49.411     18.146      0.000     797.332     995.921
+access_gini  -254.0569    103.625     -2.452      0.018    -462.299     -45.815
+==============================================================================
+Omnibus:                        3.236   Durbin-Watson:                   1.774
+Prob(Omnibus):                  0.198   Jarque-Bera (JB):                3.035
+Skew:                           0.535   Prob(JB):                        0.219
+Kurtosis:                       2.469   Cond. No.                         9.58
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,942 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,943 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'avg_travel_time_min' (IV) vs. 'age_adjusted_death_rate' (DV)
+2025-07-20 03:12:33,943 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,943 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,945 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     age_adjusted_death_rate   R-squared:                       0.020
+Model:                                 OLS   Adj. R-squared:                 -0.000
+Method:                      Least Squares   F-statistic:                    0.9772
+Date:                     Sun, 20 Jul 2025   Prob (F-statistic):              0.328
+Time:                             03:12:33   Log-Likelihood:                -305.37
+No. Observations:                       51   AIC:                             614.7
+Df Residuals:                           49   BIC:                             618.6
+Df Model:                                1                                         
+Covariance Type:                 nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                 769.1908     17.487     43.987      0.000     734.050     804.332
+avg_travel_time_min     0.2017      0.204      0.989      0.328      -0.208       0.612
+==============================================================================
+Omnibus:                        3.029   Durbin-Watson:                   1.871
+Prob(Omnibus):                  0.220   Jarque-Bera (JB):                2.836
+Skew:                           0.562   Prob(JB):                        0.242
+Kurtosis:                       2.735   Cond. No.                         109.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,945 - INFO - [AHEI_State_Regressions_072025_v2.py:228] - ================================================================================
+2025-07-20 03:12:33,945 - INFO - [AHEI_State_Regressions_072025_v2.py:229] - RUNNING REGRESSION: 'pct_area_in_30min_drive' (IV) vs. 'age_adjusted_death_rate' (DV)
+2025-07-20 03:12:33,946 - INFO - [AHEI_State_Regressions_072025_v2.py:240] - Using 51 complete observations for this pair.
+2025-07-20 03:12:33,946 - INFO - [AHEI_State_Regressions_072025_v2.py:241] - --------------------------------------------------------------------------------
+2025-07-20 03:12:33,948 - INFO - [AHEI_State_Regressions_072025_v2.py:190] - 
+                               OLS Regression Results                              
+===================================================================================
+Dep. Variable:     age_adjusted_death_rate   R-squared:                       0.089
+Model:                                 OLS   Adj. R-squared:                  0.070
+Method:                      Least Squares   F-statistic:                     4.760
+Date:                     Sun, 20 Jul 2025   Prob (F-statistic):             0.0340
+Time:                             03:12:33   Log-Likelihood:                -303.51
+No. Observations:                       51   AIC:                             611.0
+Df Residuals:                           49   BIC:                             614.9
+Df Model:                                1                                         
+Covariance Type:                 nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                     811.5984     19.704     41.189      0.000     772.002     851.195
+pct_area_in_30min_drive    -1.1339      0.520     -2.182      0.034      -2.178      -0.089
+==============================================================================
+Omnibus:                        1.581   Durbin-Watson:                   1.934
+Prob(Omnibus):                  0.454   Jarque-Bera (JB):                1.327
+Skew:                           0.391   Prob(JB):                        0.515
+Kurtosis:                       2.885   Cond. No.                         56.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+2025-07-20 03:12:33,948 - INFO - [AHEI_State_Regressions_072025_v2.py:245] - ================================================================================
+2025-07-20 03:12:33,948 - INFO - [AHEI_State_Regressions_072025_v2.py:246] - Script finished successfully.

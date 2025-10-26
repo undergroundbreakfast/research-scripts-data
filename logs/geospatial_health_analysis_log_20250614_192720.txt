@@ -1,0 +1,36 @@
+2025-06-14 19:27:20,999 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:75] - Logging to: logs/geospatial_health_analysis_log_20250614_192720.txt
+2025-06-14 19:27:20,999 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:932] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 19:27:21,085 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:96] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 19:27:21,085 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:108] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 19:27:21,112 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:133] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 19:27:21,124 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:152] - GeoDataFrame created successfully.
+2025-06-14 19:27:21,125 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:172] - County shapefile already exists at: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 19:27:21,391 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:222] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 19:27:21,723 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:284] - Hot spot analysis complete for ai_adoption_score. Hot spots: 98, Cold spots: 0
+2025-06-14 19:27:21,728 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:418] - Generating cluster map for ai_adoption_score...
+2025-06-14 19:27:32,673 - WARNING - [Geospatial_TAMU_analysis_061425_v4.py:449] - Could not add basemap to cluster plot: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 19:27:34,255 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:461] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_ai_adoption_score.png
+2025-06-14 19:27:34,257 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:480] - Found 98 hospitals in high-tech clusters
+2025-06-14 19:27:34,641 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:501] - Found 303 counties within a 30-mile radius of a 'ai_adoption_score' hot spot hospital.
+2025-06-14 19:27:34,642 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:504] - Service area summary saved to geospatial_output/service_area_summary_ai_adoption_score.csv
+2025-06-14 19:27:34,642 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:506] - Generating service area coverage map...
+2025-06-14 19:27:35,648 - ERROR - [Geospatial_TAMU_analysis_061425_v4.py:538] - Error in hospital service area analysis: Connection reset by peer too many times. Last message was: 500 Error: Domain Not Found for url: https://stamen-tiles-a.a.ssl.fastly.net/toner-lite/4/2/5.png
+2025-06-14 19:27:35,693 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:545] - --- Generating enhanced glow map for ai_adoption_score ---
+2025-06-14 19:27:35,693 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:552] - Input GDF for ai_adoption_score - CRS: EPSG:4326, Length: 5777
+2025-06-14 19:27:35,694 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:558] - Input GDF for ai_adoption_score - total_bounds (in original CRS): [-155.4721152   -85.2904311    35.048719     48.90690143]
+2025-06-14 19:27:35,694 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:560] - Input GDF for ai_adoption_score - head(2) geometry: 
+0    POINT (-68.76325 44.82051)
+1    POINT (-69.89018 43.90633)
+Name: geometry, dtype: geometry
+2025-06-14 19:27:35,694 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:580] - Reprojecting input GDF from EPSG:4326 to EPSG:5070 for ai_adoption_score
+2025-06-14 19:27:35,696 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:582] - gdf_proj for ai_adoption_score - CRS: EPSG:5070, Length: 5777
+2025-06-14 19:27:35,697 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:584] - gdf_proj for ai_adoption_score - total_bounds (EPSG:5070): [-6055907.59295464   281897.07482847 16577675.96412849  6709456.37569793]
+2025-06-14 19:27:35,698 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:606] - For ai_adoption_score: Hot spots found: 98, Cold spots: 0, Other points: 5679
+2025-06-14 19:27:35,698 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:609] - Hot spots GDF for ai_adoption_score (EPSG:5070) bounds: [-2053148.28669168   400029.95899958  2122840.56299665  2821639.08349691]
+2025-06-14 19:27:35,704 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:612] - Hot spots GDF for ai_adoption_score (converted to EPSG:3857) bounds: [-13249305.66183757   2934820.37881495  -7649406.4071671
+   5724892.83924334]
+2025-06-14 19:27:35,705 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:619] - 'Not Significant' points GDF for ai_adoption_score (EPSG:5070) bounds: [-6055907.59295464   281897.07482847 16577675.96412849  6709456.37569793]
+2025-06-14 19:27:35,707 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:622] - 'Not Significant' points GDF for ai_adoption_score (converted to EPSG:3857) bounds: [-17307076.69661717 -20354003.3595718    3901605.55203653
+   6259079.25304616]
+2025-06-14 19:27:35,707 - ERROR - [Geospatial_TAMU_analysis_061425_v4.py:989] - A critical error occurred during the main execution pipeline: name 'gdf_counties_proj' is not defined
+2025-06-14 19:27:35,710 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:992] - Geospatial analysis script finished. Check logs and output directory for results.

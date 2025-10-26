@@ -1,0 +1,10 @@
+2025-05-13 22:41:02,498 - INFO - Logging to: logs/moderation_log_20250513_224102.txt
+2025-05-13 22:41:02,498 - INFO - Output will be saved in: moderation_output
+2025-05-13 22:41:02,600 - INFO - Connected to Postgres successfully.
+2025-05-13 22:41:28,504 - INFO - Data fetched from vw_conceptual_model (with NOT NULL checks): shape=(2126, 12)
+2025-05-13 22:41:28,506 - INFO - Using '1' as the reference category for census_division dummies.
+2025-05-13 22:41:28,508 - INFO - Created 8 dummy cols for census_division
+2025-05-13 22:41:28,508 - INFO - Saving coefficients summary to: moderation_output/Moderation_Coefficients_All_Transformations.csv
+2025-05-13 22:41:28,508 - INFO - --------------------------------------------------------------------------------
+2025-05-13 22:41:28,508 - INFO - PATH 1/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 22:41:28,508 - INFO -   Running with RAW transformation

@@ -1,0 +1,8 @@
+2025-06-14 12:20:01,388 - INFO - [Geospatial_Analysis_061425_v3.py:82] - Logging to: logs/geospatial_health_analysis_log_20250614_122001.txt
+2025-06-14 12:20:01,388 - INFO - [Geospatial_Analysis_061425_v3.py:421] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 12:20:01,451 - INFO - [Geospatial_Analysis_061425_v3.py:103] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 12:20:01,451 - INFO - [Geospatial_Analysis_061425_v3.py:112] - Fetching hospital-level data for geospatial analysis...
+2025-06-14 12:20:01,470 - INFO - [Geospatial_Analysis_061425_v3.py:138] - Hospital-level data retrieved: 6166 rows.
+2025-06-14 12:20:01,475 - INFO - [Geospatial_Analysis_061425_v3.py:214] - No geocode cache found. Geocoding all hospitals.
+2025-06-14 12:20:01,505 - INFO - [Geospatial_Analysis_061425_v3.py:225] - Starting geocoding for 6166 addresses. This may take some time...
+2025-06-14 12:22:09,678 - INFO - [Geospatial_Analysis_061425_v3.py:239] -   ...geocoded 50 of 6166 addresses.

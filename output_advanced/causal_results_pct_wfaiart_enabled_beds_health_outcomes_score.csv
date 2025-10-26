@@ -1,0 +1,2 @@
+treatment_variable,outcome_variable,ate_naive,ate_iptw,ate_iptw_se,ate_iptw_ci_lower,ate_iptw_ci_upper,e_value_iptw_point_approx,n_total_after_trimming,n_treated_after_trimming,n_control_after_trimming
+pct_wfaiart_enabled_beds,health_outcomes_score,-858.7273023103598,-484.1254645854489,53.981050712428136,-589.9712838303076,-378.2796453405902,"Context-dependent, see paper's method",2855,416,2439

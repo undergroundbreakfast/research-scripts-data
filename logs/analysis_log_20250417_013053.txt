@@ -1,0 +1,216 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-17 01:30:53
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+
+Diagnosing Index-Level (Original): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS (Original)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access (Original) .....
+Usable observations for dv1_healthcare_access: 3143
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed div_8 (p=0.7750, f²=0.0000, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed iv3_health_behaviors (p=0.7378, f²=0.0000, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.2968-0.2965) / (1-0.2968)) = 0.0004 => trivial
+Removed iv1_public_health_policy (p=0.2793, f²=0.0004, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.2965-0.2962) / (1-0.2965)) = 0.0004 => trivial
+Removed mo1_genai_cap (p=0.2366, f²=0.0004, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.2962-0.2404) / (1-0.2962)) = 0.0792 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.2962-0.2631) / (1-0.2962)) = 0.0470 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.2962-0.2738) / (1-0.2962)) = 0.0318 => small
+Cohen's f² for population: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.2962-0.2943) / (1-0.2962)) = 0.0028 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.2962-0.2805) / (1-0.2962)) = 0.0224 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.2962-0.2703) / (1-0.2962)) = 0.0368 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.2962-0.2884) / (1-0.2962)) = 0.0111 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.2962-0.2826) / (1-0.2962)) = 0.0193 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.2962-0.2942) / (1-0.2962)) = 0.0029 => trivial
+Cohen's f² for div_Unknown: ((0.2962-0.2962) / (1-0.2962)) = 0.0000 => trivial
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2962 (initial=0.2968), Condition#=3412712.45
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_9', 'div_Unknown']
+Removed predictors: ['div_8', 'iv3_health_behaviors', 'iv1_public_health_policy', 'mo1_genai_cap']
+Testing 66 interactions for DV=dv1_healthcare_access among stepwise-kept predictors.
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['iv2_physical_environment_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['iv4_social_economic_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['mo2_robotics_cap_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['population_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_2_x_div_3', 'div_Unknown']
+Removing zero variance predictors: ['div_2_x_div_4', 'div_Unknown']
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_5']
+Removing zero variance predictors: ['div_2_x_div_6', 'div_Unknown']
+Removing zero variance predictors: ['div_2_x_div_7', 'div_Unknown']
+Removing zero variance predictors: ['div_2_x_div_9', 'div_Unknown']
+Removing zero variance predictors: ['div_2_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_3_x_div_4', 'div_Unknown']
+Removing zero variance predictors: ['div_3_x_div_5', 'div_Unknown']
+Removing zero variance predictors: ['div_3_x_div_6', 'div_Unknown']
+Removing zero variance predictors: ['div_3_x_div_7', 'div_Unknown']
+Removing zero variance predictors: ['div_3_x_div_9', 'div_Unknown']
+Removing zero variance predictors: ['div_3_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_4_x_div_5', 'div_Unknown']
+Removing zero variance predictors: ['div_4_x_div_6', 'div_Unknown']
+Removing zero variance predictors: ['div_4_x_div_7', 'div_Unknown']
+Removing zero variance predictors: ['div_4_x_div_9', 'div_Unknown']
+Removing zero variance predictors: ['div_4_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_6']
+Removing zero variance predictors: ['div_5_x_div_7', 'div_Unknown']
+Removing zero variance predictors: ['div_5_x_div_9', 'div_Unknown']
+Removing zero variance predictors: ['div_5_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_6_x_div_7', 'div_Unknown']
+Removing zero variance predictors: ['div_6_x_div_9', 'div_Unknown']
+Removing zero variance predictors: ['div_6_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_7_x_div_9', 'div_Unknown']
+Removing zero variance predictors: ['div_7_x_div_Unknown', 'div_Unknown']
+Removing zero variance predictors: ['div_9_x_div_Unknown', 'div_Unknown']
+Usable observations for dv1_healthcare_access: 3143
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed div_8 (p=0.7750, f²=0.0000, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed iv3_health_behaviors (p=0.7378, f²=0.0000, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.2968-0.2965) / (1-0.2968)) = 0.0004 => trivial
+Removed iv1_public_health_policy (p=0.2793, f²=0.0004, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.2965-0.2962) / (1-0.2965)) = 0.0004 => trivial
+Removed mo1_genai_cap (p=0.2366, f²=0.0004, trivial)
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.2962-0.2404) / (1-0.2962)) = 0.0792 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.2962-0.2631) / (1-0.2962)) = 0.0470 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.2962-0.2738) / (1-0.2962)) = 0.0318 => small
+Cohen's f² for population: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.2962-0.2943) / (1-0.2962)) = 0.0028 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.2962-0.2805) / (1-0.2962)) = 0.0224 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.2962-0.2703) / (1-0.2962)) = 0.0368 => small
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.2962-0.2884) / (1-0.2962)) = 0.0111 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.2962-0.2826) / (1-0.2962)) = 0.0193 => trivial
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.2962-0.2942) / (1-0.2962)) = 0.0029 => trivial
+Cohen's f² for div_Unknown: ((0.2962-0.2962) / (1-0.2962)) = 0.0000 => trivial
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2962 (initial=0.2968), Condition#=3412712.45
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_9', 'div_Unknown']
+Removed predictors: ['div_8', 'iv3_health_behaviors', 'iv1_public_health_policy', 'mo1_genai_cap']
+Appended results to OLS_Coefficients_IndexLevel_Original.csv for DV=dv1_healthcare_access.
+Removing zero variance predictors: ['div_Unknown']
+Appended results to OLS_Coefficients_IndexLevel_Original_WithZ.csv for DV=dv1_healthcare_access.
+
+Correlation matrix for DV=dv1_healthcare_access_original among final model columns:
+                          iv2_physical_environment  iv4_social_economic  mo2_robotics_cap  population     div_2     div_3     div_4     div_5     div_6     div_7     div_9  div_Unknown  dv1_healthcare_access
+iv2_physical_environment                  1.000000            -0.007559          0.139497    0.214688  0.074431  0.127688  0.161711  0.154380 -0.288545  0.249257 -0.104869          NaN               0.360085
+iv4_social_economic                      -0.007559             1.000000         -0.124017   -0.133282 -0.086630  0.091943 -0.033956  0.165163 -0.111440 -0.041489 -0.035018          NaN               0.246873
+mo2_robotics_cap                          0.139497            -0.124017          1.000000    0.224809  0.076529  0.032279  0.090471 -0.072070 -0.073690 -0.064100  0.058919          NaN              -0.178832
+population                                0.214688            -0.133282          0.224809    1.000000  0.119025  0.011735  0.004438 -0.055559 -0.103268 -0.022032  0.152501          NaN              -0.112787
+div_2                                     0.074431            -0.086630          0.076529    0.119025  1.000000 -0.107708 -0.090218 -0.081247 -0.111077 -0.094140 -0.053342          NaN              -0.044805
+div_3                                     0.127688             0.091943          0.032279    0.011735 -0.107708  1.000000 -0.193372 -0.174143 -0.238082 -0.201778 -0.114333          NaN               0.119075
+div_4                                     0.161711            -0.033956          0.090471    0.004438 -0.090218 -0.193372  1.000000 -0.145865 -0.199422 -0.169013 -0.095767          NaN               0.015135
+div_5                                     0.154380             0.165163         -0.072070   -0.055559 -0.081247 -0.174143 -0.145865  1.000000 -0.179591 -0.152206 -0.086244          NaN               0.229861
+div_6                                    -0.288545            -0.111440         -0.073690   -0.103268 -0.111077 -0.238082 -0.199422 -0.179591  1.000000 -0.208091 -0.117909          NaN              -0.106891
+div_7                                     0.249257            -0.041489         -0.064100   -0.022032 -0.094140 -0.201778 -0.169013 -0.152206 -0.208091  1.000000 -0.099930          NaN               0.141906
+div_9                                    -0.104869            -0.035018          0.058919    0.152501 -0.053342 -0.114333 -0.095767 -0.086244 -0.117909 -0.099930  1.000000          NaN              -0.208875
+div_Unknown                                    NaN                  NaN               NaN         NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN          NaN                    NaN
+dv1_healthcare_access                     0.360085             0.246873         -0.178832   -0.112787 -0.044805  0.119075  0.015135  0.229861 -0.106891  0.141906 -0.208875          NaN               1.000000
+Correlation heatmap saved to corr_dv1_healthcare_access_original.png

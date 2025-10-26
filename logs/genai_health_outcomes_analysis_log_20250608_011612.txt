@@ -1,0 +1,321 @@
+2025-06-08 01:16:12,714 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:82] - Logging to: logs/genai_health_outcomes_analysis_log_20250608_011612.txt
+2025-06-08 01:16:12,714 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:444] - Starting Comprehensive GenAI/Robotics Health Outcomes Analysis Script.
+2025-06-08 01:16:12,715 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:450] - All outputs will be saved in: analysis_results_20250608_011612
+2025-06-08 01:16:13,568 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:102] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-08 01:16:45,729 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:163] - Data for analysis retrieved: 3135 rows, 24 columns.
+2025-06-08 01:16:45,730 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:177] - Performing data preparations...
+2025-06-08 01:16:45,733 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:206] - Data preparation complete.
+2025-06-08 01:16:45,733 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:495] - 
+######################### RUNNING ALL ANALYSES FOR WEIGHTING SCHEME: BEDS #########################
+2025-06-08 01:16:45,734 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:213] - 
+================================================================================
+2025-06-08 01:16:45,734 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:214] - PART 1: OVERALL CONCEPTUAL MODEL ANALYSIS (Weighting: BEDS)
+2025-06-08 01:16:45,734 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:215] - ================================================================================
+2025-06-08 01:16:45,734 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:220] - 
+--- Testing Model for DV: dv1_clinical_care ---
+2025-06-08 01:16:45,743 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:242] - Model: dv1_clinical_care ~ iv1_medicaid_expansion + iv2_physical_env + iv3_health_behaviors + iv4_social_economic + mo1_ai_adoption_composite + mo2_robotics_adoption_composite + log_population + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-06-08 01:16:45,743 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:243] - Sample Size (after dropna): 3135.0
+2025-06-08 01:16:45,743 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:244] - R-squared: 0.2779
+2025-06-08 01:16:45,743 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:245] - Adj. R-squared: 0.2744
+2025-06-08 01:16:45,743 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:246] - F-statistic p-value: 2.274e-207
+2025-06-08 01:16:45,743 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:249] - Key Variable P-Values:
+2025-06-08 01:16:45,744 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv1_medicaid_expansion: 0.2727
+2025-06-08 01:16:45,745 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv2_physical_env: 0.0000
+2025-06-08 01:16:45,745 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv3_health_behaviors: 0.1238
+2025-06-08 01:16:45,745 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv4_social_economic: 0.0000
+2025-06-08 01:16:45,745 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo1_ai_adoption_composite: 0.1595
+2025-06-08 01:16:45,745 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo2_robotics_adoption_composite: 0.0000
+2025-06-08 01:16:45,751 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:220] - 
+--- Testing Model for DV: dv2_health_outcomes ---
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:242] - Model: dv2_health_outcomes ~ iv1_medicaid_expansion + iv2_physical_env + iv3_health_behaviors + iv4_social_economic + mo1_ai_adoption_composite + mo2_robotics_adoption_composite + log_population + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:243] - Sample Size (after dropna): 3135.0
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:244] - R-squared: 0.7045
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:245] - Adj. R-squared: 0.7030
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:246] - F-statistic p-value: 0
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:249] - Key Variable P-Values:
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv1_medicaid_expansion: 0.3836
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv2_physical_env: 0.0000
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv3_health_behaviors: 0.0000
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv4_social_economic: 0.0000
+2025-06-08 01:16:45,773 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo1_ai_adoption_composite: 0.4105
+2025-06-08 01:16:45,774 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo2_robotics_adoption_composite: 0.0002
+2025-06-08 01:16:45,782 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:220] - 
+--- Testing Model for DV: dv3_ops_efficiency ---
+2025-06-08 01:16:45,799 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:242] - Model: dv3_ops_efficiency ~ iv1_medicaid_expansion + iv2_physical_env + iv3_health_behaviors + iv4_social_economic + mo1_ai_adoption_composite + mo2_robotics_adoption_composite + log_population + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-06-08 01:16:45,799 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:243] - Sample Size (after dropna): 2126.0
+2025-06-08 01:16:45,799 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:244] - R-squared: 0.1679
+2025-06-08 01:16:45,799 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:245] - Adj. R-squared: 0.1620
+2025-06-08 01:16:45,799 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:246] - F-statistic p-value: 1.463e-73
+2025-06-08 01:16:45,799 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:249] - Key Variable P-Values:
+2025-06-08 01:16:45,800 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv1_medicaid_expansion: 0.8744
+2025-06-08 01:16:45,800 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv2_physical_env: 0.7019
+2025-06-08 01:16:45,800 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv3_health_behaviors: 0.0082
+2025-06-08 01:16:45,800 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv4_social_economic: 0.0001
+2025-06-08 01:16:45,800 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo1_ai_adoption_composite: 0.0348
+2025-06-08 01:16:45,800 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo2_robotics_adoption_composite: 0.2047
+2025-06-08 01:16:45,825 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:504] - Part 1 results saved to analysis_results_20250608_011612/output_beds/part1_overall_model_summary_beds.csv
+2025-06-08 01:16:45,826 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:507] - 
+Full OLS Summary for DV 'dv2_health_outcomes' (Weighting: beds):
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     dv2_health_outcomes   R-squared:                       0.704
+Model:                             OLS   Adj. R-squared:                  0.703
+Method:                  Least Squares   F-statistic:                     495.6
+Date:                 Sun, 08 Jun 2025   Prob (F-statistic):               0.00
+Time:                         01:16:45   Log-Likelihood:                -25905.
+No. Observations:                 3135   AIC:                         5.184e+04
+Df Residuals:                     3119   BIC:                         5.194e+04
+Df Model:                           15                                         
+Covariance Type:             nonrobust                                         
+===================================================================================================
+                                      coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------
+Intercept                         695.3337    232.298      2.993      0.003     239.861    1150.807
+iv1_medicaid_expansion            -34.0449     39.068     -0.871      0.384    -110.647      42.558
+iv2_physical_env                  459.9872     50.992      9.021      0.000     360.006     559.968
+iv3_health_behaviors               27.4885      0.865     31.767      0.000      25.792      29.185
+iv4_social_economic               263.3042      5.143     51.197      0.000     253.220     273.388
+mo1_ai_adoption_composite         -16.9321     20.571     -0.823      0.411     -57.267      23.402
+mo2_robotics_adoption_composite   -22.9242      6.209     -3.692      0.000     -35.098     -10.751
+log_population                   -172.7118     15.471    -11.164      0.000    -203.045    -142.378
+div_2                             465.1325    146.809      3.168      0.002     177.280     752.985
+div_3                             717.7603    134.912      5.320      0.000     453.235     982.285
+div_4                             372.6482    134.954      2.761      0.006     108.041     637.255
+div_5                            1236.5431    140.266      8.816      0.000     961.520    1511.566
+div_6                             107.3440    134.382      0.799      0.424    -156.143     370.831
+div_7                             797.5423    140.176      5.690      0.000     522.695    1072.390
+div_8                             365.7745    137.610      2.658      0.008      95.958     635.591
+div_9                              37.9756    145.414      0.261      0.794    -247.140     323.091
+==============================================================================
+Omnibus:                      520.255   Durbin-Watson:                   1.931
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4084.631
+Skew:                           0.560   Prob(JB):                         0.00
+Kurtosis:                       8.479   Cond. No.                     1.00e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large,  1e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+2025-06-08 01:16:45,826 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:274] - 
+================================================================================
+2025-06-08 01:16:45,826 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:275] - PART 2: DETAILED MODERATION ANALYSIS (Weighting: BEDS)
+2025-06-08 01:16:45,826 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:276] - ================================================================================
+2025-06-08 01:16:45,826 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,828 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,828 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,830 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,830 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,831 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,831 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,833 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,833 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,834 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,834 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,835 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,835 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv1_clinical_care ---
+2025-06-08 01:16:45,836 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv1_clinical_care: 
+2025-06-08 01:16:45,836 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv1_clinical_care ---
+2025-06-08 01:16:45,837 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv1_clinical_care: 
+2025-06-08 01:16:45,837 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv1_clinical_care ---
+2025-06-08 01:16:45,837 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv1_clinical_care: 
+2025-06-08 01:16:45,837 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv1_clinical_care ---
+2025-06-08 01:16:45,838 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv1_clinical_care: 
+2025-06-08 01:16:45,838 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv1_clinical_care ---
+2025-06-08 01:16:45,838 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv1_clinical_care: 
+2025-06-08 01:16:45,838 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv1_clinical_care ---
+2025-06-08 01:16:45,840 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv1_clinical_care: 
+2025-06-08 01:16:45,841 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:404] - 
+================================================================================
+2025-06-08 01:16:45,841 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:405] - PART 3: MAIN EFFECTS ANALYSIS (Weighting: BEDS)
+2025-06-08 01:16:45,841 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:406] - ================================================================================
+2025-06-08 01:16:45,841 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.1_ai_automate_tasks on dv2_health_outcomes ---
+2025-06-08 01:16:45,853 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.1_ai_automate_tasks: -2.1681, P-value: 0.0031
+2025-06-08 01:16:45,853 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.2_ai_optimize_workflows on dv2_health_outcomes ---
+2025-06-08 01:16:45,864 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.2_ai_optimize_workflows: -1.7257, P-value: 0.0138
+2025-06-08 01:16:45,864 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.3_ai_predict_demand on dv2_health_outcomes ---
+2025-06-08 01:16:45,873 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.3_ai_predict_demand: -1.5777, P-value: 0.0563
+2025-06-08 01:16:45,873 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.4_ai_predict_staff on dv2_health_outcomes ---
+2025-06-08 01:16:45,885 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.4_ai_predict_staff: -1.3579, P-value: 0.1124
+2025-06-08 01:16:45,885 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.5_ai_staff_schedule on dv2_health_outcomes ---
+2025-06-08 01:16:45,893 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.5_ai_staff_schedule: -1.4732, P-value: 0.0894
+2025-06-08 01:16:45,893 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo2.1_robotics_in_hospital on dv2_health_outcomes ---
+2025-06-08 01:16:45,899 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo2.1_robotics_in_hospital: -2.7205, P-value: 0.0000
+2025-06-08 01:16:45,899 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:539] - Part 3 results saved to analysis_results_20250608_011612/output_beds/part3_main_effects_analysis_results_beds.csv
+2025-06-08 01:16:45,899 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:495] - 
+######################### RUNNING ALL ANALYSES FOR WEIGHTING SCHEME: ADJPD #########################
+2025-06-08 01:16:45,900 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:213] - 
+================================================================================
+2025-06-08 01:16:45,900 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:214] - PART 1: OVERALL CONCEPTUAL MODEL ANALYSIS (Weighting: ADJPD)
+2025-06-08 01:16:45,900 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:215] - ================================================================================
+2025-06-08 01:16:45,900 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:220] - 
+--- Testing Model for DV: dv1_clinical_care ---
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:242] - Model: dv1_clinical_care ~ iv1_medicaid_expansion + iv2_physical_env + iv3_health_behaviors + iv4_social_economic + mo1_ai_adoption_composite + mo2_robotics_adoption_composite + log_population + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:243] - Sample Size (after dropna): 3135.0
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:244] - R-squared: 0.2779
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:245] - Adj. R-squared: 0.2744
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:246] - F-statistic p-value: 2.274e-207
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:249] - Key Variable P-Values:
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv1_medicaid_expansion: 0.2727
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv2_physical_env: 0.0000
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv3_health_behaviors: 0.1238
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv4_social_economic: 0.0000
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo1_ai_adoption_composite: 0.1595
+2025-06-08 01:16:45,906 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo2_robotics_adoption_composite: 0.0000
+2025-06-08 01:16:45,910 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:220] - 
+--- Testing Model for DV: dv2_health_outcomes ---
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:242] - Model: dv2_health_outcomes ~ iv1_medicaid_expansion + iv2_physical_env + iv3_health_behaviors + iv4_social_economic + mo1_ai_adoption_composite + mo2_robotics_adoption_composite + log_population + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:243] - Sample Size (after dropna): 3135.0
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:244] - R-squared: 0.7045
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:245] - Adj. R-squared: 0.7030
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:246] - F-statistic p-value: 0
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:249] - Key Variable P-Values:
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv1_medicaid_expansion: 0.3836
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv2_physical_env: 0.0000
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv3_health_behaviors: 0.0000
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv4_social_economic: 0.0000
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo1_ai_adoption_composite: 0.4105
+2025-06-08 01:16:45,916 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo2_robotics_adoption_composite: 0.0002
+2025-06-08 01:16:45,920 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:220] - 
+--- Testing Model for DV: dv3_ops_efficiency ---
+2025-06-08 01:16:45,930 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:242] - Model: dv3_ops_efficiency ~ iv1_medicaid_expansion + iv2_physical_env + iv3_health_behaviors + iv4_social_economic + mo1_ai_adoption_composite + mo2_robotics_adoption_composite + log_population + div_2 + div_3 + div_4 + div_5 + div_6 + div_7 + div_8 + div_9
+2025-06-08 01:16:45,930 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:243] - Sample Size (after dropna): 2126.0
+2025-06-08 01:16:45,930 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:244] - R-squared: 0.1679
+2025-06-08 01:16:45,930 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:245] - Adj. R-squared: 0.1620
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:246] - F-statistic p-value: 1.463e-73
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:249] - Key Variable P-Values:
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv1_medicaid_expansion: 0.8744
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv2_physical_env: 0.7019
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv3_health_behaviors: 0.0082
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - iv4_social_economic: 0.0001
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo1_ai_adoption_composite: 0.0348
+2025-06-08 01:16:45,931 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:253] -   - mo2_robotics_adoption_composite: 0.2047
+2025-06-08 01:16:45,938 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:504] - Part 1 results saved to analysis_results_20250608_011612/output_adjpd/part1_overall_model_summary_adjpd.csv
+2025-06-08 01:16:45,938 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:507] - 
+Full OLS Summary for DV 'dv2_health_outcomes' (Weighting: adjpd):
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     dv2_health_outcomes   R-squared:                       0.704
+Model:                             OLS   Adj. R-squared:                  0.703
+Method:                  Least Squares   F-statistic:                     495.6
+Date:                 Sun, 08 Jun 2025   Prob (F-statistic):               0.00
+Time:                         01:16:45   Log-Likelihood:                -25905.
+No. Observations:                 3135   AIC:                         5.184e+04
+Df Residuals:                     3119   BIC:                         5.194e+04
+Df Model:                           15                                         
+Covariance Type:             nonrobust                                         
+===================================================================================================
+                                      coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------
+Intercept                         695.3337    232.298      2.993      0.003     239.861    1150.807
+iv1_medicaid_expansion            -34.0449     39.068     -0.871      0.384    -110.647      42.558
+iv2_physical_env                  459.9872     50.992      9.021      0.000     360.006     559.968
+iv3_health_behaviors               27.4885      0.865     31.767      0.000      25.792      29.185
+iv4_social_economic               263.3042      5.143     51.197      0.000     253.220     273.388
+mo1_ai_adoption_composite         -16.9321     20.571     -0.823      0.411     -57.267      23.402
+mo2_robotics_adoption_composite   -22.9242      6.209     -3.692      0.000     -35.098     -10.751
+log_population                   -172.7118     15.471    -11.164      0.000    -203.045    -142.378
+div_2                             465.1325    146.809      3.168      0.002     177.280     752.985
+div_3                             717.7603    134.912      5.320      0.000     453.235     982.285
+div_4                             372.6482    134.954      2.761      0.006     108.041     637.255
+div_5                            1236.5431    140.266      8.816      0.000     961.520    1511.566
+div_6                             107.3440    134.382      0.799      0.424    -156.143     370.831
+div_7                             797.5423    140.176      5.690      0.000     522.695    1072.390
+div_8                             365.7745    137.610      2.658      0.008      95.958     635.591
+div_9                              37.9756    145.414      0.261      0.794    -247.140     323.091
+==============================================================================
+Omnibus:                      520.255   Durbin-Watson:                   1.931
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4084.631
+Skew:                           0.560   Prob(JB):                         0.00
+Kurtosis:                       8.479   Cond. No.                     1.00e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large,  1e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+2025-06-08 01:16:45,938 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:274] - 
+================================================================================
+2025-06-08 01:16:45,939 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:275] - PART 2: DETAILED MODERATION ANALYSIS (Weighting: ADJPD)
+2025-06-08 01:16:45,939 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:276] - ================================================================================
+2025-06-08 01:16:45,939 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,940 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,940 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,942 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,943 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,944 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,944 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,945 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,945 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,945 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,945 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv2_health_outcomes ---
+2025-06-08 01:16:45,946 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv2_health_outcomes: 
+2025-06-08 01:16:45,946 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv1_clinical_care ---
+2025-06-08 01:16:45,946 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.1_ai_automate_tasks_on_dv1_clinical_care: 
+2025-06-08 01:16:45,947 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv1_clinical_care ---
+2025-06-08 01:16:45,948 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.2_ai_optimize_workflows_on_dv1_clinical_care: 
+2025-06-08 01:16:45,949 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv1_clinical_care ---
+2025-06-08 01:16:45,950 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.3_ai_predict_demand_on_dv1_clinical_care: 
+2025-06-08 01:16:45,950 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv1_clinical_care ---
+2025-06-08 01:16:45,951 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.4_ai_predict_staff_on_dv1_clinical_care: 
+2025-06-08 01:16:45,951 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv1_clinical_care ---
+2025-06-08 01:16:45,953 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo1.5_ai_staff_schedule_on_dv1_clinical_care: 
+2025-06-08 01:16:45,953 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:283] - 
+--- Testing Interaction: iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv1_clinical_care ---
+2025-06-08 01:16:45,953 - ERROR - [BDTOT_vs_ADJPD_060825_v1.py:324] - Failed to run moderation model for iv3_health_behaviors_x_mo2.1_robotics_in_hospital_on_dv1_clinical_care: 
+2025-06-08 01:16:45,954 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:404] - 
+================================================================================
+2025-06-08 01:16:45,954 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:405] - PART 3: MAIN EFFECTS ANALYSIS (Weighting: ADJPD)
+2025-06-08 01:16:45,954 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:406] - ================================================================================
+2025-06-08 01:16:45,954 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.1_ai_automate_tasks on dv2_health_outcomes ---
+2025-06-08 01:16:45,964 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.1_ai_automate_tasks: -2.1858, P-value: 0.0020
+2025-06-08 01:16:45,964 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.2_ai_optimize_workflows on dv2_health_outcomes ---
+2025-06-08 01:16:45,972 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.2_ai_optimize_workflows: -1.8010, P-value: 0.0077
+2025-06-08 01:16:45,972 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.3_ai_predict_demand on dv2_health_outcomes ---
+2025-06-08 01:16:45,978 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.3_ai_predict_demand: -1.6786, P-value: 0.0365
+2025-06-08 01:16:45,978 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.4_ai_predict_staff on dv2_health_outcomes ---
+2025-06-08 01:16:45,985 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.4_ai_predict_staff: -1.4655, P-value: 0.0775
+2025-06-08 01:16:45,985 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo1.5_ai_staff_schedule on dv2_health_outcomes ---
+2025-06-08 01:16:45,993 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo1.5_ai_staff_schedule: -1.5690, P-value: 0.0615
+2025-06-08 01:16:45,993 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:411] - 
+--- Testing Main Effect of: mo2.1_robotics_in_hospital on dv2_health_outcomes ---
+2025-06-08 01:16:46,000 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:427] - Main Effect Beta for mo2.1_robotics_in_hospital: -2.7417, P-value: 0.0000
+2025-06-08 01:16:46,000 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:539] - Part 3 results saved to analysis_results_20250608_011612/output_adjpd/part3_main_effects_analysis_results_adjpd.csv
+2025-06-08 01:16:46,001 - INFO - [BDTOT_vs_ADJPD_060825_v1.py:542] - 
+Script finished successfully. All outputs are in the 'analysis_results_{timestamp}' directory.

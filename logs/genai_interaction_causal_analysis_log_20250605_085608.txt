@@ -1,0 +1,551 @@
+2025-06-05 08:56:08,104 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:70] - Logging to: logs/genai_interaction_causal_analysis_log_20250605_085608.txt
+2025-06-05 08:56:08,104 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:892] - Starting GenAI/Robotics Causal and Moderation Analysis Script.
+2025-06-05 08:56:08,876 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:94] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-05 08:56:39,996 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:145] - Data for analysis retrieved: 3135 rows, 19 columns.
+2025-06-05 08:56:39,998 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:161] - Renaming columns for clarity (e.g. iv3_health_behaviors_score)...
+2025-06-05 08:56:39,999 - WARNING - [OLS_IPTW_AIPW_Moderation_060125_v2.py:182] - Columns with >10% NaNs which might affect sample sizes:
+dv3_avg_patient_services_margin    1009
+dtype: int64
+2025-06-05 08:56:39,999 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:194] - Performing common data preparations...
+2025-06-05 08:56:40,000 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:227] - Created 8 dummy variables for 'census_division'.
+2025-06-05 08:56:40,000 - WARNING - [OLS_IPTW_AIPW_Moderation_060125_v2.py:255] - NaNs introduced or present in outcome column 'dv21_premature_death_ypll_rate' after numeric conversion.
+2025-06-05 08:56:40,001 - WARNING - [OLS_IPTW_AIPW_Moderation_060125_v2.py:255] - NaNs introduced or present in outcome column 'dv15_preventable_stays_rate' after numeric conversion.
+2025-06-05 08:56:40,001 - WARNING - [OLS_IPTW_AIPW_Moderation_060125_v2.py:255] - NaNs introduced or present in outcome column 'dv3_avg_patient_services_margin' after numeric conversion.
+2025-06-05 08:56:40,001 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:260] - Common data preparations complete.
+2025-06-05 08:56:40,001 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:981] - ============================== PART 1: MAIN EFFECT ANALYSIS ==============================
+2025-06-05 08:56:40,001 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:986] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO11_AI_Automate_Tasks (pct_wfaiart_enabled_beds) ==========
+2025-06-05 08:56:40,002 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1019] -   Main Effect Final N for MO11_AI_Automate_Tasks: 3080 (Treated: 417, Control: 2663) on Outcome: dv21_premature_death_ypll_rate
+2025-06-05 08:56:40,002 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:304] - --- Starting OLS Main Effect Analysis for Treatment: pct_wfaiart_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:40,016 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:339] - OLS Main Effect Beta for pct_wfaiart_enabled_beds_adopted: -486.0591, P-value: 0.0023, CI: [-799.0785, -173.0396]
+2025-06-05 08:56:40,017 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaiart_enabled_beds_adopted' (Main Effect: -486.0591 on YPLL rate):
+2025-06-05 08:56:40,017 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 752,816
+2025-06-05 08:56:40,017 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 25,959
+2025-06-05 08:56:40,017 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:370] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaiart_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:40,025 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:392] - IPTW Main Effect ATE for pct_wfaiart_enabled_beds_adopted: -1589.6566
+2025-06-05 08:56:40,026 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:393] - IPTW Main Effect ATET for pct_wfaiart_enabled_beds_adopted: -69.4061
+2025-06-05 08:56:43,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaiart_enabled_beds_adopted' (Main Effect: -1589.6566 on YPLL rate):
+2025-06-05 08:56:43,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 2,462,085
+2025-06-05 08:56:43,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 84,899
+2025-06-05 08:56:43,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:479] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaiart_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:44,411 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:521] - AIPW Main Effect ATE for pct_wfaiart_enabled_beds_adopted: -946.2773
+2025-06-05 08:56:44,411 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:522] - AIPW Main Effect ATET for pct_wfaiart_enabled_beds_adopted: -390.7923
+2025-06-05 08:56:49,222 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaiart_enabled_beds_adopted' (Main Effect: -946.2773 on YPLL rate):
+2025-06-05 08:56:49,222 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 1,465,609
+2025-06-05 08:56:49,223 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 50,538
+2025-06-05 08:56:49,223 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:986] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO12_AI_Optimize_Workflows (pct_wfaioacw_enabled_beds) ==========
+2025-06-05 08:56:49,223 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1019] -   Main Effect Final N for MO12_AI_Optimize_Workflows: 3080 (Treated: 453, Control: 2627) on Outcome: dv21_premature_death_ypll_rate
+2025-06-05 08:56:49,223 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:304] - --- Starting OLS Main Effect Analysis for Treatment: pct_wfaioacw_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:49,239 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:339] - OLS Main Effect Beta for pct_wfaioacw_enabled_beds_adopted: -336.5722, P-value: 0.0308, CI: [-641.9524, -31.1920]
+2025-06-05 08:56:49,240 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaioacw_enabled_beds_adopted' (Main Effect: -336.5722 on YPLL rate):
+2025-06-05 08:56:49,240 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 490,672
+2025-06-05 08:56:49,240 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 16,920
+2025-06-05 08:56:49,240 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:370] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaioacw_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:49,245 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:392] - IPTW Main Effect ATE for pct_wfaioacw_enabled_beds_adopted: -112.9861
+2025-06-05 08:56:49,245 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:393] - IPTW Main Effect ATET for pct_wfaioacw_enabled_beds_adopted: 81.6791
+2025-06-05 08:56:52,759 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaioacw_enabled_beds_adopted' (Main Effect: -112.9861 on YPLL rate):
+2025-06-05 08:56:52,759 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 164,717
+2025-06-05 08:56:52,759 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 5,680
+2025-06-05 08:56:52,759 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:479] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaioacw_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:53,005 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:521] - AIPW Main Effect ATE for pct_wfaioacw_enabled_beds_adopted: -294.6689
+2025-06-05 08:56:53,005 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:522] - AIPW Main Effect ATET for pct_wfaioacw_enabled_beds_adopted: -197.7285
+2025-06-05 08:56:57,843 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaioacw_enabled_beds_adopted' (Main Effect: -294.6689 on YPLL rate):
+2025-06-05 08:56:57,844 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 429,583
+2025-06-05 08:56:57,844 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 14,813
+2025-06-05 08:56:57,844 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:986] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO13_AI_Predict_Demand (pct_wfaippd_enabled_beds) ==========
+2025-06-05 08:56:57,845 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1019] -   Main Effect Final N for MO13_AI_Predict_Demand: 3080 (Treated: 337, Control: 2743) on Outcome: dv21_premature_death_ypll_rate
+2025-06-05 08:56:57,845 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:304] - --- Starting OLS Main Effect Analysis for Treatment: pct_wfaippd_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:57,848 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:339] - OLS Main Effect Beta for pct_wfaippd_enabled_beds_adopted: -306.1962, P-value: 0.0636, CI: [-629.7833, 17.3909]
+2025-06-05 08:56:57,848 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaippd_enabled_beds_adopted' (Main Effect: -306.1962 on YPLL rate):
+2025-06-05 08:56:57,848 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 525,307
+2025-06-05 08:56:57,848 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 18,114
+2025-06-05 08:56:57,848 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:370] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaippd_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:56:57,854 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:392] - IPTW Main Effect ATE for pct_wfaippd_enabled_beds_adopted: -1375.4569
+2025-06-05 08:56:57,854 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:393] - IPTW Main Effect ATET for pct_wfaippd_enabled_beds_adopted: -180.4030
+2025-06-05 08:57:01,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaippd_enabled_beds_adopted' (Main Effect: -1375.4569 on YPLL rate):
+2025-06-05 08:57:01,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 2,359,718
+2025-06-05 08:57:01,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 81,370
+2025-06-05 08:57:01,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:479] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaippd_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:02,021 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:521] - AIPW Main Effect ATE for pct_wfaippd_enabled_beds_adopted: -438.8152
+2025-06-05 08:57:02,021 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:522] - AIPW Main Effect ATET for pct_wfaippd_enabled_beds_adopted: -314.8763
+2025-06-05 08:57:07,244 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaippd_enabled_beds_adopted' (Main Effect: -438.8152 on YPLL rate):
+2025-06-05 08:57:07,244 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 752,826
+2025-06-05 08:57:07,244 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 25,960
+2025-06-05 08:57:07,244 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:986] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO14_AI_Predict_Staff (pct_wfaipsn_enabled_beds) ==========
+2025-06-05 08:57:07,245 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1019] -   Main Effect Final N for MO14_AI_Predict_Staff: 3080 (Treated: 318, Control: 2762) on Outcome: dv21_premature_death_ypll_rate
+2025-06-05 08:57:07,245 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:304] - --- Starting OLS Main Effect Analysis for Treatment: pct_wfaipsn_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:07,249 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:339] - OLS Main Effect Beta for pct_wfaipsn_enabled_beds_adopted: -234.3453, P-value: 0.1889, CI: [-584.0181, 115.3276]
+2025-06-05 08:57:07,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaipsn_enabled_beds_adopted' (Main Effect: -234.3453 on YPLL rate):
+2025-06-05 08:57:07,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 414,818
+2025-06-05 08:57:07,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 14,304
+2025-06-05 08:57:07,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:370] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaipsn_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:07,256 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:392] - IPTW Main Effect ATE for pct_wfaipsn_enabled_beds_adopted: -931.0308
+2025-06-05 08:57:07,256 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:393] - IPTW Main Effect ATET for pct_wfaipsn_enabled_beds_adopted: -533.4842
+2025-06-05 08:57:11,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaipsn_enabled_beds_adopted' (Main Effect: -931.0308 on YPLL rate):
+2025-06-05 08:57:11,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 1,648,032
+2025-06-05 08:57:11,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 56,829
+2025-06-05 08:57:11,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:479] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaipsn_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:11,263 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:521] - AIPW Main Effect ATE for pct_wfaipsn_enabled_beds_adopted: -178.2555
+2025-06-05 08:57:11,263 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:522] - AIPW Main Effect ATET for pct_wfaipsn_enabled_beds_adopted: -137.8040
+2025-06-05 08:57:16,558 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaipsn_enabled_beds_adopted' (Main Effect: -178.2555 on YPLL rate):
+2025-06-05 08:57:16,558 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 315,533
+2025-06-05 08:57:16,559 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 10,880
+2025-06-05 08:57:16,559 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:986] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO15_AI_Staff_Schedule (pct_wfaiss_enabled_beds) ==========
+2025-06-05 08:57:16,559 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1019] -   Main Effect Final N for MO15_AI_Staff_Schedule: 3080 (Treated: 299, Control: 2781) on Outcome: dv21_premature_death_ypll_rate
+2025-06-05 08:57:16,559 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:304] - --- Starting OLS Main Effect Analysis for Treatment: pct_wfaiss_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:16,562 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:339] - OLS Main Effect Beta for pct_wfaiss_enabled_beds_adopted: -150.3223, P-value: 0.3682, CI: [-477.8481, 177.2036]
+2025-06-05 08:57:16,563 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaiss_enabled_beds_adopted' (Main Effect: -150.3223 on YPLL rate):
+2025-06-05 08:57:16,563 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 285,794
+2025-06-05 08:57:16,563 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 9,855
+2025-06-05 08:57:16,563 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:370] - --- Starting IPTW Main Effect Analysis for Treatment: pct_wfaiss_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:16,570 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:392] - IPTW Main Effect ATE for pct_wfaiss_enabled_beds_adopted: -842.1154
+2025-06-05 08:57:16,570 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:393] - IPTW Main Effect ATET for pct_wfaiss_enabled_beds_adopted: 944.2805
+2025-06-05 08:57:20,151 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaiss_enabled_beds_adopted' (Main Effect: -842.1154 on YPLL rate):
+2025-06-05 08:57:20,151 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 1,601,038
+2025-06-05 08:57:20,151 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 55,208
+2025-06-05 08:57:20,151 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:479] - --- Starting AIPW Main Effect Analysis for Treatment: pct_wfaiss_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:20,383 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:521] - AIPW Main Effect ATE for pct_wfaiss_enabled_beds_adopted: -306.4635
+2025-06-05 08:57:20,383 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:522] - AIPW Main Effect ATET for pct_wfaiss_enabled_beds_adopted: -98.8390
+2025-06-05 08:57:25,882 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_wfaiss_enabled_beds_adopted' (Main Effect: -306.4635 on YPLL rate):
+2025-06-05 08:57:25,882 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 582,651
+2025-06-05 08:57:25,883 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 20,091
+2025-06-05 08:57:25,883 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:986] - ========== PROCESSING MAIN EFFECT FOR COMPONENT: MO21_Robotics_In_Hospital (pct_robohos_enabled_beds) ==========
+2025-06-05 08:57:25,883 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1019] -   Main Effect Final N for MO21_Robotics_In_Hospital: 3080 (Treated: 775, Control: 2305) on Outcome: dv21_premature_death_ypll_rate
+2025-06-05 08:57:25,883 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:304] - --- Starting OLS Main Effect Analysis for Treatment: pct_robohos_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:25,886 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:339] - OLS Main Effect Beta for pct_robohos_enabled_beds_adopted: -566.4949, P-value: 0.0000, CI: [-770.6825, -362.3074]
+2025-06-05 08:57:25,887 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_robohos_enabled_beds_adopted' (Main Effect: -566.4949 on YPLL rate):
+2025-06-05 08:57:25,887 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 414,342
+2025-06-05 08:57:25,887 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 14,288
+2025-06-05 08:57:25,887 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:370] - --- Starting IPTW Main Effect Analysis for Treatment: pct_robohos_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:25,897 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:392] - IPTW Main Effect ATE for pct_robohos_enabled_beds_adopted: -1056.3370
+2025-06-05 08:57:25,897 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:393] - IPTW Main Effect ATET for pct_robohos_enabled_beds_adopted: -495.2937
+2025-06-05 08:57:29,818 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_robohos_enabled_beds_adopted' (Main Effect: -1056.3370 on YPLL rate):
+2025-06-05 08:57:29,818 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 772,619
+2025-06-05 08:57:29,818 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 26,642
+2025-06-05 08:57:29,818 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:479] - --- Starting AIPW Main Effect Analysis for Treatment: pct_robohos_enabled_beds_adopted on dv21_premature_death_ypll_rate ---
+2025-06-05 08:57:30,074 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:521] - AIPW Main Effect ATE for pct_robohos_enabled_beds_adopted: -471.2417
+2025-06-05 08:57:30,074 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:522] - AIPW Main Effect ATET for pct_robohos_enabled_beds_adopted: -778.0293
+2025-06-05 08:57:35,478 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:624] -   Scenario for non-adopters of 'pct_robohos_enabled_beds_adopted' (Main Effect: -471.2417 on YPLL rate):
+2025-06-05 08:57:35,478 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:625] -     Total YPLL potentially averted (main effect): 344,672
+2025-06-05 08:57:35,478 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:626] -     Total premature deaths potentially averted (main effect): 11,885
+2025-06-05 08:57:35,496 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1115] - 
+                 Component         Raw_Treatment_Col  N_Total  N_Treated  N_Control  OLS Coefficient (Beta)  OLS p-value  OLS CI_Lower  OLS CI_Upper  OLS YPLL Averted  OLS Deaths Averted  OLS_Error     IPTW ATE  IPTW CI_Lower  IPTW CI_Upper IPTW Significant (95% CI)  IPTW E_Value  IPTW YPLL Averted  IPTW Deaths Averted   IPTW ATET  IPTW ATET_CI_Lower  IPTW ATET_CI_Upper  IPTW_Error    AIPW ATE  AIPW CI_Lower  AIPW CI_Upper  AIPW ATE P-Value (raw)  AIPW ATE Q-Value (BH) AIPW ATE Significant (BH FDR) AIPW Significant (95% CI)  AIPW E_Value  AIPW YPLL Averted  AIPW Deaths Averted   AIPW ATET  AIPW ATET_CI_Lower  AIPW ATET_CI_Upper  AIPW_Error  Overall_Error_Flag  Error_Message
+    MO11_AI_Automate_Tasks  pct_wfaiart_enabled_beds     3080        417       2663             -486.059067 2.349330e-03   -799.078540   -173.039595     752815.773589        25959.164607      False -1589.656622   -2338.561306    -815.518154                       Yes      2.366260       2.462085e+06         84899.471454  -69.406064        -1206.119525          730.636759       False -946.277278   -1756.233041    -169.092595                0.015968               0.047904                          True                       Yes      1.862734       1.465609e+06         50538.235526 -390.792329         -708.136982          -91.647142       False               False            NaN
+MO12_AI_Optimize_Workflows pct_wfaioacw_enabled_beds     3080        453       2627             -336.572225 3.077171e-02   -641.952427    -31.192023     490671.727607        16919.714745      False  -112.986077    -813.801241     684.011746                        No           NaN       1.647167e+05          5679.886944   81.679106         -754.210021          661.481211       False -294.668883    -766.228995     270.518794                0.303393               0.455090                         False                        No           NaN       4.295830e+05         14813.205210 -197.728462         -704.330564          335.782151       False               False            NaN
+    MO13_AI_Predict_Demand  pct_wfaippd_enabled_beds     3080        337       2743             -306.196219 6.364074e-02   -629.783332     17.390893     525306.780171        18114.026902      False -1375.456879   -1860.463974    -801.811241                       Yes      2.200772       2.359718e+06         81369.596789 -180.403017        -1249.533664          736.742093       False -438.815156    -895.646375      67.102776                0.091816               0.183633                         False                        No           NaN       7.528263e+05         25959.528660 -314.876272         -651.618892           26.231221       False               False            NaN
+     MO14_AI_Predict_Staff  pct_wfaipsn_enabled_beds     3080        318       2762             -234.345269 1.889255e-01   -584.018121    115.327583     414818.145837        14304.073994      False  -931.030779   -1540.990753    -325.073906                       Yes      1.855647       1.648032e+06         56828.683653 -533.484151        -1141.628373          642.053619       False -178.255505    -663.367509     357.155436                0.582834               0.646707                         False                        No           NaN       3.155328e+05         10880.441270 -137.803957         -568.903393          341.256455       False               False            NaN
+    MO15_AI_Staff_Schedule   pct_wfaiss_enabled_beds     3080        299       2781             -150.322254 3.682405e-01   -477.848060    177.203551     285794.174646         9854.971540      False  -842.115381   -1717.194425    -112.391122                       Yes      1.790141       1.601038e+06         55208.213503  944.280455          -95.343014         1725.312654       False -306.463457   -1112.205228     454.109996                0.646707               0.646707                         False                        No           NaN       5.826514e+05         20091.427347  -98.838981         -403.262208          174.727977       False               False            NaN
+ MO21_Robotics_In_Hospital  pct_robohos_enabled_beds     3080        775       2305             -566.494912 5.752764e-08   -770.682467   -362.307357     414341.924449        14287.652567      False -1056.337004   -1369.592739    -738.742211                       Yes      1.937711       7.726190e+05         26642.032931 -495.293746         -777.874920         -242.809468       False -471.241669    -746.405308    -184.430067                0.003992               0.023952                          True                       Yes      1.503812       3.446724e+05         11885.256329 -778.029330         -987.068012         -597.025204       False               False            NaN
+2025-06-05 08:57:35,517 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1118] - Main effects summary table saved to genai_interaction_causal_output/main_effects_analysis_summary.csv
+2025-06-05 08:57:35,770 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:691] - Main effect ATE comparison plot saved to genai_interaction_causal_output/plots/Main_Effect_ATE_Comparison_Plot.png
+2025-06-05 08:57:35,770 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1126] - ============================== PART 2: OLS MODERATION ANALYSIS ==============================
+2025-06-05 08:57:35,770 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO11_on_DV2 ==========
+2025-06-05 08:57:35,770 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaiart_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:35,771 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO11_on_DV2 ---
+2025-06-05 08:57:35,771 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:35,771 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:35,771 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:35,771 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:35,772 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO11_on_DV2): Removed 2 rows with NaNs.
+2025-06-05 08:57:35,790 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaiart_enabled_beds_adopted in IV3_x_MO11_on_DV2:
+2025-06-05 08:57:35,790 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -12.7199
+2025-06-05 08:57:35,790 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:35,790 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-18.0882, -7.3516]
+2025-06-05 08:57:35,790 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO11_on_DV2 (p=0.000).
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO11_on_DV2.png
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO12_on_DV2 ==========
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaioacw_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO12_on_DV2 ---
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:36,218 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:36,219 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO12_on_DV2): Removed 2 rows with NaNs.
+2025-06-05 08:57:36,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaioacw_enabled_beds_adopted in IV3_x_MO12_on_DV2:
+2025-06-05 08:57:36,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -14.7539
+2025-06-05 08:57:36,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:36,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-19.9952, -9.5127]
+2025-06-05 08:57:36,250 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO12_on_DV2 (p=0.000).
+2025-06-05 08:57:36,673 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO12_on_DV2.png
+2025-06-05 08:57:36,673 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO13_on_DV2 ==========
+2025-06-05 08:57:36,673 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaippd_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:36,674 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO13_on_DV2 ---
+2025-06-05 08:57:36,674 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:36,674 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:36,674 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:36,674 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:36,675 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO13_on_DV2): Removed 2 rows with NaNs.
+2025-06-05 08:57:36,683 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaippd_enabled_beds_adopted in IV3_x_MO13_on_DV2:
+2025-06-05 08:57:36,683 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -13.5166
+2025-06-05 08:57:36,683 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:36,683 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-19.2104, -7.8228]
+2025-06-05 08:57:36,683 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO13_on_DV2 (p=0.000).
+2025-06-05 08:57:37,108 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO13_on_DV2.png
+2025-06-05 08:57:37,108 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO14_on_DV2 ==========
+2025-06-05 08:57:37,108 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaipsn_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:37,109 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO14_on_DV2 ---
+2025-06-05 08:57:37,109 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:37,109 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:37,109 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:37,109 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:37,110 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO14_on_DV2): Removed 2 rows with NaNs.
+2025-06-05 08:57:37,113 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaipsn_enabled_beds_adopted in IV3_x_MO14_on_DV2:
+2025-06-05 08:57:37,113 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -11.9219
+2025-06-05 08:57:37,113 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0001
+2025-06-05 08:57:37,113 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-17.9580, -5.8858]
+2025-06-05 08:57:37,113 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO14_on_DV2 (p=0.000).
+2025-06-05 08:57:37,540 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO14_on_DV2.png
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO15_on_DV2 ==========
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaiss_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO15_on_DV2 ---
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:37,541 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:37,542 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO15_on_DV2): Removed 2 rows with NaNs.
+2025-06-05 08:57:37,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaiss_enabled_beds_adopted in IV3_x_MO15_on_DV2:
+2025-06-05 08:57:37,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -10.5618
+2025-06-05 08:57:37,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0008
+2025-06-05 08:57:37,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-16.7434, -4.3802]
+2025-06-05 08:57:37,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO15_on_DV2 (p=0.001).
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO15_on_DV2.png
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO21_on_DV2 ==========
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_robohos_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO21_on_DV2 ---
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:37,969 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:37,970 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO21_on_DV2): Removed 2 rows with NaNs.
+2025-06-05 08:57:37,978 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_robohos_enabled_beds_adopted in IV3_x_MO21_on_DV2:
+2025-06-05 08:57:37,978 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -8.5571
+2025-06-05 08:57:37,978 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:37,978 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-12.4061, -4.7081]
+2025-06-05 08:57:37,978 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO21_on_DV2 (p=0.000).
+2025-06-05 08:57:38,387 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO21_on_DV2.png
+2025-06-05 08:57:38,387 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO11_on_DV21 ==========
+2025-06-05 08:57:38,387 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaiart_enabled_beds, DV (Y): dv21_premature_death_ypll_rate
+2025-06-05 08:57:38,388 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO11_on_DV21 ---
+2025-06-05 08:57:38,388 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv21_premature_death_ypll_rate
+2025-06-05 08:57:38,388 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:38,388 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:38,388 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:38,389 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO11_on_DV21): Removed 55 rows with NaNs.
+2025-06-05 08:57:38,408 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaiart_enabled_beds_adopted in IV3_x_MO11_on_DV21:
+2025-06-05 08:57:38,408 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -26.7725
+2025-06-05 08:57:38,408 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:38,408 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-37.5593, -15.9858]
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:817] -   Scenario for counties adopting moderator for 'IV3_x_MO11_on_DV21' (Interaction Beta: -26.7725):
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:818] -     Total YPLL potentially AVERTED due to moderation: 1,562,477
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:819] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:820] -     Net YPLL impact (Averted - Increased): 1,562,477
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:821] -     Corresponding premature deaths AVERTED: 53,879
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:822] -     Corresponding premature deaths INCREASED: 0
+2025-06-05 08:57:38,420 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO11_on_DV21 (p=0.000).
+2025-06-05 08:57:38,838 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO11_on_DV21.png
+2025-06-05 08:57:38,838 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO12_on_DV21 ==========
+2025-06-05 08:57:38,838 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaioacw_enabled_beds, DV (Y): dv21_premature_death_ypll_rate
+2025-06-05 08:57:38,839 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO12_on_DV21 ---
+2025-06-05 08:57:38,839 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv21_premature_death_ypll_rate
+2025-06-05 08:57:38,839 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:38,839 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:38,839 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:38,839 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO12_on_DV21): Removed 55 rows with NaNs.
+2025-06-05 08:57:38,842 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaioacw_enabled_beds_adopted in IV3_x_MO12_on_DV21:
+2025-06-05 08:57:38,842 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -30.8314
+2025-06-05 08:57:38,842 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:38,842 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-41.3592, -20.3036]
+2025-06-05 08:57:38,853 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:817] -   Scenario for counties adopting moderator for 'IV3_x_MO12_on_DV21' (Interaction Beta: -30.8314):
+2025-06-05 08:57:38,853 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:818] -     Total YPLL potentially AVERTED due to moderation: 1,672,009
+2025-06-05 08:57:38,853 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:819] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-05 08:57:38,853 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:820] -     Net YPLL impact (Averted - Increased): 1,672,009
+2025-06-05 08:57:38,854 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:821] -     Corresponding premature deaths AVERTED: 57,655
+2025-06-05 08:57:38,854 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:822] -     Corresponding premature deaths INCREASED: 0
+2025-06-05 08:57:38,854 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO12_on_DV21 (p=0.000).
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO12_on_DV21.png
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO13_on_DV21 ==========
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaippd_enabled_beds, DV (Y): dv21_premature_death_ypll_rate
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO13_on_DV21 ---
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv21_premature_death_ypll_rate
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:39,272 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:39,273 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO13_on_DV21): Removed 55 rows with NaNs.
+2025-06-05 08:57:39,293 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaippd_enabled_beds_adopted in IV3_x_MO13_on_DV21:
+2025-06-05 08:57:39,293 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -28.2398
+2025-06-05 08:57:39,293 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:39,293 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-39.6695, -16.8102]
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:817] -   Scenario for counties adopting moderator for 'IV3_x_MO13_on_DV21' (Interaction Beta: -28.2398):
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:818] -     Total YPLL potentially AVERTED due to moderation: 1,844,979
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:819] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:820] -     Net YPLL impact (Averted - Increased): 1,844,979
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:821] -     Corresponding premature deaths AVERTED: 63,620
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:822] -     Corresponding premature deaths INCREASED: 0
+2025-06-05 08:57:39,306 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO13_on_DV21 (p=0.000).
+2025-06-05 08:57:39,731 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO13_on_DV21.png
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO14_on_DV21 ==========
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaipsn_enabled_beds, DV (Y): dv21_premature_death_ypll_rate
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO14_on_DV21 ---
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv21_premature_death_ypll_rate
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:39,732 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:39,733 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO14_on_DV21): Removed 55 rows with NaNs.
+2025-06-05 08:57:39,750 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaipsn_enabled_beds_adopted in IV3_x_MO14_on_DV21:
+2025-06-05 08:57:39,750 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -25.0522
+2025-06-05 08:57:39,750 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0001
+2025-06-05 08:57:39,750 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-37.1702, -12.9341]
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:817] -   Scenario for counties adopting moderator for 'IV3_x_MO14_on_DV21' (Interaction Beta: -25.0522):
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:818] -     Total YPLL potentially AVERTED due to moderation: 1,703,997
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:819] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:820] -     Net YPLL impact (Averted - Increased): 1,703,997
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:821] -     Corresponding premature deaths AVERTED: 58,759
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:822] -     Corresponding premature deaths INCREASED: 0
+2025-06-05 08:57:39,763 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO14_on_DV21 (p=0.000).
+2025-06-05 08:57:40,225 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO14_on_DV21.png
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO15_on_DV21 ==========
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaiss_enabled_beds, DV (Y): dv21_premature_death_ypll_rate
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO15_on_DV21 ---
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv21_premature_death_ypll_rate
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:40,226 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:40,227 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO15_on_DV21): Removed 55 rows with NaNs.
+2025-06-05 08:57:40,242 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaiss_enabled_beds_adopted in IV3_x_MO15_on_DV21:
+2025-06-05 08:57:40,242 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -22.3602
+2025-06-05 08:57:40,242 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0004
+2025-06-05 08:57:40,242 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-34.7717, -9.9486]
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:817] -   Scenario for counties adopting moderator for 'IV3_x_MO15_on_DV21' (Interaction Beta: -22.3602):
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:818] -     Total YPLL potentially AVERTED due to moderation: 1,652,158
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:819] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:820] -     Net YPLL impact (Averted - Increased): 1,652,158
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:821] -     Corresponding premature deaths AVERTED: 56,971
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:822] -     Corresponding premature deaths INCREASED: 0
+2025-06-05 08:57:40,255 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO15_on_DV21 (p=0.000).
+2025-06-05 08:57:40,708 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO15_on_DV21.png
+2025-06-05 08:57:40,708 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO21_on_DV21 ==========
+2025-06-05 08:57:40,708 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_robohos_enabled_beds, DV (Y): dv21_premature_death_ypll_rate
+2025-06-05 08:57:40,709 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO21_on_DV21 ---
+2025-06-05 08:57:40,709 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv21_premature_death_ypll_rate
+2025-06-05 08:57:40,709 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:40,709 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:40,709 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:40,710 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO21_on_DV21): Removed 55 rows with NaNs.
+2025-06-05 08:57:40,712 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_robohos_enabled_beds_adopted in IV3_x_MO21_on_DV21:
+2025-06-05 08:57:40,712 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -18.4476
+2025-06-05 08:57:40,712 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0000
+2025-06-05 08:57:40,712 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-26.1875, -10.7077]
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:817] -   Scenario for counties adopting moderator for 'IV3_x_MO21_on_DV21' (Interaction Beta: -18.4476):
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:818] -     Total YPLL potentially AVERTED due to moderation: 450,904
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:819] -     Total YPLL potentially INCREASED due to moderation: 0
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:820] -     Net YPLL impact (Averted - Increased): 450,904
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:821] -     Corresponding premature deaths AVERTED: 15,548
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:822] -     Corresponding premature deaths INCREASED: 0
+2025-06-05 08:57:40,723 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO21_on_DV21 (p=0.000).
+2025-06-05 08:57:41,143 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO21_on_DV21.png
+2025-06-05 08:57:41,143 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO11_on_DV15 ==========
+2025-06-05 08:57:41,143 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaiart_enabled_beds, DV (Y): dv15_preventable_stays_rate
+2025-06-05 08:57:41,144 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO11_on_DV15 ---
+2025-06-05 08:57:41,144 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv15_preventable_stays_rate
+2025-06-05 08:57:41,144 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:41,144 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:41,144 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:41,144 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO11_on_DV15): Removed 70 rows with NaNs.
+2025-06-05 08:57:41,148 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaiart_enabled_beds_adopted in IV3_x_MO11_on_DV15:
+2025-06-05 08:57:41,148 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 4.5189
+2025-06-05 08:57:41,148 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.1100
+2025-06-05 08:57:41,148 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-1.0243, 10.0621]
+2025-06-05 08:57:41,148 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction IV3_x_MO11_on_DV15 not significant (p=0.110 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:41,148 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO11_on_DV15 (p=0.110).
+2025-06-05 08:57:41,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO11_on_DV15.png
+2025-06-05 08:57:41,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO12_on_DV15 ==========
+2025-06-05 08:57:41,555 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaioacw_enabled_beds, DV (Y): dv15_preventable_stays_rate
+2025-06-05 08:57:41,556 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO12_on_DV15 ---
+2025-06-05 08:57:41,556 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv15_preventable_stays_rate
+2025-06-05 08:57:41,556 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:41,556 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:41,556 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:41,557 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO12_on_DV15): Removed 70 rows with NaNs.
+2025-06-05 08:57:41,578 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaioacw_enabled_beds_adopted in IV3_x_MO12_on_DV15:
+2025-06-05 08:57:41,578 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 3.4922
+2025-06-05 08:57:41,578 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.2060
+2025-06-05 08:57:41,578 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-1.9215, 8.9058]
+2025-06-05 08:57:41,578 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction IV3_x_MO12_on_DV15 not significant (p=0.206 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:41,578 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO12_on_DV15 (p=0.206).
+2025-06-05 08:57:41,998 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO12_on_DV15.png
+2025-06-05 08:57:41,998 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO13_on_DV15 ==========
+2025-06-05 08:57:41,998 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaippd_enabled_beds, DV (Y): dv15_preventable_stays_rate
+2025-06-05 08:57:41,999 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO13_on_DV15 ---
+2025-06-05 08:57:41,999 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv15_preventable_stays_rate
+2025-06-05 08:57:41,999 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:41,999 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:41,999 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:42,000 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO13_on_DV15): Removed 70 rows with NaNs.
+2025-06-05 08:57:42,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaippd_enabled_beds_adopted in IV3_x_MO13_on_DV15:
+2025-06-05 08:57:42,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 4.3008
+2025-06-05 08:57:42,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.1505
+2025-06-05 08:57:42,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-1.5634, 10.1650]
+2025-06-05 08:57:42,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction IV3_x_MO13_on_DV15 not significant (p=0.151 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:42,023 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO13_on_DV15 (p=0.151).
+2025-06-05 08:57:42,429 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO13_on_DV15.png
+2025-06-05 08:57:42,429 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO14_on_DV15 ==========
+2025-06-05 08:57:42,429 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaipsn_enabled_beds, DV (Y): dv15_preventable_stays_rate
+2025-06-05 08:57:42,430 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO14_on_DV15 ---
+2025-06-05 08:57:42,430 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv15_preventable_stays_rate
+2025-06-05 08:57:42,430 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:42,430 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:42,430 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:42,430 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO14_on_DV15): Removed 70 rows with NaNs.
+2025-06-05 08:57:42,455 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaipsn_enabled_beds_adopted in IV3_x_MO14_on_DV15:
+2025-06-05 08:57:42,455 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 3.7493
+2025-06-05 08:57:42,455 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.2365
+2025-06-05 08:57:42,455 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-2.4594, 9.9581]
+2025-06-05 08:57:42,455 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction IV3_x_MO14_on_DV15 not significant (p=0.236 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:42,455 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO14_on_DV15 (p=0.236).
+2025-06-05 08:57:42,905 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO14_on_DV15.png
+2025-06-05 08:57:42,905 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO15_on_DV15 ==========
+2025-06-05 08:57:42,906 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_wfaiss_enabled_beds, DV (Y): dv15_preventable_stays_rate
+2025-06-05 08:57:42,906 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO15_on_DV15 ---
+2025-06-05 08:57:42,906 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv15_preventable_stays_rate
+2025-06-05 08:57:42,906 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:42,906 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:42,906 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:42,907 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO15_on_DV15): Removed 70 rows with NaNs.
+2025-06-05 08:57:42,909 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_wfaiss_enabled_beds_adopted in IV3_x_MO15_on_DV15:
+2025-06-05 08:57:42,909 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 4.3873
+2025-06-05 08:57:42,909 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.1759
+2025-06-05 08:57:42,909 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-1.9666, 10.7412]
+2025-06-05 08:57:42,909 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction IV3_x_MO15_on_DV15 not significant (p=0.176 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:42,909 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO15_on_DV15 (p=0.176).
+2025-06-05 08:57:43,317 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO15_on_DV15.png
+2025-06-05 08:57:43,317 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: IV3_x_MO21_on_DV15 ==========
+2025-06-05 08:57:43,317 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): iv3_health_behaviors_score, Moderator (M): pct_robohos_enabled_beds, DV (Y): dv15_preventable_stays_rate
+2025-06-05 08:57:43,318 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: IV3_x_MO21_on_DV15 ---
+2025-06-05 08:57:43,318 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv15_preventable_stays_rate
+2025-06-05 08:57:43,318 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): iv3_health_behaviors_score
+2025-06-05 08:57:43,318 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:43,318 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): iv3_health_behaviors_score_x_pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:43,319 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (IV3_x_MO21_on_DV15): Removed 70 rows with NaNs.
+2025-06-05 08:57:43,342 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for iv3_health_behaviors_score_x_pct_robohos_enabled_beds_adopted in IV3_x_MO21_on_DV15:
+2025-06-05 08:57:43,343 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 0.4260
+2025-06-05 08:57:43,343 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.8341
+2025-06-05 08:57:43,343 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-3.5615, 4.4135]
+2025-06-05 08:57:43,343 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction IV3_x_MO21_on_DV15 not significant (p=0.834 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:43,343 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for IV3_x_MO21_on_DV15 (p=0.834).
+2025-06-05 08:57:43,760 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_IV3_x_MO21_on_DV15.png
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: DV12_x_MO11_on_DV2 ==========
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): dv12_physicians_ratio, Moderator (M): pct_wfaiart_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: DV12_x_MO11_on_DV2 ---
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): dv12_physicians_ratio
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:43,761 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): dv12_physicians_ratio_x_pct_wfaiart_enabled_beds_adopted
+2025-06-05 08:57:43,762 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (DV12_x_MO11_on_DV2): Removed 159 rows with NaNs.
+2025-06-05 08:57:43,773 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for dv12_physicians_ratio_x_pct_wfaiart_enabled_beds_adopted in DV12_x_MO11_on_DV2:
+2025-06-05 08:57:43,773 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 0.0125
+2025-06-05 08:57:43,773 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.8308
+2025-06-05 08:57:43,773 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-0.1021, 0.1271]
+2025-06-05 08:57:43,774 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction DV12_x_MO11_on_DV2 not significant (p=0.831 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:43,774 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for DV12_x_MO11_on_DV2 (p=0.831).
+2025-06-05 08:57:44,170 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_DV12_x_MO11_on_DV2.png
+2025-06-05 08:57:44,170 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: DV12_x_MO12_on_DV2 ==========
+2025-06-05 08:57:44,170 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): dv12_physicians_ratio, Moderator (M): pct_wfaioacw_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:44,171 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: DV12_x_MO12_on_DV2 ---
+2025-06-05 08:57:44,171 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:44,171 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): dv12_physicians_ratio
+2025-06-05 08:57:44,171 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:44,171 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): dv12_physicians_ratio_x_pct_wfaioacw_enabled_beds_adopted
+2025-06-05 08:57:44,172 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (DV12_x_MO12_on_DV2): Removed 159 rows with NaNs.
+2025-06-05 08:57:44,174 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for dv12_physicians_ratio_x_pct_wfaioacw_enabled_beds_adopted in DV12_x_MO12_on_DV2:
+2025-06-05 08:57:44,174 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 0.0453
+2025-06-05 08:57:44,174 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.4100
+2025-06-05 08:57:44,174 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-0.0625, 0.1531]
+2025-06-05 08:57:44,174 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction DV12_x_MO12_on_DV2 not significant (p=0.410 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:44,174 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for DV12_x_MO12_on_DV2 (p=0.410).
+2025-06-05 08:57:44,580 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_DV12_x_MO12_on_DV2.png
+2025-06-05 08:57:44,580 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: DV12_x_MO13_on_DV2 ==========
+2025-06-05 08:57:44,580 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): dv12_physicians_ratio, Moderator (M): pct_wfaippd_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:44,581 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: DV12_x_MO13_on_DV2 ---
+2025-06-05 08:57:44,581 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:44,581 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): dv12_physicians_ratio
+2025-06-05 08:57:44,581 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:44,581 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): dv12_physicians_ratio_x_pct_wfaippd_enabled_beds_adopted
+2025-06-05 08:57:44,581 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (DV12_x_MO13_on_DV2): Removed 159 rows with NaNs.
+2025-06-05 08:57:44,593 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for dv12_physicians_ratio_x_pct_wfaippd_enabled_beds_adopted in DV12_x_MO13_on_DV2:
+2025-06-05 08:57:44,593 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 0.0009
+2025-06-05 08:57:44,593 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.9830
+2025-06-05 08:57:44,593 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-0.0812, 0.0830]
+2025-06-05 08:57:44,593 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction DV12_x_MO13_on_DV2 not significant (p=0.983 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:44,593 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for DV12_x_MO13_on_DV2 (p=0.983).
+2025-06-05 08:57:45,064 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_DV12_x_MO13_on_DV2.png
+2025-06-05 08:57:45,064 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: DV12_x_MO14_on_DV2 ==========
+2025-06-05 08:57:45,064 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): dv12_physicians_ratio, Moderator (M): pct_wfaipsn_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:45,065 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: DV12_x_MO14_on_DV2 ---
+2025-06-05 08:57:45,065 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:45,065 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): dv12_physicians_ratio
+2025-06-05 08:57:45,065 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:45,065 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): dv12_physicians_ratio_x_pct_wfaipsn_enabled_beds_adopted
+2025-06-05 08:57:45,066 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (DV12_x_MO14_on_DV2): Removed 159 rows with NaNs.
+2025-06-05 08:57:45,099 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for dv12_physicians_ratio_x_pct_wfaipsn_enabled_beds_adopted in DV12_x_MO14_on_DV2:
+2025-06-05 08:57:45,100 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -0.0360
+2025-06-05 08:57:45,100 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.3923
+2025-06-05 08:57:45,100 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-0.1187, 0.0466]
+2025-06-05 08:57:45,100 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction DV12_x_MO14_on_DV2 not significant (p=0.392 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:45,100 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for DV12_x_MO14_on_DV2 (p=0.392).
+2025-06-05 08:57:45,510 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_DV12_x_MO14_on_DV2.png
+2025-06-05 08:57:45,510 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: DV12_x_MO15_on_DV2 ==========
+2025-06-05 08:57:45,510 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): dv12_physicians_ratio, Moderator (M): pct_wfaiss_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:45,510 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: DV12_x_MO15_on_DV2 ---
+2025-06-05 08:57:45,511 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:45,511 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): dv12_physicians_ratio
+2025-06-05 08:57:45,511 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:45,511 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): dv12_physicians_ratio_x_pct_wfaiss_enabled_beds_adopted
+2025-06-05 08:57:45,511 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (DV12_x_MO15_on_DV2): Removed 159 rows with NaNs.
+2025-06-05 08:57:45,514 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for dv12_physicians_ratio_x_pct_wfaiss_enabled_beds_adopted in DV12_x_MO15_on_DV2:
+2025-06-05 08:57:45,514 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: -0.0204
+2025-06-05 08:57:45,514 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.6278
+2025-06-05 08:57:45,514 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-0.1028, 0.0620]
+2025-06-05 08:57:45,514 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:841] - Interaction DV12_x_MO15_on_DV2 not significant (p=0.628 > 0.1). Plotting suppressed for brevity, but can be enabled.
+2025-06-05 08:57:45,514 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for DV12_x_MO15_on_DV2 (p=0.628).
+2025-06-05 08:57:45,916 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_DV12_x_MO15_on_DV2.png
+2025-06-05 08:57:45,917 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1135] - ========== PROCESSING MODERATION: DV12_x_MO21_on_DV2 ==========
+2025-06-05 08:57:45,917 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1136] -     IV (X): dv12_physicians_ratio, Moderator (M): pct_robohos_enabled_beds, DV (Y): dv2_health_outcomes_score
+2025-06-05 08:57:45,918 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:704] - --- Starting OLS Moderation Analysis for: DV12_x_MO21_on_DV2 ---
+2025-06-05 08:57:45,918 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:705] -     Y (Outcome): dv2_health_outcomes_score
+2025-06-05 08:57:45,918 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:706] -     X (Independent Var): dv12_physicians_ratio
+2025-06-05 08:57:45,918 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:707] -     M (Moderator, binary): pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:45,918 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:708] -     X*M (Interaction): dv12_physicians_ratio_x_pct_robohos_enabled_beds_adopted
+2025-06-05 08:57:45,919 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:726] - OLS Moderation (DV12_x_MO21_on_DV2): Removed 159 rows with NaNs.
+2025-06-05 08:57:45,928 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:743] - OLS Moderation Results for dv12_physicians_ratio_x_pct_robohos_enabled_beds_adopted in DV12_x_MO21_on_DV2:
+2025-06-05 08:57:45,928 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:744] -   Interaction Beta: 0.0880
+2025-06-05 08:57:45,928 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:745] -   P-value: 0.0596
+2025-06-05 08:57:45,928 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:746] -   95% CI: [-0.0036, 0.1796]
+2025-06-05 08:57:45,928 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:844] - Generating interaction plot for DV12_x_MO21_on_DV2 (p=0.060).
+2025-06-05 08:57:46,351 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:881] - Interaction plot saved to genai_interaction_causal_output/plots/interaction_plot_DV12_x_MO21_on_DV2.png
+2025-06-05 08:57:46,353 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1235] - 
+  Interaction_Name                         IV         Moderator_Pct_Col                             DV  N_Obs_Model  Interaction_Beta  Interaction_P_Value  Interaction_CI_Lower  Interaction_CI_Upper  Net_YPLL_Impact_Moderation  Net_Deaths_Impact_Moderation  OLS_Interaction_Error  Error_Message
+ IV3_x_MO11_on_DV2 iv3_health_behaviors_score  pct_wfaiart_enabled_beds      dv2_health_outcomes_score         3133        -12.719933         3.527215e-06            -18.088225             -7.351640                         NaN                           NaN                  False            NaN
+ IV3_x_MO12_on_DV2 iv3_health_behaviors_score pct_wfaioacw_enabled_beds      dv2_health_outcomes_score         3133        -14.753924         3.681838e-08            -19.995197             -9.512651                         NaN                           NaN                  False            NaN
+ IV3_x_MO13_on_DV2 iv3_health_behaviors_score  pct_wfaippd_enabled_beds      dv2_health_outcomes_score         3133        -13.516574         3.381964e-06            -19.210377             -7.822772                         NaN                           NaN                  False            NaN
+ IV3_x_MO14_on_DV2 iv3_health_behaviors_score  pct_wfaipsn_enabled_beds      dv2_health_outcomes_score         3133        -11.921915         1.098862e-04            -17.958039             -5.885792                         NaN                           NaN                  False            NaN
+ IV3_x_MO15_on_DV2 iv3_health_behaviors_score   pct_wfaiss_enabled_beds      dv2_health_outcomes_score         3133        -10.561772         8.175623e-04            -16.743371             -4.380172                         NaN                           NaN                  False            NaN
+ IV3_x_MO21_on_DV2 iv3_health_behaviors_score  pct_robohos_enabled_beds      dv2_health_outcomes_score         3133         -8.557133         1.348222e-05            -12.406129             -4.708137                         NaN                           NaN                  False            NaN
+IV3_x_MO11_on_DV21 iv3_health_behaviors_score  pct_wfaiart_enabled_beds dv21_premature_death_ypll_rate         3080        -26.772539         1.193386e-06            -37.559323            -15.985755                1.562477e+06                  53878.503117                  False            NaN
+IV3_x_MO12_on_DV21 iv3_health_behaviors_score pct_wfaioacw_enabled_beds dv21_premature_death_ypll_rate         3080        -30.831400         1.026351e-08            -41.359194            -20.303606                1.672009e+06                  57655.484362                  False            NaN
+IV3_x_MO13_on_DV21 iv3_health_behaviors_score  pct_wfaippd_enabled_beds dv21_premature_death_ypll_rate         3080        -28.239838         1.332435e-06            -39.669490            -16.810186                1.844979e+06                  63619.952815                  False            NaN
+IV3_x_MO14_on_DV21 iv3_health_behaviors_score  pct_wfaipsn_enabled_beds dv21_premature_death_ypll_rate         3080        -25.052170         5.170908e-05            -37.170219            -12.934122                1.703997e+06                  58758.515563                  False            NaN
+IV3_x_MO15_on_DV21 iv3_health_behaviors_score   pct_wfaiss_enabled_beds dv21_premature_death_ypll_rate         3080        -22.360152         4.179275e-04            -34.771742             -9.948562                1.652158e+06                  56970.955967                  False            NaN
+IV3_x_MO21_on_DV21 iv3_health_behaviors_score  pct_robohos_enabled_beds dv21_premature_death_ypll_rate         3080        -18.447634         3.091721e-06            -26.187528            -10.707739                4.509037e+05                  15548.402557                  False            NaN
+IV3_x_MO11_on_DV15 iv3_health_behaviors_score  pct_wfaiart_enabled_beds    dv15_preventable_stays_rate         3065          4.518907         1.100493e-01             -1.024266             10.062081                         NaN                           NaN                  False            NaN
+IV3_x_MO12_on_DV15 iv3_health_behaviors_score pct_wfaioacw_enabled_beds    dv15_preventable_stays_rate         3065          3.492166         2.060377e-01             -1.921503              8.905835                         NaN                           NaN                  False            NaN
+IV3_x_MO13_on_DV15 iv3_health_behaviors_score  pct_wfaippd_enabled_beds    dv15_preventable_stays_rate         3065          4.300776         1.505371e-01             -1.563427             10.164980                         NaN                           NaN                  False            NaN
+IV3_x_MO14_on_DV15 iv3_health_behaviors_score  pct_wfaipsn_enabled_beds    dv15_preventable_stays_rate         3065          3.749317         2.364881e-01             -2.459447              9.958080                         NaN                           NaN                  False            NaN
+IV3_x_MO15_on_DV15 iv3_health_behaviors_score   pct_wfaiss_enabled_beds    dv15_preventable_stays_rate         3065          4.387309         1.758758e-01             -1.966578             10.741196                         NaN                           NaN                  False            NaN
+IV3_x_MO21_on_DV15 iv3_health_behaviors_score  pct_robohos_enabled_beds    dv15_preventable_stays_rate         3065          0.425997         8.340918e-01             -3.561464              4.413459                         NaN                           NaN                  False            NaN
+DV12_x_MO11_on_DV2      dv12_physicians_ratio  pct_wfaiart_enabled_beds      dv2_health_outcomes_score         2976          0.012496         8.307716e-01             -0.102144              0.127136                         NaN                           NaN                  False            NaN
+DV12_x_MO12_on_DV2      dv12_physicians_ratio pct_wfaioacw_enabled_beds      dv2_health_outcomes_score         2976          0.045302         4.099927e-01             -0.062494              0.153098                         NaN                           NaN                  False            NaN
+DV12_x_MO13_on_DV2      dv12_physicians_ratio  pct_wfaippd_enabled_beds      dv2_health_outcomes_score         2976          0.000894         9.829829e-01             -0.081247              0.083034                         NaN                           NaN                  False            NaN
+DV12_x_MO14_on_DV2      dv12_physicians_ratio  pct_wfaipsn_enabled_beds      dv2_health_outcomes_score         2976         -0.036044         3.923238e-01             -0.118652              0.046564                         NaN                           NaN                  False            NaN
+DV12_x_MO15_on_DV2      dv12_physicians_ratio   pct_wfaiss_enabled_beds      dv2_health_outcomes_score         2976         -0.020371         6.278112e-01             -0.102753              0.062010                         NaN                           NaN                  False            NaN
+DV12_x_MO21_on_DV2      dv12_physicians_ratio  pct_robohos_enabled_beds      dv2_health_outcomes_score         2976          0.088030         5.959871e-02             -0.003564              0.179624                         NaN                           NaN                  False            NaN
+2025-06-05 08:57:46,354 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1238] - Moderation analysis summary table saved to genai_interaction_causal_output/moderation_analysis_summary.csv
+2025-06-05 08:57:46,354 - INFO - [OLS_IPTW_AIPW_Moderation_060125_v2.py:1242] - Script finished. Check logs and output directory for details.

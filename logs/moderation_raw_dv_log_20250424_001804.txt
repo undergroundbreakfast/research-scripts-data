@@ -1,0 +1,136 @@
+2025-04-24 00:18:04,505 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250424_001804.txt
+2025-04-24 00:18:04,505 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-24 00:18:04,570 - INFO - Connected to Postgres successfully.
+2025-04-24 00:18:04,570 - INFO - Checking available columns in views...
+2025-04-24 00:18:04,585 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:18:04,585 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:18:04,585 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-24 00:18:04,588 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:18:04,591 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:18:04,591 - INFO - Executing join query between conceptual model and variables views
+2025-04-24 00:18:30,211 - INFO - Joined data fetched: shape=(3049, 11)
+2025-04-24 00:18:30,214 - INFO - Calculated death and hospitalization rates per 100k population
+2025-04-24 00:18:30,214 - INFO - Using '1' as the reference category for census_division dummies.
+2025-04-24 00:18:30,215 - INFO - Created 8 dummy cols for census_division
+2025-04-24 00:18:30,215 - INFO - All expected variables for raw DV analysis found.
+2025-04-24 00:18:30,215 - INFO - Saving GLM coefficients summary to: moderation_output_raw_dv/Moderation_RawOutcomes_GLM_Coefficients.csv
+2025-04-24 00:18:30,215 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,215 - INFO - PATH 1/16: Processing iv1_public_health_policy x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,220 - WARNING - High condition number: 30.1 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,243 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,248 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,248 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,248 - INFO - PATH 2/16: Processing iv1_public_health_policy x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,253 - WARNING - High condition number: 30.1 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,272 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,274 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,274 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,274 - INFO - PATH 3/16: Processing iv1_public_health_policy x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,279 - WARNING - High condition number: 97.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,292 - INFO - Model dispersion ratio: 0.13 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,297 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,297 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,298 - INFO - PATH 4/16: Processing iv1_public_health_policy x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,301 - WARNING - High condition number: 97.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,313 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,318 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,319 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,319 - INFO - PATH 5/16: Processing iv2_physical_environment x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,323 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => premature_death_raw_count model:
+2025-04-24 00:18:30,323 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9784
+2025-04-24 00:18:30,325 - WARNING - High condition number: 61.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,340 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,342 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,342 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,342 - INFO - PATH 6/16: Processing iv2_physical_environment x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,344 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:18:30,344 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9784
+2025-04-24 00:18:30,345 - WARNING - High condition number: 61.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,356 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,358 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,358 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,358 - INFO - PATH 7/16: Processing iv2_physical_environment x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,360 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => premature_death_raw_count model:
+2025-04-24 00:18:30,360 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9775
+2025-04-24 00:18:30,361 - WARNING - High condition number: 204.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,370 - INFO - Model dispersion ratio: 0.13 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,372 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,372 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,372 - INFO - PATH 8/16: Processing iv2_physical_environment x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,374 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:18:30,374 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9775
+2025-04-24 00:18:30,375 - WARNING - High condition number: 204.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,383 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,384 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,384 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,384 - INFO - PATH 9/16: Processing iv3_health_behaviors x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,386 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => premature_death_raw_count model:
+2025-04-24 00:18:30,386 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8803
+2025-04-24 00:18:30,387 - WARNING - High condition number: 934.0 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,398 - INFO - Model dispersion ratio: 0.12 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,399 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,400 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,400 - INFO - PATH 10/16: Processing iv3_health_behaviors x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,402 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:18:30,402 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8803
+2025-04-24 00:18:30,403 - WARNING - High condition number: 934.0 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,414 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,416 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,416 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,416 - INFO - PATH 11/16: Processing iv3_health_behaviors x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,418 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => premature_death_raw_count model:
+2025-04-24 00:18:30,418 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8505
+2025-04-24 00:18:30,419 - WARNING - High condition number: 3268.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,419 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:18:30,423 - INFO - Centering reduced condition number from 3268.9 to 1393.4
+2025-04-24 00:18:30,423 - INFO - Using centered variables: ['iv3_health_behaviors_c', 'mo2_robotics_capabilities_c', 'iv3_health_behaviors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:18:30,445 - INFO - Model dispersion ratio: 0.11 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,446 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,446 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,446 - INFO - PATH 12/16: Processing iv3_health_behaviors x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,448 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:18:30,448 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8505
+2025-04-24 00:18:30,450 - WARNING - High condition number: 3268.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,451 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:18:30,455 - INFO - Centering reduced condition number from 3268.9 to 1393.4
+2025-04-24 00:18:30,455 - INFO - Using centered variables: ['iv3_health_behaviors_c', 'mo2_robotics_capabilities_c', 'iv3_health_behaviors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:18:30,465 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,467 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,467 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,467 - INFO - PATH 13/16: Processing iv4_social_economic_factors x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,469 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => premature_death_raw_count model:
+2025-04-24 00:18:30,469 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9677
+2025-04-24 00:18:30,470 - WARNING - High condition number: 334.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,488 - INFO - Model dispersion ratio: 0.06 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,490 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,490 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,490 - INFO - PATH 14/16: Processing iv4_social_economic_factors x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,492 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:18:30,492 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9677
+2025-04-24 00:18:30,494 - WARNING - High condition number: 334.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,508 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,513 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,513 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,513 - INFO - PATH 15/16: Processing iv4_social_economic_factors x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:18:30,516 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => premature_death_raw_count model:
+2025-04-24 00:18:30,516 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9588
+2025-04-24 00:18:30,517 - WARNING - High condition number: 1025.4 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,517 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:18:30,518 - INFO - Centering reduced condition number from 1025.4 to 246.0
+2025-04-24 00:18:30,518 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:18:30,530 - INFO - Model dispersion ratio: 0.06 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,532 - ERROR - Plotting function missing required columns in input data: ['premature_death_rate_100k']
+2025-04-24 00:18:30,532 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:18:30,532 - INFO - PATH 16/16: Processing iv4_social_economic_factors x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:18:30,534 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:18:30,534 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9588
+2025-04-24 00:18:30,535 - WARNING - High condition number: 1025.4 - Results may be unstable due to multicollinearity
+2025-04-24 00:18:30,535 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:18:30,536 - INFO - Centering reduced condition number from 1025.4 to 246.0
+2025-04-24 00:18:30,536 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:18:30,558 - INFO - Model dispersion ratio: 0.13 (>1.2 suggests overdispersion)
+2025-04-24 00:18:30,560 - ERROR - Plotting function missing required columns in input data: ['prev_hosp_stays_rate_100k']
+2025-04-24 00:18:30,578 - INFO - Successfully saved GLM coefficients for 16 models to moderation_output_raw_dv/Moderation_RawOutcomes_GLM_Coefficients.csv
+2025-04-24 00:18:30,578 - INFO - ================================================================================
+2025-04-24 00:18:30,578 - INFO - Raw DV moderation analyses script finished.
+2025-04-24 00:18:30,578 - INFO - ================================================================================

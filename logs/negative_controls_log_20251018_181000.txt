@@ -1,0 +1,17 @@
+2025-10-18 18:10:00,366 - INFO - Logger initialized.
+2025-10-18 18:10:00,447 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 18:10:30,168 - INFO - Base data: 3135 counties.
+2025-10-18 18:10:30,171 - INFO - Added division FE (dummies=8).
+2025-10-18 18:10:30,192 - INFO - chr_analytic_chunk_3: Years range from 2024 to 2024 (3195 valid records)
+2025-10-18 18:10:30,202 - INFO - chr_analytic_chunk_2: Years range from 2024 to 2024 (3195 valid records)
+2025-10-18 18:10:30,208 - INFO - chr_analytic_chunk_1: Years range from 2024 to 2024 (3195 valid records)
+2025-10-18 18:10:30,268 - INFO - [Direct NCO] Skipping pct_households_with_lack_of_kitchen_or_plumbing: not found.
+2025-10-18 18:10:30,268 - INFO - [Direct NCO] Skipping percentage_of_households_with_high_housing_costs: not found.
+2025-10-18 18:10:30,268 - INFO - [Direct NCO] Skipping percentage_of_households_with_overcrowding: not found.
+2025-10-18 18:10:30,349 - INFO - DV21 long data shape: (88539, 5)
+2025-10-18 18:10:30,350 - INFO - DV21 unique years: [np.int64(2024)]
+2025-10-18 18:10:30,350 - INFO - Candidate years found: [2024]
+2025-10-18 18:10:30,350 - WARNING - No years in range 2010-2022 found for temporal falsification.
+2025-10-18 18:10:43,643 - INFO - Permutation tests done for MO1 family.
+2025-10-18 18:10:43,651 - INFO - Guardrail checks written.
+2025-10-18 18:10:43,652 - INFO - All done. Outputs in ./negative_controls_output

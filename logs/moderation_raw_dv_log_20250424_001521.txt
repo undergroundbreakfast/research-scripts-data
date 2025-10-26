@@ -1,0 +1,20 @@
+2025-04-24 00:15:21,805 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250424_001521.txt
+2025-04-24 00:15:21,805 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-24 00:15:21,869 - INFO - Connected to Postgres successfully.
+2025-04-24 00:15:21,869 - INFO - Checking available columns in views...
+2025-04-24 00:15:21,888 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:15:21,889 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:15:21,889 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-24 00:15:21,892 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:15:21,896 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:15:21,896 - INFO - Executing join query between conceptual model and variables views
+2025-04-24 00:15:47,376 - INFO - Joined data fetched: shape=(3049, 11)
+2025-04-24 00:15:47,378 - INFO - Calculated death and hospitalization rates per 100k population
+2025-04-24 00:15:47,378 - INFO - Using '1' as the reference category for census_division dummies.
+2025-04-24 00:15:47,379 - INFO - Created 8 dummy cols for census_division
+2025-04-24 00:15:47,379 - INFO - All expected variables for raw DV analysis found.
+2025-04-24 00:15:47,379 - INFO - Saving GLM coefficients summary to: moderation_output_raw_dv/Moderation_RawOutcomes_GLM_Coefficients.csv
+2025-04-24 00:15:47,379 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:15:47,379 - INFO - PATH 1/16: Processing iv1_public_health_policy x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:15:47,384 - WARNING - High condition number: 30.1 - Results may be unstable due to multicollinearity
+2025-04-24 00:15:47,407 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)

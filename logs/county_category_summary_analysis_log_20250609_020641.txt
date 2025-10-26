@@ -1,0 +1,224 @@
+2025-06-09 02:06:41,039 - INFO - [6_County_Categories_060925_v6.py:62] - Logging to: logs/county_category_summary_analysis_log_20250609_020641.txt
+2025-06-09 02:06:41,039 - INFO - [6_County_Categories_060925_v6.py:586] - Starting County Category Summary Analysis Script.
+2025-06-09 02:06:41,107 - INFO - [6_County_Categories_060925_v6.py:82] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-09 02:07:06,839 - INFO - [6_County_Categories_060925_v6.py:147] - Data for summary analysis retrieved: 3143 rows, 14 columns.
+2025-06-09 02:07:06,839 - INFO - [6_County_Categories_060925_v6.py:154] - Column names standardized to lower case.
+2025-06-09 02:07:06,840 - INFO - [6_County_Categories_060925_v6.py:158] - Initial NaN counts per column:
+rural_raw_value                                      6
+total_beds_in_county                               687
+ratio_of_population_to_primary_care_physicians     157
+life_expectancy_raw_value                           73
+dv21_premature_death_ypll_rate                      55
+child_mortality_raw_value                         1106
+infant_mortality_raw_value                        1937
+dv15_preventable_stays_rate                         70
+avg_patient_services_margin                       1027
+population                                           8
+dtype: int64
+2025-06-09 02:07:06,840 - INFO - [6_County_Categories_060925_v6.py:170] - Performing data preparations for summary analysis...
+2025-06-09 02:07:06,842 - INFO - [6_County_Categories_060925_v6.py:197] - County categories mapped. Value counts:
+county_category_label
+1. No hospital                           685
+2. Hospital, no AI/Robotics             1406
+3. Hospital, surgical robotics           475
+4. Hospital, AI                          105
+5. Hospital, AI & robotics               159
+6. Multiple hospitals, AI & robotics     313
+Name: count, dtype: int64
+2025-06-09 02:07:06,844 - INFO - [6_County_Categories_060925_v6.py:231] - Data preparation complete.
+2025-06-09 02:07:06,844 - INFO - [6_County_Categories_060925_v6.py:239] - ============================== CATEGORICAL SUMMARY ANALYSIS ==============================
+2025-06-09 02:07:06,846 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: rural_raw_value ---
+2025-06-09 02:07:06,852 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for rural_raw_value:
+                                      count      mean  ...        q1        q3
+county_category_label                                  ...                    
+1. No hospital                          685  0.893161  ...  0.943203  1.000000
+2. Hospital, no AI/Robotics            1406  0.710517  ...  0.493361  1.000000
+3. Hospital, surgical robotics          475  0.441895  ...  0.233804  0.627381
+4. Hospital, AI                         105  0.662740  ...  0.452102  0.905480
+5. Hospital, AI & robotics              158  0.448048  ...  0.258880  0.608781
+6. Multiple hospitals, AI & robotics    308  0.171747  ...  0.039870  0.243018
+
+[6 rows x 6 columns]
+2025-06-09 02:07:06,853 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for rural_raw_value. Using Kruskal-Wallis.
+2025-06-09 02:07:06,854 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for rural_raw_value: H-statistic=1230.239, p-value=0.0000
+2025-06-09 02:07:07,270 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for rural_raw_value saved to county_category_summary_output/plots/boxplot_rural_raw_value.png
+2025-06-09 02:07:07,619 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for rural_raw_value saved to county_category_summary_output/plots/boxplot_log_rural_raw_value.png
+2025-06-09 02:07:07,619 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: total_beds_in_county ---
+2025-06-09 02:07:07,623 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for total_beds_in_county:
+                                      count         mean  ...     q1      q3
+county_category_label                                     ...               
+1. No hospital                          685     0.000000  ...    0.0     0.0
+2. Hospital, no AI/Robotics            1406    90.933855  ...   25.0    94.0
+3. Hospital, surgical robotics          475   342.109474  ...   50.0   402.5
+4. Hospital, AI                         105    80.990476  ...   24.0    91.0
+5. Hospital, AI & robotics              159   198.578616  ...   49.0   270.5
+6. Multiple hospitals, AI & robotics    313  1861.670927  ...  448.0  2271.0
+
+[6 rows x 6 columns]
+2025-06-09 02:07:07,625 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for total_beds_in_county. Using Kruskal-Wallis.
+2025-06-09 02:07:07,625 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for total_beds_in_county: H-statistic=2158.490, p-value=0.0000
+2025-06-09 02:07:07,912 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for total_beds_in_county saved to county_category_summary_output/plots/boxplot_total_beds_in_county.png
+2025-06-09 02:07:08,240 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for total_beds_in_county saved to county_category_summary_output/plots/boxplot_log_total_beds_in_county.png
+2025-06-09 02:07:08,241 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: ratio_of_population_to_primary_care_physicians ---
+2025-06-09 02:07:08,244 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for ratio_of_population_to_primary_care_physicians:
+                                      count         mean  ...           q1           q3
+county_category_label                                     ...                          
+1. No hospital                          568  4268.099198  ...  1901.187469  5966.250000
+2. Hospital, no AI/Robotics            1369  2715.401267  ...  1553.812500  3284.833252
+3. Hospital, surgical robotics          474  1969.843907  ...  1219.471649  2368.837891
+4. Hospital, AI                         103  2312.369797  ...  1435.319580  2692.304443
+5. Hospital, AI & robotics              159  2081.794510  ...  1272.022217  2363.500000
+6. Multiple hospitals, AI & robotics    313  1422.833999  ...  1003.741760  1678.239990
+
+[6 rows x 6 columns]
+2025-06-09 02:07:08,245 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for ratio_of_population_to_primary_care_physicians. Using Kruskal-Wallis.
+2025-06-09 02:07:08,246 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for ratio_of_population_to_primary_care_physicians: H-statistic=464.886, p-value=0.0000
+2025-06-09 02:07:08,550 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for ratio_of_population_to_primary_care_physicians saved to county_category_summary_output/plots/boxplot_ratio_of_population_to_primary_care_physicians.png
+2025-06-09 02:07:08,883 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for ratio_of_population_to_primary_care_physicians saved to county_category_summary_output/plots/boxplot_log_ratio_of_population_to_primary_care_physicians.png
+2025-06-09 02:07:08,883 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: life_expectancy_raw_value ---
+2025-06-09 02:07:08,886 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for life_expectancy_raw_value:
+                                      count       mean  ...         q1         q3
+county_category_label                                   ...                      
+1. No hospital                          623  75.315806  ...  73.065937  77.578274
+2. Hospital, no AI/Robotics            1396  75.169001  ...  72.975840  77.608082
+3. Hospital, surgical robotics          475  76.390798  ...  74.492542  78.275974
+4. Hospital, AI                         104  76.198873  ...  74.674335  77.694826
+5. Hospital, AI & robotics              159  76.680635  ...  74.324169  78.508289
+6. Multiple hospitals, AI & robotics    313  77.659410  ...  75.725693  79.603104
+
+[6 rows x 6 columns]
+2025-06-09 02:07:08,887 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for life_expectancy_raw_value. Using Kruskal-Wallis.
+2025-06-09 02:07:08,888 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for life_expectancy_raw_value: H-statistic=185.995, p-value=0.0000
+2025-06-09 02:07:09,215 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for life_expectancy_raw_value saved to county_category_summary_output/plots/boxplot_life_expectancy_raw_value.png
+2025-06-09 02:07:09,543 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for life_expectancy_raw_value saved to county_category_summary_output/plots/boxplot_log_life_expectancy_raw_value.png
+2025-06-09 02:07:09,543 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: dv21_premature_death_ypll_rate ---
+2025-06-09 02:07:09,547 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for dv21_premature_death_ypll_rate:
+                                      count          mean  ...           q1            q3
+county_category_label                                      ...                           
+1. No hospital                          637  10609.011535  ...  7994.892090  12372.677734
+2. Hospital, no AI/Robotics            1399  10365.234691  ...  7824.974854  12267.788086
+3. Hospital, surgical robotics          475   9082.529015  ...  7078.832275  10826.117188
+4. Hospital, AI                         105   9088.570473  ...  7468.167480  10231.536133
+5. Hospital, AI & robotics              159   8746.281222  ...  6992.197266  10613.053223
+6. Multiple hospitals, AI & robotics    313   7990.545368  ...  6224.679199   9425.012695
+
+[6 rows x 6 columns]
+2025-06-09 02:07:09,548 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for dv21_premature_death_ypll_rate. Using Kruskal-Wallis.
+2025-06-09 02:07:09,549 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for dv21_premature_death_ypll_rate: H-statistic=208.970, p-value=0.0000
+2025-06-09 02:07:09,854 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for dv21_premature_death_ypll_rate saved to county_category_summary_output/plots/boxplot_dv21_premature_death_ypll_rate.png
+2025-06-09 02:07:10,175 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for dv21_premature_death_ypll_rate saved to county_category_summary_output/plots/boxplot_log_dv21_premature_death_ypll_rate.png
+2025-06-09 02:07:10,175 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: child_mortality_raw_value ---
+2025-06-09 02:07:10,179 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for child_mortality_raw_value:
+                                      count       mean  ...         q1         q3
+county_category_label                                   ...                      
+1. No hospital                          230  76.928790  ...  54.309010  90.751328
+2. Hospital, no AI/Robotics             847  69.749539  ...  51.423994  82.985424
+3. Hospital, surgical robotics          431  56.841923  ...  43.977568  66.937447
+4. Hospital, AI                          74  57.076373  ...  46.027087  67.691584
+5. Hospital, AI & robotics              144  53.526340  ...  41.725059  61.952763
+6. Multiple hospitals, AI & robotics    311  51.064449  ...  39.244907  62.625847
+
+[6 rows x 6 columns]
+2025-06-09 02:07:10,181 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for child_mortality_raw_value. Using Kruskal-Wallis.
+2025-06-09 02:07:10,181 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for child_mortality_raw_value: H-statistic=251.631, p-value=0.0000
+2025-06-09 02:07:10,476 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for child_mortality_raw_value saved to county_category_summary_output/plots/boxplot_child_mortality_raw_value.png
+2025-06-09 02:07:10,791 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for child_mortality_raw_value saved to county_category_summary_output/plots/boxplot_log_child_mortality_raw_value.png
+2025-06-09 02:07:10,792 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: infant_mortality_raw_value ---
+2025-06-09 02:07:10,796 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for infant_mortality_raw_value:
+                                      count      mean  ...        q1        q3
+county_category_label                                  ...                    
+1. No hospital                           55  7.822993  ...  6.009853  8.409791
+2. Hospital, no AI/Robotics             390  7.437127  ...  5.822856  8.776721
+3. Hospital, surgical robotics          322  6.449635  ...  5.050891  7.650214
+4. Hospital, AI                          32  7.059401  ...  6.093863  7.895736
+5. Hospital, AI & robotics              103  6.140852  ...  4.869984  7.139691
+6. Multiple hospitals, AI & robotics    304  5.694670  ...  4.458948  6.696344
+
+[6 rows x 6 columns]
+2025-06-09 02:07:10,797 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for infant_mortality_raw_value. Using Kruskal-Wallis.
+2025-06-09 02:07:10,797 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for infant_mortality_raw_value: H-statistic=126.004, p-value=0.0000
+2025-06-09 02:07:11,089 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for infant_mortality_raw_value saved to county_category_summary_output/plots/boxplot_infant_mortality_raw_value.png
+2025-06-09 02:07:11,397 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for infant_mortality_raw_value saved to county_category_summary_output/plots/boxplot_log_infant_mortality_raw_value.png
+2025-06-09 02:07:11,397 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: dv15_preventable_stays_rate ---
+2025-06-09 02:07:11,401 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for dv15_preventable_stays_rate:
+                                      count         mean  ...       q1       q3
+county_category_label                                     ...                  
+1. No hospital                          627  2872.984051  ...  2097.50  3539.50
+2. Hospital, no AI/Robotics            1396  2942.179799  ...  2115.25  3577.75
+3. Hospital, surgical robotics          473  2702.835095  ...  2110.00  3217.00
+4. Hospital, AI                         105  2539.390476  ...  1894.00  2977.00
+5. Hospital, AI & robotics              159  2650.911950  ...  2128.50  3203.50
+6. Multiple hospitals, AI & robotics    313  2742.140575  ...  2210.00  3208.00
+
+[6 rows x 6 columns]
+2025-06-09 02:07:11,402 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for dv15_preventable_stays_rate. Using Kruskal-Wallis.
+2025-06-09 02:07:11,403 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for dv15_preventable_stays_rate: H-statistic=30.179, p-value=0.0000
+2025-06-09 02:07:11,752 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for dv15_preventable_stays_rate saved to county_category_summary_output/plots/boxplot_dv15_preventable_stays_rate.png
+2025-06-09 02:07:12,086 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for dv15_preventable_stays_rate saved to county_category_summary_output/plots/boxplot_log_dv15_preventable_stays_rate.png
+2025-06-09 02:07:12,087 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: mo1_ai_adoption_score ---
+2025-06-09 02:07:12,090 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for mo1_ai_adoption_score:
+                                      count      mean       std    median   q1   q3
+county_category_label                                                              
+1. No hospital                          685  0.000000  0.000000  0.000000  0.0  0.0
+2. Hospital, no AI/Robotics            1406  0.000000  0.000000  0.000000  0.0  0.0
+3. Hospital, surgical robotics          475  0.000000  0.000000  0.000000  0.0  0.0
+4. Hospital, AI                         105  2.166190  1.514080  2.000000  1.0  3.0
+5. Hospital, AI & robotics              159  2.412474  1.525129  2.000000  1.0  4.0
+6. Multiple hospitals, AI & robotics    313  1.155692  0.983774  0.857143  0.5  1.5
+2025-06-09 02:07:12,091 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for mo1_ai_adoption_score. Using Kruskal-Wallis.
+2025-06-09 02:07:12,092 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for mo1_ai_adoption_score: H-statistic=3107.707, p-value=0.0000
+2025-06-09 02:07:12,379 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for mo1_ai_adoption_score saved to county_category_summary_output/plots/boxplot_mo1_ai_adoption_score.png
+2025-06-09 02:07:12,676 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for mo1_ai_adoption_score saved to county_category_summary_output/plots/boxplot_log_mo1_ai_adoption_score.png
+2025-06-09 02:07:12,676 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: mo2_robotics_adoption_score ---
+2025-06-09 02:07:12,680 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for mo2_robotics_adoption_score:
+                                      count      mean       std  median   q1         q3
+county_category_label                                                                  
+1. No hospital                          685  0.000000  0.000000     0.0  0.0   0.000000
+2. Hospital, no AI/Robotics            1406  0.000000  0.000000     0.0  0.0   0.000000
+3. Hospital, surgical robotics          475  6.104269  3.278684     5.0  3.0  10.000000
+4. Hospital, AI                         105  0.000000  0.000000     0.0  0.0   0.000000
+5. Hospital, AI & robotics              159  6.679769  3.939108     5.0  3.0  10.000000
+6. Multiple hospitals, AI & robotics    313  4.828736  2.325959     4.6  3.0   6.076923
+2025-06-09 02:07:12,681 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for mo2_robotics_adoption_score. Using Kruskal-Wallis.
+2025-06-09 02:07:12,681 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for mo2_robotics_adoption_score: H-statistic=3016.927, p-value=0.0000
+2025-06-09 02:07:12,978 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for mo2_robotics_adoption_score saved to county_category_summary_output/plots/boxplot_mo2_robotics_adoption_score.png
+2025-06-09 02:07:13,278 - INFO - [6_County_Categories_060925_v6.py:511] -   Log-transformed box plot for mo2_robotics_adoption_score saved to county_category_summary_output/plots/boxplot_log_mo2_robotics_adoption_score.png
+2025-06-09 02:07:13,278 - INFO - [6_County_Categories_060925_v6.py:269] - 
+--- Analyzing Variable: avg_patient_services_margin ---
+2025-06-09 02:07:13,282 - INFO - [6_County_Categories_060925_v6.py:274] - Descriptive Statistics for avg_patient_services_margin:
+                                      count      mean  ...        q1        q3
+county_category_label                                  ...                    
+1. No hospital                            0       NaN  ...       NaN       NaN
+2. Hospital, no AI/Robotics            1168  0.002984  ... -0.107000  0.091625
+3. Hospital, surgical robotics          412  0.084319  ... -0.018500  0.165750
+4. Hospital, AI                          88  0.018350  ... -0.053500  0.104125
+5. Hospital, AI & robotics              139  0.139647  ... -0.016500  0.218000
+6. Multiple hospitals, AI & robotics    309  0.092391  ...  0.004333  0.155333
+
+[6 rows x 6 columns]
+2025-06-09 02:07:13,283 - INFO - [6_County_Categories_060925_v6.py:347] -   Not all groups normal for avg_patient_services_margin. Using Kruskal-Wallis.
+2025-06-09 02:07:13,284 - INFO - [6_County_Categories_060925_v6.py:367] -   Kruskal-Wallis for avg_patient_services_margin: H-statistic=151.852, p-value=0.0000
+2025-06-09 02:07:13,573 - INFO - [6_County_Categories_060925_v6.py:408] -   Box plot for avg_patient_services_margin saved to county_category_summary_output/plots/boxplot_avg_patient_services_margin.png
+2025-06-09 02:07:13,611 - ERROR - [6_County_Categories_060925_v6.py:618] - An error occurred in the main execution block: list index out of range
+2025-06-09 02:07:13,619 - ERROR - [6_County_Categories_060925_v6.py:619] - Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/6_County_Categories_060925_v6.py", line 615, in main
+    perform_categorical_summary_analysis(df_prepared, numerical_cols_for_analysis, category_map, plot_dir, output_dir, logger)
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/6_County_Categories_060925_v6.py", line 468, in perform_categorical_summary_analysis
+    box_data = ax.artists[i].get_bbox().get_points()  # Get box coordinates
+               ~~~~~~~~~~^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/matplotlib/axes/_base.py", line 1453, in __getitem__
+    return [artist
+           ^^^^^^^
+IndexError: list index out of range
+
+2025-06-09 02:07:13,620 - INFO - [6_County_Categories_060925_v6.py:624] - Database engine disposed.

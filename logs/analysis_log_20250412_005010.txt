@@ -1,0 +1,7 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-12 00:50:10
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)

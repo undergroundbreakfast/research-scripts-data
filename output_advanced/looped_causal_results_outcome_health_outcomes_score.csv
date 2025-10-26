@@ -1,0 +1,7 @@
+treatment_variable,outcome_variable,ate_naive,ate_iptw,ate_iptw_se,ate_iptw_ci_lower,ate_iptw_ci_upper,e_value_iptw_point_approx,n_total_after_trimming,n_treated_after_trimming,n_control_after_trimming,status
+pct_wfaipsn_enabled_beds,health_outcomes_score,-662.189685930518,-107.08756511919917,54.807549626697615,-214.5571244566063,0.3819942182079643,"Context-dependent, see paper's method",2671,317,2354,Success
+pct_wfaippd_enabled_beds,health_outcomes_score,-684.4957717968309,-193.72052138024776,55.024617985088746,-301.6158486252177,-85.82519413527783,"Context-dependent, see paper's method",2664,337,2327,Success
+pct_wfaiss_enabled_beds,health_outcomes_score,-683.02790290957,-194.56380730749908,53.27511289548516,-299.02570811765236,-90.1019064973458,"Context-dependent, see paper's method",2837,298,2539,Success
+pct_wfaiart_enabled_beds,health_outcomes_score,-858.7273023103598,-484.12546458544756,53.98105071242801,-589.971283830306,-378.2796453405891,"Context-dependent, see paper's method",2855,416,2439,Success
+pct_wfaioacw_enabled_beds,health_outcomes_score,-793.2008605644496,-337.7552436935498,53.415520491543234,-442.4914080204216,-233.019079366678,"Context-dependent, see paper's method",2905,452,2453,Success
+pct_robohos_enabled_beds,health_outcomes_score,-795.6829493819287,-307.16040536191736,59.91612884775923,-424.6464098211435,-189.6744009026912,"Context-dependent, see paper's method",2708,742,1966,Success

@@ -1,0 +1,42 @@
+2025-10-18 18:20:17,116 - INFO - Logger initialized.
+2025-10-18 18:20:17,195 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 18:20:47,328 - INFO - Base data: 3135 counties.
+2025-10-18 18:20:47,332 - INFO - Added division FE (dummies=8).
+2025-10-18 18:20:47,352 - INFO - chr_analytic_chunk_3: Years range from 2024 to 2024 (3195 valid records)
+2025-10-18 18:20:47,364 - INFO - chr_analytic_chunk_2: Years range from 2024 to 2024 (3195 valid records)
+2025-10-18 18:20:47,371 - INFO - chr_analytic_chunk_1: Years range from 2024 to 2024 (3195 valid records)
+2025-10-18 18:20:47,395 - INFO - Data summary:
+2025-10-18 18:20:47,396 - INFO -   Base counties: 3135
+2025-10-18 18:20:47,396 - INFO -   CHR chunk_3: 326 counties (latest year)
+2025-10-18 18:20:47,396 - INFO -   CHR chunk_2: 326 counties (latest year)
+2025-10-18 18:20:47,396 - INFO -   CHR chunk_1 temporal: 88539 county-year records
+2025-10-18 18:20:47,396 - INFO -   Year range in chunk_1: 2024-2024
+2025-10-18 18:20:47,396 - INFO -   Historical years (2010-2022) available: 0
+2025-10-18 18:20:47,396 - WARNING -   ⚠️  No historical CHR data available - temporal falsification will be skipped
+2025-10-18 18:20:47,396 - WARNING -   ⚠️  To run temporal falsification, load CHR data from 2010-2022
+2025-10-18 18:20:47,422 - INFO - [Direct NCO] Skipping long_commute_driving_alone_raw_value: not found.
+2025-10-18 18:20:47,433 - INFO - [Direct NCO] Skipping school_funding_adequacy_raw_value: not found.
+2025-10-18 18:20:47,433 - INFO - [Direct NCO] Skipping school_segregation_raw_value: not found.
+2025-10-18 18:20:47,462 - INFO - [Placebo IV] Skipping long_commute_driving_alone_raw_value: not found.
+2025-10-18 18:20:47,472 - INFO - [Placebo IV] Skipping school_funding_adequacy_raw_value: not found.
+2025-10-18 18:20:47,472 - INFO - [Placebo IV] Skipping school_segregation_raw_value: not found.
+2025-10-18 18:20:47,494 - INFO - [Placebo DV] Skipping long_commute_driving_alone_raw_value: not found.
+2025-10-18 18:20:47,494 - INFO - DV21 long data shape: (88539, 5)
+2025-10-18 18:20:47,494 - INFO - DV21 unique years available: [2024]
+2025-10-18 18:20:47,494 - WARNING - No years in range 2010-2022 found for temporal falsification.
+2025-10-18 18:20:47,494 - WARNING - Available years: [2024]
+2025-10-18 18:20:47,494 - WARNING - Temporal falsification requires historical CHR data. Skipping this test.
+2025-10-18 18:21:00,652 - INFO - Permutation tests done for MO1 family.
+2025-10-18 18:21:00,660 - INFO - Guardrail checks written.
+2025-10-18 18:21:00,661 - INFO - ============================================================
+2025-10-18 18:21:00,661 - INFO - NEGATIVE CONTROLS TEST SUITE COMPLETE
+2025-10-18 18:21:00,661 - INFO - ============================================================
+2025-10-18 18:21:00,661 - INFO - Output directory: ./negative_controls_output
+2025-10-18 18:21:00,661 - INFO - Tests completed:
+2025-10-18 18:21:00,661 - INFO -   ✓ Direct NCO tests: 0 results
+2025-10-18 18:21:00,661 - INFO -   ✓ Placebo interactions: 0 results
+2025-10-18 18:21:00,661 - INFO -   ✓ Placebo outcomes: 0 results
+2025-10-18 18:21:00,661 - INFO -   ⚠ Temporal falsification: 0 results
+2025-10-18 18:21:00,661 - INFO -   ✓ Permutation tests: 6 results
+2025-10-18 18:21:00,661 - INFO -   ✓ Guardrail checks: 1 results
+2025-10-18 18:21:00,661 - INFO - ============================================================

@@ -1,0 +1,67 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-02 23:34:01
+================================================================================
+
+Connected to Postgres successfully.
+Component-level data fetched: shape = (3143, 37)
+
+--------------------------------------------------------------------------------
+ EFA SECTION
+--------------------------------------------------------------------------------
+Potential multicollinearity detected (correlations > 0.8):
+  adult_smoking_raw_value and physical_inactivity_raw_value: r = 0.810
+This may cause the Moore-Penrose generalized inversion warning.
+Bartlett's test: chi_sq=8298.82, p=0.0000 (small p => correlations not identity).
+KMO (sampling adequacy) for each variable => [0.72329798 0.64491415 0.75548513 0.77308263 0.65243174]
+KMO overall => 0.704
+
+Factor Loadings (Rotated):
+  adult_smoking_raw_value: [0.91603023 0.12503628]
+  physical_inactivity_raw_value: [0.88565582 0.14388458]
+  children_in_poverty_raw_value: [0.81677339 0.37992212]
+  unemployment_raw_value: [0.17871933 0.97717392]
+  injury_deaths_raw_value: [0.62638845 0.12860533]
+
+Factor Loadings (Rotated):
+                               Factor 1  Factor 2
+adult_smoking_raw_value           0.916     0.125
+physical_inactivity_raw_value     0.886     0.144
+children_in_poverty_raw_value     0.817     0.380
+unemployment_raw_value            0.179     0.977
+injury_deaths_raw_value           0.626     0.129
+
+Strong Factor Loadings (|loading| > 0.4):
+  adult_smoking_raw_value: Factor 1: 0.916
+  physical_inactivity_raw_value: Factor 1: 0.886
+  children_in_poverty_raw_value: Factor 1: 0.817
+  unemployment_raw_value: Factor 2: 0.977
+  injury_deaths_raw_value: Factor 1: 0.626
+
+Explained Variance (each factor): [0.54298389 0.23041717]
+Cumulative Variance by Factor: [0.54298389 0.77340106]
+
+EFA completed. 2 factors extracted.
+
+Factor loadings saved to: results/factor_loadings_20250402_233404.csv
+Factor scores saved to: results/factor_scores_20250402_233404.csv
+
+Sample factor scores (head):
+
+         F1        F2
+0 -0.140722 -1.103839
+1 -0.343733 -0.938441
+2  1.867681  0.155748
+3  1.349458 -1.170229
+4  0.473072 -1.343187
+
+--------------------------------------------------------------------------------
+ SEM SECTION
+--------------------------------------------------------------------------------
+Column 'dv_health_outcome' not found. SEM example won't run properly.
+
+================================================================================
+ ANALYSIS COMPLETED: 2025-04-02 23:34:04
+ Total runtime: 0:00:03.033984
+================================================================================
+

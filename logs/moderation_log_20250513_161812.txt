@@ -1,0 +1,633 @@
+2025-05-13 16:18:12,371 - INFO - Logging to: logs/moderation_log_20250513_161812.txt
+2025-05-13 16:18:12,372 - INFO - Output will be saved in: moderation_output
+2025-05-13 16:18:13,339 - INFO - Connected to Postgres successfully.
+2025-05-13 16:18:38,985 - INFO - Data fetched from vw_conceptual_model (with NOT NULL checks): shape=(2126, 12)
+2025-05-13 16:18:38,986 - INFO - Using '1' as the reference category for census_division dummies.
+2025-05-13 16:18:38,987 - INFO - Created 8 dummy cols for census_division
+2025-05-13 16:18:38,987 - INFO - All expected IV, MO, DV, and Control variables found in DataFrame.
+2025-05-13 16:18:38,988 - INFO - Saving coefficients summary to: moderation_output/Moderation_Coefficients.csv
+2025-05-13 16:18:38,988 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:38,988 - INFO - PATH 1/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 16:18:38,993 - INFO - Condition number for iv1_public_health_policyxmo1_genai_capabilities=>dv1_healthcare_access: 8586219.6
+2025-05-13 16:18:38,993 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:38,994 - INFO - Condition number AFTER centering: 8558901.4
+2025-05-13 16:18:38,995 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:39,022 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:39,022 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:39,023 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:39,023 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:39,023 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:39,025 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -7.49901813, INTERACTION_EFFECT: -16.24906408
+2025-05-13 16:18:39,026 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: -18.33172752, INTERACTION_EFFECT: -16.24906408
+2025-05-13 16:18:39,027 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: -39.99714629, INTERACTION_EFFECT: -16.24906408
+2025-05-13 16:18:39,556 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:39,557 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:39,557 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:39,809 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:39,810 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:39,810 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:40,056 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:40,056 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:40,057 - INFO - PATH 2/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 16:18:40,060 - INFO - Condition number for iv1_public_health_policyxmo2_robotics_capabilities=>dv1_healthcare_access: 8575832.3
+2025-05-13 16:18:40,060 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:40,061 - INFO - Condition number AFTER centering: 8547699.4
+2025-05-13 16:18:40,061 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:40,083 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:40,083 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:40,083 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:40,084 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:40,084 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:40,085 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -7.39304606, INTERACTION_EFFECT: -0.29080274
+2025-05-13 16:18:40,086 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: -8.26545429, INTERACTION_EFFECT: -0.29080274
+2025-05-13 16:18:40,088 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: -9.91333649, INTERACTION_EFFECT: -0.29080274
+2025-05-13 16:18:40,360 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:40,361 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:40,361 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:40,611 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:40,612 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:40,612 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:40,871 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:40,871 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:40,871 - INFO - PATH 3/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 16:18:40,874 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo1_genai_capabilities=>dv1_healthcare_access model:
+2025-05-13 16:18:40,874 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-05-13 16:18:40,875 - INFO - Condition number for iv2_physical_environmentxmo1_genai_capabilities=>dv1_healthcare_access: 8549108.4
+2025-05-13 16:18:40,875 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:40,876 - INFO - Condition number AFTER centering: 8613457.2
+2025-05-13 16:18:40,876 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:40,901 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo1_genai_capabilities=>dv1_healthcare_access:
+2025-05-13 16:18:40,901 - WARNING -   - iv2_physical_environment: VIF = 26.48
+2025-05-13 16:18:40,901 - WARNING -   - mo1_genai_capabilities: VIF = 29.80
+2025-05-13 16:18:40,901 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 30.39
+2025-05-13 16:18:40,901 - WARNING -   - div_3: VIF = 5.22
+2025-05-13 16:18:40,901 - WARNING -   - div_4: VIF = 5.17
+2025-05-13 16:18:40,901 - WARNING -   - div_7: VIF = 5.61
+2025-05-13 16:18:40,903 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:40,903 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:40,903 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:40,903 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:40,903 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:40,905 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 151.72673977, INTERACTION_EFFECT: 22.25093794
+2025-05-13 16:18:40,906 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 166.56069839, INTERACTION_EFFECT: 22.25093794
+2025-05-13 16:18:40,907 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: 196.22861565, INTERACTION_EFFECT: 22.25093794
+2025-05-13 16:18:41,234 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:41,235 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:41,235 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:41,461 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv2_physical_environment_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:41,461 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:41,462 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:41,706 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv2_physical_environment_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:41,706 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:41,706 - INFO - PATH 4/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 16:18:41,709 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo2_robotics_capabilities=>dv1_healthcare_access model:
+2025-05-13 16:18:41,709 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-05-13 16:18:41,710 - INFO - Condition number for iv2_physical_environmentxmo2_robotics_capabilities=>dv1_healthcare_access: 8487264.0
+2025-05-13 16:18:41,710 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:41,711 - INFO - Condition number AFTER centering: 8571598.7
+2025-05-13 16:18:41,711 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:41,738 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo2_robotics_capabilities=>dv1_healthcare_access:
+2025-05-13 16:18:41,738 - WARNING -   - iv2_physical_environment: VIF = 29.10
+2025-05-13 16:18:41,738 - WARNING -   - mo2_robotics_capabilities: VIF = 35.13
+2025-05-13 16:18:41,738 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 36.74
+2025-05-13 16:18:41,738 - WARNING -   - div_3: VIF = 5.56
+2025-05-13 16:18:41,738 - WARNING -   - div_4: VIF = 5.48
+2025-05-13 16:18:41,738 - WARNING -   - div_6: VIF = 5.08
+2025-05-13 16:18:41,738 - WARNING -   - div_7: VIF = 5.89
+2025-05-13 16:18:41,741 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:41,741 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:41,741 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:41,741 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:41,741 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:41,743 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 204.40079400, INTERACTION_EFFECT: -10.37927633
+2025-05-13 16:18:41,744 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 173.26296500, INTERACTION_EFFECT: -10.37927633
+2025-05-13 16:18:41,745 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 114.44706577, INTERACTION_EFFECT: -10.37927633
+2025-05-13 16:18:42,069 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:42,069 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:42,070 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:42,303 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:42,304 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:42,304 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:42,557 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:42,557 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:42,557 - INFO - PATH 5/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 16:18:42,560 - INFO - Condition number for iv3_health_behaviorsxmo1_genai_capabilities=>dv1_healthcare_access: 8519594.9
+2025-05-13 16:18:42,560 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:42,562 - INFO - Condition number AFTER centering: 8538407.7
+2025-05-13 16:18:42,562 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:42,579 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo1_genai_capabilities=>dv1_healthcare_access:
+2025-05-13 16:18:42,579 - WARNING -   - iv3_health_behaviors: VIF = 5.14
+2025-05-13 16:18:42,579 - WARNING -   - mo1_genai_capabilities: VIF = 5.61
+2025-05-13 16:18:42,579 - WARNING -   - iv3_health_behaviors_X_mo1_genai_capabilities: VIF = 5.74
+2025-05-13 16:18:42,581 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:42,581 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:42,581 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:42,582 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:42,582 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:42,583 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -0.61338700, INTERACTION_EFFECT: -0.01061841
+2025-05-13 16:18:42,584 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: -0.62046594, INTERACTION_EFFECT: -0.01061841
+2025-05-13 16:18:42,586 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: -0.63462382, INTERACTION_EFFECT: -0.01061841
+2025-05-13 16:18:42,905 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:42,905 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:42,905 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:43,166 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:43,167 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:43,167 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:43,408 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:43,408 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:43,408 - INFO - PATH 6/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 16:18:43,412 - INFO - Condition number for iv3_health_behaviorsxmo2_robotics_capabilities=>dv1_healthcare_access: 8489177.1
+2025-05-13 16:18:43,412 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:43,413 - INFO - Condition number AFTER centering: 8514294.9
+2025-05-13 16:18:43,413 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:43,431 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo2_robotics_capabilities=>dv1_healthcare_access:
+2025-05-13 16:18:43,431 - WARNING -   - iv3_health_behaviors: VIF = 6.25
+2025-05-13 16:18:43,431 - WARNING -   - mo2_robotics_capabilities: VIF = 5.96
+2025-05-13 16:18:43,431 - WARNING -   - iv3_health_behaviors_X_mo2_robotics_capabilities: VIF = 6.34
+2025-05-13 16:18:43,433 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:43,433 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:43,433 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:43,433 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:43,433 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:43,435 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -0.02339440, INTERACTION_EFFECT: -0.11081852
+2025-05-13 16:18:43,436 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: -0.35584996, INTERACTION_EFFECT: -0.11081852
+2025-05-13 16:18:43,437 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: -0.98382158, INTERACTION_EFFECT: -0.11081852
+2025-05-13 16:18:43,765 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:43,765 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:43,766 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:44,001 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:44,001 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:44,001 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:44,245 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:44,245 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:44,245 - INFO - PATH 7/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv1_healthcare_access
+2025-05-13 16:18:44,248 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo1_genai_capabilities=>dv1_healthcare_access model:
+2025-05-13 16:18:44,248 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-05-13 16:18:44,249 - INFO - Condition number for iv4_social_economic_factorsxmo1_genai_capabilities=>dv1_healthcare_access: 8506706.7
+2025-05-13 16:18:44,249 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:44,250 - INFO - Condition number AFTER centering: 8486680.5
+2025-05-13 16:18:44,250 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:44,268 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo1_genai_capabilities=>dv1_healthcare_access:
+2025-05-13 16:18:44,268 - WARNING -   - iv4_social_economic_factors: VIF = 14.07
+2025-05-13 16:18:44,268 - WARNING -   - mo1_genai_capabilities: VIF = 20.84
+2025-05-13 16:18:44,268 - WARNING -   - iv4_social_economic_factors_X_mo1_genai_capabilities: VIF = 20.41
+2025-05-13 16:18:44,270 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:44,270 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:44,270 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:44,271 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:44,271 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:44,272 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 17.16584597, INTERACTION_EFFECT: -3.29999352
+2025-05-13 16:18:44,273 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 14.96585029, INTERACTION_EFFECT: -3.29999352
+2025-05-13 16:18:44,274 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: 10.56585893, INTERACTION_EFFECT: -3.29999352
+2025-05-13 16:18:44,611 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:44,612 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:44,612 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:44,838 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:44,838 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:44,839 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:45,083 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:45,083 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:45,083 - INFO - PATH 8/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv1_healthcare_access
+2025-05-13 16:18:45,086 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo2_robotics_capabilities=>dv1_healthcare_access model:
+2025-05-13 16:18:45,086 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-05-13 16:18:45,087 - INFO - Condition number for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv1_healthcare_access: 8485278.0
+2025-05-13 16:18:45,087 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:45,088 - INFO - Condition number AFTER centering: 8456173.2
+2025-05-13 16:18:45,088 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:45,107 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv1_healthcare_access:
+2025-05-13 16:18:45,107 - WARNING -   - iv4_social_economic_factors: VIF = 15.75
+2025-05-13 16:18:45,107 - WARNING -   - mo2_robotics_capabilities: VIF = 21.89
+2025-05-13 16:18:45,107 - WARNING -   - iv4_social_economic_factors_X_mo2_robotics_capabilities: VIF = 20.71
+2025-05-13 16:18:45,109 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:45,109 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:45,109 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:45,109 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:45,109 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:45,111 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 11.59245236, INTERACTION_EFFECT: 0.41730191
+2025-05-13 16:18:45,112 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 12.84435810, INTERACTION_EFFECT: 0.41730191
+2025-05-13 16:18:45,113 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 15.20906894, INTERACTION_EFFECT: 0.41730191
+2025-05-13 16:18:45,437 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_95CI.png
+2025-05-13 16:18:45,437 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:45,438 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:45,669 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:45,669 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:45,670 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:45,916 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv1_healthcare_access_binary.png
+2025-05-13 16:18:45,916 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:45,916 - INFO - PATH 9/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:45,920 - INFO - Condition number for iv1_public_health_policyxmo1_genai_capabilities=>dv2_healthcare_quality: 8586219.6
+2025-05-13 16:18:45,920 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:45,921 - INFO - Condition number AFTER centering: 8558901.4
+2025-05-13 16:18:45,921 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:45,938 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:45,938 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:45,938 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:45,938 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:45,938 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:45,940 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 97.49213869, INTERACTION_EFFECT: -0.01912523
+2025-05-13 16:18:45,941 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 97.47938853, INTERACTION_EFFECT: -0.01912523
+2025-05-13 16:18:45,942 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: 97.45388823, INTERACTION_EFFECT: -0.01912523
+2025-05-13 16:18:46,218 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:46,219 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:46,219 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:46,442 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:46,442 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:46,443 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:46,735 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:46,735 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:46,735 - INFO - PATH 10/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:46,739 - INFO - Condition number for iv1_public_health_policyxmo2_robotics_capabilities=>dv2_healthcare_quality: 8575832.3
+2025-05-13 16:18:46,739 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:46,740 - INFO - Condition number AFTER centering: 8547699.4
+2025-05-13 16:18:46,740 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:46,762 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:46,762 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:46,762 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:46,762 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:46,762 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:46,764 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 128.61680373, INTERACTION_EFFECT: -8.13781222
+2025-05-13 16:18:46,765 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 104.20336708, INTERACTION_EFFECT: -8.13781222
+2025-05-13 16:18:46,766 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 58.08909785, INTERACTION_EFFECT: -8.13781222
+2025-05-13 16:18:47,044 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:47,044 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:47,045 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:47,285 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:47,285 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:47,286 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:47,535 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:47,535 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:47,535 - INFO - PATH 11/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:47,538 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo1_genai_capabilities=>dv2_healthcare_quality model:
+2025-05-13 16:18:47,538 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-05-13 16:18:47,539 - INFO - Condition number for iv2_physical_environmentxmo1_genai_capabilities=>dv2_healthcare_quality: 8549108.4
+2025-05-13 16:18:47,539 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:47,540 - INFO - Condition number AFTER centering: 8613457.2
+2025-05-13 16:18:47,540 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:47,556 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo1_genai_capabilities=>dv2_healthcare_quality:
+2025-05-13 16:18:47,556 - WARNING -   - iv2_physical_environment: VIF = 26.48
+2025-05-13 16:18:47,556 - WARNING -   - mo1_genai_capabilities: VIF = 29.80
+2025-05-13 16:18:47,556 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 30.39
+2025-05-13 16:18:47,556 - WARNING -   - div_3: VIF = 5.22
+2025-05-13 16:18:47,556 - WARNING -   - div_4: VIF = 5.17
+2025-05-13 16:18:47,556 - WARNING -   - div_7: VIF = 5.61
+2025-05-13 16:18:47,558 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:47,558 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:47,558 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:47,559 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:47,559 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:47,560 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 148.99592874, INTERACTION_EFFECT: 169.49634993
+2025-05-13 16:18:47,562 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 261.99349536, INTERACTION_EFFECT: 169.49634993
+2025-05-13 16:18:47,563 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: 487.98862860, INTERACTION_EFFECT: 169.49634993
+2025-05-13 16:18:47,893 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:47,893 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:47,894 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:48,116 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv2_physical_environment_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:48,116 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:48,117 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:48,366 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv2_physical_environment_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:48,366 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:48,366 - INFO - PATH 12/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:48,369 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo2_robotics_capabilities=>dv2_healthcare_quality model:
+2025-05-13 16:18:48,369 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-05-13 16:18:48,370 - INFO - Condition number for iv2_physical_environmentxmo2_robotics_capabilities=>dv2_healthcare_quality: 8487264.0
+2025-05-13 16:18:48,370 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:48,371 - INFO - Condition number AFTER centering: 8571598.7
+2025-05-13 16:18:48,371 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:48,425 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo2_robotics_capabilities=>dv2_healthcare_quality:
+2025-05-13 16:18:48,425 - WARNING -   - iv2_physical_environment: VIF = 29.10
+2025-05-13 16:18:48,425 - WARNING -   - mo2_robotics_capabilities: VIF = 35.13
+2025-05-13 16:18:48,425 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 36.74
+2025-05-13 16:18:48,425 - WARNING -   - div_3: VIF = 5.56
+2025-05-13 16:18:48,425 - WARNING -   - div_4: VIF = 5.48
+2025-05-13 16:18:48,425 - WARNING -   - div_6: VIF = 5.08
+2025-05-13 16:18:48,425 - WARNING -   - div_7: VIF = 5.89
+2025-05-13 16:18:48,427 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:48,427 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:48,427 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:48,428 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:48,428 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:48,429 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 203.58792751, INTERACTION_EFFECT: 28.63357104
+2025-05-13 16:18:48,430 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 289.48864062, INTERACTION_EFFECT: 28.63357104
+2025-05-13 16:18:48,432 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 451.74554316, INTERACTION_EFFECT: 28.63357104
+2025-05-13 16:18:48,767 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:48,767 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:48,768 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:48,995 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:48,996 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:48,996 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:49,246 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:49,246 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:49,246 - INFO - PATH 13/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:49,250 - INFO - Condition number for iv3_health_behaviorsxmo1_genai_capabilities=>dv2_healthcare_quality: 8519594.9
+2025-05-13 16:18:49,250 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:49,251 - INFO - Condition number AFTER centering: 8538407.7
+2025-05-13 16:18:49,251 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:49,268 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo1_genai_capabilities=>dv2_healthcare_quality:
+2025-05-13 16:18:49,268 - WARNING -   - iv3_health_behaviors: VIF = 5.14
+2025-05-13 16:18:49,268 - WARNING -   - mo1_genai_capabilities: VIF = 5.61
+2025-05-13 16:18:49,268 - WARNING -   - iv3_health_behaviors_X_mo1_genai_capabilities: VIF = 5.74
+2025-05-13 16:18:49,270 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:49,270 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:49,270 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:49,271 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:49,271 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:49,272 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 29.03182883, INTERACTION_EFFECT: -4.85934306
+2025-05-13 16:18:49,274 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 25.79226679, INTERACTION_EFFECT: -4.85934306
+2025-05-13 16:18:49,275 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: 19.31314272, INTERACTION_EFFECT: -4.85934306
+2025-05-13 16:18:49,616 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:49,616 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:49,617 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:49,841 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:49,841 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:49,842 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:50,116 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:50,116 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:50,116 - INFO - PATH 14/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:50,119 - INFO - Condition number for iv3_health_behaviorsxmo2_robotics_capabilities=>dv2_healthcare_quality: 8489177.1
+2025-05-13 16:18:50,119 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:50,121 - INFO - Condition number AFTER centering: 8514294.9
+2025-05-13 16:18:50,121 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:50,137 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo2_robotics_capabilities=>dv2_healthcare_quality:
+2025-05-13 16:18:50,137 - WARNING -   - iv3_health_behaviors: VIF = 6.25
+2025-05-13 16:18:50,137 - WARNING -   - mo2_robotics_capabilities: VIF = 5.96
+2025-05-13 16:18:50,137 - WARNING -   - iv3_health_behaviors_X_mo2_robotics_capabilities: VIF = 6.34
+2025-05-13 16:18:50,139 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:50,139 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:50,139 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:50,140 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:50,140 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:50,141 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 29.26062724, INTERACTION_EFFECT: -0.15392774
+2025-05-13 16:18:50,142 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 28.79884401, INTERACTION_EFFECT: -0.15392774
+2025-05-13 16:18:50,144 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 27.92658681, INTERACTION_EFFECT: -0.15392774
+2025-05-13 16:18:50,462 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:50,462 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:50,463 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:50,740 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:50,741 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:50,741 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:51,939 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:51,939 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:51,939 - INFO - PATH 15/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:51,941 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo1_genai_capabilities=>dv2_healthcare_quality model:
+2025-05-13 16:18:51,942 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-05-13 16:18:51,942 - INFO - Condition number for iv4_social_economic_factorsxmo1_genai_capabilities=>dv2_healthcare_quality: 8506706.7
+2025-05-13 16:18:51,942 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:51,944 - INFO - Condition number AFTER centering: 8486680.5
+2025-05-13 16:18:51,944 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:51,971 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo1_genai_capabilities=>dv2_healthcare_quality:
+2025-05-13 16:18:51,971 - WARNING -   - iv4_social_economic_factors: VIF = 14.07
+2025-05-13 16:18:51,972 - WARNING -   - mo1_genai_capabilities: VIF = 20.84
+2025-05-13 16:18:51,972 - WARNING -   - iv4_social_economic_factors_X_mo1_genai_capabilities: VIF = 20.41
+2025-05-13 16:18:51,974 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:51,974 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:51,974 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:51,974 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:51,974 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:51,976 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 285.37381897, INTERACTION_EFFECT: -17.35378535
+2025-05-13 16:18:51,977 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 273.80462874, INTERACTION_EFFECT: -17.35378535
+2025-05-13 16:18:51,978 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: 250.66624826, INTERACTION_EFFECT: -17.35378535
+2025-05-13 16:18:52,295 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:52,296 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:52,296 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:52,524 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:52,524 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:52,525 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:52,772 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:52,772 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:52,772 - INFO - PATH 16/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv2_healthcare_quality
+2025-05-13 16:18:52,775 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo2_robotics_capabilities=>dv2_healthcare_quality model:
+2025-05-13 16:18:52,775 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-05-13 16:18:52,776 - INFO - Condition number for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv2_healthcare_quality: 8485278.0
+2025-05-13 16:18:52,776 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:52,777 - INFO - Condition number AFTER centering: 8456173.2
+2025-05-13 16:18:52,777 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:52,794 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv2_healthcare_quality:
+2025-05-13 16:18:52,794 - WARNING -   - iv4_social_economic_factors: VIF = 15.75
+2025-05-13 16:18:52,794 - WARNING -   - mo2_robotics_capabilities: VIF = 21.89
+2025-05-13 16:18:52,794 - WARNING -   - iv4_social_economic_factors_X_mo2_robotics_capabilities: VIF = 20.71
+2025-05-13 16:18:52,796 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:52,796 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:52,796 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:52,796 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:52,796 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:52,798 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 277.12387141, INTERACTION_EFFECT: -0.27511762
+2025-05-13 16:18:52,799 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 276.29851856, INTERACTION_EFFECT: -0.27511762
+2025-05-13 16:18:52,800 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 274.73951873, INTERACTION_EFFECT: -0.27511762
+2025-05-13 16:18:53,123 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_95CI.png
+2025-05-13 16:18:53,123 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:53,123 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:53,356 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:53,357 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:53,357 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:53,603 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv2_healthcare_quality_binary.png
+2025-05-13 16:18:53,603 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:53,603 - INFO - PATH 17/24: Processing iv1_public_health_policy x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:53,607 - INFO - Condition number for iv1_public_health_policyxmo1_genai_capabilities=>dv3_operational_efficiency: 8586219.6
+2025-05-13 16:18:53,607 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:53,608 - INFO - Condition number AFTER centering: 8558901.4
+2025-05-13 16:18:53,608 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:53,630 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:53,630 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:53,630 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:53,631 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:53,631 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:53,632 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 1.25246147, INTERACTION_EFFECT: -2.45861072
+2025-05-13 16:18:53,633 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: -0.38661234, INTERACTION_EFFECT: -2.45861072
+2025-05-13 16:18:53,635 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: -3.66475996, INTERACTION_EFFECT: -2.45861072
+2025-05-13 16:18:53,914 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:53,914 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:53,915 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:54,143 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:54,144 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:54,144 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:54,385 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv1_public_health_policy_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:54,385 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:54,385 - INFO - PATH 18/24: Processing iv1_public_health_policy x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:54,388 - INFO - Condition number for iv1_public_health_policyxmo2_robotics_capabilities=>dv3_operational_efficiency: 8575832.3
+2025-05-13 16:18:54,388 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:54,389 - INFO - Condition number AFTER centering: 8547699.4
+2025-05-13 16:18:54,389 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:54,414 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:54,414 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:54,414 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:54,414 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:54,414 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:54,416 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 2.16744146, INTERACTION_EFFECT: -0.91809816
+2025-05-13 16:18:54,417 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: -0.58685302, INTERACTION_EFFECT: -0.91809816
+2025-05-13 16:18:54,418 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: -5.78940928, INTERACTION_EFFECT: -0.91809816
+2025-05-13 16:18:54,694 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:54,694 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:54,695 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:54,971 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:54,972 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:54,972 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:56,168 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv1_public_health_policy_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:56,168 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:56,168 - INFO - PATH 19/24: Processing iv2_physical_environment x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:56,171 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo1_genai_capabilities=>dv3_operational_efficiency model:
+2025-05-13 16:18:56,171 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9781
+2025-05-13 16:18:56,172 - INFO - Condition number for iv2_physical_environmentxmo1_genai_capabilities=>dv3_operational_efficiency: 8549108.4
+2025-05-13 16:18:56,172 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:56,173 - INFO - Condition number AFTER centering: 8613457.2
+2025-05-13 16:18:56,173 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:56,204 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo1_genai_capabilities=>dv3_operational_efficiency:
+2025-05-13 16:18:56,204 - WARNING -   - iv2_physical_environment: VIF = 26.48
+2025-05-13 16:18:56,204 - WARNING -   - mo1_genai_capabilities: VIF = 29.80
+2025-05-13 16:18:56,205 - WARNING -   - iv2_physical_environment_X_mo1_genai_capabilities: VIF = 30.39
+2025-05-13 16:18:56,205 - WARNING -   - div_3: VIF = 5.22
+2025-05-13 16:18:56,205 - WARNING -   - div_4: VIF = 5.17
+2025-05-13 16:18:56,205 - WARNING -   - div_7: VIF = 5.61
+2025-05-13 16:18:56,206 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:56,206 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:56,207 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:56,207 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:56,207 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:56,208 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 5.25214797, INTERACTION_EFFECT: -2.96291381
+2025-05-13 16:18:56,210 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: 3.27687210, INTERACTION_EFFECT: -2.96291381
+2025-05-13 16:18:56,211 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: -0.67367965, INTERACTION_EFFECT: -2.96291381
+2025-05-13 16:18:56,522 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:56,522 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:56,523 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:56,750 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv2_physical_environment_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:56,750 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:56,751 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:56,988 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv2_physical_environment_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:56,988 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:56,988 - INFO - PATH 20/24: Processing iv2_physical_environment x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:56,991 - WARNING - High correlations detected (> 0.90 / 0.95) in iv2_physical_environmentxmo2_robotics_capabilities=>dv3_operational_efficiency model:
+2025-05-13 16:18:56,991 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9747
+2025-05-13 16:18:56,992 - INFO - Condition number for iv2_physical_environmentxmo2_robotics_capabilities=>dv3_operational_efficiency: 8487264.0
+2025-05-13 16:18:56,992 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:56,993 - INFO - Condition number AFTER centering: 8571598.7
+2025-05-13 16:18:56,993 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:57,011 - WARNING - High VIFs (> 5) detected in FINAL model for iv2_physical_environmentxmo2_robotics_capabilities=>dv3_operational_efficiency:
+2025-05-13 16:18:57,011 - WARNING -   - iv2_physical_environment: VIF = 29.10
+2025-05-13 16:18:57,012 - WARNING -   - mo2_robotics_capabilities: VIF = 35.13
+2025-05-13 16:18:57,012 - WARNING -   - iv2_physical_environment_X_mo2_robotics_capabilities: VIF = 36.74
+2025-05-13 16:18:57,012 - WARNING -   - div_3: VIF = 5.56
+2025-05-13 16:18:57,012 - WARNING -   - div_4: VIF = 5.48
+2025-05-13 16:18:57,012 - WARNING -   - div_6: VIF = 5.08
+2025-05-13 16:18:57,012 - WARNING -   - div_7: VIF = 5.89
+2025-05-13 16:18:57,013 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:57,014 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:57,014 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:57,014 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:57,014 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:57,016 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: 3.64735343, INTERACTION_EFFECT: -0.02672518
+2025-05-13 16:18:57,017 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: 3.56717789, INTERACTION_EFFECT: -0.02672518
+2025-05-13 16:18:57,018 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: 3.41573519, INTERACTION_EFFECT: -0.02672518
+2025-05-13 16:18:57,330 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:57,330 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:57,331 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:57,559 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:57,559 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:57,560 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:57,801 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv2_physical_environment_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:57,801 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:57,801 - INFO - PATH 21/24: Processing iv3_health_behaviors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:57,805 - INFO - Condition number for iv3_health_behaviorsxmo1_genai_capabilities=>dv3_operational_efficiency: 8519594.9
+2025-05-13 16:18:57,805 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:57,806 - INFO - Condition number AFTER centering: 8538407.7
+2025-05-13 16:18:57,806 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:57,825 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo1_genai_capabilities=>dv3_operational_efficiency:
+2025-05-13 16:18:57,825 - WARNING -   - iv3_health_behaviors: VIF = 5.14
+2025-05-13 16:18:57,825 - WARNING -   - mo1_genai_capabilities: VIF = 5.61
+2025-05-13 16:18:57,825 - WARNING -   - iv3_health_behaviors_X_mo1_genai_capabilities: VIF = 5.74
+2025-05-13 16:18:57,827 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:57,827 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:57,827 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:57,828 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:57,828 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:57,829 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -0.00935610, INTERACTION_EFFECT: 0.00308670
+2025-05-13 16:18:57,830 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: -0.00729830, INTERACTION_EFFECT: 0.00308670
+2025-05-13 16:18:57,832 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: -0.00318270, INTERACTION_EFFECT: 0.00308670
+2025-05-13 16:18:58,136 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:58,136 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:58,137 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:58,372 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:58,372 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:58,372 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:18:58,618 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv3_health_behaviors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:58,618 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:58,618 - INFO - PATH 22/24: Processing iv3_health_behaviors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:58,622 - INFO - Condition number for iv3_health_behaviorsxmo2_robotics_capabilities=>dv3_operational_efficiency: 8489177.1
+2025-05-13 16:18:58,622 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:58,623 - INFO - Condition number AFTER centering: 8514294.9
+2025-05-13 16:18:58,623 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:58,639 - WARNING - High VIFs (> 5) detected in FINAL model for iv3_health_behaviorsxmo2_robotics_capabilities=>dv3_operational_efficiency:
+2025-05-13 16:18:58,639 - WARNING -   - iv3_health_behaviors: VIF = 6.25
+2025-05-13 16:18:58,639 - WARNING -   - mo2_robotics_capabilities: VIF = 5.96
+2025-05-13 16:18:58,639 - WARNING -   - iv3_health_behaviors_X_mo2_robotics_capabilities: VIF = 6.34
+2025-05-13 16:18:58,641 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:58,641 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:18:58,641 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:18:58,641 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:18:58,641 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:18:58,643 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -0.01172738, INTERACTION_EFFECT: -0.00431223
+2025-05-13 16:18:58,644 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: -0.02466406, INTERACTION_EFFECT: -0.00431223
+2025-05-13 16:18:58,645 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: -0.04910000, INTERACTION_EFFECT: -0.00431223
+2025-05-13 16:18:58,948 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:58,949 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:58,949 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:59,176 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:59,176 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:18:59,176 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:18:59,465 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv3_health_behaviors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:18:59,465 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:18:59,465 - INFO - PATH 23/24: Processing iv4_social_economic_factors x mo1_genai_capabilities => dv3_operational_efficiency
+2025-05-13 16:18:59,468 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo1_genai_capabilities=>dv3_operational_efficiency model:
+2025-05-13 16:18:59,468 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9667
+2025-05-13 16:18:59,469 - INFO - Condition number for iv4_social_economic_factorsxmo1_genai_capabilities=>dv3_operational_efficiency: 8506706.7
+2025-05-13 16:18:59,469 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:18:59,470 - INFO - Condition number AFTER centering: 8486680.5
+2025-05-13 16:18:59,470 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:18:59,484 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo1_genai_capabilities=>dv3_operational_efficiency:
+2025-05-13 16:18:59,485 - WARNING -   - iv4_social_economic_factors: VIF = 14.07
+2025-05-13 16:18:59,485 - WARNING -   - mo1_genai_capabilities: VIF = 20.84
+2025-05-13 16:18:59,485 - WARNING -   - iv4_social_economic_factors_X_mo1_genai_capabilities: VIF = 20.41
+2025-05-13 16:18:59,486 - WARNING - Moderator mo1_genai_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:18:59,487 - INFO - Moderator mo1_genai_capabilities has 74.9% zero values
+2025-05-13 16:18:59,487 - INFO - Majority zeros detected in mo1_genai_capabilities. Using special spacing.
+2025-05-13 16:18:59,487 - INFO - Using artificial moderator values: Low=0.0000, Med=0.6667, High=2.0000
+2025-05-13 16:18:59,487 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 0.6666666666666666, 'High': 2.0}
+2025-05-13 16:18:59,489 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -1.08328960, INTERACTION_EFFECT: 0.17861174
+2025-05-13 16:18:59,490 - INFO - GROUP: Medium, MO_VALUE: 0.66666667, SLOPE: -0.96421510, INTERACTION_EFFECT: 0.17861174
+2025-05-13 16:18:59,491 - INFO - GROUP: High, MO_VALUE: 2.00000000, SLOPE: -0.72606611, INTERACTION_EFFECT: 0.17861174
+2025-05-13 16:18:59,805 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:18:59,805 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:18:59,805 - INFO - Binary groups for histogram: {'Low': 1593, 'High': 533}
+2025-05-13 16:19:00,029 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:19:00,029 - INFO - Majority zeros (74.9%) detected in mo1_genai_capabilities. Using zero as threshold.
+2025-05-13 16:19:00,029 - INFO - Binary groups for boxplot: {'Low': 1593, 'High': 533}
+2025-05-13 16:19:00,270 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv4_social_economic_factors_x_mo1_genai_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:19:00,271 - INFO - --------------------------------------------------------------------------------
+2025-05-13 16:19:00,271 - INFO - PATH 24/24: Processing iv4_social_economic_factors x mo2_robotics_capabilities => dv3_operational_efficiency
+2025-05-13 16:19:00,273 - WARNING - High correlations detected (> 0.90 / 0.95) in iv4_social_economic_factorsxmo2_robotics_capabilities=>dv3_operational_efficiency model:
+2025-05-13 16:19:00,273 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9546
+2025-05-13 16:19:00,274 - INFO - Condition number for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv3_operational_efficiency: 8485278.0
+2025-05-13 16:19:00,274 - WARNING - High condition number detected. Attempting centering of IV and MO.
+2025-05-13 16:19:00,276 - INFO - Condition number AFTER centering: 8456173.2
+2025-05-13 16:19:00,276 - WARNING - Centering did NOT sufficiently improve condition number. Reverting to original variables.
+2025-05-13 16:19:00,294 - WARNING - High VIFs (> 5) detected in FINAL model for iv4_social_economic_factorsxmo2_robotics_capabilities=>dv3_operational_efficiency:
+2025-05-13 16:19:00,294 - WARNING -   - iv4_social_economic_factors: VIF = 15.75
+2025-05-13 16:19:00,294 - WARNING -   - mo2_robotics_capabilities: VIF = 21.89
+2025-05-13 16:19:00,294 - WARNING -   - iv4_social_economic_factors_X_mo2_robotics_capabilities: VIF = 20.71
+2025-05-13 16:19:00,296 - WARNING - Moderator mo2_robotics_capabilities values at percentiles are too close. Using artificial values.
+2025-05-13 16:19:00,296 - INFO - Moderator mo2_robotics_capabilities has 59.6% zero values
+2025-05-13 16:19:00,296 - INFO - Majority zeros detected in mo2_robotics_capabilities. Using special spacing.
+2025-05-13 16:19:00,297 - INFO - Using artificial moderator values: Low=0.0000, Med=3.0000, High=8.6667
+2025-05-13 16:19:00,297 - INFO - Moderator values for regression lines: {'Low': 0, 'Medium': 3.0, 'High': 8.666666666666666}
+2025-05-13 16:19:00,298 - INFO - GROUP: Low, MO_VALUE: 0.00000000, SLOPE: -1.09830611, INTERACTION_EFFECT: 0.07929360
+2025-05-13 16:19:00,300 - INFO - GROUP: Medium, MO_VALUE: 3.00000000, SLOPE: -0.86042530, INTERACTION_EFFECT: 0.07929360
+2025-05-13 16:19:00,301 - INFO - GROUP: High, MO_VALUE: 8.66666667, SLOPE: -0.41109489, INTERACTION_EFFECT: 0.07929360
+2025-05-13 16:19:00,613 - INFO - Saved plot with 95% CI bands to: moderation_output/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_95CI.png
+2025-05-13 16:19:00,614 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:19:00,614 - INFO - Binary groups for histogram: {'Low': 1267, 'High': 859}
+2025-05-13 16:19:00,844 - INFO - Saved histogram with binary groups to: moderation_output/plots/histogram_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:19:00,845 - INFO - Majority zeros (59.6%) detected in mo2_robotics_capabilities. Using zero as threshold.
+2025-05-13 16:19:00,845 - INFO - Binary groups for boxplot: {'Low': 1267, 'High': 859}
+2025-05-13 16:19:01,091 - INFO - Saved box plot with binary groups to: moderation_output/plots/boxplot_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_dv3_operational_efficiency_binary.png
+2025-05-13 16:19:01,167 - INFO - Successfully saved coefficients for 24 models to moderation_output/Moderation_Coefficients.csv
+2025-05-13 16:19:01,167 - INFO - ================================================================================
+2025-05-13 16:19:01,167 - INFO - Moderation analyses script finished.
+2025-05-13 16:19:01,167 - INFO - ================================================================================

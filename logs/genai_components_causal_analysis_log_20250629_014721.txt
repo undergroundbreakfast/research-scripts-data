@@ -1,0 +1,208 @@
+2025-06-29 01:47:21,789 - INFO - YPLL_AIPW_Analysis_062825_v19 - Logging to: logs/genai_components_causal_analysis_log_20250629_014721.txt
+2025-06-29 01:47:21,789 - INFO - YPLL_AIPW_Analysis_062825_v19 - Starting Generative AI & Robotics Component-Level Causal Analysis Script.
+2025-06-29 01:47:21,789 - INFO - YPLL_AIPW_Analysis_062825_v19 - Output will be saved in: genai_components_causal_output and logs/
+2025-06-29 01:47:21,855 - INFO - YPLL_AIPW_Analysis_062825_v19 - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-29 01:47:43,315 - INFO - YPLL_AIPW_Analysis_062825_v19 - Data for component analysis retrieved: 3080 rows, 14 columns.
+2025-06-29 01:47:43,315 - INFO - YPLL_AIPW_Analysis_062825_v19 - Converting population to numeric and filtering...
+2025-06-29 01:47:43,317 - INFO - YPLL_AIPW_Analysis_062825_v19 - Performing common data preparations...
+2025-06-29 01:47:43,318 - INFO - YPLL_AIPW_Analysis_062825_v19 - Created 8 dummy variables for 'census_division'.
+2025-06-29 01:47:43,319 - INFO - YPLL_AIPW_Analysis_062825_v19 - Common data preparations complete.
+2025-06-29 01:47:43,319 - INFO - YPLL_AIPW_Analysis_062825_v19 - Generating two-way interaction PDP plot...
+2025-06-29 01:47:44,045 - INFO - YPLL_AIPW_Analysis_062825_v19 - Interaction PDP plot saved to genai_components_causal_output/plots/pdp_interaction_plot.png
+2025-06-29 01:47:44,045 - INFO - YPLL_AIPW_Analysis_062825_v19 - Generating 3D interaction surface plot...
+2025-06-29 01:47:44,751 - INFO - YPLL_AIPW_Analysis_062825_v19 - 3D Interaction plot saved to genai_components_causal_output/plots/pdp_interaction_plot_3d.png
+2025-06-29 01:47:44,751 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: AI Staff Scheduling
+2025-06-29 01:47:44,751 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_wfaiss_enabled_adopted: 9.71% (N_T=299, N_C=2781)
+2025-06-29 01:47:44,753 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for AI Staff Scheduling analysis: 3080 (Treated: 299, Control: 2781)
+2025-06-29 01:47:44,753 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_wfaiss_enabled_adopted ---
+2025-06-29 01:47:44,987 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_wfaiss_enabled_adopted.png
+2025-06-29 01:47:45,283 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_wfaiss_enabled_adopted: -405.4369
+2025-06-29 01:47:52,173 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:47:59,238 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:06,323 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:13,429 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:20,501 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:27,566 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:34,642 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:41,755 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:48,898 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:48:55,967 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:03,072 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:10,163 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:17,230 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:24,293 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:31,378 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:38,446 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:45,547 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:52,612 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:49:59,720 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:50:06,813 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_wfaiss_enabled_adopted
+2025-06-29 01:50:07,099 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_wfaiss_enabled_adopted (500 valid): [-989.0955, 42.1992]
+2025-06-29 01:50:07,099 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_wfaiss_enabled_adopted ---
+2025-06-29 01:50:07,099 - INFO - YPLL_AIPW_Analysis_062825_v19 -   E-value for AI Staff Scheduling: 1.46
+2025-06-29 01:50:07,100 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Scenario for component 'pct_wfaiss_enabled_adopted' (ATE: -405.4369):
+2025-06-29 01:50:07,100 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total YPLL potentially averted: 770,821
+2025-06-29 01:50:07,100 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total premature deaths potentially averted: 26,580
+2025-06-29 01:50:07,100 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: AI Predict Staff Needs
+2025-06-29 01:50:07,100 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_wfaipsn_enabled_adopted: 10.32% (N_T=318, N_C=2762)
+2025-06-29 01:50:07,101 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for AI Predict Staff Needs analysis: 3080 (Treated: 318, Control: 2762)
+2025-06-29 01:50:07,101 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_wfaipsn_enabled_adopted ---
+2025-06-29 01:50:07,319 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_wfaipsn_enabled_adopted.png
+2025-06-29 01:50:07,614 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_wfaipsn_enabled_adopted: -681.0305
+2025-06-29 01:50:14,386 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:50:21,427 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:50:28,450 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:50:35,499 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:50:42,557 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:50:49,655 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:50:56,745 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:03,881 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:11,004 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:18,071 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:25,165 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:32,248 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:39,324 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:46,441 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:51:53,513 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:52:00,608 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:52:07,693 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:52:14,729 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:52:21,797 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:52:28,848 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_wfaipsn_enabled_adopted
+2025-06-29 01:52:29,129 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_wfaipsn_enabled_adopted (500 valid): [-1334.1042, -85.1498]
+2025-06-29 01:52:29,129 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_wfaipsn_enabled_adopted ---
+2025-06-29 01:52:29,129 - INFO - YPLL_AIPW_Analysis_062825_v19 -   E-value for AI Predict Staff Needs: 1.67
+2025-06-29 01:52:29,130 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Scenario for component 'pct_wfaipsn_enabled_adopted' (ATE: -681.0305):
+2025-06-29 01:52:29,130 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total YPLL potentially averted: 1,205,502
+2025-06-29 01:52:29,130 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total premature deaths potentially averted: 41,569
+2025-06-29 01:52:29,130 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: AI Predict Pt Demand
+2025-06-29 01:52:29,130 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_wfaippd_enabled_adopted: 10.94% (N_T=337, N_C=2743)
+2025-06-29 01:52:29,131 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for AI Predict Pt Demand analysis: 3080 (Treated: 337, Control: 2743)
+2025-06-29 01:52:29,131 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_wfaippd_enabled_adopted ---
+2025-06-29 01:52:29,364 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_wfaippd_enabled_adopted.png
+2025-06-29 01:52:29,664 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_wfaippd_enabled_adopted: -714.7656
+2025-06-29 01:52:36,452 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:52:43,514 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:52:50,603 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:52:57,657 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:04,707 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:11,753 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:18,807 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:25,880 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:32,904 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:39,964 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:47,040 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:53:54,086 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:01,094 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:08,157 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:15,206 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:22,229 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:29,262 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:36,345 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:43,416 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:50,515 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_wfaippd_enabled_adopted
+2025-06-29 01:54:50,795 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_wfaippd_enabled_adopted (500 valid): [-1029.3988, -321.5208]
+2025-06-29 01:54:50,795 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_wfaippd_enabled_adopted ---
+2025-06-29 01:54:50,796 - INFO - YPLL_AIPW_Analysis_062825_v19 -   E-value for AI Predict Pt Demand: 1.69
+2025-06-29 01:54:50,796 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Scenario for component 'pct_wfaippd_enabled_adopted' (ATE: -714.7656):
+2025-06-29 01:54:50,796 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total YPLL potentially averted: 1,226,244
+2025-06-29 01:54:50,796 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total premature deaths potentially averted: 42,284
+2025-06-29 01:54:50,796 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: AI Automate Routine Tasks
+2025-06-29 01:54:50,797 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_wfaiart_enabled_adopted: 13.54% (N_T=417, N_C=2663)
+2025-06-29 01:54:50,798 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for AI Automate Routine Tasks analysis: 3080 (Treated: 417, Control: 2663)
+2025-06-29 01:54:50,798 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_wfaiart_enabled_adopted ---
+2025-06-29 01:54:51,078 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_wfaiart_enabled_adopted.png
+2025-06-29 01:54:51,371 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_wfaiart_enabled_adopted: -978.7562
+2025-06-29 01:54:58,144 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:05,127 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:12,143 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:19,166 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:26,167 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:33,145 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:40,220 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:47,263 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:55:54,257 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:01,272 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:08,279 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:15,248 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:22,253 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:29,280 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:36,299 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:43,353 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:50,401 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:56:57,419 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:57:04,409 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:57:11,409 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_wfaiart_enabled_adopted
+2025-06-29 01:57:11,692 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_wfaiart_enabled_adopted (500 valid): [-1452.3271, -548.6990]
+2025-06-29 01:57:11,692 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_wfaiart_enabled_adopted ---
+2025-06-29 01:57:11,692 - INFO - YPLL_AIPW_Analysis_062825_v19 -   E-value for AI Automate Routine Tasks: 1.89
+2025-06-29 01:57:11,693 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Scenario for component 'pct_wfaiart_enabled_adopted' (ATE: -978.7562):
+2025-06-29 01:57:11,693 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total YPLL potentially averted: 1,515,913
+2025-06-29 01:57:11,693 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total premature deaths potentially averted: 52,273
+2025-06-29 01:57:11,693 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: AI Optimize Workflows
+2025-06-29 01:57:11,693 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_wfaioacw_enabled_adopted: 14.71% (N_T=453, N_C=2627)
+2025-06-29 01:57:11,694 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for AI Optimize Workflows analysis: 3080 (Treated: 453, Control: 2627)
+2025-06-29 01:57:11,695 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_wfaioacw_enabled_adopted ---
+2025-06-29 01:57:11,919 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_wfaioacw_enabled_adopted.png
+2025-06-29 01:57:12,212 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_wfaioacw_enabled_adopted: -416.6121
+2025-06-29 01:57:18,905 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:57:25,847 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:57:32,822 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:57:39,828 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:57:46,822 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:57:53,795 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:00,750 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:07,709 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:14,684 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:21,627 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:28,606 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:35,557 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:42,552 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:49,584 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:58:56,546 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:59:03,525 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:59:10,520 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:59:17,488 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:59:24,466 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:59:31,453 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_wfaioacw_enabled_adopted
+2025-06-29 01:59:31,737 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_wfaioacw_enabled_adopted (500 valid): [-775.4769, -88.1899]
+2025-06-29 01:59:31,737 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_wfaioacw_enabled_adopted ---
+2025-06-29 01:59:31,737 - INFO - YPLL_AIPW_Analysis_062825_v19 -   E-value for AI Optimize Workflows: 1.46
+2025-06-29 01:59:31,738 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Scenario for component 'pct_wfaioacw_enabled_adopted' (ATE: -416.6121):
+2025-06-29 01:59:31,738 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total YPLL potentially averted: 607,358
+2025-06-29 01:59:31,738 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total premature deaths potentially averted: 20,943
+2025-06-29 01:59:31,738 - INFO - YPLL_AIPW_Analysis_062825_v19 - Processing Component: Robotics in Hospital
+2025-06-29 01:59:31,738 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Initial Prevalence for pct_robohos_enabled_adopted: 25.16% (N_T=775, N_C=2305)
+2025-06-29 01:59:31,739 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Final N for Robotics in Hospital analysis: 3080 (Treated: 775, Control: 2305)
+2025-06-29 01:59:31,739 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Starting AIPW Analysis for Treatment: pct_robohos_enabled_adopted ---
+2025-06-29 01:59:31,964 - INFO - YPLL_AIPW_Analysis_062825_v19 - Overlap plot saved: genai_components_causal_output/plots/propensity_overlap_pct_robohos_enabled_adopted.png
+2025-06-29 01:59:32,253 - INFO - YPLL_AIPW_Analysis_062825_v19 - ATE for pct_robohos_enabled_adopted: -635.2135
+2025-06-29 01:59:38,815 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 25/500 for pct_robohos_enabled_adopted
+2025-06-29 01:59:45,663 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 50/500 for pct_robohos_enabled_adopted
+2025-06-29 01:59:52,528 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 75/500 for pct_robohos_enabled_adopted
+2025-06-29 01:59:59,426 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 100/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:06,264 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 125/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:13,096 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 150/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:19,939 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 175/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:26,770 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 200/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:33,609 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 225/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:40,494 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 250/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:47,344 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 275/500 for pct_robohos_enabled_adopted
+2025-06-29 02:00:54,166 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 300/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:00,977 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 325/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:07,812 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 350/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:14,664 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 375/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:21,492 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 400/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:28,321 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 425/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:35,174 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 450/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:42,015 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 475/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:48,951 - INFO - YPLL_AIPW_Analysis_062825_v19 - Bootstrap 500/500 for pct_robohos_enabled_adopted
+2025-06-29 02:01:49,225 - INFO - YPLL_AIPW_Analysis_062825_v19 - 95% CI for pct_robohos_enabled_adopted (500 valid): [-841.0727, -355.8497]
+2025-06-29 02:01:49,225 - INFO - YPLL_AIPW_Analysis_062825_v19 - --- Finished AIPW Analysis for Treatment: pct_robohos_enabled_adopted ---
+2025-06-29 02:01:49,225 - INFO - YPLL_AIPW_Analysis_062825_v19 -   E-value for Robotics in Hospital: 1.63
+2025-06-29 02:01:49,225 - INFO - YPLL_AIPW_Analysis_062825_v19 -   Scenario for component 'pct_robohos_enabled_adopted' (ATE: -635.2135):
+2025-06-29 02:01:49,225 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total YPLL potentially averted: 464,604
+2025-06-29 02:01:49,225 - INFO - YPLL_AIPW_Analysis_062825_v19 -     Total premature deaths potentially averted: 16,021
+2025-06-29 02:01:49,226 - INFO - YPLL_AIPW_Analysis_062825_v19 - All components processed. Generating summary table...
+2025-06-29 02:01:49,249 - INFO - YPLL_AIPW_Analysis_062825_v19 - Summary table saved to: genai_components_causal_output/component_analysis_summary.xlsx
+2025-06-29 02:01:49,260 - INFO - YPLL_AIPW_Analysis_062825_v19 - Analysis script completed.

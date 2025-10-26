@@ -1,0 +1,4 @@
+2025-06-14 11:20:15,928 [INFO] Geospatial_Analysis_061425_v1:81 — Logging to logs/health_ai_robotics_analysis_20250614_112015.txt
+2025-06-14 11:20:16,029 [INFO] Geospatial_Analysis_061425_v1:103 — ✔ Connected to Postgres.
+2025-06-14 11:20:16,030 [WARNING] Geospatial_Analysis_061425_v1:260 — GeoPandas / PySAL not installed – skipping Part 4.
+2025-06-14 11:20:16,030 [INFO] Geospatial_Analysis_061425_v1:394 — === All parts complete.  Check output folders for results. ===

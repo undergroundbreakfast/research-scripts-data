@@ -1,0 +1,94 @@
+2025-10-18 18:53:04,784 - INFO - Logger initialized.
+2025-10-18 18:53:04,864 - INFO - Connected to PostgreSQL 'Research_TEST'.
+2025-10-18 18:53:04,864 - INFO - ============================================================
+2025-10-18 18:53:04,864 - INFO - DIAGNOSTIC: Checking CHR column data quality
+2025-10-18 18:53:04,864 - INFO - ============================================================
+2025-10-18 18:53:04,868 - INFO - 
+Checking chr_analytic_chunk_2...
+2025-10-18 18:53:04,919 - INFO -   ✓ long_commute_driving_alone_raw_value: Found with 10 distinct values
+2025-10-18 18:53:04,919 - INFO -     Top values: ['0.31799998879432678', '0.33700001239776611', '0.30199998617172241', '0.34700000286102295', '0.34400001168251038']
+2025-10-18 18:53:04,920 - INFO -     Numeric conversion: 100.0% valid
+2025-10-18 18:53:04,920 - INFO -   ❌ school_funding_adequacy_raw_value: NOT FOUND in table
+2025-10-18 18:53:04,920 - INFO -   ❌ school_segregation_raw_value: NOT FOUND in table
+2025-10-18 18:53:04,921 - INFO - 
+Checking chr_analytic_chunk_3...
+2025-10-18 18:53:04,925 - INFO -   ❌ long_commute_driving_alone_raw_value: NOT FOUND in table
+2025-10-18 18:53:04,932 - INFO -   ✓ school_funding_adequacy_raw_value: Found with 10 distinct values
+2025-10-18 18:53:04,932 - INFO -     Top values: [None, '-4930.80517578125', '-1001.1422729492188', '-1004.7899780273438', '-1008.5399780273438']
+2025-10-18 18:53:04,932 - INFO -     Numeric conversion: 90.0% valid
+2025-10-18 18:53:04,937 - INFO -   ✓ school_segregation_raw_value: Found with 10 distinct values
+2025-10-18 18:53:04,937 - INFO -     Top values: [None, '0.33536046743392944', '0.24044071137905121', '0.00470366096124053', '0.01063079945743084']
+2025-10-18 18:53:04,938 - INFO -     Numeric conversion: 90.0% valid
+2025-10-18 18:53:04,938 - INFO - ============================================================
+2025-10-18 18:53:35,362 - INFO - Base data: 3135 counties.
+2025-10-18 18:53:35,367 - INFO - Added division FE (dummies=8).
+2025-10-18 18:53:35,412 - INFO - chr_analytic_chunk_3: Years range from 2024 to 2024 (3195 valid records, years: [2024])
+2025-10-18 18:53:35,413 - INFO - chr_analytic_chunk_3: 19/19 requested columns have data: ['not_proficient_in_english_raw_value', 'gender_pay_gap_raw_value', 'homeownership_raw_value', 'non_hispanic_white_raw_value', 'severe_housing_cost_burden_raw_value']...
+2025-10-18 18:53:35,437 - INFO - chr_analytic_chunk_2: Years range from 2024 to 2024 (3195 valid records, years: [2024])
+2025-10-18 18:53:35,438 - INFO - chr_analytic_chunk_2: 9/9 requested columns have data: ['drinking_water_violations_raw_value', 'life_expectancy_raw_value', 'air_pollution_particulate_matter_raw_value', 'percentage_of_households_with_high_housing_costs', 'long_commute_driving_alone_raw_value']...
+2025-10-18 18:53:35,446 - INFO - chr_analytic_chunk_1: Years range from 2024 to 2024 (3195 valid records, years: [2024])
+2025-10-18 18:53:35,446 - INFO - chr_analytic_chunk_1: 1/1 requested columns have data: ['premature_death_raw_value']
+2025-10-18 18:53:35,473 - INFO - Data summary:
+2025-10-18 18:53:35,473 - INFO -   Base counties: 3135
+2025-10-18 18:53:35,473 - INFO -   CHR chunk_3: 326 counties (latest year)
+2025-10-18 18:53:35,473 - INFO -   CHR chunk_2: 326 counties (latest year)
+2025-10-18 18:53:35,473 - INFO -   CHR chunk_1 temporal: 88539 county-year records
+2025-10-18 18:53:35,474 - INFO -   Year range in chunk_1: 2024-2024
+2025-10-18 18:53:35,474 - INFO -   Historical years (2010-2022) available: 0
+2025-10-18 18:53:35,474 - WARNING -   ⚠️  No historical CHR data available - temporal falsification will be skipped
+2025-10-18 18:53:35,474 - WARNING -   ⚠️  To run temporal falsification, load CHR data from 2010-2022
+2025-10-18 18:53:35,474 - INFO - CHR chunk_3 columns (lowercase): ['_65_and_older_raw_value', 'below_18_years_of_age_raw_value', 'census_participation_raw_value', 'county_fips', 'female_raw_value', 'gender_pay_gap_raw_value', 'hispanic_raw_value', 'homeownership_raw_value', 'juvenile_arrests_raw_value', 'math_scores_raw_value', 'non_hispanic_black_raw_value', 'non_hispanic_white_raw_value', 'not_proficient_in_english_raw_value', 'population_raw_value', 'reading_scores_raw_value', 'school_funding_adequacy_raw_value', 'school_segregation_raw_value', 'severe_housing_cost_burden_raw_value', 'traffic_volume_raw_value', 'voter_turnout_raw_value', 'year', 'year_clean']
+2025-10-18 18:53:35,474 - INFO - CHR chunk_2 columns (lowercase): ['air_pollution_particulate_matter_raw_value', 'county_fips', 'drinking_water_violations_raw_value', 'driving_alone_to_work_raw_value', 'life_expectancy_raw_value', 'long_commute_driving_alone_raw_value', 'pct_households_with_lack_of_kitchen_or_plumbing', 'percentage_of_households_with_high_housing_costs', 'percentage_of_households_with_overcrowding', 'severe_housing_problems_raw_value', 'year', 'year_clean']
+2025-10-18 18:53:35,476 - WARNING - [Direct NCO] Skipping _65_and_older_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,477 - WARNING - [Direct NCO] Skipping air_pollution_particulate_matter_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,478 - WARNING - [Direct NCO] Skipping below_18_years_of_age_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,479 - WARNING - [Direct NCO] Skipping census_participation_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,479 - WARNING - [Direct NCO] Skipping drinking_water_violations_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,480 - WARNING - [Direct NCO] Skipping driving_alone_to_work_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,480 - WARNING - [Direct NCO] Skipping female_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,481 - WARNING - [Direct NCO] Skipping gender_pay_gap_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,481 - WARNING - [Direct NCO] Skipping hispanic_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,482 - WARNING - [Direct NCO] Skipping homeownership_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,483 - WARNING - [Direct NCO] Skipping juvenile_arrests_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,484 - WARNING - [Direct NCO] Skipping long_commute_driving_alone_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,485 - WARNING - [Direct NCO] Skipping math_scores_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,486 - WARNING - [Direct NCO] Skipping non_hispanic_black_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,487 - WARNING - [Direct NCO] Skipping non_hispanic_white_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,488 - WARNING - [Direct NCO] Skipping not_proficient_in_english_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,488 - WARNING - [Direct NCO] Skipping reading_scores_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,489 - WARNING - [Direct NCO] Skipping school_funding_adequacy_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,490 - WARNING - [Direct NCO] Skipping school_segregation_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,491 - WARNING - [Direct NCO] Skipping severe_housing_cost_burden_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,492 - WARNING - [Direct NCO] Skipping traffic_volume_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,493 - WARNING - [Direct NCO] Skipping voter_turnout_raw_value: 0 valid values after join (had 3135 counties before dropna).
+2025-10-18 18:53:35,493 - WARNING - Direct NCO tests produced 0 results - check data availability and merge logic.
+2025-10-18 18:53:35,494 - WARNING - [Placebo IV] Skipping voter_turnout_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,495 - WARNING - [Placebo IV] Skipping census_participation_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,496 - WARNING - [Placebo IV] Skipping traffic_volume_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,497 - WARNING - [Placebo IV] Skipping driving_alone_to_work_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,497 - WARNING - [Placebo IV] Skipping long_commute_driving_alone_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,498 - WARNING - [Placebo IV] Skipping reading_scores_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,498 - WARNING - [Placebo IV] Skipping math_scores_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,499 - WARNING - [Placebo IV] Skipping school_funding_adequacy_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,500 - WARNING - [Placebo IV] Skipping school_segregation_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,501 - WARNING - [Placebo IV] Skipping gender_pay_gap_raw_value: 0 valid values after join.
+2025-10-18 18:53:35,501 - WARNING - Placebo interaction tests produced 0 results - check data availability.
+2025-10-18 18:53:35,522 - INFO - DV21 long data shape: (88539, 5)
+2025-10-18 18:53:35,523 - INFO - DV21 unique years available: [2024]
+2025-10-18 18:53:35,523 - WARNING - No years in range 2010-2022 found for temporal falsification.
+2025-10-18 18:53:35,523 - WARNING - Available years: [2024]
+2025-10-18 18:53:35,523 - WARNING - Temporal falsification requires historical CHR data. Skipping this test.
+2025-10-18 18:53:48,734 - INFO - Permutation tests done for MO1 family.
+2025-10-18 18:53:48,741 - INFO - Guardrail checks written.
+2025-10-18 18:53:48,742 - INFO - ============================================================
+2025-10-18 18:53:48,742 - INFO - NEGATIVE CONTROLS TEST SUITE COMPLETE
+2025-10-18 18:53:48,742 - INFO - ============================================================
+2025-10-18 18:53:48,743 - INFO - Output directory: ./negative_controls_output
+2025-10-18 18:53:48,743 - INFO - Tests completed:
+2025-10-18 18:53:48,743 - INFO -   ✓ Direct NCO tests: 0 results
+2025-10-18 18:53:48,743 - INFO -   ✓ Placebo interactions: 0 results
+2025-10-18 18:53:48,743 - INFO -   ✓ Placebo outcomes: 0 results
+2025-10-18 18:53:48,743 - INFO -   ⚠ Temporal falsification: 0 results
+2025-10-18 18:53:48,743 - INFO -   ✓ Permutation tests: 6 results
+2025-10-18 18:53:48,743 - INFO -   ✓ Guardrail checks: 1 results
+2025-10-18 18:53:48,743 - INFO - ============================================================

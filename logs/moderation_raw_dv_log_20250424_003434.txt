@@ -1,0 +1,168 @@
+2025-04-24 00:34:34,185 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250424_003434.txt
+2025-04-24 00:34:34,185 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-24 00:34:34,254 - INFO - Connected to Postgres successfully.
+2025-04-24 00:34:34,255 - INFO - Checking available columns in views...
+2025-04-24 00:34:34,267 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:34:34,267 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:34:34,267 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-24 00:34:34,270 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-24 00:34:34,272 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-24 00:34:34,272 - INFO - Executing join query between conceptual model and variables views
+2025-04-24 00:34:59,871 - INFO - Joined data fetched: shape=(3049, 11)
+2025-04-24 00:34:59,873 - INFO - Calculated death and hospitalization rates per 100k population
+2025-04-24 00:34:59,873 - INFO - Using '1' as the reference category for census_division dummies.
+2025-04-24 00:34:59,874 - INFO - Created 8 dummy cols for census_division
+2025-04-24 00:34:59,874 - INFO - All expected variables for raw DV analysis found.
+2025-04-24 00:34:59,874 - INFO - Saving GLM coefficients summary to: moderation_output_raw_dv/Moderation_RawOutcomes_GLM_Coefficients.csv
+2025-04-24 00:34:59,874 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:34:59,874 - INFO - PATH 1/16: Processing iv1_public_health_policy x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:34:59,878 - WARNING - High condition number: 30.1 - Results may be unstable due to multicollinearity
+2025-04-24 00:34:59,900 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)
+2025-04-24 00:34:59,913 - WARNING - Extreme predictions detected for iv1_public_health_policy x mo1_genai_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:00,091 - WARNING - Capping y-axis at 1,000,000 for iv1_public_health_policy x mo1_genai_capabilities => premature_death_rate_100k
+2025-04-24 00:35:00,364 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:00,364 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:00,364 - INFO - PATH 2/16: Processing iv1_public_health_policy x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:00,367 - WARNING - High condition number: 30.1 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:00,378 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:35:00,390 - WARNING - Extreme predictions detected for iv1_public_health_policy x mo1_genai_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:00,450 - WARNING - Capping y-axis at 1,000,000 for iv1_public_health_policy x mo1_genai_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:00,715 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv1_public_health_policy_x_mo1_genai_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:00,715 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:00,715 - INFO - PATH 3/16: Processing iv1_public_health_policy x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:00,718 - WARNING - High condition number: 97.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:00,726 - INFO - Model dispersion ratio: 0.13 (>1.2 suggests overdispersion)
+2025-04-24 00:35:00,738 - WARNING - Extreme predictions detected for iv1_public_health_policy x mo2_robotics_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:00,774 - WARNING - Capping y-axis at 1,000,000 for iv1_public_health_policy x mo2_robotics_capabilities => premature_death_rate_100k
+2025-04-24 00:35:01,034 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:01,034 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:01,034 - INFO - PATH 4/16: Processing iv1_public_health_policy x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:01,037 - WARNING - High condition number: 97.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:01,074 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:35:01,086 - WARNING - Extreme predictions detected for iv1_public_health_policy x mo2_robotics_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:01,123 - WARNING - Capping y-axis at 1,000,000 for iv1_public_health_policy x mo2_robotics_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:01,381 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv1_public_health_policy_x_mo2_robotics_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:01,381 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:01,381 - INFO - PATH 5/16: Processing iv2_physical_environment x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:01,383 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => premature_death_raw_count model:
+2025-04-24 00:35:01,383 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9784
+2025-04-24 00:35:01,384 - WARNING - High condition number: 61.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:01,393 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)
+2025-04-24 00:35:01,406 - WARNING - Extreme predictions detected for iv2_physical_environment x mo1_genai_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:01,451 - WARNING - Capping y-axis at 1,000,000 for iv2_physical_environment x mo1_genai_capabilities => premature_death_rate_100k
+2025-04-24 00:35:01,749 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:01,749 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:01,749 - INFO - PATH 6/16: Processing iv2_physical_environment x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:01,750 - WARNING - High correlations detected in iv2_physical_environment x mo1_genai_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:35:01,750 - WARNING -   - mo1_genai_capabilities and iv2_physical_environment_X_mo1_genai_capabilities: r = 0.9784
+2025-04-24 00:35:01,751 - WARNING - High condition number: 61.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:01,763 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:35:01,776 - WARNING - Extreme predictions detected for iv2_physical_environment x mo1_genai_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:01,815 - WARNING - Capping y-axis at 1,000,000 for iv2_physical_environment x mo1_genai_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:02,097 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv2_physical_environment_x_mo1_genai_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:02,097 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:02,097 - INFO - PATH 7/16: Processing iv2_physical_environment x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:02,099 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => premature_death_raw_count model:
+2025-04-24 00:35:02,099 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9775
+2025-04-24 00:35:02,100 - WARNING - High condition number: 204.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:02,116 - INFO - Model dispersion ratio: 0.13 (>1.2 suggests overdispersion)
+2025-04-24 00:35:02,128 - WARNING - Extreme predictions detected for iv2_physical_environment x mo2_robotics_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:02,167 - WARNING - Capping y-axis at 1,000,000 for iv2_physical_environment x mo2_robotics_capabilities => premature_death_rate_100k
+2025-04-24 00:35:02,463 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:02,463 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:02,463 - INFO - PATH 8/16: Processing iv2_physical_environment x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:02,464 - WARNING - High correlations detected in iv2_physical_environment x mo2_robotics_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:35:02,464 - WARNING -   - mo2_robotics_capabilities and iv2_physical_environment_X_mo2_robotics_capabilities: r = 0.9775
+2025-04-24 00:35:02,465 - WARNING - High condition number: 204.3 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:02,477 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:35:02,490 - WARNING - Extreme predictions detected for iv2_physical_environment x mo2_robotics_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:02,535 - WARNING - Capping y-axis at 1,000,000 for iv2_physical_environment x mo2_robotics_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:02,815 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv2_physical_environment_x_mo2_robotics_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:02,815 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:02,815 - INFO - PATH 9/16: Processing iv3_health_behaviors x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:02,817 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => premature_death_raw_count model:
+2025-04-24 00:35:02,817 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8803
+2025-04-24 00:35:02,818 - WARNING - High condition number: 934.0 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:02,864 - INFO - Model dispersion ratio: 0.12 (>1.2 suggests overdispersion)
+2025-04-24 00:35:02,877 - WARNING - Extreme predictions detected for iv3_health_behaviors x mo1_genai_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:02,911 - WARNING - Capping y-axis at 1,000,000 for iv3_health_behaviors x mo1_genai_capabilities => premature_death_rate_100k
+2025-04-24 00:35:03,194 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:03,194 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:03,194 - INFO - PATH 10/16: Processing iv3_health_behaviors x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:03,196 - WARNING - High correlations detected in iv3_health_behaviors x mo1_genai_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:35:03,196 - WARNING -   - mo1_genai_capabilities and iv3_health_behaviors_X_mo1_genai_capabilities: r = 0.8803
+2025-04-24 00:35:03,197 - WARNING - High condition number: 934.0 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:03,206 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:35:03,219 - WARNING - Extreme predictions detected for iv3_health_behaviors x mo1_genai_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:03,254 - WARNING - Capping y-axis at 1,000,000 for iv3_health_behaviors x mo1_genai_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:03,520 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv3_health_behaviors_x_mo1_genai_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:03,520 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:03,520 - INFO - PATH 11/16: Processing iv3_health_behaviors x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:03,522 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => premature_death_raw_count model:
+2025-04-24 00:35:03,522 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8505
+2025-04-24 00:35:03,523 - WARNING - High condition number: 3268.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:03,523 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:35:03,524 - INFO - Centering reduced condition number from 3268.9 to 1393.4
+2025-04-24 00:35:03,524 - INFO - Using centered variables: ['iv3_health_behaviors_c', 'mo2_robotics_capabilities_c', 'iv3_health_behaviors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:35:03,538 - INFO - Model dispersion ratio: 0.11 (>1.2 suggests overdispersion)
+2025-04-24 00:35:03,550 - WARNING - Extreme predictions detected for iv3_health_behaviors x mo2_robotics_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:03,587 - WARNING - Capping y-axis at 1,000,000 for iv3_health_behaviors x mo2_robotics_capabilities => premature_death_rate_100k
+2025-04-24 00:35:03,865 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:03,865 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:03,865 - INFO - PATH 12/16: Processing iv3_health_behaviors x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:03,867 - WARNING - High correlations detected in iv3_health_behaviors x mo2_robotics_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:35:03,867 - WARNING -   - mo2_robotics_capabilities and iv3_health_behaviors_X_mo2_robotics_capabilities: r = 0.8505
+2025-04-24 00:35:03,868 - WARNING - High condition number: 3268.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:03,868 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:35:03,869 - INFO - Centering reduced condition number from 3268.9 to 1393.4
+2025-04-24 00:35:03,869 - INFO - Using centered variables: ['iv3_health_behaviors_c', 'mo2_robotics_capabilities_c', 'iv3_health_behaviors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:35:03,879 - INFO - Model dispersion ratio: 0.15 (>1.2 suggests overdispersion)
+2025-04-24 00:35:03,924 - WARNING - Extreme predictions detected for iv3_health_behaviors x mo2_robotics_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:03,960 - WARNING - Capping y-axis at 1,000,000 for iv3_health_behaviors x mo2_robotics_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:04,226 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv3_health_behaviors_x_mo2_robotics_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:04,226 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:04,226 - INFO - PATH 13/16: Processing iv4_social_economic_factors x mo1_genai_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:04,228 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => premature_death_raw_count model:
+2025-04-24 00:35:04,228 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9677
+2025-04-24 00:35:04,229 - WARNING - High condition number: 334.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:04,254 - INFO - Model dispersion ratio: 0.06 (>1.2 suggests overdispersion)
+2025-04-24 00:35:04,267 - WARNING - Extreme predictions detected for iv4_social_economic_factors x mo1_genai_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:04,302 - WARNING - Capping y-axis at 1,000,000 for iv4_social_economic_factors x mo1_genai_capabilities => premature_death_rate_100k
+2025-04-24 00:35:04,590 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:04,590 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:04,590 - INFO - PATH 14/16: Processing iv4_social_economic_factors x mo1_genai_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:04,592 - WARNING - High correlations detected in iv4_social_economic_factors x mo1_genai_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:35:04,592 - WARNING -   - mo1_genai_capabilities and iv4_social_economic_factors_X_mo1_genai_capabilities: r = 0.9677
+2025-04-24 00:35:04,593 - WARNING - High condition number: 334.9 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:04,600 - INFO - Model dispersion ratio: 0.14 (>1.2 suggests overdispersion)
+2025-04-24 00:35:04,613 - WARNING - Extreme predictions detected for iv4_social_economic_factors x mo1_genai_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:04,649 - WARNING - Capping y-axis at 1,000,000 for iv4_social_economic_factors x mo1_genai_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:04,920 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv4_social_economic_factors_x_mo1_genai_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:04,920 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:04,920 - INFO - PATH 15/16: Processing iv4_social_economic_factors x mo2_robotics_capabilities => premature_death_raw_count (as Rate)
+2025-04-24 00:35:04,922 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => premature_death_raw_count model:
+2025-04-24 00:35:04,922 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9588
+2025-04-24 00:35:04,923 - WARNING - High condition number: 1025.4 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:04,923 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:35:04,924 - INFO - Centering reduced condition number from 1025.4 to 246.0
+2025-04-24 00:35:04,924 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:35:04,936 - INFO - Model dispersion ratio: 0.06 (>1.2 suggests overdispersion)
+2025-04-24 00:35:04,949 - WARNING - Extreme predictions detected for iv4_social_economic_factors x mo2_robotics_capabilities => premature_death_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:04,986 - WARNING - Capping y-axis at 1,000,000 for iv4_social_economic_factors x mo2_robotics_capabilities => premature_death_rate_100k
+2025-04-24 00:35:05,274 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_premature_death_rate_100k.png
+2025-04-24 00:35:05,274 - INFO - --------------------------------------------------------------------------------
+2025-04-24 00:35:05,274 - INFO - PATH 16/16: Processing iv4_social_economic_factors x mo2_robotics_capabilities => prev_hosp_stays_raw_count (as Rate)
+2025-04-24 00:35:05,276 - WARNING - High correlations detected in iv4_social_economic_factors x mo2_robotics_capabilities => prev_hosp_stays_raw_count model:
+2025-04-24 00:35:05,276 - WARNING -   - mo2_robotics_capabilities and iv4_social_economic_factors_X_mo2_robotics_capabilities: r = 0.9588
+2025-04-24 00:35:05,277 - WARNING - High condition number: 1025.4 - Results may be unstable due to multicollinearity
+2025-04-24 00:35:05,277 - WARNING - Attempting to center IV and MO to reduce collinearity...
+2025-04-24 00:35:05,278 - INFO - Centering reduced condition number from 1025.4 to 246.0
+2025-04-24 00:35:05,278 - INFO - Using centered variables: ['iv4_social_economic_factors_c', 'mo2_robotics_capabilities_c', 'iv4_social_economic_factors_c_X_mo2_robotics_capabilities_c', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+2025-04-24 00:35:05,289 - INFO - Model dispersion ratio: 0.13 (>1.2 suggests overdispersion)
+2025-04-24 00:35:05,303 - WARNING - Extreme predictions detected for iv4_social_economic_factors x mo2_robotics_capabilities => prev_hosp_stays_rate_100k. Clipping values to prevent overflow.
+2025-04-24 00:35:05,341 - WARNING - Capping y-axis at 1,000,000 for iv4_social_economic_factors x mo2_robotics_capabilities => prev_hosp_stays_rate_100k
+2025-04-24 00:35:05,614 - INFO - Saved moderation plot to moderation_output_raw_dv/plots/moderation_iv4_social_economic_factors_x_mo2_robotics_capabilities_to_prev_hosp_stays_rate_100k.png
+2025-04-24 00:35:05,622 - INFO - Successfully saved GLM coefficients for 16 models to moderation_output_raw_dv/Moderation_RawOutcomes_GLM_Coefficients.csv
+2025-04-24 00:35:05,622 - INFO - ================================================================================
+2025-04-24 00:35:05,622 - INFO - Raw DV moderation analyses script finished.
+2025-04-24 00:35:05,622 - INFO - ================================================================================

@@ -1,0 +1,85 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-21 17:05:30
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)
+Index-level data fetched from improved version: shape = (3143, 12)
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+
+Diagnosing Index-Level (Original): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+Diagnosing Index-Level (Improved): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS - BOTH SCENARIOS (Original Data)
+--------------------------------------------------------------------------------
+
+..... Running scenario=original on original data. .....
+Analyzing DV: dv1_healthcare_access under scenario=original...
+
+--- Running original role-aware model for dv1_healthcare_access ---
+IVs: ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic']
+MOs: ['mo1_genai_cap', 'mo2_robotics_cap']
+Controls: ['population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'div_Unknown']
+Dropping 1 non-numeric columns from X.
+Removing zero variance predictors: ['div_Unknown']
+Control variables only: R² = 0.1826
+Dropping 1 non-numeric columns from X.
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for IV block: ((0.2637-0.1826) / (1-0.2637)) = 0.1101 => small
+Controls + IVs: R² = 0.2637, ΔR² = 0.0811, f² = 0.1101 (small)
+Dropping 1 non-numeric columns from X.
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for MO block: ((0.2906-0.2637) / (1-0.2906)) = 0.0380 => small
+Controls + IVs + MOs: R² = 0.2906, ΔR² = 0.0270, f² = 0.0380 (small)
+Dropping 1 non-numeric columns from X.
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for Interaction block: ((0.3007-0.2906) / (1-0.3007)) = 0.0144 => trivial
+Full model with interactions: R² = 0.3007, ΔR² = 0.0101, f² = 0.0144 (trivial)

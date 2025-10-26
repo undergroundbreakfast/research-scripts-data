@@ -1,0 +1,82 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-07 23:52:19
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched: shape = (3143, 12)
+Component-level data fetched: shape = (3143, 37)
+
+Diagnosing DataFrame: Index-Level Data
+Shape: (3135, 19)
+Column dtypes:
+  county_fips: object, 0 nulls, 3135 unique values
+    Sample values: ['54021', '41031', '28059', '41033', '38023']
+  iv1_public_health_policy: int64, 0 nulls, 2 unique values
+  iv2_physical_environment: float64, 0 nulls, 3135 unique values
+  iv3_health_behaviors: float64, 0 nulls, 3135 unique values
+  iv4_social_economic: float64, 0 nulls, 3135 unique values
+  mo1_genai_cap: float64, 0 nulls, 103 unique values
+  mo2_robotics_cap: float64, 0 nulls, 150 unique values
+  dv1_healthcare_access: float64, 0 nulls, 3135 unique values
+  dv2_healthcare_quality: float64, 0 nulls, 3135 unique values
+  dv3_operational_eff: float64, 1009 nulls, 1035 unique values
+  population: float64, 0 nulls, 3071 unique values
+  div_2.0: bool, 0 nulls, 2 unique values
+  div_3.0: bool, 0 nulls, 2 unique values
+  div_4.0: bool, 0 nulls, 2 unique values
+  div_5.0: bool, 0 nulls, 2 unique values
+  div_6.0: bool, 0 nulls, 2 unique values
+  div_7.0: bool, 0 nulls, 2 unique values
+  div_8.0: bool, 0 nulls, 2 unique values
+  div_9.0: bool, 0 nulls, 2 unique values
+
+Diagnosing DataFrame: Component-Level Data
+Shape: (3143, 37)
+Column dtypes:
+  county_fips: object, 0 nulls, 3143 unique values
+    Sample values: ['37195', '13065', '31171', '30017', '05063']
+  premature_death_raw_value: float64, 55 nulls, 3088 unique values
+  poor_or_fair_health_raw_value: float64, 0 nulls, 237 unique values
+  poor_physical_health_days_raw_value: float64, 0 nulls, 3143 unique values
+  poor_mental_health_days_raw_value: float64, 0 nulls, 3142 unique values
+  low_birthweight_raw_value: float64, 98 nulls, 2935 unique values
+  adult_smoking_raw_value: float64, 0 nulls, 234 unique values
+  adult_obesity_raw_value: float64, 0 nulls, 271 unique values
+  food_environment_index_raw_value: float64, 35 nulls, 82 unique values
+  physical_inactivity_raw_value: float64, 0 nulls, 280 unique values
+  access_to_exercise_opportunities_raw_value: float64, 45 nulls, 3060 unique values
+  excessive_drinking_raw_value: float64, 0 nulls, 3142 unique values
+  alcohol_impaired_driving_deaths_raw_value: float64, 27 nulls, 862 unique values
+  sexually_transmitted_infections_raw_value: float64, 145 nulls, 2382 unique values
+  teen_births_raw_value: float64, 216 nulls, 2902 unique values
+  uninsured_raw_value: float64, 1 nulls, 3139 unique values
+  ratio_of_population_to_primary_care_physicians: float64, 157 nulls, 2964 unique values
+  ratio_of_population_to_dentists: float64, 87 nulls, 3031 unique values
+  ratio_of_population_to_mental_health_providers: float64, 185 nulls, 2950 unique values
+  preventable_hospital_stays_raw_value: float64, 70 nulls, 2084 unique values
+  mammography_screening_raw_value: float64, 36 nulls, 48 unique values
+  flu_vaccinations_raw_value: float64, 50 nulls, 54 unique values
+  high_school_completion_raw_value: float64, 0 nulls, 3138 unique values
+  some_college_raw_value: float64, 1 nulls, 3133 unique values
+  unemployment_raw_value: float64, 1 nulls, 3130 unique values
+  children_in_poverty_raw_value: float64, 1 nulls, 403 unique values
+  air_pollution_particulate_matter_raw_value: float64, 28 nulls, 104 unique values
+  drinking_water_violations_raw_value: float64, 52 nulls, 2 unique values
+  severe_housing_problems_raw_value: float64, 1 nulls, 3037 unique values
+  driving_alone_to_work_raw_value: float64, 0 nulls, 3137 unique values
+  long_commute_driving_alone_raw_value: float64, 0 nulls, 573 unique values
+  income_inequality_raw_value: float64, 16 nulls, 3123 unique values
+  children_in_single_parent_households_raw_value: float64, 10 nulls, 3127 unique values
+  social_associations_raw_value: float64, 0 nulls, 2962 unique values
+  injury_deaths_raw_value: float64, 106 nulls, 3035 unique values
+  weighted_ai_adoption_score: float64, 685 nulls, 105 unique values
+  weighted_robotics_adoption_score: float64, 685 nulls, 150 unique values
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access with stepwise, then all interactions .....
+DV dv1_healthcare_access dtype: float64
+Predictor dtypes: ['iv1_public_health_policy: int64', 'iv2_physical_environment: float64', 'iv3_health_behaviors: float64']...

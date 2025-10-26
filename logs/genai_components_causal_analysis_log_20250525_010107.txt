@@ -1,0 +1,57 @@
+2025-05-25 01:01:07,596 - INFO - YPLL_AIPW_Analysis_052325_v11 - Logging to: logs/genai_components_causal_analysis_log_20250525_010107.txt
+2025-05-25 01:01:07,597 - INFO - YPLL_AIPW_Analysis_052325_v11 - Starting Generative AI & Robotics Component-Level Causal Analysis Script.
+2025-05-25 01:01:07,597 - INFO - YPLL_AIPW_Analysis_052325_v11 - Output will be saved in: genai_components_causal_output and logs/
+2025-05-25 01:01:07,685 - INFO - YPLL_AIPW_Analysis_052325_v11 - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-05-25 01:01:33,025 - INFO - YPLL_AIPW_Analysis_052325_v11 - Data for component analysis retrieved: 3080 rows, 14 columns.
+2025-05-25 01:01:33,025 - INFO - YPLL_AIPW_Analysis_052325_v11 - Converting population to numeric and filtering...
+2025-05-25 01:01:33,029 - INFO - YPLL_AIPW_Analysis_052325_v11 - Performing common data preparations...
+2025-05-25 01:01:33,031 - INFO - YPLL_AIPW_Analysis_052325_v11 - Created 8 dummy variables for 'census_division'.
+2025-05-25 01:01:33,031 - INFO - YPLL_AIPW_Analysis_052325_v11 - Common data preparations complete.
+2025-05-25 01:01:33,031 - INFO - YPLL_AIPW_Analysis_052325_v11 - Processing Component: AI Staff Scheduling
+2025-05-25 01:01:33,031 - INFO - YPLL_AIPW_Analysis_052325_v11 -   Initial Prevalence for pct_wfaiss_enabled_beds_adopted: 9.71% (N_T=299, N_C=2781)
+2025-05-25 01:01:33,033 - INFO - YPLL_AIPW_Analysis_052325_v11 -   Final N for AI Staff Scheduling analysis: 3080 (Treated: 299, Control: 2781)
+2025-05-25 01:01:33,033 - INFO - YPLL_AIPW_Analysis_052325_v11 - --- Starting AIPW Analysis for Treatment: pct_wfaiss_enabled_beds_adopted ---
+2025-05-25 01:01:33,034 - ERROR - YPLL_AIPW_Analysis_052325_v11 - A critical error occurred in the main script execution loop: could not convert string to float: 'health_behaviors_score'
+2025-05-25 01:01:33,056 - ERROR - YPLL_AIPW_Analysis_052325_v11 - Traceback: Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/YPLL_AIPW_Analysis_052325_v11.py", line 471, in main
+    ate, ci_low, ci_high, n_t_from_func, n_c_from_func, error_flag, control_mean, control_sd = run_aipw_analysis_for_treatment(
+                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/YPLL_AIPW_Analysis_052325_v11.py", line 268, in run_aipw_analysis_for_treatment
+    prop_scores_clamped, scaler_obj = estimate_propensity_scores(current_confounder_cols, T_treatment, logger, current_treatment_col)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/YPLL_AIPW_Analysis_052325_v11.py", line 211, in estimate_propensity_scores
+    X_scaled = scaler.fit_transform(X_confounders)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/base.py", line 1098, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 878, in fit
+    return self.partial_fit(X, y, sample_weight)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 914, in partial_fit
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1012, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 751, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'health_behaviors_score'
+
+2025-05-25 01:01:33,056 - INFO - YPLL_AIPW_Analysis_052325_v11 - ================================================================================
+2025-05-25 01:01:33,056 - INFO - YPLL_AIPW_Analysis_052325_v11 - Component-Level Causal Analysis Summary:
+2025-05-25 01:01:33,056 - INFO - YPLL_AIPW_Analysis_052325_v11 - No results to summarize.
+2025-05-25 01:01:33,056 - INFO - YPLL_AIPW_Analysis_052325_v11 - ================================================================================
+2025-05-25 01:01:33,057 - INFO - YPLL_AIPW_Analysis_052325_v11 - Script finished.
+2025-05-25 01:01:33,057 - WARNING - YPLL_AIPW_Analysis_052325_v11 - Results DataFrame is empty. Cannot generate ATE forest plot.
+2025-05-25 01:01:33,057 - INFO - YPLL_AIPW_Analysis_052325_v11 - Generated ATE forest plot for all components.

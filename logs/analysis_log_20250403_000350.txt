@@ -1,0 +1,18 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-03 00:03:50
+================================================================================
+
+Connected to Postgres successfully.
+Component-level data fetched: shape = (3143, 37)
+
+--------------------------------------------------------------------------------
+ DATA EXPLORATION
+--------------------------------------------------------------------------------
+Dataset has 3143 rows and 37 columns
+Sample column names: ['county_fips', 'premature_death_raw_value', 'poor_or_fair_health_raw_value', 'poor_physical_health_days_raw_value', 'poor_mental_health_days_raw_value']
+
+--------------------------------------------------------------------------------
+ CALCULATING INDEX VARIABLES
+--------------------------------------------------------------------------------
+Creating index variables from raw components using specified weights

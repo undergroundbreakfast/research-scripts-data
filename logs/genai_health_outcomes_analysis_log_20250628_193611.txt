@@ -1,0 +1,7 @@
+2025-06-28 19:36:11,039 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:82] - Logging to: logs/genai_health_outcomes_analysis_log_20250628_193611.txt
+2025-06-28 19:36:11,039 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:462] - Starting Comprehensive GenAI/Robotics Health Outcomes Analysis Script.
+2025-06-28 19:36:11,039 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:468] - All outputs will be saved in: analysis_results_20250628_193611
+2025-06-28 19:36:11,108 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:102] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-28 19:36:39,544 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:163] - Data for analysis retrieved: 3135 rows, 24 columns.
+2025-06-28 19:36:39,544 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:177] - Performing data preparations...
+2025-06-28 19:36:39,548 - INFO - [BDTOT_vs_ADJPD_060825_v4.py:206] - Data preparation complete.

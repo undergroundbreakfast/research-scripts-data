@@ -1,0 +1,46 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-02 23:26:14
+================================================================================
+
+Connected to Postgres successfully.
+Component-level data fetched: shape = (3143, 37)
+
+--------------------------------------------------------------------------------
+ EFA SECTION
+--------------------------------------------------------------------------------
+Bartlett's test: chi_sq=8298.82, p=0.0000 (small p => correlations not identity).
+KMO (sampling adequacy) for each variable => [0.72329798 0.64491415 0.75548513 0.77308263 0.65243174]
+KMO overall => 0.704
+
+Factor Loadings (Rotated):
+  adult_smoking_raw_value: [0.91603023 0.12503628]
+  physical_inactivity_raw_value: [0.88565582 0.14388458]
+  children_in_poverty_raw_value: [0.81677339 0.37992212]
+  unemployment_raw_value: [0.17871933 0.97717392]
+  injury_deaths_raw_value: [0.62638845 0.12860533]
+
+Explained Variance (each factor): [0.54298389 0.23041717]
+Cumulative Variance by Factor: [0.54298389 0.77340106]
+
+EFA completed. 2 factors extracted.
+
+Sample factor scores (head):
+
+         F1        F2
+0 -0.140722 -1.103839
+1 -0.343733 -0.938441
+2  1.867681  0.155748
+3  1.349458 -1.170229
+4  0.473072 -1.343187
+
+--------------------------------------------------------------------------------
+ SEM SECTION
+--------------------------------------------------------------------------------
+Column 'dv_health_outcome' not found. SEM example won't run properly.
+
+================================================================================
+ ANALYSIS COMPLETED: 2025-04-02 23:26:17
+ Total runtime: 0:00:02.995383
+================================================================================
+

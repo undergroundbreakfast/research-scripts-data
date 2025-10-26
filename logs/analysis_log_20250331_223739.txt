@@ -1,0 +1,1074 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-03-31 22:37:39
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched: shape = (3143, 11)
+Component-level data fetched: shape = (3143, 37)
+Converting population to numeric type...
+
+Population statistics:
+- Total population covered: 327,486,276
+- Average county population: 104,461
+- Population range: 50 to 9,936,690
+- Missing population values: 8
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL PREDICTORS
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access .....
+[Stepwise OLS] Starting with base predictors:
+  ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+Initial model with all 6 predictors: R² = 0.2388
+Step 1: Removing 'iv3_health_behaviors' (p=0.5147 > 0.1, f²=0.0001, trivial effect)
+
+Final stepwise model R² = 0.2387 (initial was 0.2388)
+Condition number: 84.43 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['iv1_public_health_policy', 'iv2_physical_environment', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+iv3_health_behaviors           0.5147     0.0001     trivial 
+Overall effect of removed predictors on R²: f² = 0.0001, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  iv1_public_health_policy       p=0.0000, f²=0.0062, trivial 
+  iv2_physical_environment       p=0.0000, f²=0.1867, medium **
+  iv4_social_economic            p=0.0000, f²=0.0652, small *
+  mo1_genai_cap                  p=0.0449, f²=0.0013, trivial 
+  mo2_robotics_cap               p=0.0000, f²=0.0396, small *
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.239
+Model:                               OLS   Adj. R-squared:                  0.237
+Method:                    Least Squares   F-statistic:                     196.7
+Date:                   Mon, 31 Mar 2025   Prob (F-statistic):          1.00e-182
+Time:                           22:38:05   Log-Likelihood:                -24251.
+No. Observations:                   3143   AIC:                         4.851e+04
+Df Residuals:                       3137   BIC:                         4.855e+04
+Df Model:                              5                                         
+Covariance Type:               nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+const                      -73.1297     54.866     -1.333      0.183    -180.706      34.446
+iv1_public_health_policy   -86.6492     19.606     -4.420      0.000    -125.091     -48.208
+iv2_physical_environment   481.5538     19.900     24.199      0.000     442.536     520.571
+iv4_social_economic         32.2204      2.252     14.306      0.000      27.804      36.636
+mo1_genai_cap              -23.4862     11.706     -2.006      0.045     -46.439      -0.534
+mo2_robotics_cap           -36.7203      3.295    -11.144      0.000     -43.181     -30.259
+==============================================================================
+Omnibus:                      957.531   Durbin-Watson:                   1.759
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4356.644
+Skew:                           1.403   Prob(JB):                         0.00
+Kurtosis:                       8.040   Cond. No.                         84.4
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (Final Stepwise Model) ---
+                 feature      VIF
+        mo2_robotics_cap 1.169240
+           mo1_genai_cap 1.133729
+iv2_physical_environment 1.030621
+iv1_public_health_policy 1.020488
+     iv4_social_economic 1.016796
+Max VIF: 1.17
+
+..... Analyzing DV: dv2_healthcare_quality .....
+[Stepwise OLS] Starting with base predictors:
+  ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+Initial model with all 6 predictors: R² = 0.6454
+
+Final stepwise model R² = 0.6454 (initial was 0.6454)
+Condition number: 242.86 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+Overall effect of removed predictors on R²: f² = 0.0000, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  iv1_public_health_policy       p=0.0000, f²=0.0138, trivial 
+  iv2_physical_environment       p=0.0000, f²=0.0231, small *
+  iv3_health_behaviors           p=0.0000, f²=0.2932, medium **
+  iv4_social_economic            p=0.0000, f²=0.9311, large ***
+  mo1_genai_cap                  p=0.0014, f²=0.0032, trivial 
+  mo2_robotics_cap               p=0.0000, f²=0.0328, small *
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.645
+Model:                                OLS   Adj. R-squared:                  0.645
+Method:                     Least Squares   F-statistic:                     951.1
+Date:                    Mon, 31 Mar 2025   Prob (F-statistic):               0.00
+Time:                            22:38:05   Log-Likelihood:                -26463.
+No. Observations:                    3143   AIC:                         5.294e+04
+Df Residuals:                        3136   BIC:                         5.298e+04
+Df Model:                               6                                         
+Covariance Type:                nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+const                       66.4006    110.989      0.598      0.550    -151.219     284.020
+iv1_public_health_policy  -263.9011     40.045     -6.590      0.000    -342.418    -185.384
+iv2_physical_environment   350.5808     41.212      8.507      0.000     269.776     431.385
+iv3_health_behaviors        28.3491      0.935     30.325      0.000      26.516      30.182
+iv4_social_economic        254.7396      4.714     54.035      0.000     245.496     263.983
+mo1_genai_cap              -75.5453     23.672     -3.191      0.001    -121.959     -29.132
+mo2_robotics_cap           -68.0164      6.702    -10.149      0.000     -81.157     -54.876
+==============================================================================
+Omnibus:                      834.605   Durbin-Watson:                   1.786
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5089.015
+Skew:                           1.117   Prob(JB):                         0.00
+Kurtosis:                       8.820   Cond. No.                         243.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (Final Stepwise Model) ---
+                 feature      VIF
+        mo2_robotics_cap 1.183258
+    iv3_health_behaviors 1.160055
+           mo1_genai_cap 1.134190
+     iv4_social_economic 1.089954
+iv2_physical_environment 1.081445
+iv1_public_health_policy 1.041576
+Max VIF: 1.18
+
+..... Analyzing DV: dv3_operational_eff .....
+[Stepwise OLS] Starting with base predictors:
+  ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+Initial model with all 6 predictors: R² = 0.0514
+Step 1: Removing 'iv3_health_behaviors' (p=0.7560 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'iv1_public_health_policy' (p=0.4264 > 0.1, f²=0.0003, trivial effect)
+
+Final stepwise model R² = 0.0511 (initial was 0.0514)
+Condition number: 92.72 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+iv3_health_behaviors           0.7560     0.0000     trivial 
+iv1_public_health_policy       0.4264     0.0003     trivial 
+Overall effect of removed predictors on R²: f² = 0.0003, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  iv2_physical_environment       p=0.0109, f²=0.0031, trivial 
+  iv4_social_economic            p=0.0000, f²=0.0096, trivial 
+  mo1_genai_cap                  p=0.0021, f²=0.0044, trivial 
+  mo2_robotics_cap               p=0.0000, f²=0.0165, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     dv3_operational_eff   R-squared:                       0.051
+Model:                             OLS   Adj. R-squared:                  0.049
+Method:                  Least Squares   F-statistic:                     28.62
+Date:                 Mon, 31 Mar 2025   Prob (F-statistic):           3.35e-23
+Time:                         22:38:05   Log-Likelihood:                -9389.9
+No. Observations:                 2133   AIC:                         1.879e+04
+Df Residuals:                     2128   BIC:                         1.882e+04
+Df Model:                            4                                         
+Covariance Type:             nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+const                        3.7447      2.702      1.386      0.166      -1.555       9.044
+iv2_physical_environment     2.3134      0.908      2.548      0.011       0.533       4.094
+iv4_social_economic         -0.5333      0.118     -4.519      0.000      -0.765      -0.302
+mo1_genai_cap                1.4191      0.462      3.074      0.002       0.514       2.324
+mo2_robotics_cap             0.7975      0.134      5.933      0.000       0.534       1.061
+==============================================================================
+Omnibus:                     1572.651   Durbin-Watson:                   1.781
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           107575.312
+Skew:                           2.836   Prob(JB):                         0.00
+Kurtosis:                      37.326   Cond. No.                         92.7
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+--- VIF (Final Stepwise Model) ---
+                 feature      VIF
+        mo2_robotics_cap 1.159868
+           mo1_genai_cap 1.111611
+     iv4_social_economic 1.047632
+iv2_physical_environment 1.025526
+Max VIF: 1.16
+
+--------------------------------------------------------------------------------
+ PART B: COMPONENT-LEVEL (NO INTERACTIONS)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access .....
+[Stepwise OLS] Starting with base predictors:
+  ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+Initial model with all 24 predictors: R² = 0.4716
+Step 1: Removing 'social_associations_raw_value' (p=0.9373 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'children_in_poverty_raw_value' (p=0.7834 > 0.1, f²=0.0000, trivial effect)
+Step 3: Removing 'unemployment_raw_value' (p=0.6395 > 0.1, f²=0.0001, trivial effect)
+Step 4: Removing 'weighted_ai_adoption_score' (p=0.4956 > 0.1, f²=0.0002, trivial effect)
+Step 5: Removing 'some_college_raw_value' (p=0.4244 > 0.1, f²=0.0003, trivial effect)
+Step 6: Removing 'food_environment_index_raw_value' (p=0.4386 > 0.1, f²=0.0003, trivial effect)
+Step 7: Removing 'children_in_single_parent_households_raw_value' (p=0.4285 > 0.1, f²=0.0003, trivial effect)
+Step 8: Removing 'sexually_transmitted_infections_raw_value' (p=0.2773 > 0.1, f²=0.0005, trivial effect)
+Step 9: Removing 'driving_alone_to_work_raw_value' (p=0.1260 > 0.1, f²=0.0010, trivial effect)
+Step 10: Removing 'alcohol_impaired_driving_deaths_raw_value' (p=0.1043 > 0.1, f²=0.0012, trivial effect)
+
+Final stepwise model R² = 0.4695 (initial was 0.4716)
+Condition number: 7086.91 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'income_inequality_raw_value', 'injury_deaths_raw_value', 'weighted_robotics_adoption_score']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+social_associations_raw_value  0.9373     0.0000     trivial 
+children_in_poverty_raw_value  0.7834     0.0000     trivial 
+unemployment_raw_value         0.6395     0.0001     trivial 
+weighted_ai_adoption_score     0.4956     0.0002     trivial 
+some_college_raw_value         0.4244     0.0003     trivial 
+food_environment_index_raw_value 0.4386     0.0003     trivial 
+children_in_single_parent_households_raw_value 0.4285     0.0003     trivial 
+sexually_transmitted_infections_raw_value 0.2773     0.0005     trivial 
+driving_alone_to_work_raw_value 0.1260     0.0010     trivial 
+alcohol_impaired_driving_deaths_raw_value 0.1043     0.0012     trivial 
+Overall effect of removed predictors on R²: f² = 0.0039, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  air_pollution_particulate_matter_raw_value p=0.0059, f²=0.0034, trivial 
+  drinking_water_violations_raw_value p=0.0114, f²=0.0029, trivial 
+  severe_housing_problems_raw_value p=0.0000, f²=0.0197, trivial 
+  long_commute_driving_alone_raw_value p=0.0000, f²=0.1147, small *
+  adult_smoking_raw_value        p=0.0000, f²=0.0095, trivial 
+  adult_obesity_raw_value        p=0.0008, f²=0.0050, trivial 
+  physical_inactivity_raw_value  p=0.0032, f²=0.0039, trivial 
+  access_to_exercise_opportunities_raw_value p=0.0000, f²=0.0093, trivial 
+  excessive_drinking_raw_value   p=0.0636, f²=0.0015, trivial 
+  teen_births_raw_value          p=0.0000, f²=0.0096, trivial 
+  high_school_completion_raw_value p=0.0000, f²=0.0127, trivial 
+  income_inequality_raw_value    p=0.0188, f²=0.0025, trivial 
+  injury_deaths_raw_value        p=0.0000, f²=0.0100, trivial 
+  weighted_robotics_adoption_score p=0.0024, f²=0.0041, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.469
+Model:                               OLS   Adj. R-squared:                  0.466
+Method:                    Least Squares   F-statistic:                     141.9
+Date:                   Mon, 31 Mar 2025   Prob (F-statistic):          2.87e-296
+Time:                           22:38:05   Log-Likelihood:                -16494.
+No. Observations:                   2260   AIC:                         3.302e+04
+Df Residuals:                       2245   BIC:                         3.310e+04
+Df Model:                             14                                         
+Covariance Type:               nonrobust                                         
+==============================================================================================================
+                                                 coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------
+const                                       1026.4910    282.023      3.640      0.000     473.437    1579.545
+air_pollution_particulate_matter_raw_value    14.9782      5.430      2.758      0.006       4.329      25.627
+drinking_water_violations_raw_value           39.5470     15.613      2.533      0.011       8.929      70.165
+severe_housing_problems_raw_value          -1739.6753    261.696     -6.648      0.000   -2252.866   -1226.484
+long_commute_driving_alone_raw_value        1203.4208     74.992     16.047      0.000    1056.359    1350.482
+adult_smoking_raw_value                     1802.9931    391.296      4.608      0.000    1035.653    2570.333
+adult_obesity_raw_value                      957.5703    284.701      3.363      0.001     399.266    1515.874
+physical_inactivity_raw_value               1204.5789    407.539      2.956      0.003     405.386    2003.772
+access_to_exercise_opportunities_raw_value  -226.2213     49.540     -4.566      0.000    -323.370    -129.073
+excessive_drinking_raw_value                 702.0937    378.275      1.856      0.064     -39.711    1443.898
+teen_births_raw_value                          5.6114      1.209      4.640      0.000       3.240       7.983
+high_school_completion_raw_value           -1264.6636    236.790     -5.341      0.000   -1729.014    -800.313
+income_inequality_raw_value                   30.9450     13.163      2.351      0.019       5.132      56.758
+injury_deaths_raw_value                       -1.8177      0.385     -4.727      0.000      -2.572      -1.064
+weighted_robotics_adoption_score              -7.1998      2.370     -3.038      0.002     -11.847      -2.553
+==============================================================================
+Omnibus:                      916.807   Durbin-Watson:                   1.975
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             8101.344
+Skew:                           1.673   Prob(JB):                         0.00
+Kurtosis:                      11.651   Cond. No.                     7.09e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.09e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+--- VIF (Final Stepwise Model) ---
+                                   feature      VIF
+             physical_inactivity_raw_value 7.660281
+                   adult_smoking_raw_value 3.990992
+                     teen_births_raw_value 3.242815
+                   adult_obesity_raw_value 2.889020
+          high_school_completion_raw_value 2.844584
+                   injury_deaths_raw_value 1.766928
+              excessive_drinking_raw_value 1.763140
+               income_inequality_raw_value 1.695742
+         severe_housing_problems_raw_value 1.692823
+access_to_exercise_opportunities_raw_value 1.690894
+air_pollution_particulate_matter_raw_value 1.475387
+      long_commute_driving_alone_raw_value 1.316302
+          weighted_robotics_adoption_score 1.173368
+       drinking_water_violations_raw_value 1.034627
+Max VIF: 7.66
+
+..... Analyzing DV: dv2_healthcare_quality .....
+[Stepwise OLS] Starting with base predictors:
+  ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+Initial model with all 24 predictors: R² = 0.8423
+Step 1: Removing 'air_pollution_particulate_matter_raw_value' (p=0.9035 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'high_school_completion_raw_value' (p=0.5375 > 0.1, f²=0.0002, trivial effect)
+Step 3: Removing 'physical_inactivity_raw_value' (p=0.6484 > 0.1, f²=0.0001, trivial effect)
+Step 4: Removing 'weighted_robotics_adoption_score' (p=0.4344 > 0.1, f²=0.0003, trivial effect)
+Step 5: Removing 'drinking_water_violations_raw_value' (p=0.3927 > 0.1, f²=0.0003, trivial effect)
+Step 6: Removing 'severe_housing_problems_raw_value' (p=0.4249 > 0.1, f²=0.0003, trivial effect)
+Step 7: Removing 'alcohol_impaired_driving_deaths_raw_value' (p=0.3321 > 0.1, f²=0.0004, trivial effect)
+Step 8: Removing 'adult_obesity_raw_value' (p=0.3043 > 0.1, f²=0.0005, trivial effect)
+Step 9: Removing 'unemployment_raw_value' (p=0.2030 > 0.1, f²=0.0007, trivial effect)
+
+Final stepwise model R² = 0.8419 (initial was 0.8423)
+Condition number: 25339.37 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'food_environment_index_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'some_college_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+air_pollution_particulate_matter_raw_value 0.9035     0.0000     trivial 
+high_school_completion_raw_value 0.5375     0.0002     trivial 
+physical_inactivity_raw_value  0.6484     0.0001     trivial 
+weighted_robotics_adoption_score 0.4344     0.0003     trivial 
+drinking_water_violations_raw_value 0.3927     0.0003     trivial 
+severe_housing_problems_raw_value 0.4249     0.0003     trivial 
+alcohol_impaired_driving_deaths_raw_value 0.3321     0.0004     trivial 
+adult_obesity_raw_value        0.3043     0.0005     trivial 
+unemployment_raw_value         0.2030     0.0007     trivial 
+Overall effect of removed predictors on R²: f² = 0.0028, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  driving_alone_to_work_raw_value p=0.0000, f²=0.0186, trivial 
+  long_commute_driving_alone_raw_value p=0.0000, f²=0.0112, trivial 
+  adult_smoking_raw_value        p=0.0000, f²=0.0544, small *
+  food_environment_index_raw_value p=0.0000, f²=0.0133, trivial 
+  access_to_exercise_opportunities_raw_value p=0.0450, f²=0.0018, trivial 
+  excessive_drinking_raw_value   p=0.0000, f²=0.0097, trivial 
+  sexually_transmitted_infections_raw_value p=0.0000, f²=0.0846, small *
+  teen_births_raw_value          p=0.0000, f²=0.0718, small *
+  some_college_raw_value         p=0.0000, f²=0.0081, trivial 
+  children_in_poverty_raw_value  p=0.0000, f²=0.0224, small *
+  income_inequality_raw_value    p=0.0665, f²=0.0015, trivial 
+  children_in_single_parent_households_raw_value p=0.0391, f²=0.0019, trivial 
+  social_associations_raw_value  p=0.0012, f²=0.0047, trivial 
+  injury_deaths_raw_value        p=0.0000, f²=0.6823, large ***
+  weighted_ai_adoption_score     p=0.0596, f²=0.0016, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.842
+Model:                                OLS   Adj. R-squared:                  0.841
+Method:                     Least Squares   F-statistic:                     796.6
+Date:                    Mon, 31 Mar 2025   Prob (F-statistic):               0.00
+Time:                            22:38:06   Log-Likelihood:                -17807.
+No. Observations:                    2260   AIC:                         3.565e+04
+Df Residuals:                        2244   BIC:                         3.574e+04
+Df Model:                              15                                         
+Covariance Type:                nonrobust                                         
+==================================================================================================================
+                                                     coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+const                                          -1074.3130    388.863     -2.763      0.006   -1836.881    -311.745
+driving_alone_to_work_raw_value                 1656.1896    256.187      6.465      0.000    1153.801    2158.578
+long_commute_driving_alone_raw_value             667.8322    133.328      5.009      0.000     406.374     929.290
+adult_smoking_raw_value                         6903.9686    625.038     11.046      0.000    5678.256    8129.682
+food_environment_index_raw_value                -112.5966     20.585     -5.470      0.000    -152.964     -72.229
+access_to_exercise_opportunities_raw_value      -179.5277     89.490     -2.006      0.045    -355.019      -4.036
+excessive_drinking_raw_value                   -3172.5582    680.022     -4.665      0.000   -4506.095   -1839.021
+sexually_transmitted_infections_raw_value          1.0831      0.079     13.778      0.000       0.929       1.237
+teen_births_raw_value                             27.7117      2.183     12.697      0.000      23.432      31.992
+some_college_raw_value                           902.3311    211.677      4.263      0.000     487.227    1317.435
+children_in_poverty_raw_value                   2836.1525    400.306      7.085      0.000    2051.144    3621.161
+income_inequality_raw_value                       46.0184     25.068      1.836      0.067      -3.141      95.177
+children_in_single_parent_households_raw_value   521.4417    252.581      2.064      0.039      26.125    1016.759
+social_associations_raw_value                    -10.2531      3.153     -3.252      0.001     -16.436      -4.070
+injury_deaths_raw_value                           24.3352      0.622     39.130      0.000      23.116      25.555
+weighted_ai_adoption_score                       -26.5595     14.092     -1.885      0.060     -54.194       1.075
+==============================================================================
+Omnibus:                     1006.335   Durbin-Watson:                   1.855
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            19521.435
+Skew:                           1.619   Prob(JB):                         0.00
+Kurtosis:                      17.030   Cond. No.                     2.53e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.53e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+--- VIF (Final Stepwise Model) ---
+                                       feature      VIF
+                 children_in_poverty_raw_value 5.497313
+                         teen_births_raw_value 3.304284
+                       adult_smoking_raw_value 3.185914
+children_in_single_parent_households_raw_value 3.065956
+                        some_college_raw_value 2.959956
+              food_environment_index_raw_value 2.515191
+     sexually_transmitted_infections_raw_value 2.186377
+                   income_inequality_raw_value 1.924156
+                  excessive_drinking_raw_value 1.782666
+    access_to_exercise_opportunities_raw_value 1.726256
+                       injury_deaths_raw_value 1.446009
+               driving_alone_to_work_raw_value 1.384718
+          long_commute_driving_alone_raw_value 1.301708
+                 social_associations_raw_value 1.261447
+                    weighted_ai_adoption_score 1.051664
+Max VIF: 5.50
+
+..... Analyzing DV: dv3_operational_eff .....
+[Stepwise OLS] Starting with base predictors:
+  ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+Initial model with all 24 predictors: R² = 0.1192
+Step 1: Removing 'access_to_exercise_opportunities_raw_value' (p=0.9431 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'high_school_completion_raw_value' (p=0.5733 > 0.1, f²=0.0002, trivial effect)
+Step 3: Removing 'unemployment_raw_value' (p=0.4640 > 0.1, f²=0.0003, trivial effect)
+Step 4: Removing 'children_in_single_parent_households_raw_value' (p=0.4193 > 0.1, f²=0.0003, trivial effect)
+Step 5: Removing 'children_in_poverty_raw_value' (p=0.3811 > 0.1, f²=0.0004, trivial effect)
+Step 6: Removing 'severe_housing_problems_raw_value' (p=0.3129 > 0.1, f²=0.0005, trivial effect)
+Step 7: Removing 'food_environment_index_raw_value' (p=0.1482 > 0.1, f²=0.0011, trivial effect)
+
+Final stepwise model R² = 0.1167 (initial was 0.1192)
+Condition number: 30877.43 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'physical_inactivity_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'some_college_raw_value', 'income_inequality_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+access_to_exercise_opportunities_raw_value 0.9431     0.0000     trivial 
+high_school_completion_raw_value 0.5733     0.0002     trivial 
+unemployment_raw_value         0.4640     0.0003     trivial 
+children_in_single_parent_households_raw_value 0.4193     0.0003     trivial 
+children_in_poverty_raw_value  0.3811     0.0004     trivial 
+severe_housing_problems_raw_value 0.3129     0.0005     trivial 
+food_environment_index_raw_value 0.1482     0.0011     trivial 
+Overall effect of removed predictors on R²: f² = 0.0028, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  air_pollution_particulate_matter_raw_value p=0.0004, f²=0.0064, trivial 
+  drinking_water_violations_raw_value p=0.0120, f²=0.0032, trivial 
+  driving_alone_to_work_raw_value p=0.0058, f²=0.0039, trivial 
+  long_commute_driving_alone_raw_value p=0.0913, f²=0.0015, trivial 
+  adult_smoking_raw_value        p=0.0059, f²=0.0039, trivial 
+  adult_obesity_raw_value        p=0.0850, f²=0.0015, trivial 
+  physical_inactivity_raw_value  p=0.0000, f²=0.0147, trivial 
+  excessive_drinking_raw_value   p=0.0928, f²=0.0014, trivial 
+  alcohol_impaired_driving_deaths_raw_value p=0.0800, f²=0.0016, trivial 
+  sexually_transmitted_infections_raw_value p=0.0108, f²=0.0033, trivial 
+  teen_births_raw_value          p=0.0510, f²=0.0020, trivial 
+  some_college_raw_value         p=0.0217, f²=0.0027, trivial 
+  income_inequality_raw_value    p=0.0281, f²=0.0025, trivial 
+  social_associations_raw_value  p=0.0000, f²=0.0194, trivial 
+  injury_deaths_raw_value        p=0.0662, f²=0.0017, trivial 
+  weighted_ai_adoption_score     p=0.0165, f²=0.0029, trivial 
+  weighted_robotics_adoption_score p=0.0589, f²=0.0018, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     dv3_operational_eff   R-squared:                       0.117
+Model:                             OLS   Adj. R-squared:                  0.109
+Method:                  Least Squares   F-statistic:                     15.19
+Date:                 Mon, 31 Mar 2025   Prob (F-statistic):           4.56e-42
+Time:                         22:38:06   Log-Likelihood:                -8620.8
+No. Observations:                 1972   AIC:                         1.728e+04
+Df Residuals:                     1954   BIC:                         1.738e+04
+Df Model:                           17                                         
+Covariance Type:             nonrobust                                         
+==============================================================================================================
+                                                 coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------
+const                                          5.6715     11.065      0.513      0.608     -16.029      27.372
+air_pollution_particulate_matter_raw_value     1.1279      0.318      3.547      0.000       0.504       1.752
+drinking_water_violations_raw_value           -2.2583      0.898     -2.516      0.012      -4.019      -0.498
+driving_alone_to_work_raw_value               24.1507      8.750      2.760      0.006       6.991      41.310
+long_commute_driving_alone_raw_value          -7.4243      4.395     -1.689      0.091     -16.044       1.196
+adult_smoking_raw_value                       63.0602     22.883      2.756      0.006      18.182     107.938
+adult_obesity_raw_value                       29.3117     17.008      1.723      0.085      -4.044      62.668
+physical_inactivity_raw_value               -119.2671     22.261     -5.358      0.000    -162.925     -75.609
+excessive_drinking_raw_value                 -37.3651     22.221     -1.681      0.093     -80.945       6.215
+alcohol_impaired_driving_deaths_raw_value     -6.4715      3.695     -1.751      0.080     -13.718       0.775
+sexually_transmitted_infections_raw_value      0.0062      0.002      2.553      0.011       0.001       0.011
+teen_births_raw_value                         -0.1385      0.071     -1.952      0.051      -0.278       0.001
+some_college_raw_value                        15.4911      6.745      2.297      0.022       2.263      28.719
+income_inequality_raw_value                   -1.6159      0.735     -2.197      0.028      -3.058      -0.174
+social_associations_raw_value                 -0.6194      0.101     -6.155      0.000      -0.817      -0.422
+injury_deaths_raw_value                       -0.0405      0.022     -1.838      0.066      -0.084       0.003
+weighted_ai_adoption_score                     1.1223      0.468      2.399      0.017       0.205       2.040
+weighted_robotics_adoption_score               0.2696      0.143      1.890      0.059      -0.010       0.549
+==============================================================================
+Omnibus:                     1522.244   Durbin-Watson:                   1.878
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           106561.397
+Skew:                           3.039   Prob(JB):                         0.00
+Kurtosis:                      38.496   Cond. No.                     3.09e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.09e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+--- VIF (Final Stepwise Model) ---
+                                   feature      VIF
+             physical_inactivity_raw_value 6.882258
+                   adult_smoking_raw_value 4.036582
+                     teen_births_raw_value 3.349268
+                   adult_obesity_raw_value 3.056869
+                    some_college_raw_value 2.975100
+              excessive_drinking_raw_value 1.850214
+ sexually_transmitted_infections_raw_value 1.755181
+                   injury_deaths_raw_value 1.715146
+               income_inequality_raw_value 1.620443
+           driving_alone_to_work_raw_value 1.572825
+air_pollution_particulate_matter_raw_value 1.537691
+      long_commute_driving_alone_raw_value 1.371196
+          weighted_robotics_adoption_score 1.271056
+             social_associations_raw_value 1.249306
+                weighted_ai_adoption_score 1.118772
+ alcohol_impaired_driving_deaths_raw_value 1.078870
+       drinking_water_violations_raw_value 1.043229
+Max VIF: 6.88
+
+--------------------------------------------------------------------------------
+ PART C: SINGLE INTERACTIONS (COMPONENT-LEVEL)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access .....
+[Stepwise OLS] Starting with base predictors:
+  ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+Initial model with all 24 predictors: R² = 0.4716
+Step 1: Removing 'social_associations_raw_value' (p=0.9373 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'children_in_poverty_raw_value' (p=0.7834 > 0.1, f²=0.0000, trivial effect)
+Step 3: Removing 'unemployment_raw_value' (p=0.6395 > 0.1, f²=0.0001, trivial effect)
+Step 4: Removing 'weighted_ai_adoption_score' (p=0.4956 > 0.1, f²=0.0002, trivial effect)
+Step 5: Removing 'some_college_raw_value' (p=0.4244 > 0.1, f²=0.0003, trivial effect)
+Step 6: Removing 'food_environment_index_raw_value' (p=0.4386 > 0.1, f²=0.0003, trivial effect)
+Step 7: Removing 'children_in_single_parent_households_raw_value' (p=0.4285 > 0.1, f²=0.0003, trivial effect)
+Step 8: Removing 'sexually_transmitted_infections_raw_value' (p=0.2773 > 0.1, f²=0.0005, trivial effect)
+Step 9: Removing 'driving_alone_to_work_raw_value' (p=0.1260 > 0.1, f²=0.0010, trivial effect)
+Step 10: Removing 'alcohol_impaired_driving_deaths_raw_value' (p=0.1043 > 0.1, f²=0.0012, trivial effect)
+
+Final stepwise model R² = 0.4695 (initial was 0.4716)
+Condition number: 7086.91 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'income_inequality_raw_value', 'injury_deaths_raw_value', 'weighted_robotics_adoption_score']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+social_associations_raw_value  0.9373     0.0000     trivial 
+children_in_poverty_raw_value  0.7834     0.0000     trivial 
+unemployment_raw_value         0.6395     0.0001     trivial 
+weighted_ai_adoption_score     0.4956     0.0002     trivial 
+some_college_raw_value         0.4244     0.0003     trivial 
+food_environment_index_raw_value 0.4386     0.0003     trivial 
+children_in_single_parent_households_raw_value 0.4285     0.0003     trivial 
+sexually_transmitted_infections_raw_value 0.2773     0.0005     trivial 
+driving_alone_to_work_raw_value 0.1260     0.0010     trivial 
+alcohol_impaired_driving_deaths_raw_value 0.1043     0.0012     trivial 
+Overall effect of removed predictors on R²: f² = 0.0039, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  air_pollution_particulate_matter_raw_value p=0.0059, f²=0.0034, trivial 
+  drinking_water_violations_raw_value p=0.0114, f²=0.0029, trivial 
+  severe_housing_problems_raw_value p=0.0000, f²=0.0197, trivial 
+  long_commute_driving_alone_raw_value p=0.0000, f²=0.1147, small *
+  adult_smoking_raw_value        p=0.0000, f²=0.0095, trivial 
+  adult_obesity_raw_value        p=0.0008, f²=0.0050, trivial 
+  physical_inactivity_raw_value  p=0.0032, f²=0.0039, trivial 
+  access_to_exercise_opportunities_raw_value p=0.0000, f²=0.0093, trivial 
+  excessive_drinking_raw_value   p=0.0636, f²=0.0015, trivial 
+  teen_births_raw_value          p=0.0000, f²=0.0096, trivial 
+  high_school_completion_raw_value p=0.0000, f²=0.0127, trivial 
+  income_inequality_raw_value    p=0.0188, f²=0.0025, trivial 
+  injury_deaths_raw_value        p=0.0000, f²=0.0100, trivial 
+  weighted_robotics_adoption_score p=0.0024, f²=0.0041, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     dv1_healthcare_access   R-squared:                       0.469
+Model:                               OLS   Adj. R-squared:                  0.466
+Method:                    Least Squares   F-statistic:                     141.9
+Date:                   Mon, 31 Mar 2025   Prob (F-statistic):          2.87e-296
+Time:                           22:38:06   Log-Likelihood:                -16494.
+No. Observations:                   2260   AIC:                         3.302e+04
+Df Residuals:                       2245   BIC:                         3.310e+04
+Df Model:                             14                                         
+Covariance Type:               nonrobust                                         
+==============================================================================================================
+                                                 coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------
+const                                       1026.4910    282.023      3.640      0.000     473.437    1579.545
+air_pollution_particulate_matter_raw_value    14.9782      5.430      2.758      0.006       4.329      25.627
+drinking_water_violations_raw_value           39.5470     15.613      2.533      0.011       8.929      70.165
+severe_housing_problems_raw_value          -1739.6753    261.696     -6.648      0.000   -2252.866   -1226.484
+long_commute_driving_alone_raw_value        1203.4208     74.992     16.047      0.000    1056.359    1350.482
+adult_smoking_raw_value                     1802.9931    391.296      4.608      0.000    1035.653    2570.333
+adult_obesity_raw_value                      957.5703    284.701      3.363      0.001     399.266    1515.874
+physical_inactivity_raw_value               1204.5789    407.539      2.956      0.003     405.386    2003.772
+access_to_exercise_opportunities_raw_value  -226.2213     49.540     -4.566      0.000    -323.370    -129.073
+excessive_drinking_raw_value                 702.0937    378.275      1.856      0.064     -39.711    1443.898
+teen_births_raw_value                          5.6114      1.209      4.640      0.000       3.240       7.983
+high_school_completion_raw_value           -1264.6636    236.790     -5.341      0.000   -1729.014    -800.313
+income_inequality_raw_value                   30.9450     13.163      2.351      0.019       5.132      56.758
+injury_deaths_raw_value                       -1.8177      0.385     -4.727      0.000      -2.572      -1.064
+weighted_robotics_adoption_score              -7.1998      2.370     -3.038      0.002     -11.847      -2.553
+==============================================================================
+Omnibus:                      916.807   Durbin-Watson:                   1.975
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             8101.344
+Skew:                           1.673   Prob(JB):                         0.00
+Kurtosis:                      11.651   Cond. No.                     7.09e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.09e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+--- VIF (Final Stepwise Model) ---
+                                   feature      VIF
+             physical_inactivity_raw_value 7.660281
+                   adult_smoking_raw_value 3.990992
+                     teen_births_raw_value 3.242815
+                   adult_obesity_raw_value 2.889020
+          high_school_completion_raw_value 2.844584
+                   injury_deaths_raw_value 1.766928
+              excessive_drinking_raw_value 1.763140
+               income_inequality_raw_value 1.695742
+         severe_housing_problems_raw_value 1.692823
+access_to_exercise_opportunities_raw_value 1.690894
+air_pollution_particulate_matter_raw_value 1.475387
+      long_commute_driving_alone_raw_value 1.316302
+          weighted_robotics_adoption_score 1.173368
+       drinking_water_violations_raw_value 1.034627
+Max VIF: 7.66
+
+Now testing single interactions, one at a time.
+
+Skipping adult_obesity_raw_value*children_in_poverty_raw_value because one or both are not in final stepwise model.
+Skipping access_to_exercise_opportunities_raw_value*unemployment_raw_value because one or both are not in final stepwise model.
+
+..... Analyzing DV: dv2_healthcare_quality .....
+[Stepwise OLS] Starting with base predictors:
+  ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+Initial model with all 24 predictors: R² = 0.8423
+Step 1: Removing 'air_pollution_particulate_matter_raw_value' (p=0.9035 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'high_school_completion_raw_value' (p=0.5375 > 0.1, f²=0.0002, trivial effect)
+Step 3: Removing 'physical_inactivity_raw_value' (p=0.6484 > 0.1, f²=0.0001, trivial effect)
+Step 4: Removing 'weighted_robotics_adoption_score' (p=0.4344 > 0.1, f²=0.0003, trivial effect)
+Step 5: Removing 'drinking_water_violations_raw_value' (p=0.3927 > 0.1, f²=0.0003, trivial effect)
+Step 6: Removing 'severe_housing_problems_raw_value' (p=0.4249 > 0.1, f²=0.0003, trivial effect)
+Step 7: Removing 'alcohol_impaired_driving_deaths_raw_value' (p=0.3321 > 0.1, f²=0.0004, trivial effect)
+Step 8: Removing 'adult_obesity_raw_value' (p=0.3043 > 0.1, f²=0.0005, trivial effect)
+Step 9: Removing 'unemployment_raw_value' (p=0.2030 > 0.1, f²=0.0007, trivial effect)
+
+Final stepwise model R² = 0.8419 (initial was 0.8423)
+Condition number: 25339.37 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'food_environment_index_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'some_college_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+air_pollution_particulate_matter_raw_value 0.9035     0.0000     trivial 
+high_school_completion_raw_value 0.5375     0.0002     trivial 
+physical_inactivity_raw_value  0.6484     0.0001     trivial 
+weighted_robotics_adoption_score 0.4344     0.0003     trivial 
+drinking_water_violations_raw_value 0.3927     0.0003     trivial 
+severe_housing_problems_raw_value 0.4249     0.0003     trivial 
+alcohol_impaired_driving_deaths_raw_value 0.3321     0.0004     trivial 
+adult_obesity_raw_value        0.3043     0.0005     trivial 
+unemployment_raw_value         0.2030     0.0007     trivial 
+Overall effect of removed predictors on R²: f² = 0.0028, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  driving_alone_to_work_raw_value p=0.0000, f²=0.0186, trivial 
+  long_commute_driving_alone_raw_value p=0.0000, f²=0.0112, trivial 
+  adult_smoking_raw_value        p=0.0000, f²=0.0544, small *
+  food_environment_index_raw_value p=0.0000, f²=0.0133, trivial 
+  access_to_exercise_opportunities_raw_value p=0.0450, f²=0.0018, trivial 
+  excessive_drinking_raw_value   p=0.0000, f²=0.0097, trivial 
+  sexually_transmitted_infections_raw_value p=0.0000, f²=0.0846, small *
+  teen_births_raw_value          p=0.0000, f²=0.0718, small *
+  some_college_raw_value         p=0.0000, f²=0.0081, trivial 
+  children_in_poverty_raw_value  p=0.0000, f²=0.0224, small *
+  income_inequality_raw_value    p=0.0665, f²=0.0015, trivial 
+  children_in_single_parent_households_raw_value p=0.0391, f²=0.0019, trivial 
+  social_associations_raw_value  p=0.0012, f²=0.0047, trivial 
+  injury_deaths_raw_value        p=0.0000, f²=0.6823, large ***
+  weighted_ai_adoption_score     p=0.0596, f²=0.0016, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     dv2_healthcare_quality   R-squared:                       0.842
+Model:                                OLS   Adj. R-squared:                  0.841
+Method:                     Least Squares   F-statistic:                     796.6
+Date:                    Mon, 31 Mar 2025   Prob (F-statistic):               0.00
+Time:                            22:38:06   Log-Likelihood:                -17807.
+No. Observations:                    2260   AIC:                         3.565e+04
+Df Residuals:                        2244   BIC:                         3.574e+04
+Df Model:                              15                                         
+Covariance Type:                nonrobust                                         
+==================================================================================================================
+                                                     coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+const                                          -1074.3130    388.863     -2.763      0.006   -1836.881    -311.745
+driving_alone_to_work_raw_value                 1656.1896    256.187      6.465      0.000    1153.801    2158.578
+long_commute_driving_alone_raw_value             667.8322    133.328      5.009      0.000     406.374     929.290
+adult_smoking_raw_value                         6903.9686    625.038     11.046      0.000    5678.256    8129.682
+food_environment_index_raw_value                -112.5966     20.585     -5.470      0.000    -152.964     -72.229
+access_to_exercise_opportunities_raw_value      -179.5277     89.490     -2.006      0.045    -355.019      -4.036
+excessive_drinking_raw_value                   -3172.5582    680.022     -4.665      0.000   -4506.095   -1839.021
+sexually_transmitted_infections_raw_value          1.0831      0.079     13.778      0.000       0.929       1.237
+teen_births_raw_value                             27.7117      2.183     12.697      0.000      23.432      31.992
+some_college_raw_value                           902.3311    211.677      4.263      0.000     487.227    1317.435
+children_in_poverty_raw_value                   2836.1525    400.306      7.085      0.000    2051.144    3621.161
+income_inequality_raw_value                       46.0184     25.068      1.836      0.067      -3.141      95.177
+children_in_single_parent_households_raw_value   521.4417    252.581      2.064      0.039      26.125    1016.759
+social_associations_raw_value                    -10.2531      3.153     -3.252      0.001     -16.436      -4.070
+injury_deaths_raw_value                           24.3352      0.622     39.130      0.000      23.116      25.555
+weighted_ai_adoption_score                       -26.5595     14.092     -1.885      0.060     -54.194       1.075
+==============================================================================
+Omnibus:                     1006.335   Durbin-Watson:                   1.855
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            19521.435
+Skew:                           1.619   Prob(JB):                         0.00
+Kurtosis:                      17.030   Cond. No.                     2.53e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.53e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+--- VIF (Final Stepwise Model) ---
+                                       feature      VIF
+                 children_in_poverty_raw_value 5.497313
+                         teen_births_raw_value 3.304284
+                       adult_smoking_raw_value 3.185914
+children_in_single_parent_households_raw_value 3.065956
+                        some_college_raw_value 2.959956
+              food_environment_index_raw_value 2.515191
+     sexually_transmitted_infections_raw_value 2.186377
+                   income_inequality_raw_value 1.924156
+                  excessive_drinking_raw_value 1.782666
+    access_to_exercise_opportunities_raw_value 1.726256
+                       injury_deaths_raw_value 1.446009
+               driving_alone_to_work_raw_value 1.384718
+          long_commute_driving_alone_raw_value 1.301708
+                 social_associations_raw_value 1.261447
+                    weighted_ai_adoption_score 1.051664
+Max VIF: 5.50
+
+Now testing single interactions, one at a time.
+
+Skipping adult_obesity_raw_value*children_in_poverty_raw_value because one or both are not in final stepwise model.
+Skipping access_to_exercise_opportunities_raw_value*unemployment_raw_value because one or both are not in final stepwise model.
+
+..... Analyzing DV: dv3_operational_eff .....
+[Stepwise OLS] Starting with base predictors:
+  ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'severe_housing_problems_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'food_environment_index_raw_value', 'physical_inactivity_raw_value', 'access_to_exercise_opportunities_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'high_school_completion_raw_value', 'some_college_raw_value', 'unemployment_raw_value', 'children_in_poverty_raw_value', 'income_inequality_raw_value', 'children_in_single_parent_households_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+Initial model with all 24 predictors: R² = 0.1192
+Step 1: Removing 'access_to_exercise_opportunities_raw_value' (p=0.9431 > 0.1, f²=0.0000, trivial effect)
+Step 2: Removing 'high_school_completion_raw_value' (p=0.5733 > 0.1, f²=0.0002, trivial effect)
+Step 3: Removing 'unemployment_raw_value' (p=0.4640 > 0.1, f²=0.0003, trivial effect)
+Step 4: Removing 'children_in_single_parent_households_raw_value' (p=0.4193 > 0.1, f²=0.0003, trivial effect)
+Step 5: Removing 'children_in_poverty_raw_value' (p=0.3811 > 0.1, f²=0.0004, trivial effect)
+Step 6: Removing 'severe_housing_problems_raw_value' (p=0.3129 > 0.1, f²=0.0005, trivial effect)
+Step 7: Removing 'food_environment_index_raw_value' (p=0.1482 > 0.1, f²=0.0011, trivial effect)
+
+Final stepwise model R² = 0.1167 (initial was 0.1192)
+Condition number: 30877.43 (Note: >30 suggests strong collinearity.)
+Kept predictors: ['air_pollution_particulate_matter_raw_value', 'drinking_water_violations_raw_value', 'driving_alone_to_work_raw_value', 'long_commute_driving_alone_raw_value', 'adult_smoking_raw_value', 'adult_obesity_raw_value', 'physical_inactivity_raw_value', 'excessive_drinking_raw_value', 'alcohol_impaired_driving_deaths_raw_value', 'sexually_transmitted_infections_raw_value', 'teen_births_raw_value', 'some_college_raw_value', 'income_inequality_raw_value', 'social_associations_raw_value', 'injury_deaths_raw_value', 'weighted_ai_adoption_score', 'weighted_robotics_adoption_score']
+
+Removed predictors (in order of removal):
+Predictor                      p-value    f²         Effect
+------------------------------------------------------------
+access_to_exercise_opportunities_raw_value 0.9431     0.0000     trivial 
+high_school_completion_raw_value 0.5733     0.0002     trivial 
+unemployment_raw_value         0.4640     0.0003     trivial 
+children_in_single_parent_households_raw_value 0.4193     0.0003     trivial 
+children_in_poverty_raw_value  0.3811     0.0004     trivial 
+severe_housing_problems_raw_value 0.3129     0.0005     trivial 
+food_environment_index_raw_value 0.1482     0.0011     trivial 
+Overall effect of removed predictors on R²: f² = 0.0028, trivial 
+
+Partial Cohen's f² for each *kept* predictor (final model):
+  air_pollution_particulate_matter_raw_value p=0.0004, f²=0.0064, trivial 
+  drinking_water_violations_raw_value p=0.0120, f²=0.0032, trivial 
+  driving_alone_to_work_raw_value p=0.0058, f²=0.0039, trivial 
+  long_commute_driving_alone_raw_value p=0.0913, f²=0.0015, trivial 
+  adult_smoking_raw_value        p=0.0059, f²=0.0039, trivial 
+  adult_obesity_raw_value        p=0.0850, f²=0.0015, trivial 
+  physical_inactivity_raw_value  p=0.0000, f²=0.0147, trivial 
+  excessive_drinking_raw_value   p=0.0928, f²=0.0014, trivial 
+  alcohol_impaired_driving_deaths_raw_value p=0.0800, f²=0.0016, trivial 
+  sexually_transmitted_infections_raw_value p=0.0108, f²=0.0033, trivial 
+  teen_births_raw_value          p=0.0510, f²=0.0020, trivial 
+  some_college_raw_value         p=0.0217, f²=0.0027, trivial 
+  income_inequality_raw_value    p=0.0281, f²=0.0025, trivial 
+  social_associations_raw_value  p=0.0000, f²=0.0194, trivial 
+  injury_deaths_raw_value        p=0.0662, f²=0.0017, trivial 
+  weighted_ai_adoption_score     p=0.0165, f²=0.0029, trivial 
+  weighted_robotics_adoption_score p=0.0589, f²=0.0018, trivial 
+
+--- Final Model Summary (Stepwise) ---
+                             OLS Regression Results                            
+===============================================================================
+Dep. Variable:     dv3_operational_eff   R-squared:                       0.117
+Model:                             OLS   Adj. R-squared:                  0.109
+Method:                  Least Squares   F-statistic:                     15.19
+Date:                 Mon, 31 Mar 2025   Prob (F-statistic):           4.56e-42
+Time:                         22:38:06   Log-Likelihood:                -8620.8
+No. Observations:                 1972   AIC:                         1.728e+04
+Df Residuals:                     1954   BIC:                         1.738e+04
+Df Model:                           17                                         
+Covariance Type:             nonrobust                                         
+==============================================================================================================
+                                                 coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------
+const                                          5.6715     11.065      0.513      0.608     -16.029      27.372
+air_pollution_particulate_matter_raw_value     1.1279      0.318      3.547      0.000       0.504       1.752
+drinking_water_violations_raw_value           -2.2583      0.898     -2.516      0.012      -4.019      -0.498
+driving_alone_to_work_raw_value               24.1507      8.750      2.760      0.006       6.991      41.310
+long_commute_driving_alone_raw_value          -7.4243      4.395     -1.689      0.091     -16.044       1.196
+adult_smoking_raw_value                       63.0602     22.883      2.756      0.006      18.182     107.938
+adult_obesity_raw_value                       29.3117     17.008      1.723      0.085      -4.044      62.668
+physical_inactivity_raw_value               -119.2671     22.261     -5.358      0.000    -162.925     -75.609
+excessive_drinking_raw_value                 -37.3651     22.221     -1.681      0.093     -80.945       6.215
+alcohol_impaired_driving_deaths_raw_value     -6.4715      3.695     -1.751      0.080     -13.718       0.775
+sexually_transmitted_infections_raw_value      0.0062      0.002      2.553      0.011       0.001       0.011
+teen_births_raw_value                         -0.1385      0.071     -1.952      0.051      -0.278       0.001
+some_college_raw_value                        15.4911      6.745      2.297      0.022       2.263      28.719
+income_inequality_raw_value                   -1.6159      0.735     -2.197      0.028      -3.058      -0.174
+social_associations_raw_value                 -0.6194      0.101     -6.155      0.000      -0.817      -0.422
+injury_deaths_raw_value                       -0.0405      0.022     -1.838      0.066      -0.084       0.003
+weighted_ai_adoption_score                     1.1223      0.468      2.399      0.017       0.205       2.040
+weighted_robotics_adoption_score               0.2696      0.143      1.890      0.059      -0.010       0.549
+==============================================================================
+Omnibus:                     1522.244   Durbin-Watson:                   1.878
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           106561.397
+Skew:                           3.039   Prob(JB):                         0.00
+Kurtosis:                      38.496   Cond. No.                     3.09e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.09e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+--- VIF (Final Stepwise Model) ---
+                                   feature      VIF
+             physical_inactivity_raw_value 6.882258
+                   adult_smoking_raw_value 4.036582
+                     teen_births_raw_value 3.349268
+                   adult_obesity_raw_value 3.056869
+                    some_college_raw_value 2.975100
+              excessive_drinking_raw_value 1.850214
+ sexually_transmitted_infections_raw_value 1.755181
+                   injury_deaths_raw_value 1.715146
+               income_inequality_raw_value 1.620443
+           driving_alone_to_work_raw_value 1.572825
+air_pollution_particulate_matter_raw_value 1.537691
+      long_commute_driving_alone_raw_value 1.371196
+          weighted_robotics_adoption_score 1.271056
+             social_associations_raw_value 1.249306
+                weighted_ai_adoption_score 1.118772
+ alcohol_impaired_driving_deaths_raw_value 1.078870
+       drinking_water_violations_raw_value 1.043229
+Max VIF: 6.88
+
+Now testing single interactions, one at a time.
+
+Skipping adult_obesity_raw_value*children_in_poverty_raw_value because one or both are not in final stepwise model.
+Skipping access_to_exercise_opportunities_raw_value*unemployment_raw_value because one or both are not in final stepwise model.
+
+--------------------------------------------------------------------------------
+ FINAL COHEN'S f² SUMMARY
+--------------------------------------------------------------------------------
+
+COHEN'S f² SUMMARY TABLE
+--------------------------------------------------------------------------------
+                                                                                      Predictor    ΔR²     f² Effect Size Sig     p-value
+                                     Index: iv4_social_economic (kept) (dv2_healthcare_quality) 0.3302 0.9311       large ***  0.0000e+00
+                           Comp(NoInt): injury_deaths_raw_value (kept) (dv2_healthcare_quality) 0.1079 0.6823       large *** 8.9258e-256
+                         Comp(IntTest): injury_deaths_raw_value (kept) (dv2_healthcare_quality) 0.1079 0.6823       large *** 8.9258e-256
+                                    Index: iv3_health_behaviors (kept) (dv2_healthcare_quality) 0.1040 0.2932      medium  ** 2.2999e-177
+                                 Index: iv2_physical_environment (kept) (dv1_healthcare_access) 0.1421 0.1867      medium  ** 9.2278e-119
+             Comp(IntTest): long_commute_driving_alone_raw_value (kept) (dv1_healthcare_access) 0.0609 0.1147       small   *  6.0401e-55
+               Comp(NoInt): long_commute_driving_alone_raw_value (kept) (dv1_healthcare_access) 0.0609 0.1147       small   *  6.0401e-55
+       Comp(IntTest): sexually_transmitted_infections_raw_value (kept) (dv2_healthcare_quality) 0.0134 0.0846       small   *  1.6102e-41
+         Comp(NoInt): sexually_transmitted_infections_raw_value (kept) (dv2_healthcare_quality) 0.0134 0.0846       small   *  1.6102e-41
+                             Comp(NoInt): teen_births_raw_value (kept) (dv2_healthcare_quality) 0.0114 0.0718       small   *  1.0132e-35
+                           Comp(IntTest): teen_births_raw_value (kept) (dv2_healthcare_quality) 0.0114 0.0718       small   *  1.0132e-35
+                                      Index: iv4_social_economic (kept) (dv1_healthcare_access) 0.0497 0.0652       small   *  5.0769e-45
+                         Comp(IntTest): adult_smoking_raw_value (kept) (dv2_healthcare_quality) 0.0086 0.0544       small   *  1.1705e-27
+                           Comp(NoInt): adult_smoking_raw_value (kept) (dv2_healthcare_quality) 0.0086 0.0544       small   *  1.1705e-27
+                                         Index: mo2_robotics_cap (kept) (dv1_healthcare_access) 0.0301 0.0396       small   *  2.5967e-28
+                                        Index: mo2_robotics_cap (kept) (dv2_healthcare_quality) 0.0116 0.0328       small   *  7.7833e-24
+                                Index: iv2_physical_environment (kept) (dv2_healthcare_quality) 0.0082 0.0231       small   *  2.7273e-17
+                   Comp(IntTest): children_in_poverty_raw_value (kept) (dv2_healthcare_quality) 0.0035 0.0224       small   *  1.8541e-12
+                     Comp(NoInt): children_in_poverty_raw_value (kept) (dv2_healthcare_quality) 0.0035 0.0224       small   *  1.8541e-12
+                Comp(IntTest): severe_housing_problems_raw_value (kept) (dv1_healthcare_access) 0.0104 0.0197     trivial      3.7257e-11
+                  Comp(NoInt): severe_housing_problems_raw_value (kept) (dv1_healthcare_access) 0.0104 0.0197     trivial      3.7257e-11
+                        Comp(NoInt): social_associations_raw_value (kept) (dv3_operational_eff) 0.0171 0.0194     trivial      9.0926e-10
+                      Comp(IntTest): social_associations_raw_value (kept) (dv3_operational_eff) 0.0171 0.0194     trivial      9.0926e-10
+                 Comp(IntTest): driving_alone_to_work_raw_value (kept) (dv2_healthcare_quality) 0.0029 0.0186     trivial      1.2409e-10
+                   Comp(NoInt): driving_alone_to_work_raw_value (kept) (dv2_healthcare_quality) 0.0029 0.0186     trivial      1.2409e-10
+                                           Index: mo2_robotics_cap (kept) (dv3_operational_eff) 0.0157 0.0165     trivial      3.4563e-09
+                      Comp(IntTest): physical_inactivity_raw_value (kept) (dv3_operational_eff) 0.0130 0.0147     trivial      9.4274e-08
+                        Comp(NoInt): physical_inactivity_raw_value (kept) (dv3_operational_eff) 0.0130 0.0147     trivial      9.4274e-08
+                                Index: iv1_public_health_policy (kept) (dv2_healthcare_quality) 0.0049 0.0138     trivial      5.1351e-11
+                  Comp(NoInt): food_environment_index_raw_value (kept) (dv2_healthcare_quality) 0.0021 0.0133     trivial      5.0046e-08
+                Comp(IntTest): food_environment_index_raw_value (kept) (dv2_healthcare_quality) 0.0021 0.0133     trivial      5.0046e-08
+                 Comp(IntTest): high_school_completion_raw_value (kept) (dv1_healthcare_access) 0.0067 0.0127     trivial      1.0183e-07
+                   Comp(NoInt): high_school_completion_raw_value (kept) (dv1_healthcare_access) 0.0067 0.0127     trivial      1.0183e-07
+              Comp(NoInt): long_commute_driving_alone_raw_value (kept) (dv2_healthcare_quality) 0.0018 0.0112     trivial      5.8993e-07
+            Comp(IntTest): long_commute_driving_alone_raw_value (kept) (dv2_healthcare_quality) 0.0018 0.0112     trivial      5.8993e-07
+                          Comp(IntTest): injury_deaths_raw_value (kept) (dv1_healthcare_access) 0.0053 0.0100     trivial      2.4187e-06
+                            Comp(NoInt): injury_deaths_raw_value (kept) (dv1_healthcare_access) 0.0053 0.0100     trivial      2.4187e-06
+                      Comp(NoInt): excessive_drinking_raw_value (kept) (dv2_healthcare_quality) 0.0015 0.0097     trivial      3.2618e-06
+                    Comp(IntTest): excessive_drinking_raw_value (kept) (dv2_healthcare_quality) 0.0015 0.0097     trivial      3.2618e-06
+                            Comp(IntTest): teen_births_raw_value (kept) (dv1_healthcare_access) 0.0051 0.0096     trivial      3.6889e-06
+                              Comp(NoInt): teen_births_raw_value (kept) (dv1_healthcare_access) 0.0051 0.0096     trivial      3.6889e-06
+                                        Index: iv4_social_economic (kept) (dv3_operational_eff) 0.0091 0.0096     trivial      6.5453e-06
+                            Comp(NoInt): adult_smoking_raw_value (kept) (dv1_healthcare_access) 0.0050 0.0095     trivial      4.2986e-06
+                          Comp(IntTest): adult_smoking_raw_value (kept) (dv1_healthcare_access) 0.0050 0.0095     trivial      4.2986e-06
+         Comp(NoInt): access_to_exercise_opportunities_raw_value (kept) (dv1_healthcare_access) 0.0049 0.0093     trivial      5.2289e-06
+       Comp(IntTest): access_to_exercise_opportunities_raw_value (kept) (dv1_healthcare_access) 0.0049 0.0093     trivial      5.2289e-06
+                          Comp(IntTest): some_college_raw_value (kept) (dv2_healthcare_quality) 0.0013 0.0081     trivial      2.1027e-05
+                            Comp(NoInt): some_college_raw_value (kept) (dv2_healthcare_quality) 0.0013 0.0081     trivial      2.1027e-05
+           Comp(NoInt): air_pollution_particulate_matter_raw_value (kept) (dv3_operational_eff) 0.0057 0.0064     trivial      3.9866e-04
+         Comp(IntTest): air_pollution_particulate_matter_raw_value (kept) (dv3_operational_eff) 0.0057 0.0064     trivial      3.9866e-04
+                                 Index: iv1_public_health_policy (kept) (dv1_healthcare_access) 0.0047 0.0062     trivial      1.0224e-05
+                          Comp(IntTest): adult_obesity_raw_value (kept) (dv1_healthcare_access) 0.0027 0.0050     trivial      7.8273e-04
+                            Comp(NoInt): adult_obesity_raw_value (kept) (dv1_healthcare_access) 0.0027 0.0050     trivial      7.8273e-04
+                     Comp(NoInt): social_associations_raw_value (kept) (dv2_healthcare_quality) 0.0007 0.0047     trivial      1.1635e-03
+                   Comp(IntTest): social_associations_raw_value (kept) (dv2_healthcare_quality) 0.0007 0.0047     trivial      1.1635e-03
+                                              Index: mo1_genai_cap (kept) (dv3_operational_eff) 0.0042 0.0044     trivial      2.1394e-03
+                 Comp(IntTest): weighted_robotics_adoption_score (kept) (dv1_healthcare_access) 0.0022 0.0041     trivial      2.4071e-03
+                   Comp(NoInt): weighted_robotics_adoption_score (kept) (dv1_healthcare_access) 0.0022 0.0041     trivial      2.4071e-03
+                              Comp(NoInt): adult_smoking_raw_value (kept) (dv3_operational_eff) 0.0034 0.0039     trivial      5.9099e-03
+                    Comp(IntTest): physical_inactivity_raw_value (kept) (dv1_healthcare_access) 0.0021 0.0039     trivial      3.1517e-03
+                      Comp(NoInt): driving_alone_to_work_raw_value (kept) (dv3_operational_eff) 0.0034 0.0039     trivial      5.8308e-03
+                            Comp(IntTest): adult_smoking_raw_value (kept) (dv3_operational_eff) 0.0034 0.0039     trivial      5.9099e-03
+                    Comp(IntTest): driving_alone_to_work_raw_value (kept) (dv3_operational_eff) 0.0034 0.0039     trivial      5.8308e-03
+                      Comp(NoInt): physical_inactivity_raw_value (kept) (dv1_healthcare_access) 0.0021 0.0039     trivial      3.1517e-03
+         Comp(NoInt): air_pollution_particulate_matter_raw_value (kept) (dv1_healthcare_access) 0.0018 0.0034     trivial      5.8577e-03
+       Comp(IntTest): air_pollution_particulate_matter_raw_value (kept) (dv1_healthcare_access) 0.0018 0.0034     trivial      5.8577e-03
+          Comp(IntTest): sexually_transmitted_infections_raw_value (kept) (dv3_operational_eff) 0.0029 0.0033     trivial      1.0763e-02
+            Comp(NoInt): sexually_transmitted_infections_raw_value (kept) (dv3_operational_eff) 0.0029 0.0033     trivial      1.0763e-02
+                  Comp(NoInt): drinking_water_violations_raw_value (kept) (dv3_operational_eff) 0.0029 0.0032     trivial      1.1955e-02
+                                           Index: mo1_genai_cap (kept) (dv2_healthcare_quality) 0.0012 0.0032     trivial      1.4299e-03
+                Comp(IntTest): drinking_water_violations_raw_value (kept) (dv3_operational_eff) 0.0029 0.0032     trivial      1.1955e-02
+                                   Index: iv2_physical_environment (kept) (dv3_operational_eff) 0.0029 0.0031     trivial      1.0909e-02
+                           Comp(NoInt): weighted_ai_adoption_score (kept) (dv3_operational_eff) 0.0026 0.0029     trivial      1.6541e-02
+              Comp(IntTest): drinking_water_violations_raw_value (kept) (dv1_healthcare_access) 0.0015 0.0029     trivial      1.1379e-02
+                Comp(NoInt): drinking_water_violations_raw_value (kept) (dv1_healthcare_access) 0.0015 0.0029     trivial      1.1379e-02
+                         Comp(IntTest): weighted_ai_adoption_score (kept) (dv3_operational_eff) 0.0026 0.0029     trivial      1.6541e-02
+                               Comp(NoInt): some_college_raw_value (kept) (dv3_operational_eff) 0.0024 0.0027     trivial      2.1738e-02
+                             Comp(IntTest): some_college_raw_value (kept) (dv3_operational_eff) 0.0024 0.0027     trivial      2.1738e-02
+                        Comp(IntTest): income_inequality_raw_value (kept) (dv3_operational_eff) 0.0022 0.0025     trivial      2.8113e-02
+                          Comp(NoInt): income_inequality_raw_value (kept) (dv3_operational_eff) 0.0022 0.0025     trivial      2.8113e-02
+                      Comp(IntTest): income_inequality_raw_value (kept) (dv1_healthcare_access) 0.0013 0.0025     trivial      1.8814e-02
+                        Comp(NoInt): income_inequality_raw_value (kept) (dv1_healthcare_access) 0.0013 0.0025     trivial      1.8814e-02
+                                Comp(NoInt): teen_births_raw_value (kept) (dv3_operational_eff) 0.0017 0.0020     trivial      5.1045e-02
+                              Comp(IntTest): teen_births_raw_value (kept) (dv3_operational_eff) 0.0017 0.0020     trivial      5.1045e-02
+    Comp(NoInt): children_in_single_parent_households_raw_value (kept) (dv2_healthcare_quality) 0.0003 0.0019     trivial      3.9090e-02
+  Comp(IntTest): children_in_single_parent_households_raw_value (kept) (dv2_healthcare_quality) 0.0003 0.0019     trivial      3.9090e-02
+                     Comp(NoInt): weighted_robotics_adoption_score (kept) (dv3_operational_eff) 0.0016 0.0018     trivial      5.8917e-02
+      Comp(IntTest): access_to_exercise_opportunities_raw_value (kept) (dv2_healthcare_quality) 0.0003 0.0018     trivial      4.4963e-02
+        Comp(NoInt): access_to_exercise_opportunities_raw_value (kept) (dv2_healthcare_quality) 0.0003 0.0018     trivial      4.4963e-02
+                   Comp(IntTest): weighted_robotics_adoption_score (kept) (dv3_operational_eff) 0.0016 0.0018     trivial      5.8917e-02
+                              Comp(NoInt): injury_deaths_raw_value (kept) (dv3_operational_eff) 0.0015 0.0017     trivial      6.6196e-02
+                            Comp(IntTest): injury_deaths_raw_value (kept) (dv3_operational_eff) 0.0015 0.0017     trivial      6.6196e-02
+                      Comp(IntTest): weighted_ai_adoption_score (kept) (dv2_healthcare_quality) 0.0003 0.0016     trivial      5.9592e-02
+          Comp(IntTest): alcohol_impaired_driving_deaths_raw_value (kept) (dv3_operational_eff) 0.0014 0.0016     trivial      8.0038e-02
+            Comp(NoInt): alcohol_impaired_driving_deaths_raw_value (kept) (dv3_operational_eff) 0.0014 0.0016     trivial      8.0038e-02
+                        Comp(NoInt): weighted_ai_adoption_score (kept) (dv2_healthcare_quality) 0.0003 0.0016     trivial      5.9592e-02
+                     Comp(IntTest): income_inequality_raw_value (kept) (dv2_healthcare_quality) 0.0002 0.0015     trivial      6.6529e-02
+                       Comp(NoInt): income_inequality_raw_value (kept) (dv2_healthcare_quality) 0.0002 0.0015     trivial      6.6529e-02
+               Comp(IntTest): long_commute_driving_alone_raw_value (kept) (dv3_operational_eff) 0.0013 0.0015     trivial      9.1350e-02
+                            Comp(IntTest): adult_obesity_raw_value (kept) (dv3_operational_eff) 0.0013 0.0015     trivial      8.4975e-02
+                     Comp(IntTest): excessive_drinking_raw_value (kept) (dv1_healthcare_access) 0.0008 0.0015     trivial      6.3578e-02
+                 Comp(NoInt): long_commute_driving_alone_raw_value (kept) (dv3_operational_eff) 0.0013 0.0015     trivial      9.1350e-02
+                              Comp(NoInt): adult_obesity_raw_value (kept) (dv3_operational_eff) 0.0013 0.0015     trivial      8.4975e-02
+                       Comp(NoInt): excessive_drinking_raw_value (kept) (dv1_healthcare_access) 0.0008 0.0015     trivial      6.3578e-02
+                       Comp(IntTest): excessive_drinking_raw_value (kept) (dv3_operational_eff) 0.0013 0.0014     trivial      9.2827e-02
+                         Comp(NoInt): excessive_drinking_raw_value (kept) (dv3_operational_eff) 0.0013 0.0014     trivial      9.2827e-02
+                                            Index: mo1_genai_cap (kept) (dv1_healthcare_access) 0.0010 0.0013     trivial      4.4910e-02
+       Comp(NoInt): alcohol_impaired_driving_deaths_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0012     trivial      1.0428e-01
+     Comp(IntTest): alcohol_impaired_driving_deaths_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0012     trivial      1.0428e-01
+                  Comp(NoInt): food_environment_index_raw_value (removed) (dv3_operational_eff) 0.0000 0.0011     trivial      1.4819e-01
+                Comp(IntTest): food_environment_index_raw_value (removed) (dv3_operational_eff) 0.0000 0.0011     trivial      1.4819e-01
+               Comp(IntTest): driving_alone_to_work_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0010     trivial      1.2602e-01
+                 Comp(NoInt): driving_alone_to_work_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0010     trivial      1.2602e-01
+                         Comp(NoInt): unemployment_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0007     trivial      2.0296e-01
+                       Comp(IntTest): unemployment_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0007     trivial      2.0296e-01
+                      Comp(IntTest): adult_obesity_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0005     trivial      3.0434e-01
+               Comp(IntTest): severe_housing_problems_raw_value (removed) (dv3_operational_eff) 0.0000 0.0005     trivial      3.1292e-01
+                        Comp(NoInt): adult_obesity_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0005     trivial      3.0434e-01
+       Comp(NoInt): sexually_transmitted_infections_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0005     trivial      2.7729e-01
+                 Comp(NoInt): severe_housing_problems_raw_value (removed) (dv3_operational_eff) 0.0000 0.0005     trivial      3.1292e-01
+     Comp(IntTest): sexually_transmitted_infections_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0005     trivial      2.7729e-01
+    Comp(IntTest): alcohol_impaired_driving_deaths_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0004     trivial      3.3208e-01
+                     Comp(NoInt): children_in_poverty_raw_value (removed) (dv3_operational_eff) 0.0000 0.0004     trivial      3.8105e-01
+                   Comp(IntTest): children_in_poverty_raw_value (removed) (dv3_operational_eff) 0.0000 0.0004     trivial      3.8105e-01
+      Comp(NoInt): alcohol_impaired_driving_deaths_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0004     trivial      3.3208e-01
+               Comp(NoInt): weighted_robotics_adoption_score (removed) (dv2_healthcare_quality) 0.0000 0.0003     trivial      4.3437e-01
+  Comp(IntTest): children_in_single_parent_households_raw_value (removed) (dv3_operational_eff) 0.0000 0.0003     trivial      4.1927e-01
+                Comp(NoInt): food_environment_index_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0003     trivial      4.3857e-01
+                          Comp(NoInt): some_college_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0003     trivial      4.2441e-01
+                                Index: iv1_public_health_policy (removed) (dv3_operational_eff) 0.0000 0.0003     trivial      4.2641e-01
+                          Comp(IntTest): unemployment_raw_value (removed) (dv3_operational_eff) 0.0000 0.0003     trivial      4.6397e-01
+  Comp(NoInt): children_in_single_parent_households_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0003     trivial      4.2845e-01
+              Comp(IntTest): food_environment_index_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0003     trivial      4.3857e-01
+            Comp(NoInt): drinking_water_violations_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0003     trivial      3.9269e-01
+          Comp(IntTest): drinking_water_violations_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0003     trivial      3.9269e-01
+                        Comp(IntTest): some_college_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0003     trivial      4.2441e-01
+              Comp(NoInt): severe_housing_problems_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0003     trivial      4.2495e-01
+    Comp(NoInt): children_in_single_parent_households_raw_value (removed) (dv3_operational_eff) 0.0000 0.0003     trivial      4.1927e-01
+Comp(IntTest): children_in_single_parent_households_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0003     trivial      4.2845e-01
+                            Comp(NoInt): unemployment_raw_value (removed) (dv3_operational_eff) 0.0000 0.0003     trivial      4.6397e-01
+             Comp(IntTest): weighted_robotics_adoption_score (removed) (dv2_healthcare_quality) 0.0000 0.0003     trivial      4.3437e-01
+            Comp(IntTest): severe_housing_problems_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0003     trivial      4.2495e-01
+                    Comp(IntTest): weighted_ai_adoption_score (removed) (dv1_healthcare_access) 0.0000 0.0002     trivial      4.9564e-01
+                      Comp(NoInt): weighted_ai_adoption_score (removed) (dv1_healthcare_access) 0.0000 0.0002     trivial      4.9564e-01
+             Comp(IntTest): high_school_completion_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0002     trivial      5.3749e-01
+                  Comp(NoInt): high_school_completion_raw_value (removed) (dv3_operational_eff) 0.0000 0.0002     trivial      5.7332e-01
+                Comp(IntTest): high_school_completion_raw_value (removed) (dv3_operational_eff) 0.0000 0.0002     trivial      5.7332e-01
+               Comp(NoInt): high_school_completion_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0002     trivial      5.3749e-01
+                          Comp(NoInt): unemployment_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0001     trivial      6.3946e-01
+                Comp(IntTest): physical_inactivity_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0001     trivial      6.4842e-01
+                        Comp(IntTest): unemployment_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0001     trivial      6.3946e-01
+                  Comp(NoInt): physical_inactivity_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0001     trivial      6.4842e-01
+                                  Index: iv3_health_behaviors (removed) (dv1_healthcare_access) 0.0000 0.0001     trivial      5.1469e-01
+                 Comp(IntTest): social_associations_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0000     trivial      9.3731e-01
+                 Comp(IntTest): children_in_poverty_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0000     trivial      7.8335e-01
+        Comp(NoInt): access_to_exercise_opportunities_raw_value (removed) (dv3_operational_eff) 0.0000 0.0000     trivial      9.4310e-01
+      Comp(IntTest): access_to_exercise_opportunities_raw_value (removed) (dv3_operational_eff) 0.0000 0.0000     trivial      9.4310e-01
+   Comp(IntTest): air_pollution_particulate_matter_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0000     trivial      9.0347e-01
+                   Comp(NoInt): children_in_poverty_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0000     trivial      7.8335e-01
+                   Comp(NoInt): social_associations_raw_value (removed) (dv1_healthcare_access) 0.0000 0.0000     trivial      9.3731e-01
+     Comp(NoInt): air_pollution_particulate_matter_raw_value (removed) (dv2_healthcare_quality) 0.0000 0.0000     trivial      9.0347e-01
+                                    Index: iv3_health_behaviors (removed) (dv3_operational_eff) 0.0000 0.0000     trivial      7.5601e-01
+--------------------------------------------------------------------------------
+Significance: *** p<0.001, ** p<0.01, * p<0.05
+Effect Size Interpretation: f² ≥ 0.02 (small), ≥ 0.15 (medium), ≥ 0.35 (large)
+
+================================================================================
+ ANALYSIS COMPLETED: 2025-03-31 22:38:06
+ Total runtime: 0:00:26.899730
+================================================================================
+

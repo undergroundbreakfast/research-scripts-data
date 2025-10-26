@@ -1,0 +1,2122 @@
+
+================================================================================
+ ANALYSIS STARTED: 2025-04-13 22:31:25
+================================================================================
+
+Connected to Postgres successfully.
+Index-level data fetched from original version: shape = (3143, 12)
+Index-level data fetched from improved version: shape = (3143, 12)
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+8 null in census_division, filling with 'Unknown'.
+Created 9 division dummies from census_division
+
+Diagnosing Index-Level (Original): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+Diagnosing Index-Level (Improved): shape=(3143, 21)
+  county_fips: object, 0 nulls
+  iv1_public_health_policy: int64, 0 nulls
+  iv2_physical_environment: float64, 0 nulls
+  iv3_health_behaviors: float64, 0 nulls
+  iv4_social_economic: float64, 0 nulls
+  mo1_genai_cap: float64, 0 nulls
+  mo2_robotics_cap: float64, 0 nulls
+  dv1_healthcare_access: float64, 0 nulls
+  dv2_healthcare_quality: float64, 0 nulls
+  dv3_operational_eff: float64, 1010 nulls
+  population: object, 8 nulls
+  census_division: object, 0 nulls
+  div_2: int64, 0 nulls
+  div_3: int64, 0 nulls
+  div_4: int64, 0 nulls
+  div_5: int64, 0 nulls
+  div_6: int64, 0 nulls
+  div_7: int64, 0 nulls
+  div_8: int64, 0 nulls
+  div_9: int64, 0 nulls
+  div_Unknown: int64, 0 nulls
+
+--------------------------------------------------------------------------------
+ PART A: INDEX-LEVEL MODELS (Original)
+--------------------------------------------------------------------------------
+
+..... Analyzing DV: dv1_healthcare_access (Original) .....
+Usable observations for dv1_healthcare_access: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed div_8 (p=0.7750, f²=0.0000, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed iv3_health_behaviors (p=0.7378, f²=0.0000, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.2968-0.2965) / (1-0.2968)) = 0.0004 => trivial
+Removed iv1_public_health_policy (p=0.2793, f²=0.0004, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.2965-0.2962) / (1-0.2965)) = 0.0004 => trivial
+Removed mo1_genai_cap (p=0.2366, f²=0.0004, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.2962-0.2404) / (1-0.2962)) = 0.0792 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.2962-0.2631) / (1-0.2962)) = 0.0470 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.2962-0.2738) / (1-0.2962)) = 0.0318 => small
+Cohen's f² for population: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.2962-0.2943) / (1-0.2962)) = 0.0028 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.2962-0.2805) / (1-0.2962)) = 0.0224 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.2962-0.2703) / (1-0.2962)) = 0.0368 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.2962-0.2884) / (1-0.2962)) = 0.0111 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.2962-0.2826) / (1-0.2962)) = 0.0193 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.2962-0.2942) / (1-0.2962)) = 0.0029 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Cohen's f² for div_Unknown: ((0.2962-0.2962) / (1-0.2962)) = 0.0000 => trivial
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2962 (initial=0.2968), Condition#=3412712.45293625
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_9', 'div_Unknown']
+Removed predictors: ['div_8', 'iv3_health_behaviors', 'iv1_public_health_policy', 'mo1_genai_cap']
+Testing 66 interactions for DV=dv1_healthcare_access among stepwise-kept predictors.
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×iv4_social_economic: ΔR²=0.0001, f²=0.0001, p=5.6432e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×mo2_robotics_cap: ΔR²=0.0059, f²=0.0085, p=2.8973e-07
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×population: ΔR²=0.0002, f²=0.0003, p=3.0998e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_2: ΔR²=0.0028, f²=0.0040, p=4.3088e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_3: ΔR²=0.0005, f²=0.0007, p=1.4866e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_4: ΔR²=0.0002, f²=0.0003, p=3.4033e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_5: ΔR²=0.0014, f²=0.0019, p=1.3918e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_6: ΔR²=0.0057, f²=0.0081, p=5.1748e-07
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_7: ΔR²=0.0026, f²=0.0037, p=6.3141e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_9: ΔR²=0.0010, f²=0.0015, p=3.3041e-02
+Removing zero variance predictors: ['div_Unknown', 'iv2_physical_environment_x_div_Unknown']
+Interaction iv2_physical_environment×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×mo2_robotics_cap: ΔR²=0.0011, f²=0.0016, p=2.3985e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×population: ΔR²=0.0067, f²=0.0096, p=5.0029e-08
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_2: ΔR²=0.0008, f²=0.0012, p=5.6758e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_3: ΔR²=0.0000, f²=0.0000, p=7.0321e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_4: ΔR²=0.0006, f²=0.0009, p=9.0853e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_5: ΔR²=0.0013, f²=0.0018, p=1.7049e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_6: ΔR²=0.0000, f²=0.0000, p=8.4186e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_7: ΔR²=0.0016, f²=0.0023, p=7.2471e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_9: ΔR²=0.0024, f²=0.0034, p=1.0481e-03
+Removing zero variance predictors: ['div_Unknown', 'iv4_social_economic_x_div_Unknown']
+Interaction iv4_social_economic×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×population: ΔR²=0.0027, f²=0.0038, p=5.6760e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_2: ΔR²=0.0001, f²=0.0001, p=5.1182e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_3: ΔR²=0.0000, f²=0.0000, p=8.9859e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_4: ΔR²=0.0001, f²=0.0001, p=5.0310e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_5: ΔR²=0.0021, f²=0.0030, p=2.1512e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_6: ΔR²=0.0000, f²=0.0000, p=7.6047e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_7: ΔR²=0.0006, f²=0.0009, p=9.3933e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_9: ΔR²=0.0003, f²=0.0005, p=2.2651e-01
+Removing zero variance predictors: ['div_Unknown', 'mo2_robotics_cap_x_div_Unknown']
+Interaction mo2_robotics_cap×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_2: ΔR²=0.0001, f²=0.0002, p=4.4654e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_3: ΔR²=0.0015, f²=0.0021, p=1.0611e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_4: ΔR²=0.0002, f²=0.0003, p=3.4561e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_5: ΔR²=0.0079, f²=0.0113, p=2.9540e-09
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_6: ΔR²=0.0002, f²=0.0003, p=3.3544e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_7: ΔR²=0.0002, f²=0.0003, p=3.0890e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_9: ΔR²=0.0024, f²=0.0034, p=1.1127e-03
+Removing zero variance predictors: ['population_x_div_Unknown', 'div_Unknown']
+Interaction population×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_3']
+Interaction div_2×div_3: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_4', 'div_Unknown']
+Interaction div_2×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_5']
+Interaction div_2×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_6']
+Interaction div_2×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_7', 'div_Unknown']
+Interaction div_2×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_9']
+Interaction div_2×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_Unknown']
+Interaction div_2×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_4']
+Interaction div_3×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_5']
+Interaction div_3×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_6']
+Interaction div_3×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_7']
+Interaction div_3×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_9']
+Interaction div_3×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_Unknown']
+Interaction div_3×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_5']
+Interaction div_4×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_6']
+Interaction div_4×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_7']
+Interaction div_4×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_9']
+Interaction div_4×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_Unknown']
+Interaction div_4×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_6']
+Interaction div_5×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_7']
+Interaction div_5×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_9']
+Interaction div_5×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_Unknown']
+Interaction div_5×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_7']
+Interaction div_6×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_9']
+Interaction div_6×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_Unknown']
+Interaction div_6×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_9']
+Interaction div_7×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_Unknown']
+Interaction div_7×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_9_x_div_Unknown']
+Interaction div_9×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Usable observations for dv1_healthcare_access: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed div_8 (p=0.7750, f²=0.0000, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.2968-0.2968) / (1-0.2968)) = 0.0000 => trivial
+Removed iv3_health_behaviors (p=0.7378, f²=0.0000, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.2968-0.2965) / (1-0.2968)) = 0.0004 => trivial
+Removed iv1_public_health_policy (p=0.2793, f²=0.0004, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.2965-0.2962) / (1-0.2965)) = 0.0004 => trivial
+Removed mo1_genai_cap (p=0.2366, f²=0.0004, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.2962-0.2404) / (1-0.2962)) = 0.0792 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.2962-0.2631) / (1-0.2962)) = 0.0470 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.2962-0.2738) / (1-0.2962)) = 0.0318 => small
+Cohen's f² for population: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.2962-0.2943) / (1-0.2962)) = 0.0028 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.2962-0.2805) / (1-0.2962)) = 0.0224 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.2962-0.2901) / (1-0.2962)) = 0.0087 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.2962-0.2703) / (1-0.2962)) = 0.0368 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.2962-0.2884) / (1-0.2962)) = 0.0111 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.2962-0.2826) / (1-0.2962)) = 0.0193 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.2962-0.2942) / (1-0.2962)) = 0.0029 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Cohen's f² for div_Unknown: ((0.2962-0.2962) / (1-0.2962)) = 0.0000 => trivial
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2962 (initial=0.2968), Condition#=3412712.45293625
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_9', 'div_Unknown']
+Removed predictors: ['div_8', 'iv3_health_behaviors', 'iv1_public_health_policy', 'mo1_genai_cap']
+Appended results to OLS_Coefficients_IndexLevel_Original.csv for DV=dv1_healthcare_access.
+Dropping 3135 rows with NaN (0 rows remaining).
+Not enough observations (0) for 12 parameters.
+Standardized model is None for dv1_healthcare_access. Exporting only unstandardized coefficients.
+Appended results to OLS_Coefficients_IndexLevel_Original_WithZ.csv for DV=dv1_healthcare_access.
+
+Correlation matrix for DV=dv1_healthcare_access among final model columns:
+                          iv2_physical_environment  iv4_social_economic  mo2_robotics_cap  population     div_2     div_3     div_4     div_5     div_6     div_7     div_9  div_Unknown  dv1_healthcare_access
+iv2_physical_environment                  1.000000            -0.007559          0.139497    0.214688  0.074431  0.127688  0.161711  0.154380 -0.288545  0.249257 -0.104869          NaN               0.360085
+iv4_social_economic                      -0.007559             1.000000         -0.124017   -0.133282 -0.086630  0.091943 -0.033956  0.165163 -0.111440 -0.041489 -0.035018          NaN               0.246873
+mo2_robotics_cap                          0.139497            -0.124017          1.000000    0.224809  0.076529  0.032279  0.090471 -0.072070 -0.073690 -0.064100  0.058919          NaN              -0.178832
+population                                0.214688            -0.133282          0.224809    1.000000  0.119025  0.011735  0.004438 -0.055559 -0.103268 -0.022032  0.152501          NaN              -0.112787
+div_2                                     0.074431            -0.086630          0.076529    0.119025  1.000000 -0.107708 -0.090218 -0.081247 -0.111077 -0.094140 -0.053342          NaN              -0.044805
+div_3                                     0.127688             0.091943          0.032279    0.011735 -0.107708  1.000000 -0.193372 -0.174143 -0.238082 -0.201778 -0.114333          NaN               0.119075
+div_4                                     0.161711            -0.033956          0.090471    0.004438 -0.090218 -0.193372  1.000000 -0.145865 -0.199422 -0.169013 -0.095767          NaN               0.015135
+div_5                                     0.154380             0.165163         -0.072070   -0.055559 -0.081247 -0.174143 -0.145865  1.000000 -0.179591 -0.152206 -0.086244          NaN               0.229861
+div_6                                    -0.288545            -0.111440         -0.073690   -0.103268 -0.111077 -0.238082 -0.199422 -0.179591  1.000000 -0.208091 -0.117909          NaN              -0.106891
+div_7                                     0.249257            -0.041489         -0.064100   -0.022032 -0.094140 -0.201778 -0.169013 -0.152206 -0.208091  1.000000 -0.099930          NaN               0.141906
+div_9                                    -0.104869            -0.035018          0.058919    0.152501 -0.053342 -0.114333 -0.095767 -0.086244 -0.117909 -0.099930  1.000000          NaN              -0.208875
+div_Unknown                                    NaN                  NaN               NaN         NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN          NaN                    NaN
+dv1_healthcare_access                     0.360085             0.246873         -0.178832   -0.112787 -0.044805  0.119075  0.015135  0.229861 -0.106891  0.141906 -0.208875          NaN               1.000000
+Correlation heatmap saved to corr_dv1_healthcare_access_original.png
+Potential outliers in dv1_healthcare_access model (n=126):
+ - Row index: 64, Studentized resid=2.90, Cook's=0.0023
+ - Row index: 65, Studentized resid=2.66, Cook's=0.0020
+ - Row index: 73, Studentized resid=1.16, Cook's=0.0017
+ - Row index: 76, Studentized resid=-1.92, Cook's=0.0051
+ - Row index: 84, Studentized resid=-1.98, Cook's=0.0054
+ - Row index: 86, Studentized resid=1.53, Cook's=0.0031
+ - Row index: 104, Studentized resid=0.94, Cook's=0.0048
+ - Row index: 122, Studentized resid=2.84, Cook's=0.0020
+ - Row index: 151, Studentized resid=4.05, Cook's=0.0032
+ - Row index: 167, Studentized resid=2.92, Cook's=0.0017
+ - Row index: 188, Studentized resid=-2.73, Cook's=0.0135
+ - Row index: 197, Studentized resid=1.81, Cook's=0.0018
+ - Row index: 205, Studentized resid=2.69, Cook's=0.2551
+ - Row index: 218, Studentized resid=-1.49, Cook's=0.0023
+ - Row index: 244, Studentized resid=1.70, Cook's=0.0017
+ - Row index: 254, Studentized resid=-1.54, Cook's=0.0013
+ - Row index: 265, Studentized resid=2.65, Cook's=0.0019
+ - Row index: 343, Studentized resid=4.33, Cook's=0.0031
+ - Row index: 363, Studentized resid=0.82, Cook's=0.0013
+ - Row index: 393, Studentized resid=2.57, Cook's=0.0014
+ - Row index: 400, Studentized resid=3.32, Cook's=0.0017
+ - Row index: 437, Studentized resid=-3.07, Cook's=0.0022
+ - Row index: 467, Studentized resid=4.19, Cook's=0.0034
+ - Row index: 478, Studentized resid=3.10, Cook's=0.0023
+ - Row index: 483, Studentized resid=4.20, Cook's=0.0040
+ - Row index: 484, Studentized resid=3.52, Cook's=0.0029
+ - Row index: 496, Studentized resid=4.24, Cook's=0.0043
+ - Row index: 497, Studentized resid=2.99, Cook's=0.0046
+ - Row index: 505, Studentized resid=-2.72, Cook's=0.0013
+ - Row index: 518, Studentized resid=-2.46, Cook's=0.0032
+ - Row index: 543, Studentized resid=2.80, Cook's=0.0014
+ - Row index: 560, Studentized resid=-1.45, Cook's=0.0014
+ - Row index: 588, Studentized resid=2.98, Cook's=0.0025
+ - Row index: 604, Studentized resid=3.14, Cook's=0.0020
+ - Row index: 611, Studentized resid=0.81, Cook's=0.0051
+ - Row index: 635, Studentized resid=2.43, Cook's=0.0014
+ - Row index: 639, Studentized resid=3.55, Cook's=0.0027
+ - Row index: 753, Studentized resid=4.04, Cook's=0.0037
+ - Row index: 766, Studentized resid=8.05, Cook's=0.0134
+ - Row index: 778, Studentized resid=2.91, Cook's=0.0020
+ - Row index: 901, Studentized resid=-2.44, Cook's=0.0028
+ - Row index: 956, Studentized resid=-1.64, Cook's=0.0013
+ - Row index: 958, Studentized resid=5.48, Cook's=0.0066
+ - Row index: 1009, Studentized resid=2.74, Cook's=0.0018
+ - Row index: 1016, Studentized resid=2.86, Cook's=0.0019
+ - Row index: 1024, Studentized resid=2.87, Cook's=0.0022
+ - Row index: 1067, Studentized resid=4.52, Cook's=0.0050
+ - Row index: 1081, Studentized resid=3.48, Cook's=0.0030
+ - Row index: 1088, Studentized resid=-2.14, Cook's=0.0025
+ - Row index: 1092, Studentized resid=2.39, Cook's=0.0015
+ - Row index: 1131, Studentized resid=2.90, Cook's=0.0016
+ - Row index: 1135, Studentized resid=5.34, Cook's=0.0056
+ - Row index: 1422, Studentized resid=3.41, Cook's=0.0035
+ - Row index: 1429, Studentized resid=-3.13, Cook's=0.0056
+ - Row index: 1440, Studentized resid=2.35, Cook's=0.0013
+ - Row index: 1457, Studentized resid=3.12, Cook's=0.0024
+ - Row index: 1466, Studentized resid=3.04, Cook's=0.0025
+ - Row index: 1471, Studentized resid=2.55, Cook's=0.0016
+ - Row index: 1482, Studentized resid=3.64, Cook's=0.0032
+ - Row index: 1511, Studentized resid=6.30, Cook's=0.0073
+ - Row index: 1513, Studentized resid=4.41, Cook's=0.0029
+ - Row index: 1540, Studentized resid=5.35, Cook's=0.0069
+ - Row index: 1543, Studentized resid=3.17, Cook's=0.0025
+ - Row index: 1551, Studentized resid=3.52, Cook's=0.0024
+ - Row index: 1555, Studentized resid=5.32, Cook's=0.0074
+ - Row index: 1556, Studentized resid=2.12, Cook's=0.0013
+ - Row index: 1561, Studentized resid=2.37, Cook's=0.0013
+ - Row index: 1570, Studentized resid=3.25, Cook's=0.0023
+ - Row index: 1625, Studentized resid=-1.68, Cook's=0.0023
+ - Row index: 1689, Studentized resid=-1.61, Cook's=0.0014
+ - Row index: 1693, Studentized resid=-2.59, Cook's=0.0020
+ - Row index: 1754, Studentized resid=1.69, Cook's=0.0014
+ - Row index: 1826, Studentized resid=3.63, Cook's=0.0040
+ - Row index: 1852, Studentized resid=1.24, Cook's=0.0035
+ - Row index: 1865, Studentized resid=3.59, Cook's=0.0079
+ - Row index: 1887, Studentized resid=2.00, Cook's=0.0036
+ - Row index: 1983, Studentized resid=3.87, Cook's=0.0025
+ - Row index: 2101, Studentized resid=2.72, Cook's=0.0016
+ - Row index: 2104, Studentized resid=3.67, Cook's=0.0030
+ - Row index: 2134, Studentized resid=2.69, Cook's=0.0014
+ - Row index: 2137, Studentized resid=-1.99, Cook's=0.0017
+ - Row index: 2138, Studentized resid=1.90, Cook's=0.0015
+ - Row index: 2146, Studentized resid=3.04, Cook's=0.0030
+ - Row index: 2173, Studentized resid=6.32, Cook's=0.0075
+ - Row index: 2185, Studentized resid=2.14, Cook's=0.0013
+ - Row index: 2246, Studentized resid=-1.20, Cook's=0.0017
+ - Row index: 2370, Studentized resid=-3.74, Cook's=0.0178
+ - Row index: 2382, Studentized resid=1.71, Cook's=0.0015
+ - Row index: 2397, Studentized resid=-2.20, Cook's=0.0025
+ - Row index: 2409, Studentized resid=-2.05, Cook's=0.0015
+ - Row index: 2422, Studentized resid=2.02, Cook's=0.0032
+ - Row index: 2484, Studentized resid=3.18, Cook's=0.0025
+ - Row index: 2509, Studentized resid=2.75, Cook's=0.0019
+ - Row index: 2529, Studentized resid=-2.49, Cook's=0.0030
+ - Row index: 2540, Studentized resid=-2.39, Cook's=0.0025
+ - Row index: 2559, Studentized resid=3.38, Cook's=0.0024
+ - Row index: 2582, Studentized resid=2.88, Cook's=0.0026
+ - Row index: 2596, Studentized resid=4.08, Cook's=0.0034
+ - Row index: 2606, Studentized resid=3.13, Cook's=0.0020
+ - Row index: 2610, Studentized resid=-2.44, Cook's=0.0027
+ - Row index: 2624, Studentized resid=0.60, Cook's=0.0023
+ - Row index: 2650, Studentized resid=4.62, Cook's=0.0039
+ - Row index: 2654, Studentized resid=-2.57, Cook's=0.0029
+ - Row index: 2658, Studentized resid=-2.15, Cook's=0.0021
+ - Row index: 2674, Studentized resid=-1.87, Cook's=0.0018
+ - Row index: 2689, Studentized resid=6.98, Cook's=0.0100
+ - Row index: 2696, Studentized resid=-1.71, Cook's=0.0015
+ - Row index: 2708, Studentized resid=3.94, Cook's=0.0044
+ - Row index: 2713, Studentized resid=2.85, Cook's=0.0015
+ - Row index: 2720, Studentized resid=-2.11, Cook's=0.0024
+ - Row index: 2721, Studentized resid=3.39, Cook's=0.0021
+ - Row index: 2727, Studentized resid=5.96, Cook's=0.0074
+ - Row index: 2734, Studentized resid=-2.11, Cook's=0.0014
+ - Row index: 2745, Studentized resid=-2.26, Cook's=0.0024
+ - Row index: 2757, Studentized resid=2.76, Cook's=0.0015
+ - Row index: 2760, Studentized resid=2.27, Cook's=0.0013
+ - Row index: 2768, Studentized resid=2.11, Cook's=0.0013
+ - Row index: 2785, Studentized resid=2.70, Cook's=0.0019
+ - Row index: 2789, Studentized resid=1.65, Cook's=0.0013
+ - Row index: 2824, Studentized resid=2.95, Cook's=0.0015
+ - Row index: 2889, Studentized resid=3.23, Cook's=0.0016
+ - Row index: 2898, Studentized resid=3.26, Cook's=0.0018
+ - Row index: 2936, Studentized resid=-2.35, Cook's=0.0018
+ - Row index: 3015, Studentized resid=2.47, Cook's=0.0043
+ - Row index: 3022, Studentized resid=4.46, Cook's=0.0049
+ - Row index: 3047, Studentized resid=2.34, Cook's=0.0014
+Enhanced partial regression plots saved to partial_regression_dv1_healthcare_access_original.png
+Path diagram saved to SignificantPaths_dv1_healthcare_access_Original.png
+
+--------------------------------------------------------------------------------
+ PART E: ANALYZING INFLUENTIAL GENAI POINTS
+--------------------------------------------------------------------------------
+Looking for influential GenAI points with x < -8 and y between -2600 and 2600
+Data diagnostics: GenAI column has 3143 non-null values
+Data range: GenAI min=0.0, max=5.0
+==========================================
+STARTING GENAI INFLUENTIAL POINTS ANALYSIS
+==========================================
+Computing residuals using 15 predictors
+Dataset shape after dropping NaNs: (3135, 16)
+
+..... Analyzing DV: dv2_healthcare_quality (Original) .....
+Usable observations for dv2_healthcare_quality: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.6860-0.6859) / (1-0.6860)) = 0.0001 => trivial
+Removed iv1_public_health_policy (p=0.5017, f²=0.0001, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.6859-0.6853) / (1-0.6859)) = 0.0018 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.6859-0.5952) / (1-0.6859)) = 0.2887 => medium
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.6859-0.4095) / (1-0.6859)) = 0.8799 => large
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.6859-0.6856) / (1-0.6859)) = 0.0011 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.6859-0.6795) / (1-0.6859)) = 0.0203 => small
+Cohen's f² for population: ((0.6859-0.6819) / (1-0.6859)) = 0.0127 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.6859-0.6845) / (1-0.6859)) = 0.0046 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.6859-0.6804) / (1-0.6859)) = 0.0176 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.6859-0.6838) / (1-0.6859)) = 0.0066 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.6859-0.6740) / (1-0.6859)) = 0.0378 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.6859-0.6844) / (1-0.6859)) = 0.0048 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.6859-0.6783) / (1-0.6859)) = 0.0243 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.6859-0.6843) / (1-0.6859)) = 0.0052 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.6859-0.6852) / (1-0.6859)) = 0.0023 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Cohen's f² for div_Unknown: ((0.6859-0.6859) / (1-0.6859)) = 0.0000 => trivial
+Stepwise final model for DV=dv2_healthcare_quality => R²=0.6859 (initial=0.6860), Condition#=7771758.145407048
+Kept predictors: ['iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'div_Unknown']
+Removed predictors: ['iv1_public_health_policy']
+Testing 105 interactions for DV=dv2_healthcare_quality among stepwise-kept predictors.
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×iv3_health_behaviors: ΔR²=0.0000, f²=0.0001, p=6.1710e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×iv4_social_economic: ΔR²=0.0011, f²=0.0035, p=9.9166e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×mo1_genai_cap: ΔR²=0.0002, f²=0.0005, p=1.9777e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×mo2_robotics_cap: ΔR²=0.0002, f²=0.0005, p=1.9884e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×population: ΔR²=0.0030, f²=0.0096, p=4.7743e-08
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_2: ΔR²=0.0005, f²=0.0015, p=2.8745e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_3: ΔR²=0.0012, f²=0.0038, p=5.7380e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_4: ΔR²=0.0001, f²=0.0002, p=3.8382e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_5: ΔR²=0.0002, f²=0.0005, p=1.9803e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_6: ΔR²=0.0001, f²=0.0003, p=3.3202e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_7: ΔR²=0.0000, f²=0.0000, p=7.6277e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_8: ΔR²=0.0000, f²=0.0001, p=5.7890e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_9: ΔR²=0.0001, f²=0.0002, p=4.0974e-01
+Removing zero variance predictors: ['div_Unknown', 'iv2_physical_environment_x_div_Unknown']
+Interaction iv2_physical_environment×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×iv4_social_economic: ΔR²=0.0058, f²=0.0189, p=2.1995e-14
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×mo1_genai_cap: ΔR²=0.0007, f²=0.0022, p=8.2257e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×mo2_robotics_cap: ΔR²=0.0005, f²=0.0016, p=2.5396e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×population: ΔR²=0.0006, f²=0.0020, p=1.1545e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_2: ΔR²=0.0002, f²=0.0005, p=2.0857e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_3: ΔR²=0.0000, f²=0.0001, p=6.3287e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_4: ΔR²=0.0004, f²=0.0013, p=4.4508e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_5: ΔR²=0.0003, f²=0.0009, p=8.9353e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_6: ΔR²=0.0064, f²=0.0208, p=1.1872e-15
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_7: ΔR²=0.0003, f²=0.0009, p=9.7356e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_8: ΔR²=0.0026, f²=0.0082, p=4.3747e-07
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_9: ΔR²=0.0065, f²=0.0210, p=8.5270e-16
+Removing zero variance predictors: ['div_Unknown', 'iv3_health_behaviors_x_div_Unknown']
+Interaction iv3_health_behaviors×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×mo1_genai_cap: ΔR²=0.0001, f²=0.0004, p=2.3907e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×mo2_robotics_cap: ΔR²=0.0001, f²=0.0003, p=3.7091e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×population: ΔR²=0.0031, f²=0.0100, p=2.5223e-08
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_2: ΔR²=0.0004, f²=0.0013, p=4.1463e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_3: ΔR²=0.0006, f²=0.0020, p=1.2103e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_4: ΔR²=0.0004, f²=0.0014, p=3.8856e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_5: ΔR²=0.0013, f²=0.0042, p=3.0994e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_6: ΔR²=0.0001, f²=0.0003, p=3.2496e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_7: ΔR²=0.0009, f²=0.0028, p=3.3824e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_8: ΔR²=0.0006, f²=0.0020, p=1.1885e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_9: ΔR²=0.0019, f²=0.0062, p=1.1730e-05
+Removing zero variance predictors: ['div_Unknown', 'iv4_social_economic_x_div_Unknown']
+Interaction iv4_social_economic×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×mo2_robotics_cap: ΔR²=0.0001, f²=0.0004, p=2.4481e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×population: ΔR²=0.0007, f²=0.0022, p=8.9781e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_2: ΔR²=0.0000, f²=0.0002, p=4.8838e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_3: ΔR²=0.0001, f²=0.0002, p=4.0976e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_4: ΔR²=0.0001, f²=0.0004, p=2.8162e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_5: ΔR²=0.0001, f²=0.0003, p=3.5933e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_6: ΔR²=0.0000, f²=0.0001, p=6.0269e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_7: ΔR²=0.0000, f²=0.0000, p=7.6082e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_8: ΔR²=0.0002, f²=0.0006, p=1.7705e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_9: ΔR²=0.0000, f²=0.0000, p=9.3349e-01
+Removing zero variance predictors: ['div_Unknown', 'mo1_genai_cap_x_div_Unknown']
+Interaction mo1_genai_cap×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×population: ΔR²=0.0010, f²=0.0031, p=2.0320e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_2: ΔR²=0.0001, f²=0.0003, p=3.4285e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_3: ΔR²=0.0000, f²=0.0000, p=9.9246e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_4: ΔR²=0.0000, f²=0.0000, p=7.9211e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_5: ΔR²=0.0003, f²=0.0008, p=1.1048e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_6: ΔR²=0.0000, f²=0.0000, p=9.2202e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_7: ΔR²=0.0001, f²=0.0002, p=4.1658e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_8: ΔR²=0.0002, f²=0.0005, p=1.9206e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_9: ΔR²=0.0000, f²=0.0001, p=5.1469e-01
+Removing zero variance predictors: ['div_Unknown', 'mo2_robotics_cap_x_div_Unknown']
+Interaction mo2_robotics_cap×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_2: ΔR²=0.0000, f²=0.0000, p=8.6010e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_3: ΔR²=0.0022, f²=0.0071, p=2.5843e-06
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_4: ΔR²=0.0000, f²=0.0000, p=7.9069e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_5: ΔR²=0.0028, f²=0.0090, p=1.3505e-07
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_6: ΔR²=0.0007, f²=0.0021, p=9.7789e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_7: ΔR²=0.0000, f²=0.0001, p=5.7871e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_8: ΔR²=0.0000, f²=0.0000, p=7.3319e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_9: ΔR²=0.0026, f²=0.0085, p=2.8950e-07
+Removing zero variance predictors: ['population_x_div_Unknown', 'div_Unknown']
+Interaction population×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_3']
+Interaction div_2×div_3: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_4', 'div_Unknown']
+Interaction div_2×div_4: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_5']
+Interaction div_2×div_5: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_6']
+Interaction div_2×div_6: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_7', 'div_Unknown']
+Interaction div_2×div_7: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_8']
+Interaction div_2×div_8: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_9']
+Interaction div_2×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_Unknown']
+Interaction div_2×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_4']
+Interaction div_3×div_4: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_5']
+Interaction div_3×div_5: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_6']
+Interaction div_3×div_6: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_7']
+Interaction div_3×div_7: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_8']
+Interaction div_3×div_8: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_9']
+Interaction div_3×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_Unknown']
+Interaction div_3×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_5']
+Interaction div_4×div_5: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_6']
+Interaction div_4×div_6: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_7']
+Interaction div_4×div_7: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_8']
+Interaction div_4×div_8: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_9']
+Interaction div_4×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_Unknown']
+Interaction div_4×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_6']
+Interaction div_5×div_6: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_7']
+Interaction div_5×div_7: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_8']
+Interaction div_5×div_8: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_9']
+Interaction div_5×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_Unknown']
+Interaction div_5×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_7']
+Interaction div_6×div_7: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_8']
+Interaction div_6×div_8: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_9']
+Interaction div_6×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_Unknown']
+Interaction div_6×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_8']
+Interaction div_7×div_8: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_9']
+Interaction div_7×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_Unknown']
+Interaction div_7×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_8_x_div_9']
+Interaction div_8×div_9: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_8_x_div_Unknown']
+Interaction div_8×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_9_x_div_Unknown']
+Interaction div_9×div_Unknown: ΔR²=-0.0000, f²=-0.0000, p=nan
+Usable observations for dv2_healthcare_quality: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.6860-0.6859) / (1-0.6860)) = 0.0001 => trivial
+Removed iv1_public_health_policy (p=0.5017, f²=0.0001, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.6859-0.6853) / (1-0.6859)) = 0.0018 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.6859-0.5952) / (1-0.6859)) = 0.2887 => medium
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.6859-0.4095) / (1-0.6859)) = 0.8799 => large
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.6859-0.6856) / (1-0.6859)) = 0.0011 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.6859-0.6795) / (1-0.6859)) = 0.0203 => small
+Cohen's f² for population: ((0.6859-0.6819) / (1-0.6859)) = 0.0127 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.6859-0.6845) / (1-0.6859)) = 0.0046 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.6859-0.6804) / (1-0.6859)) = 0.0176 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.6859-0.6838) / (1-0.6859)) = 0.0066 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.6859-0.6740) / (1-0.6859)) = 0.0378 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.6859-0.6844) / (1-0.6859)) = 0.0048 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.6859-0.6783) / (1-0.6859)) = 0.0243 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.6859-0.6843) / (1-0.6859)) = 0.0052 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.6859-0.6852) / (1-0.6859)) = 0.0023 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Cohen's f² for div_Unknown: ((0.6859-0.6859) / (1-0.6859)) = 0.0000 => trivial
+Stepwise final model for DV=dv2_healthcare_quality => R²=0.6859 (initial=0.6860), Condition#=7771758.145407048
+Kept predictors: ['iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'div_Unknown']
+Removed predictors: ['iv1_public_health_policy']
+Appended results to OLS_Coefficients_IndexLevel_Original.csv for DV=dv2_healthcare_quality.
+Dropping 3135 rows with NaN (0 rows remaining).
+Not enough observations (0) for 15 parameters.
+Standardized model is None for dv2_healthcare_quality. Exporting only unstandardized coefficients.
+Appended results to OLS_Coefficients_IndexLevel_Original_WithZ.csv for DV=dv2_healthcare_quality.
+
+Correlation matrix for DV=dv2_healthcare_quality among final model columns:
+                          iv2_physical_environment  iv3_health_behaviors  iv4_social_economic  mo1_genai_cap  mo2_robotics_cap  population     div_2     div_3     div_4     div_5     div_6     div_7     div_8     div_9  div_Unknown  dv2_healthcare_quality
+iv2_physical_environment                  1.000000              0.233610            -0.007559       0.047311          0.139497    0.214688  0.074431  0.127688  0.161711  0.154380 -0.288545  0.249257 -0.380970 -0.104869          NaN                0.159579
+iv3_health_behaviors                      0.233610              1.000000             0.236788       0.000328          0.090942    0.124186 -0.070442  0.152580 -0.095837  0.133720 -0.123449  0.104085 -0.106093 -0.005896          NaN                0.511446
+iv4_social_economic                      -0.007559              0.236788             1.000000      -0.067354         -0.124017   -0.133282 -0.086630  0.091943 -0.033956  0.165163 -0.111440 -0.041489  0.026388 -0.035018          NaN                0.698300
+mo1_genai_cap                             0.047311              0.000328            -0.067354       1.000000          0.335234    0.123913  0.090865  0.006922  0.078923 -0.083002 -0.051443 -0.052470  0.043857 -0.012979          NaN               -0.116336
+mo2_robotics_cap                          0.139497              0.090942            -0.124017       0.335234          1.000000    0.224809  0.076529  0.032279  0.090471 -0.072070 -0.073690 -0.064100  0.005798  0.058919          NaN               -0.164401
+population                                0.214688              0.124186            -0.133282       0.123913          0.224809    1.000000  0.119025  0.011735  0.004438 -0.055559 -0.103268 -0.022032 -0.014683  0.152501          NaN               -0.137935
+div_2                                     0.074431             -0.070442            -0.086630       0.090865          0.076529    0.119025  1.000000 -0.107708 -0.090218 -0.081247 -0.111077 -0.094140 -0.070340 -0.053342          NaN               -0.121095
+div_3                                     0.127688              0.152580             0.091943       0.006922          0.032279    0.011735 -0.107708  1.000000 -0.193372 -0.174143 -0.238082 -0.201778 -0.150765 -0.114333          NaN                0.149978
+div_4                                     0.161711             -0.095837            -0.033956       0.078923          0.090471    0.004438 -0.090218 -0.193372  1.000000 -0.145865 -0.199422 -0.169013 -0.126283 -0.095767          NaN               -0.105444
+div_5                                     0.154380              0.133720             0.165163      -0.083002         -0.072070   -0.055559 -0.081247 -0.174143 -0.145865  1.000000 -0.179591 -0.152206 -0.113726 -0.086244          NaN                0.299078
+div_6                                    -0.288545             -0.123449            -0.111440      -0.051443         -0.073690   -0.103268 -0.111077 -0.238082 -0.199422 -0.179591  1.000000 -0.208091 -0.155482 -0.117909          NaN               -0.188722
+div_7                                     0.249257              0.104085            -0.041489      -0.052470         -0.064100   -0.022032 -0.094140 -0.201778 -0.169013 -0.152206 -0.208091  1.000000 -0.131773 -0.099930          NaN                0.117638
+div_8                                    -0.380970             -0.106093             0.026388       0.043857          0.005798   -0.014683 -0.070340 -0.150765 -0.126283 -0.113726 -0.155482 -0.131773  1.000000 -0.074666          NaN               -0.081113
+div_9                                    -0.104869             -0.005896            -0.035018      -0.012979          0.058919    0.152501 -0.053342 -0.114333 -0.095767 -0.086244 -0.117909 -0.099930 -0.074666  1.000000          NaN               -0.101140
+div_Unknown                                    NaN                   NaN                  NaN            NaN               NaN         NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN          NaN                     NaN
+dv2_healthcare_quality                    0.159579              0.511446             0.698300      -0.116336         -0.164401   -0.137935 -0.121095  0.149978 -0.105444  0.299078 -0.188722  0.117638 -0.081113 -0.101140          NaN                1.000000
+Correlation heatmap saved to corr_dv2_healthcare_quality_original.png
+Potential outliers in dv2_healthcare_quality model (n=139):
+ - Row index: 70, Studentized resid=-4.63, Cook's=0.0628
+ - Row index: 71, Studentized resid=8.39, Cook's=0.0713
+ - Row index: 73, Studentized resid=-1.67, Cook's=0.0032
+ - Row index: 75, Studentized resid=1.88, Cook's=0.0038
+ - Row index: 76, Studentized resid=-1.54, Cook's=0.0027
+ - Row index: 77, Studentized resid=1.54, Cook's=0.0020
+ - Row index: 78, Studentized resid=4.71, Cook's=0.0247
+ - Row index: 83, Studentized resid=-3.11, Cook's=0.0353
+ - Row index: 84, Studentized resid=1.26, Cook's=0.0018
+ - Row index: 86, Studentized resid=-2.78, Cook's=0.0152
+ - Row index: 87, Studentized resid=-1.50, Cook's=0.0022
+ - Row index: 88, Studentized resid=-3.92, Cook's=0.0303
+ - Row index: 96, Studentized resid=-1.79, Cook's=0.0044
+ - Row index: 97, Studentized resid=2.34, Cook's=0.0037
+ - Row index: 100, Studentized resid=2.14, Cook's=0.0017
+ - Row index: 103, Studentized resid=2.46, Cook's=0.0022
+ - Row index: 104, Studentized resid=1.04, Cook's=0.0048
+ - Row index: 106, Studentized resid=1.98, Cook's=0.0015
+ - Row index: 188, Studentized resid=4.50, Cook's=0.0328
+ - Row index: 205, Studentized resid=4.30, Cook's=0.5297
+ - Row index: 216, Studentized resid=0.93, Cook's=0.0019
+ - Row index: 219, Studentized resid=0.95, Cook's=0.0014
+ - Row index: 222, Studentized resid=1.27, Cook's=0.0027
+ - Row index: 232, Studentized resid=-2.00, Cook's=0.0020
+ - Row index: 254, Studentized resid=3.70, Cook's=0.0065
+ - Row index: 259, Studentized resid=-1.94, Cook's=0.0013
+ - Row index: 261, Studentized resid=-1.68, Cook's=0.0015
+ - Row index: 290, Studentized resid=2.23, Cook's=0.0013
+ - Row index: 291, Studentized resid=-2.68, Cook's=0.0018
+ - Row index: 294, Studentized resid=-2.05, Cook's=0.0021
+ - Row index: 301, Studentized resid=-1.81, Cook's=0.0019
+ - Row index: 320, Studentized resid=-2.25, Cook's=0.0013
+ - Row index: 383, Studentized resid=3.15, Cook's=0.0012
+ - Row index: 487, Studentized resid=4.21, Cook's=0.0026
+ - Row index: 505, Studentized resid=4.31, Cook's=0.0031
+ - Row index: 513, Studentized resid=1.44, Cook's=0.0018
+ - Row index: 518, Studentized resid=3.47, Cook's=0.0054
+ - Row index: 532, Studentized resid=2.18, Cook's=0.0015
+ - Row index: 553, Studentized resid=-2.09, Cook's=0.0018
+ - Row index: 564, Studentized resid=4.28, Cook's=0.0091
+ - Row index: 597, Studentized resid=2.59, Cook's=0.0017
+ - Row index: 611, Studentized resid=1.17, Cook's=0.0085
+ - Row index: 912, Studentized resid=6.55, Cook's=0.0057
+ - Row index: 924, Studentized resid=5.11, Cook's=0.0073
+ - Row index: 936, Studentized resid=6.49, Cook's=0.0068
+ - Row index: 939, Studentized resid=6.58, Cook's=0.0103
+ - Row index: 982, Studentized resid=2.60, Cook's=0.0018
+ - Row index: 1000, Studentized resid=2.65, Cook's=0.0016
+ - Row index: 1006, Studentized resid=3.00, Cook's=0.0023
+ - Row index: 1041, Studentized resid=2.71, Cook's=0.0016
+ - Row index: 1088, Studentized resid=1.88, Cook's=0.0018
+ - Row index: 1090, Studentized resid=3.64, Cook's=0.0038
+ - Row index: 1091, Studentized resid=1.84, Cook's=0.0017
+ - Row index: 1112, Studentized resid=2.67, Cook's=0.0021
+ - Row index: 1120, Studentized resid=2.72, Cook's=0.0015
+ - Row index: 1149, Studentized resid=-2.06, Cook's=0.0014
+ - Row index: 1223, Studentized resid=0.91, Cook's=0.0014
+ - Row index: 1358, Studentized resid=1.86, Cook's=0.0014
+ - Row index: 1412, Studentized resid=3.35, Cook's=0.0028
+ - Row index: 1429, Studentized resid=2.21, Cook's=0.0024
+ - Row index: 1451, Studentized resid=2.43, Cook's=0.0014
+ - Row index: 1473, Studentized resid=2.10, Cook's=0.0021
+ - Row index: 1561, Studentized resid=3.04, Cook's=0.0027
+ - Row index: 1598, Studentized resid=-1.72, Cook's=0.0018
+ - Row index: 1600, Studentized resid=2.05, Cook's=0.0030
+ - Row index: 1601, Studentized resid=3.21, Cook's=0.0033
+ - Row index: 1611, Studentized resid=1.98, Cook's=0.0017
+ - Row index: 1616, Studentized resid=2.63, Cook's=0.0026
+ - Row index: 1617, Studentized resid=5.06, Cook's=0.0121
+ - Row index: 1626, Studentized resid=-2.43, Cook's=0.0020
+ - Row index: 1641, Studentized resid=6.25, Cook's=0.0241
+ - Row index: 1642, Studentized resid=1.75, Cook's=0.0015
+ - Row index: 1658, Studentized resid=-2.42, Cook's=0.0033
+ - Row index: 1662, Studentized resid=4.09, Cook's=0.0053
+ - Row index: 1686, Studentized resid=2.46, Cook's=0.0017
+ - Row index: 1691, Studentized resid=4.43, Cook's=0.0055
+ - Row index: 1717, Studentized resid=2.91, Cook's=0.0024
+ - Row index: 1741, Studentized resid=4.57, Cook's=0.0110
+ - Row index: 1753, Studentized resid=5.13, Cook's=0.0131
+ - Row index: 1758, Studentized resid=4.23, Cook's=0.0049
+ - Row index: 1797, Studentized resid=-2.23, Cook's=0.0019
+ - Row index: 1813, Studentized resid=4.49, Cook's=0.0090
+ - Row index: 1993, Studentized resid=4.87, Cook's=0.0312
+ - Row index: 2014, Studentized resid=2.67, Cook's=0.0023
+ - Row index: 2016, Studentized resid=-2.71, Cook's=0.0019
+ - Row index: 2023, Studentized resid=3.34, Cook's=0.0034
+ - Row index: 2032, Studentized resid=5.98, Cook's=0.0085
+ - Row index: 2033, Studentized resid=4.22, Cook's=0.0155
+ - Row index: 2160, Studentized resid=-2.58, Cook's=0.0031
+ - Row index: 2178, Studentized resid=-2.47, Cook's=0.0021
+ - Row index: 2243, Studentized resid=1.94, Cook's=0.0024
+ - Row index: 2271, Studentized resid=2.23, Cook's=0.0024
+ - Row index: 2333, Studentized resid=1.67, Cook's=0.0013
+ - Row index: 2356, Studentized resid=-2.05, Cook's=0.0016
+ - Row index: 2363, Studentized resid=2.79, Cook's=0.0025
+ - Row index: 2365, Studentized resid=1.84, Cook's=0.0017
+ - Row index: 2370, Studentized resid=6.68, Cook's=0.0645
+ - Row index: 2372, Studentized resid=-5.63, Cook's=0.0099
+ - Row index: 2377, Studentized resid=4.70, Cook's=0.0175
+ - Row index: 2382, Studentized resid=4.51, Cook's=0.0271
+ - Row index: 2389, Studentized resid=-2.84, Cook's=0.0021
+ - Row index: 2393, Studentized resid=-5.30, Cook's=0.0086
+ - Row index: 2396, Studentized resid=4.13, Cook's=0.0052
+ - Row index: 2397, Studentized resid=1.76, Cook's=0.0020
+ - Row index: 2404, Studentized resid=2.32, Cook's=0.0015
+ - Row index: 2406, Studentized resid=2.61, Cook's=0.0019
+ - Row index: 2409, Studentized resid=3.36, Cook's=0.0071
+ - Row index: 2413, Studentized resid=3.65, Cook's=0.0268
+ - Row index: 2422, Studentized resid=-0.86, Cook's=0.0027
+ - Row index: 2428, Studentized resid=3.65, Cook's=0.0048
+ - Row index: 2432, Studentized resid=-2.67, Cook's=0.0019
+ - Row index: 2447, Studentized resid=-2.18, Cook's=0.0015
+ - Row index: 2491, Studentized resid=-2.12, Cook's=0.0014
+ - Row index: 2529, Studentized resid=3.72, Cook's=0.0055
+ - Row index: 2546, Studentized resid=-2.35, Cook's=0.0016
+ - Row index: 2587, Studentized resid=-1.25, Cook's=0.0016
+ - Row index: 2592, Studentized resid=2.88, Cook's=0.0026
+ - Row index: 2601, Studentized resid=3.39, Cook's=0.0043
+ - Row index: 2624, Studentized resid=0.93, Cook's=0.0043
+ - Row index: 2641, Studentized resid=2.89, Cook's=0.0029
+ - Row index: 2645, Studentized resid=3.41, Cook's=0.0049
+ - Row index: 2687, Studentized resid=2.05, Cook's=0.0014
+ - Row index: 2696, Studentized resid=4.03, Cook's=0.0068
+ - Row index: 2703, Studentized resid=1.83, Cook's=0.0015
+ - Row index: 2717, Studentized resid=2.79, Cook's=0.0014
+ - Row index: 2739, Studentized resid=-2.45, Cook's=0.0021
+ - Row index: 2745, Studentized resid=-2.84, Cook's=0.0037
+ - Row index: 2747, Studentized resid=-3.21, Cook's=0.0041
+ - Row index: 2865, Studentized resid=2.82, Cook's=0.0034
+ - Row index: 2924, Studentized resid=3.29, Cook's=0.0017
+ - Row index: 2929, Studentized resid=3.42, Cook's=0.0017
+ - Row index: 2931, Studentized resid=-1.52, Cook's=0.0015
+ - Row index: 2965, Studentized resid=4.43, Cook's=0.0123
+ - Row index: 3015, Studentized resid=2.31, Cook's=0.0035
+ - Row index: 3016, Studentized resid=1.57, Cook's=0.0015
+ - Row index: 3022, Studentized resid=3.23, Cook's=0.0026
+ - Row index: 3028, Studentized resid=-2.09, Cook's=0.0014
+ - Row index: 3087, Studentized resid=2.67, Cook's=0.0030
+ - Row index: 3088, Studentized resid=-1.83, Cook's=0.0017
+Enhanced partial regression plots saved to partial_regression_dv2_healthcare_quality_original.png
+Path diagram saved to SignificantPaths_dv2_healthcare_quality_Original.png
+
+--------------------------------------------------------------------------------
+ PART E: ANALYZING INFLUENTIAL GENAI POINTS
+--------------------------------------------------------------------------------
+Looking for influential GenAI points with x < -8 and y between -2600 and 2600
+Data diagnostics: GenAI column has 3143 non-null values
+Data range: GenAI min=0.0, max=5.0
+==========================================
+STARTING GENAI INFLUENTIAL POINTS ANALYSIS
+==========================================
+Computing residuals using 15 predictors
+Dataset shape after dropping NaNs: (3135, 16)
+
+..... Analyzing DV: dv3_operational_eff (Original) .....
+Usable observations for dv3_operational_eff: 2133
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.1259-0.1259) / (1-0.1259)) = 0.0000 => trivial
+Removed iv3_health_behaviors (p=0.9646, f²=0.0000, trivial)
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.1259-0.1259) / (1-0.1259)) = 0.0000 => trivial
+Removed div_2 (p=0.8693, f²=0.0000, trivial)
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for population: ((0.1259-0.1265) / (1-0.1259)) = -0.0007 => trivial
+Removed population (p=0.7055, f²=-0.0007, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for iv1_public_health_policy: ((0.1265-0.1263) / (1-0.1265)) = 0.0002 => trivial
+Removed iv1_public_health_policy (p=0.5611, f²=0.0002, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_9: ((0.1263-0.1261) / (1-0.1263)) = 0.0003 => trivial
+Removed div_9 (p=0.4458, f²=0.0003, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_6: ((0.1261-0.1260) / (1-0.1261)) = 0.0001 => trivial
+Removed div_6 (p=0.6444, f²=0.0001, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_Unknown: ((0.1260-0.1252) / (1-0.1260)) = 0.0010 => trivial
+Removed div_Unknown (p=0.1550, f²=0.0010, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for iv2_physical_environment: ((0.1252-0.1209) / (1-0.1252)) = 0.0049 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for iv4_social_economic: ((0.1252-0.1103) / (1-0.1252)) = 0.0170 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for mo1_genai_cap: ((0.1252-0.1223) / (1-0.1252)) = 0.0033 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for mo2_robotics_cap: ((0.1252-0.1164) / (1-0.1252)) = 0.0101 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_3: ((0.1252-0.1040) / (1-0.1252)) = 0.0242 => small
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_4: ((0.1252-0.1129) / (1-0.1252)) = 0.0140 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_5: ((0.1252-0.1201) / (1-0.1252)) = 0.0058 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_7: ((0.1252-0.1124) / (1-0.1252)) = 0.0145 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_8: ((0.1252-0.1162) / (1-0.1252)) = 0.0103 => trivial
+Stepwise final model for DV=dv3_operational_eff => R²=0.1252 (initial=0.1259), Condition#=103.594351577345
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'div_3', 'div_4', 'div_5', 'div_7', 'div_8']
+Removed predictors: ['iv3_health_behaviors', 'div_2', 'population', 'iv1_public_health_policy', 'div_9', 'div_6', 'div_Unknown']
+Testing 36 interactions for DV=dv3_operational_eff among stepwise-kept predictors.
+Interaction iv2_physical_environment×iv4_social_economic: ΔR²=0.0022, f²=0.0025, p=2.1185e-02
+Interaction iv2_physical_environment×mo1_genai_cap: ΔR²=0.0025, f²=0.0029, p=1.3865e-02
+Interaction iv2_physical_environment×mo2_robotics_cap: ΔR²=0.0000, f²=0.0000, p=8.9929e-01
+Interaction iv2_physical_environment×div_3: ΔR²=0.0004, f²=0.0004, p=3.4593e-01
+Interaction iv2_physical_environment×div_4: ΔR²=0.0002, f²=0.0002, p=5.2800e-01
+Interaction iv2_physical_environment×div_5: ΔR²=0.0093, f²=0.0108, p=1.9026e-06
+Interaction iv2_physical_environment×div_7: ΔR²=0.0135, f²=0.0157, p=9.3892e-09
+Interaction iv2_physical_environment×div_8: ΔR²=0.0001, f²=0.0001, p=6.8150e-01
+Interaction iv4_social_economic×mo1_genai_cap: ΔR²=0.0004, f²=0.0004, p=3.5601e-01
+Interaction iv4_social_economic×mo2_robotics_cap: ΔR²=0.0005, f²=0.0006, p=2.5967e-01
+Interaction iv4_social_economic×div_3: ΔR²=0.0009, f²=0.0011, p=1.3456e-01
+Interaction iv4_social_economic×div_4: ΔR²=0.0012, f²=0.0013, p=9.1744e-02
+Interaction iv4_social_economic×div_5: ΔR²=0.0000, f²=0.0000, p=9.7624e-01
+Interaction iv4_social_economic×div_7: ΔR²=0.0055, f²=0.0063, p=2.7120e-04
+Interaction iv4_social_economic×div_8: ΔR²=0.0005, f²=0.0006, p=2.7320e-01
+Interaction mo1_genai_cap×mo2_robotics_cap: ΔR²=0.0007, f²=0.0008, p=1.8058e-01
+Interaction mo1_genai_cap×div_3: ΔR²=0.0002, f²=0.0002, p=5.3946e-01
+Interaction mo1_genai_cap×div_4: ΔR²=0.0003, f²=0.0004, p=3.8793e-01
+Interaction mo1_genai_cap×div_5: ΔR²=0.0006, f²=0.0007, p=2.1872e-01
+Interaction mo1_genai_cap×div_7: ΔR²=0.0000, f²=0.0000, p=7.4636e-01
+Interaction mo1_genai_cap×div_8: ΔR²=0.0047, f²=0.0054, p=7.5482e-04
+Interaction mo2_robotics_cap×div_3: ΔR²=0.0007, f²=0.0008, p=2.0711e-01
+Interaction mo2_robotics_cap×div_4: ΔR²=0.0005, f²=0.0006, p=2.7895e-01
+Interaction mo2_robotics_cap×div_5: ΔR²=0.0002, f²=0.0002, p=4.8655e-01
+Interaction mo2_robotics_cap×div_7: ΔR²=0.0122, f²=0.0142, p=4.5464e-08
+Interaction mo2_robotics_cap×div_8: ΔR²=0.0004, f²=0.0004, p=3.5409e-01
+Removing zero variance predictors: ['div_3_x_div_4']
+Interaction div_3×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_5']
+Interaction div_3×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_7']
+Interaction div_3×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_8']
+Interaction div_3×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_5']
+Interaction div_4×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_7']
+Interaction div_4×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_8']
+Interaction div_4×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_5_x_div_7']
+Interaction div_5×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_5_x_div_8']
+Interaction div_5×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_7_x_div_8']
+Interaction div_7×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Usable observations for dv3_operational_eff: 2133
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.1259-0.1259) / (1-0.1259)) = 0.0000 => trivial
+Removed iv3_health_behaviors (p=0.9646, f²=0.0000, trivial)
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.1259-0.1259) / (1-0.1259)) = 0.0000 => trivial
+Removed div_2 (p=0.8693, f²=0.0000, trivial)
+Dropping 1017 rows with NaN (2126 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for population: ((0.1259-0.1265) / (1-0.1259)) = -0.0007 => trivial
+Removed population (p=0.7055, f²=-0.0007, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for iv1_public_health_policy: ((0.1265-0.1263) / (1-0.1265)) = 0.0002 => trivial
+Removed iv1_public_health_policy (p=0.5611, f²=0.0002, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_9: ((0.1263-0.1261) / (1-0.1263)) = 0.0003 => trivial
+Removed div_9 (p=0.4458, f²=0.0003, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_6: ((0.1261-0.1260) / (1-0.1261)) = 0.0001 => trivial
+Removed div_6 (p=0.6444, f²=0.0001, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_Unknown: ((0.1260-0.1252) / (1-0.1260)) = 0.0010 => trivial
+Removed div_Unknown (p=0.1550, f²=0.0010, trivial)
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for iv2_physical_environment: ((0.1252-0.1209) / (1-0.1252)) = 0.0049 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for iv4_social_economic: ((0.1252-0.1103) / (1-0.1252)) = 0.0170 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for mo1_genai_cap: ((0.1252-0.1223) / (1-0.1252)) = 0.0033 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for mo2_robotics_cap: ((0.1252-0.1164) / (1-0.1252)) = 0.0101 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_3: ((0.1252-0.1040) / (1-0.1252)) = 0.0242 => small
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_4: ((0.1252-0.1129) / (1-0.1252)) = 0.0140 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_5: ((0.1252-0.1201) / (1-0.1252)) = 0.0058 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_7: ((0.1252-0.1124) / (1-0.1252)) = 0.0145 => trivial
+Dropping 1010 rows with NaN (2133 rows remaining).
+Cohen's f² for div_8: ((0.1252-0.1162) / (1-0.1252)) = 0.0103 => trivial
+Stepwise final model for DV=dv3_operational_eff => R²=0.1252 (initial=0.1259), Condition#=103.594351577345
+Kept predictors: ['iv2_physical_environment', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'div_3', 'div_4', 'div_5', 'div_7', 'div_8']
+Removed predictors: ['iv3_health_behaviors', 'div_2', 'population', 'iv1_public_health_policy', 'div_9', 'div_6', 'div_Unknown']
+Appended results to OLS_Coefficients_IndexLevel_Original.csv for DV=dv3_operational_eff.
+Appended results to OLS_Coefficients_IndexLevel_Original_WithZ.csv for DV=dv3_operational_eff.
+
+Correlation matrix for DV=dv3_operational_eff among final model columns:
+                          iv2_physical_environment  iv4_social_economic  mo1_genai_cap  mo2_robotics_cap     div_3     div_4     div_5     div_7     div_8  dv3_operational_eff
+iv2_physical_environment                  1.000000            -0.102058       0.036150          0.137424  0.107459  0.168412  0.140981  0.246856 -0.380608             0.085472
+iv4_social_economic                      -0.102058             1.000000      -0.100335         -0.194787  0.079844 -0.069368  0.143042  0.008947  0.102879            -0.136392
+mo1_genai_cap                             0.036150            -0.100335       1.000000          0.314179  0.032659  0.062920 -0.097593 -0.058344  0.041894             0.122604
+mo2_robotics_cap                          0.137424            -0.194787       0.314179          1.000000  0.087863  0.083400 -0.091540 -0.075673 -0.010256             0.182955
+div_3                                     0.107459             0.079844       0.032659          0.087863  1.000000 -0.179974 -0.155683 -0.181651 -0.137405             0.151705
+div_4                                     0.168412            -0.069368       0.062920          0.083400 -0.179974  1.000000 -0.149323 -0.174231 -0.131792             0.128797
+div_5                                     0.140981             0.143042      -0.097593         -0.091540 -0.155683 -0.149323  1.000000 -0.150715 -0.114004             0.022711
+div_7                                     0.246856             0.008947      -0.058344         -0.075673 -0.181651 -0.174231 -0.150715  1.000000 -0.133020            -0.206663
+div_8                                    -0.380608             0.102879       0.041894         -0.010256 -0.137405 -0.131792 -0.114004 -0.133020  1.000000             0.033038
+dv3_operational_eff                       0.085472            -0.136392       0.122604          0.182955  0.151705  0.128797  0.022711 -0.206663  0.033038             1.000000
+Correlation heatmap saved to corr_dv3_operational_eff_original.png
+Potential outliers in dv3_operational_eff model (n=96):
+ - Row index: 5, Studentized resid=2.57, Cook's=0.0028
+ - Row index: 55, Studentized resid=-2.50, Cook's=0.0027
+ - Row index: 85, Studentized resid=3.89, Cook's=0.0025
+ - Row index: 87, Studentized resid=-1.47, Cook's=0.0026
+ - Row index: 94, Studentized resid=-1.85, Cook's=0.0032
+ - Row index: 240, Studentized resid=-1.77, Cook's=0.0031
+ - Row index: 254, Studentized resid=-1.88, Cook's=0.0049
+ - Row index: 256, Studentized resid=1.85, Cook's=0.0023
+ - Row index: 264, Studentized resid=-1.58, Cook's=0.0026
+ - Row index: 276, Studentized resid=-1.46, Cook's=0.0029
+ - Row index: 332, Studentized resid=2.69, Cook's=0.0025
+ - Row index: 492, Studentized resid=2.67, Cook's=0.0029
+ - Row index: 502, Studentized resid=2.32, Cook's=0.0021
+ - Row index: 513, Studentized resid=-1.15, Cook's=0.0020
+ - Row index: 519, Studentized resid=3.32, Cook's=0.0040
+ - Row index: 534, Studentized resid=2.17, Cook's=0.0026
+ - Row index: 652, Studentized resid=-1.50, Cook's=0.0031
+ - Row index: 689, Studentized resid=1.56, Cook's=0.0040
+ - Row index: 697, Studentized resid=-1.08, Cook's=0.0020
+ - Row index: 737, Studentized resid=2.44, Cook's=0.0024
+ - Row index: 890, Studentized resid=-1.30, Cook's=0.0023
+ - Row index: 1000, Studentized resid=-2.43, Cook's=0.0030
+ - Row index: 1016, Studentized resid=3.12, Cook's=0.0041
+ - Row index: 1018, Studentized resid=4.69, Cook's=0.0100
+ - Row index: 1034, Studentized resid=2.16, Cook's=0.0021
+ - Row index: 1035, Studentized resid=2.23, Cook's=0.0021
+ - Row index: 1071, Studentized resid=2.10, Cook's=0.0019
+ - Row index: 1074, Studentized resid=3.15, Cook's=0.0042
+ - Row index: 1093, Studentized resid=2.69, Cook's=0.0034
+ - Row index: 1098, Studentized resid=4.56, Cook's=0.0160
+ - Row index: 1159, Studentized resid=2.37, Cook's=0.0031
+ - Row index: 1172, Studentized resid=-1.96, Cook's=0.0025
+ - Row index: 1216, Studentized resid=2.70, Cook's=0.0026
+ - Row index: 1464, Studentized resid=-2.13, Cook's=0.0025
+ - Row index: 1586, Studentized resid=-1.21, Cook's=0.0022
+ - Row index: 1604, Studentized resid=-1.41, Cook's=0.0028
+ - Row index: 1624, Studentized resid=-1.40, Cook's=0.0024
+ - Row index: 1628, Studentized resid=-1.18, Cook's=0.0021
+ - Row index: 1709, Studentized resid=8.35, Cook's=0.0178
+ - Row index: 1751, Studentized resid=3.03, Cook's=0.0054
+ - Row index: 1800, Studentized resid=-2.04, Cook's=0.0024
+ - Row index: 1813, Studentized resid=-1.87, Cook's=0.0033
+ - Row index: 1939, Studentized resid=-2.69, Cook's=0.0027
+ - Row index: 1945, Studentized resid=2.05, Cook's=0.0043
+ - Row index: 2048, Studentized resid=2.25, Cook's=0.0021
+ - Row index: 2138, Studentized resid=2.09, Cook's=0.0030
+ - Row index: 2144, Studentized resid=-1.27, Cook's=0.0021
+ - Row index: 2185, Studentized resid=-3.71, Cook's=0.0076
+ - Row index: 2235, Studentized resid=2.77, Cook's=0.0022
+ - Row index: 2254, Studentized resid=-1.95, Cook's=0.0020
+ - Row index: 2272, Studentized resid=2.04, Cook's=0.0021
+ - Row index: 2430, Studentized resid=-1.13, Cook's=0.0021
+ - Row index: 2433, Studentized resid=2.13, Cook's=0.0022
+ - Row index: 2454, Studentized resid=2.70, Cook's=0.0033
+ - Row index: 2470, Studentized resid=-3.41, Cook's=0.0055
+ - Row index: 2478, Studentized resid=2.63, Cook's=0.0033
+ - Row index: 2482, Studentized resid=2.95, Cook's=0.0040
+ - Row index: 2501, Studentized resid=1.62, Cook's=0.0020
+ - Row index: 2511, Studentized resid=2.32, Cook's=0.0027
+ - Row index: 2523, Studentized resid=-1.28, Cook's=0.0027
+ - Row index: 2559, Studentized resid=2.86, Cook's=0.0031
+ - Row index: 2571, Studentized resid=-1.40, Cook's=0.0020
+ - Row index: 2577, Studentized resid=-3.51, Cook's=0.0053
+ - Row index: 2607, Studentized resid=-2.14, Cook's=0.0020
+ - Row index: 2634, Studentized resid=2.61, Cook's=0.0045
+ - Row index: 2663, Studentized resid=-2.05, Cook's=0.0019
+ - Row index: 2669, Studentized resid=-4.12, Cook's=0.0065
+ - Row index: 2685, Studentized resid=2.89, Cook's=0.0053
+ - Row index: 2694, Studentized resid=-2.78, Cook's=0.0042
+ - Row index: 2698, Studentized resid=2.84, Cook's=0.0027
+ - Row index: 2715, Studentized resid=-2.22, Cook's=0.0019
+ - Row index: 2726, Studentized resid=2.56, Cook's=0.0024
+ - Row index: 2747, Studentized resid=-1.96, Cook's=0.0027
+ - Row index: 2749, Studentized resid=2.31, Cook's=0.0025
+ - Row index: 2752, Studentized resid=-2.31, Cook's=0.0019
+ - Row index: 2769, Studentized resid=5.57, Cook's=0.0158
+ - Row index: 2772, Studentized resid=3.35, Cook's=0.0074
+ - Row index: 2774, Studentized resid=-2.67, Cook's=0.0025
+ - Row index: 2781, Studentized resid=3.97, Cook's=0.0140
+ - Row index: 2788, Studentized resid=3.01, Cook's=0.0150
+ - Row index: 2797, Studentized resid=12.63, Cook's=0.1191
+ - Row index: 2798, Studentized resid=1.63, Cook's=0.0044
+ - Row index: 2799, Studentized resid=1.31, Cook's=0.0028
+ - Row index: 2800, Studentized resid=3.42, Cook's=0.0072
+ - Row index: 2801, Studentized resid=2.40, Cook's=0.0032
+ - Row index: 2806, Studentized resid=2.46, Cook's=0.0038
+ - Row index: 2822, Studentized resid=-1.57, Cook's=0.0026
+ - Row index: 2855, Studentized resid=-1.13, Cook's=0.0021
+ - Row index: 2905, Studentized resid=1.78, Cook's=0.0019
+ - Row index: 2932, Studentized resid=2.69, Cook's=0.0038
+ - Row index: 2941, Studentized resid=-2.22, Cook's=0.0038
+ - Row index: 3016, Studentized resid=-3.57, Cook's=0.0197
+ - Row index: 3043, Studentized resid=-2.24, Cook's=0.0020
+ - Row index: 3048, Studentized resid=-2.55, Cook's=0.0030
+ - Row index: 3107, Studentized resid=1.83, Cook's=0.0023
+ - Row index: 3115, Studentized resid=16.04, Cook's=0.0869
+Enhanced partial regression plots saved to partial_regression_dv3_operational_eff_original.png
+Path diagram saved to SignificantPaths_dv3_operational_eff_Original.png
+
+--------------------------------------------------------------------------------
+ PART E: ANALYZING INFLUENTIAL GENAI POINTS
+--------------------------------------------------------------------------------
+Looking for influential GenAI points with x < -8 and y between -2600 and 2600
+Data diagnostics: GenAI column has 3143 non-null values
+Data range: GenAI min=0.0, max=5.0
+==========================================
+STARTING GENAI INFLUENTIAL POINTS ANALYSIS
+==========================================
+Computing residuals using 15 predictors
+Dataset shape after dropping NaNs: (3135, 16)
+
+--------------------------------------------------------------------------------
+ PART B: INDEX-LEVEL MODELS (Improved)
+--------------------------------------------------------------------------------
+Starting analysis for DV: dv1_healthcare_access
+
+..... Analyzing DV: dv1_healthcare_access (Improved) .....
+Usable observations for dv1_healthcare_access: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for population: ((0.2997-0.2997) / (1-0.2997)) = -0.0000 => trivial
+Removed population (p=0.8762, f²=-0.0000, trivial)
+Cohen's f² for div_Unknown: ((0.2997-0.2997) / (1-0.2997)) = 0.0001 => trivial
+Removed div_Unknown (p=0.5974, f²=0.0001, trivial)
+Cohen's f² for mo1_genai_cap: ((0.2997-0.2994) / (1-0.2997)) = 0.0003 => trivial
+Removed mo1_genai_cap (p=0.3129, f²=0.0003, trivial)
+Cohen's f² for mo2_robotics_cap: ((0.2994-0.2989) / (1-0.2994)) = 0.0008 => trivial
+Removed mo2_robotics_cap (p=0.1064, f²=0.0008, trivial)
+Cohen's f² for iv1_public_health_policy: ((0.2989-0.2947) / (1-0.2989)) = 0.0060 => trivial
+Cohen's f² for iv2_physical_environment: ((0.2989-0.2774) / (1-0.2989)) = 0.0306 => small
+Cohen's f² for iv3_health_behaviors: ((0.2989-0.2909) / (1-0.2989)) = 0.0114 => trivial
+Cohen's f² for iv4_social_economic: ((0.2989-0.2623) / (1-0.2989)) = 0.0521 => small
+Cohen's f² for div_2: ((0.2989-0.2977) / (1-0.2989)) = 0.0017 => trivial
+Cohen's f² for div_3: ((0.2989-0.2958) / (1-0.2989)) = 0.0044 => trivial
+Cohen's f² for div_4: ((0.2989-0.2979) / (1-0.2989)) = 0.0013 => trivial
+Cohen's f² for div_5: ((0.2989-0.2912) / (1-0.2989)) = 0.0109 => trivial
+Cohen's f² for div_6: ((0.2989-0.2980) / (1-0.2989)) = 0.0012 => trivial
+Cohen's f² for div_7: ((0.2989-0.2936) / (1-0.2989)) = 0.0074 => trivial
+Cohen's f² for div_8: ((0.2989-0.2952) / (1-0.2989)) = 0.0053 => trivial
+Cohen's f² for div_9: ((0.2989-0.2922) / (1-0.2989)) = 0.0095 => trivial
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2989 (initial=0.2997), Condition#=862.6376767857078
+Kept predictors: ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+Removed predictors: ['population', 'div_Unknown', 'mo1_genai_cap', 'mo2_robotics_cap']
+Testing 66 interactions for DV=dv1_healthcare_access among stepwise-kept predictors.
+Interaction iv1_public_health_policy×iv2_physical_environment: ΔR²=0.0008, f²=0.0012, p=5.2117e-02
+Interaction iv1_public_health_policy×iv3_health_behaviors: ΔR²=0.0001, f²=0.0002, p=4.2539e-01
+Interaction iv1_public_health_policy×iv4_social_economic: ΔR²=0.0001, f²=0.0002, p=4.7917e-01
+Detected 1 linearly dependent columns in design matrix.
+Interaction iv1_public_health_policy×div_2: ΔR²=0.0000, f²=0.0000, p=2.1858e-02
+Interaction iv1_public_health_policy×div_3: ΔR²=0.0001, f²=0.0001, p=5.6332e-01
+Interaction iv1_public_health_policy×div_4: ΔR²=0.0026, f²=0.0037, p=7.1541e-04
+Interaction iv1_public_health_policy×div_5: ΔR²=0.0034, f²=0.0049, p=9.5437e-05
+Interaction iv1_public_health_policy×div_6: ΔR²=0.0065, f²=0.0093, p=7.2135e-08
+Interaction iv1_public_health_policy×div_7: ΔR²=0.0005, f²=0.0007, p=1.3934e-01
+Interaction iv1_public_health_policy×div_8: ΔR²=0.0003, f²=0.0004, p=2.7782e-01
+Interaction iv1_public_health_policy×div_9: ΔR²=0.0000, f²=0.0000, p=9.6195e-01
+Interaction iv2_physical_environment×iv3_health_behaviors: ΔR²=0.0003, f²=0.0005, p=2.2256e-01
+Interaction iv2_physical_environment×iv4_social_economic: ΔR²=0.0024, f²=0.0035, p=9.8295e-04
+Interaction iv2_physical_environment×div_2: ΔR²=0.0012, f²=0.0018, p=1.8453e-02
+Interaction iv2_physical_environment×div_3: ΔR²=0.0017, f²=0.0024, p=6.5797e-03
+Interaction iv2_physical_environment×div_4: ΔR²=0.0013, f²=0.0019, p=1.4581e-02
+Interaction iv2_physical_environment×div_5: ΔR²=0.0022, f²=0.0032, p=1.6546e-03
+Interaction iv2_physical_environment×div_6: ΔR²=0.0007, f²=0.0010, p=7.4389e-02
+Interaction iv2_physical_environment×div_7: ΔR²=0.0007, f²=0.0010, p=7.4768e-02
+Interaction iv2_physical_environment×div_8: ΔR²=0.0019, f²=0.0027, p=3.6666e-03
+Interaction iv2_physical_environment×div_9: ΔR²=0.0003, f²=0.0004, p=2.6894e-01
+Interaction iv3_health_behaviors×iv4_social_economic: ΔR²=0.0004, f²=0.0006, p=1.6563e-01
+Interaction iv3_health_behaviors×div_2: ΔR²=0.0000, f²=0.0000, p=7.5474e-01
+Interaction iv3_health_behaviors×div_3: ΔR²=0.0007, f²=0.0010, p=7.7308e-02
+Interaction iv3_health_behaviors×div_4: ΔR²=0.0014, f²=0.0020, p=1.1700e-02
+Interaction iv3_health_behaviors×div_5: ΔR²=0.0026, f²=0.0037, p=7.0142e-04
+Interaction iv3_health_behaviors×div_6: ΔR²=0.0004, f²=0.0006, p=1.5693e-01
+Interaction iv3_health_behaviors×div_7: ΔR²=0.0005, f²=0.0007, p=1.4676e-01
+Interaction iv3_health_behaviors×div_8: ΔR²=0.0000, f²=0.0000, p=8.8604e-01
+Interaction iv3_health_behaviors×div_9: ΔR²=0.0001, f²=0.0001, p=5.0415e-01
+Interaction iv4_social_economic×div_2: ΔR²=0.0001, f²=0.0002, p=4.9210e-01
+Interaction iv4_social_economic×div_3: ΔR²=0.0047, f²=0.0068, p=4.3363e-06
+Interaction iv4_social_economic×div_4: ΔR²=0.0013, f²=0.0018, p=1.7965e-02
+Interaction iv4_social_economic×div_5: ΔR²=0.0021, f²=0.0030, p=2.2003e-03
+Interaction iv4_social_economic×div_6: ΔR²=0.0001, f²=0.0001, p=5.9059e-01
+Interaction iv4_social_economic×div_7: ΔR²=0.0007, f²=0.0009, p=8.8431e-02
+Interaction iv4_social_economic×div_8: ΔR²=0.0008, f²=0.0011, p=5.8887e-02
+Interaction iv4_social_economic×div_9: ΔR²=0.0028, f²=0.0040, p=4.0526e-04
+Removing zero variance predictors: ['div_2_x_div_3']
+Interaction div_2×div_3: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_4']
+Interaction div_2×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_5']
+Interaction div_2×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_6']
+Interaction div_2×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_7']
+Interaction div_2×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_8']
+Interaction div_2×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_9']
+Interaction div_2×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_4']
+Interaction div_3×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_5']
+Interaction div_3×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_6']
+Interaction div_3×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_7']
+Interaction div_3×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_8']
+Interaction div_3×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_3_x_div_9']
+Interaction div_3×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_5']
+Interaction div_4×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_6']
+Interaction div_4×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_7']
+Interaction div_4×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_8']
+Interaction div_4×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_4_x_div_9']
+Interaction div_4×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_5_x_div_6']
+Interaction div_5×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_5_x_div_7']
+Interaction div_5×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_5_x_div_8']
+Interaction div_5×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_5_x_div_9']
+Interaction div_5×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_6_x_div_7']
+Interaction div_6×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_6_x_div_8']
+Interaction div_6×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_6_x_div_9']
+Interaction div_6×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_7_x_div_8']
+Interaction div_7×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_7_x_div_9']
+Interaction div_7×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_8_x_div_9']
+Interaction div_8×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Usable observations for dv1_healthcare_access: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for population: ((0.2997-0.2997) / (1-0.2997)) = -0.0000 => trivial
+Removed population (p=0.8762, f²=-0.0000, trivial)
+Cohen's f² for div_Unknown: ((0.2997-0.2997) / (1-0.2997)) = 0.0001 => trivial
+Removed div_Unknown (p=0.5974, f²=0.0001, trivial)
+Cohen's f² for mo1_genai_cap: ((0.2997-0.2994) / (1-0.2997)) = 0.0003 => trivial
+Removed mo1_genai_cap (p=0.3129, f²=0.0003, trivial)
+Cohen's f² for mo2_robotics_cap: ((0.2994-0.2989) / (1-0.2994)) = 0.0008 => trivial
+Removed mo2_robotics_cap (p=0.1064, f²=0.0008, trivial)
+Cohen's f² for iv1_public_health_policy: ((0.2989-0.2947) / (1-0.2989)) = 0.0060 => trivial
+Cohen's f² for iv2_physical_environment: ((0.2989-0.2774) / (1-0.2989)) = 0.0306 => small
+Cohen's f² for iv3_health_behaviors: ((0.2989-0.2909) / (1-0.2989)) = 0.0114 => trivial
+Cohen's f² for iv4_social_economic: ((0.2989-0.2623) / (1-0.2989)) = 0.0521 => small
+Cohen's f² for div_2: ((0.2989-0.2977) / (1-0.2989)) = 0.0017 => trivial
+Cohen's f² for div_3: ((0.2989-0.2958) / (1-0.2989)) = 0.0044 => trivial
+Cohen's f² for div_4: ((0.2989-0.2979) / (1-0.2989)) = 0.0013 => trivial
+Cohen's f² for div_5: ((0.2989-0.2912) / (1-0.2989)) = 0.0109 => trivial
+Cohen's f² for div_6: ((0.2989-0.2980) / (1-0.2989)) = 0.0012 => trivial
+Cohen's f² for div_7: ((0.2989-0.2936) / (1-0.2989)) = 0.0074 => trivial
+Cohen's f² for div_8: ((0.2989-0.2952) / (1-0.2989)) = 0.0053 => trivial
+Cohen's f² for div_9: ((0.2989-0.2922) / (1-0.2989)) = 0.0095 => trivial
+Stepwise final model for DV=dv1_healthcare_access => R²=0.2989 (initial=0.2997), Condition#=862.6376767857078
+Kept predictors: ['iv1_public_health_policy', 'iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9']
+Removed predictors: ['population', 'div_Unknown', 'mo1_genai_cap', 'mo2_robotics_cap']
+Appended results to OLS_Coefficients_IndexLevel_Improved.csv for DV=dv1_healthcare_access.
+Appended results to OLS_Coefficients_IndexLevel_Improved_WithZ.csv for DV=dv1_healthcare_access.
+
+Correlation matrix for DV=dv1_healthcare_access among final model columns:
+                          iv1_public_health_policy  iv2_physical_environment  iv3_health_behaviors  iv4_social_economic     div_2     div_3     div_4     div_5     div_6     div_7     div_8     div_9  dv1_healthcare_access
+iv1_public_health_policy                  1.000000                 -0.090001             -0.145725             0.002122  0.213359 -0.150496  0.250423 -0.140840 -0.135999 -0.191665  0.084287  0.220816              -0.070747
+iv2_physical_environment                 -0.090001                  1.000000              0.233802            -0.007820  0.074358  0.127521  0.161543  0.154228 -0.288382  0.249020 -0.380779 -0.104843               0.358337
+iv3_health_behaviors                     -0.145725                  0.233802              1.000000             0.236879 -0.070288  0.152763 -0.095557  0.133864 -0.123088  0.104269 -0.105867 -0.005758               0.243303
+iv4_social_economic                       0.002122                 -0.007820              0.236879             1.000000 -0.086402  0.092307 -0.033587  0.165400 -0.110938 -0.041101  0.026650 -0.034797               0.250418
+div_2                                     0.213359                  0.074358             -0.070288            -0.086402  1.000000 -0.107395 -0.089964 -0.081021 -0.110753 -0.093873 -0.070147 -0.053199               0.013459
+div_3                                    -0.150496                  0.127521              0.152763             0.092307 -0.107395  1.000000 -0.192784 -0.173620 -0.237332 -0.201160 -0.150318 -0.114000               0.124506
+div_4                                     0.250423                  0.161543             -0.095557            -0.033587 -0.089964 -0.192784  1.000000 -0.145440 -0.198811 -0.168510 -0.125920 -0.095497               0.023569
+div_5                                    -0.140840                  0.154228              0.133864             0.165400 -0.081021 -0.173620 -0.145440  1.000000 -0.179048 -0.151759 -0.113403 -0.086004               0.218724
+div_6                                    -0.135999                 -0.288382             -0.123088            -0.110938 -0.110753 -0.237332 -0.198811 -0.179048  1.000000 -0.207450 -0.155018 -0.117564              -0.112721
+div_7                                    -0.191665                  0.249020              0.104269            -0.041101 -0.093873 -0.201160 -0.168510 -0.151759 -0.207450  1.000000 -0.131392 -0.099646               0.159642
+div_8                                     0.084287                 -0.380779             -0.105867             0.026650 -0.070147 -0.150318 -0.125920 -0.113403 -0.155018 -0.131392  1.000000 -0.074461              -0.292804
+div_9                                     0.220816                 -0.104843             -0.005758            -0.034797 -0.053199 -0.114000 -0.095497 -0.086004 -0.117564 -0.099646 -0.074461  1.000000              -0.226623
+dv1_healthcare_access                    -0.070747                  0.358337              0.243303             0.250418  0.013459  0.124506  0.023569  0.218724 -0.112721  0.159642 -0.292804 -0.226623               1.000000
+Correlation heatmap saved to corr_dv1_healthcare_access_improved.png
+Potential outliers in dv1_healthcare_access model (n=139):
+ - Row index: 17, Studentized resid=3.60, Cook's=0.0030
+ - Row index: 66, Studentized resid=3.33, Cook's=0.0030
+ - Row index: 75, Studentized resid=1.41, Cook's=0.0024
+ - Row index: 76, Studentized resid=-1.70, Cook's=0.0034
+ - Row index: 83, Studentized resid=-1.11, Cook's=0.0052
+ - Row index: 84, Studentized resid=-2.11, Cook's=0.0057
+ - Row index: 86, Studentized resid=2.93, Cook's=0.0194
+ - Row index: 87, Studentized resid=-1.32, Cook's=0.0019
+ - Row index: 88, Studentized resid=-2.67, Cook's=0.0162
+ - Row index: 90, Studentized resid=-1.44, Cook's=0.0023
+ - Row index: 91, Studentized resid=1.34, Cook's=0.0015
+ - Row index: 96, Studentized resid=-2.24, Cook's=0.0079
+ - Row index: 133, Studentized resid=3.54, Cook's=0.0029
+ - Row index: 145, Studentized resid=2.75, Cook's=0.0023
+ - Row index: 159, Studentized resid=-1.74, Cook's=0.0013
+ - Row index: 165, Studentized resid=-1.52, Cook's=0.0013
+ - Row index: 186, Studentized resid=2.35, Cook's=0.0014
+ - Row index: 188, Studentized resid=-1.94, Cook's=0.0071
+ - Row index: 190, Studentized resid=1.70, Cook's=0.0014
+ - Row index: 192, Studentized resid=1.75, Cook's=0.0015
+ - Row index: 197, Studentized resid=2.12, Cook's=0.0022
+ - Row index: 210, Studentized resid=1.49, Cook's=0.0013
+ - Row index: 244, Studentized resid=2.09, Cook's=0.0022
+ - Row index: 276, Studentized resid=2.74, Cook's=0.0041
+ - Row index: 413, Studentized resid=-2.29, Cook's=0.0026
+ - Row index: 422, Studentized resid=2.84, Cook's=0.0013
+ - Row index: 427, Studentized resid=2.12, Cook's=0.0014
+ - Row index: 437, Studentized resid=-2.66, Cook's=0.0017
+ - Row index: 473, Studentized resid=3.09, Cook's=0.0017
+ - Row index: 483, Studentized resid=2.80, Cook's=0.0016
+ - Row index: 505, Studentized resid=-3.12, Cook's=0.0017
+ - Row index: 539, Studentized resid=-3.10, Cook's=0.0018
+ - Row index: 610, Studentized resid=3.45, Cook's=0.0032
+ - Row index: 613, Studentized resid=2.40, Cook's=0.0013
+ - Row index: 618, Studentized resid=3.20, Cook's=0.0020
+ - Row index: 687, Studentized resid=2.23, Cook's=0.0013
+ - Row index: 778, Studentized resid=3.60, Cook's=0.0030
+ - Row index: 820, Studentized resid=2.93, Cook's=0.0022
+ - Row index: 901, Studentized resid=-2.64, Cook's=0.0039
+ - Row index: 920, Studentized resid=4.21, Cook's=0.0054
+ - Row index: 921, Studentized resid=2.44, Cook's=0.0015
+ - Row index: 943, Studentized resid=2.51, Cook's=0.0014
+ - Row index: 1006, Studentized resid=4.31, Cook's=0.0062
+ - Row index: 1016, Studentized resid=3.10, Cook's=0.0027
+ - Row index: 1029, Studentized resid=3.26, Cook's=0.0033
+ - Row index: 1032, Studentized resid=-2.63, Cook's=0.0024
+ - Row index: 1035, Studentized resid=2.56, Cook's=0.0018
+ - Row index: 1041, Studentized resid=4.05, Cook's=0.0049
+ - Row index: 1051, Studentized resid=3.50, Cook's=0.0036
+ - Row index: 1058, Studentized resid=5.48, Cook's=0.0139
+ - Row index: 1060, Studentized resid=5.30, Cook's=0.0090
+ - Row index: 1079, Studentized resid=5.71, Cook's=0.0095
+ - Row index: 1090, Studentized resid=2.60, Cook's=0.0025
+ - Row index: 1124, Studentized resid=4.65, Cook's=0.0052
+ - Row index: 1131, Studentized resid=6.67, Cook's=0.0134
+ - Row index: 1155, Studentized resid=2.48, Cook's=0.0018
+ - Row index: 1175, Studentized resid=3.85, Cook's=0.0039
+ - Row index: 1184, Studentized resid=-1.05, Cook's=0.0013
+ - Row index: 1220, Studentized resid=1.16, Cook's=0.0016
+ - Row index: 1230, Studentized resid=1.21, Cook's=0.0019
+ - Row index: 1361, Studentized resid=3.52, Cook's=0.0024
+ - Row index: 1386, Studentized resid=2.97, Cook's=0.0017
+ - Row index: 1392, Studentized resid=-2.61, Cook's=0.0018
+ - Row index: 1412, Studentized resid=4.28, Cook's=0.0055
+ - Row index: 1429, Studentized resid=-2.53, Cook's=0.0036
+ - Row index: 1432, Studentized resid=2.52, Cook's=0.0018
+ - Row index: 1561, Studentized resid=3.30, Cook's=0.0036
+ - Row index: 1600, Studentized resid=1.41, Cook's=0.0017
+ - Row index: 1604, Studentized resid=2.45, Cook's=0.0034
+ - Row index: 1611, Studentized resid=3.06, Cook's=0.0047
+ - Row index: 1615, Studentized resid=2.25, Cook's=0.0028
+ - Row index: 1652, Studentized resid=-1.86, Cook's=0.0013
+ - Row index: 1658, Studentized resid=-1.72, Cook's=0.0019
+ - Row index: 1662, Studentized resid=2.67, Cook's=0.0027
+ - Row index: 1683, Studentized resid=3.21, Cook's=0.0039
+ - Row index: 1686, Studentized resid=2.22, Cook's=0.0016
+ - Row index: 1693, Studentized resid=-2.38, Cook's=0.0021
+ - Row index: 2002, Studentized resid=4.61, Cook's=0.0087
+ - Row index: 2009, Studentized resid=5.78, Cook's=0.0076
+ - Row index: 2012, Studentized resid=3.60, Cook's=0.0029
+ - Row index: 2016, Studentized resid=2.15, Cook's=0.0015
+ - Row index: 2023, Studentized resid=2.23, Cook's=0.0020
+ - Row index: 2025, Studentized resid=4.07, Cook's=0.0033
+ - Row index: 2030, Studentized resid=2.09, Cook's=0.0047
+ - Row index: 2134, Studentized resid=3.63, Cook's=0.0024
+ - Row index: 2135, Studentized resid=2.00, Cook's=0.0013
+ - Row index: 2137, Studentized resid=-1.75, Cook's=0.0013
+ - Row index: 2138, Studentized resid=3.77, Cook's=0.0026
+ - Row index: 2143, Studentized resid=2.77, Cook's=0.0019
+ - Row index: 2144, Studentized resid=2.24, Cook's=0.0027
+ - Row index: 2146, Studentized resid=5.61, Cook's=0.0098
+ - Row index: 2160, Studentized resid=1.92, Cook's=0.0021
+ - Row index: 2178, Studentized resid=-1.79, Cook's=0.0013
+ - Row index: 2195, Studentized resid=3.27, Cook's=0.0026
+ - Row index: 2209, Studentized resid=-1.54, Cook's=0.0013
+ - Row index: 2364, Studentized resid=3.13, Cook's=0.0015
+ - Row index: 2370, Studentized resid=-4.36, Cook's=0.0323
+ - Row index: 2377, Studentized resid=1.47, Cook's=0.0020
+ - Row index: 2382, Studentized resid=1.43, Cook's=0.0032
+ - Row index: 2383, Studentized resid=2.61, Cook's=0.0016
+ - Row index: 2386, Studentized resid=4.27, Cook's=0.0040
+ - Row index: 2388, Studentized resid=3.48, Cook's=0.0024
+ - Row index: 2397, Studentized resid=-3.33, Cook's=0.0084
+ - Row index: 2398, Studentized resid=2.52, Cook's=0.0023
+ - Row index: 2413, Studentized resid=-1.87, Cook's=0.0082
+ - Row index: 2422, Studentized resid=2.02, Cook's=0.0172
+ - Row index: 2432, Studentized resid=-2.35, Cook's=0.0017
+ - Row index: 2442, Studentized resid=3.14, Cook's=0.0027
+ - Row index: 2484, Studentized resid=2.93, Cook's=0.0022
+ - Row index: 2529, Studentized resid=-2.22, Cook's=0.0023
+ - Row index: 2540, Studentized resid=-2.20, Cook's=0.0021
+ - Row index: 2546, Studentized resid=-2.24, Cook's=0.0017
+ - Row index: 2559, Studentized resid=3.60, Cook's=0.0028
+ - Row index: 2563, Studentized resid=-2.33, Cook's=0.0018
+ - Row index: 2567, Studentized resid=2.50, Cook's=0.0015
+ - Row index: 2577, Studentized resid=-2.58, Cook's=0.0016
+ - Row index: 2587, Studentized resid=-1.82, Cook's=0.0038
+ - Row index: 2610, Studentized resid=-2.15, Cook's=0.0020
+ - Row index: 2622, Studentized resid=2.35, Cook's=0.0015
+ - Row index: 2626, Studentized resid=-2.44, Cook's=0.0023
+ - Row index: 2629, Studentized resid=2.75, Cook's=0.0020
+ - Row index: 2641, Studentized resid=2.53, Cook's=0.0026
+ - Row index: 2654, Studentized resid=-2.38, Cook's=0.0024
+ - Row index: 2658, Studentized resid=-2.16, Cook's=0.0020
+ - Row index: 2674, Studentized resid=-2.04, Cook's=0.0020
+ - Row index: 2703, Studentized resid=1.70, Cook's=0.0015
+ - Row index: 2720, Studentized resid=-1.98, Cook's=0.0020
+ - Row index: 2745, Studentized resid=-2.38, Cook's=0.0029
+ - Row index: 2776, Studentized resid=2.24, Cook's=0.0013
+ - Row index: 2789, Studentized resid=2.72, Cook's=0.0026
+ - Row index: 2830, Studentized resid=-2.99, Cook's=0.0018
+ - Row index: 2936, Studentized resid=-2.72, Cook's=0.0027
+ - Row index: 2995, Studentized resid=3.50, Cook's=0.0045
+ - Row index: 3003, Studentized resid=2.45, Cook's=0.0014
+ - Row index: 3014, Studentized resid=3.42, Cook's=0.0045
+ - Row index: 3015, Studentized resid=4.52, Cook's=0.0104
+ - Row index: 3022, Studentized resid=7.71, Cook's=0.0190
+ - Row index: 3047, Studentized resid=5.05, Cook's=0.0084
+ - Row index: 3128, Studentized resid=-1.64, Cook's=0.0013
+Enhanced partial regression plots saved to partial_regression_dv1_healthcare_access_improved.png
+Path diagram saved to SignificantPaths_dv1_healthcare_access_Improved.png
+Starting analysis for DV: dv2_healthcare_quality
+
+..... Analyzing DV: dv2_healthcare_quality (Improved) .....
+Usable observations for dv2_healthcare_quality: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.6859-0.6859) / (1-0.6859)) = 0.0001 => trivial
+Removed iv1_public_health_policy (p=0.5013, f²=0.0001, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.6859-0.6853) / (1-0.6859)) = 0.0018 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.6859-0.5952) / (1-0.6859)) = 0.2887 => medium
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.6859-0.4095) / (1-0.6859)) = 0.8799 => large
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.6859-0.6856) / (1-0.6859)) = 0.0011 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.6859-0.6795) / (1-0.6859)) = 0.0203 => small
+Cohen's f² for population: ((0.6859-0.6819) / (1-0.6859)) = 0.0127 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.6859-0.6845) / (1-0.6859)) = 0.0046 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.6859-0.6804) / (1-0.6859)) = 0.0176 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.6859-0.6838) / (1-0.6859)) = 0.0066 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.6859-0.6740) / (1-0.6859)) = 0.0378 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.6859-0.6844) / (1-0.6859)) = 0.0048 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.6859-0.6783) / (1-0.6859)) = 0.0243 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.6859-0.6843) / (1-0.6859)) = 0.0052 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.6859-0.6852) / (1-0.6859)) = 0.0023 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Cohen's f² for div_Unknown: ((0.6859-0.6859) / (1-0.6859)) = 0.0000 => trivial
+Stepwise final model for DV=dv2_healthcare_quality => R²=0.6859 (initial=0.6859), Condition#=7771758.145407048
+Kept predictors: ['iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'div_Unknown']
+Removed predictors: ['iv1_public_health_policy']
+Testing 105 interactions for DV=dv2_healthcare_quality among stepwise-kept predictors.
+Removing zero variance predictors: ['div_Unknown']
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×iv3_health_behaviors: ΔR²=0.0000, f²=0.0001, p=6.1694e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×iv4_social_economic: ΔR²=0.0011, f²=0.0035, p=9.9270e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×mo1_genai_cap: ΔR²=0.0002, f²=0.0005, p=1.9772e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×mo2_robotics_cap: ΔR²=0.0002, f²=0.0005, p=1.9874e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×population: ΔR²=0.0030, f²=0.0096, p=4.7817e-08
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_2: ΔR²=0.0005, f²=0.0015, p=2.8763e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_3: ΔR²=0.0012, f²=0.0038, p=5.7383e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_4: ΔR²=0.0001, f²=0.0002, p=3.8399e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_5: ΔR²=0.0002, f²=0.0005, p=1.9839e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_6: ΔR²=0.0001, f²=0.0003, p=3.3149e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_7: ΔR²=0.0000, f²=0.0000, p=7.6275e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_8: ΔR²=0.0000, f²=0.0001, p=5.7898e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv2_physical_environment×div_9: ΔR²=0.0001, f²=0.0002, p=4.0972e-01
+Removing zero variance predictors: ['div_Unknown', 'iv2_physical_environment_x_div_Unknown']
+Interaction iv2_physical_environment×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×iv4_social_economic: ΔR²=0.0058, f²=0.0189, p=2.1995e-14
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×mo1_genai_cap: ΔR²=0.0007, f²=0.0022, p=8.2231e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×mo2_robotics_cap: ΔR²=0.0005, f²=0.0016, p=2.5385e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×population: ΔR²=0.0006, f²=0.0020, p=1.1528e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_2: ΔR²=0.0002, f²=0.0005, p=2.0854e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_3: ΔR²=0.0000, f²=0.0001, p=6.3279e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_4: ΔR²=0.0004, f²=0.0013, p=4.4500e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_5: ΔR²=0.0003, f²=0.0009, p=8.9526e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_6: ΔR²=0.0064, f²=0.0208, p=1.1878e-15
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_7: ΔR²=0.0003, f²=0.0009, p=9.7276e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_8: ΔR²=0.0026, f²=0.0082, p=4.3686e-07
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv3_health_behaviors×div_9: ΔR²=0.0065, f²=0.0210, p=8.4969e-16
+Removing zero variance predictors: ['div_Unknown', 'iv3_health_behaviors_x_div_Unknown']
+Interaction iv3_health_behaviors×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×mo1_genai_cap: ΔR²=0.0001, f²=0.0004, p=2.3896e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×mo2_robotics_cap: ΔR²=0.0001, f²=0.0003, p=3.7112e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×population: ΔR²=0.0031, f²=0.0100, p=2.5217e-08
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_2: ΔR²=0.0004, f²=0.0013, p=4.1453e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_3: ΔR²=0.0006, f²=0.0020, p=1.2119e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_4: ΔR²=0.0004, f²=0.0014, p=3.8869e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_5: ΔR²=0.0013, f²=0.0042, p=3.1013e-04
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_6: ΔR²=0.0001, f²=0.0003, p=3.2497e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_7: ΔR²=0.0009, f²=0.0028, p=3.3834e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_8: ΔR²=0.0006, f²=0.0020, p=1.1865e-02
+Removing zero variance predictors: ['div_Unknown']
+Interaction iv4_social_economic×div_9: ΔR²=0.0019, f²=0.0062, p=1.1729e-05
+Removing zero variance predictors: ['div_Unknown', 'iv4_social_economic_x_div_Unknown']
+Interaction iv4_social_economic×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×mo2_robotics_cap: ΔR²=0.0001, f²=0.0004, p=2.4479e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×population: ΔR²=0.0007, f²=0.0022, p=8.9779e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_2: ΔR²=0.0000, f²=0.0002, p=4.8830e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_3: ΔR²=0.0001, f²=0.0002, p=4.0992e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_4: ΔR²=0.0001, f²=0.0004, p=2.8161e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_5: ΔR²=0.0001, f²=0.0003, p=3.5932e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_6: ΔR²=0.0000, f²=0.0001, p=6.0299e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_7: ΔR²=0.0000, f²=0.0000, p=7.6079e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_8: ΔR²=0.0002, f²=0.0006, p=1.7704e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo1_genai_cap×div_9: ΔR²=0.0000, f²=0.0000, p=9.3348e-01
+Removing zero variance predictors: ['div_Unknown', 'mo1_genai_cap_x_div_Unknown']
+Interaction mo1_genai_cap×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×population: ΔR²=0.0010, f²=0.0031, p=2.0312e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_2: ΔR²=0.0001, f²=0.0003, p=3.4280e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_3: ΔR²=0.0000, f²=0.0000, p=9.9229e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_4: ΔR²=0.0000, f²=0.0000, p=7.9219e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_5: ΔR²=0.0003, f²=0.0008, p=1.1052e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_6: ΔR²=0.0000, f²=0.0000, p=9.2174e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_7: ΔR²=0.0001, f²=0.0002, p=4.1654e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_8: ΔR²=0.0002, f²=0.0005, p=1.9204e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction mo2_robotics_cap×div_9: ΔR²=0.0000, f²=0.0001, p=5.1466e-01
+Removing zero variance predictors: ['div_Unknown', 'mo2_robotics_cap_x_div_Unknown']
+Interaction mo2_robotics_cap×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_2: ΔR²=0.0000, f²=0.0000, p=8.6012e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_3: ΔR²=0.0022, f²=0.0071, p=2.5903e-06
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_4: ΔR²=0.0000, f²=0.0000, p=7.9068e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_5: ΔR²=0.0028, f²=0.0090, p=1.3523e-07
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_6: ΔR²=0.0007, f²=0.0021, p=9.7735e-03
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_7: ΔR²=0.0000, f²=0.0001, p=5.7872e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_8: ΔR²=0.0000, f²=0.0000, p=7.3332e-01
+Removing zero variance predictors: ['div_Unknown']
+Interaction population×div_9: ΔR²=0.0026, f²=0.0085, p=2.8982e-07
+Removing zero variance predictors: ['population_x_div_Unknown', 'div_Unknown']
+Interaction population×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_3']
+Interaction div_2×div_3: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_4', 'div_Unknown']
+Interaction div_2×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_5']
+Interaction div_2×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_6']
+Interaction div_2×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_2_x_div_7', 'div_Unknown']
+Interaction div_2×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_8']
+Interaction div_2×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_9']
+Interaction div_2×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_2_x_div_Unknown']
+Interaction div_2×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_4']
+Interaction div_3×div_4: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_5']
+Interaction div_3×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_6']
+Interaction div_3×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_7']
+Interaction div_3×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_8']
+Interaction div_3×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_9']
+Interaction div_3×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_3_x_div_Unknown']
+Interaction div_3×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_5']
+Interaction div_4×div_5: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_6']
+Interaction div_4×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_7']
+Interaction div_4×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_8']
+Interaction div_4×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_9']
+Interaction div_4×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_4_x_div_Unknown']
+Interaction div_4×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_6']
+Interaction div_5×div_6: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_7']
+Interaction div_5×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_8']
+Interaction div_5×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_9']
+Interaction div_5×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_5_x_div_Unknown']
+Interaction div_5×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_7']
+Interaction div_6×div_7: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_8']
+Interaction div_6×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_9']
+Interaction div_6×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_6_x_div_Unknown']
+Interaction div_6×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_8']
+Interaction div_7×div_8: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_9']
+Interaction div_7×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_7_x_div_Unknown']
+Interaction div_7×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_8_x_div_9']
+Interaction div_8×div_9: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_8_x_div_Unknown']
+Interaction div_8×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Removing zero variance predictors: ['div_Unknown', 'div_9_x_div_Unknown']
+Interaction div_9×div_Unknown: ΔR²=0.0000, f²=0.0000, p=nan
+Usable observations for dv2_healthcare_quality: 3143
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv1_public_health_policy: ((0.6859-0.6859) / (1-0.6859)) = 0.0001 => trivial
+Removed iv1_public_health_policy (p=0.5013, f²=0.0001, trivial)
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv2_physical_environment: ((0.6859-0.6853) / (1-0.6859)) = 0.0018 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv3_health_behaviors: ((0.6859-0.5952) / (1-0.6859)) = 0.2887 => medium
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for iv4_social_economic: ((0.6859-0.4095) / (1-0.6859)) = 0.8799 => large
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo1_genai_cap: ((0.6859-0.6856) / (1-0.6859)) = 0.0011 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for mo2_robotics_cap: ((0.6859-0.6795) / (1-0.6859)) = 0.0203 => small
+Cohen's f² for population: ((0.6859-0.6819) / (1-0.6859)) = 0.0127 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_2: ((0.6859-0.6845) / (1-0.6859)) = 0.0046 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_3: ((0.6859-0.6804) / (1-0.6859)) = 0.0176 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_4: ((0.6859-0.6838) / (1-0.6859)) = 0.0066 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_5: ((0.6859-0.6740) / (1-0.6859)) = 0.0378 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_6: ((0.6859-0.6844) / (1-0.6859)) = 0.0048 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_7: ((0.6859-0.6783) / (1-0.6859)) = 0.0243 => small
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_8: ((0.6859-0.6843) / (1-0.6859)) = 0.0052 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Removing zero variance predictors: ['div_Unknown']
+Cohen's f² for div_9: ((0.6859-0.6852) / (1-0.6859)) = 0.0023 => trivial
+Dropping 8 rows with NaN (3135 rows remaining).
+Cohen's f² for div_Unknown: ((0.6859-0.6859) / (1-0.6859)) = 0.0000 => trivial
+Stepwise final model for DV=dv2_healthcare_quality => R²=0.6859 (initial=0.6859), Condition#=7771758.145407048
+Kept predictors: ['iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'div_Unknown']
+Removed predictors: ['iv1_public_health_policy']
+Appended results to OLS_Coefficients_IndexLevel_Improved.csv for DV=dv2_healthcare_quality.
+Dropping 3135 rows with NaN (0 rows remaining).
+Not enough observations (0) for 15 parameters.
+Standardized model is None for dv2_healthcare_quality. Exporting only unstandardized coefficients.
+Appended results to OLS_Coefficients_IndexLevel_Improved_WithZ.csv for DV=dv2_healthcare_quality.
+
+Correlation matrix for DV=dv2_healthcare_quality among final model columns:
+                          iv2_physical_environment  iv3_health_behaviors  iv4_social_economic  mo1_genai_cap  mo2_robotics_cap  population     div_2     div_3     div_4     div_5     div_6     div_7     div_8     div_9  div_Unknown  dv2_healthcare_quality
+iv2_physical_environment                  1.000000              0.233610            -0.007559       0.047311          0.139497    0.214688  0.074431  0.127688  0.161711  0.154380 -0.288545  0.249257 -0.380970 -0.104869          NaN                0.159566
+iv3_health_behaviors                      0.233610              1.000000             0.236788       0.000328          0.090942    0.124186 -0.070442  0.152580 -0.095837  0.133720 -0.123449  0.104085 -0.106093 -0.005896          NaN                0.511448
+iv4_social_economic                      -0.007559              0.236788             1.000000      -0.067354         -0.124017   -0.133282 -0.086630  0.091943 -0.033956  0.165163 -0.111440 -0.041489  0.026388 -0.035018          NaN                0.698302
+mo1_genai_cap                             0.047311              0.000328            -0.067354       1.000000          0.335234    0.123913  0.090865  0.006922  0.078923 -0.083002 -0.051443 -0.052470  0.043857 -0.012979          NaN               -0.116336
+mo2_robotics_cap                          0.139497              0.090942            -0.124017       0.335234          1.000000    0.224809  0.076529  0.032279  0.090471 -0.072070 -0.073690 -0.064100  0.005798  0.058919          NaN               -0.164398
+population                                0.214688              0.124186            -0.133282       0.123913          0.224809    1.000000  0.119025  0.011735  0.004438 -0.055559 -0.103268 -0.022032 -0.014683  0.152501          NaN               -0.137932
+div_2                                     0.074431             -0.070442            -0.086630       0.090865          0.076529    0.119025  1.000000 -0.107708 -0.090218 -0.081247 -0.111077 -0.094140 -0.070340 -0.053342          NaN               -0.121094
+div_3                                     0.127688              0.152580             0.091943       0.006922          0.032279    0.011735 -0.107708  1.000000 -0.193372 -0.174143 -0.238082 -0.201778 -0.150765 -0.114333          NaN                0.149977
+div_4                                     0.161711             -0.095837            -0.033956       0.078923          0.090471    0.004438 -0.090218 -0.193372  1.000000 -0.145865 -0.199422 -0.169013 -0.126283 -0.095767          NaN               -0.105444
+div_5                                     0.154380              0.133720             0.165163      -0.083002         -0.072070   -0.055559 -0.081247 -0.174143 -0.145865  1.000000 -0.179591 -0.152206 -0.113726 -0.086244          NaN                0.299066
+div_6                                    -0.288545             -0.123449            -0.111440      -0.051443         -0.073690   -0.103268 -0.111077 -0.238082 -0.199422 -0.179591  1.000000 -0.208091 -0.155482 -0.117909          NaN               -0.188700
+div_7                                     0.249257              0.104085            -0.041489      -0.052470         -0.064100   -0.022032 -0.094140 -0.201778 -0.169013 -0.152206 -0.208091  1.000000 -0.131773 -0.099930          NaN                0.117626
+div_8                                    -0.380970             -0.106093             0.026388       0.043857          0.005798   -0.014683 -0.070340 -0.150765 -0.126283 -0.113726 -0.155482 -0.131773  1.000000 -0.074666          NaN               -0.081112
+div_9                                    -0.104869             -0.005896            -0.035018      -0.012979          0.058919    0.152501 -0.053342 -0.114333 -0.095767 -0.086244 -0.117909 -0.099930 -0.074666  1.000000          NaN               -0.101145
+div_Unknown                                    NaN                   NaN                  NaN            NaN               NaN         NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN       NaN          NaN                     NaN
+dv2_healthcare_quality                    0.159566              0.511448             0.698302      -0.116336         -0.164398   -0.137932 -0.121094  0.149977 -0.105444  0.299066 -0.188700  0.117626 -0.081112 -0.101145          NaN                1.000000
+Correlation heatmap saved to corr_dv2_healthcare_quality_improved.png
+Potential outliers in dv2_healthcare_quality model (n=139):
+ - Row index: 70, Studentized resid=-4.63, Cook's=0.0628
+ - Row index: 71, Studentized resid=8.39, Cook's=0.0713
+ - Row index: 73, Studentized resid=-1.67, Cook's=0.0032
+ - Row index: 75, Studentized resid=1.88, Cook's=0.0038
+ - Row index: 76, Studentized resid=-1.54, Cook's=0.0027
+ - Row index: 77, Studentized resid=1.54, Cook's=0.0020
+ - Row index: 78, Studentized resid=4.71, Cook's=0.0247
+ - Row index: 83, Studentized resid=-3.11, Cook's=0.0353
+ - Row index: 84, Studentized resid=1.26, Cook's=0.0018
+ - Row index: 86, Studentized resid=-2.78, Cook's=0.0152
+ - Row index: 87, Studentized resid=-1.50, Cook's=0.0022
+ - Row index: 88, Studentized resid=-3.92, Cook's=0.0303
+ - Row index: 96, Studentized resid=-1.79, Cook's=0.0044
+ - Row index: 97, Studentized resid=2.34, Cook's=0.0037
+ - Row index: 100, Studentized resid=2.14, Cook's=0.0017
+ - Row index: 103, Studentized resid=2.46, Cook's=0.0022
+ - Row index: 104, Studentized resid=1.04, Cook's=0.0048
+ - Row index: 106, Studentized resid=1.98, Cook's=0.0015
+ - Row index: 188, Studentized resid=4.50, Cook's=0.0328
+ - Row index: 205, Studentized resid=4.30, Cook's=0.5296
+ - Row index: 216, Studentized resid=0.93, Cook's=0.0019
+ - Row index: 219, Studentized resid=0.95, Cook's=0.0014
+ - Row index: 222, Studentized resid=1.27, Cook's=0.0027
+ - Row index: 232, Studentized resid=-2.00, Cook's=0.0020
+ - Row index: 254, Studentized resid=3.70, Cook's=0.0065
+ - Row index: 259, Studentized resid=-1.94, Cook's=0.0013
+ - Row index: 261, Studentized resid=-1.68, Cook's=0.0015
+ - Row index: 290, Studentized resid=2.23, Cook's=0.0013
+ - Row index: 291, Studentized resid=-2.68, Cook's=0.0018
+ - Row index: 294, Studentized resid=-2.05, Cook's=0.0021
+ - Row index: 301, Studentized resid=-1.81, Cook's=0.0019
+ - Row index: 320, Studentized resid=-2.25, Cook's=0.0013
+ - Row index: 383, Studentized resid=3.15, Cook's=0.0012
+ - Row index: 487, Studentized resid=4.21, Cook's=0.0026
+ - Row index: 505, Studentized resid=4.31, Cook's=0.0031
+ - Row index: 513, Studentized resid=1.44, Cook's=0.0018
+ - Row index: 518, Studentized resid=3.47, Cook's=0.0054
+ - Row index: 532, Studentized resid=2.18, Cook's=0.0015
+ - Row index: 553, Studentized resid=-2.09, Cook's=0.0018
+ - Row index: 564, Studentized resid=4.28, Cook's=0.0091
+ - Row index: 597, Studentized resid=2.59, Cook's=0.0017
+ - Row index: 611, Studentized resid=1.17, Cook's=0.0085
+ - Row index: 912, Studentized resid=6.55, Cook's=0.0057
+ - Row index: 924, Studentized resid=5.11, Cook's=0.0073
+ - Row index: 936, Studentized resid=6.49, Cook's=0.0068
+ - Row index: 939, Studentized resid=6.58, Cook's=0.0103
+ - Row index: 982, Studentized resid=2.60, Cook's=0.0018
+ - Row index: 1000, Studentized resid=2.65, Cook's=0.0016
+ - Row index: 1006, Studentized resid=3.00, Cook's=0.0023
+ - Row index: 1041, Studentized resid=2.71, Cook's=0.0016
+ - Row index: 1088, Studentized resid=1.88, Cook's=0.0018
+ - Row index: 1090, Studentized resid=3.64, Cook's=0.0038
+ - Row index: 1091, Studentized resid=1.84, Cook's=0.0017
+ - Row index: 1112, Studentized resid=2.67, Cook's=0.0021
+ - Row index: 1120, Studentized resid=2.72, Cook's=0.0015
+ - Row index: 1149, Studentized resid=-2.06, Cook's=0.0014
+ - Row index: 1223, Studentized resid=0.91, Cook's=0.0014
+ - Row index: 1358, Studentized resid=1.86, Cook's=0.0014
+ - Row index: 1412, Studentized resid=3.35, Cook's=0.0028
+ - Row index: 1429, Studentized resid=2.21, Cook's=0.0024
+ - Row index: 1451, Studentized resid=2.43, Cook's=0.0014
+ - Row index: 1473, Studentized resid=2.10, Cook's=0.0021
+ - Row index: 1561, Studentized resid=3.04, Cook's=0.0027
+ - Row index: 1598, Studentized resid=-1.72, Cook's=0.0018
+ - Row index: 1600, Studentized resid=2.05, Cook's=0.0030
+ - Row index: 1601, Studentized resid=3.21, Cook's=0.0033
+ - Row index: 1611, Studentized resid=1.98, Cook's=0.0017
+ - Row index: 1616, Studentized resid=2.63, Cook's=0.0026
+ - Row index: 1617, Studentized resid=5.06, Cook's=0.0121
+ - Row index: 1626, Studentized resid=-2.43, Cook's=0.0020
+ - Row index: 1641, Studentized resid=6.25, Cook's=0.0241
+ - Row index: 1642, Studentized resid=1.75, Cook's=0.0015
+ - Row index: 1658, Studentized resid=-2.42, Cook's=0.0033
+ - Row index: 1662, Studentized resid=4.09, Cook's=0.0053
+ - Row index: 1686, Studentized resid=2.46, Cook's=0.0017
+ - Row index: 1691, Studentized resid=4.43, Cook's=0.0055
+ - Row index: 1717, Studentized resid=2.91, Cook's=0.0024
+ - Row index: 1741, Studentized resid=4.57, Cook's=0.0110
+ - Row index: 1753, Studentized resid=5.13, Cook's=0.0131
+ - Row index: 1758, Studentized resid=4.23, Cook's=0.0049
+ - Row index: 1797, Studentized resid=-2.23, Cook's=0.0019
+ - Row index: 1813, Studentized resid=4.49, Cook's=0.0090
+ - Row index: 1993, Studentized resid=4.87, Cook's=0.0312
+ - Row index: 2014, Studentized resid=2.67, Cook's=0.0023
+ - Row index: 2016, Studentized resid=-2.71, Cook's=0.0019
+ - Row index: 2023, Studentized resid=3.35, Cook's=0.0034
+ - Row index: 2032, Studentized resid=5.98, Cook's=0.0085
+ - Row index: 2033, Studentized resid=4.22, Cook's=0.0155
+ - Row index: 2160, Studentized resid=-2.58, Cook's=0.0031
+ - Row index: 2178, Studentized resid=-2.47, Cook's=0.0021
+ - Row index: 2243, Studentized resid=1.94, Cook's=0.0024
+ - Row index: 2271, Studentized resid=2.23, Cook's=0.0024
+ - Row index: 2333, Studentized resid=1.67, Cook's=0.0013
+ - Row index: 2356, Studentized resid=-2.05, Cook's=0.0016
+ - Row index: 2363, Studentized resid=2.79, Cook's=0.0025
+ - Row index: 2365, Studentized resid=1.84, Cook's=0.0017
+ - Row index: 2370, Studentized resid=6.68, Cook's=0.0645
+ - Row index: 2372, Studentized resid=-5.63, Cook's=0.0099
+ - Row index: 2377, Studentized resid=4.70, Cook's=0.0175
+ - Row index: 2382, Studentized resid=4.51, Cook's=0.0271
+ - Row index: 2389, Studentized resid=-2.84, Cook's=0.0021
+ - Row index: 2393, Studentized resid=-5.30, Cook's=0.0086
+ - Row index: 2396, Studentized resid=4.13, Cook's=0.0052
+ - Row index: 2397, Studentized resid=1.76, Cook's=0.0020
+ - Row index: 2404, Studentized resid=2.32, Cook's=0.0015
+ - Row index: 2406, Studentized resid=2.61, Cook's=0.0019
+ - Row index: 2409, Studentized resid=3.36, Cook's=0.0071
+ - Row index: 2413, Studentized resid=3.65, Cook's=0.0268
+ - Row index: 2422, Studentized resid=-0.86, Cook's=0.0027
+ - Row index: 2428, Studentized resid=3.65, Cook's=0.0048
+ - Row index: 2432, Studentized resid=-2.67, Cook's=0.0019
+ - Row index: 2447, Studentized resid=-2.18, Cook's=0.0015
+ - Row index: 2491, Studentized resid=-2.12, Cook's=0.0014
+ - Row index: 2529, Studentized resid=3.72, Cook's=0.0055
+ - Row index: 2546, Studentized resid=-2.35, Cook's=0.0016
+ - Row index: 2587, Studentized resid=-1.25, Cook's=0.0016
+ - Row index: 2592, Studentized resid=2.88, Cook's=0.0026
+ - Row index: 2601, Studentized resid=3.39, Cook's=0.0043
+ - Row index: 2624, Studentized resid=0.93, Cook's=0.0043
+ - Row index: 2641, Studentized resid=2.89, Cook's=0.0029
+ - Row index: 2645, Studentized resid=3.41, Cook's=0.0049
+ - Row index: 2687, Studentized resid=2.05, Cook's=0.0014
+ - Row index: 2696, Studentized resid=4.03, Cook's=0.0068
+ - Row index: 2703, Studentized resid=1.83, Cook's=0.0015
+ - Row index: 2717, Studentized resid=2.79, Cook's=0.0014
+ - Row index: 2739, Studentized resid=-2.45, Cook's=0.0021
+ - Row index: 2745, Studentized resid=-2.84, Cook's=0.0037
+ - Row index: 2747, Studentized resid=-3.21, Cook's=0.0041
+ - Row index: 2865, Studentized resid=2.82, Cook's=0.0034
+ - Row index: 2924, Studentized resid=3.29, Cook's=0.0017
+ - Row index: 2929, Studentized resid=3.42, Cook's=0.0017
+ - Row index: 2931, Studentized resid=-1.52, Cook's=0.0015
+ - Row index: 2965, Studentized resid=4.43, Cook's=0.0123
+ - Row index: 3015, Studentized resid=2.31, Cook's=0.0035
+ - Row index: 3016, Studentized resid=1.57, Cook's=0.0015
+ - Row index: 3022, Studentized resid=3.23, Cook's=0.0026
+ - Row index: 3028, Studentized resid=-2.09, Cook's=0.0014
+ - Row index: 3087, Studentized resid=2.67, Cook's=0.0030
+ - Row index: 3088, Studentized resid=-1.83, Cook's=0.0017
+Enhanced partial regression plots saved to partial_regression_dv2_healthcare_quality_improved.png
+Path diagram saved to SignificantPaths_dv2_healthcare_quality_Improved.png
+Checking for Pacific analysis eligibility. Final predictors: ['iv2_physical_environment', 'iv3_health_behaviors', 'iv4_social_economic', 'mo1_genai_cap', 'mo2_robotics_cap', 'population', 'div_2', 'div_3', 'div_4', 'div_5', 'div_6', 'div_7', 'div_8', 'div_9', 'div_Unknown']
+Found div_9 in final model. Running Pacific analysis.
+
+--------------------------------------------------------------------------------
+ PART D: Investigate Pacific Clusters (Div9 partial-residuals)
+--------------------------------------------------------------------------------

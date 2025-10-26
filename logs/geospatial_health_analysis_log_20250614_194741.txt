@@ -1,0 +1,50 @@
+2025-06-14 19:47:41,937 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:74] - Logging to: logs/geospatial_health_analysis_log_20250614_194741.txt
+2025-06-14 19:47:41,937 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:878] - Starting Geospatial Health AI/Robotics Impact Analysis Script.
+2025-06-14 19:47:41,997 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:95] - Connected to PostgreSQL database 'Research_TEST' successfully.
+2025-06-14 19:47:41,997 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:107] - Fetching hospital data and joining with pre-geocoded locations...
+2025-06-14 19:47:42,023 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:132] - Joined hospital data retrieved: 5777 rows with valid coordinates.
+2025-06-14 19:47:42,029 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:151] - GeoDataFrame created successfully.
+2025-06-14 19:47:42,030 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:171] - County shapefile already exists at: geospatial_output/geodata/tl_2023_us_county/tl_2023_us_county.shp
+2025-06-14 19:47:42,190 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:221] - --- Running Hot Spot Analysis for: ai_adoption_score ---
+2025-06-14 19:47:42,512 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:283] - Hot spot analysis complete for ai_adoption_score. Hot spots: 98, Cold spots: 0
+2025-06-14 19:47:42,515 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:417] - Generating cluster map for ai_adoption_score...
+2025-06-14 19:47:53,207 - WARNING - [Geospatial_TAMU_analysis_061425_v4.py:448] - Could not add basemap to cluster plot: name 'ctx' is not defined
+2025-06-14 19:47:54,759 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:460] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_ai_adoption_score.png
+2025-06-14 19:47:54,760 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:479] - Found 98 hospitals in high-tech clusters
+2025-06-14 19:47:55,159 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:500] - Found 303 counties within a 30-mile radius of a 'ai_adoption_score' hot spot hospital.
+2025-06-14 19:47:55,161 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:503] - Service area summary saved to geospatial_output/service_area_summary_ai_adoption_score.csv
+2025-06-14 19:47:55,161 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:505] - Generating service area coverage map...
+2025-06-14 19:47:57,371 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:532] - Service area map saved to geospatial_output/plots/service_area_map_ai_adoption_score.png
+2025-06-14 19:47:57,412 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:544] - --- Generating enhanced glow map for ai_adoption_score ---
+2025-06-14 19:47:57,745 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:586] - For ai_adoption_score: Hot spots found: 98, Cold spots: 0, Other points: 5679
+2025-06-14 19:47:57,745 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:592] - Plotting 3235 county boundaries as base layer for ai_adoption_score
+2025-06-14 19:48:05,920 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:617] - Creating glow effect for 98 hot spots for ai_adoption_score
+2025-06-14 19:48:05,951 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:651] - Plotting 0 'other' points (filtered to contiguous US) for ai_adoption_score
+2025-06-14 19:48:05,951 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:662] - Plotting 98 hot spots for ai_adoption_score
+2025-06-14 19:48:07,524 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:720] - Enhanced cluster map with glow effect saved to geospatial_output/plots/enhanced_cluster_map_ai_adoption_score.png
+2025-06-14 19:48:07,524 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:721] - Map for ai_adoption_score contains 98 hot spots and 0 cold spots.
+2025-06-14 19:48:08,150 - ERROR - [Geospatial_TAMU_analysis_061425_v4.py:841] - Error during basemap addition for simple cluster map: name 'ctx' is not defined
+2025-06-14 19:48:08,533 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:863] - Simple cluster map saved to geospatial_output/plots/simple_cluster_map_ai_adoption_score.png
+2025-06-14 19:48:08,533 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:864] - Map for ai_adoption_score contains 98 hot spots and 0 cold spots.
+2025-06-14 19:48:08,534 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:221] - --- Running Hot Spot Analysis for: robotics_adoption_score ---
+2025-06-14 19:48:08,917 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:283] - Hot spot analysis complete for robotics_adoption_score. Hot spots: 19, Cold spots: 0
+2025-06-14 19:48:08,921 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:417] - Generating cluster map for robotics_adoption_score...
+2025-06-14 19:48:20,137 - WARNING - [Geospatial_TAMU_analysis_061425_v4.py:448] - Could not add basemap to cluster plot: name 'ctx' is not defined
+2025-06-14 19:48:21,719 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:460] - Geospatial cluster map saved to geospatial_output/plots/geospatial_cluster_map_robotics_adoption_score.png
+2025-06-14 19:48:21,722 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:479] - Found 19 hospitals in high-tech clusters
+2025-06-14 19:48:22,082 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:500] - Found 160 counties within a 30-mile radius of a 'robotics_adoption_score' hot spot hospital.
+2025-06-14 19:48:22,082 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:503] - Service area summary saved to geospatial_output/service_area_summary_robotics_adoption_score.csv
+2025-06-14 19:48:22,082 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:505] - Generating service area coverage map...
+2025-06-14 19:48:24,178 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:532] - Service area map saved to geospatial_output/plots/service_area_map_robotics_adoption_score.png
+2025-06-14 19:48:24,191 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:544] - --- Generating enhanced glow map for robotics_adoption_score ---
+2025-06-14 19:48:24,529 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:586] - For robotics_adoption_score: Hot spots found: 19, Cold spots: 0, Other points: 5758
+2025-06-14 19:48:24,529 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:592] - Plotting 3235 county boundaries as base layer for robotics_adoption_score
+2025-06-14 19:48:32,808 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:617] - Creating glow effect for 19 hot spots for robotics_adoption_score
+2025-06-14 19:48:32,817 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:651] - Plotting 0 'other' points (filtered to contiguous US) for robotics_adoption_score
+2025-06-14 19:48:32,817 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:662] - Plotting 19 hot spots for robotics_adoption_score
+2025-06-14 19:48:34,388 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:720] - Enhanced cluster map with glow effect saved to geospatial_output/plots/enhanced_cluster_map_robotics_adoption_score.png
+2025-06-14 19:48:34,388 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:721] - Map for robotics_adoption_score contains 19 hot spots and 0 cold spots.
+2025-06-14 19:48:35,006 - ERROR - [Geospatial_TAMU_analysis_061425_v4.py:841] - Error during basemap addition for simple cluster map: name 'ctx' is not defined
+2025-06-14 19:48:35,390 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:863] - Simple cluster map saved to geospatial_output/plots/simple_cluster_map_robotics_adoption_score.png
+2025-06-14 19:48:35,390 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:864] - Map for robotics_adoption_score contains 19 hot spots and 0 cold spots.
+2025-06-14 19:48:35,390 - INFO - [Geospatial_TAMU_analysis_061425_v4.py:938] - Geospatial analysis script finished. Check logs and output directory for results.

@@ -1,0 +1,996 @@
+
+2025-03-30 14:17:36,395 - INFO -------------------------------------------------
+Logging initialized. Output will be saved to logs/analysis_log_20250330_141736.txt
+
+2025-03-30 14:17:36,395 - INFO -------------------------------------------------
+
+================================================================================
+ ANALYSIS STARTED: 2025-03-30 14:17:36
+================================================================================
+
+2025-03-30 14:17:36,397 - INFO -------------------------------------------------
+Connecting to database...
+
+2025-03-30 14:17:36,471 - INFO -------------------------------------------------
+Connected to DB.
+
+2025-03-30 14:17:36,471 - INFO -------------------------------------------------
+Fetching data from database...
+
+2025-03-30 14:17:59,092 - INFO -------------------------------------------------
+Fetched index-level data, shape=(3143, 10)
+
+2025-03-30 14:18:02,043 - INFO -------------------------------------------------
+Fetched component-level data, shape=(3143, 37)
+
+2025-03-30 14:18:02,043 - INFO -------------------------------------------------
+
+================================================================================
+
+2025-03-30 14:18:02,043 - INFO -------------------------------------------------
+PART A) OLS, RF, GBM using INDEX-LEVEL variables (no interactions)
+
+2025-03-30 14:18:02,043 - INFO -------------------------------------------------
+================================================================================
+
+2025-03-30 14:18:02,055 - INFO -------------------------------------------------
+
+[VIF for dv1_healthcare_access - index-level]
+
+2025-03-30 14:18:02,055 - INFO -------------------------------------------------
+                    Feature       VIF
+0  iv1_public_health_policy  1.041576
+1  iv2_physical_environment  1.081445
+2      iv3_health_behaviors  1.160055
+3       iv4_social_economic  1.089954
+4             mo1_genai_cap  1.134190
+5          mo2_robotics_cap  1.183258
+
+2025-03-30 14:18:02,453 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv1_healthcare_access_indexlevel.png
+
+2025-03-30 14:18:02,483 - INFO -------------------------------------------------
+Training Random Forest model for dv1_healthcare_access...
+
+2025-03-30 14:18:02,636 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv1_healthcare_access...
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+
+[Random Forest Results for dv1_healthcare_access]
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  R2:  0.3092
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  MSE: 266171.5290
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  MAE: 373.9916
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  Top 5 Features:
+iv2_physical_environment    0.358211
+iv4_social_economic         0.285193
+iv3_health_behaviors        0.220696
+mo2_robotics_cap            0.093978
+iv1_public_health_policy    0.024398
+dtype: float64
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv1_healthcare_access]
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  R2:  0.3402
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  MSE: 254221.8644
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  MAE: 358.8302
+
+2025-03-30 14:18:02,955 - INFO -------------------------------------------------
+  Top 5 Features:
+iv2_physical_environment    0.410291
+iv4_social_economic         0.248115
+mo2_robotics_cap            0.173385
+iv3_health_behaviors        0.131895
+mo1_genai_cap               0.022713
+dtype: float64
+
+2025-03-30 14:18:03,308 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv1_healthcare_access_index.png
+
+2025-03-30 14:18:03,594 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv1_healthcare_access_index.png
+
+2025-03-30 14:18:04,597 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv1_healthcare_access_rf_index.png
+
+2025-03-30 14:18:04,775 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv1_healthcare_access_rf_index.png
+
+2025-03-30 14:18:04,925 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv1_healthcare_access_gbm_index.png
+
+2025-03-30 14:18:05,105 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv1_healthcare_access_gbm_index.png
+
+2025-03-30 14:18:05,502 - INFO -------------------------------------------------
+Saved figure: pdp_dv1_healthcare_access_rf_index.png
+
+2025-03-30 14:18:05,830 - INFO -------------------------------------------------
+Saved figure: pdp_dv1_healthcare_access_gbm_index.png
+
+2025-03-30 14:18:05,902 - INFO -------------------------------------------------
+
+[VIF for dv2_healthcare_quality - index-level]
+
+2025-03-30 14:18:05,902 - INFO -------------------------------------------------
+                    Feature       VIF
+0  iv1_public_health_policy  1.041576
+1  iv2_physical_environment  1.081445
+2      iv3_health_behaviors  1.160055
+3       iv4_social_economic  1.089954
+4             mo1_genai_cap  1.134190
+5          mo2_robotics_cap  1.183258
+
+2025-03-30 14:18:06,109 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv2_healthcare_quality_indexlevel.png
+
+2025-03-30 14:18:06,140 - INFO -------------------------------------------------
+Training Random Forest model for dv2_healthcare_quality...
+
+2025-03-30 14:18:06,290 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv2_healthcare_quality...
+
+2025-03-30 14:18:06,626 - INFO -------------------------------------------------
+
+[Random Forest Results for dv2_healthcare_quality]
+
+2025-03-30 14:18:06,626 - INFO -------------------------------------------------
+  R2:  0.6197
+
+2025-03-30 14:18:06,626 - INFO -------------------------------------------------
+  MSE: 1411592.9806
+
+2025-03-30 14:18:06,626 - INFO -------------------------------------------------
+  MAE: 828.7207
+
+2025-03-30 14:18:06,627 - INFO -------------------------------------------------
+  Top 5 Features:
+iv4_social_economic         0.556704
+iv3_health_behaviors        0.283947
+iv2_physical_environment    0.108402
+mo2_robotics_cap            0.022608
+iv1_public_health_policy    0.016765
+dtype: float64
+
+2025-03-30 14:18:06,627 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv2_healthcare_quality]
+
+2025-03-30 14:18:06,627 - INFO -------------------------------------------------
+  R2:  0.6575
+
+2025-03-30 14:18:06,627 - INFO -------------------------------------------------
+  MSE: 1271284.8184
+
+2025-03-30 14:18:06,627 - INFO -------------------------------------------------
+  MAE: 790.3137
+
+2025-03-30 14:18:06,627 - INFO -------------------------------------------------
+  Top 5 Features:
+iv4_social_economic         0.620620
+iv3_health_behaviors        0.259692
+iv2_physical_environment    0.072365
+mo2_robotics_cap            0.024146
+iv1_public_health_policy    0.011614
+dtype: float64
+
+2025-03-30 14:18:06,905 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv2_healthcare_quality_index.png
+
+2025-03-30 14:18:07,182 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv2_healthcare_quality_index.png
+
+2025-03-30 14:18:08,101 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv2_healthcare_quality_rf_index.png
+
+2025-03-30 14:18:08,279 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv2_healthcare_quality_rf_index.png
+
+2025-03-30 14:18:08,429 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv2_healthcare_quality_gbm_index.png
+
+2025-03-30 14:18:08,601 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv2_healthcare_quality_gbm_index.png
+
+2025-03-30 14:18:08,999 - INFO -------------------------------------------------
+Saved figure: pdp_dv2_healthcare_quality_rf_index.png
+
+2025-03-30 14:18:09,304 - INFO -------------------------------------------------
+Saved figure: pdp_dv2_healthcare_quality_gbm_index.png
+
+2025-03-30 14:18:09,385 - INFO -------------------------------------------------
+
+[VIF for dv3_operational_eff - index-level]
+
+2025-03-30 14:18:09,385 - INFO -------------------------------------------------
+                    Feature       VIF
+0  iv1_public_health_policy  1.041576
+1  iv2_physical_environment  1.081445
+2      iv3_health_behaviors  1.160055
+3       iv4_social_economic  1.089954
+4             mo1_genai_cap  1.134190
+5          mo2_robotics_cap  1.183258
+
+2025-03-30 14:18:09,584 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv3_operational_eff_indexlevel.png
+
+2025-03-30 14:18:09,626 - INFO -------------------------------------------------
+Training Random Forest model for dv3_operational_eff...
+
+2025-03-30 14:18:09,765 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv3_operational_eff...
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+
+[Random Forest Results for dv3_operational_eff]
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  R2:  0.0343
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  MSE: 530.5841
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  MAE: 14.4817
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  Top 5 Features:
+iv4_social_economic         0.307617
+iv3_health_behaviors        0.278832
+iv2_physical_environment    0.266418
+mo2_robotics_cap            0.080244
+mo1_genai_cap               0.040315
+dtype: float64
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv3_operational_eff]
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  R2:  0.0216
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  MSE: 537.5931
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  MAE: 14.4099
+
+2025-03-30 14:18:09,988 - INFO -------------------------------------------------
+  Top 5 Features:
+iv4_social_economic         0.314491
+iv3_health_behaviors        0.243648
+iv2_physical_environment    0.238880
+mo2_robotics_cap            0.127986
+mo1_genai_cap               0.044875
+dtype: float64
+
+2025-03-30 14:18:10,249 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv3_operational_eff_index.png
+
+2025-03-30 14:18:10,531 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv3_operational_eff_index.png
+
+2025-03-30 14:18:11,291 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv3_operational_eff_rf_index.png
+
+2025-03-30 14:18:11,465 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv3_operational_eff_rf_index.png
+
+2025-03-30 14:18:11,615 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv3_operational_eff_gbm_index.png
+
+2025-03-30 14:18:11,792 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv3_operational_eff_gbm_index.png
+
+2025-03-30 14:18:12,176 - INFO -------------------------------------------------
+Saved figure: pdp_dv3_operational_eff_rf_index.png
+
+2025-03-30 14:18:12,498 - INFO -------------------------------------------------
+Saved figure: pdp_dv3_operational_eff_gbm_index.png
+
+2025-03-30 14:18:12,564 - INFO -------------------------------------------------
+
+================================================================================
+
+2025-03-30 14:18:12,564 - INFO -------------------------------------------------
+PART B) OLS, RF, GBM using COMPONENT-LEVEL variables (no interactions)
+
+2025-03-30 14:18:12,564 - INFO -------------------------------------------------
+================================================================================
+
+2025-03-30 14:18:12,568 - INFO -------------------------------------------------
+[INFO] Merged component dataframe shape: (3143, 40)
+
+2025-03-30 14:18:12,626 - INFO -------------------------------------------------
+
+[VIF for dv1_healthcare_access - component-level]
+
+2025-03-30 14:18:12,626 - INFO -------------------------------------------------
+                                           Feature       VIF
+0       air_pollution_particulate_matter_raw_value  1.580316
+1              drinking_water_violations_raw_value  1.069291
+2                severe_housing_problems_raw_value  2.367327
+3                  driving_alone_to_work_raw_value  1.750667
+4             long_commute_driving_alone_raw_value  1.521067
+5                          adult_smoking_raw_value  4.670375
+6                          adult_obesity_raw_value  3.187768
+7                 food_environment_index_raw_value  2.699263
+8                    physical_inactivity_raw_value  8.134956
+9       access_to_exercise_opportunities_raw_value  1.820489
+10                    excessive_drinking_raw_value  2.014451
+11       alcohol_impaired_driving_deaths_raw_value  1.100671
+12       sexually_transmitted_infections_raw_value  2.486585
+13                           teen_births_raw_value  3.894555
+14                high_school_completion_raw_value  3.964515
+15                          some_college_raw_value  4.004770
+16                          unemployment_raw_value  1.531537
+17                   children_in_poverty_raw_value  5.909498
+18                     income_inequality_raw_value  2.121529
+19  children_in_single_parent_households_raw_value  3.129249
+20                   social_associations_raw_value  1.372985
+21                         injury_deaths_raw_value  1.862128
+22                      weighted_ai_adoption_score  1.119654
+23                weighted_robotics_adoption_score  1.269763
+
+2025-03-30 14:18:12,852 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv1_healthcare_access_components.png
+
+2025-03-30 14:18:12,886 - INFO -------------------------------------------------
+Training Random Forest model for dv1_healthcare_access...
+
+2025-03-30 14:18:13,184 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv1_healthcare_access...
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+
+[Random Forest Results for dv1_healthcare_access]
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  R2:  0.4441
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  MSE: 111729.7335
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  MAE: 239.9720
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  Top 5 Features:
+physical_inactivity_raw_value                 0.305393
+long_commute_driving_alone_raw_value          0.136248
+teen_births_raw_value                         0.049459
+adult_obesity_raw_value                       0.042832
+access_to_exercise_opportunities_raw_value    0.041446
+dtype: float64
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv1_healthcare_access]
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  R2:  0.3624
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  MSE: 128152.7297
+
+2025-03-30 14:18:14,273 - INFO -------------------------------------------------
+  MAE: 257.7296
+
+2025-03-30 14:18:14,274 - INFO -------------------------------------------------
+  Top 5 Features:
+physical_inactivity_raw_value                 0.252635
+long_commute_driving_alone_raw_value          0.157047
+access_to_exercise_opportunities_raw_value    0.071126
+teen_births_raw_value                         0.070775
+adult_obesity_raw_value                       0.067343
+dtype: float64
+
+2025-03-30 14:18:14,542 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv1_healthcare_access_components.png
+
+2025-03-30 14:18:14,858 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv1_healthcare_access_components.png
+
+2025-03-30 14:18:16,735 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv1_healthcare_access_rf_components.png
+
+2025-03-30 14:18:17,123 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv1_healthcare_access_rf_components.png
+
+2025-03-30 14:18:17,432 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv1_healthcare_access_gbm_components.png
+
+2025-03-30 14:18:17,816 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv1_healthcare_access_gbm_components.png
+
+2025-03-30 14:18:18,204 - INFO -------------------------------------------------
+Saved figure: pdp_dv1_healthcare_access_rf_components.png
+
+2025-03-30 14:18:18,521 - INFO -------------------------------------------------
+Saved figure: pdp_dv1_healthcare_access_gbm_components.png
+
+2025-03-30 14:18:18,658 - INFO -------------------------------------------------
+
+[VIF for dv2_healthcare_quality - component-level]
+
+2025-03-30 14:18:18,658 - INFO -------------------------------------------------
+                                           Feature       VIF
+0       air_pollution_particulate_matter_raw_value  1.580316
+1              drinking_water_violations_raw_value  1.069291
+2                severe_housing_problems_raw_value  2.367327
+3                  driving_alone_to_work_raw_value  1.750667
+4             long_commute_driving_alone_raw_value  1.521067
+5                          adult_smoking_raw_value  4.670375
+6                          adult_obesity_raw_value  3.187768
+7                 food_environment_index_raw_value  2.699263
+8                    physical_inactivity_raw_value  8.134956
+9       access_to_exercise_opportunities_raw_value  1.820489
+10                    excessive_drinking_raw_value  2.014451
+11       alcohol_impaired_driving_deaths_raw_value  1.100671
+12       sexually_transmitted_infections_raw_value  2.486585
+13                           teen_births_raw_value  3.894555
+14                high_school_completion_raw_value  3.964515
+15                          some_college_raw_value  4.004770
+16                          unemployment_raw_value  1.531537
+17                   children_in_poverty_raw_value  5.909498
+18                     income_inequality_raw_value  2.121529
+19  children_in_single_parent_households_raw_value  3.129249
+20                   social_associations_raw_value  1.372985
+21                         injury_deaths_raw_value  1.862128
+22                      weighted_ai_adoption_score  1.119654
+23                weighted_robotics_adoption_score  1.269763
+
+2025-03-30 14:18:18,858 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv2_healthcare_quality_components.png
+
+2025-03-30 14:18:18,900 - INFO -------------------------------------------------
+Training Random Forest model for dv2_healthcare_quality...
+
+2025-03-30 14:18:19,206 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv2_healthcare_quality...
+
+2025-03-30 14:18:20,289 - INFO -------------------------------------------------
+
+[Random Forest Results for dv2_healthcare_quality]
+
+2025-03-30 14:18:20,289 - INFO -------------------------------------------------
+  R2:  0.8506
+
+2025-03-30 14:18:20,289 - INFO -------------------------------------------------
+  MSE: 396960.3213
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+  MAE: 462.4035
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+  Top 5 Features:
+children_in_poverty_raw_value                0.454133
+injury_deaths_raw_value                      0.168776
+teen_births_raw_value                        0.156392
+sexually_transmitted_infections_raw_value    0.028871
+adult_smoking_raw_value                      0.023439
+dtype: float64
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv2_healthcare_quality]
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+  R2:  0.8412
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+  MSE: 421774.7573
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+  MAE: 470.9578
+
+2025-03-30 14:18:20,290 - INFO -------------------------------------------------
+  Top 5 Features:
+children_in_poverty_raw_value                0.293414
+teen_births_raw_value                        0.261550
+injury_deaths_raw_value                      0.195242
+adult_smoking_raw_value                      0.062078
+sexually_transmitted_infections_raw_value    0.036914
+dtype: float64
+
+2025-03-30 14:18:20,555 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv2_healthcare_quality_components.png
+
+2025-03-30 14:18:20,869 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv2_healthcare_quality_components.png
+
+2025-03-30 14:18:22,649 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv2_healthcare_quality_rf_components.png
+
+2025-03-30 14:18:23,028 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv2_healthcare_quality_rf_components.png
+
+2025-03-30 14:18:23,340 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv2_healthcare_quality_gbm_components.png
+
+2025-03-30 14:18:23,725 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv2_healthcare_quality_gbm_components.png
+
+2025-03-30 14:18:24,112 - INFO -------------------------------------------------
+Saved figure: pdp_dv2_healthcare_quality_rf_components.png
+
+2025-03-30 14:18:24,431 - INFO -------------------------------------------------
+Saved figure: pdp_dv2_healthcare_quality_gbm_components.png
+
+2025-03-30 14:18:24,714 - INFO -------------------------------------------------
+
+[VIF for dv3_operational_eff - component-level]
+
+2025-03-30 14:18:24,715 - INFO -------------------------------------------------
+                                           Feature       VIF
+0       air_pollution_particulate_matter_raw_value  1.580316
+1              drinking_water_violations_raw_value  1.069291
+2                severe_housing_problems_raw_value  2.367327
+3                  driving_alone_to_work_raw_value  1.750667
+4             long_commute_driving_alone_raw_value  1.521067
+5                          adult_smoking_raw_value  4.670375
+6                          adult_obesity_raw_value  3.187768
+7                 food_environment_index_raw_value  2.699263
+8                    physical_inactivity_raw_value  8.134956
+9       access_to_exercise_opportunities_raw_value  1.820489
+10                    excessive_drinking_raw_value  2.014451
+11       alcohol_impaired_driving_deaths_raw_value  1.100671
+12       sexually_transmitted_infections_raw_value  2.486585
+13                           teen_births_raw_value  3.894555
+14                high_school_completion_raw_value  3.964515
+15                          some_college_raw_value  4.004770
+16                          unemployment_raw_value  1.531537
+17                   children_in_poverty_raw_value  5.909498
+18                     income_inequality_raw_value  2.121529
+19  children_in_single_parent_households_raw_value  3.129249
+20                   social_associations_raw_value  1.372985
+21                         injury_deaths_raw_value  1.862128
+22                      weighted_ai_adoption_score  1.119654
+23                weighted_robotics_adoption_score  1.269763
+
+2025-03-30 14:18:24,932 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv3_operational_eff_components.png
+
+2025-03-30 14:18:24,975 - INFO -------------------------------------------------
+Training Random Forest model for dv3_operational_eff...
+
+2025-03-30 14:18:25,322 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv3_operational_eff...
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+
+[Random Forest Results for dv3_operational_eff]
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  R2:  0.1044
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  MSE: 408.1441
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  MAE: 12.5848
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  Top 5 Features:
+some_college_raw_value              0.068910
+excessive_drinking_raw_value        0.063413
+injury_deaths_raw_value             0.062470
+high_school_completion_raw_value    0.057547
+children_in_poverty_raw_value       0.054233
+dtype: float64
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv3_operational_eff]
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  R2:  0.0441
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  MSE: 435.6214
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  MAE: 13.0768
+
+2025-03-30 14:18:26,280 - INFO -------------------------------------------------
+  Top 5 Features:
+excessive_drinking_raw_value        0.097994
+driving_alone_to_work_raw_value     0.078070
+some_college_raw_value              0.074208
+high_school_completion_raw_value    0.072127
+children_in_poverty_raw_value       0.069939
+dtype: float64
+
+2025-03-30 14:18:26,535 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv3_operational_eff_components.png
+
+2025-03-30 14:18:26,859 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv3_operational_eff_components.png
+
+2025-03-30 14:18:29,055 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv3_operational_eff_rf_components.png
+
+2025-03-30 14:18:29,448 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv3_operational_eff_rf_components.png
+
+2025-03-30 14:18:29,755 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv3_operational_eff_gbm_components.png
+
+2025-03-30 14:18:30,143 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv3_operational_eff_gbm_components.png
+
+2025-03-30 14:18:30,535 - INFO -------------------------------------------------
+Saved figure: pdp_dv3_operational_eff_rf_components.png
+
+2025-03-30 14:18:30,850 - INFO -------------------------------------------------
+Saved figure: pdp_dv3_operational_eff_gbm_components.png
+
+2025-03-30 14:18:30,915 - INFO -------------------------------------------------
+
+================================================================================
+
+2025-03-30 14:18:30,916 - INFO -------------------------------------------------
+PART C) OLS, RF, GBM using COMPONENT-LEVEL variables WITH INTERACTIONS
+
+2025-03-30 14:18:30,916 - INFO -------------------------------------------------
+================================================================================
+
+2025-03-30 14:18:50,663 - INFO -------------------------------------------------
+
+[VIF for dv1_healthcare_access - component-level + interactions]
+
+2025-03-30 14:18:50,663 - INFO -------------------------------------------------
+                                           Feature           VIF
+0       air_pollution_particulate_matter_raw_value   5263.830002
+1              drinking_water_violations_raw_value   3234.826609
+2                severe_housing_problems_raw_value   4546.565026
+3                  driving_alone_to_work_raw_value   3870.910562
+4             long_commute_driving_alone_raw_value   4595.365861
+5                          adult_smoking_raw_value  11569.321481
+6                          adult_obesity_raw_value   9183.683439
+7                 food_environment_index_raw_value   7053.088602
+8                    physical_inactivity_raw_value  19187.768038
+9       access_to_exercise_opportunities_raw_value   4736.268757
+10                    excessive_drinking_raw_value   6903.271545
+11       alcohol_impaired_driving_deaths_raw_value   3159.562820
+12       sexually_transmitted_infections_raw_value   6985.251769
+13                           teen_births_raw_value   8134.592974
+14                high_school_completion_raw_value   5574.257752
+15                          some_college_raw_value   7878.231276
+16                          unemployment_raw_value   4224.093975
+17                   children_in_poverty_raw_value  13399.404026
+18                     income_inequality_raw_value   5078.585128
+19  children_in_single_parent_households_raw_value   7866.671449
+
+2025-03-30 14:18:50,911 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv1_healthcare_access_comp_interactions.png
+
+2025-03-30 14:18:50,958 - INFO -------------------------------------------------
+Training Random Forest model for dv1_healthcare_access...
+
+2025-03-30 14:18:53,481 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv1_healthcare_access...
+
+2025-03-30 14:19:08,244 - INFO -------------------------------------------------
+
+[Random Forest Results for dv1_healthcare_access]
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  R2:  0.4319
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  MSE: 114200.1848
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  MAE: 243.8675
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  Top 5 Features:
+long_commute_driving_alone_raw_value_x_teen_births_raw_value            0.279621
+driving_alone_to_work_raw_value_x_physical_inactivity_raw_value         0.067737
+long_commute_driving_alone_raw_value_x_adult_smoking_raw_value          0.036115
+long_commute_driving_alone_raw_value_x_physical_inactivity_raw_value    0.023674
+long_commute_driving_alone_raw_value_x_adult_obesity_raw_value          0.016337
+dtype: float64
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv1_healthcare_access]
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  R2:  0.3950
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  MSE: 121612.4830
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  MAE: 250.6990
+
+2025-03-30 14:19:08,245 - INFO -------------------------------------------------
+  Top 5 Features:
+long_commute_driving_alone_raw_value_x_teen_births_raw_value            0.223431
+long_commute_driving_alone_raw_value_x_physical_inactivity_raw_value    0.073993
+driving_alone_to_work_raw_value_x_physical_inactivity_raw_value         0.066717
+long_commute_driving_alone_raw_value_x_adult_smoking_raw_value          0.043294
+long_commute_driving_alone_raw_value_x_adult_obesity_raw_value          0.026696
+dtype: float64
+
+2025-03-30 14:19:08,529 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv1_healthcare_access_comp_interactions.png
+
+2025-03-30 14:19:08,884 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv1_healthcare_access_comp_interactions.png
+
+2025-03-30 14:19:12,202 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv1_healthcare_access_rf_comp_interactions.png
+
+2025-03-30 14:19:12,674 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv1_healthcare_access_rf_comp_interactions.png
+
+2025-03-30 14:19:13,053 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv1_healthcare_access_gbm_comp_interactions.png
+
+2025-03-30 14:19:13,512 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv1_healthcare_access_gbm_comp_interactions.png
+
+2025-03-30 14:19:13,921 - INFO -------------------------------------------------
+Saved figure: pdp_dv1_healthcare_access_rf_comp_interactions.png
+
+2025-03-30 14:19:14,247 - INFO -------------------------------------------------
+Saved figure: pdp_dv1_healthcare_access_gbm_comp_interactions.png
+
+2025-03-30 14:19:33,968 - INFO -------------------------------------------------
+
+[VIF for dv2_healthcare_quality - component-level + interactions]
+
+2025-03-30 14:19:33,968 - INFO -------------------------------------------------
+                                           Feature           VIF
+0       air_pollution_particulate_matter_raw_value   5263.830002
+1              drinking_water_violations_raw_value   3234.826609
+2                severe_housing_problems_raw_value   4546.565026
+3                  driving_alone_to_work_raw_value   3870.910562
+4             long_commute_driving_alone_raw_value   4595.365861
+5                          adult_smoking_raw_value  11569.321481
+6                          adult_obesity_raw_value   9183.683439
+7                 food_environment_index_raw_value   7053.088602
+8                    physical_inactivity_raw_value  19187.768038
+9       access_to_exercise_opportunities_raw_value   4736.268757
+10                    excessive_drinking_raw_value   6903.271545
+11       alcohol_impaired_driving_deaths_raw_value   3159.562820
+12       sexually_transmitted_infections_raw_value   6985.251769
+13                           teen_births_raw_value   8134.592974
+14                high_school_completion_raw_value   5574.257752
+15                          some_college_raw_value   7878.231276
+16                          unemployment_raw_value   4224.093975
+17                   children_in_poverty_raw_value  13399.404026
+18                     income_inequality_raw_value   5078.585128
+19  children_in_single_parent_households_raw_value   7866.671449
+
+2025-03-30 14:19:34,195 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv2_healthcare_quality_comp_interactions.png
+
+2025-03-30 14:19:34,248 - INFO -------------------------------------------------
+Training Random Forest model for dv2_healthcare_quality...
+
+2025-03-30 14:19:36,755 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv2_healthcare_quality...
+
+2025-03-30 14:19:51,582 - INFO -------------------------------------------------
+
+[Random Forest Results for dv2_healthcare_quality]
+
+2025-03-30 14:19:51,582 - INFO -------------------------------------------------
+  R2:  0.8651
+
+2025-03-30 14:19:51,582 - INFO -------------------------------------------------
+  MSE: 358233.9278
+
+2025-03-30 14:19:51,582 - INFO -------------------------------------------------
+  MAE: 440.7467
+
+2025-03-30 14:19:51,583 - INFO -------------------------------------------------
+  Top 5 Features:
+children_in_poverty_raw_value_x_injury_deaths_raw_value                0.510848
+teen_births_raw_value_x_injury_deaths_raw_value                        0.190279
+physical_inactivity_raw_value_x_injury_deaths_raw_value                0.024393
+adult_smoking_raw_value_x_injury_deaths_raw_value                      0.023416
+sexually_transmitted_infections_raw_value_x_injury_deaths_raw_value    0.018933
+dtype: float64
+
+2025-03-30 14:19:51,583 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv2_healthcare_quality]
+
+2025-03-30 14:19:51,583 - INFO -------------------------------------------------
+  R2:  0.8582
+
+2025-03-30 14:19:51,583 - INFO -------------------------------------------------
+  MSE: 376572.8236
+
+2025-03-30 14:19:51,583 - INFO -------------------------------------------------
+  MAE: 445.0603
+
+2025-03-30 14:19:51,583 - INFO -------------------------------------------------
+  Top 5 Features:
+children_in_poverty_raw_value_x_injury_deaths_raw_value                0.396383
+physical_inactivity_raw_value_x_injury_deaths_raw_value                0.149816
+teen_births_raw_value_x_injury_deaths_raw_value                        0.138903
+adult_smoking_raw_value_x_injury_deaths_raw_value                      0.045333
+sexually_transmitted_infections_raw_value_x_injury_deaths_raw_value    0.026851
+dtype: float64
+
+2025-03-30 14:19:51,864 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv2_healthcare_quality_comp_interactions.png
+
+2025-03-30 14:19:52,217 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv2_healthcare_quality_comp_interactions.png
+
+2025-03-30 14:19:54,588 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv2_healthcare_quality_rf_comp_interactions.png
+
+2025-03-30 14:19:55,054 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv2_healthcare_quality_rf_comp_interactions.png
+
+2025-03-30 14:19:55,425 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv2_healthcare_quality_gbm_comp_interactions.png
+
+2025-03-30 14:19:55,870 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv2_healthcare_quality_gbm_comp_interactions.png
+
+2025-03-30 14:19:56,269 - INFO -------------------------------------------------
+Saved figure: pdp_dv2_healthcare_quality_rf_comp_interactions.png
+
+2025-03-30 14:19:56,593 - INFO -------------------------------------------------
+Saved figure: pdp_dv2_healthcare_quality_gbm_comp_interactions.png
+
+2025-03-30 14:20:16,931 - INFO -------------------------------------------------
+
+[VIF for dv3_operational_eff - component-level + interactions]
+
+2025-03-30 14:20:16,932 - INFO -------------------------------------------------
+                                           Feature           VIF
+0       air_pollution_particulate_matter_raw_value   5263.830002
+1              drinking_water_violations_raw_value   3234.826609
+2                severe_housing_problems_raw_value   4546.565026
+3                  driving_alone_to_work_raw_value   3870.910562
+4             long_commute_driving_alone_raw_value   4595.365861
+5                          adult_smoking_raw_value  11569.321481
+6                          adult_obesity_raw_value   9183.683439
+7                 food_environment_index_raw_value   7053.088602
+8                    physical_inactivity_raw_value  19187.768038
+9       access_to_exercise_opportunities_raw_value   4736.268757
+10                    excessive_drinking_raw_value   6903.271545
+11       alcohol_impaired_driving_deaths_raw_value   3159.562820
+12       sexually_transmitted_infections_raw_value   6985.251769
+13                           teen_births_raw_value   8134.592974
+14                high_school_completion_raw_value   5574.257752
+15                          some_college_raw_value   7878.231276
+16                          unemployment_raw_value   4224.093975
+17                   children_in_poverty_raw_value  13399.404026
+18                     income_inequality_raw_value   5078.585128
+19  children_in_single_parent_households_raw_value   7866.671449
+
+2025-03-30 14:20:17,179 - INFO -------------------------------------------------
+Saved figure: ols_residuals_dv3_operational_eff_comp_interactions.png
+
+2025-03-30 14:20:17,238 - INFO -------------------------------------------------
+Training Random Forest model for dv3_operational_eff...
+
+2025-03-30 14:20:19,988 - INFO -------------------------------------------------
+Training Gradient Boosting model for dv3_operational_eff...
+
+2025-03-30 14:20:32,795 - INFO -------------------------------------------------
+
+[Random Forest Results for dv3_operational_eff]
+
+2025-03-30 14:20:32,795 - INFO -------------------------------------------------
+  R2:  0.0840
+
+2025-03-30 14:20:32,795 - INFO -------------------------------------------------
+  MSE: 417.4421
+
+2025-03-30 14:20:32,795 - INFO -------------------------------------------------
+  MAE: 12.6200
+
+2025-03-30 14:20:32,796 - INFO -------------------------------------------------
+  Top 5 Features:
+driving_alone_to_work_raw_value_x_some_college_raw_value                         0.069087
+food_environment_index_raw_value_x_some_college_raw_value                        0.033751
+high_school_completion_raw_value_x_some_college_raw_value                        0.024299
+access_to_exercise_opportunities_raw_value_x_some_college_raw_value              0.014802
+access_to_exercise_opportunities_raw_value_x_high_school_completion_raw_value    0.012825
+dtype: float64
+
+2025-03-30 14:20:32,796 - INFO -------------------------------------------------
+
+[Gradient Boosting Results for dv3_operational_eff]
+
+2025-03-30 14:20:32,796 - INFO -------------------------------------------------
+  R2:  0.0632
+
+2025-03-30 14:20:32,796 - INFO -------------------------------------------------
+  MSE: 426.9369
+
+2025-03-30 14:20:32,796 - INFO -------------------------------------------------
+  MAE: 12.8220
+
+2025-03-30 14:20:32,796 - INFO -------------------------------------------------
+  Top 5 Features:
+driving_alone_to_work_raw_value_x_some_college_raw_value      0.081562
+food_environment_index_raw_value_x_some_college_raw_value     0.031353
+high_school_completion_raw_value_x_some_college_raw_value     0.028072
+some_college_raw_value_x_income_inequality_raw_value          0.023336
+high_school_completion_raw_value_x_injury_deaths_raw_value    0.015516
+dtype: float64
+
+2025-03-30 14:20:33,068 - INFO -------------------------------------------------
+Saved figure: actual_vs_pred_dv3_operational_eff_comp_interactions.png
+
+2025-03-30 14:20:33,427 - INFO -------------------------------------------------
+Saved figure: feature_importances_dv3_operational_eff_comp_interactions.png
+
+2025-03-30 14:20:37,219 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv3_operational_eff_rf_comp_interactions.png
+
+2025-03-30 14:20:37,675 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv3_operational_eff_rf_comp_interactions.png
+
+2025-03-30 14:20:38,057 - INFO -------------------------------------------------
+Saved figure: shap_importance_dv3_operational_eff_gbm_comp_interactions.png
+
+2025-03-30 14:20:38,583 - INFO -------------------------------------------------
+Saved figure: shap_impact_dv3_operational_eff_gbm_comp_interactions.png
+
+2025-03-30 14:20:38,996 - INFO -------------------------------------------------
+Saved figure: pdp_dv3_operational_eff_rf_comp_interactions.png
+
+2025-03-30 14:20:39,320 - INFO -------------------------------------------------
+Saved figure: pdp_dv3_operational_eff_gbm_comp_interactions.png
+
+2025-03-30 14:20:39,390 - INFO -------------------------------------------------
+
+
+===== SUMMARY RESULTS (Side-by-Side) =====
+
+2025-03-30 14:20:39,390 - INFO -------------------------------------------------
+                              Scenario  ...       GBM_MSE
+0                          Index-Level  ...  2.542219e+05
+1                          Index-Level  ...  1.271285e+06
+2                          Index-Level  ...  5.375931e+02
+3    Component-Level (No Interactions)  ...  1.281527e+05
+4    Component-Level (No Interactions)  ...  4.217748e+05
+5    Component-Level (No Interactions)  ...  4.356214e+02
+6  Component-Level (With Interactions)  ...  1.216125e+05
+7  Component-Level (With Interactions)  ...  3.765728e+05
+8  Component-Level (With Interactions)  ...  4.269369e+02
+
+[9 rows x 8 columns]
+
+2025-03-30 14:20:39,400 - INFO -------------------------------------------------
+[INFO] Results saved to chapter3_side_by_side_results.csv
+
+2025-03-30 14:20:39,400 - INFO -------------------------------------------------
+
+[INFO] All analyses complete.
+
+2025-03-30 14:20:39,433 - INFO -------------------------------------------------
+
+================================================================================
+ ANALYSIS COMPLETED: 2025-03-30 14:20:39
+================================================================================
+

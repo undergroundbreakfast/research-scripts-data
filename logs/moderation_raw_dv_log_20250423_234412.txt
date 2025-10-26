@@ -1,0 +1,129 @@
+2025-04-23 23:44:12,265 - INFO - Logging Raw DV analysis to: logs/moderation_raw_dv_log_20250423_234412.txt
+2025-04-23 23:44:12,265 - INFO - Raw DV analysis output will be saved in: moderation_output_raw_dv
+2025-04-23 23:44:12,334 - INFO - Connected to Postgres successfully.
+2025-04-23 23:44:12,334 - INFO - Checking available columns in views...
+2025-04-23 23:44:12,361 - INFO - Found 13 columns in vw_conceptual_model
+2025-04-23 23:44:12,361 - INFO - Found 37 columns in vw_conceptual_model_variables
+2025-04-23 23:44:12,361 - INFO - Using public.vw_conceptual_model_variables for query - found necessary columns
+2025-04-23 23:44:12,363 - ERROR - Error fetching or processing raw data: (psycopg2.errors.UndefinedColumn) column "medicaid_expansion_active" does not exist
+LINE 6:             medicaid_expansion_active AS iv1_public_health_p...
+                    ^
+
+[SQL: 
+    WITH RawData AS (
+        SELECT
+            county_fips,
+            -- IVs (Scores)
+            medicaid_expansion_active AS iv1_public_health_policy,
+            physical_environment_score AS iv2_physical_environment,
+            health_behaviors_score AS iv3_health_behaviors,
+            social_economic_factors_score AS iv4_social_economic_factors,
+            -- Moderators (Scores)
+            weighted_ai_adoption_score AS mo1_genai_capabilities,
+            weighted_robotics_adoption_score AS mo2_robotics_capabilities,
+            -- Raw Outcome Numerators
+            premature_death_raw_value,
+            preventable_hospital_stays_raw_value,
+            -- Denominator and Controls
+            population,
+            census_division
+        FROM public.vw_conceptual_model_variables -- CHANGED: Using the specified view
+        WHERE county_fips IS NOT NULL
+          AND population IS NOT NULL AND population > 0 -- Crucial for rates
+          AND census_division IS NOT NULL
+          -- Add NOT NULL checks for IVs/MOs as needed by analysis
+          AND medicaid_expansion_active IS NOT NULL
+          AND physical_environment_score IS NOT NULL
+          AND health_behaviors_score IS NOT NULL
+          AND social_economic_factors_score IS NOT NULL
+          AND weighted_ai_adoption_score IS NOT NULL
+          AND weighted_robotics_adoption_score IS NOT NULL
+          -- Add NOT NULL for raw outcomes only if you want to exclude rows missing *any* outcome
+          -- Otherwise, handle NaNs during modeling for each DV separately
+          AND premature_death_raw_value IS NOT NULL
+          AND preventable_hospital_stays_raw_value IS NOT NULL
+    )
+    SELECT * FROM RawData;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-04-23 23:44:12,366 - ERROR - Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "medicaid_expansion_active" does not exist
+LINE 6:             medicaid_expansion_active AS iv1_public_health_p...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/aaronjohnson/Library/CloudStorage/OneDrive-Personal/Documents/Coursera/Drexel/Dissertation/Code/Python_Code/Conceptual_Model_Code/Calculate_Death_Rates_v1.py", line 149, in fetch_data_for_raw_analysis
+    df = pd.read_sql(query, engine)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1779, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "medicaid_expansion_active" does not exist
+LINE 6:             medicaid_expansion_active AS iv1_public_health_p...
+                    ^
+
+[SQL: 
+    WITH RawData AS (
+        SELECT
+            county_fips,
+            -- IVs (Scores)
+            medicaid_expansion_active AS iv1_public_health_policy,
+            physical_environment_score AS iv2_physical_environment,
+            health_behaviors_score AS iv3_health_behaviors,
+            social_economic_factors_score AS iv4_social_economic_factors,
+            -- Moderators (Scores)
+            weighted_ai_adoption_score AS mo1_genai_capabilities,
+            weighted_robotics_adoption_score AS mo2_robotics_capabilities,
+            -- Raw Outcome Numerators
+            premature_death_raw_value,
+            preventable_hospital_stays_raw_value,
+            -- Denominator and Controls
+            population,
+            census_division
+        FROM public.vw_conceptual_model_variables -- CHANGED: Using the specified view
+        WHERE county_fips IS NOT NULL
+          AND population IS NOT NULL AND population > 0 -- Crucial for rates
+          AND census_division IS NOT NULL
+          -- Add NOT NULL checks for IVs/MOs as needed by analysis
+          AND medicaid_expansion_active IS NOT NULL
+          AND physical_environment_score IS NOT NULL
+          AND health_behaviors_score IS NOT NULL
+          AND social_economic_factors_score IS NOT NULL
+          AND weighted_ai_adoption_score IS NOT NULL
+          AND weighted_robotics_adoption_score IS NOT NULL
+          -- Add NOT NULL for raw outcomes only if you want to exclude rows missing *any* outcome
+          -- Otherwise, handle NaNs during modeling for each DV separately
+          AND premature_death_raw_value IS NOT NULL
+          AND preventable_hospital_stays_raw_value IS NOT NULL
+    )
+    SELECT * FROM RawData;
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
