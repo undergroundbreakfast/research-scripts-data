@@ -138,17 +138,17 @@ Desktop.ini
 # *_output/  # Now tracked for research sharing
 logs/
 # plots/  # Now tracked for research sharing
-figs/
-figures/
+# figs/  # Now tracked for research sharing
+# figures/  # Now tracked for research sharing
 tile_cache/
 
 # Output directories - now tracked for research collaboration
 # multiverse_output/  # Restored for sharing
 # polynomial_moderation_output/  # Restored for sharing
-ML_Graphs/
-ai_impact_results/
+# ML_Graphs/  # Restored for sharing
+# ai_impact_results/  # Restored for sharing
 # output_figures/  # Restored for sharing
-psm_results/
+# psm_results/  # Restored for sharing
 # ai_component_3d_analysis_output/  # Restored for sharing
 # ai_component_moderation_output/  # Restored for sharing
 # ai_component_polynomial_moderation_output/  # Restored for sharing
