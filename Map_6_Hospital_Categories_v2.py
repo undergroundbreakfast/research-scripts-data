@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 
 """
 Revised May 18th, 2025
@@ -40,7 +44,7 @@ hawaii_gdf = gdf[gdf["STATEFP"] == "15"]
 host = 'localhost'
 database = 'Research_TEST'
 user = 'postgres'
-password = os.getenv("POSTGRESQL_KEY")  # Make sure this is set in your environment
+password = os.getenv("POSTGRESQL_KEY")  # Make sure this is set in environment
 
 engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}/{database}")
 

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 # -*- coding: utf-8 -*-
 """
 Negative Controls & Placebos for Dissertation (NC suite v2 with MO1 components)
@@ -151,7 +155,7 @@ DIRECT_NCO_DVS = sorted(set(PLACEBO_DVS + [
     "school_segregation_raw_value",
     "homeownership_raw_value",
     "severe_housing_cost_burden_raw_value",
-    # FIX: Use the exact column names from your database
+    # FIX: Use the exact column names from database
     # These are in chunk_2, not chunk_3
     "air_pollution_particulate_matter_raw_value",
     "drinking_water_violations_raw_value",
@@ -1178,7 +1182,7 @@ def guardrail_checks(df: pd.DataFrame,
     return out
 
 # -----------------------------------------------------------------------------
-# Fast shortlist (10 checks you listed), expanded to components where relevant
+# Fast shortlist (10 checks listed), expanded to components where relevant
 # -----------------------------------------------------------------------------
 def run_shortlist(df: pd.DataFrame,
                   latest_c3: pd.DataFrame,

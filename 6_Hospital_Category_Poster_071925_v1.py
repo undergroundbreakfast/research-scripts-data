@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
+# ==============================================================================
 #  generate_county_poster.py
 #  Author:  Aaron Johnson
 #  Last updated: 2025-07-19

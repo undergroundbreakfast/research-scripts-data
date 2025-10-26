@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 """
 Changing to ADJPD patient days technology weights for AIPW analysis on 6/9/25
 

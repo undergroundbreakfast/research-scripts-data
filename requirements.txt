@@ -1,0 +1,50 @@
+# Core Data Science Libraries
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Statistical Analysis
+statsmodels>=0.13.0
+
+# Machine Learning
+scikit-learn>=1.0.0
+joblib>=1.1.0
+
+# Geospatial Analysis
+geopandas>=0.10.0
+shapely>=1.8.0
+pyproj>=3.2.0
+
+# Optional: Spatial Statistics (for LISA analysis)
+# pysal>=2.5.0
+# esda>=2.4.0
+# splot>=1.1.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Optional: Basemaps for geospatial visualization
+# contextily>=1.2.0
+# matplotlib-scalebar>=0.8.0
+
+# Database Connectivity
+sqlalchemy>=1.4.0
+psycopg2-binary>=2.9.0
+
+# Progress Bars
+tqdm>=4.62.0
+
+# Optional: Advanced ML libraries
+# shap>=0.40.0
+# knockpy>=1.3.0
+# interpret>=0.3.0
+
+# State Name/Abbreviation Utilities
+us>=2.0.0
+
+# Data File Handling
+pyarrow>=6.0.0  # For Parquet file support
+
+# Python Version
+# Requires Python >=3.8

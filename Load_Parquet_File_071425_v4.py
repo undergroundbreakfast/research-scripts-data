@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # ==============================================================================
-#  explore_hospital_data.py (REVISED)
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
+# ==============================================================================
 #  Author: Aaron Johnson
 #  Date: 2024-05-21
 #

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 """
 CHR ↔ AHA: State‑blocked, parallel multiverse for (a) direct adoption predictors and (b) CHR×(AI/Robotics) interactions on DV21/DV15.
 

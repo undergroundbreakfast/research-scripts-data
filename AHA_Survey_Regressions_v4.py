@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 """
 AI & Robotics Adoption vs. County-Level Outcomes
 Author:  Aaron Johnson

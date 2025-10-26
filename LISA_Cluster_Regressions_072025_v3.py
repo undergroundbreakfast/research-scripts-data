@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 """
 This script performs Ordinary Least Squares (OLS) regression analysis on US 
 county-level health data for dissertation research. It investigates the 

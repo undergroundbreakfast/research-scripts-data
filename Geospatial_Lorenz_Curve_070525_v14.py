@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
+# ==============================================================================
 #  geospatial_hospital_ai_robotics_analysis.py
 #  Author:  Aaron Johnson
 #  Last updated: 2025-07-14
@@ -1117,27 +1121,3 @@ if __name__ == "__main__":
     except Exception as e:
         logging.exception("An unhandled exception occurred during the main execution.")
         sys.exit(1)
-
-# ======================= ADVANCED SUGGESTION FOR FURTHER ANALYSIS =======================
-# For a deeper analysis, you can convert your edge list into a formal graph object
-# using the networkx library. This would allow you to calculate network metrics
-# for your dissertation, such as centrality, connected components, etc.
-
-# Example:
-#
-# import networkx as nx
-#
-# # In your main function, after creating your edges:
-# # G = nx.Graph()
-# # G.add_nodes_from(range(len(hospital_gdf_cleaned))) # Add all hospitals as nodes
-# # G.add_edges_from(knn_edges)
-#
-# # Now you can calculate metrics
-# # For example, find the largest connected component
-# # largest_cc = max(nx.connected_components(G), key=len)
-# # print(f"The largest connected network of hospitals contains {len(largest_cc)} nodes.")
-#
-# # Or calculate degree centrality (how many neighbors each hospital has)
-# # degree_centrality = nx.degree_centrality(G)
-# # You could add this back to your GeoDataFrame
-# # hospital_gdf_cleaned['degree_centrality'] = hospital_gdf_cleaned.index.map(degree_centrality)

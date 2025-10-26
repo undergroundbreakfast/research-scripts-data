@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 import subprocess
 import sys
 from pathlib import Path

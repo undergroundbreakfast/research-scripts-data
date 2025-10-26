@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ==============================================================================
+# Copyright (c) 2025 Aaron Johnson, Drexel University
+# Licensed under the MIT License - see LICENSE file for details
+# ==============================================================================
 """
 This script performs a three-part analysis on US county-level health data:
 1. Causal Main Effect Analysis: Estimates the impact of specific Generative AI
